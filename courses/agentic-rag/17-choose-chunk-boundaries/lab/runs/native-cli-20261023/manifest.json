@@ -1,0 +1,76 @@
+{
+  "classification": "Original live local learner CLI PTY captured after exit, not a report or replay of stdout",
+  "source_base": "7ff11a520a840a1d0febef617cb82a23186861de",
+  "command": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py",
+    "--output",
+    "runs/native-cli-20261023/result.json"
+  ],
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "cf5bff617e0778e4e9b6a47ced1ff187b8d06d3c947cff01d593c2c1f6eb43a8",
+    "chunk_index.py": "8c1dfc379f48d68f20510758dc5bcd85bebffa17139976411d304f9a254188de",
+    "fixtures/docs/aster-copy-v1.md": "34257e6c9c3ec0e75af47dd465cd370b63dc4c5e45a6a3413f87b15baf643bfd",
+    "fixtures/docs/aster-copy-v2.md": "ee85252a1f2997476d3ee9fd9ff17648af3bede369201f82d2d230d3fd370f5b",
+    "fixtures/source-manifest.json": "5ad198cc3d6fe506bff4532302c806d201afe3e82900e00eafdb5a62e16b1153",
+    "load_documents.py": "84d30170889fc4b9f5ecbece4cdac392afe0ca3786ae09f92a9e0e49175222d7",
+    "render_output.py": "46ea27738cb130be0887372c15599b72d5f04907c478e86fddef058065f568a0",
+    "run.py": "4f71724b48cbb0ddf9af9c58632bfcc1845be865574199263482dc4f2cafa2b3",
+    "runs/2026-10-23-chunks/execution.json": "f3003ca500f288102fa9cc9a6e233ff2ea993563300c7d0815adc3bbd938de9b",
+    "runs/2026-10-23-chunks/media.json": "5ef993131eaa55a4bbd07cec9579ac424bde4c8f0f1b3b1ca1aea985ada9110e",
+    "runs/2026-10-23-chunks/output-mobile.png": "92998b8f340f87e00c5ef445541bd875a1ac8f32fce7104e8ad6fa1d87e8ddef",
+    "runs/2026-10-23-chunks/output-small.png": "243f0852b775e624c4f1a01ffe77d557cdbea801d59d72be8c1f54b60d182edb",
+    "runs/2026-10-23-chunks/output.png": "c97c23fc15aa04e287853088234db566e999c10b95663613f4aaed495c03080a",
+    "runs/2026-10-23-chunks/result.json": "dd1795d590f2389062b82ddd494ee9229444799b74bfd20601389f1b7ae83fe2",
+    "runs/2026-10-23-chunks/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-chunks/stdout.txt": "c7f5f856fbc9cc82e8b7e427e364e01ffb92fa5cf35f7b17d844fd00510f675c",
+    "runs/2026-10-23-chunks/tests.txt": "ac0e90d0de56731c0729fc017b307cbe178677c851b443969be951b26c44cc22",
+    "test_chunks.py": "7083a2b5ea8ea37418e3c13349b14fa3fb8e9432619151313dfda7b38319c151"
+  },
+  "executed_README": "source/README.md",
+  "source_resolution": "All code, fixtures and old records remain byte-identical. Current lab README only adds this capture section; its original executed bytes are retained in source/README.md.",
+  "guard_sha256": "cc3aa6a4d52abb883b7daad366dd78a3c542665ae5ce6dba178d87a7182c8ffd",
+  "capture_control_freeze_sha256": "487cef739ccdabb5db8d8e969939834e1be7e32e6c9978adfb0b6020c91d9a45",
+  "exit_code": 0,
+  "original_processes": 1,
+  "terminal_input_bytes": 0,
+  "network_attempts": 0,
+  "provider_requests": 0,
+  "original_stdout_sha256": "d89662121c5ec7cd36dd8e210409085d548e3fa115d1d03484d37cbd72abb43f",
+  "parsed_result_sha256": "dd1795d590f2389062b82ddd494ee9229444799b74bfd20601389f1b7ae83fe2",
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "sha256": "b25293bea8fd8ff2743f7857cf8b75447396d90ce75255650457737efa1c17b0",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "state": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "sha256": "b25293bea8fd8ff2743f7857cf8b75447396d90ce75255650457737efa1c17b0",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "state": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "same_deterministic_result_as_historical": true,
+  "historical_difference": [],
+  "scope": "The learner command prints 13 fixed-character, eight paragraph and seven heading-aware chunks. Only the heading-aware case keeps the selected instruction and its qualifier together.",
+  "record_files_sha256": {
+    "capture.json": "6cc5e43e2c2027dbcba19be048c2bb25bc9b003578093a4f2b9416bde84a6ab8",
+    "environment.json": "6f695b2ec797b284dffcd83177adac241a05234e7e0e2a7f746224e8dc930c7e",
+    "guard-ready.json": "f1d375dfaf1378085e0419559207068e700db0e6f69f99d088dc0c9c2bb6898d",
+    "images/completed-end-1920@2x.png": "b25293bea8fd8ff2743f7857cf8b75447396d90ce75255650457737efa1c17b0",
+    "images/completed-top-1920@2x.png": "b25293bea8fd8ff2743f7857cf8b75447396d90ce75255650457737efa1c17b0",
+    "launch.json": "29a385a3a9e31d8c602a556148d7f68f96ff4614f87e58dae03ace55a49327fa",
+    "process-result.json": "315a9ed5f6577921a798ef40e605b1f5e13a35be51f11226b953991c0aca9c32",
+    "provenance.json": "d5b2fd7a31bca7863c796eeb1a2e84a4cd876c34f28e05e8237f06426d7f2ade",
+    "result.json": "dd1795d590f2389062b82ddd494ee9229444799b74bfd20601389f1b7ae83fe2",
+    "source/README.md": "cf5bff617e0778e4e9b6a47ced1ff187b8d06d3c947cff01d593c2c1f6eb43a8",
+    "stdout.txt": "d89662121c5ec7cd36dd8e210409085d548e3fa115d1d03484d37cbd72abb43f"
+  }
+}

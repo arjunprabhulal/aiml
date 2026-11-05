@@ -1,0 +1,15 @@
+test_tools_are_not_listed_when_the_server_does_not_offer_them (test_traced_client.CapabilityGate.test_tools_are_not_listed_when_the_server_does_not_offer_them) ... ok
+Tool 'search_docs' failed: 'Error executing tool search_docs: The query is empty.'
+test_bad_arguments_and_unknown_tools_are_refused_before_sending (test_traced_client.TracedRun.test_bad_arguments_and_unknown_tools_are_refused_before_sending) ... ok
+test_discovery_records_version_server_and_capabilities (test_traced_client.TracedRun.test_discovery_records_version_server_and_capabilities) ... ok
+test_output_that_breaks_the_schema_is_rejected (test_traced_client.TracedRun.test_output_that_breaks_the_schema_is_rejected) ... ok
+test_saved_fixtures_match_a_fresh_run (test_traced_client.TracedRun.test_saved_fixtures_match_a_fresh_run) ... ok
+test_second_listing_is_served_from_cache_without_a_request (test_traced_client.TracedRun.test_second_listing_is_served_from_cache_without_a_request) ... ok
+test_server_spans_continue_the_client_trace (test_traced_client.TracedRun.test_server_spans_continue_the_client_trace) ... ok
+test_timeout_is_local_and_the_server_still_finishes (test_traced_client.TracedRun.test_timeout_is_local_and_the_server_still_finishes) ... ok
+test_tool_error_is_a_result_with_is_error (test_traced_client.TracedRun.test_tool_error_is_a_result_with_is_error) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.426s
+
+OK

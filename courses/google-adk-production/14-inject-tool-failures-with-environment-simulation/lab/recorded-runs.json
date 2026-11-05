@@ -1,0 +1,515 @@
+{
+  "question": "How do I make the assistant use a local model instead of Gemini?",
+  "model": "gemini-3.8-flash",
+  "runs": {
+    "baseline": {
+      "options": {
+        "fault": null
+      },
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_480663",
+                "args": {},
+                "name": "list_pages"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_519211",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_573206",
+                "args": {
+                  "path": "install.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "Set the `OLLAMA_API_BASE` environment variable to use a local model instead of Gemini (install.md)."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "trail": [
+        "call   list_pages({})",
+        "result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> cli.md (231 chars)",
+        "call   read_page({'path': 'install.md'})",
+        "result read_page -> install.md (158 chars)",
+        "answer Set the `OLLAMA_API_BASE` environment variable to use a local model instead of Gemini (install.md)."
+      ],
+      "error": null,
+      "answer": "Set the `OLLAMA_API_BASE` environment variable to use a local model instead of Gemini (install.md).",
+      "read_page_failures": 0,
+      "cites_a_page": true
+    },
+    "outage": {
+      "options": {
+        "fault": "outage"
+      },
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_709993",
+                "args": {},
+                "name": "list_pages"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_602381",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_675221",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_480817",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_384698",
+                "args": {
+                  "path": "install.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_546935",
+                "args": {
+                  "path": "troubleshooting.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_539457",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "I am currently unable to answer your question because the documentation service is unavailable (cli.md)."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "trail": [
+        "call   list_pages({})",
+        "result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "call   read_page({'path': 'install.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "call   read_page({'path': 'troubleshooting.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "answer I am currently unable to answer your question because the documentation service is unavailable (cli.md)."
+      ],
+      "error": null,
+      "answer": "I am currently unable to answer your question because the documentation service is unavailable (cli.md).",
+      "read_page_failures": 6,
+      "cites_a_page": true
+    },
+    "outage-with-error-rule": {
+      "options": {
+        "fault": "outage",
+        "instruction": "INSTRUCTION + ON_ERROR"
+      },
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_416250",
+                "args": {},
+                "name": "list_pages"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_490953",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "The docs service failed, so I cannot provide an answer."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "trail": [
+        "call   list_pages({})",
+        "result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+        "answer The docs service failed, so I cannot provide an answer."
+      ],
+      "error": null,
+      "answer": "The docs service failed, so I cannot provide an answer.",
+      "read_page_failures": 1,
+      "cites_a_page": false
+    },
+    "outage-with-retry-plugin": {
+      "options": {
+        "fault": "outage",
+        "retry": "raise"
+      },
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_519214",
+                "args": {},
+                "name": "list_pages"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_534923",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_447050",
+                "args": {
+                  "path": "install.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_445391",
+                "args": {
+                  "path": "troubleshooting.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "trail": [
+        "call   list_pages({})",
+        "result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'response_type': 'ERROR_HANDLED_BY_REFLECT_AND_RETRY_PLUGIN', 'error_type': 'ToolError', 'error_details': \"{'error_code': 503, 'error_message': 'Docs service unavailable.'}\", 'retry_count': 1, 'reflection_guidance': 'The call to tool `read_page` failed.\\n\\n**Error Details:**\\n```\\n{\\'error_code\\': 503, \\'error_message\\': \\'Docs service unavailable.\\'}\\n```\\n\\n**Tool Arguments Used:**\\n```json\\n{\\n  \"path\": \"cli.md\"\\n}\\n```\\n\\n**Reflection Guidance:**\\nThis is retry attempt **1 of 2**. Analyze the error and the arguments you provided. Do not repeat the exact same call. Consider the following before your next attempt:\\n\\n1.  **Invalid Parameters**: Does the error suggest that one or more arguments are incorrect, badly formatted, or missing? Review the tool\\'s schema and your arguments.\\n2.  **State or Preconditions**: Did a previous step fail or not produce the necessary state/resource for this tool to succeed?\\n3.  **Alternative Approach**: Is this the right tool for the job? Could another tool or a different sequence of steps achieve the goal?\\n4.  **Simplify the Task**: Can you break the problem down into smaller, simpler steps?\\n5.  **Wrong Function Name**: Does the error indicates the tool is not found? Please check again and only use available tools.\\n\\nFormulate a new plan based on your analysis and try a corrected or different approach.'}",
+        "call   read_page({'path': 'install.md'})",
+        "result read_page -> {'response_type': 'ERROR_HANDLED_BY_REFLECT_AND_RETRY_PLUGIN', 'error_type': 'ToolError', 'error_details': \"{'error_code': 503, 'error_message': 'Docs service unavailable.'}\", 'retry_count': 2, 'reflection_guidance': 'The call to tool `read_page` failed.\\n\\n**Error Details:**\\n```\\n{\\'error_code\\': 503, \\'error_message\\': \\'Docs service unavailable.\\'}\\n```\\n\\n**Tool Arguments Used:**\\n```json\\n{\\n  \"path\": \"install.md\"\\n}\\n```\\n\\n**Reflection Guidance:**\\nThis is retry attempt **2 of 2**. Analyze the error and the arguments you provided. Do not repeat the exact same call. Consider the following before your next attempt:\\n\\n1.  **Invalid Parameters**: Does the error suggest that one or more arguments are incorrect, badly formatted, or missing? Review the tool\\'s schema and your arguments.\\n2.  **State or Preconditions**: Did a previous step fail or not produce the necessary state/resource for this tool to succeed?\\n3.  **Alternative Approach**: Is this the right tool for the job? Could another tool or a different sequence of steps achieve the goal?\\n4.  **Simplify the Task**: Can you break the problem down into smaller, simpler steps?\\n5.  **Wrong Function Name**: Does the error indicates the tool is not found? Please check again and only use available tools.\\n\\nFormulate a new plan based on your analysis and try a corrected or different approach.'}",
+        "call   read_page({'path': 'troubleshooting.md'})"
+      ],
+      "error": "RuntimeError: Error in plugin 'reflect_retry_tool_plugin' during 'after_tool_callback' callback: {'error_code': 503, 'error_message': 'Docs service unavailable.'}",
+      "answer": null,
+      "read_page_failures": 2,
+      "cites_a_page": false
+    },
+    "outage-with-retry-limit-answer": {
+      "options": {
+        "fault": "outage",
+        "retry": "answer"
+      },
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_499183",
+                "args": {},
+                "name": "list_pages"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_702174",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_548046",
+                "args": {
+                  "path": "install.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "I am unable to retrieve the documentation at the moment because the docs service is currently unavailable (cli.md)."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "trail": [
+        "call   list_pages({})",
+        "result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> {'response_type': 'ERROR_HANDLED_BY_REFLECT_AND_RETRY_PLUGIN', 'error_type': 'ToolError', 'error_details': \"{'error_code': 503, 'error_message': 'Docs service unavailable.'}\", 'retry_count': 1, 'reflection_guidance': 'The call to tool `read_page` failed.\\n\\n**Error Details:**\\n```\\n{\\'error_code\\': 503, \\'error_message\\': \\'Docs service unavailable.\\'}\\n```\\n\\n**Tool Arguments Used:**\\n```json\\n{\\n  \"path\": \"cli.md\"\\n}\\n```\\n\\n**Reflection Guidance:**\\nThis is retry attempt **1 of 2**. Analyze the error and the arguments you provided. Do not repeat the exact same call. Consider the following before your next attempt:\\n\\n1.  **Invalid Parameters**: Does the error suggest that one or more arguments are incorrect, badly formatted, or missing? Review the tool\\'s schema and your arguments.\\n2.  **State or Preconditions**: Did a previous step fail or not produce the necessary state/resource for this tool to succeed?\\n3.  **Alternative Approach**: Is this the right tool for the job? Could another tool or a different sequence of steps achieve the goal?\\n4.  **Simplify the Task**: Can you break the problem down into smaller, simpler steps?\\n5.  **Wrong Function Name**: Does the error indicates the tool is not found? Please check again and only use available tools.\\n\\nFormulate a new plan based on your analysis and try a corrected or different approach.'}",
+        "call   read_page({'path': 'install.md'})",
+        "result read_page -> {'response_type': 'ERROR_HANDLED_BY_REFLECT_AND_RETRY_PLUGIN', 'error_type': 'ToolError', 'error_details': \"{'error_code': 503, 'error_message': 'Docs service unavailable.'}\", 'retry_count': 2, 'reflection_guidance': 'The call to tool `read_page` failed.\\n\\n**Error Details:**\\n```\\n{\\'error_code\\': 503, \\'error_message\\': \\'Docs service unavailable.\\'}\\n```\\n\\n**Tool Arguments Used:**\\n```json\\n{\\n  \"path\": \"install.md\"\\n}\\n```\\n\\n**Reflection Guidance:**\\nThis is retry attempt **2 of 2**. Analyze the error and the arguments you provided. Do not repeat the exact same call. Consider the following before your next attempt:\\n\\n1.  **Invalid Parameters**: Does the error suggest that one or more arguments are incorrect, badly formatted, or missing? Review the tool\\'s schema and your arguments.\\n2.  **State or Preconditions**: Did a previous step fail or not produce the necessary state/resource for this tool to succeed?\\n3.  **Alternative Approach**: Is this the right tool for the job? Could another tool or a different sequence of steps achieve the goal?\\n4.  **Simplify the Task**: Can you break the problem down into smaller, simpler steps?\\n5.  **Wrong Function Name**: Does the error indicates the tool is not found? Please check again and only use available tools.\\n\\nFormulate a new plan based on your analysis and try a corrected or different approach.'}",
+        "answer I am unable to retrieve the documentation at the moment because the docs service is currently unavailable (cli.md)."
+      ],
+      "error": null,
+      "answer": "I am unable to retrieve the documentation at the moment because the docs service is currently unavailable (cli.md).",
+      "read_page_failures": 2,
+      "cites_a_page": true
+    },
+    "missing-page-with-error-rule": {
+      "options": {
+        "fault": "missing-page",
+        "instruction": "INSTRUCTION + ON_ERROR"
+      },
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_470004",
+                "args": {},
+                "name": "list_pages"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_572352",
+                "args": {
+                  "path": "cli.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_688018",
+                "args": {
+                  "path": "install.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_476055",
+                "args": {
+                  "path": "troubleshooting.md"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "Set `OLLAMA_API_BASE` to point to a running Ollama server (troubleshooting.md)."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "trail": [
+        "call   list_pages({})",
+        "result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}",
+        "call   read_page({'path': 'cli.md'})",
+        "result read_page -> cli.md (231 chars)",
+        "call   read_page({'path': 'install.md'})",
+        "result read_page -> {'error_code': 404, 'error_message': 'Page not found.'}",
+        "call   read_page({'path': 'troubleshooting.md'})",
+        "result read_page -> troubleshooting.md (256 chars)",
+        "answer Set `OLLAMA_API_BASE` to point to a running Ollama server (troubleshooting.md)."
+      ],
+      "error": null,
+      "answer": "Set `OLLAMA_API_BASE` to point to a running Ollama server (troubleshooting.md).",
+      "read_page_failures": 1,
+      "cites_a_page": true
+    }
+  },
+  "outage_repeats": [
+    {
+      "read_page_failures": 18,
+      "cites_a_page": true,
+      "answer": "The documentation service is currently unavailable, so I cannot retrieve the instructions for using a local model instead of Gemini (cli.md)."
+    },
+    {
+      "read_page_failures": 4,
+      "cites_a_page": false,
+      "answer": "I am unable to access the documentation at the moment because the docs service is currently unavailable."
+    },
+    {
+      "read_page_failures": 6,
+      "cites_a_page": false,
+      "answer": "I am unable to access the documentation at the moment because the docs service is currently unavailable."
+    },
+    {
+      "read_page_failures": 5,
+      "cites_a_page": true,
+      "answer": "I am unable to retrieve the instructions right now because the docs service is currently unavailable (cli.md)."
+    },
+    {
+      "read_page_failures": 5,
+      "cites_a_page": false,
+      "answer": "I am unable to answer this question because the documentation service is currently unavailable."
+    }
+  ]
+}

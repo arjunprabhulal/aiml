@@ -1,0 +1,38 @@
+$ python workflow.py prepare --out recorded/cohort.json
+{
+  "written": "recorded/cohort.json",
+  "rows": 240,
+  "splits": {
+    "training": 144,
+    "validation": 48,
+    "test": 48
+  }
+}
+
+$ python workflow.py train --cohort recorded/cohort.json --out recorded/candidate.json
+{
+  "written": "recorded/candidate.json",
+  "training_rows": 144,
+  "features": [
+    "recent_event_count"
+  ]
+}
+
+$ python workflow.py evaluate --cohort recorded/cohort.json --model recorded/candidate.json --out recorded/validation.json
+{
+  "split": "validation",
+  "rows": 48,
+  "correct": 29,
+  "accuracy": 0.6041666666666666,
+  "majority_correct": 27,
+  "model_sha256": "6ec6c622ac475213b6b13723e5cb8cdeb14d5bdccd93ca2ee42ba0d684917ab7",
+  "cohort_sha256": "bacaa0053ffd5fd844af307b5ee5370515a4f99dea02a2fa7b76e7122c2ccf6b",
+  "execution": "fresh local CPU fit; authored synthetic labels"
+}
+
+$ python workflow.py predict --model recorded/candidate.json --event-count 3
+{
+  "event_count": 3,
+  "return_probability": 0.40381146876849405,
+  "predicted_return": 0
+}

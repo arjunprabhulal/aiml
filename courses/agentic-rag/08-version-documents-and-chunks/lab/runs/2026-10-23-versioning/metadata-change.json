@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "execution_mode": "offline-local-files",
+  "chunker": {
+    "name": "paragraphs",
+    "version": 1,
+    "newline_policy": "CRLF-to-LF",
+    "separator": "blank-line"
+  },
+  "snapshot_id": "970f70ddaeb7239d1c44a716174361be7b0cba4a552d011f830da98ed9ec95b5",
+  "documents": [
+    {
+      "source_id": "json-text",
+      "path": "docs/json-text.md",
+      "title": "json-text",
+      "sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+      "fact_status": "original summary; primary docs checked",
+      "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+      "metadata_sha256": "fa80a47c53e04f67d9481651bd0b6fae72e8094b2df37fc9a375cabfd930bc10",
+      "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+      "chunks": [
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+        }
+      ]
+    },
+    {
+      "source_id": "path-read",
+      "path": "docs/path-read.md",
+      "title": "path-read",
+      "sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "original summary; primary docs checked",
+      "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+      "metadata_sha256": "1f1afc1a151fe961715da50dad4c18a19fa67b1f94117123153731c63dd9a1a8",
+      "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+      "chunks": [
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0"
+        }
+      ]
+    },
+    {
+      "source_id": "path-read-3-13",
+      "path": "docs/path-read-3-13.md",
+      "title": "path-read-3-13",
+      "sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+      "version": "3.13",
+      "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "documented only; Python 3.13 not executed",
+      "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+      "metadata_sha256": "a757e6201998dfaf780a87d8544ee4079bb5f1e5ab97ad035a77cd3afdbf0d01",
+      "document_revision": "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9",
+      "chunks": [
+        {
+          "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+          "source_id": "path-read-3-13",
+          "document_revision": "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+          "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+        }
+      ]
+    },
+    {
+      "source_id": "path-write",
+      "path": "docs/path-write.md",
+      "title": "Write UTF-8 text with pathlib",
+      "sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "fact_status": "original summary; primary docs checked",
+      "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+      "metadata_sha256": "fa7085e5dcd23a3cc6a63261a19b1601c12750c05110a900e3251b59c4585572",
+      "document_revision": "db8807f30a17947915f67ea5208f5768a4f75c2b2233ad8ff0776327a96e3706",
+      "chunks": [
+        {
+          "chunk_id": "12f06d42c15746b564ca36a775a7bd5b88d6376a79b47473d360cb53cc60c815",
+          "source_id": "path-write",
+          "document_revision": "db8807f30a17947915f67ea5208f5768a4f75c2b2233ad8ff0776327a96e3706",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        }
+      ]
+    }
+  ]
+}

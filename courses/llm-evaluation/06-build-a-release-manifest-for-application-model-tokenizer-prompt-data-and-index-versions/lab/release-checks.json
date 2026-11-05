@@ -1,0 +1,55 @@
+{
+  "mode": "local compatibility checks; no new model calls",
+  "scenarios": [
+    {
+      "decision": "match",
+      "findings": [],
+      "scenario": "unchanged bundle"
+    },
+    {
+      "decision": "block",
+      "findings": [
+        "eval run key differs: docs_sha",
+        "file changed or missing: docs.json",
+        "manifest key differs: docs_sha",
+        "recording key differs: docs_sha"
+      ],
+      "scenario": "documentation edited"
+    },
+    {
+      "decision": "block",
+      "findings": [
+        "eval run key differs: k",
+        "file changed or missing: assistant.py",
+        "manifest key differs: k",
+        "recording key differs: k"
+      ],
+      "scenario": "retrieval depth changed"
+    },
+    {
+      "decision": "block",
+      "findings": [
+        "eval run key differs: model",
+        "file changed or missing: run-config.json",
+        "manifest key differs: model",
+        "recording key differs: model"
+      ],
+      "scenario": "generator name changed"
+    },
+    {
+      "decision": "block",
+      "findings": [
+        "eval case ids differ",
+        "file changed or missing: eval-run.json"
+      ],
+      "scenario": "case removed from report"
+    },
+    {
+      "decision": "block",
+      "findings": [
+        "file changed or missing: assistant.py"
+      ],
+      "scenario": "application source edited"
+    }
+  ]
+}

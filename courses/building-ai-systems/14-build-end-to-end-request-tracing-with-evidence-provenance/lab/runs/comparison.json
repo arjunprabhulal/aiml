@@ -1,0 +1,214 @@
+{
+  "baseline": {
+    "name": "grounded-support",
+    "version": "1",
+    "mode": "live",
+    "model": "gemma4:e2b@b37049369adf (replayed)",
+    "prompt": "support-instructions-v1",
+    "tools": null
+  },
+  "candidate": {
+    "name": "grounded-support",
+    "version": "2",
+    "mode": "live",
+    "model": "gemma4:e2b@b37049369adf (replayed)",
+    "prompt": "support-instructions-v1",
+    "tools": null
+  },
+  "case_set": {
+    "name": "grounded-support",
+    "sha256": "3a38cea9ec476d0893bc5a0905d65bbc863d08c8110e41c5f357fbb4b11cdf07"
+  },
+  "task": {
+    "name": "grounded-support",
+    "version": "1",
+    "sha256": "8d7ce82159e41a63fc9453e919dd066a71dec614da8276832a0e38224d0d2c12"
+  },
+  "summary": {
+    "development": {
+      "baseline": {
+        "cases": 5,
+        "trials": 15,
+        "pass": 9,
+        "fail": 6,
+        "incomplete": 0,
+        "cases_passing_any_trial": 3,
+        "cases_passing_every_trial": 3
+      },
+      "candidate": {
+        "cases": 5,
+        "trials": 15,
+        "pass": 15,
+        "fail": 0,
+        "incomplete": 0,
+        "cases_passing_any_trial": 5,
+        "cases_passing_every_trial": 5
+      },
+      "fixed": 2,
+      "regressed": 0,
+      "changed": 0,
+      "unchanged": 3
+    },
+    "held_out": {
+      "baseline": {
+        "cases": 4,
+        "trials": 12,
+        "pass": 12,
+        "fail": 0,
+        "incomplete": 0,
+        "cases_passing_any_trial": 4,
+        "cases_passing_every_trial": 4
+      },
+      "candidate": {
+        "cases": 4,
+        "trials": 12,
+        "pass": 12,
+        "fail": 0,
+        "incomplete": 0,
+        "cases_passing_any_trial": 4,
+        "cases_passing_every_trial": 4
+      },
+      "fixed": 0,
+      "regressed": 0,
+      "changed": 0,
+      "unchanged": 4
+    }
+  },
+  "cases": [
+    {
+      "split": "development",
+      "case_id": "blank-question",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    },
+    {
+      "split": "development",
+      "case_id": "change-address",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    },
+    {
+      "split": "development",
+      "case_id": "refund-window",
+      "baseline": [
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "fixed"
+    },
+    {
+      "split": "development",
+      "case_id": "standard-delivery",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    },
+    {
+      "split": "development",
+      "case_id": "unwanted-parcel",
+      "baseline": [
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "fixed"
+    },
+    {
+      "split": "held_out",
+      "case_id": "arrival-date",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    },
+    {
+      "split": "held_out",
+      "case_id": "dropped-laptop",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    },
+    {
+      "split": "held_out",
+      "case_id": "express-speed",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    },
+    {
+      "split": "held_out",
+      "case_id": "password-changed",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "candidate": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "change": "unchanged"
+    }
+  ]
+}

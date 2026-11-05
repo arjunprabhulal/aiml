@@ -1,0 +1,104 @@
+{
+  "report_version": "1",
+  "case_set": {
+    "name": "inbox-triage",
+    "sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6"
+  },
+  "systems": [
+    {
+      "system": {
+        "name": "model-triage-gemma4",
+        "version": "1",
+        "mode": "replay",
+        "model": "gemma4:e2b@b37049369adf",
+        "prompt": "triage-v1 sha256:053fdf51b21d891e",
+        "tools": null
+      },
+      "recording_sha256": "04010c18382ba7c3e03f5ac1e0709e96e3baa5d9041bc1daee373ed65dad0198",
+      "trials_per_case": 10,
+      "cases": 9,
+      "verdicts": {
+        "pass": 59,
+        "incomplete": 31
+      },
+      "not_run": 31,
+      "failures_by_check": {},
+      "incomplete_by_error": {
+        "NotRun": 31
+      },
+      "per_case": {
+        "charged-twice": {
+          "class": "billing",
+          "pass": 7,
+          "fail": 0,
+          "incomplete": 3,
+          "not_run": 3
+        },
+        "stuck-tracking": {
+          "class": "delivery",
+          "pass": 7,
+          "fail": 0,
+          "incomplete": 3,
+          "not_run": 3
+        },
+        "password-changed": {
+          "class": "account security",
+          "pass": 7,
+          "fail": 0,
+          "incomplete": 3,
+          "not_run": 3
+        },
+        "product-advice": {
+          "class": "out of scope",
+          "pass": 7,
+          "fail": 0,
+          "incomplete": 3,
+          "not_run": 3
+        },
+        "refund-missing": {
+          "class": "billing",
+          "pass": 7,
+          "fail": 0,
+          "incomplete": 3,
+          "not_run": 3
+        },
+        "charged-after-closing": {
+          "class": "billing, ambiguous wording",
+          "pass": 6,
+          "fail": 0,
+          "incomplete": 4,
+          "not_run": 4
+        },
+        "blank-message": {
+          "class": "empty input",
+          "pass": 6,
+          "fail": 0,
+          "incomplete": 4,
+          "not_run": 4
+        },
+        "missing-body": {
+          "class": "missing input",
+          "pass": 6,
+          "fail": 0,
+          "incomplete": 4,
+          "not_run": 4
+        },
+        "late-order": {
+          "class": "delivery",
+          "pass": 6,
+          "fail": 0,
+          "incomplete": 4,
+          "not_run": 4
+        }
+      },
+      "flaky_cases": [],
+      "never_passed": [],
+      "curve": null,
+      "latency_s": {
+        "trials": 47,
+        "median": 0.639,
+        "p90": 0.727
+      }
+    }
+  ]
+}

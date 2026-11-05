@@ -1,0 +1,360 @@
+[
+  {
+    "id": "dev-latest",
+    "split": "dev",
+    "kind": "fact in the newest turn",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "When do we ship the release?",
+    "history": [
+      {
+        "user": "Here is the deploy log: 09:00 deploy-worker retry 1 of 5 after a timeout. 09:01 deploy-worker retry 2 of 5 after a timeout. 09:02 deploy-worker retry 3 of 5 after a timeout. 09:03 deploy-worker retry 4 of 5 after a timeout. 09:04 deploy-worker retry 5 of 5 after a timeout. 09:05 deploy-worker retry 1 of 5 after a timeout. 09:06 deploy-worker retry 2 of 5 after a timeout. 09:07 deploy-worker retry 3 of 5 after a timeout. 09:08 deploy-worker retry 4 of 5 after a timeout. 09:09 deploy-worker retry 5 of 5 after a timeout. 09:10 deploy-worker retry 1 of 5 after a timeout. 09:11 deploy-worker retry 2 of 5 after a timeout. 09:12 deploy-worker retry 3 of 5 after a timeout. 09:13 deploy-worker retry 4 of 5 after a timeout. 09:14 deploy-worker retry 5 of 5 after a timeout. 09:15 deploy-worker retry 1 of 5 after a timeout. 09:16 deploy-worker retry 2 of 5 after a timeout. 09:17 deploy-worker retry 3 of 5 after a timeout. 09:18 deploy-worker retry 4 of 5 after a timeout. 09:19 deploy-worker retry 5 of 5 after a timeout. 09:20 deploy-worker retry 1 of 5 after a timeout. 09:21 deploy-worker retry 2 of 5 after a timeout. 09:22 deploy-worker retry 3 of 5 after a timeout. 09:23 deploy-worker retry 4 of 5 after a timeout.",
+        "assistant": "The deploy retried until the timeout cleared."
+      },
+      {
+        "user": "We will ship the release on Friday.",
+        "assistant": "Friday it is."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "ship the release on Friday"
+    ],
+    "stale": []
+  },
+  {
+    "id": "dev-old-decision",
+    "split": "dev",
+    "kind": "decision behind a long turn",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "Which database did we choose?",
+    "history": [
+      {
+        "user": "We chose PostgreSQL for the application.",
+        "assistant": "Understood. PostgreSQL is the selected database."
+      },
+      {
+        "user": "The export job failed. Log: 09:00 export-worker retry 1 of 5 after a timeout. 09:01 export-worker retry 2 of 5 after a timeout. 09:02 export-worker retry 3 of 5 after a timeout. 09:03 export-worker retry 4 of 5 after a timeout. 09:04 export-worker retry 5 of 5 after a timeout. 09:05 export-worker retry 1 of 5 after a timeout. 09:06 export-worker retry 2 of 5 after a timeout. 09:07 export-worker retry 3 of 5 after a timeout. 09:08 export-worker retry 4 of 5 after a timeout. 09:09 export-worker retry 5 of 5 after a timeout. 09:10 export-worker retry 1 of 5 after a timeout. 09:11 export-worker retry 2 of 5 after a timeout. 09:12 export-worker retry 3 of 5 after a timeout. 09:13 export-worker retry 4 of 5 after a timeout. 09:14 export-worker retry 5 of 5 after a timeout. 09:15 export-worker retry 1 of 5 after a timeout. 09:16 export-worker retry 2 of 5 after a timeout. 09:17 export-worker retry 3 of 5 after a timeout. 09:18 export-worker retry 4 of 5 after a timeout. 09:19 export-worker retry 5 of 5 after a timeout. 09:20 export-worker retry 1 of 5 after a timeout. 09:21 export-worker retry 2 of 5 after a timeout. 09:22 export-worker retry 3 of 5 after a timeout. 09:23 export-worker retry 4 of 5 after a timeout.",
+        "assistant": "The export job recovered after five retries."
+      },
+      {
+        "user": "Thanks for checking.",
+        "assistant": "You're welcome."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "We chose PostgreSQL for the application."
+    ],
+    "stale": []
+  },
+  {
+    "id": "dev-correction",
+    "split": "dev",
+    "kind": "corrected decision",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "Which database will we use?",
+    "history": [
+      {
+        "user": "We will use MySQL for the first version.",
+        "assistant": "MySQL noted."
+      },
+      {
+        "user": "Switch to PostgreSQL instead of MySQL.",
+        "assistant": "Switched to PostgreSQL."
+      },
+      {
+        "user": "Here is the migration log: 09:00 migrate retry 1 of 5 after a timeout. 09:01 migrate retry 2 of 5 after a timeout. 09:02 migrate retry 3 of 5 after a timeout. 09:03 migrate retry 4 of 5 after a timeout. 09:04 migrate retry 5 of 5 after a timeout. 09:05 migrate retry 1 of 5 after a timeout. 09:06 migrate retry 2 of 5 after a timeout. 09:07 migrate retry 3 of 5 after a timeout. 09:08 migrate retry 4 of 5 after a timeout. 09:09 migrate retry 5 of 5 after a timeout. 09:10 migrate retry 1 of 5 after a timeout. 09:11 migrate retry 2 of 5 after a timeout. 09:12 migrate retry 3 of 5 after a timeout. 09:13 migrate retry 4 of 5 after a timeout. 09:14 migrate retry 5 of 5 after a timeout. 09:15 migrate retry 1 of 5 after a timeout. 09:16 migrate retry 2 of 5 after a timeout. 09:17 migrate retry 3 of 5 after a timeout. 09:18 migrate retry 4 of 5 after a timeout. 09:19 migrate retry 5 of 5 after a timeout. 09:20 migrate retry 1 of 5 after a timeout. 09:21 migrate retry 2 of 5 after a timeout. 09:22 migrate retry 3 of 5 after a timeout. 09:23 migrate retry 4 of 5 after a timeout.",
+        "assistant": "The migration log shows only retries."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "Switch to PostgreSQL instead of MySQL."
+    ],
+    "stale": [
+      "We will use MySQL"
+    ]
+  },
+  {
+    "id": "dev-pronoun",
+    "split": "dev",
+    "kind": "fact stated with a pronoun",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "How often do exports run?",
+    "history": [
+      {
+        "user": "Priya owns the export service.",
+        "assistant": "Noted. Priya owns it."
+      },
+      {
+        "user": "She decided that exports run hourly.",
+        "assistant": "Hourly exports, noted."
+      },
+      {
+        "user": "Here is the scheduler log: 09:00 scheduler retry 1 of 5 after a timeout. 09:01 scheduler retry 2 of 5 after a timeout. 09:02 scheduler retry 3 of 5 after a timeout. 09:03 scheduler retry 4 of 5 after a timeout. 09:04 scheduler retry 5 of 5 after a timeout. 09:05 scheduler retry 1 of 5 after a timeout. 09:06 scheduler retry 2 of 5 after a timeout. 09:07 scheduler retry 3 of 5 after a timeout. 09:08 scheduler retry 4 of 5 after a timeout. 09:09 scheduler retry 5 of 5 after a timeout. 09:10 scheduler retry 1 of 5 after a timeout. 09:11 scheduler retry 2 of 5 after a timeout. 09:12 scheduler retry 3 of 5 after a timeout. 09:13 scheduler retry 4 of 5 after a timeout. 09:14 scheduler retry 5 of 5 after a timeout. 09:15 scheduler retry 1 of 5 after a timeout. 09:16 scheduler retry 2 of 5 after a timeout. 09:17 scheduler retry 3 of 5 after a timeout. 09:18 scheduler retry 4 of 5 after a timeout. 09:19 scheduler retry 5 of 5 after a timeout. 09:20 scheduler retry 1 of 5 after a timeout. 09:21 scheduler retry 2 of 5 after a timeout. 09:22 scheduler retry 3 of 5 after a timeout. 09:23 scheduler retry 4 of 5 after a timeout.",
+        "assistant": "The scheduler log shows retries only."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "exports run hourly"
+    ],
+    "stale": []
+  },
+  {
+    "id": "dev-spread",
+    "split": "dev",
+    "kind": "facts spread across turns",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "What limits apply to audit logs and exports?",
+    "history": [
+      {
+        "user": "Audit logs must keep 400 days of history.",
+        "assistant": "Audit logs: 400 days."
+      },
+      {
+        "user": "Here is the audit job log: 09:00 audit-job retry 1 of 5 after a timeout. 09:01 audit-job retry 2 of 5 after a timeout. 09:02 audit-job retry 3 of 5 after a timeout. 09:03 audit-job retry 4 of 5 after a timeout. 09:04 audit-job retry 5 of 5 after a timeout. 09:05 audit-job retry 1 of 5 after a timeout. 09:06 audit-job retry 2 of 5 after a timeout. 09:07 audit-job retry 3 of 5 after a timeout. 09:08 audit-job retry 4 of 5 after a timeout. 09:09 audit-job retry 5 of 5 after a timeout. 09:10 audit-job retry 1 of 5 after a timeout. 09:11 audit-job retry 2 of 5 after a timeout. 09:12 audit-job retry 3 of 5 after a timeout. 09:13 audit-job retry 4 of 5 after a timeout. 09:14 audit-job retry 5 of 5 after a timeout. 09:15 audit-job retry 1 of 5 after a timeout. 09:16 audit-job retry 2 of 5 after a timeout. 09:17 audit-job retry 3 of 5 after a timeout. 09:18 audit-job retry 4 of 5 after a timeout. 09:19 audit-job retry 5 of 5 after a timeout. 09:20 audit-job retry 1 of 5 after a timeout. 09:21 audit-job retry 2 of 5 after a timeout. 09:22 audit-job retry 3 of 5 after a timeout. 09:23 audit-job retry 4 of 5 after a timeout.",
+        "assistant": "The audit job is healthy."
+      },
+      {
+        "user": "Exports must finish within 15 minutes.",
+        "assistant": "Exports: 15 minutes."
+      },
+      {
+        "user": "Thanks.",
+        "assistant": "You're welcome."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "400 days of history",
+      "within 15 minutes"
+    ],
+    "stale": []
+  },
+  {
+    "id": "dev-no-overlap",
+    "split": "dev",
+    "kind": "fact with no shared words",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "How do we deploy the service?",
+    "history": [
+      {
+        "user": "Use a blue-green rollout for the API.",
+        "assistant": "Blue-green rollout, noted."
+      },
+      {
+        "user": "Here is the build log: 09:00 builder retry 1 of 5 after a timeout. 09:01 builder retry 2 of 5 after a timeout. 09:02 builder retry 3 of 5 after a timeout. 09:03 builder retry 4 of 5 after a timeout. 09:04 builder retry 5 of 5 after a timeout. 09:05 builder retry 1 of 5 after a timeout. 09:06 builder retry 2 of 5 after a timeout. 09:07 builder retry 3 of 5 after a timeout. 09:08 builder retry 4 of 5 after a timeout. 09:09 builder retry 5 of 5 after a timeout. 09:10 builder retry 1 of 5 after a timeout. 09:11 builder retry 2 of 5 after a timeout. 09:12 builder retry 3 of 5 after a timeout. 09:13 builder retry 4 of 5 after a timeout. 09:14 builder retry 5 of 5 after a timeout. 09:15 builder retry 1 of 5 after a timeout. 09:16 builder retry 2 of 5 after a timeout. 09:17 builder retry 3 of 5 after a timeout. 09:18 builder retry 4 of 5 after a timeout. 09:19 builder retry 5 of 5 after a timeout. 09:20 builder retry 1 of 5 after a timeout. 09:21 builder retry 2 of 5 after a timeout. 09:22 builder retry 3 of 5 after a timeout. 09:23 builder retry 4 of 5 after a timeout.",
+        "assistant": "The build passed after retries."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "blue-green rollout"
+    ],
+    "stale": []
+  },
+  {
+    "id": "held-latest",
+    "split": "held_out",
+    "kind": "fact in the newest turn",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "Who is on call this week?",
+    "history": [
+      {
+        "user": "Here is the queue log: 09:00 queue-worker retry 1 of 5 after a timeout. 09:01 queue-worker retry 2 of 5 after a timeout. 09:02 queue-worker retry 3 of 5 after a timeout. 09:03 queue-worker retry 4 of 5 after a timeout. 09:04 queue-worker retry 5 of 5 after a timeout. 09:05 queue-worker retry 1 of 5 after a timeout. 09:06 queue-worker retry 2 of 5 after a timeout. 09:07 queue-worker retry 3 of 5 after a timeout. 09:08 queue-worker retry 4 of 5 after a timeout. 09:09 queue-worker retry 5 of 5 after a timeout. 09:10 queue-worker retry 1 of 5 after a timeout. 09:11 queue-worker retry 2 of 5 after a timeout. 09:12 queue-worker retry 3 of 5 after a timeout. 09:13 queue-worker retry 4 of 5 after a timeout. 09:14 queue-worker retry 5 of 5 after a timeout. 09:15 queue-worker retry 1 of 5 after a timeout. 09:16 queue-worker retry 2 of 5 after a timeout. 09:17 queue-worker retry 3 of 5 after a timeout. 09:18 queue-worker retry 4 of 5 after a timeout. 09:19 queue-worker retry 5 of 5 after a timeout. 09:20 queue-worker retry 1 of 5 after a timeout. 09:21 queue-worker retry 2 of 5 after a timeout. 09:22 queue-worker retry 3 of 5 after a timeout. 09:23 queue-worker retry 4 of 5 after a timeout.",
+        "assistant": "The queue drained after the retries."
+      },
+      {
+        "user": "The on-call engineer this week is Mateo.",
+        "assistant": "Mateo is on call."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "on-call engineer this week is Mateo"
+    ],
+    "stale": []
+  },
+  {
+    "id": "held-old-decision",
+    "split": "held_out",
+    "kind": "decision behind a long turn",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "Where do we store uploads?",
+    "history": [
+      {
+        "user": "We decided to store uploads in object storage.",
+        "assistant": "Object storage for uploads, noted."
+      },
+      {
+        "user": "Here is the upload log: 09:00 upload-worker retry 1 of 5 after a timeout. 09:01 upload-worker retry 2 of 5 after a timeout. 09:02 upload-worker retry 3 of 5 after a timeout. 09:03 upload-worker retry 4 of 5 after a timeout. 09:04 upload-worker retry 5 of 5 after a timeout. 09:05 upload-worker retry 1 of 5 after a timeout. 09:06 upload-worker retry 2 of 5 after a timeout. 09:07 upload-worker retry 3 of 5 after a timeout. 09:08 upload-worker retry 4 of 5 after a timeout. 09:09 upload-worker retry 5 of 5 after a timeout. 09:10 upload-worker retry 1 of 5 after a timeout. 09:11 upload-worker retry 2 of 5 after a timeout. 09:12 upload-worker retry 3 of 5 after a timeout. 09:13 upload-worker retry 4 of 5 after a timeout. 09:14 upload-worker retry 5 of 5 after a timeout. 09:15 upload-worker retry 1 of 5 after a timeout. 09:16 upload-worker retry 2 of 5 after a timeout. 09:17 upload-worker retry 3 of 5 after a timeout. 09:18 upload-worker retry 4 of 5 after a timeout. 09:19 upload-worker retry 5 of 5 after a timeout. 09:20 upload-worker retry 1 of 5 after a timeout. 09:21 upload-worker retry 2 of 5 after a timeout. 09:22 upload-worker retry 3 of 5 after a timeout. 09:23 upload-worker retry 4 of 5 after a timeout.",
+        "assistant": "The uploads finished after retries."
+      },
+      {
+        "user": "Good.",
+        "assistant": "Glad it worked."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "decided to store uploads in object storage"
+    ],
+    "stale": []
+  },
+  {
+    "id": "held-correction",
+    "split": "held_out",
+    "kind": "corrected decision",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "What do we use for the job queue?",
+    "history": [
+      {
+        "user": "We decided to use RabbitMQ for the job queue.",
+        "assistant": "RabbitMQ for the queue."
+      },
+      {
+        "user": "Actually, use Redis streams for the job queue, not RabbitMQ.",
+        "assistant": "Redis streams it is."
+      },
+      {
+        "user": "Here is the broker log: 09:00 broker retry 1 of 5 after a timeout. 09:01 broker retry 2 of 5 after a timeout. 09:02 broker retry 3 of 5 after a timeout. 09:03 broker retry 4 of 5 after a timeout. 09:04 broker retry 5 of 5 after a timeout. 09:05 broker retry 1 of 5 after a timeout. 09:06 broker retry 2 of 5 after a timeout. 09:07 broker retry 3 of 5 after a timeout. 09:08 broker retry 4 of 5 after a timeout. 09:09 broker retry 5 of 5 after a timeout. 09:10 broker retry 1 of 5 after a timeout. 09:11 broker retry 2 of 5 after a timeout. 09:12 broker retry 3 of 5 after a timeout. 09:13 broker retry 4 of 5 after a timeout. 09:14 broker retry 5 of 5 after a timeout. 09:15 broker retry 1 of 5 after a timeout. 09:16 broker retry 2 of 5 after a timeout. 09:17 broker retry 3 of 5 after a timeout. 09:18 broker retry 4 of 5 after a timeout. 09:19 broker retry 5 of 5 after a timeout. 09:20 broker retry 1 of 5 after a timeout. 09:21 broker retry 2 of 5 after a timeout. 09:22 broker retry 3 of 5 after a timeout. 09:23 broker retry 4 of 5 after a timeout.",
+        "assistant": "The broker log shows retries only."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "use Redis streams for the job queue"
+    ],
+    "stale": [
+      "decided to use RabbitMQ"
+    ]
+  },
+  {
+    "id": "held-pronoun",
+    "split": "held_out",
+    "kind": "fact stated with a pronoun",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "How many times do invoices retry?",
+    "history": [
+      {
+        "user": "Lena runs the billing service.",
+        "assistant": "Lena owns billing."
+      },
+      {
+        "user": "She set the invoice retry limit to three attempts.",
+        "assistant": "Three attempts, noted."
+      },
+      {
+        "user": "Here is the billing log: 09:00 billing retry 1 of 5 after a timeout. 09:01 billing retry 2 of 5 after a timeout. 09:02 billing retry 3 of 5 after a timeout. 09:03 billing retry 4 of 5 after a timeout. 09:04 billing retry 5 of 5 after a timeout. 09:05 billing retry 1 of 5 after a timeout. 09:06 billing retry 2 of 5 after a timeout. 09:07 billing retry 3 of 5 after a timeout. 09:08 billing retry 4 of 5 after a timeout. 09:09 billing retry 5 of 5 after a timeout. 09:10 billing retry 1 of 5 after a timeout. 09:11 billing retry 2 of 5 after a timeout. 09:12 billing retry 3 of 5 after a timeout. 09:13 billing retry 4 of 5 after a timeout. 09:14 billing retry 5 of 5 after a timeout. 09:15 billing retry 1 of 5 after a timeout. 09:16 billing retry 2 of 5 after a timeout. 09:17 billing retry 3 of 5 after a timeout. 09:18 billing retry 4 of 5 after a timeout. 09:19 billing retry 5 of 5 after a timeout. 09:20 billing retry 1 of 5 after a timeout. 09:21 billing retry 2 of 5 after a timeout. 09:22 billing retry 3 of 5 after a timeout. 09:23 billing retry 4 of 5 after a timeout.",
+        "assistant": "Billing retried as expected."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "invoice retry limit to three attempts"
+    ],
+    "stale": []
+  },
+  {
+    "id": "held-spread",
+    "split": "held_out",
+    "kind": "facts spread across turns",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "What are the password and session rules?",
+    "history": [
+      {
+        "user": "Passwords must have at least 14 characters.",
+        "assistant": "Minimum length 14."
+      },
+      {
+        "user": "Here is the sign-in log: 09:00 auth retry 1 of 5 after a timeout. 09:01 auth retry 2 of 5 after a timeout. 09:02 auth retry 3 of 5 after a timeout. 09:03 auth retry 4 of 5 after a timeout. 09:04 auth retry 5 of 5 after a timeout. 09:05 auth retry 1 of 5 after a timeout. 09:06 auth retry 2 of 5 after a timeout. 09:07 auth retry 3 of 5 after a timeout. 09:08 auth retry 4 of 5 after a timeout. 09:09 auth retry 5 of 5 after a timeout. 09:10 auth retry 1 of 5 after a timeout. 09:11 auth retry 2 of 5 after a timeout. 09:12 auth retry 3 of 5 after a timeout. 09:13 auth retry 4 of 5 after a timeout. 09:14 auth retry 5 of 5 after a timeout. 09:15 auth retry 1 of 5 after a timeout. 09:16 auth retry 2 of 5 after a timeout. 09:17 auth retry 3 of 5 after a timeout. 09:18 auth retry 4 of 5 after a timeout. 09:19 auth retry 5 of 5 after a timeout. 09:20 auth retry 1 of 5 after a timeout. 09:21 auth retry 2 of 5 after a timeout. 09:22 auth retry 3 of 5 after a timeout. 09:23 auth retry 4 of 5 after a timeout.",
+        "assistant": "Sign-in is healthy."
+      },
+      {
+        "user": "Sessions must expire after 30 minutes of inactivity.",
+        "assistant": "Sessions expire after 30 idle minutes."
+      },
+      {
+        "user": "Thanks.",
+        "assistant": "You're welcome."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "at least 14 characters",
+      "expire after 30 minutes"
+    ],
+    "stale": []
+  },
+  {
+    "id": "held-buried",
+    "split": "held_out",
+    "kind": "fact inside a long turn",
+    "instructions": "Answer only from the conversation. If a fact is missing, say so.",
+    "current": "What connection limit must the gateway allow?",
+    "history": [
+      {
+        "user": "Here is the incident log: 09:00 api-gateway retry 1 of 5 after a timeout. 09:01 api-gateway retry 2 of 5 after a timeout. 09:02 api-gateway retry 3 of 5 after a timeout. 09:03 api-gateway retry 4 of 5 after a timeout. 09:04 api-gateway retry 5 of 5 after a timeout. 09:05 api-gateway retry 1 of 5 after a timeout. 09:06 api-gateway retry 2 of 5 after a timeout. 09:07 api-gateway retry 3 of 5 after a timeout. 09:08 api-gateway retry 4 of 5 after a timeout. 09:09 api-gateway retry 5 of 5 after a timeout. 09:10 api-gateway retry 1 of 5 after a timeout. 09:11 api-gateway retry 2 of 5 after a timeout. 09:12 api-gateway retry 3 of 5 after a timeout. 09:13 api-gateway retry 4 of 5 after a timeout. 09:14 api-gateway retry 5 of 5 after a timeout. 09:15 api-gateway retry 1 of 5 after a timeout. 09:16 api-gateway retry 2 of 5 after a timeout. 09:17 api-gateway retry 3 of 5 after a timeout. 09:18 api-gateway retry 4 of 5 after a timeout. 09:19 api-gateway retry 5 of 5 after a timeout. 09:20 api-gateway retry 1 of 5 after a timeout. 09:21 api-gateway retry 2 of 5 after a timeout. 09:22 api-gateway retry 3 of 5 after a timeout. 09:23 api-gateway retry 4 of 5 after a timeout. Root cause: the gateway must allow 200 connections.",
+        "assistant": "The gateway connection limit caused the incident."
+      },
+      {
+        "user": "Thanks.",
+        "assistant": "You're welcome."
+      }
+    ],
+    "budget": {
+      "context_limit": 384,
+      "max_new_tokens": 96,
+      "margin": 32
+    },
+    "required": [
+      "gateway must allow 200 connections"
+    ],
+    "stale": []
+  }
+]

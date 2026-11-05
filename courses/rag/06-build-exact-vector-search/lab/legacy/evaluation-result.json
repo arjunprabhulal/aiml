@@ -1,0 +1,553 @@
+{
+  "k": 5,
+  "passages": 347,
+  "questions": 24,
+  "multiply_adds_per_query": 355328,
+  "measures": {
+    "vector": {
+      "questions_found_at_1": 17,
+      "questions_found_at_5": 22,
+      "mrr": 0.792,
+      "relevant_lessons_in_top_5": 27,
+      "relevant_lessons_total": 37,
+      "mean_distinct_lessons_in_top_5": 2.79,
+      "first_relevant_rank": [
+        1,
+        1,
+        1,
+        3,
+        11,
+        5,
+        1,
+        8,
+        1,
+        1,
+        1,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "vector-lessons": {
+      "questions_found_at_1": 17,
+      "questions_found_at_5": 22,
+      "mrr": 0.795,
+      "relevant_lessons_in_top_5": 32,
+      "relevant_lessons_total": 37,
+      "mean_distinct_lessons_in_top_5": 5.0,
+      "first_relevant_rank": [
+        1,
+        1,
+        1,
+        3,
+        null,
+        4,
+        1,
+        null,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "tf-idf": {
+      "questions_found_at_1": 16,
+      "questions_found_at_5": 18,
+      "mrr": 0.723,
+      "relevant_lessons_in_top_5": 22,
+      "relevant_lessons_total": 37,
+      "mean_distinct_lessons_in_top_5": 3.42,
+      "first_relevant_rank": [
+        1,
+        6,
+        1,
+        1,
+        1,
+        6,
+        11,
+        108,
+        1,
+        1,
+        1,
+        3,
+        12,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "stored_vector_length_range": [
+    0.999999,
+    1.000001
+  ],
+  "metrics_agree_on_top_5": true,
+  "full_order_differences": [
+    {
+      "question": "q21",
+      "metric": "euclidean",
+      "first_difference_at_rank": 157,
+      "cosine_gap": 1.16e-07
+    },
+    {
+      "question": "q22",
+      "metric": "euclidean",
+      "first_difference_at_rank": 206,
+      "cosine_gap": 2.2e-07
+    }
+  ],
+  "questions_whose_top_5_differs_after_scaling": 24,
+  "per_question": [
+    {
+      "id": "q01",
+      "question": "How does LoRA cut the number of trainable parameters?",
+      "relevant": [
+        "adaptation-methods"
+      ],
+      "vector_top": [
+        "adaptation-methods",
+        "adaptation-methods",
+        "adaptation-methods"
+      ],
+      "tf_idf_top": [
+        "adaptation-methods",
+        "adaptation-methods",
+        "adaptation-methods"
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "Why can't I just keep deleting the oldest chat messages when a conversation gets too long?",
+      "relevant": [
+        "build-a-context-budget-manager",
+        "build-context-compaction"
+      ],
+      "vector_top": [
+        "build-a-context-budget-manager",
+        "build-a-context-budget-manager",
+        "build-a-context-budget-manager"
+      ],
+      "tf_idf_top": [
+        "what-is-ai",
+        "messages-and-context",
+        "messages-and-context"
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "Why does a word that appears in almost every document count for less?",
+      "relevant": [
+        "keyword-ranking",
+        "build-a-retriever"
+      ],
+      "vector_top": [
+        "build-a-retriever",
+        "build-a-retriever",
+        "keyword-ranking"
+      ],
+      "tf_idf_top": [
+        "build-a-retriever",
+        "keyword-ranking",
+        "build-a-retriever"
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "How do I know whether an evaluation score means anything?",
+      "relevant": [
+        "datasets-baselines-and-held-out-cases",
+        "what-is-an-evaluation"
+      ],
+      "vector_top": [
+        "tests-and-failures",
+        "build-a-retriever",
+        "what-is-an-evaluation"
+      ],
+      "tf_idf_top": [
+        "what-is-an-evaluation",
+        "closed-open-weight-open-source",
+        "what-is-an-evaluation"
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "Should the model obey instructions it finds inside a web page?",
+      "relevant": [
+        "human-control",
+        "build-a-context-assembler"
+      ],
+      "vector_top": [
+        "what-is-ai",
+        "next-token-prediction",
+        "build-a-context-budget-manager"
+      ],
+      "tf_idf_top": [
+        "human-control",
+        "build-a-context-assembler",
+        "build-a-context-budget-manager"
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "What happens between sending a prompt and getting the first word back?",
+      "relevant": [
+        "model-request-lifecycle",
+        "what-is-inference"
+      ],
+      "vector_top": [
+        "tokens-and-tokenizers",
+        "build-a-context-budget-manager",
+        "generation-controls"
+      ],
+      "tf_idf_top": [
+        "human-control",
+        "build-a-retriever",
+        "python-data-and-functions"
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "Why does the same prompt give a different answer each time?",
+      "relevant": [
+        "generation-controls",
+        "repeated-trials-and-quality-tradeoffs"
+      ],
+      "vector_top": [
+        "repeated-trials-and-quality-tradeoffs",
+        "build-a-context-budget-manager",
+        "build-a-context-budget-manager"
+      ],
+      "tf_idf_top": [
+        "what-is-an-evaluation",
+        "model-request-lifecycle",
+        "tasks-cases-and-success-criteria"
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "How can two sentences with no words in common still be close together?",
+      "relevant": [
+        "vectors-and-similarity"
+      ],
+      "vector_top": [
+        "build-a-retriever",
+        "compare-context-selection-strategies",
+        "build-a-retriever"
+      ],
+      "tf_idf_top": [
+        "build-a-retriever",
+        "build-context-compaction",
+        "build-context-compaction"
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "Is an open-weight model the same thing as open source?",
+      "relevant": [
+        "closed-open-weight-open-source",
+        "model-labels"
+      ],
+      "vector_top": [
+        "closed-open-weight-open-source",
+        "closed-open-weight-open-source",
+        "closed-open-weight-open-source"
+      ],
+      "tf_idf_top": [
+        "closed-open-weight-open-source",
+        "closed-open-weight-open-source",
+        "terminal-and-python"
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "What should be checked before a proposed tool call actually runs?",
+      "relevant": [
+        "tools-and-permissions"
+      ],
+      "vector_top": [
+        "tools-and-permissions",
+        "retrieval-tools-and-agents",
+        "human-control"
+      ],
+      "tf_idf_top": [
+        "tools-and-permissions",
+        "build-a-context-assembler",
+        "tools-and-permissions"
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "What is a test fixture for?",
+      "relevant": [
+        "tests-and-failures"
+      ],
+      "vector_top": [
+        "tests-and-failures",
+        "tests-and-failures",
+        "tests-and-failures"
+      ],
+      "tf_idf_top": [
+        "tests-and-failures",
+        "build-isolated-contexts",
+        "build-a-retriever"
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "Where should API keys live in a project?",
+      "relevant": [
+        "environments-and-secrets"
+      ],
+      "vector_top": [
+        "local-models-and-hosted-apis",
+        "local-models-and-hosted-apis",
+        "local-models-and-hosted-apis"
+      ],
+      "tf_idf_top": [
+        "local-models-and-hosted-apis",
+        "build-a-context-budget-manager",
+        "environments-and-secrets"
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "How does a transformer decide which earlier words matter for the current one?",
+      "relevant": [
+        "attention-and-sequences"
+      ],
+      "vector_top": [
+        "next-token-prediction",
+        "attention-and-sequences",
+        "attention-and-sequences"
+      ],
+      "tf_idf_top": [
+        "build-a-retriever",
+        "messages-and-context",
+        "build-a-retriever"
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "What does the optimizer do with the error after each batch?",
+      "relevant": [
+        "loss-and-updates",
+        "how-models-learn"
+      ],
+      "vector_top": [
+        "loss-and-updates",
+        "loss-and-updates",
+        "loss-and-updates"
+      ],
+      "tf_idf_top": [
+        "arrays-and-tensors",
+        "arrays-and-tensors",
+        "arrays-and-tensors"
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "How can a long-running agent job survive a restart?",
+      "relevant": [
+        "tasks-and-handoffs",
+        "state-and-workflows"
+      ],
+      "vector_top": [
+        "tasks-and-handoffs",
+        "tasks-and-handoffs",
+        "tasks-and-handoffs"
+      ],
+      "tf_idf_top": [
+        "tasks-and-handoffs",
+        "protocol-boundaries",
+        "build-isolated-contexts"
+      ]
+    },
+    {
+      "id": "q16",
+      "question": "How do I stop one user's saved notes from showing up for another user?",
+      "relevant": [
+        "build-isolated-contexts"
+      ],
+      "vector_top": [
+        "build-isolated-contexts",
+        "build-isolated-contexts",
+        "build-isolated-contexts"
+      ],
+      "tf_idf_top": [
+        "build-isolated-contexts",
+        "build-isolated-contexts",
+        "build-context-compaction"
+      ]
+    },
+    {
+      "id": "q17",
+      "question": "How can I tell whether shortening a conversation lost an important fact?",
+      "relevant": [
+        "build-context-compaction"
+      ],
+      "vector_top": [
+        "build-context-compaction",
+        "messages-and-context",
+        "compare-context-selection-strategies"
+      ],
+      "tf_idf_top": [
+        "build-context-compaction",
+        "compare-context-selection-strategies",
+        "build-context-compaction"
+      ]
+    },
+    {
+      "id": "q18",
+      "question": "Which parts of the conversation does the model see on a new turn?",
+      "relevant": [
+        "messages-and-context",
+        "build-a-context-budget-manager"
+      ],
+      "vector_top": [
+        "build-a-context-budget-manager",
+        "build-a-context-assembler",
+        "messages-and-context"
+      ],
+      "tf_idf_top": [
+        "build-a-context-budget-manager",
+        "build-context-compaction",
+        "build-context-compaction"
+      ]
+    },
+    {
+      "id": "q19",
+      "question": "Why should an answer point to the passages it relied on?",
+      "relevant": [
+        "rag-and-evidence"
+      ],
+      "vector_top": [
+        "graders-rubrics-and-human-review",
+        "rag-and-evidence",
+        "build-context-compaction"
+      ],
+      "tf_idf_top": [
+        "rag-and-evidence",
+        "different-model-jobs",
+        "model-request-lifecycle"
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "How much memory do I need to run a model on my own machine?",
+      "relevant": [
+        "model-runtime-and-hardware",
+        "local-models-and-hosted-apis"
+      ],
+      "vector_top": [
+        "model-runtime-and-hardware",
+        "model-runtime-and-hardware",
+        "model-runtime-and-hardware"
+      ],
+      "tf_idf_top": [
+        "model-runtime-and-hardware",
+        "model-runtime-and-hardware",
+        "documents-and-queries"
+      ]
+    },
+    {
+      "id": "q21",
+      "question": "How is text broken into the pieces a model reads?",
+      "relevant": [
+        "tokens-and-tokenizers"
+      ],
+      "vector_top": [
+        "tokens-and-tokenizers",
+        "tokens-and-tokenizers",
+        "different-model-jobs"
+      ],
+      "tf_idf_top": [
+        "json-and-files",
+        "build-a-context-assembler",
+        "tokens-and-tokenizers"
+      ]
+    },
+    {
+      "id": "q22",
+      "question": "Why keep some test cases hidden while tuning a system?",
+      "relevant": [
+        "datasets-baselines-and-held-out-cases",
+        "compare-context-selection-strategies"
+      ],
+      "vector_top": [
+        "datasets-baselines-and-held-out-cases",
+        "datasets-baselines-and-held-out-cases",
+        "compare-context-selection-strategies"
+      ],
+      "tf_idf_top": [
+        "datasets-baselines-and-held-out-cases",
+        "datasets-baselines-and-held-out-cases",
+        "build-a-retriever"
+      ]
+    },
+    {
+      "id": "q23",
+      "question": "How does an MCP client learn which tools a server offers?",
+      "relevant": [
+        "protocol-boundaries"
+      ],
+      "vector_top": [
+        "protocol-boundaries",
+        "protocol-boundaries",
+        "protocol-boundaries"
+      ],
+      "tf_idf_top": [
+        "protocol-boundaries",
+        "protocol-boundaries",
+        "protocol-boundaries"
+      ]
+    },
+    {
+      "id": "q24",
+      "question": "Can a reply be valid JSON and still be wrong?",
+      "relevant": [
+        "checking-model-results",
+        "json-and-files"
+      ],
+      "vector_top": [
+        "json-and-files",
+        "json-and-files",
+        "json-and-files"
+      ],
+      "tf_idf_top": [
+        "json-and-files",
+        "json-and-files",
+        "tests-and-failures"
+      ]
+    }
+  ]
+}

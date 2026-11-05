@@ -1,0 +1,53 @@
+{
+  "execution_mode": "fresh-gemini-api",
+  "environment": {
+    "python": "3.12.8",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "sqlite": "3.45.3",
+    "model": "gemini-3.1-flash-lite",
+    "seed": "not set; provider default",
+    "configuration": "serialized in every request record",
+    "endpoint": "Gemini Developer API v1beta",
+    "tls": "verified with the preinstalled certifi CA bundle",
+    "automatic_retries": 0
+  },
+  "source_sha256": {
+    "gemini_client.py": "738eb3baf9fd3f3dc5fd5503a0133b70eb1bab95ddce7f1d82f030042ff45d96",
+    "gemini_rerank.py": "a46d8988901ed1193a1e58bb7a7475669322822cdd0dfb8307c474f48558c68d",
+    "hybrid.py": "7275cfeca034edc9602d1e2f8f28a23d5e07c53925d3b6406df38fdb0eea14ff",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "render_output.py": "be4982ac3f3125d4bb1179e5112158d4766c56d560a4a71f5f26ebb2a69e4dc2",
+    "rerank.py": "93b1403a31495091d9ec992f9244b4448b4264f6f0ba63ce75a17136c9713757",
+    "run.py": "8f52abf4749def50af3ff2059c7d467834655a153d0c05a5f9136bc344c3503d",
+    "vector_retriever.py": "950d21daccda66fb2f8dba9a74d1fabec836ccfe677725c48bf2880279976ee5",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "result_sha256": "687cee97aaca05091a0dfdcb72d4e8a92146950c2a39b5ab83d222f828ab859f",
+  "requests": [
+    {
+      "file": "requests/request-001.json",
+      "sha256": "6f14fb01543da3cc2bea622e45bd7791233772e767177884499f7c74204ce783"
+    },
+    {
+      "file": "requests/request-002.json",
+      "sha256": "6462ca329ac9eaaf30a86e08d271f9a3a182352fd21b962452ed80ed7cd7d2ab"
+    },
+    {
+      "file": "requests/request-003.json",
+      "sha256": "1a8856092fd2ba61c90295465a11b36d13378402ccd0863ab9459582e31f83d6"
+    },
+    {
+      "file": "requests/request-004.json",
+      "sha256": "0d3e577d0b53e1b08e41a08861ae698f3b0e1975651cceb3fe011850b9dd13e4"
+    },
+    {
+      "file": "requests/request-005.json",
+      "sha256": "c322c02bee9c12f2a26bbcc2d1a720c68b5043f3e603e36e7503e72577986d9f"
+    }
+  ],
+  "failed_attempts": 1,
+  "estimated_usd": 0.0015609999999999999,
+  "price_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "price_checked": "2026-10-24",
+  "scope": "Usage estimate, not an invoice. Session budget is shared across the three labs."
+}

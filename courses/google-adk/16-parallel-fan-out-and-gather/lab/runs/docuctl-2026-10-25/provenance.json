@@ -1,0 +1,95 @@
+{
+  "execution_mode": "live Gemini API calls from the lab recorder; local tools and services as implemented",
+  "scope": "Guarded provider attempts captured for this lab. The inventory includes retries and earlier attempts; it is not a one-to-one mapping of requests to the selected output. Offline replay tests exercise the selected recorded turns.",
+  "model": "gemini-3.8-flash",
+  "output_files_sha256": {
+    "prep-run.json": "99f6e76ffe4666366a2f4d1584b02e83b92a4efcb9f75221b43875e198a48c58"
+  },
+  "provider_attempts": [
+    {
+      "attempt": 183,
+      "started_epoch": 1792979189.802416,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "774395a49ba4dbe94434fb0c7f0aa7d5c34a9232bd4218ddfb9b5b40fb9eaff6",
+      "private_request_receipt_sha256": "b51234647c2c378f9cf8327de7713ec467c0398d922080425b81d51535fa4754",
+      "private_response_sha256": "7bd6e6f3165f8cc092918bcf4c5727401bcf904675c0ba6ee1f1123f9960228a",
+      "http_status": 200,
+      "max_output_tokens": 1024,
+      "prompt_tokens": 127,
+      "output_and_thinking_tokens": 53,
+      "finished_epoch": 1792979191.8078458,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 184,
+      "started_epoch": 1792979189.811285,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "59760127e43e7879fea75e054203c02ad65c15d1f88bcd54afacc6c01fa2b602",
+      "private_request_receipt_sha256": "30351f3da04e0bd4ed66ae1c2b0594ee019c7459ab7bfd21fe66fe1f1bc6ccd2",
+      "private_response_sha256": "a846accd59a09dcb68098aed64ef1dbe043138e00a6870e5065ebc05d2ab72c4",
+      "http_status": 200,
+      "max_output_tokens": 1024,
+      "prompt_tokens": 140,
+      "output_and_thinking_tokens": 39,
+      "finished_epoch": 1792979191.481803,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 186,
+      "started_epoch": 1792979191.8333771,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "3f66d5dfff35a6bd561d01bab4b08970c458ea6130721625ee60d05ef3468f9a",
+      "private_request_receipt_sha256": "13db41ca30e6496ea6aa7568b40c10158e2bea809f15137421fa49242d61ce47",
+      "private_response_sha256": null,
+      "http_status": null,
+      "max_output_tokens": 1024,
+      "prompt_tokens": null,
+      "output_and_thinking_tokens": null,
+      "finished_epoch": null,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 187,
+      "started_epoch": 1792979191.8370922,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "924f53a55690c8a4565ebbd71144989cad5090354b6d0ea50e554573959addea",
+      "private_request_receipt_sha256": "3fa328927749fa01ced1973cb8b2b455f9ee0008db27567ceb55fdf4f8ee9a41",
+      "private_response_sha256": null,
+      "http_status": null,
+      "max_output_tokens": 1024,
+      "prompt_tokens": null,
+      "output_and_thinking_tokens": null,
+      "finished_epoch": null,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 188,
+      "started_epoch": 1792979191.897951,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "3f66d5dfff35a6bd561d01bab4b08970c458ea6130721625ee60d05ef3468f9a",
+      "private_request_receipt_sha256": "61975d2b3287ed4db93d1efe23726ffa753b3a51820f93cff6648f2405193647",
+      "private_response_sha256": "e55f83de9984bbe8e1b3d516369226151c69311e87fd44d36f124951f2738d12",
+      "http_status": 200,
+      "max_output_tokens": 1024,
+      "prompt_tokens": 90,
+      "output_and_thinking_tokens": 35,
+      "finished_epoch": 1792979193.622308,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 189,
+      "started_epoch": 1792979191.903903,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "924f53a55690c8a4565ebbd71144989cad5090354b6d0ea50e554573959addea",
+      "private_request_receipt_sha256": "d704ef191f0e7aab745d784cc96e40e38e326e154c485c0fd0cd3e977bb20d2a",
+      "private_response_sha256": "18f11c90e7c919d63bf8e07d9e754d95e42a702caf23a3b6a409113926d359bc",
+      "http_status": 200,
+      "max_output_tokens": 1024,
+      "prompt_tokens": 103,
+      "output_and_thinking_tokens": 21,
+      "finished_epoch": 1792979193.848397,
+      "stream_exhausted": null
+    }
+  ],
+  "privacy": "Raw provider receipts remain private. Only their SHA256 digests and bounded request metadata are published. Opaque model signatures and SQLite binaries are not distributed."
+}

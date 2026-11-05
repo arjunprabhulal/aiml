@@ -1,0 +1,293 @@
+{
+  "corpus": {
+    "characters": 45223,
+    "stories": 400
+  },
+  "alphabet": [
+    "\n",
+    " ",
+    ",",
+    ".",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "g",
+    "h",
+    "i",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ],
+  "base_vocab_size": 28,
+  "vocab_size": 96,
+  "merge_count": 68,
+  "first_merges": [
+    {
+      "pair": [
+        " ",
+        "t"
+      ],
+      "token": " t",
+      "count": 2400
+    },
+    {
+      "pair": [
+        "h",
+        "e"
+      ],
+      "token": "he",
+      "count": 1798
+    },
+    {
+      "pair": [
+        " t",
+        "he"
+      ],
+      "token": " the",
+      "count": 1600
+    },
+    {
+      "pair": [
+        " ",
+        "g"
+      ],
+      "token": " g",
+      "count": 1186
+    },
+    {
+      "pair": [
+        " ",
+        "b"
+      ],
+      "token": " b",
+      "count": 1101
+    },
+    {
+      "pair": [
+        " ",
+        "a"
+      ],
+      "token": " a",
+      "count": 1072
+    },
+    {
+      "pair": [
+        " ",
+        "h"
+      ],
+      "token": " h",
+      "count": 1010
+    },
+    {
+      "pair": [
+        " h",
+        "a"
+      ],
+      "token": " ha",
+      "count": 1010
+    },
+    {
+      "pair": [
+        " ha",
+        "s"
+      ],
+      "token": " has",
+      "count": 800
+    },
+    {
+      "pair": [
+        " t",
+        "o"
+      ],
+      "token": " to",
+      "count": 800
+    },
+    {
+      "pair": [
+        "e",
+        "s"
+      ],
+      "token": "es",
+      "count": 800
+    },
+    {
+      "pair": [
+        "e",
+        "n"
+      ],
+      "token": "en",
+      "count": 716
+    }
+  ],
+  "last_merges": [
+    {
+      "pair": [
+        " kit",
+        "c"
+      ],
+      "token": " kitc",
+      "count": 198
+    },
+    {
+      "pair": [
+        " kitc",
+        "he"
+      ],
+      "token": " kitche",
+      "count": 198
+    },
+    {
+      "pair": [
+        " kitche",
+        "n"
+      ],
+      "token": " kitchen",
+      "count": 198
+    },
+    {
+      "pair": [
+        " p",
+        "ar"
+      ],
+      "token": " par",
+      "count": 198
+    },
+    {
+      "pair": [
+        " par",
+        "k"
+      ],
+      "token": " park",
+      "count": 198
+    }
+  ],
+  "corpus_tokens": 14381,
+  "characters_per_token": 3.145,
+  "round_trip": true,
+  "sweep": [
+    {
+      "requested": 40,
+      "vocab_size": 40,
+      "tokens": 30930,
+      "characters_per_token": 1.462
+    },
+    {
+      "requested": 64,
+      "vocab_size": 64,
+      "tokens": 21494,
+      "characters_per_token": 2.104
+    },
+    {
+      "requested": 96,
+      "vocab_size": 96,
+      "tokens": 14381,
+      "characters_per_token": 3.145
+    },
+    {
+      "requested": 128,
+      "vocab_size": 109,
+      "tokens": 12400,
+      "characters_per_token": 3.647
+    }
+  ],
+  "samples": [
+    {
+      "text": "mia has a red ball.",
+      "tokens": [
+        "mia",
+        " has",
+        " a",
+        " red",
+        " ball",
+        "."
+      ],
+      "ids": [
+        58,
+        36,
+        33,
+        89,
+        85,
+        4
+      ],
+      "decoded": "mia has a red ball."
+    },
+    {
+      "text": "maya has a purple umbrella.",
+      "tokens": [
+        "m",
+        "a",
+        "y",
+        "a",
+        " has",
+        " a",
+        " p",
+        "u",
+        "r",
+        "p",
+        "l",
+        "e",
+        " ",
+        "u",
+        "m",
+        "b",
+        "re",
+        "ll",
+        "a",
+        "."
+      ],
+      "ids": [
+        15,
+        5,
+        26,
+        5,
+        36,
+        33,
+        90,
+        22,
+        19,
+        18,
+        14,
+        9,
+        2,
+        22,
+        15,
+        6,
+        44,
+        43,
+        5,
+        4
+      ],
+      "decoded": "maya has a purple umbrella."
+    },
+    {
+      "text": "café",
+      "tokens": [
+        "c",
+        "a",
+        "<unk>",
+        "<unk>"
+      ],
+      "ids": [
+        7,
+        5,
+        0,
+        0
+      ],
+      "decoded": "ca��"
+    }
+  ]
+}

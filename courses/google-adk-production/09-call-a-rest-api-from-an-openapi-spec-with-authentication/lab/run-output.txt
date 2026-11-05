@@ -1,0 +1,32 @@
+tools: ['list_releases', 'get_release']
+
+# main
+> Which staging releases failed, and why?
+call   list_releases {"env": "staging", "status": "failed"}
+http   GET /envs/staging/releases key_sent=True request_id=e-7396d4b2...
+result {"result": [{"release": "r43", "status": "failed", "commit": "0be77c3", "reason": "health check failed"}, {"release": "r42", "status": "failed", "commit": "d41e
+answer The following staging releases failed:  * **r43**: Health check failed (commit `0be77c3`) * **r42**: pre_deploy exited 1 (commit `d41e9a7`)
+
+# main
+> What is live in production right now?
+call   list_releases {"env": "production"}
+http   GET /envs/production/releases key_sent=True request_id=e-62230bdc...
+result {"result": [{"release": "r40", "status": "live", "commit": "5e2a913", "reason": null}, {"release": "r39", "status": "previous", "commit": "77d0c41", "reason": n
+answer Release **r40** (commit `5e2a913`) is currently live in production.
+
+# main
+> Roll production back to r39.
+answer I cannot change an environment directly. To roll back production to r39, run:  ```bash docuctl rollback --env production --to r39 ```
+
+# wrong key
+> Which staging releases failed, and why?
+call   list_releases {"env": "staging", "status": "failed"}
+http   GET /envs/staging/releases key_sent=True request_id=e-2555441e...
+result {"error": "Tool list_releases execution failed. Analyze this execution error and your inputs. Retry with adjustments if applicable. But make sure don't retry mo
+answer I cannot retrieve the failed staging releases because the request failed with an authentication error (401: missing or invalid `X-Ship-Key`). Please verify that the appropriate API key is configured.
+
+# spec without servers
+> Which staging releases failed, and why?
+error  UnsupportedProtocol: Request URL is missing an 'http://' or 'https://' protocol.
+
+# tool_filter with operationIds: []

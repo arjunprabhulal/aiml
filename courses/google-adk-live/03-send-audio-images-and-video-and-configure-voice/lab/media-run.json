@@ -1,0 +1,4372 @@
+{
+ "environment": {
+  "google-adk": "2.12.0",
+  "google-genai": "2.32.0",
+  "model": "gemini-2.5-flash-native-audio-preview-12-2025"
+ },
+ "runs": [
+  {
+   "name": "screen frames, then a spoken question",
+   "heard": "Which test failed on my screen?",
+   "answer": "The test \"test_resume_after_drop\" failed.",
+   "events": 58,
+   "check": {
+    "expects": "test_resume_after_drop",
+    "passed": true
+   },
+   "connections": [
+    {
+     "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "speech_config": {
+       "voice_config": {
+        "prebuilt_voice_config": {
+         "voice_name": "Kore"
+        }
+       },
+       "language_code": "en-US"
+      },
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     },
+     "traffic": [
+      {
+       "sent": "realtime",
+       "mime_type": "image/jpeg",
+       "bytes": 76220,
+       "chunks": 3
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 60800,
+       "chunks": 19
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " Whi",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 6400,
+       "chunks": 2
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": "ch",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 3200,
+       "chunks": 1
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " test",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 3200,
+       "chunks": 1
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " failed on my screen?",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 20140,
+       "chunks": 7
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "text": "**Identifying Test Failure**\n\nI have carefully reviewed the provided image sequence. Initially, two frames indicated successful test runs with an increasing number of passed tests. However, the final frame clearly highlights a failure. Specifically, the test `test_resume_after_drop` encountered a `SessionNotFoundError` and is the culprit.\n\n\n",
+           "thought": true
+          }
+         ]
+        },
+        "partial": true
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": "The test",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " \"test_resume_after_drop\"",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 46080,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " failed.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "input_transcription": {
+         "text": " Which test failed on my screen?",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "output_transcription": {
+         "text": "The test \"test_resume_after_drop\" failed.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "usage_metadata": {
+         "candidates_token_count": 70,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 70
+          }
+         ],
+         "prompt_token_count": 1198,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 423
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 1
+          },
+          {
+           "modality": "IMAGE",
+           "token_count": 774
+          }
+         ],
+         "thoughts_token_count": 145,
+         "total_token_count": 1268
+        }
+       }
+      },
+      {
+       "received": {
+        "content": {
+         "parts": [
+          {
+           "text": "**Identifying Test Failure**\n\nI have carefully reviewed the provided image sequence. Initially, two frames indicated successful test runs with an increasing number of passed tests. However, the final frame clearly highlights a failure. Specifically, the test `test_resume_after_drop` encountered a `SessionNotFoundError` and is the culprit.\n\n\n",
+           "thought": true
+          }
+         ],
+         "role": "model"
+        },
+        "partial": false,
+        "interrupted": false
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "push-to-talk turn",
+   "heard": "Which sample rate should the microphone audio use?",
+   "answer": "The microphone audio should use `44100.0`.",
+   "events": 106,
+   "check": {
+    "expects": "16",
+    "passed": false
+   },
+   "connections": [
+    {
+     "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "speech_config": {
+       "voice_config": {
+        "prebuilt_voice_config": {
+         "voice_name": "Kore"
+        }
+       },
+       "language_code": "en-US"
+      },
+      "input_audio_transcription": {},
+      "output_audio_transcription": {},
+      "realtime_input_config": {
+       "automatic_activity_detection": {
+        "disabled": true
+       }
+      }
+     },
+     "traffic": [
+      {
+       "sent": "realtime",
+       "mime_type": "ActivityStart",
+       "bytes": 0,
+       "chunks": 1
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 93322,
+       "chunks": 30
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "ActivityEnd",
+       "bytes": 0,
+       "chunks": 1
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " Which",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " sa",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": "mple",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " ra",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": "te",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " shoul",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": "d the",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " microphone audio use?",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "text": "**Analyzing Audio Sample Rate**\n\nI've been looking over the image and identified `mSampleRate` within `AudioStreamBasicDescription` as the key. The code references `kAudioFormatMPEG4AAC`, a familiar format. It appears the value set for `mSampleRate` is 44100.0, which is standard. Thus, I infer the microphone's audio sample rate is 44100.0.\n\n\n",
+           "thought": true
+          }
+         ]
+        },
+        "partial": true
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": "The microphone",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " audio",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 46080,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " should",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " use",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " `44100.0`.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "input_transcription": {
+         "text": " Which sample rate should the microphone audio use?",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "output_transcription": {
+         "text": "The microphone audio should use `44100.0`.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "usage_metadata": {
+         "candidates_token_count": 115,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 115
+          }
+         ],
+         "prompt_token_count": 452,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 451
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 1
+          }
+         ],
+         "thoughts_token_count": 100,
+         "total_token_count": 567
+        }
+       }
+      },
+      {
+       "received": {
+        "content": {
+         "parts": [
+          {
+           "text": "**Analyzing Audio Sample Rate**\n\nI've been looking over the image and identified `mSampleRate` within `AudioStreamBasicDescription` as the key. The code references `kAudioFormatMPEG4AAC`, a familiar format. It appears the value set for `mSampleRate` is 44100.0, which is standard. Thus, I infer the microphone's audio sample rate is 44100.0.\n\n\n",
+           "thought": true
+          }
+         ],
+         "role": "model"
+        },
+        "partial": false,
+        "interrupted": false
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "agent voice over session voice",
+   "heard": "",
+   "answer": "Hello, how can I help?",
+   "events": 20,
+   "connections": [
+    {
+     "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "speech_config": {
+       "voice_config": {
+        "prebuilt_voice_config": {
+         "voice_name": "Puck"
+        }
+       },
+       "language_code": "en-US"
+      },
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     },
+     "traffic": [
+      {
+       "sent": "content",
+       "text": "Say hello.",
+       "function_responses": []
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "text": "**Formulating A Response**\n\nI've crafted a simple greeting. As the docs assistant, I'll reply to the user with a spoken \"Hello, how can I help?\". This is the initial point of interaction to initiate a conversation with the user.\n\n\n",
+           "thought": true
+          }
+         ]
+        },
+        "partial": true
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": "Hello, how",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " can I",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " help?",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 46080,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "output_transcription": {
+         "text": "Hello, how can I help?",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "usage_metadata": {
+         "candidates_token_count": 40,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 40
+          }
+         ],
+         "prompt_token_count": 411,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 411
+          }
+         ],
+         "thoughts_token_count": 42,
+         "total_token_count": 451
+        }
+       }
+      },
+      {
+       "received": {
+        "content": {
+         "parts": [
+          {
+           "text": "**Formulating A Response**\n\nI've crafted a simple greeting. As the docs assistant, I'll reply to the user with a spoken \"Hello, how can I help?\". This is the initial point of interaction to initiate a conversation with the user.\n\n\n",
+           "thought": true
+          }
+         ],
+         "role": "model"
+        },
+        "partial": false,
+        "interrupted": false
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "8 kHz audio labelled 16 kHz",
+   "heard": "Which the micro micro micro micro audio?",
+   "answer": "The microphone sample rate is \"44.1 kHz\".",
+   "events": 79,
+   "check": {
+    "expects": "16",
+    "passed": false
+   },
+   "connections": [
+    {
+     "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "speech_config": {
+       "voice_config": {
+        "prebuilt_voice_config": {
+         "voice_name": "Kore"
+        }
+       },
+       "language_code": "en-US"
+      },
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     },
+     "traffic": [
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 57600,
+       "chunks": 18
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " Whi",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 3200,
+       "chunks": 1
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": "ch",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 3200,
+       "chunks": 1
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "input_transcription": {
+         "text": " the micro micro micro micro audio?",
+         "finished": false
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 14660,
+       "chunks": 5
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "text": "**Discovering Sample Rate Details**\n\nI have located the microphone sample rate. I found a screen labeled \"Microphone Setup,\" which also had a \"Record\" button, and on that screen, I found the setting: \"Sample Rate: 44.1 kHz.\" So, the sample rate is 44.1 kHz.\n\n\n",
+           "thought": true
+          }
+         ]
+        },
+        "partial": true
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": "The microphone",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " sample",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " rate",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 46080,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " is",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " \"44.1",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": true,
+        "output_transcription": {
+         "text": " kHz\".",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "input_transcription": {
+         "text": " Which the micro micro micro micro audio?",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "partial": false,
+        "output_transcription": {
+         "text": "The microphone sample rate is \"44.1 kHz\".",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "usage_metadata": {
+         "candidates_token_count": 93,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 93
+          }
+         ],
+         "prompt_token_count": 416,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 415
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 1
+          }
+         ],
+         "thoughts_token_count": 87,
+         "total_token_count": 509
+        }
+       }
+      },
+      {
+       "received": {
+        "content": {
+         "parts": [
+          {
+           "text": "**Discovering Sample Rate Details**\n\nI have located the microphone sample rate. I found a screen labeled \"Microphone Setup,\" which also had a \"Record\" button, and on that screen, I found the setting: \"Sample Rate: 44.1 kHz.\" So, the sample rate is 44.1 kHz.\n\n\n",
+           "thought": true
+          }
+         ],
+         "role": "model"
+        },
+        "partial": false,
+        "interrupted": false
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "VAD off, no activity signals",
+   "error": "TimeoutError: no turn_complete within 25 s",
+   "connections": [
+    {
+     "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "speech_config": {
+       "voice_config": {
+        "prebuilt_voice_config": {
+         "voice_name": "Kore"
+        }
+       },
+       "language_code": "en-US"
+      },
+      "input_audio_transcription": {},
+      "output_audio_transcription": {},
+      "realtime_input_config": {
+       "automatic_activity_detection": {
+        "disabled": true
+       }
+      }
+     },
+     "traffic": [
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 125322,
+       "chunks": 40
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "unknown voice name",
+   "error": "APIError: 1007 None. Requested voice api_name 'Narrator' is not available for model models/gemini-2.5-flash-native-audio-preview-12-2025",
+   "connections": [
+    {
+     "model": "gemini-2.5-flash-native-audio-preview-12-2025",
+     "config": null,
+     "traffic": []
+    }
+   ]
+  },
+  {
+   "name": "proactivity on Gemini 3.1 Flash Live",
+   "heard": "",
+   "answer": "Hello, I'm here to help with your documents.",
+   "events": 23,
+   "connections": [
+    {
+     "model": "gemini-3.1-flash-live-preview",
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     },
+     "traffic": [
+      {
+       "sent": "content",
+       "text": "Say hello.",
+       "function_responses": []
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 2,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "partial": true,
+        "output_transcription": {
+         "text": "Hello, I'm",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9120,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 13440,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "live_session_resumption_update": {
+         "new_handle": "0338ed7e-11b7-4d2c-8f03-b18028fa9df7",
+         "resumable": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "partial": true,
+        "output_transcription": {
+         "text": " here to",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "partial": true,
+        "output_transcription": {
+         "text": " help",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "partial": true,
+        "output_transcription": {
+         "text": " with your",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "partial": true,
+        "output_transcription": {
+         "text": " documents.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ]
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "partial": false,
+        "output_transcription": {
+         "text": "Hello, I'm here to help with your documents.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "usage_metadata": {
+         "candidates_token_count": 64,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 64
+          }
+         ],
+         "prompt_token_count": 198,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 175
+          }
+         ],
+         "total_token_count": 262
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.1-flash-live-preview",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

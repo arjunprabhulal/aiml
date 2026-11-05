@@ -1,0 +1,82 @@
+# Handle conflicting documentation
+
+This local pre-generation gate parses an explicit machine-readable teaching
+contract. It is not an NLP/NLI system or a contradiction detector for arbitrary
+prose. Quill is a fictional SDK. Every documentation file here is an original
+synthetic developer fixture; its rules do not describe a real framework.
+
+## Narrow contract and decision policy
+
+A directive occupies one complete unindented line:
+
+```text
+@quill create_copy existing_path=refuse
+```
+
+The only operation is `create_copy`. Supported claim keys and values are
+`existing_path=refuse|overwrite` and `close_required=yes|no`. Whitespace, spelling
+and case are exact. A line containing `@quill`, or starting with an `@` marker
+after indentation, must satisfy that grammar. Unknown prefixes, operations,
+keys and values, malformed directives and duplicate keys within one source
+raise `DirectiveError`. Ordinary prose is not interpreted as a claim. A source
+may declare different supported keys, but the gate compares only the requested
+operation/key. It never infers a conflict between unrelated propositions.
+
+`gate` accepts a pinned manifest, unique controlled source IDs, an exact numeric
+major.minor version string and a supported claim key. The unchanged module-three
+loader first validates the complete snapshot's local file bytes against their
+pinned SHA-256 values. The gate then selects candidate sources with exactly the
+requested version before parsing their directives. A newer version cannot
+supply a missing rule. Unsupported values in an excluded version are not parsed;
+changed file bytes anywhere in the pinned snapshot still cause load refusal.
+
+For eligible sources:
+
+- No eligible version returns `not_in_docs`, with no request.
+- Any eligible source missing the requested key returns `not_in_docs`, including
+  partial coverage when another eligible source declares the key.
+- Different declared values return `conflict`, retaining every quote and
+  withholding the request. Source order, recency and title do not choose a winner.
+- Agreeing values return `ready`, with all source claims in a cited request.
+  The program prepares messages only; it does not generate or send an answer.
+
+Controlled IDs are source IDs, not search results. This lab does not perform
+retrieval or judge whether the caller selected all relevant documents. Every
+claim includes the source ID/version, raw file hash, metadata-bound revision,
+path/URL, exact quote, one-based inclusive line span and zero-based end-exclusive
+character offsets into normalized text. These offsets count Python characters,
+not bytes. The source revision hashes pinned source metadata, including the raw
+file hash. These receipts establish local binding; they do not authenticate an
+author or prove that a directive is correct. The manifest metadata is trusted
+local input, not an access-control policy.
+
+## Run offline
+
+Requires Python 3.11 or later. Dependencies: standard library only. No install,
+model, provider request, network access or download is needed. Run from this
+lesson directory:
+
+```sh
+python3 run.py
+python3 -m unittest -v
+python3 render_output.py /tmp/quill-conflicts-report.html
+```
+
+`load_documents.py` is copied byte-identically from
+`load-developer-documentation`. The fixtures and this gate are specific to this
+lesson; no earlier synthetic SDK rules were changed.
+
+The actual run is `runs/2026-10-23-conflicts/result.json`, with exact stdout,
+stderr, test output and source/environment hashes beside it. It records
+wrong-version exclusion, agreement, same-version disagreement, absent version,
+missing/partially missing claims, unknown values, malformed directives and a
+changed pinned source. The changed-source case uses an isolated temporary copy;
+the original fixture stays intact. The recording harness denies outbound socket
+connections. A fresh run reproduces the deterministic result without a model.
+The HTML renderer reads that actual record and does not execute generation.
+
+Tests exercise version eligibility, all-source citations, conflict/request
+separation, missing-rule refusal, grammar failures, quote/span/revision binding,
+changed source bytes and invalid controlled IDs/version metadata. These cases
+show the narrow parser and gate contract, not general prose understanding,
+semantic answer quality or a security guarantee.

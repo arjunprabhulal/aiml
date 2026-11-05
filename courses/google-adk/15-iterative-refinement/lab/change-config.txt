@@ -1,0 +1,7 @@
+Six configuration keys move from the [build] table to a new [site] table, and docuctl migrate rewrites old files.
+name:docuctl migrate
+name:site.base_url
+name:site.default_language
+name:site.search_index_path
+name:site.syntax_highlight_theme
+name:site.navigation_depth

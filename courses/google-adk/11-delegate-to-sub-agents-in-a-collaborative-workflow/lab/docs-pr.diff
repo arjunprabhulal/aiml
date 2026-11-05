@@ -1,0 +1,21 @@
+diff --git a/docs/troubleshooting.md b/docs/troubleshooting.md
+--- a/docs/troubleshooting.md
++++ b/docs/troubleshooting.md
+@@ -12,13 +12,9 @@
+ ## The assistant cites the wrong page
+ 
+-Rebuild the search index with `docs-assistant index --rebuild`.
+-
+-## The assistant cannot reach Ollama
+-
+-Check that `OLLAMA_API_BASE` points to a running Ollama server.
++If the assistant cites a page that does not answer the question, which usually happens after pages were renamed or moved and the search index still holds the old URLs, rebuild the search index with `docs-assistant index --rebuild` and then ask the question again so that the new index is used.
+diff --git a/docs/cli.md b/docs/cli.md
+--- a/docs/cli.md
++++ b/docs/cli.md
+@@ -6,3 +6,7 @@
+ `docs-assistant ask QUESTION` prints an answer with citation links.
++
++## index
++
++`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.

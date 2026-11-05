@@ -1,0 +1,82 @@
+{
+ "health": {
+  "status": "ok",
+  "checkpoint": {
+   "step": 450,
+   "dev_loss": 0.2941
+  }
+ },
+ "test_stories": 60,
+ "served_equals_direct": 60,
+ "greedy_story_checks": {
+  "well_formed": 57,
+  "keeps_color_and_object": 35
+ },
+ "test_loss": 0.2628,
+ "fresh_set": {
+  "seed": 2027,
+  "generated": 60,
+  "duplicates_removed": 8,
+  "stories": 52,
+  "test_loss": 0.3172,
+  "greedy_story_checks": {
+   "well_formed": 43,
+   "keeps_color_and_object": 25
+  },
+  "color_recall": {
+   "correct": 25,
+   "total": 52
+  }
+ },
+ "color_recall_test": {
+  "correct": 36,
+  "total": 60
+ },
+ "error_cases": [
+  {
+   "case": "not JSON",
+   "status": 400,
+   "error": "body must be a JSON object"
+  },
+  {
+   "case": "missing prompt",
+   "status": 400,
+   "error": "missing field: prompt"
+  },
+  {
+   "case": "unknown field",
+   "status": 400,
+   "error": "unknown fields: ['top_p']"
+  },
+  {
+   "case": "temperature as text",
+   "status": 400,
+   "error": "field temperature has the wrong type"
+  },
+  {
+   "case": "negative temperature",
+   "status": 400,
+   "error": "temperature must be 0 or a finite number >= 0.01, got -1"
+  },
+  {
+   "case": "max_new_tokens too large",
+   "status": 400,
+   "error": "max_new_tokens must be from 1 to 64"
+  },
+  {
+   "case": "empty prompt",
+   "status": 400,
+   "error": "empty prompt: the model needs at least one token to continue"
+  },
+  {
+   "case": "body over the size limit",
+   "status": 413,
+   "error": "body larger than 4096 bytes"
+  },
+  {
+   "case": "unknown route",
+   "status": 404,
+   "error": "no route /models"
+  }
+ ]
+}

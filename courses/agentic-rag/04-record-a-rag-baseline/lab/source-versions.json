@@ -1,0 +1,55 @@
+{
+  "checked_on": "2026-10-22",
+  "minimum_python": "3.12",
+  "minimum_reason": "unchanged lock contains NumPy2.5.4 requiring Python>=3.12",
+  "reuse": {
+    "vendor/evals/harness.py": {
+      "source": "build-held-out-dataset-and-leakage-checks/harness.py",
+      "sha256": "cc41a86aeb449476abbb983fae570daeef45aa970206aae7a1da20c2026b19a5",
+      "unchanged": true,
+      "scope": "retained task-independent core; current tracker adapter is separate"
+    },
+    "vendor/evals/leakcheck.py": {
+      "source": "build-held-out-dataset-and-leakage-checks/leakcheck.py",
+      "sha256": "7b01ffb1dba8869b45317dc3b6a987af25a9edeb0cbd2d909c9eb8a55fe26ba6",
+      "unchanged": true,
+      "scope": "retained task-independent core; current tracker adapter is separate"
+    }
+  },
+  "unchanged_pipeline_functions": {
+    "digest": "6a564c23ac16c75861e055b15f40d8571a204f15a8d287fcc6dcf4899daa67d9",
+    "chunk_id": "c0fadfbb23686070616fe7056a111dcd87a4ab3cf379e69c1d64163bd2f3654f"
+  },
+  "original_source_fields_unchanged": true,
+  "protected_pilot_record_sha256": "ee99ceedc9a09b50e39ed9eef8184a437b29fca0b6755d4edd914c8186f09e9f",
+  "official_docs": [
+    "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+    "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+    "https://docs.python.org/3.12/library/json.html#json.dumps",
+    "https://docs.python.org/3.12/license.html"
+  ],
+  "package_metadata": {
+    "langchain-core": {
+      "version": "1.7.0",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "license": "MIT"
+    },
+    "langchain-text-splitters": {
+      "version": "1.1.3",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "license": "MIT"
+    },
+    "pydantic": {
+      "version": "2.14.1",
+      "requires_python": ">=3.10",
+      "license": "MIT"
+    },
+    "numpy": {
+      "version": "2.5.4",
+      "requires_python": ">=3.12",
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+    }
+  },
+  "model_calls": false,
+  "python313_execution": false
+}

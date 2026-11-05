@@ -1,0 +1,488 @@
+# Run partial-metric-info
+$ adk eval docs_assistant train --config_file_path config-partial-metric-info.json
+
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for EvalConfig
+
+# Run metric-not-on-path
+$ adk eval docs_assistant train --config_file_path eval_config.json
+Using evaluation criteria: criteria={'cited_page_was_read': 1.0} custom_metrics={'cited_page_was_read': CustomMetricConfig(code_config=CodeConfig(name='citation_metric.cited_page_was_read'), metric_info=MetricInfo(metric_name='cited_page_was_read', description='The answer cites the expected page, and the agent read that page.', metric_value_info=MetricValueInfo(interval=Interval(min_value=0.0, open_at_min=False, max_value=1.0, open_at_max=False)), requires_threshold=True), description='')} user_simulator_config=None live_model_config=None
+*********************************************************************
+Eval Run Summary
+train:
+  Tests passed: 0
+  Tests failed: 4
+2026-10-21 21:04:00,126 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `cited_page_was_read` for eval case id 'wrong-citation' with following error `Could not import custom metric function from ...
+ModuleNotFoundError: No module named 'citation_metric'
+ImportError: Could not import custom metric function from citation_metric.cited_page_was_read
+2026-10-21 21:04:00,135 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `cited_page_was_read` for eval case id 'python-version' with following error `Could not import custom metric function from ...
+2026-10-21 21:04:00,138 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `cited_page_was_read` for eval case id 'rebuild-index' with following error `Could not import custom metric function from  ...
+2026-10-21 21:04:00,141 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `cited_page_was_read` for eval case id 'ask-output' with following error `Could not import custom metric function from cit ...
+
+# Run baseline-train
+$ PYTHONPATH=. adk eval docs_assistant train --config_file_path eval_config.json --print_detailed_results
+Using evaluation criteria: criteria={'cited_page_was_read': 1.0} custom_metrics={'cited_page_was_read': CustomMetricConfig(code_config=CodeConfig(name='citation_metric.cited_page_was_read'), metric_info=MetricInfo(metric_name='cited_page_was_read', description='The answer cites the expected page, and the agent read that page.', metric_value_info=MetricValueInfo(interval=Interval(min_value=0.0, open_at_min=False, max_value=1.0, open_at_max=False)), requires_threshold=True), description='')} user_simulator_config=None live_model_config=None
+*********************************************************************
+Eval Run Summary
+train:
+  Tests passed: 0
+  Tests failed: 4
+********************************************************************
+Eval Set Id: train
+Eval Id: wrong-citation
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 644.0, Threshold: None
+Token breakdown:
+  total:            644
+    input:          587
+      prompt:       587
+        cached:     n/a
+      tool use:     n/a
+    output:         57
+      candidates:   57
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 4.692, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     The assistant cites the wrong page. What should I do?
+  expected_response:          Rebuild the search index with `docs-assistant index --rebuild`
+                              (troubleshooting.md).
+  actual_response:            If the assistant cites the wrong page, rebuild the search index by running:
+                              
+                              ```bash
+                              docs-assistant index --rebuild
+                              ```
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='troubleshooting.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             644 (in 587, out 57)
+  invocation_duration_v1:     4.69s
+
+
+********************************************************************
+Eval Set Id: train
+Eval Id: ask-output
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 611.0, Threshold: None
+Token breakdown:
+  total:            611
+    input:          564
+      prompt:       564
+        cached:     n/a
+      tool use:     n/a
+    output:         47
+      candidates:   47
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 4.123, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     What does the ask command print?
+  expected_response:          `docs-assistant ask QUESTION` prints an answer with citation links (cli.md).
+  actual_response:            The `ask` command (`docs-assistant ask QUESTION`) prints an answer with citation
+                              links.
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             611 (in 564, out 47)
+  invocation_duration_v1:     4.12s
+
+
+********************************************************************
+Eval Set Id: train
+Eval Id: rebuild-index
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 632.0, Threshold: None
+Token breakdown:
+  total:            632
+    input:          567
+      prompt:       567
+        cached:     n/a
+      tool use:     n/a
+    output:         65
+      candidates:   65
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 5.399, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     How do I rebuild the search index?
+  expected_response:          Run `docs-assistant index --rebuild` (cli.md).
+  actual_response:            To rebuild the search index, run:
+                              
+                              ```bash
+                              docs-assistant index --rebuild
+                              ```
+                              
+                              This will drop the existing search index and rebuild it from the docs folder.
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             632 (in 567, out 65)
+  invocation_duration_v1:     5.40s
+
+
+********************************************************************
+Eval Set Id: train
+Eval Id: python-version
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 597.0, Threshold: None
+Token breakdown:
+  total:            597
+    input:          557
+      prompt:       557
+        cached:     n/a
+      tool use:     n/a
+    output:         40
+      candidates:   40
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 4.592, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     Which Python version do I need?
+  expected_response:          Python 3.12 or later (install.md).
+  actual_response:            You need **Python 3.12 or later**.
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='install.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             597 (in 557, out 40)
+  invocation_duration_v1:     4.59s
+
+# Run baseline-validation
+$ PYTHONPATH=. adk eval docs_assistant validation --config_file_path eval_config.json --print_detailed_results
+Using evaluation criteria: criteria={'cited_page_was_read': 1.0} custom_metrics={'cited_page_was_read': CustomMetricConfig(code_config=CodeConfig(name='citation_metric.cited_page_was_read'), metric_info=MetricInfo(metric_name='cited_page_was_read', description='The answer cites the expected page, and the agent read that page.', metric_value_info=MetricValueInfo(interval=Interval(min_value=0.0, open_at_min=False, max_value=1.0, open_at_max=False)), requires_threshold=True), description='')} user_simulator_config=None live_model_config=None
+*********************************************************************
+Eval Run Summary
+validation:
+  Tests passed: 0
+  Tests failed: 3
+********************************************************************
+Eval Set Id: validation
+Eval Id: local-model
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 4.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1022.0, Threshold: None
+Token breakdown:
+  total:            1022
+    input:          934
+      prompt:       934
+        cached:     n/a
+      tool use:     n/a
+    output:         88
+      candidates:   88
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 6.014, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     How do I point the assistant at a local model?
+  expected_response:          Set `OLLAMA_API_BASE` (install.md).
+  actual_response:            To point the assistant at a local model, set the `OLLAMA_API_BASE` environment
+                              variable to your local model endpoint (such as your local Ollama server address)
+                              instead of using Gemini.
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='install.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         3
+  inference_call_count_v1:    4
+  token_usage_v1:             1022 (in 934, out 88)
+  invocation_duration_v1:     6.01s
+
+
+********************************************************************
+Eval Set Id: validation
+Eval Id: ollama-unreachable
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 644.0, Threshold: None
+Token breakdown:
+  total:            644
+    input:          593
+      prompt:       593
+        cached:     n/a
+      tool use:     n/a
+    output:         51
+      candidates:   51
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 5.725, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     The assistant can't reach Ollama. What do I check?
+  expected_response:          Check that `OLLAMA_API_BASE` points to a running Ollama server
+                              (troubleshooting.md).
+  actual_response:            Check that the `OLLAMA_API_BASE` environment variable points to a running Ollama
+                              server.
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='troubleshooting.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             644 (in 593, out 51)
+  invocation_duration_v1:     5.72s
+
+
+********************************************************************
+Eval Set Id: validation
+Eval Id: drop-index
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: FAILED, Score: 0.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 4.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1012.0, Threshold: None
+Token breakdown:
+  total:            1012
+    input:          933
+      prompt:       933
+        cached:     n/a
+      tool use:     n/a
+    output:         79
+      candidates:   79
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 6.795, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     What command drops the search index?
+  expected_response:          `docs-assistant index --rebuild` drops the search index and builds it again
+                              (cli.md).
+  actual_response:            The command that drops the search index (and rebuilds it from the docs folder)
+                              is:
+                              
+                              ```bash
+                              docs-assistant index --rebuild
+                              ```
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='troubleshooting.md')
+  cited_page_was_read:        FAILED (0.0)
+  tool_call_count_v1:         3
+  inference_call_count_v1:    4
+  token_usage_v1:             1012 (in 933, out 79)
+  invocation_duration_v1:     6.79s
+
+# Run optimized-validation
+$ PYTHONPATH=. DOCS_INSTRUCTION_FILE=optimized-instruction.txt adk eval docs_assistant validation --config_file_path eval_config.json --print_detailed_results
+Using evaluation criteria: criteria={'cited_page_was_read': 1.0} custom_metrics={'cited_page_was_read': CustomMetricConfig(code_config=CodeConfig(name='citation_metric.cited_page_was_read'), metric_info=MetricInfo(metric_name='cited_page_was_read', description='The answer cites the expected page, and the agent read that page.', metric_value_info=MetricValueInfo(interval=Interval(min_value=0.0, open_at_min=False, max_value=1.0, open_at_max=False)), requires_threshold=True), description='')} user_simulator_config=None live_model_config=None
+*********************************************************************
+Eval Run Summary
+validation:
+  Tests passed: 3
+  Tests failed: 0
+********************************************************************
+Eval Set Id: validation
+Eval Id: drop-index
+Overall Eval Status: PASSED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: PASSED, Score: 1.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1587.0, Threshold: None
+Token breakdown:
+  total:            1587
+    input:          1533
+      prompt:       1533
+        cached:     n/a
+      tool use:     n/a
+    output:         54
+      candidates:   54
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 6.679, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     What command drops the search index?
+  expected_response:          `docs-assistant index --rebuild` drops the search index and builds it again
+                              (cli.md).
+  actual_response:            The command that drops the search index and rebuilds it is `docs-assistant index
+                              --rebuild` (cli.md).
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+  cited_page_was_read:        PASSED (1.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1587 (in 1533, out 54)
+  invocation_duration_v1:     6.68s
+
+
+********************************************************************
+Eval Set Id: validation
+Eval Id: ollama-unreachable
+Overall Eval Status: PASSED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: PASSED, Score: 1.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1967.0, Threshold: None
+Token breakdown:
+  total:            1967
+    input:          1766
+      prompt:       1766
+        cached:     n/a
+      tool use:     n/a
+    output:         201
+      candidates:   53
+      reasoning:    148
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 5.617, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     The assistant can't reach Ollama. What do I check?
+  expected_response:          Check that `OLLAMA_API_BASE` points to a running Ollama server
+                              (troubleshooting.md).
+  actual_response:            Check that `OLLAMA_API_BASE` points to a running Ollama server
+                              (troubleshooting.md).
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='troubleshooting.md')
+  cited_page_was_read:        PASSED (1.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1967 (in 1766, out 201)
+  invocation_duration_v1:     5.62s
+
+
+********************************************************************
+Eval Set Id: validation
+Eval Id: local-model
+Overall Eval Status: PASSED
+---------------------------------------------------------------------
+Metric: cited_page_was_read, Status: PASSED, Score: 1.0, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1809.0, Threshold: None
+Token breakdown:
+  total:            1809
+    input:          1631
+      prompt:       1631
+        cached:     n/a
+      tool use:     n/a
+    output:         178
+      candidates:   64
+      reasoning:    114
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 5.869, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     How do I point the assistant at a local model?
+  expected_response:          Set `OLLAMA_API_BASE` (install.md).
+  actual_response:            To point the assistant at a local model instead of Gemini, set the
+                              `OLLAMA_API_BASE` environment variable to your running local model server
+                              (install.md).
+  expected_tool_calls:        (none)
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='install.md')
+  cited_page_was_read:        PASSED (1.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1809 (in 1631, out 178)
+  invocation_duration_v1:     5.87s
+
+# Run optimized-after-docs-change (install.md now says Python 3.13)
+> Which Python version do I need?
+call   list_pages {}
+call   read_page {'path': 'install.md'}
+answer You need Python 3.13 or later (install.md).

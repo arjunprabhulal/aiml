@@ -1,0 +1,36 @@
+$ python tune.py   # gemini-3.8-flash
+req-1: How do I roll back production?
+  model  call with 1 contents
+  event call   state_delta={} stored[last_page]=None metadata={'request_id': 'req-1'}
+  tool   request_id=req-1 state[last_page]='rollback' stored[last_page]=None
+  event result state_delta={'last_page': 'rollback'} stored[last_page]='rollback' metadata={'request_id': 'req-1'}
+  model  call with 3 contents
+  event answer state_delta={} stored[last_page]='rollback' metadata={'request_id': 'req-1'}
+  answer: Run `docuctl rollback --env production` to roll back to the previous release. To target a specific release instead, specify it with `--to`:
+
+```bash
+docuctl rollback --env production --to <release>
+```
+req-2: Which page covers CI tokens?
+  model  call with 5 contents
+  event call   state_delta={} stored[last_page]='rollback' metadata={'request_id': 'req-2'}
+  tool   request_id=req-2 state[last_page]='tokens' stored[last_page]='rollback'
+  event result state_delta={'last_page': 'tokens'} stored[last_page]='tokens' metadata={'request_id': 'req-2'}
+  model  call with 7 contents
+  event answer state_delta={} stored[last_page]='tokens' metadata={'request_id': 'req-2'}
+  answer: The `tokens` page covers CI deploy tokens, including how to create, store, and manage them.
+req-3: What was my first question?  (num_recent_events=4)
+  model  call with 5 contents
+  event answer state_delta={} stored[last_page]='tokens' metadata={'request_id': 'req-3'}
+  answer: Your first question was: "Which page covers CI tokens?"
+
+# the same session, capped at 3 events
+  model  call with 4 contents
+  event error  state_delta={} stored[last_page]='tokens' metadata={'request_id': 'req-3'} error_code=INVALID_ARGUMENT
+  raised google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Please ensure that function call turn comes immediately after a user turn or after a function response turn.', 'status': 'INVALID_ARGUMENT'}}
+
+# a 1 ms model-call timeout
+req-1: How do I roll back production?  (timeout=1 ms)
+  model  call with 1 contents
+  event error  state_delta={} stored[last_page]=None metadata={'request_id': 'req-1'} error_code=ConnectTimeout
+  raised httpx.ConnectTimeout: 

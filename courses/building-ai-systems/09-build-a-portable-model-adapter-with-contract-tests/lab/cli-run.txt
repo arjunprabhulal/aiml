@@ -1,0 +1,10 @@
+$ python3 adapters.py --api ollama-native 'What does JSON stand for?'
+{"text": "JSON stands for JavaScript Object Notation.", "finish": "stop", "input_tokens": 26, "output_tokens": 8}
+$ python3 adapters.py --api openai-compatible 'What does JSON stand for?'
+{"text": "JSON stands for JavaScript Object Notation.", "finish": "stop", "input_tokens": 26, "output_tokens": 8}
+$ python3 adapters.py --api openai-compatible --model aiml-missing:never 'What does JSON stand for?'
+model_not_found: The server does not have this model. Pull it explicitly.
+exit status 1
+$ python3 adapters.py --base-url http://127.0.0.1:1 'What does JSON stand for?'
+connection: Cannot reach the model server: [Errno 61] Connection refused
+exit status 1

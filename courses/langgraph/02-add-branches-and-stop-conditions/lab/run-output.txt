@@ -1,0 +1,29 @@
+== Which open pull request has failing CI, and why? (recursion_limit=12)
+  path:     agent -> tools -> agent -> tools -> agent -> tools -> agent
+  proposed: list_open_prs {}
+  proposed: get_ci_status {"number": 412}
+  proposed: get_ci_status {"number": 415}
+  proposed: get_ci_status {"number": 418}
+  proposed: get_diff {"number": 415}
+  outcome:  answered after 7 steps
+  final:    Pull request #415 has failing CI. It failed `tests/test_client.py::test_default_timeout` because the test expected a default timeout value of 10, but got 30 after `DEFAULT_TIMEOUT` was updated.
+== What does pull request 418 change, and did its CI pass? (recursion_limit=12)
+  path:     agent -> tools -> agent
+  proposed: get_diff {"number": 418}
+  proposed: get_ci_status {"number": 418}
+  outcome:  answered after 3 steps
+  final:    Pull request 418 removes `export/csv_legacy.py` and drops the `csv_legacy` import from `export/__init__.py`. Its CI build passed.
+== Has CI been re-run on #415 since the last push? Check until it passes. (recursion_limit=12)
+  path:     agent -> tools -> agent -> stop
+  proposed: get_ci_status {"number": 415}
+  proposed: get_ci_status {"number": 415}
+  outcome:  repeated_call after 4 steps
+  final:    I stopped before answering (repeated_call).
+== Which open pull request has failing CI, and why? (recursion_limit=5)
+  path:     agent -> tools -> agent -> stop
+  proposed: list_open_prs {}
+  proposed: get_ci_status {"number": 412}
+  proposed: get_ci_status {"number": 415}
+  proposed: get_ci_status {"number": 418}
+  outcome:  step_limit after 4 steps
+  final:    I stopped before answering (step_limit).

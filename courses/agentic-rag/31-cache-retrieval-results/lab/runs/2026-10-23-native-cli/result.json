@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "mode": "actual-loopback-http-materialized-result-cache",
+  "model_called": false,
+  "observations": [
+    {
+      "name": "first_miss",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 200,
+      "body": {
+        "cache": "miss",
+        "cache_key": "bd1000c3a6c6c91ea652b2379cd45fe0a187e4d1320f1cabea1260eca2da15a9",
+        "result": {
+          "status": "completed",
+          "principal": "reader",
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+          "request": {
+            "query": "json",
+            "collection": "serialization",
+            "version": "3.12",
+            "k": 2
+          },
+          "pipeline": {
+            "name": "literal-search-read",
+            "version": 1,
+            "max_passages": 10
+          },
+          "evidence": [
+            {
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+            }
+          ],
+          "result_sha256": "e1deddbeb398d30a550944effb72e35689ebedc37add665f7e2623180c5d41f8"
+        }
+      }
+    },
+    {
+      "name": "normalized_hit",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 200,
+      "body": {
+        "cache": "hit",
+        "cache_key": "bd1000c3a6c6c91ea652b2379cd45fe0a187e4d1320f1cabea1260eca2da15a9",
+        "result": {
+          "status": "completed",
+          "principal": "reader",
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+          "request": {
+            "query": "json",
+            "collection": "serialization",
+            "version": "3.12",
+            "k": 2
+          },
+          "pipeline": {
+            "name": "literal-search-read",
+            "version": 1,
+            "max_passages": 10
+          },
+          "evidence": [
+            {
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+            }
+          ],
+          "result_sha256": "e1deddbeb398d30a550944effb72e35689ebedc37add665f7e2623180c5d41f8"
+        }
+      }
+    },
+    {
+      "name": "other_principal_miss",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 200,
+      "body": {
+        "cache": "miss",
+        "cache_key": "69b69d2247a2f27251b8221586af80a6124f05d911a0ad9115c9874a90bd703e",
+        "result": {
+          "status": "completed",
+          "principal": "editor",
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+          "request": {
+            "query": "json",
+            "collection": "serialization",
+            "version": "3.12",
+            "k": 2
+          },
+          "pipeline": {
+            "name": "literal-search-read",
+            "version": 1,
+            "max_passages": 10
+          },
+          "evidence": [
+            {
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+            }
+          ],
+          "result_sha256": "049cc1bfec474d1e7811f1e933b70ec85116b602e1247bd48a7e0bc72f8448f7"
+        }
+      }
+    },
+    {
+      "name": "unknown_identity",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 401,
+      "body": {
+        "error": {
+          "code": "unauthenticated"
+        }
+      }
+    },
+    {
+      "name": "collection_denied",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 403,
+      "body": {
+        "error": {
+          "code": "collection_denied"
+        }
+      }
+    },
+    {
+      "name": "empty_bypass_first",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 200,
+      "body": {
+        "cache": "bypass",
+        "cache_key": "daa86ed848608568b83c3a2e9d476c50cac3982d3e58d0080d22048bbe5a32d5",
+        "result": {
+          "status": "incomplete",
+          "principal": "reader",
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+          "request": {
+            "query": "zzzz",
+            "collection": "serialization",
+            "version": "3.12",
+            "k": 2
+          },
+          "pipeline": {
+            "name": "literal-search-read",
+            "version": 1,
+            "max_passages": 10
+          },
+          "evidence": [],
+          "result_sha256": "4282f48c5cf1218fe7610533e3713fff5e352ccfee1ad99ac3183d4280069e9c"
+        }
+      }
+    },
+    {
+      "name": "empty_bypass_again",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 200,
+      "body": {
+        "cache": "bypass",
+        "cache_key": "daa86ed848608568b83c3a2e9d476c50cac3982d3e58d0080d22048bbe5a32d5",
+        "result": {
+          "status": "incomplete",
+          "principal": "reader",
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+          "request": {
+            "query": "zzzz",
+            "collection": "serialization",
+            "version": "3.12",
+            "k": 2
+          },
+          "pipeline": {
+            "name": "literal-search-read",
+            "version": 1,
+            "max_passages": 10
+          },
+          "evidence": [],
+          "result_sha256": "4282f48c5cf1218fe7610533e3713fff5e352ccfee1ad99ac3183d4280069e9c"
+        }
+      }
+    },
+    {
+      "name": "real_ttl_expired_miss",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 200,
+      "body": {
+        "cache": "miss",
+        "cache_key": "bd1000c3a6c6c91ea652b2379cd45fe0a187e4d1320f1cabea1260eca2da15a9",
+        "result": {
+          "status": "completed",
+          "principal": "reader",
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+          "request": {
+            "query": "json",
+            "collection": "serialization",
+            "version": "3.12",
+            "k": 2
+          },
+          "pipeline": {
+            "name": "literal-search-read",
+            "version": 1,
+            "max_passages": 10
+          },
+          "evidence": [
+            {
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+            }
+          ],
+          "result_sha256": "e1deddbeb398d30a550944effb72e35689ebedc37add665f7e2623180c5d41f8"
+        }
+      }
+    },
+    {
+      "name": "tool_failure_first",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 503,
+      "body": {
+        "error": {
+          "code": "tool_failure"
+        }
+      }
+    },
+    {
+      "name": "tool_failure_again",
+      "method": "POST",
+      "path": "/retrieve",
+      "status_code": 503,
+      "body": {
+        "error": {
+          "code": "tool_failure"
+        }
+      }
+    }
+  ]
+}

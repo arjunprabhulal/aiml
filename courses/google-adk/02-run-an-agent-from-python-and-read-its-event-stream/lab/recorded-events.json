@@ -1,0 +1,191 @@
+{
+ "question": "How do I undo the last production deploy?",
+ "model": "gemini-3.8-flash",
+ "execution_mode": "fresh-hosted-model-inference",
+ "environment": {
+  "google-adk": "2.12.0",
+  "google-genai": "2.32.0"
+ },
+ "none": {
+  "lines": [
+   "user            final    'How do I undo the last production deploy?'",
+   "docs_assistant  event    call read_page({'page': 'rollback'})",
+   "docs_assistant  event    result read_page -> ['page', 'text']",
+   "docs_assistant  final    'To undo the last production deploy, run:\\n\\n`docuctl rollback --env production`\\n\\nWithout the `--to` flag, `docuctl rollback` moves traffic back to the previous release without rebuilding anything. \\n\\nNote that database migrations are not rolled back automatically; if the release ran a migration, you must write a new migration to reverse it.'"
+  ],
+  "seconds": [
+   0.186,
+   3.18,
+   3.182,
+   5.815
+  ],
+  "stored": 4,
+  "answer": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` moves traffic back to the previous release without rebuilding anything. \n\nNote that database migrations are not rolled back automatically; if the release ran a migration, you must write a new migration to reverse it.",
+  "model_turns": [
+   {
+    "content": {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2198844",
+        "args": {
+         "page": "rollback"
+        },
+        "name": "read_page"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    "partial": false
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` moves traffic back to the previous release without rebuilding anything. \n\nNote that database migrations are not rolled back automatically; if the release ran a migration, you must write a new migration to reverse it."
+      }
+     ],
+     "role": "model"
+    },
+    "partial": false
+   }
+  ]
+ },
+ "sse": {
+  "lines": [
+   "user            final    'How do I undo the last production deploy?'",
+   "docs_assistant  partial  call read_page({'page': 'rollback'})",
+   "docs_assistant  partial  ''",
+   "docs_assistant  event    call read_page({'page': 'rollback'})",
+   "docs_assistant  event    result read_page -> ['page', 'text']",
+   "docs_assistant  partial  'To undo the last production deploy, run:\\n\\n`docuctl rollback --env production`\\n\\nWithout the `--'",
+   "docs_assistant  partial  'to` flag, `docuctl rollback` moves the environment back to the previous release without rebuilding anything. Note that database migrations are not rolled'",
+   "docs_assistant  partial  ' back; if the release ran a migration, you must write a new migration to reverse it.'",
+   "docs_assistant  partial  ''",
+   "docs_assistant  final    'To undo the last production deploy, run:\\n\\n`docuctl rollback --env production`\\n\\nWithout the `--to` flag, `docuctl rollback` moves the environment back to the previous release without rebuilding anything. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it.'"
+  ],
+  "seconds": [
+   0.001,
+   1.662,
+   1.662,
+   1.662,
+   1.663,
+   4.112,
+   4.248,
+   4.36,
+   4.368,
+   4.368
+  ],
+  "stored": 4,
+  "answer": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` moves the environment back to the previous release without rebuilding anything. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it.",
+  "model_turns": [
+   {
+    "content": {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1284845",
+        "args": {
+         "page": "rollback"
+        },
+        "name": "read_page"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    "partial": true
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": ""
+      }
+     ],
+     "role": "model"
+    },
+    "partial": true
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1284845",
+        "args": {
+         "page": "rollback"
+        },
+        "name": "read_page"
+       }
+      },
+      {
+       "text": ""
+      }
+     ],
+     "role": "model"
+    },
+    "partial": false
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--"
+      }
+     ],
+     "role": "model"
+    },
+    "partial": true
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "to` flag, `docuctl rollback` moves the environment back to the previous release without rebuilding anything. Note that database migrations are not rolled"
+      }
+     ],
+     "role": "model"
+    },
+    "partial": true
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": " back; if the release ran a migration, you must write a new migration to reverse it."
+      }
+     ],
+     "role": "model"
+    },
+    "partial": true
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": ""
+      }
+     ],
+     "role": "model"
+    },
+    "partial": true
+   },
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` moves the environment back to the previous release without rebuilding anything. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it."
+      },
+      {
+       "text": ""
+      }
+     ],
+     "role": "model"
+    },
+    "partial": false
+   }
+  ]
+ }
+}

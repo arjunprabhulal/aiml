@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+collecting ... collected 19 items
+
+test_contract.py::test_tools_list_matches_the_published_contract PASSED  [  5%]
+test_contract.py::test_each_tool_returns_content_that_matches_its_output_schema[list_tasks-arguments0] PASSED [ 10%]
+test_contract.py::test_each_tool_returns_content_that_matches_its_output_schema[list_tasks-arguments1] PASSED [ 15%]
+test_contract.py::test_each_tool_returns_content_that_matches_its_output_schema[add_task-arguments2] PASSED [ 21%]
+test_contract.py::test_each_tool_returns_content_that_matches_its_output_schema[complete_task-arguments3] PASSED [ 26%]
+test_contract.py::test_bad_calls_return_tool_errors[add_task-arguments0-String should have at least 3 characters] PASSED [ 31%]
+test_contract.py::test_bad_calls_return_tool_errors[add_task-arguments1-Input should be 'low', 'normal' or 'high'] PASSED [ 36%]
+test_contract.py::test_bad_calls_return_tool_errors[complete_task-arguments2-String should match pattern] PASSED [ 42%]
+test_contract.py::test_bad_calls_return_tool_errors[complete_task-arguments3-No task with ID T-9. Call list_tasks] PASSED [ 47%]
+test_contract.py::test_bad_calls_return_tool_errors[complete_task-arguments4-Field required] PASSED [ 52%]
+test_transports.py::test_stdio_round_trip PASSED                         [ 57%]
+test_transports.py::test_streamable_http_round_trip PASSED               [ 63%]
+test_transports.py::test_http_clients_share_one_server_process PASSED    [ 68%]
+test_transports.py::test_print_to_stdout_corrupts_the_stdio_stream PASSED [ 73%]
+test_transports.py::test_wrong_endpoint_path_is_not_found PASSED         [ 78%]
+test_transports.py::test_foreign_host_header_is_rejected PASSED          [ 84%]
+test_transports.py::test_client_script_prints_the_recorded_output PASSED [ 89%]
+test_transports.py::test_server_is_the_typed_tools_lesson_server PASSED  [ 94%]
+test_transports.py::test_recorded_http_exchange_matches_a_fresh_run PASSED [100%]
+
+============================== 19 passed in 5.93s ==============================

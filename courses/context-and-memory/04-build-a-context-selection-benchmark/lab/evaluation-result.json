@@ -1,0 +1,876 @@
+{
+  "case_set": "cases.json",
+  "case_set_sha256": "30d77344974e5d711695d6c556255f4b221a1992608be81a300306cb483d4d44",
+  "strategies_sha256": "b703fc62d351ab4ba7f51886d67385418650f2162147be52aaddd9f6048010b2",
+  "tokenizer_manifest_sha256": "13fdb279d284653bed8b0af8b344eac7c2d0cc5e7a76c0cbc23ae250f5bd3181",
+  "environment": {
+    "python": "3.11.11",
+    "implementation": "CPython"
+  },
+  "counter": {
+    "model": "google/gemma-4-E2B-it",
+    "revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+    "template_sha256": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5",
+    "enable_thinking": false,
+    "count_scope": "chat template with generation prefix; tokenizer files only, no inference"
+  },
+  "trials": 1,
+  "grader": "exact substring match of required and stale facts, raw or escaped, in the selected messages",
+  "summary": {
+    "recent": {
+      "dev": {
+        "cases": 6,
+        "facts_found": 2,
+        "facts_total": 7,
+        "fact_recall": 0.286,
+        "complete_cases": 1,
+        "cases_with_stale_facts": 0,
+        "over_budget": 0,
+        "mean_input_tokens": 49.8
+      },
+      "held_out": {
+        "cases": 6,
+        "facts_found": 2,
+        "facts_total": 7,
+        "fact_recall": 0.286,
+        "complete_cases": 1,
+        "cases_with_stale_facts": 0,
+        "over_budget": 0,
+        "mean_input_tokens": 54.2
+      }
+    },
+    "relevant": {
+      "dev": {
+        "cases": 6,
+        "facts_found": 5,
+        "facts_total": 7,
+        "fact_recall": 0.714,
+        "complete_cases": 4,
+        "cases_with_stale_facts": 1,
+        "over_budget": 0,
+        "mean_input_tokens": 60.7
+      },
+      "held_out": {
+        "cases": 6,
+        "facts_found": 4,
+        "facts_total": 7,
+        "fact_recall": 0.571,
+        "complete_cases": 4,
+        "cases_with_stale_facts": 1,
+        "over_budget": 0,
+        "mean_input_tokens": 58.7
+      }
+    },
+    "notes": {
+      "dev": {
+        "cases": 6,
+        "facts_found": 6,
+        "facts_total": 7,
+        "fact_recall": 0.857,
+        "complete_cases": 5,
+        "cases_with_stale_facts": 1,
+        "over_budget": 0,
+        "mean_input_tokens": 84.7
+      },
+      "held_out": {
+        "cases": 6,
+        "facts_found": 6,
+        "facts_total": 7,
+        "fact_recall": 0.857,
+        "complete_cases": 5,
+        "cases_with_stale_facts": 1,
+        "over_budget": 0,
+        "mean_input_tokens": 96.0
+      }
+    },
+    "hybrid": {
+      "dev": {
+        "cases": 6,
+        "facts_found": 5,
+        "facts_total": 7,
+        "fact_recall": 0.714,
+        "complete_cases": 4,
+        "cases_with_stale_facts": 1,
+        "over_budget": 0,
+        "mean_input_tokens": 66.7
+      },
+      "held_out": {
+        "cases": 6,
+        "facts_found": 4,
+        "facts_total": 7,
+        "fact_recall": 0.571,
+        "complete_cases": 4,
+        "cases_with_stale_facts": 1,
+        "over_budget": 0,
+        "mean_input_tokens": 67.0
+      }
+    }
+  },
+  "cases": {
+    "recent": [
+      {
+        "case": "dev-latest",
+        "split": "dev",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 58,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-old-decision",
+        "split": "dev",
+        "kind": "decision behind a long turn",
+        "turns": [
+          2
+        ],
+        "notes": 0,
+        "input_tokens": 54,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "We chose PostgreSQL for the application."
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "dev-correction",
+        "split": "dev",
+        "kind": "corrected decision",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 35,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "Switch to PostgreSQL instead of MySQL."
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "dev-pronoun",
+        "split": "dev",
+        "kind": "fact stated with a pronoun",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 35,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "exports run hourly"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "dev-spread",
+        "split": "dev",
+        "kind": "facts spread across turns",
+        "turns": [
+          2,
+          3
+        ],
+        "notes": 0,
+        "input_tokens": 81,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 2,
+        "missing": [
+          "400 days of history"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "dev-no-overlap",
+        "split": "dev",
+        "kind": "fact with no shared words",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 36,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "blue-green rollout"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-latest",
+        "split": "held_out",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 62,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-old-decision",
+        "split": "held_out",
+        "kind": "decision behind a long turn",
+        "turns": [
+          2
+        ],
+        "notes": 0,
+        "input_tokens": 51,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "decided to store uploads in object storage"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-correction",
+        "split": "held_out",
+        "kind": "corrected decision",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 38,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "use Redis streams for the job queue"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-pronoun",
+        "split": "held_out",
+        "kind": "fact stated with a pronoun",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 36,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "invoice retry limit to three attempts"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-spread",
+        "split": "held_out",
+        "kind": "facts spread across turns",
+        "turns": [
+          2,
+          3
+        ],
+        "notes": 0,
+        "input_tokens": 84,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 2,
+        "missing": [
+          "at least 14 characters"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-buried",
+        "split": "held_out",
+        "kind": "fact inside a long turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 54,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "gateway must allow 200 connections"
+        ],
+        "stale_included": []
+      }
+    ],
+    "relevant": [
+      {
+        "case": "dev-latest",
+        "split": "dev",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 58,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-old-decision",
+        "split": "dev",
+        "kind": "decision behind a long turn",
+        "turns": [
+          0
+        ],
+        "notes": 0,
+        "input_tokens": 61,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-correction",
+        "split": "dev",
+        "kind": "corrected decision",
+        "turns": [
+          0
+        ],
+        "notes": 0,
+        "input_tokens": 57,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "Switch to PostgreSQL instead of MySQL."
+        ],
+        "stale_included": [
+          "We will use MySQL"
+        ]
+      },
+      {
+        "case": "dev-pronoun",
+        "split": "dev",
+        "kind": "fact stated with a pronoun",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 57,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-spread",
+        "split": "dev",
+        "kind": "facts spread across turns",
+        "turns": [
+          0,
+          2
+        ],
+        "notes": 0,
+        "input_tokens": 95,
+        "within_budget": true,
+        "required_found": 2,
+        "required_total": 2,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-no-overlap",
+        "split": "dev",
+        "kind": "fact with no shared words",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 36,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "blue-green rollout"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-latest",
+        "split": "held_out",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 62,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-old-decision",
+        "split": "held_out",
+        "kind": "decision behind a long turn",
+        "turns": [
+          0
+        ],
+        "notes": 0,
+        "input_tokens": 61,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-correction",
+        "split": "held_out",
+        "kind": "corrected decision",
+        "turns": [
+          0,
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 94,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": [
+          "decided to use RabbitMQ"
+        ]
+      },
+      {
+        "case": "held-pronoun",
+        "split": "held_out",
+        "kind": "fact stated with a pronoun",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 61,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-spread",
+        "split": "held_out",
+        "kind": "facts spread across turns",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 37,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 2,
+        "missing": [
+          "at least 14 characters",
+          "expire after 30 minutes"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-buried",
+        "split": "held_out",
+        "kind": "fact inside a long turn",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 37,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "gateway must allow 200 connections"
+        ],
+        "stale_included": []
+      }
+    ],
+    "notes": [
+      {
+        "case": "dev-latest",
+        "split": "dev",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 58,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-old-decision",
+        "split": "dev",
+        "kind": "decision behind a long turn",
+        "turns": [
+          2
+        ],
+        "notes": 1,
+        "input_tokens": 97,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-correction",
+        "split": "dev",
+        "kind": "corrected decision",
+        "turns": [],
+        "notes": 3,
+        "input_tokens": 110,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": [
+          "We will use MySQL"
+        ]
+      },
+      {
+        "case": "dev-pronoun",
+        "split": "dev",
+        "kind": "fact stated with a pronoun",
+        "turns": [],
+        "notes": 1,
+        "input_tokens": 78,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-spread",
+        "split": "dev",
+        "kind": "facts spread across turns",
+        "turns": [
+          2,
+          3
+        ],
+        "notes": 1,
+        "input_tokens": 129,
+        "within_budget": true,
+        "required_found": 2,
+        "required_total": 2,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-no-overlap",
+        "split": "dev",
+        "kind": "fact with no shared words",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 36,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "blue-green rollout"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-latest",
+        "split": "held_out",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 62,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-old-decision",
+        "split": "held_out",
+        "kind": "decision behind a long turn",
+        "turns": [
+          2
+        ],
+        "notes": 1,
+        "input_tokens": 96,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-correction",
+        "split": "held_out",
+        "kind": "corrected decision",
+        "turns": [],
+        "notes": 1,
+        "input_tokens": 85,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "use Redis streams for the job queue"
+        ],
+        "stale_included": [
+          "decided to use RabbitMQ"
+        ]
+      },
+      {
+        "case": "held-pronoun",
+        "split": "held_out",
+        "kind": "fact stated with a pronoun",
+        "turns": [],
+        "notes": 1,
+        "input_tokens": 82,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-spread",
+        "split": "held_out",
+        "kind": "facts spread across turns",
+        "turns": [
+          2,
+          3
+        ],
+        "notes": 1,
+        "input_tokens": 131,
+        "within_budget": true,
+        "required_found": 2,
+        "required_total": 2,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-buried",
+        "split": "held_out",
+        "kind": "fact inside a long turn",
+        "turns": [
+          1
+        ],
+        "notes": 2,
+        "input_tokens": 120,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      }
+    ],
+    "hybrid": [
+      {
+        "case": "dev-latest",
+        "split": "dev",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 58,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-old-decision",
+        "split": "dev",
+        "kind": "decision behind a long turn",
+        "turns": [
+          0,
+          2
+        ],
+        "notes": 0,
+        "input_tokens": 80,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-correction",
+        "split": "dev",
+        "kind": "corrected decision",
+        "turns": [
+          0
+        ],
+        "notes": 0,
+        "input_tokens": 57,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "Switch to PostgreSQL instead of MySQL."
+        ],
+        "stale_included": [
+          "We will use MySQL"
+        ]
+      },
+      {
+        "case": "dev-pronoun",
+        "split": "dev",
+        "kind": "fact stated with a pronoun",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 57,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-spread",
+        "split": "dev",
+        "kind": "facts spread across turns",
+        "turns": [
+          0,
+          2,
+          3
+        ],
+        "notes": 0,
+        "input_tokens": 112,
+        "within_budget": true,
+        "required_found": 2,
+        "required_total": 2,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "dev-no-overlap",
+        "split": "dev",
+        "kind": "fact with no shared words",
+        "turns": [],
+        "notes": 0,
+        "input_tokens": 36,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "blue-green rollout"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-latest",
+        "split": "held_out",
+        "kind": "fact in the newest turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 62,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-old-decision",
+        "split": "held_out",
+        "kind": "decision behind a long turn",
+        "turns": [
+          0,
+          2
+        ],
+        "notes": 0,
+        "input_tokens": 77,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-correction",
+        "split": "held_out",
+        "kind": "corrected decision",
+        "turns": [
+          0,
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 94,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": [
+          "decided to use RabbitMQ"
+        ]
+      },
+      {
+        "case": "held-pronoun",
+        "split": "held_out",
+        "kind": "fact stated with a pronoun",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 61,
+        "within_budget": true,
+        "required_found": 1,
+        "required_total": 1,
+        "missing": [],
+        "stale_included": []
+      },
+      {
+        "case": "held-spread",
+        "split": "held_out",
+        "kind": "facts spread across turns",
+        "turns": [
+          3
+        ],
+        "notes": 0,
+        "input_tokens": 54,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 2,
+        "missing": [
+          "at least 14 characters",
+          "expire after 30 minutes"
+        ],
+        "stale_included": []
+      },
+      {
+        "case": "held-buried",
+        "split": "held_out",
+        "kind": "fact inside a long turn",
+        "turns": [
+          1
+        ],
+        "notes": 0,
+        "input_tokens": 54,
+        "within_budget": true,
+        "required_found": 0,
+        "required_total": 1,
+        "missing": [
+          "gateway must allow 200 connections"
+        ],
+        "stale_included": []
+      }
+    ]
+  }
+}

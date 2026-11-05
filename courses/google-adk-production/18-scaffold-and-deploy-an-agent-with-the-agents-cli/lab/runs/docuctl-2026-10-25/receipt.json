@@ -1,0 +1,38 @@
+{
+  "execution_mode": "fresh-agents-cli-scaffold-deployment-and-remote-conversation",
+  "date": "2026-10-25",
+  "files": {
+    "recorded-output.json": "8d4f9f1e9361aae7be21885e7cc0dc6fdf9aaf16fa69ea04d553bde3b3623c75",
+    "run218.txt": "299e92cee03211148c8f1cb7f61675955402e655f410ba12a68b96ed83ad770f",
+    "run218b.txt": "5da0f46d3527ea63a324fb1f8593281a06991a80bf94778d72a8c8017a745382",
+    "deploy218.txt": "30a205f6f41b2e81f5856ab915cd1f137247d628c036ae9e9d314402f9dc2df2",
+    "dry218-defaults.txt": "2f80dfbae5786f7361a1a5ae41740c922c9c5d7b626aa46316909a5762d05048",
+    "enhance.txt": "3af7bdcf1ee8e5a7ae4986224c5b5f5e834af83efc69897f2c5e26b1b97450de",
+    "fail218-region.txt": "8c0af03b1333b4032f48609421d3948c5d6a3a498226cd307f76faa562a98e4c"
+  },
+  "source_snapshot_after_run": {
+    "agents-cli-manifest.yaml": "8a55d058dd0f1c9356819103e001e015c0d769d202282b709f9441ec911d9eac",
+    "pyproject.toml": "94f58854f8d225b36f2620d4441fdb6807936d8ba074a950753abd227bc1556b",
+    "README.md": "8a8b4a51b7f90ebab3f28de4a81c8bf71f9fcc6b8f1e076d57cb838dbf84583d",
+    "test_project.py": "ee43cfe1028c8abd1e68c59709de6c72aad49c8460fadae67fe8ade2ad31c884",
+    "docs_helper/__init__.py": "148d2ae36db6cc6a1363334da22ea89ea3f8c5c4f4e2b26c060454bf6f6e0068",
+    "docs_helper/agent.py": "8932a73acbf76b9901d1ba6d4447dbbc58f4cbd6f37b97d455bda67032f3798c",
+    "docs_helper/fast_api_app.py": "db561677274c07da4046a4a30f96e2366bd7b05db75f3847d08fa74d97cda4f0",
+    "docs_helper/docs/config.md": "3041df53d5c02048153ab118b1e26c1b26d9405d49cd6de9165e799fbd74b143",
+    "docs_helper/docs/deploy.md": "788263b26f152642f7fe8675f9ac3dc07f4bfac15c75a8a8592419f080ded28c",
+    "docs_helper/docs/rollback.md": "4daea33b4cb3f0049db23d41bbd0a303afe7776cf53152fd54a4feeace007484",
+    "docs_helper/docs/tokens.md": "fd5fb6905064b4c1eae5bbaac3d523f59289aad401c635fc0ee1653473741f49",
+    "docs_helper/app_utils/a2a.py": "b32afbdfd329d288e7151c6adeb115b6f08c47b3838ad0d96594177c7ef6a930",
+    "docs_helper/app_utils/services.py": "806e5aa6aa75ca68a87f5adf944d7e7835904901bb0f53b076b490681eadfbc7",
+    "docs_helper/app_utils/reasoning_engine_adapter.py": "0174eb4d8270060b1562246c742f2d592ced53be4b2cf6dc2feb8a776b063af9"
+  },
+  "raw_evidence": "Actual execution logs are retained privately; opaque provider signatures are omitted from public event projections.",
+  "provider_request_count": null,
+  "provider_request_count_note": "Remote calls were not independently intercepted. The agent callback allows four model calls per invocation and max_output_tokens=1024.",
+  "cleanup": {
+    "resource": "projects/913703049174/locations/us-central1/reasoningEngines/8806439701503279104",
+    "service_account": "docuctl-cli-c760a585@vertex-ai-experminent.iam.gserviceaccount.com",
+    "deleted": true,
+    "verified": 1792981881.5634959
+  }
+}

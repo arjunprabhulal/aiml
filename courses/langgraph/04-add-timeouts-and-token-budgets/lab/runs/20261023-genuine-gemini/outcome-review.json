@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS_GENUINE_MODEL_PROPOSAL_AND_NATIVE_LOCAL_TOOL_TIMEOUT_ONLY",
+  "projection": "Public-safe summary of the independent outcome review; original review retained unchanged with the private transport evidence.",
+  "original_review_sha256": "e25afff14ec1d625113b44f5dcb81459c8a9a8a51e637f96fc5d7c7222aa560f",
+  "receipt_sha256": "530642783f5b2b1f33c5b1b2a6195e5c9c44b0ab8b0b25d72dbdb733d824f352",
+  "scope_sha256": "950ceb6c3c11fcf66dbe812d10b0a1a1b4568e7622810ec15e80a7c3f2f04fe3",
+  "outcome": "The provider proposed fetch_job_log(job_id=815) with call ID call_97095. Native ToolNode returned the matching error ToolMessage after its three-second timeout against an eight-second local fixture. The message says the result is unknown, not that the CI job failed. The graph paused after tools; no model-written follow-up answer was requested.",
+  "model_requests": 1,
+  "node_path": [
+    "agent",
+    "tools"
+  ],
+  "tool_call_ids_match": true,
+  "provider_finish_reason": "STOP",
+  "followup_generation_requests": 0,
+  "retry_attempts": 0,
+  "automatic_reruns": 0,
+  "process_exit_code": 0,
+  "accounting": {
+    "preflight_count": 224,
+    "provider_input_tokens": 224,
+    "provider_candidate_tokens": 20,
+    "provider_thinking_tokens": 159,
+    "provider_total_tokens": 403,
+    "estimated_token_cost_usd": 0.00083925,
+    "not_invoice": true,
+    "count_not_general_billable_cap": true
+  },
+  "checks": [
+    "Exact proposal, tool arguments and call ID match the native tool result",
+    "Source and capture hashes match the reviewed scope",
+    "One count and one generation request reserved before dispatch; both HTTP200",
+    "Entire serialized generation request matches the counted request",
+    "Original completed images at three widths match saved capture hashes",
+    "The earlier failed preparation remains unchanged; this is a separate authorized run"
+  ],
+  "not_proven": [
+    "A model answer after the failed tool",
+    "A live CI service or job failure",
+    "A genuine model-node timeout",
+    "General model accuracy, performance or billing-cap correctness"
+  ]
+}

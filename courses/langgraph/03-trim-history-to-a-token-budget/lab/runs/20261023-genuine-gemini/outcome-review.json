@@ -1,0 +1,21 @@
+{
+  "verdict": "PASS_FOR_RECORDED_PLAIN_VERSUS_PINNED_COMPARISON",
+  "scope": "Independent actual outcome, full input views, request accounting, frozen source/SDK and original media review.",
+  "original_review_sha256": "7351968ec9e85f816469475c597855e67848caf8007b8e6c70ee0f4348d2f7cf",
+  "result": "Plain final model input contained no reviewer/deadline fact or paraphrase and reply reported them unavailable; pinned system retained the decision and reply correctly named mlee and before the 2.5 freeze on November14.",
+  "checks": [
+    "All ten replies match raw provider output; no seeded AI replies",
+    "Two independent five-turn native graph threads each retained10 messages",
+    "Exactly10 token-count and10 generation requests; no retries or reruns",
+    "Original captures readable at1440/390/320 CSS pixels"
+  ],
+  "limits": [
+    "400 is an approximate trimming budget, not a hard provider input limit.",
+    "Preflight token counts and reported provider input differed on two turns:145 versus326 and171 versus330. Do not treat the count endpoint as a general billing cap.",
+    "Observed maximum provider input464 and output including thinking218 were below the reviewed4096 limits.",
+    "A missing thoughtsTokenCount field is kept as null here; no claim that thinking was disabled.",
+    "Usage records are not an invoice.",
+    "One supplied conversation comparison, not general model accuracy or memory mastery.",
+    "The15 passing log entries and14-second timestamp span are fixture contents, not new CI or performance measurements."
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "case": "matching bundle",
+    "accepted": true
+  },
+  {
+    "case": "changed corpus",
+    "accepted": false,
+    "error": "checkpoint training inputs differ: corpus, tokenizer or source changed"
+  },
+  {
+    "case": "same-size tokenizer with different IDs",
+    "accepted": false,
+    "error": "checkpoint training inputs differ: corpus, tokenizer or source changed"
+  },
+  {
+    "case": "changed implementation",
+    "accepted": false,
+    "error": "checkpoint training inputs differ: corpus, tokenizer or source changed"
+  },
+  {
+    "case": "missing input identity",
+    "accepted": false,
+    "error": "checkpoint training inputs differ: corpus, tokenizer or source changed"
+  }
+]

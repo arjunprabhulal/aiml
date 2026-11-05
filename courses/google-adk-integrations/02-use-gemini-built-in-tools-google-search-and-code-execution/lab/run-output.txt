@@ -1,0 +1,76 @@
+$ Is the google-adk pin on the dependencies page current? | run=pin
+call   read_page {'page': 'dependencies'}
+result read_page ['page', 'text']
+server GOOGLE_SEARCH_WEB {'queries': ['site pypi org project google genai adk', 'site pypi org project google adk', 'pypi google adk release latest version', 'pypi google genai adk']}
+server GOOGLE_SEARCH_WEB {'queries': ['site:pypi.org/project/google-adk/', '"google-adk" "2.13.0" pypi']}
+search ['pypi google adk release latest version', '"google-adk" "2.13.0" pypi']
+answer **No, the `google-adk` pin on the dependencies page is not current.**
+
+### Details & Sources
+* **Current Pin in Documentation:** According to the `dependencies` page in the docuctl documentation, `google-adk` is currently pinned to version **`2.10.0`**.
+* **Latest Release:** According to PyPI and the `google/adk-python` GitHub releases, the latest release of `google-adk` is **`2.13.0`** (released October 22–23, 2026).
+source github.com
+source pypi.org
+source techgazette.com.br
+source github.com
+
+$ Do the deploy timings meet the SLO? | run=slo
+call   read_page {'page': 'deploy-timings'}
+result read_page ['page', 'text']
+code   import numpy as np
+       
+       timings = [41, 38, 44, 40, 39, 122, 42, 43, 37, 45, 40, 41, 39, 118, 44, 42, 40, 38, 43, 41]
+       timings_sorted = sorted(timings)
+       print(f"Sorted timings (len={len(timings_sorted)}): {timings_sorted}")
+       
+       # Check various percentile definitions (nearest rank, linear interpolation, etc.)
+       p95_linear = np.percentile(timings, 95)
+       p95_nearest = np.percentile(timings, 95, method='nearest')
+       p95_lower = np.percentile(timings, 95, method='lower')
+       p95_higher = np.percentile(timings, 95, method='higher')
+       p95_weibull = np.percentile(timings, 95, method='weibull')
+       
+       print(f"p95 linear: {p95_linear}")
+       print(f"p95 nearest: {p95_nearest}")
+       print(f"p95 lower: {p95_lower}")
+       print(f"p95 higher: {p95_higher}")
+       print(f"p95 weibull: {p95_weibull}")
+output OUTCOME_OK Sorted timings (len=20): [37, 38, 38, 39, 39, 40, 40, 40, 41, 41, 41, 42, 42, 43, 43, 44, 44, 45, 118, 122]
+p95 linear: 118.2
+p95 nearest: 118
+p95 lower: 118
+p95 higher: 122
+p95 weibull: 121.8
+answer **No, the deploy timings do not meet the SLO.**
+
+### Details and Calculation
+
+According to the **`deploy-timings`** documentation page:
+- **Deploy SLO:** p95 under 90 seconds.
+- **Last 20 deploy timings (in seconds):**
+  `41, 38, 44, 40, 39, 122, 42, 43, 37, 45, 40, 41, 39, 118, 44, 42, 40, 38, 43, 41`
+
+Sorted in ascending order:
+`[37, 38, 38, 39, 39, 40, 40, 40, 41, 41, 41, 42, 42, 43, 43, 44, 44, 45, 118, 122]`
+
+- Under standard linear interpolation, the **p95 is 118.2 seconds** (or **118 seconds** using the nearest-rank method).
+- Since $118.2\text{ s} > 90\text{ s}$, the current deploys violate the SLO target.
+
+$ Is the google-adk pin on the dependencies page current? | run=bypass
+call   read_page {'page': 'dependencies'}
+result read_page ['page', 'text']
+call   google_search_agent {'request': '"google-adk" latest release PyPI version'}
+result google_search_agent ['result']
+search ['"google-adk" "2.12." site:pypi.org', '"google-adk 2.13.0" site:pypi.org']
+answer No, the `google-adk` pin is **not current**.
+
+* According to the **dependencies** page of the documentation, `google-adk` is currently pinned to version **`2.10.0`**.
+* According to **PyPI (Google Search)**, the latest release of `google-adk` is **`2.13.0`**.
+source pypi.org
+source pypi.org
+
+# failure: no_flag
+ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Please enable tool_config.include_server_side_tool_invocations to use Built-in tools with Function calling.', 'status': 'INVALID_ARGUMENT'}}
+
+# failure: gemma
+ValueError: Google search tool is not supported for model ollama_chat/gemma4:e2b

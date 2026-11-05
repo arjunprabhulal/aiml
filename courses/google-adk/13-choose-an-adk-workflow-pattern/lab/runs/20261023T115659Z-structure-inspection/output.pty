@@ -1,0 +1,62 @@
+Sequential pipeline (graph, adk-graph-workflow/release_notes.py)
+  __START__ -> parse_log
+  parse_log -> group_changes
+  group_changes -> render_notes
+
+Coordinator and dispatcher (graph, adk-graph-routes/build_router.py)
+  __START__ -> classify_build
+  classify_build -> triage_links [broken_links]
+  classify_build -> report_clean [clean]
+  classify_build -> ask_for_rerun [__DEFAULT__]
+  triage_links -> check_fixes
+
+Human-in-the-loop (graph, adk-human-approval/migration_gate.py)
+  __START__ -> draft_migration
+  draft_migration -> check_migration
+  check_migration -> request_approval [review]
+  request_approval -> read_decision
+  read_decision -> apply_migration [approve]
+  read_decision -> record_rejection [reject]
+
+Generate and review (graph, adk-generate-review/review_gate.py)
+  __START__ -> read_changelog
+  read_changelog -> write_announcement
+  write_announcement -> review_announcement
+  review_announcement -> gate
+  gate -> publish [approve]
+  gate -> send_back [reject]
+
+Iterative refinement (graph, adk-iterative-refinement/refine_entry.py)
+  __START__ -> load_change
+  load_change -> write_entry
+  write_entry -> check_entry
+  check_entry -> accept [done]
+  check_entry -> revise_entry [revise]
+  check_entry -> give_up [limit]
+  revise_entry -> check_entry
+
+Parallel fan-out and gather (graph, adk-parallel-gather/release_prep.py)
+  __START__ -> load_release
+  load_release -> write_highlights
+  write_highlights -> gather
+  load_release -> write_upgrade_steps
+  write_upgrade_steps -> gather
+  load_release -> check_links
+  check_links -> gather
+  gather -> assemble
+
+Parallel fan-out, partial results (dynamic, adk-parallel-gather/release_prep.py)
+  __START__ -> load_release
+  load_release -> prepare
+  prepare -> assemble
+
+Coordinator with sub-agents (collaborative, adk-sub-agents/review_team.py)
+  docs_reviewer (depth 1)
+    pr_summarizer (depth 2, sub-agent, mode=single_turn)
+    style_checker (depth 2, sub-agent, mode=single_turn)
+
+Hierarchical task decomposition (collaborative, adk-task-decomposition/upgrade_guide.py)
+  plan_guide (depth 1)
+    write_section (depth 2, AgentTool)
+      research_docs (depth 3, AgentTool)
+

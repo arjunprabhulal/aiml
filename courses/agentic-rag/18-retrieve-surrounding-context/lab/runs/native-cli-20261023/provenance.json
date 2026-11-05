@@ -1,0 +1,104 @@
+{
+  "lesson_id": "retrieve-surrounding-context",
+  "execution": "Actual learner CLI in original PTY, no model/provider/network",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py",
+    "--output",
+    "runs/native-cli-20261023/result.json"
+  ],
+  "cwd": "/tmp/aiml-rag-native-cli-12-preparation-20261023/projects/retrieve-surrounding-context",
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "97a599f3384728a817fec7bd05a1e84c18f510f3b70a95d48a9c46142ca9d41e",
+    "chunk_index.py": "8c1dfc379f48d68f20510758dc5bcd85bebffa17139976411d304f9a254188de",
+    "fixtures/docs/aster-copy-v1.md": "34257e6c9c3ec0e75af47dd465cd370b63dc4c5e45a6a3413f87b15baf643bfd",
+    "fixtures/docs/aster-copy-v2.md": "ee85252a1f2997476d3ee9fd9ff17648af3bede369201f82d2d230d3fd370f5b",
+    "fixtures/source-manifest.json": "5ad198cc3d6fe506bff4532302c806d201afe3e82900e00eafdb5a62e16b1153",
+    "load_documents.py": "84d30170889fc4b9f5ecbece4cdac392afe0ca3786ae09f92a9e0e49175222d7",
+    "render_output.py": "665a8dff5301f14e61d8ffde2cc5c6b9b8396f16fc80bf126fbf51f2d9237a2f",
+    "run.py": "4f1b497f01cb3337513c44a3ebc1b1c19e3bf9a1115c0ab20da6494b1ecd0f98",
+    "runs/2026-10-23-surround/execution.json": "90a0b9eca0aabc5efdfb70300361106d2bf9d1ea86dcabc6817fe485b8a932d0",
+    "runs/2026-10-23-surround/media.json": "743bfa7fba8b3dccd779df335fe2c03ab193fe6534e15e69e43a5520d0f7472f",
+    "runs/2026-10-23-surround/output-mobile.png": "69973d8baf425fa7c42a5233865d849ab8d8dd46c8349ed070edca586f568005",
+    "runs/2026-10-23-surround/output-small.png": "7e37de60f5837e0ef3010cbba4f9480d39e25cd7e83926d7f0e40e01b5923223",
+    "runs/2026-10-23-surround/output.png": "2f0cca188bcf2ecfdbb1202540a68a4ee72845c7b22ee89c7520fe5e012d31dc",
+    "runs/2026-10-23-surround/result.json": "1fca7e01b123477d3fa14a1bccff9764fdcc641608b91221942961ba4f44bb73",
+    "runs/2026-10-23-surround/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-surround/stdout.txt": "38dcd4ea0f88205d4e9d5f98521225f8bf24207d249a94d32189b2a27c5e0b99",
+    "runs/2026-10-23-surround/tests.txt": "41a04370d450aee2f590cbcae615b81bdf2bbd706dea8141926dc39eae9c43cc",
+    "surround.py": "441f1b4d122c0ba05a46edb142302a0c0da506d7e8b197591075e67dfe814153",
+    "test_surround.py": "0987a3229ad0f899d5ef154d291ae8e93d04f1abaa0c074cb19684cbb02a339a"
+  },
+  "stdout_sha256": "80ca38194402e1c84bee922329f4d565545c073f42728185cb1d337e3796a1e7",
+  "result_sha256": "1fca7e01b123477d3fa14a1bccff9764fdcc641608b91221942961ba4f44bb73",
+  "source_files_unchanged": true,
+  "exit_code": 0,
+  "input_bytes": 0,
+  "network_attempts": 0,
+  "credentials_in_environment": false,
+  "historical_fixture": "retrieve-surrounding-context/runs/2026-10-23-surround/result.json",
+  "same_deterministic_result_as_historical": true,
+  "historical_differences": [],
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "b3525542f5a4f7bf9852c368f9436ce027e72bd6ed1cc6475dbd9570c5407a45",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 0,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py",
+          "--output",
+          "runs/native-cli-20261023/result.json"
+        ],
+        "terminalText": "{\"execution_mode\": \"offline-explicit-seed-expansion\", \"groups\": [{\"chunk_count\": 3, \"member_roles\": [\"seed\", \"neighbor\", \"seed\"], \"section_title\": \"Create a copy\", \"seed_count\": 2, \"\nsource_id\": \"aster-copy-v1\", \"version\": \"1.0\"}], \"seed_count\": 2}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "b3525542f5a4f7bf9852c368f9436ce027e72bd6ed1cc6475dbd9570c5407a45",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 0,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py",
+          "--output",
+          "runs/native-cli-20261023/result.json"
+        ],
+        "terminalText": "{\"execution_mode\": \"offline-explicit-seed-expansion\", \"groups\": [{\"chunk_count\": 3, \"member_roles\": [\"seed\", \"neighbor\", \"seed\"], \"section_title\": \"Create a copy\", \"seed_count\": 2, \"\nsource_id\": \"aster-copy-v1\", \"version\": \"1.0\"}], \"seed_count\": 2}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "raw_stdout_representation": "Original PTY CRLF bytes preserved; result.json parses actual stdout or copies the actual --output file. No raw output rewriting.",
+  "stdout_prefix_note": null,
+  "time": "2026-10-23T18:43:21.042637+00:00",
+  "dependencies": {
+    "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": {
+      "numpy": "2.5.4",
+      "langchain-core": "1.6.12",
+      "transformers": "5.20.1",
+      "tokenizers": "0.23.3"
+    },
+    "sqlite_version": "3.45.3",
+    "python_executable": "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python"
+  },
+  "capture_view_review": "All unique original top/end views personally inspected; eight short-output top/end pairs are byte-identical."
+}

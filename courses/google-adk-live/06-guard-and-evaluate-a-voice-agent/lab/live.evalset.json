@@ -1,0 +1,14 @@
+{
+  "eval_set_id": "docs_voice_live",
+  "name": "docs voice calls",
+  "eval_cases": [
+    {
+      "eval_id": "adk_name_and_mic_rate",
+      "conversation_scenario": {
+        "starting_prompt": "What does ADK stand for?",
+        "conversation_plan": "Ask what ADK stands for. After the answer, ask which sample rate microphone audio should use. After that answer, end the conversation."
+      },
+      "session_input": {"app_name": "docs_voice", "user_id": "eval"}
+    }
+  ]
+}

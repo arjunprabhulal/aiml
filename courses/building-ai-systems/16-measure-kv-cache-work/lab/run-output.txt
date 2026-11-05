@@ -1,0 +1,102 @@
+{
+  "generated_tokens": 8,
+  "identical_tokens": true,
+  "implementation": "fixed-weight single attention layer; CPU Python lists",
+  "model_sha256": "e305ca8f0ebe35367f04b0976405ec1357ff940690e0b62fa12d34713d216554",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "prompt_tokens": 8,
+  "python": "3.15.0",
+  "results": {
+    "cached": {
+      "attention_score_cells": 120,
+      "cached_positions": 15,
+      "median_ms": 0.352,
+      "projected_token_rows": 15,
+      "tokens": [
+        1,
+        4,
+        2,
+        9,
+        3,
+        5,
+        8,
+        7,
+        8,
+        8,
+        8,
+        8,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "uncached": {
+      "attention_score_cells": 596,
+      "cached_positions": 0,
+      "median_ms": 1.797,
+      "projected_token_rows": 92,
+      "tokens": [
+        1,
+        4,
+        2,
+        9,
+        3,
+        5,
+        8,
+        7,
+        8,
+        8,
+        8,
+        8,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "timing_repetitions": 15,
+  "workload_sweep": [
+    {
+      "cached_rows": 15,
+      "cached_score_cells": 120,
+      "identical_tokens": true,
+      "new_tokens": 8,
+      "prompt_tokens": 8,
+      "retained_kv_floats": 240,
+      "uncached_rows": 92,
+      "uncached_score_cells": 596
+    },
+    {
+      "cached_rows": 39,
+      "cached_score_cells": 780,
+      "identical_tokens": true,
+      "new_tokens": 8,
+      "prompt_tokens": 32,
+      "retained_kv_floats": 624,
+      "uncached_rows": 284,
+      "uncached_score_cells": 5204
+    },
+    {
+      "cached_rows": 39,
+      "cached_score_cells": 780,
+      "identical_tokens": true,
+      "new_tokens": 32,
+      "prompt_tokens": 8,
+      "retained_kv_floats": 624,
+      "uncached_rows": 752,
+      "uncached_score_cells": 10576
+    },
+    {
+      "cached_rows": 63,
+      "cached_score_cells": 2016,
+      "identical_tokens": true,
+      "new_tokens": 32,
+      "prompt_tokens": 32,
+      "retained_kv_floats": 1008,
+      "uncached_rows": 1520,
+      "uncached_score_cells": 38224
+    }
+  ]
+}

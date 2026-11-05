@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "authorship": "Synthetic questions and checks frozen before the first Gemini run. Held-out labels stay outside model requests; this small authored set is instructional, not a quality estimate.",
+  "cases": [
+    {"id":"overwrite","split":"development","question":"In Python 3.12, does Path.write_text append to an existing file or overwrite it?","version":"3.12","sources":["path-write"],"answer_patterns":["overwrit"],"forbidden_patterns":["will append","appends to"]},
+    {"id":"serialize-and-save","split":"development","question":"In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?","version":"3.12","sources":["json-text","path-write"],"answer_patterns":["ensure_ascii\\s*=\\s*False","write_text","utf-8"],"forbidden_patterns":[]},
+    {"id":"newline-version","split":"held-out","question":"For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?","version":"3.13","sources":["path-read-3-13"],"answer_patterns":["newline","encoding","utf-8"],"forbidden_patterns":[]},
+    {"id":"unsupported","split":"held-out","question":"In Python 3.12, how many days does Path.write_text retain backup copies?","version":"3.12","sources":[],"answer_patterns":[],"forbidden_patterns":[]}
+  ]
+}

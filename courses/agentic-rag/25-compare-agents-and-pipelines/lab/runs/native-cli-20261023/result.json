@@ -1,0 +1,2594 @@
+{
+  "execution_mode": "offline-scripted-policy-versus-fixed-pipeline",
+  "model_called": false,
+  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+  "configuration": {
+    "shared_limits": {
+      "max_steps": 6,
+      "max_searches": 2,
+      "max_reads": 2,
+      "max_source_bytes": 4096
+    },
+    "initial_query": "text",
+    "search_k": 2,
+    "fixed_pipeline": "one search and first read; no feedback branch",
+    "scripted_refinement": "question-only hand-coded rules plus read-marker feedback; at most two rounds",
+    "scope": "four original development questions only; no held-out queries or parameter tuning"
+  },
+  "target_binding_receipts": [
+    {
+      "case_id": "utf8-write",
+      "legacy_chunk_id": "path-write:b71a2d18a53d86bf",
+      "current_passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+      "binding": [
+        "source_id",
+        "source_version",
+        "source_text_sha256",
+        "chunk_text_sha256"
+      ]
+    },
+    {
+      "case_id": "replace-file",
+      "legacy_chunk_id": "path-write:b71a2d18a53d86bf",
+      "current_passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+      "binding": [
+        "source_id",
+        "source_version",
+        "source_text_sha256",
+        "chunk_text_sha256"
+      ]
+    },
+    {
+      "case_id": "json-result-type",
+      "legacy_chunk_id": "json-text:8a17e251a41ccb3b",
+      "current_passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+      "binding": [
+        "source_id",
+        "source_version",
+        "source_text_sha256",
+        "chunk_text_sha256"
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "case_id": "utf8-write",
+      "question": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "version": "3.12",
+      "policy": "fixed_pipeline",
+      "policy_terminal_status": "completed",
+      "policy_reason": "fixed_pipeline_done",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 1,
+          "reads": 1,
+          "reserved_source_bytes": 154,
+          "delivered_source_bytes": 154
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "fail",
+        "reason": "target_passage_not_read",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900"
+        ],
+        "target_passage_ids": [
+          "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+        ]
+      }
+    },
+    {
+      "case_id": "utf8-write",
+      "question": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "version": "3.12",
+      "policy": "scripted_refinement",
+      "policy_terminal_status": "incomplete",
+      "policy_reason": "round_limit",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 4,
+          "searches": 2,
+          "reads": 2,
+          "reserved_source_bytes": 353,
+          "delivered_source_bytes": 353
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "write",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+              "query": "write",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+                  "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                  "source_id": "json-text",
+                  "version": "3.12",
+                  "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                  "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "byte_count": 199,
+                  "native_score": -9.765013054830289e-07,
+                  "rank": 1,
+                  "read_token": "d8a24ee4e5d00a42b3bd417be07632c7a329c7e2cf39a0dd3ccfdea64badaaa0"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -9.432534678436319e-07,
+                  "rank": 2,
+                  "read_token": "1bd370d49cf0504dd50e14f4a9e27a9eb6440b789a66ecb0c857d432e025510f"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 3,
+              "searches": 2,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+                  "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                  "source_id": "json-text",
+                  "version": "3.12",
+                  "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                  "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "byte_count": 199,
+                  "native_score": -9.765013054830289e-07,
+                  "rank": 1,
+                  "read_token": "d8a24ee4e5d00a42b3bd417be07632c7a329c7e2cf39a0dd3ccfdea64badaaa0"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 199,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "native_score": -9.765013054830289e-07,
+              "rank": 1,
+              "read_token": "d8a24ee4e5d00a42b3bd417be07632c7a329c7e2cf39a0dd3ccfdea64badaaa0",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "read_request_id": "9a1ee0faadc084cb2c51e02f9efb21e61aa11cc069904f9e84a8c43056a188d5",
+              "result_sha256": "661fa082d4ddae14438f0f872ae166fdeddb09a04a8be1e622082e376cb25168"
+            },
+            "usage_after": {
+              "steps": 4,
+              "searches": 2,
+              "reads": 2,
+              "reserved_source_bytes": 353,
+              "delivered_source_bytes": 353
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "write",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+              "query": "write",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+                  "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                  "source_id": "json-text",
+                  "version": "3.12",
+                  "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                  "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "byte_count": 199,
+                  "native_score": -9.765013054830289e-07,
+                  "rank": 1,
+                  "read_token": "d8a24ee4e5d00a42b3bd417be07632c7a329c7e2cf39a0dd3ccfdea64badaaa0"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -9.432534678436319e-07,
+                  "rank": 2,
+                  "read_token": "1bd370d49cf0504dd50e14f4a9e27a9eb6440b789a66ecb0c857d432e025510f"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+                "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                "source_id": "json-text",
+                "version": "3.12",
+                "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                "byte_count": 199,
+                "native_score": -9.765013054830289e-07,
+                "rank": 1,
+                "read_token": "d8a24ee4e5d00a42b3bd417be07632c7a329c7e2cf39a0dd3ccfdea64badaaa0"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ce0ea8d504d083c0a75c9ba19cfa89f88985c889f4e863067efc6a313a49094d",
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "native_score": -9.765013054830289e-07,
+              "rank": 1,
+              "read_token": "d8a24ee4e5d00a42b3bd417be07632c7a329c7e2cf39a0dd3ccfdea64badaaa0",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "read_request_id": "9a1ee0faadc084cb2c51e02f9efb21e61aa11cc069904f9e84a8c43056a188d5",
+              "result_sha256": "661fa082d4ddae14438f0f872ae166fdeddb09a04a8be1e622082e376cb25168"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "incomplete",
+        "reason": "policy_stopped_without_target",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c"
+        ],
+        "target_passage_ids": [
+          "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+        ]
+      }
+    },
+    {
+      "case_id": "replace-file",
+      "question": "Will write_text replace the contents of an existing file?",
+      "version": "3.12",
+      "policy": "fixed_pipeline",
+      "policy_terminal_status": "completed",
+      "policy_reason": "fixed_pipeline_done",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 1,
+          "reads": 1,
+          "reserved_source_bytes": 154,
+          "delivered_source_bytes": 154
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "fail",
+        "reason": "target_passage_not_read",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900"
+        ],
+        "target_passage_ids": [
+          "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+        ]
+      }
+    },
+    {
+      "case_id": "replace-file",
+      "question": "Will write_text replace the contents of an existing file?",
+      "version": "3.12",
+      "policy": "scripted_refinement",
+      "policy_terminal_status": "completed",
+      "policy_reason": "configured_context_marker_found",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 4,
+          "searches": 2,
+          "reads": 2,
+          "reserved_source_bytes": 378,
+          "delivered_source_bytes": 378
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "overwritten",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "query": "overwritten",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -0.7992166451067194,
+                  "rank": 1,
+                  "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 3,
+              "searches": 2,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -0.7992166451067194,
+                  "rank": 1,
+                  "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 224,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+              "source_id": "path-write",
+              "version": "3.12",
+              "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+              "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "byte_count": 224,
+              "native_score": -0.7992166451067194,
+              "rank": 1,
+              "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "read_request_id": "ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4",
+              "result_sha256": "b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38"
+            },
+            "usage_after": {
+              "steps": 4,
+              "searches": 2,
+              "reads": 2,
+              "reserved_source_bytes": 378,
+              "delivered_source_bytes": 378
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "overwritten",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "query": "overwritten",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -0.7992166451067194,
+                  "rank": 1,
+                  "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+                "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                "source_id": "path-write",
+                "version": "3.12",
+                "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                "byte_count": 224,
+                "native_score": -0.7992166451067194,
+                "rank": 1,
+                "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+              "source_id": "path-write",
+              "version": "3.12",
+              "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+              "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "byte_count": 224,
+              "native_score": -0.7992166451067194,
+              "rank": 1,
+              "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "read_request_id": "ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4",
+              "result_sha256": "b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "pass",
+        "reason": "all_bound_target_passages_read",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+        ],
+        "target_passage_ids": [
+          "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+        ]
+      }
+    },
+    {
+      "case_id": "json-result-type",
+      "question": "Does json.dumps produce text or a bytes object?",
+      "version": "3.12",
+      "policy": "fixed_pipeline",
+      "policy_terminal_status": "completed",
+      "policy_reason": "fixed_pipeline_done",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 1,
+          "reads": 1,
+          "reserved_source_bytes": 154,
+          "delivered_source_bytes": 154
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "fail",
+        "reason": "target_passage_not_read",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900"
+        ],
+        "target_passage_ids": [
+          "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c"
+        ]
+      }
+    },
+    {
+      "case_id": "json-result-type",
+      "question": "Does json.dumps produce text or a bytes object?",
+      "version": "3.12",
+      "policy": "scripted_refinement",
+      "policy_terminal_status": "completed",
+      "policy_reason": "configured_context_marker_found",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 4,
+          "searches": 2,
+          "reads": 2,
+          "reserved_source_bytes": 353,
+          "delivered_source_bytes": 353
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "json",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+              "query": "json",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+                  "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                  "source_id": "json-text",
+                  "version": "3.12",
+                  "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                  "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "byte_count": 199,
+                  "native_score": -1.1460737786069228,
+                  "rank": 1,
+                  "read_token": "9cf3e73f825e876ae4d4ff2f5f40debb78f766a711502b807aeff90d29a9a384"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 3,
+              "searches": 2,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+                  "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                  "source_id": "json-text",
+                  "version": "3.12",
+                  "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                  "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "byte_count": 199,
+                  "native_score": -1.1460737786069228,
+                  "rank": 1,
+                  "read_token": "9cf3e73f825e876ae4d4ff2f5f40debb78f766a711502b807aeff90d29a9a384"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 199,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "native_score": -1.1460737786069228,
+              "rank": 1,
+              "read_token": "9cf3e73f825e876ae4d4ff2f5f40debb78f766a711502b807aeff90d29a9a384",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "read_request_id": "9b9badb1f56b1a51417aaab51e514a7b2370172285a7057fb146368c786ea0d2",
+              "result_sha256": "a8db9780486beab6fdc9f18328b643dcdb61dda11290bdacf22db7ead00ec13e"
+            },
+            "usage_after": {
+              "steps": 4,
+              "searches": 2,
+              "reads": 2,
+              "reserved_source_bytes": 353,
+              "delivered_source_bytes": 353
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "json",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+              "query": "json",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+                  "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                  "source_id": "json-text",
+                  "version": "3.12",
+                  "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                  "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                  "byte_count": 199,
+                  "native_score": -1.1460737786069228,
+                  "rank": 1,
+                  "read_token": "9cf3e73f825e876ae4d4ff2f5f40debb78f766a711502b807aeff90d29a9a384"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+                "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+                "source_id": "json-text",
+                "version": "3.12",
+                "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+                "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+                "byte_count": 199,
+                "native_score": -1.1460737786069228,
+                "rank": 1,
+                "read_token": "9cf3e73f825e876ae4d4ff2f5f40debb78f766a711502b807aeff90d29a9a384"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "ba197ec4bb02ae4b95e6809131447d75281efd2d2c61c98552c2c34989050d8d",
+              "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+              "source_id": "json-text",
+              "version": "3.12",
+              "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+              "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+              "byte_count": 199,
+              "native_score": -1.1460737786069228,
+              "rank": 1,
+              "read_token": "9cf3e73f825e876ae4d4ff2f5f40debb78f766a711502b807aeff90d29a9a384",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "read_request_id": "9b9badb1f56b1a51417aaab51e514a7b2370172285a7057fb146368c786ea0d2",
+              "result_sha256": "a8db9780486beab6fdc9f18328b643dcdb61dda11290bdacf22db7ead00ec13e"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "pass",
+        "reason": "all_bound_target_passages_read",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c"
+        ],
+        "target_passage_ids": [
+          "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c"
+        ]
+      }
+    },
+    {
+      "case_id": "backup-schedule",
+      "question": "How frequently does our cloud provider back up these files?",
+      "version": "3.12",
+      "policy": "fixed_pipeline",
+      "policy_terminal_status": "completed",
+      "policy_reason": "fixed_pipeline_done",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 1,
+          "reads": 1,
+          "reserved_source_bytes": 154,
+          "delivered_source_bytes": 154
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "incomplete",
+        "reason": "unsupported_fixture_has_no_retrieval_target",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900"
+        ],
+        "target_passage_ids": []
+      }
+    },
+    {
+      "case_id": "backup-schedule",
+      "question": "How frequently does our cloud provider back up these files?",
+      "version": "3.12",
+      "policy": "scripted_refinement",
+      "policy_terminal_status": "incomplete",
+      "policy_reason": "no_refinement_rule",
+      "runtime": {
+        "controller_status": "completed",
+        "terminal_reason": "policy_complete",
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 1,
+          "reads": 1,
+          "reserved_source_bytes": 154,
+          "delivered_source_bytes": 154
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "handle": {
+                "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                "source_id": "path-read",
+                "version": "3.12",
+                "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "start_line": 1,
+                "end_line": 1,
+                "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                "byte_count": 154,
+                "native_score": -1.4220532319391636e-06,
+                "rank": 1,
+                "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+              }
+            },
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            }
+          }
+        ],
+        "scope": "Offline scripted tool policy. Corpus initialization is outside action counters. Source bytes are reserved read-text UTF-8 bytes, not disk I/O or model tokens."
+      },
+      "outcome_check": {
+        "status": "incomplete",
+        "reason": "unsupported_fixture_has_no_retrieval_target",
+        "read_passage_ids": [
+          "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900"
+        ],
+        "target_passage_ids": []
+      }
+    }
+  ],
+  "summary": {
+    "fixed_pipeline": {
+      "pass": 0,
+      "fail": 3,
+      "incomplete": 1
+    },
+    "scripted_refinement": {
+      "pass": 2,
+      "fail": 0,
+      "incomplete": 2
+    }
+  },
+  "confounds": [
+    "The scripted policy contains additional domain-specific rewrite and marker rules.",
+    "Both have the same maximum budget, but the fixed pipeline usually uses fewer actions.",
+    "This comparison does not isolate architecture from rule design or actual tool effort."
+  ],
+  "limit": "Deterministic checks report whether exact bound target passages were read, not generated-answer quality or semantic understanding. Unsupported cases have no retrieval target and remain incomplete. Tiny development fixtures do not establish general quality."
+}

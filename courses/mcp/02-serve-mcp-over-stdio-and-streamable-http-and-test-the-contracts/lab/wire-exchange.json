@@ -1,0 +1,451 @@
+[
+  {
+    "request": {
+      "method": "POST",
+      "path": "/mcp",
+      "headers": {
+        "accept": "application/json, text/event-stream",
+        "content-type": "application/json",
+        "mcp-protocol-version": "2026-07-28",
+        "mcp-method": "server/discover"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientInfo": {
+              "name": "mcp",
+              "version": "0.1.0"
+            },
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "cacheScope": "private",
+          "capabilities": {
+            "prompts": {
+              "listChanged": true
+            },
+            "resources": {
+              "listChanged": true,
+              "subscribe": true
+            },
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "instructions": "Read and update the task tracker of one software project.",
+          "resultType": "complete",
+          "supportedVersions": [
+            "2026-07-28"
+          ],
+          "ttlMs": 0,
+          "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "tasks",
+              "version": "1.0.0"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/mcp",
+      "headers": {
+        "accept": "application/json, text/event-stream",
+        "content-type": "application/json",
+        "mcp-protocol-version": "2026-07-28",
+        "mcp-method": "tools/call",
+        "mcp-name": "complete_task"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/call",
+        "params": {
+          "name": "complete_task",
+          "arguments": {
+            "task_id": "T-1"
+          },
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientInfo": {
+              "name": "mcp",
+              "version": "0.1.0"
+            },
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "content": [
+            {
+              "text": "{\n  \"id\": \"T-1\",\n  \"title\": \"Write the release notes\",\n  \"priority\": \"normal\",\n  \"status\": \"done\"\n}",
+              "type": "text"
+            }
+          ],
+          "isError": false,
+          "resultType": "complete",
+          "structuredContent": {
+            "id": "T-1",
+            "title": "Write the release notes",
+            "priority": "normal",
+            "status": "done"
+          },
+          "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "tasks",
+              "version": "1.0.0"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/mcp",
+      "headers": {
+        "accept": "application/json, text/event-stream",
+        "content-type": "application/json",
+        "mcp-protocol-version": "2026-07-28",
+        "mcp-method": "tools/list"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "method": "tools/list",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientInfo": {
+              "name": "mcp",
+              "version": "0.1.0"
+            },
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": {
+          "cacheScope": "private",
+          "resultType": "complete",
+          "tools": [
+            {
+              "annotations": {
+                "readOnlyHint": true
+              },
+              "description": "List the project's tasks. Pass status to return only open or only done tasks.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "open",
+                          "done"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "title": "Status"
+                  }
+                },
+                "title": "list_tasksArguments"
+              },
+              "name": "list_tasks",
+              "outputSchema": {
+                "$defs": {
+                  "Task": {
+                    "description": "One task in the tracker.",
+                    "properties": {
+                      "id": {
+                        "description": "Task ID such as T-1.",
+                        "title": "Id",
+                        "type": "string"
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "priority": {
+                        "enum": [
+                          "low",
+                          "normal",
+                          "high"
+                        ],
+                        "title": "Priority",
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "open",
+                          "done"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "title",
+                      "priority",
+                      "status"
+                    ],
+                    "title": "Task",
+                    "type": "object"
+                  }
+                },
+                "description": "The tasks that match a filter.",
+                "properties": {
+                  "tasks": {
+                    "items": {
+                      "$ref": "#/$defs/Task"
+                    },
+                    "title": "Tasks",
+                    "type": "array"
+                  },
+                  "count": {
+                    "title": "Count",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "tasks",
+                  "count"
+                ],
+                "title": "TaskList",
+                "type": "object"
+              }
+            },
+            {
+              "description": "Add an open task and return it with its new ID.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "maxLength": 80,
+                    "minLength": 3,
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "priority": {
+                    "default": "normal",
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high"
+                    ],
+                    "title": "Priority",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title"
+                ],
+                "title": "add_taskArguments"
+              },
+              "name": "add_task",
+              "outputSchema": {
+                "description": "One task in the tracker.",
+                "properties": {
+                  "id": {
+                    "description": "Task ID such as T-1.",
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "priority": {
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high"
+                    ],
+                    "title": "Priority",
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "open",
+                      "done"
+                    ],
+                    "title": "Status",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "priority",
+                  "status"
+                ],
+                "title": "Task",
+                "type": "object"
+              }
+            },
+            {
+              "annotations": {
+                "idempotentHint": true
+              },
+              "description": "Mark one task as done and return it.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "task_id": {
+                    "description": "A task ID such as T-1, as returned by list_tasks.",
+                    "pattern": "^T-\\d+$",
+                    "title": "Task Id",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "task_id"
+                ],
+                "title": "complete_taskArguments"
+              },
+              "name": "complete_task",
+              "outputSchema": {
+                "description": "One task in the tracker.",
+                "properties": {
+                  "id": {
+                    "description": "Task ID such as T-1.",
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "priority": {
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high"
+                    ],
+                    "title": "Priority",
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "open",
+                      "done"
+                    ],
+                    "title": "Status",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "priority",
+                  "status"
+                ],
+                "title": "Task",
+                "type": "object"
+              }
+            }
+          ],
+          "ttlMs": 0,
+          "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "tasks",
+              "version": "1.0.0"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/mcp",
+      "headers": {
+        "accept": "application/json, text/event-stream",
+        "content-type": "application/json",
+        "mcp-protocol-version": "2026-07-28",
+        "mcp-method": "tools/call",
+        "mcp-name": "complete_task"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "method": "tools/call",
+        "params": {
+          "name": "complete_task",
+          "arguments": {
+            "task_id": "T-9"
+          },
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientInfo": {
+              "name": "mcp",
+              "version": "0.1.0"
+            },
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "result": {
+          "content": [
+            {
+              "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.",
+              "type": "text"
+            }
+          ],
+          "isError": true,
+          "resultType": "complete",
+          "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "tasks",
+              "version": "1.0.0"
+            }
+          }
+        }
+      }
+    }
+  }
+]

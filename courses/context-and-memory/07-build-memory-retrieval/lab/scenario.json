@@ -1,0 +1,28 @@
+{
+  "scope": ["alice", "porto-trip"],
+  "memories": [
+    {"day": 0, "kind": "semantic", "level": "user", "key": "diet", "text": "Alice is vegetarian.", "source": "trip-planning/turn-3"},
+    {"day": 0, "kind": "semantic", "level": "user", "text": "Alice prefers a hotel near a river.", "source": "trip-planning/turn-4"},
+    {"day": 0, "kind": "semantic", "level": "user", "text": "Alice's loyalty number is stored in the booking tool, not here.", "source": "trip-planning/turn-9"},
+    {"day": 0, "kind": "episodic", "level": "user", "occurred_at": "2026-08-03", "text": "Booked a Madrid hotel near the station; Alice later said it was too noisy.", "source": "madrid-trip/turn-14"},
+    {"day": 0, "kind": "episodic", "level": "user", "occurred_at": "2026-09-12", "text": "Booked the Lisbon hotel near the river; the first card was declined and the second worked.", "source": "trip-planning/turn-21"},
+    {"day": 0, "kind": "episodic", "level": "user", "occurred_at": "2026-10-01", "text": "Alice cancelled the Berlin trip because of a rail strike.", "source": "berlin-trip/turn-6"},
+    {"day": 2, "correct": "diet", "text": "Alice eats fish but no meat, so she is not vegetarian.", "source": "trip-planning/turn-12"},
+    {"day": 3, "kind": "working", "level": "task", "text": "Trip dates: 3 to 6 November.", "source": "porto-trip/turn-1"},
+    {"day": 3, "kind": "working", "level": "task", "text": "Budget: 150 euros per night.", "source": "porto-trip/turn-2"},
+    {"day": 3, "kind": "working", "level": "task", "text": "Waiting for Alice to confirm the hotel area.", "source": "porto-trip/turn-3"}
+  ],
+  "queries": [
+    {
+      "query": "Find a hotel in Porto like the one we booked last time.",
+      "required": ["Trip dates: 3 to 6 November.", "Budget: 150 euros per night.", "Booked the Lisbon hotel near the river", "Alice prefers a hotel near a river."],
+      "stale": []
+    },
+    {
+      "query": "What should Alice eat at the hotel restaurant? Is she vegetarian?",
+      "required": ["Alice eats fish but no meat"],
+      "stale": ["Alice is vegetarian."]
+    }
+  ],
+  "pooled_limit": 4
+}

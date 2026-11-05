@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "judge/archive-vs-delete": {
+      "reason": "The actual output perfectly aligns with the evaluation steps by directly addressing the core issues presented in the input. It successfully identifies the main problem by asking for the difference between `tracker archive` and `tracker delete` and the restorability of archived tasks, ensuring strict adherence to the original scope without any extraneous information.",
+      "score": 1.0
+    },
+    "judge/calendar-export": {
+      "reason": "The actual output successfully adheres to all evaluation steps by accurately summarizing the core feature request. It strictly adheres to the scope by retaining only the essential details\u2014exporting tasks with due dates to an .ics file\u2014and contains no extraneous information.",
+      "score": 1.0
+    },
+    "judge/calibration": {
+      "reason": "The actual output fails all evaluation steps because it introduces entirely new information (slowness on Windows when the network drops) that is not present in the input. It completely misses the core issue, which is the `tracker sync` crashing with a `KeyError: 'due'` when a task lacks a due date.",
+      "score": 0.0
+    },
+    "judge/color-in-pipes": {
+      "reason": "The actual output successfully identifies the core issue by stating that the tracker list output contains ANSI color codes even when not in a terminal. This adheres strictly to the scope of the input and contains no extraneous information.",
+      "score": 1.0
+    },
+    "judge/import-drops-tasks": {
+      "reason": "The actual output successfully identifies the core issue by stating that the import fails to process all 500 rows and results in silent dropping of tasks. It adheres strictly to the scope by omitting extraneous details like the specific count of 312 tasks and the initial report of success.",
+      "score": 1.0
+    },
+    "judge/json-output": {
+      "reason": "The response successfully identifies the core issue by proposing the exact solution requested: adding the `--json` flag to the `tracker list` command. It adheres strictly to the scope of the input and contains no extraneous information.",
+      "score": 1.0
+    },
+    "judge/missing-config-docs": {
+      "reason": "The actual output successfully identifies the core issue by stating that the docs are missing allowed keys in config.toml. It adheres strictly to the scope of the input and contains no extraneous information, demonstrating strong alignment with all evaluation steps.",
+      "score": 1.0
+    },
+    "judge/readme-wrong-flag": {
+      "reason": "The response successfully identifies the core issue\u2014the incorrect flag usage in the README\u2014and adheres strictly to the scope of the input. It is concise and contains no extraneous information, fulfilling all evaluation criteria.",
+      "score": 1.0
+    },
+    "judge/recurring-tasks": {
+      "reason": "The actual output successfully identifies the core issue by stating the required feature: adding recurring task functionality. It adheres strictly to the scope of the input by focusing only on the requested functionality rather than including extraneous details.",
+      "score": 1.0
+    },
+    "judge/sync-crash-no-due-date": {
+      "reason": "The Actual Output successfully identifies the main problem, which is the `tracker sync` crash with a KeyError: 'due' when a task has no due date. It adheres strictly to the scope by excluding extraneous details such as the traceback location or the version upgrade information.",
+      "score": 1.0
+    },
+    "judge/token-in-debug-log": {
+      "reason": "The actual output accurately identifies the core issue by stating that running `tracker push --debug` leaks the API token in both the terminal and the debug log. It adheres strictly to the scope of the input by omitting extraneous details like the specific log file path and the consequence of the leak.",
+      "score": 1.0
+    },
+    "judge/two-machines": {
+      "reason": "The actual output successfully identifies the core issue by focusing solely on the safety of running `tracker sync` simultaneously, which aligns perfectly with the input's main concern. It adheres strictly to the scope by omitting the alternative suggestion about waiting for one laptop to finish, demonstrating strong adherence to the evaluation steps.",
+      "score": 1.0
+    },
+    "judge/where-is-data": {
+      "reason": "The actual output perfectly aligns with all evaluation steps. It successfully identifies and retains the main problem by accurately restating the core question from the input (\"Where does tracker store its database on disk?\"). It adheres strictly to the scope and contains no extraneous information.",
+      "score": 1.0
+    },
+    "triage/archive-vs-delete": "{\n  \"label\": \"question\",\n  \"priority\": \"p2\",\n  \"summary\": \"Difference between `tracker archive` and `tracker delete`, and if archived tasks can be restored.\"\n}",
+    "triage/calendar-export": "{\n  \"label\": \"feature\",\n  \"priority\": \"p2\",\n  \"summary\": \"Feature request to export tasks with due dates to an .ics file.\"\n}",
+    "triage/color-in-pipes": "{\n  \"label\": \"bug\",\n  \"priority\": \"p1\",\n  \"summary\": \"tracker list output contains ANSI color codes even when not in a terminal.\"\n}",
+    "triage/import-drops-tasks": "{\n  \"label\": \"bug\",\n  \"priority\": \"p1\",\n  \"summary\": \"tracker import tasks.csv fails to import all 500 rows, dropping tasks silently.\"\n}",
+    "triage/json-output": "{\n  \"label\": \"feature\",\n  \"priority\": \"p2\",\n  \"summary\": \"Add --json flag to `tracker list` for JSON output.\"\n}",
+    "triage/missing-config-docs": "{\n  \"label\": \"docs\",\n  \"priority\": \"p2\",\n  \"summary\": \"Docs missing allowed keys in config.toml.\"\n}",
+    "triage/readme-wrong-flag": "{\n  \"label\": \"docs\",\n  \"priority\": \"p2\",\n  \"summary\": \"README uses incorrect flag for tracker init command.\"\n}",
+    "triage/recurring-tasks": "{\n  \"label\": \"feature\",\n  \"priority\": \"p2\",\n  \"summary\": \"Add recurring task functionality to `tracker add` command.\"\n}",
+    "triage/sync-crash-no-due-date": "{\n  \"label\": \"bug\",\n  \"priority\": \"p1\",\n  \"summary\": \"`tracker sync` crashes with KeyError: 'due' when a task has no due date.\"\n}",
+    "triage/token-in-debug-log": "{\n  \"label\": \"bug\",\n  \"priority\": \"p0\",\n  \"summary\": \"tracker push --debug leaks API token in terminal and debug log.\"\n}",
+    "triage/two-machines": "{\n  \"label\": \"question\",\n  \"priority\": \"p2\",\n  \"summary\": \"Is it safe to run `tracker sync` from two laptops against the same remote simultaneously?\"\n}",
+    "triage/where-is-data": "{\n  \"label\": \"question\",\n  \"priority\": \"p2\",\n  \"summary\": \"Where does tracker store its database on disk?\"\n}"
+  },
+  "key": {
+    "dataset": "issue-triage@1",
+    "dataset_sha": "e12a5e739a1e",
+    "judge_model": "gemma4:e2b",
+    "model": "gemma4:e2b",
+    "prompt_sha": "01859a9d3df1",
+    "prompt_version": "v1"
+  }
+}

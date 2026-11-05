@@ -1,0 +1,11 @@
+Mode: fresh hosted Gemini recording
+
+$ change-rename.txt | reviser sees rules=True
+PASSED after 1 revision(s): Deprecate `docuctl build` `--out` for `--output-dir`, `DOCUCTL_OUTPUT_DIR`
+
+$ change-config.txt | reviser sees rules=True
+STOPPED at the limit of 3 revisions. Last entry: Change `docuctl migrate`, `site.base_url`, `site.default_language`, etc config
+Still failing: name `site.search_index_path` in backticks; name `site.syntax_highlight_theme` in backticks; name `site.navigation_depth` in backticks
+
+$ change-rename.txt | reviser sees rules=False
+PASSED after 1 revision(s): Deprecate `docuctl build` `--out` for `--output-dir` and `DOCUCTL_OUTPUT_DIR`

@@ -1,0 +1,5 @@
+[blocking lookup] calls=['search_docs'] said='The Live API connection closes after about ten minutes, but you can enable session resumption to continue.'
+[streaming link check, then stop] calls=['check_links', 'stop_streaming'] said="I've started checking the links in the documentation pages and will let you know once it's complete."
+[scheduled export on current Live model] calls=['export_page_index', 'search_docs'] said='The input sample rate is 16 kHz, and the page index export has been started.The page index export has successfully finished processing.'
+[tool raises an exception] calls=[] said='' error=FileNotFoundError: [Errno 2] No such file or directory: 'docs/deploy.md'
+[raw Live API, gemini-3.8-live] ['tool_call', 'turn_complete']

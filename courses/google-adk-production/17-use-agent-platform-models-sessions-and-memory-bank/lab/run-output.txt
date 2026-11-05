@@ -1,0 +1,37 @@
+# failure model_region
+ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher model `projects/vertex-ai-experminent/locations/us-central1/publishers/google/models/gemini-3.8-flash` was not found or your project does not have access to it. Ensure you are using a valid model name and that the model is available in the specified region. For more information, see: https://docs.cloud.google.com/gemini-enterprise-agent-
+
+# failure app_name
+ValueError: App name docs_helper is not valid. It should either be the full ReasoningEngine resource name, or the reasoning engine id.
+
+# conversation 1 · session 2358123034767785984
+> I run docuctl 1.x. How do I undo release r42 in production?
+call   read_page {"page": "rollback"}
+result read_page ["page", "text"]
+answer In docuctl 1.x, use `docuctl release revert`:
+
+```bash
+docuctl release revert r42
+```
+
+Note that database migrations are not rolled back automatically; if release r42 ran a migration, you must write and deploy a new migration to reverse it.
+
+# ingest returned in 0.02 s; search right after: 0 memories
+# searchable after about 8 s:
+  - I run docuctl 1.x.
+
+# conversation 2 · session 6234596414026940416
+> How do I undo the last production release?
+call   load_memory {"query": "docuctl version"}
+call   read_page {"page": "rollback"}
+result load_memory {"result": {"memories": [{"content": {"parts": [{"text": "I run docuctl 1.x."}], "role": "user"}, "custom_metadata": {}, "author": "user", "timestamp": "2026-10-26T02:28:51.465372+00:00"}]}}
+result read_page ["page", "text"]
+answer Since you are using docuctl 1.x, use:
+
+```bash
+docuctl release revert <release>
+```
+
+Specify the release ID you want to revert to. Note that this points traffic back to that release without rebuilding, but database migrations are not rolled back automatically—any schema changes require a new reversing migration.
+
+# list_sessions for dana: 2 sessions

@@ -1,0 +1,458 @@
+{
+ "model": "gemini-3.8-flash",
+ "skills": [
+  "docs-page-review",
+  "release-notes"
+ ],
+ "runs": {
+  "release": {
+   "question": "Write the release notes for docuctl 2.4.0.",
+   "transcript": "call   list_skills {}\nresult list_skills {'result': '<available_skills>\\n<skill>\\n<name>\\ndocs-page-review\\n</name>\\n<description>\\nReview one docuctl documentation page against the docs checklist. Use\ncall   load_skill {'skill_name': 'release-notes'}\nresult load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\\n\\n1. Call `list_merged_prs` with the version the user named.\\n2. Run `scripts/grou\ncall   list_merged_prs {'version': '2.4.0'}\nresult list_merged_prs {'version': '2.4.0', 'pull_requests': [{'number': 212, 'title': 'feat: add --dry-run to rollback'}, {'number': 215, 'title': 'fix: keep the token cache after a \ncall   run_skill_script {'positional_args': ['feat: add --dry-run to rollback', 'fix: keep the token cache after a failed login', 'feat!: remove the deprecated release revert command', 'docs: document rollback --to', 'ci: cache the Go toolchain'], 'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py'}\nresult run_skill_script {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'stdout': '{\"breaking\": [\"remove the deprecated release revert command\"], \"features\": [\ncall   load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md'}\nresult load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md', 'content': '# Release notes style\\n\\n- Start with `## docuctl <version>`.\\n- Sections, in th\nanswer ## docuctl 2.4.0\n\n### Breaking changes\n- Remove the deprecated release revert command (#218)\n\n### Features\n- Add --dry-run to rollback (#212)\n\n### Fixes\n- Keep the token cache after a failed login (#215)\n\n### Docs\n- Document rollback --to (#220)",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_3063392",
+        "args": {},
+        "name": "list_skills"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2840178",
+        "args": {
+         "skill_name": "release-notes"
+        },
+        "name": "load_skill"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1556644",
+        "args": {
+         "version": "2.4.0"
+        },
+        "name": "list_merged_prs"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1499553",
+        "args": {
+         "positional_args": [
+          "feat: add --dry-run to rollback",
+          "fix: keep the token cache after a failed login",
+          "feat!: remove the deprecated release revert command",
+          "docs: document rollback --to",
+          "ci: cache the Go toolchain"
+         ],
+         "skill_name": "release-notes",
+         "file_path": "scripts/group_changes.py"
+        },
+        "name": "run_skill_script"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1554149",
+        "args": {
+         "skill_name": "release-notes",
+         "file_path": "references/style.md"
+        },
+        "name": "load_skill_resource"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "## docuctl 2.4.0\n\n### Breaking changes\n- Remove the deprecated release revert command (#218)\n\n### Features\n- Add --dry-run to rollback (#212)\n\n### Fixes\n- Keep the token cache after a failed login (#215)\n\n### Docs\n- Document rollback --to (#220)"
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "offered_per_request": [
+    [
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ]
+   ],
+   "system_instruction": "You help developers keep the docuctl documentation and releases correct. Read pages with read_page. Say plainly when you cannot do something with your tools.\n\nYou are an agent. Your internal name is \"docs_assistant\".\n\nYou can use specialized 'skills' to help you with complex tasks. You MUST use the skill tools to interact with these skills.\n\nSkills are folders of instructions and resources that extend your capabilities for specialized tasks. Each skill folder contains:\n- **SKILL.md** (required): The main instruction file with skill metadata and detailed markdown instructions.\n- **references/** (Optional): Additional documentation or examples for skill usage.\n- **assets/** (Optional): Templates, scripts or other resources used by the skill.\n- **scripts/** (Optional): Executable scripts that can be run via bash.\n\nThis is very important:\n\n1. If a skill seems relevant to the current user query, you MUST use the `load_skill` tool with `skill_name=\"<SKILL_NAME>\"` to read its full instructions before proceeding.\n2. Once you have read the instructions, follow them exactly as documented before replying to the user. For example, If the instruction lists multiple steps, please make sure you complete all of them in order.\n3. The `load_skill_resource` tool is for viewing files within a skill's directory (e.g., `references/*`, `assets/*`, `scripts/*`). It is ONLY for skill-bundled files — do NOT use it to access documents or files provided by the user at runtime. Do NOT use other tools to access skill files.\n4. Use `run_skill_script` to run scripts from a skill's `scripts/` directory. Use `load_skill_resource` to view script content first if needed.\n5. If `load_skill_resource` returns any error, do not retry any path. Report the error to the user and stop.\n6. If `run_skill_script` returns an error (for example `SCRIPT_NOT_FOUND`), do not retry the same script or guess a different script path. Report the error to the user and stop.\n7. Loading a skill only retrieves its instructions; it does NOT complete your turn. After a `load_skill` call returns, continue in the SAME turn: call whatever tools the skill's steps require (search, data retrieval, render), then write your reply. Never end your turn with an empty response right after loading a skill.\n"
+  },
+  "eager": {
+   "question": "Write the release notes for docuctl 2.4.0.",
+   "transcript": "call   load_skill {'skill_name': 'release-notes'}\nresult load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\\n\\n1. Call `list_merged_prs` with the version the user named.\\n2. Run `scripts/grou\ncall   list_merged_prs {'version': '2.4.0'}\nresult list_merged_prs {'version': '2.4.0', 'pull_requests': [{'number': 212, 'title': 'feat: add --dry-run to rollback'}, {'number': 215, 'title': 'fix: keep the token cache after a \ncall   run_skill_script {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'positional_args': ['feat: add --dry-run to rollback', 'fix: keep the token cache after a failed login', 'feat!: remove the deprecated release revert command', 'docs: document rollback --to', 'ci: cache the Go toolchain']}\nresult run_skill_script {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'stdout': '{\"breaking\": [\"remove the deprecated release revert command\"], \"features\": [\ncall   load_skill_resource {'file_path': 'references/style.md', 'skill_name': 'release-notes'}\nresult load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md', 'content': '# Release notes style\\n\\n- Start with `## docuctl <version>`.\\n- Sections, in th\nanswer ## docuctl 2.4.0\n\n### Breaking changes\n- Remove the deprecated release revert command (#218)\n\n### Features\n- Add --dry-run to rollback (#212)\n\n### Fixes\n- Keep the token cache after a failed login (#215)\n\n### Docs\n- Document rollback --to (#220)",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1261102",
+        "args": {
+         "skill_name": "release-notes"
+        },
+        "name": "load_skill"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1604192",
+        "args": {
+         "version": "2.4.0"
+        },
+        "name": "list_merged_prs"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2504323",
+        "args": {
+         "skill_name": "release-notes",
+         "file_path": "scripts/group_changes.py",
+         "positional_args": [
+          "feat: add --dry-run to rollback",
+          "fix: keep the token cache after a failed login",
+          "feat!: remove the deprecated release revert command",
+          "docs: document rollback --to",
+          "ci: cache the Go toolchain"
+         ]
+        },
+        "name": "run_skill_script"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2564263",
+        "args": {
+         "file_path": "references/style.md",
+         "skill_name": "release-notes"
+        },
+        "name": "load_skill_resource"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "## docuctl 2.4.0\n\n### Breaking changes\n- Remove the deprecated release revert command (#218)\n\n### Features\n- Add --dry-run to rollback (#212)\n\n### Fixes\n- Keep the token cache after a failed login (#215)\n\n### Docs\n- Document rollback --to (#220)"
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "offered_per_request": [
+    [
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ]
+   ],
+   "system_instruction": "You help developers keep the docuctl documentation and releases correct. Read pages with read_page. Say plainly when you cannot do something with your tools.\n\nYou are an agent. Your internal name is \"docs_assistant\".\n\nYou can use specialized 'skills' to help you with complex tasks. You MUST use the skill tools to interact with these skills.\n\nSkills are folders of instructions and resources that extend your capabilities for specialized tasks. Each skill folder contains:\n- **SKILL.md** (required): The main instruction file with skill metadata and detailed markdown instructions.\n- **references/** (Optional): Additional documentation or examples for skill usage.\n- **assets/** (Optional): Templates, scripts or other resources used by the skill.\n- **scripts/** (Optional): Executable scripts that can be run via bash.\n\nThis is very important:\n\n1. If a skill seems relevant to the current user query, you MUST use the `load_skill` tool with `skill_name=\"<SKILL_NAME>\"` to read its full instructions before proceeding.\n2. Once you have read the instructions, follow them exactly as documented before replying to the user. For example, If the instruction lists multiple steps, please make sure you complete all of them in order.\n3. The `load_skill_resource` tool is for viewing files within a skill's directory (e.g., `references/*`, `assets/*`, `scripts/*`). It is ONLY for skill-bundled files — do NOT use it to access documents or files provided by the user at runtime. Do NOT use other tools to access skill files.\n4. Use `run_skill_script` to run scripts from a skill's `scripts/` directory. Use `load_skill_resource` to view script content first if needed.\n5. If `load_skill_resource` returns any error, do not retry any path. Report the error to the user and stop.\n6. If `run_skill_script` returns an error (for example `SCRIPT_NOT_FOUND`), do not retry the same script or guess a different script path. Report the error to the user and stop.\n7. Loading a skill only retrieves its instructions; it does NOT complete your turn. After a `load_skill` call returns, continue in the SAME turn: call whatever tools the skill's steps require (search, data retrieval, render), then write your reply. Never end your turn with an empty response right after loading a skill.\n\n\nNote: The following tools are NOT available: `list_skills`. Do NOT call them. After loading a skill (if available), apply its instructions in context and write your final reply as normal model text. Never wrap the user-facing answer inside a tool call.\n\n\n<available_skills>\n<skill>\n<name>\ndocs-page-review\n</name>\n<description>\nReview one docuctl documentation page against the docs checklist. Use when someone asks to review, check or proofread a docs page.\n</description>\n</skill>\n<skill>\n<name>\nrelease-notes\n</name>\n<description>\nWrite the release notes for a docuctl version from its merged pull requests. Use when someone asks for release notes, a changelog entry or &quot;what changed&quot; in a version.\n</description>\n</skill>\n</available_skills>"
+  },
+  "unknown-version": {
+   "question": "Write the release notes for docuctl 9.9.0.",
+   "transcript": "call   list_skills {}\nresult list_skills {'result': '<available_skills>\\n<skill>\\n<name>\\ndocs-page-review\\n</name>\\n<description>\\nReview one docuctl documentation page against the docs checklist. Use\ncall   load_skill {'skill_name': 'release-notes'}\nresult load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\\n\\n1. Call `list_merged_prs` with the version the user named.\\n2. Run `scripts/grou\ncall   list_merged_prs {'version': '9.9.0'}\nresult list_merged_prs {'error': \"No release '9.9.0'. Known: 2.4.0.\"}\nanswer I cannot write release notes for docuctl 9.9.0 because `list_merged_prs` returned the following error:\n\n> No release '9.9.0'. Known: 2.4.0.",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1273651",
+        "args": {},
+        "name": "list_skills"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1278530",
+        "args": {
+         "skill_name": "release-notes"
+        },
+        "name": "load_skill"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_447640",
+        "args": {
+         "version": "9.9.0"
+        },
+        "name": "list_merged_prs"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "I cannot write release notes for docuctl 9.9.0 because `list_merged_prs` returned the following error:\n\n> No release '9.9.0'. Known: 2.4.0."
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "offered_per_request": [
+    [
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page",
+     "run_skill_script"
+    ]
+   ],
+   "system_instruction": "You help developers keep the docuctl documentation and releases correct. Read pages with read_page. Say plainly when you cannot do something with your tools.\n\nYou are an agent. Your internal name is \"docs_assistant\".\n\nYou can use specialized 'skills' to help you with complex tasks. You MUST use the skill tools to interact with these skills.\n\nSkills are folders of instructions and resources that extend your capabilities for specialized tasks. Each skill folder contains:\n- **SKILL.md** (required): The main instruction file with skill metadata and detailed markdown instructions.\n- **references/** (Optional): Additional documentation or examples for skill usage.\n- **assets/** (Optional): Templates, scripts or other resources used by the skill.\n- **scripts/** (Optional): Executable scripts that can be run via bash.\n\nThis is very important:\n\n1. If a skill seems relevant to the current user query, you MUST use the `load_skill` tool with `skill_name=\"<SKILL_NAME>\"` to read its full instructions before proceeding.\n2. Once you have read the instructions, follow them exactly as documented before replying to the user. For example, If the instruction lists multiple steps, please make sure you complete all of them in order.\n3. The `load_skill_resource` tool is for viewing files within a skill's directory (e.g., `references/*`, `assets/*`, `scripts/*`). It is ONLY for skill-bundled files — do NOT use it to access documents or files provided by the user at runtime. Do NOT use other tools to access skill files.\n4. Use `run_skill_script` to run scripts from a skill's `scripts/` directory. Use `load_skill_resource` to view script content first if needed.\n5. If `load_skill_resource` returns any error, do not retry any path. Report the error to the user and stop.\n6. If `run_skill_script` returns an error (for example `SCRIPT_NOT_FOUND`), do not retry the same script or guess a different script path. Report the error to the user and stop.\n7. Loading a skill only retrieves its instructions; it does NOT complete your turn. After a `load_skill` call returns, continue in the SAME turn: call whatever tools the skill's steps require (search, data retrieval, render), then write your reply. Never end your turn with an empty response right after loading a skill.\n"
+  },
+  "no-executor": {
+   "question": "Write the release notes for docuctl 2.4.0.",
+   "transcript": "call   list_skills {}\nresult list_skills {'result': '<available_skills>\\n<skill>\\n<name>\\ndocs-page-review\\n</name>\\n<description>\\nReview one docuctl documentation page against the docs checklist. Use\ncall   load_skill {'skill_name': 'release-notes'}\nresult load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\\n\\n1. Call `list_merged_prs` with the version the user named.\\n2. Run `scripts/grou\ncall   list_merged_prs {'version': '2.4.0'}\ncall   load_skill_resource {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py'}\ncall   load_skill_resource {'file_path': 'references/style.md', 'skill_name': 'release-notes'}\nresult list_merged_prs {'version': '2.4.0', 'pull_requests': [{'number': 212, 'title': 'feat: add --dry-run to rollback'}, {'number': 215, 'title': 'fix: keep the token cache after a \nresult load_skill_resource {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'content': '\"\"\"Group pull request titles by Conventional Commits type and print JSON.\"\"\nresult load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md', 'content': '# Release notes style\\n\\n- Start with `## docuctl <version>`.\\n- Sections, in th\nanswer ## docuctl 2.4.0\n\n### Breaking changes\n\n- Remove the deprecated release revert command (#218)\n\n### Features\n\n- Add --dry-run to rollback (#212)\n\n### Fixes\n\n- Keep the token cache after a failed login (#215)\n\n### Docs\n\n- Document rollback --to (#220)",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_313653",
+        "args": {},
+        "name": "list_skills"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1176521",
+        "args": {
+         "skill_name": "release-notes"
+        },
+        "name": "load_skill"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1919112",
+        "args": {
+         "version": "2.4.0"
+        },
+        "name": "list_merged_prs"
+       }
+      },
+      {
+       "function_call": {
+        "id": "call_1919113",
+        "args": {
+         "skill_name": "release-notes",
+         "file_path": "scripts/group_changes.py"
+        },
+        "name": "load_skill_resource"
+       }
+      },
+      {
+       "function_call": {
+        "id": "call_1919114",
+        "args": {
+         "file_path": "references/style.md",
+         "skill_name": "release-notes"
+        },
+        "name": "load_skill_resource"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "## docuctl 2.4.0\n\n### Breaking changes\n\n- Remove the deprecated release revert command (#218)\n\n### Features\n\n- Add --dry-run to rollback (#212)\n\n### Fixes\n\n- Keep the token cache after a failed login (#215)\n\n### Docs\n\n- Document rollback --to (#220)"
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "offered_per_request": [
+    [
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page"
+    ],
+    [
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page"
+    ],
+    [
+     "list_merged_prs",
+     "list_skills",
+     "load_skill",
+     "load_skill_resource",
+     "read_page"
+    ]
+   ],
+   "system_instruction": "You help developers keep the docuctl documentation and releases correct. Read pages with read_page. Say plainly when you cannot do something with your tools.\n\nYou are an agent. Your internal name is \"docs_assistant\".\n\nYou can use specialized 'skills' to help you with complex tasks. You MUST use the skill tools to interact with these skills.\n\nSkills are folders of instructions and resources that extend your capabilities for specialized tasks. Each skill folder contains:\n- **SKILL.md** (required): The main instruction file with skill metadata and detailed markdown instructions.\n- **references/** (Optional): Additional documentation or examples for skill usage.\n- **assets/** (Optional): Templates, scripts or other resources used by the skill.\n- **scripts/** (Optional): Scripts bundled with the skill. You cannot run them; use `load_skill_resource` to read one and follow it yourself.\n\nThis is very important:\n\n1. If a skill seems relevant to the current user query, you MUST use the `load_skill` tool with `skill_name=\"<SKILL_NAME>\"` to read its full instructions before proceeding.\n2. Once you have read the instructions, follow them exactly as documented before replying to the user. For example, If the instruction lists multiple steps, please make sure you complete all of them in order.\n3. The `load_skill_resource` tool is for viewing files within a skill's directory (e.g., `references/*`, `assets/*`, `scripts/*`). It is ONLY for skill-bundled files — do NOT use it to access documents or files provided by the user at runtime. Do NOT use other tools to access skill files.\n4. If `load_skill_resource` returns any error, do not retry any path. Report the error to the user and stop.\n5. Loading a skill only retrieves its instructions; it does NOT complete your turn. After a `load_skill` call returns, continue in the SAME turn: call whatever tools the skill's steps require (search, data retrieval, render), then write your reply. Never end your turn with an empty response right after loading a skill.\n"
+  }
+ },
+ "failures": {
+  "name_mismatch": "ValueError: Skill name 'release-notes' does not match directory name 'release_notes'."
+ }
+}

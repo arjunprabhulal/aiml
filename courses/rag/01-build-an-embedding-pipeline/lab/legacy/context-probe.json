@@ -1,0 +1,20 @@
+{
+  "model": "qwen3-embedding:0.6b",
+  "model_digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+  "context_length": 32768,
+  "truncate": false,
+  "inputs": [
+    {
+      "passages_joined": 161,
+      "recorded_tokens_of_those_passages": 24989,
+      "outcome": "embedded",
+      "server_tokens": 24885
+    },
+    {
+      "passages_joined": 258,
+      "recorded_tokens_of_those_passages": 40106,
+      "outcome": "refused",
+      "error": "/api/embed returned HTTP 400: {\"error\":\"the input length exceeds the context length\"}"
+    }
+  ]
+}

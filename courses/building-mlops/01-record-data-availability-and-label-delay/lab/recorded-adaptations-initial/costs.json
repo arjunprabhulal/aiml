@@ -1,0 +1,35 @@
+{
+  "split": "validation",
+  "rows": 48,
+  "costs": {
+    "false_positive": 1.0,
+    "false_negative": 3.0
+  },
+  "units": "illustrative decision-cost units, not measured money",
+  "candidates": [
+    {
+      "threshold": 0.3,
+      "correct": 28,
+      "false_positive": 18,
+      "false_negative": 2,
+      "total_cost": 24.0
+    },
+    {
+      "threshold": 0.5,
+      "correct": 29,
+      "false_positive": 8,
+      "false_negative": 11,
+      "total_cost": 41.0
+    },
+    {
+      "threshold": 0.7,
+      "correct": 27,
+      "false_positive": 5,
+      "false_negative": 16,
+      "total_cost": 53.0
+    }
+  ],
+  "selected_for_inspection": 0.3,
+  "model_threshold_unchanged": 0.5,
+  "final_test_used": false
+}

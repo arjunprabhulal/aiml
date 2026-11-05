@@ -1,0 +1,2375 @@
+{
+  "mode": "saved local-function evaluation outcomes; scenario cost analysis only",
+  "cost_policy": {
+    "id": "development-scenario-cost-v1",
+    "unit": "declared scenario penalty points; not currency or observed business loss",
+    "cost_by_boundary": {
+      "response-contract": 1,
+      "source-selection": 8,
+      "task-result": 8,
+      "action-policy": 25,
+      "authorization": 100,
+      "input-contract": 3
+    },
+    "incomplete_interval": [
+      0,
+      100
+    ],
+    "slices": [
+      {
+        "id": "all",
+        "where": {}
+      },
+      {
+        "id": "production",
+        "where": {
+          "environment": "production"
+        }
+      },
+      {
+        "id": "staging",
+        "where": {
+          "environment": "staging"
+        }
+      },
+      {
+        "id": "reader-production-proposal",
+        "where": {
+          "role": "reader",
+          "environment": "production",
+          "operation": "propose_rollback"
+        }
+      },
+      {
+        "id": "maintainer-production-proposal",
+        "where": {
+          "role": "maintainer",
+          "environment": "production",
+          "operation": "propose_rollback"
+        }
+      },
+      {
+        "id": "version-2",
+        "where": {
+          "version": "2"
+        }
+      },
+      {
+        "id": "version-3",
+        "where": {
+          "version": "3"
+        }
+      },
+      {
+        "id": "version-9",
+        "where": {
+          "version": "9"
+        }
+      },
+      {
+        "id": "version-4-empty",
+        "where": {
+          "version": "4"
+        }
+      }
+    ]
+  },
+  "case_set_sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f",
+  "reports": {
+    "none": {
+      "overall": {
+        "cases": 12,
+        "pass": 12,
+        "fail": 0,
+        "incomplete": 0,
+        "pass_fraction": 1.0,
+        "completion_fraction": 1.0,
+        "known_cost": 0.0,
+        "total_cost": 0.0,
+        "cost_interval": [
+          0.0,
+          0.0
+        ],
+        "cost_per_case": 0.0
+      },
+      "slices": {
+        "all": {
+          "where": {},
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 12,
+          "pass": 12,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "production": {
+          "where": {
+            "environment": "production"
+          },
+          "case_ids": [
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 9,
+          "pass": 9,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "staging": {
+          "where": {
+            "environment": "staging"
+          },
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "reader-production-proposal": {
+          "where": {
+            "role": "reader",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "reader-proposal"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "maintainer-production-proposal": {
+          "where": {
+            "role": "maintainer",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "maintainer-proposal",
+            "invalid-release"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-2": {
+          "where": {
+            "version": "2"
+          },
+          "case_ids": [
+            "v2-staging-lookup"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-3": {
+          "where": {
+            "version": "3"
+          },
+          "case_ids": [
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 10,
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-9": {
+          "where": {
+            "version": "9"
+          },
+          "case_ids": [
+            "unknown-version"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-4-empty": {
+          "where": {
+            "version": "4"
+          },
+          "case_ids": [],
+          "cases": 0,
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": null,
+          "completion_fraction": null,
+          "known_cost": null,
+          "total_cost": null,
+          "cost_interval": null,
+          "cost_per_case": null
+        }
+      },
+      "ledger": [
+        {
+          "id": "v2-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "2"
+          }
+        },
+        {
+          "id": "v3-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "v3-production-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "reader-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-role",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "administrator",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-version",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "9"
+          }
+        },
+        {
+          "id": "conflicting-source",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-environment",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "prod",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "invalid-release",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unsupported-operation",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "execute_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        }
+      ]
+    },
+    "source": {
+      "overall": {
+        "cases": 12,
+        "pass": 11,
+        "fail": 1,
+        "incomplete": 0,
+        "pass_fraction": 0.9166666666666666,
+        "completion_fraction": 1.0,
+        "known_cost": 8.0,
+        "total_cost": 8.0,
+        "cost_interval": [
+          8.0,
+          8.0
+        ],
+        "cost_per_case": 0.6666666666666666
+      },
+      "slices": {
+        "all": {
+          "where": {},
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9166666666666666,
+          "completion_fraction": 1.0,
+          "known_cost": 8.0,
+          "total_cost": 8.0,
+          "cost_interval": [
+            8.0,
+            8.0
+          ],
+          "cost_per_case": 0.6666666666666666
+        },
+        "production": {
+          "where": {
+            "environment": "production"
+          },
+          "case_ids": [
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 9,
+          "pass": 8,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.8888888888888888,
+          "completion_fraction": 1.0,
+          "known_cost": 8.0,
+          "total_cost": 8.0,
+          "cost_interval": [
+            8.0,
+            8.0
+          ],
+          "cost_per_case": 0.8888888888888888
+        },
+        "staging": {
+          "where": {
+            "environment": "staging"
+          },
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "reader-production-proposal": {
+          "where": {
+            "role": "reader",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "reader-proposal"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "maintainer-production-proposal": {
+          "where": {
+            "role": "maintainer",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "maintainer-proposal",
+            "invalid-release"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-2": {
+          "where": {
+            "version": "2"
+          },
+          "case_ids": [
+            "v2-staging-lookup"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-3": {
+          "where": {
+            "version": "3"
+          },
+          "case_ids": [
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 10,
+          "pass": 9,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9,
+          "completion_fraction": 1.0,
+          "known_cost": 8.0,
+          "total_cost": 8.0,
+          "cost_interval": [
+            8.0,
+            8.0
+          ],
+          "cost_per_case": 0.8
+        },
+        "version-9": {
+          "where": {
+            "version": "9"
+          },
+          "case_ids": [
+            "unknown-version"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-4-empty": {
+          "where": {
+            "version": "4"
+          },
+          "case_ids": [],
+          "cases": 0,
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": null,
+          "completion_fraction": null,
+          "known_cost": null,
+          "total_cost": null,
+          "cost_interval": null,
+          "cost_per_case": null
+        }
+      },
+      "ledger": [
+        {
+          "id": "v2-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "2"
+          }
+        },
+        {
+          "id": "v3-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "v3-production-lookup",
+          "verdict": "fail",
+          "boundary": "source-selection",
+          "cost": 8,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "reader-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-role",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "administrator",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-version",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "9"
+          }
+        },
+        {
+          "id": "conflicting-source",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-environment",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "prod",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "invalid-release",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unsupported-operation",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "execute_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        }
+      ]
+    },
+    "permission": {
+      "overall": {
+        "cases": 12,
+        "pass": 11,
+        "fail": 1,
+        "incomplete": 0,
+        "pass_fraction": 0.9166666666666666,
+        "completion_fraction": 1.0,
+        "known_cost": 100.0,
+        "total_cost": 100.0,
+        "cost_interval": [
+          100.0,
+          100.0
+        ],
+        "cost_per_case": 8.333333333333334
+      },
+      "slices": {
+        "all": {
+          "where": {},
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9166666666666666,
+          "completion_fraction": 1.0,
+          "known_cost": 100.0,
+          "total_cost": 100.0,
+          "cost_interval": [
+            100.0,
+            100.0
+          ],
+          "cost_per_case": 8.333333333333334
+        },
+        "production": {
+          "where": {
+            "environment": "production"
+          },
+          "case_ids": [
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 9,
+          "pass": 8,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.8888888888888888,
+          "completion_fraction": 1.0,
+          "known_cost": 100.0,
+          "total_cost": 100.0,
+          "cost_interval": [
+            100.0,
+            100.0
+          ],
+          "cost_per_case": 11.11111111111111
+        },
+        "staging": {
+          "where": {
+            "environment": "staging"
+          },
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "reader-production-proposal": {
+          "where": {
+            "role": "reader",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "reader-proposal"
+          ],
+          "cases": 1,
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.0,
+          "completion_fraction": 1.0,
+          "known_cost": 100.0,
+          "total_cost": 100.0,
+          "cost_interval": [
+            100.0,
+            100.0
+          ],
+          "cost_per_case": 100.0
+        },
+        "maintainer-production-proposal": {
+          "where": {
+            "role": "maintainer",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "maintainer-proposal",
+            "invalid-release"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-2": {
+          "where": {
+            "version": "2"
+          },
+          "case_ids": [
+            "v2-staging-lookup"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-3": {
+          "where": {
+            "version": "3"
+          },
+          "case_ids": [
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 10,
+          "pass": 9,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9,
+          "completion_fraction": 1.0,
+          "known_cost": 100.0,
+          "total_cost": 100.0,
+          "cost_interval": [
+            100.0,
+            100.0
+          ],
+          "cost_per_case": 10.0
+        },
+        "version-9": {
+          "where": {
+            "version": "9"
+          },
+          "case_ids": [
+            "unknown-version"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-4-empty": {
+          "where": {
+            "version": "4"
+          },
+          "case_ids": [],
+          "cases": 0,
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": null,
+          "completion_fraction": null,
+          "known_cost": null,
+          "total_cost": null,
+          "cost_interval": null,
+          "cost_per_case": null
+        }
+      },
+      "ledger": [
+        {
+          "id": "v2-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "2"
+          }
+        },
+        {
+          "id": "v3-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "v3-production-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "reader-proposal",
+          "verdict": "fail",
+          "boundary": "authorization",
+          "cost": 100,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-role",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "administrator",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-version",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "9"
+          }
+        },
+        {
+          "id": "conflicting-source",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-environment",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "prod",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "invalid-release",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unsupported-operation",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "execute_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        }
+      ]
+    },
+    "approval": {
+      "overall": {
+        "cases": 12,
+        "pass": 11,
+        "fail": 1,
+        "incomplete": 0,
+        "pass_fraction": 0.9166666666666666,
+        "completion_fraction": 1.0,
+        "known_cost": 25.0,
+        "total_cost": 25.0,
+        "cost_interval": [
+          25.0,
+          25.0
+        ],
+        "cost_per_case": 2.0833333333333335
+      },
+      "slices": {
+        "all": {
+          "where": {},
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9166666666666666,
+          "completion_fraction": 1.0,
+          "known_cost": 25.0,
+          "total_cost": 25.0,
+          "cost_interval": [
+            25.0,
+            25.0
+          ],
+          "cost_per_case": 2.0833333333333335
+        },
+        "production": {
+          "where": {
+            "environment": "production"
+          },
+          "case_ids": [
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 9,
+          "pass": 8,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.8888888888888888,
+          "completion_fraction": 1.0,
+          "known_cost": 25.0,
+          "total_cost": 25.0,
+          "cost_interval": [
+            25.0,
+            25.0
+          ],
+          "cost_per_case": 2.7777777777777777
+        },
+        "staging": {
+          "where": {
+            "environment": "staging"
+          },
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "reader-production-proposal": {
+          "where": {
+            "role": "reader",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "reader-proposal"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "maintainer-production-proposal": {
+          "where": {
+            "role": "maintainer",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "maintainer-proposal",
+            "invalid-release"
+          ],
+          "cases": 2,
+          "pass": 1,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.5,
+          "completion_fraction": 1.0,
+          "known_cost": 25.0,
+          "total_cost": 25.0,
+          "cost_interval": [
+            25.0,
+            25.0
+          ],
+          "cost_per_case": 12.5
+        },
+        "version-2": {
+          "where": {
+            "version": "2"
+          },
+          "case_ids": [
+            "v2-staging-lookup"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-3": {
+          "where": {
+            "version": "3"
+          },
+          "case_ids": [
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 10,
+          "pass": 9,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9,
+          "completion_fraction": 1.0,
+          "known_cost": 25.0,
+          "total_cost": 25.0,
+          "cost_interval": [
+            25.0,
+            25.0
+          ],
+          "cost_per_case": 2.5
+        },
+        "version-9": {
+          "where": {
+            "version": "9"
+          },
+          "case_ids": [
+            "unknown-version"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-4-empty": {
+          "where": {
+            "version": "4"
+          },
+          "case_ids": [],
+          "cases": 0,
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": null,
+          "completion_fraction": null,
+          "known_cost": null,
+          "total_cost": null,
+          "cost_interval": null,
+          "cost_per_case": null
+        }
+      },
+      "ledger": [
+        {
+          "id": "v2-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "2"
+          }
+        },
+        {
+          "id": "v3-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "v3-production-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-proposal",
+          "verdict": "fail",
+          "boundary": "action-policy",
+          "cost": 25,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "reader-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-role",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "administrator",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-version",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "9"
+          }
+        },
+        {
+          "id": "conflicting-source",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-environment",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "prod",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "invalid-release",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unsupported-operation",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "execute_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        }
+      ]
+    },
+    "format": {
+      "overall": {
+        "cases": 12,
+        "pass": 11,
+        "fail": 1,
+        "incomplete": 0,
+        "pass_fraction": 0.9166666666666666,
+        "completion_fraction": 1.0,
+        "known_cost": 1.0,
+        "total_cost": 1.0,
+        "cost_interval": [
+          1.0,
+          1.0
+        ],
+        "cost_per_case": 0.08333333333333333
+      },
+      "slices": {
+        "all": {
+          "where": {},
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.9166666666666666,
+          "completion_fraction": 1.0,
+          "known_cost": 1.0,
+          "total_cost": 1.0,
+          "cost_interval": [
+            1.0,
+            1.0
+          ],
+          "cost_per_case": 0.08333333333333333
+        },
+        "production": {
+          "where": {
+            "environment": "production"
+          },
+          "case_ids": [
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 9,
+          "pass": 9,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "staging": {
+          "where": {
+            "environment": "staging"
+          },
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup"
+          ],
+          "cases": 2,
+          "pass": 1,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.5,
+          "completion_fraction": 1.0,
+          "known_cost": 1.0,
+          "total_cost": 1.0,
+          "cost_interval": [
+            1.0,
+            1.0
+          ],
+          "cost_per_case": 0.5
+        },
+        "reader-production-proposal": {
+          "where": {
+            "role": "reader",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "reader-proposal"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "maintainer-production-proposal": {
+          "where": {
+            "role": "maintainer",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "maintainer-proposal",
+            "invalid-release"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-2": {
+          "where": {
+            "version": "2"
+          },
+          "case_ids": [
+            "v2-staging-lookup"
+          ],
+          "cases": 1,
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0,
+          "pass_fraction": 0.0,
+          "completion_fraction": 1.0,
+          "known_cost": 1.0,
+          "total_cost": 1.0,
+          "cost_interval": [
+            1.0,
+            1.0
+          ],
+          "cost_per_case": 1.0
+        },
+        "version-3": {
+          "where": {
+            "version": "3"
+          },
+          "case_ids": [
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 10,
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-9": {
+          "where": {
+            "version": "9"
+          },
+          "case_ids": [
+            "unknown-version"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-4-empty": {
+          "where": {
+            "version": "4"
+          },
+          "case_ids": [],
+          "cases": 0,
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": null,
+          "completion_fraction": null,
+          "known_cost": null,
+          "total_cost": null,
+          "cost_interval": null,
+          "cost_per_case": null
+        }
+      },
+      "ledger": [
+        {
+          "id": "v2-staging-lookup",
+          "verdict": "fail",
+          "boundary": "response-contract",
+          "cost": 1,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "2"
+          }
+        },
+        {
+          "id": "v3-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "v3-production-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "reader-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-role",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "administrator",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-version",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "9"
+          }
+        },
+        {
+          "id": "conflicting-source",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-environment",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "prod",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "invalid-release",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unsupported-operation",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "execute_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        }
+      ]
+    },
+    "no_output": {
+      "overall": {
+        "cases": 12,
+        "pass": 11,
+        "fail": 0,
+        "incomplete": 1,
+        "pass_fraction": 0.9166666666666666,
+        "completion_fraction": 0.9166666666666666,
+        "known_cost": 0.0,
+        "total_cost": null,
+        "cost_interval": [
+          0.0,
+          100.0
+        ],
+        "cost_per_case": null
+      },
+      "slices": {
+        "all": {
+          "where": {},
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 12,
+          "pass": 11,
+          "fail": 0,
+          "incomplete": 1,
+          "pass_fraction": 0.9166666666666666,
+          "completion_fraction": 0.9166666666666666,
+          "known_cost": 0.0,
+          "total_cost": null,
+          "cost_interval": [
+            0.0,
+            100.0
+          ],
+          "cost_per_case": null
+        },
+        "production": {
+          "where": {
+            "environment": "production"
+          },
+          "case_ids": [
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "unknown-version",
+            "conflicting-source",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 9,
+          "pass": 9,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "staging": {
+          "where": {
+            "environment": "staging"
+          },
+          "case_ids": [
+            "v2-staging-lookup",
+            "v3-staging-lookup"
+          ],
+          "cases": 2,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 1,
+          "pass_fraction": 0.5,
+          "completion_fraction": 0.5,
+          "known_cost": 0.0,
+          "total_cost": null,
+          "cost_interval": [
+            0.0,
+            100.0
+          ],
+          "cost_per_case": null
+        },
+        "reader-production-proposal": {
+          "where": {
+            "role": "reader",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "reader-proposal"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "maintainer-production-proposal": {
+          "where": {
+            "role": "maintainer",
+            "environment": "production",
+            "operation": "propose_rollback"
+          },
+          "case_ids": [
+            "maintainer-proposal",
+            "invalid-release"
+          ],
+          "cases": 2,
+          "pass": 2,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-2": {
+          "where": {
+            "version": "2"
+          },
+          "case_ids": [
+            "v2-staging-lookup"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-3": {
+          "where": {
+            "version": "3"
+          },
+          "case_ids": [
+            "v3-staging-lookup",
+            "v3-production-lookup",
+            "maintainer-proposal",
+            "reader-proposal",
+            "unknown-role",
+            "conflicting-source",
+            "unknown-environment",
+            "invalid-release",
+            "unsupported-operation",
+            "maintainer-lookup"
+          ],
+          "cases": 10,
+          "pass": 9,
+          "fail": 0,
+          "incomplete": 1,
+          "pass_fraction": 0.9,
+          "completion_fraction": 0.9,
+          "known_cost": 0.0,
+          "total_cost": null,
+          "cost_interval": [
+            0.0,
+            100.0
+          ],
+          "cost_per_case": null
+        },
+        "version-9": {
+          "where": {
+            "version": "9"
+          },
+          "case_ids": [
+            "unknown-version"
+          ],
+          "cases": 1,
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": 1.0,
+          "completion_fraction": 1.0,
+          "known_cost": 0.0,
+          "total_cost": 0.0,
+          "cost_interval": [
+            0.0,
+            0.0
+          ],
+          "cost_per_case": 0.0
+        },
+        "version-4-empty": {
+          "where": {
+            "version": "4"
+          },
+          "case_ids": [],
+          "cases": 0,
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 0,
+          "pass_fraction": null,
+          "completion_fraction": null,
+          "known_cost": null,
+          "total_cost": null,
+          "cost_interval": null,
+          "cost_per_case": null
+        }
+      },
+      "ledger": [
+        {
+          "id": "v2-staging-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "2"
+          }
+        },
+        {
+          "id": "v3-staging-lookup",
+          "verdict": "incomplete",
+          "boundary": "dependency-or-no-output",
+          "cost": null,
+          "request": {
+            "environment": "staging",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "v3-production-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "reader-proposal",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-role",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "administrator",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-version",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "9"
+          }
+        },
+        {
+          "id": "conflicting-source",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unknown-environment",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "prod",
+            "operation": "lookup_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "invalid-release",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "propose_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        },
+        {
+          "id": "unsupported-operation",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "execute_rollback",
+            "role": "reader",
+            "version": "3"
+          }
+        },
+        {
+          "id": "maintainer-lookup",
+          "verdict": "pass",
+          "boundary": "pass",
+          "cost": 0,
+          "request": {
+            "environment": "production",
+            "operation": "lookup_rollback",
+            "role": "maintainer",
+            "version": "3"
+          }
+        }
+      ]
+    }
+  },
+  "files": {
+    "cases.json": "e088ec1662e1ffaa2eab48164b228f562836577ffc9bfaa06adf10902d1f9087",
+    "saved-report.json": "c4ca79d4f05c7c91e4fb49de0443227aaf4eac460fbd080b56538a6540cac49b",
+    "vendor/task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+    "input-manifest.json": "c50999ccac0553b3cc28c524693fd467da9368b2b506ba33b76b77c04d86b489",
+    "cost-policy.json": "7091ae025b0cabea8cfc754ed8b9c8dc0117c654fcb701911c2112877fdb7398",
+    "analyze_slices.py": "d2e7a3fada6f0870dc91316a08c265c8fffe1fbee0c53e4384c471b29a4affb5"
+  }
+}

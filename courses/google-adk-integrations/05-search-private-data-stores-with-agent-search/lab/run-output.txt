@@ -1,0 +1,53 @@
+$ DOCS_TEAM=platform python agent.py "Why did staging deploys get stuck on September 30, and what changed?"
+search ['postmortem staging deploy September 30'] -> ['Postmortem: staging deploys stuck for 3 hours (2026-09-30)']
+answer According to the document **Postmortem: staging deploys stuck for 3 hours (2026-09-30)**:
+
+### Why staging deploys got stuck
+A deploy job was killed during a node drain while holding the PostgreSQL advisory lock for staging. Because the advisory lock was tied to the database session and the job's connection pooler kept that session open, the lock was never released. Consequently, subsequent staging deploys waited indefinitely at the "acquiring environment lock" step.
+
+### What changed
+* **Lock handling:** Deploy jobs now acquire the lock using `pg_try_advisory_xact_lock` inside a transaction, ensuring the lock automatically releases when the transaction ends.
+* **Alerting:** An alert was added to trigger whenever an environment lock is held for longer than 20 minutes.
+* **Documentation follow-up:** A task was assigned to the docs team to document how to manually release a stuck lock.
+
+$ DOCS_TEAM=platform python agent.py "How do I rotate the release signing key, and when can I revoke the old one?"
+search ['rotate release signing key runbook revoke old'] -> ['Runbook: rotate the release signing key']
+answer Based on the document **"Runbook: rotate the release signing key"**, here is how to rotate the release signing key and when to revoke the old one:
+
+### How to rotate the release signing key:
+1. **Create the new key:** Run `docuctl keys create --purpose release-signing`. This stores the key under a new version while the old version remains valid.
+2. **Promote the new key:** Run `docuctl keys promote <new-version>`. From this point forward, new releases will be signed with the new key.
+
+### When to revoke the old key:
+3. **Wait 7 days:** Allow 7 days so that every running release has either been redeployed or verified with the new key.
+4. **Revoke the old key:** After the 7-day waiting period, revoke the old key by running:
+   ```bash
+   docuctl keys revoke <old-version>
+   ```
+   *(Note: Never delete or revoke the old version before waiting the 7 days; otherwise, releases signed with the old key will fail verification and cannot be rolled back to.)*
+
+$ DOCS_TEAM=docs python agent.py "How do I rotate the release signing key?"
+search ['rotate release signing key runbook', 'release signing key rotation', '"release signing key" rotate OR rotation', 'signing key rotation runbook'] -> []
+answer I found no document on how to rotate the release signing key.
+
+$ DOCS_TEAM=platform python agent.py "How do I rotate the release signing key?"
+search ['rotate release signing key runbook'] -> ['Runbook: rotate the release signing key']
+answer Based on the document **Runbook: rotate the release signing key**, here are the steps to rotate the release signing key:
+
+1. **Create the new key:**  
+   Run `docuctl keys create --purpose release-signing`. This stores the key under a new version while keeping the old version valid.
+
+2. **Promote the new key:**  
+   Run `docuctl keys promote <new-version>`. From this point forward, new releases will be signed with the new key.
+
+3. **Wait 7 days:**  
+   Allow 7 days to pass so that every running release has either been redeployed or verified with the new key.
+
+4. **Revoke the old key:**  
+   Run `docuctl keys revoke <old-version>`. 
+
+*(Note: Never delete the old key version before step 4, as releases signed with it would fail verification and could not be rolled back to.)*
+
+$ DOCS_TEAM=docs python agent.py "What is our on-call rotation for the docs site?"
+search ['docs site on-call rotation runbook', 'team docs site on call rotation decision record'] -> []
+answer I found no document answering this question.

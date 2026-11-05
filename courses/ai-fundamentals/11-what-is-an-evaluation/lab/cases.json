@@ -1,0 +1,9 @@
+[
+ {"id": "rollback-command", "question": "How do I roll back production to release r41?", "source": "rollback.md", "must_include": ["docuctl rollback --env production --to r41"]},
+ {"id": "migrations", "question": "Does a rollback undo database migrations?", "source": "rollback.md", "must_include": ["not rolled back"]},
+ {"id": "revert-replaced", "question": "What replaced `docuctl release revert`?", "source": "rollback.md", "must_include": ["docuctl rollback"]},
+ {"id": "token-expiry", "question": "How long is a CI deploy token valid?", "source": "tokens.md", "must_include": ["90 days"]},
+ {"id": "config-file", "question": "Which file does docuctl read its configuration from?", "source": "config.md", "must_include": ["ship.toml"]},
+ {"id": "prod-approval", "question": "What has to happen before a production deploy goes out?", "source": "deploy.md", "must_include": ["docuctl approve"]},
+ {"id": "not-in-docs", "question": "How do I deploy to Kubernetes with docuctl?", "source": null, "must_include": ["not"]}
+]

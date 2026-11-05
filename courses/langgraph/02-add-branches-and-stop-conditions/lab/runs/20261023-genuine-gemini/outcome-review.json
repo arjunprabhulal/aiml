@@ -1,0 +1,17 @@
+{
+  "verdict": "PASS_FOR_RECORDED_NATIVE_STEP_LIMIT_SCENARIO",
+  "scope": "Independent outcome, trajectory, accounting, source and original media review; reviewer did not author the probe or execute the run.",
+  "original_review_sha256": "3eced6160ce7b41031eff2369353223c1f60216069af98f101e0e48e2c1fe4cf",
+  "result": "Genuine Gemini proposals for get_diff(415) and get_ci_status(415), then native agent \u2192 stop with step_limit and zero tool executions.",
+  "checks": [
+    "Raw provider response matches public events",
+    "Exactly one token-count request and one generation request; no retries",
+    "Source, SDK, operator and capture hashes match approved frozen scope",
+    "Original completed process captures readable at 1440, 390 and 320 CSS pixels"
+  ],
+  "limits": [
+    "Stop text is deterministic graph output, not a model answer.",
+    "No tool result, actual CI observation or answer-correctness claim.",
+    "Provider usage is not an invoice; no separate thinking-token count supplied."
+  ]
+}

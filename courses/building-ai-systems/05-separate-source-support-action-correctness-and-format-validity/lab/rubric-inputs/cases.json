@@ -1,0 +1,166 @@
+{
+  "name": "docuctl-answer-rubric-v1",
+  "task": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+  "cases": [
+    {
+      "id": "complete",
+      "split": "development",
+      "class": "complete",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "551cf858e75f7a1a3e5e61f5d11ae84cd6a999507e6847f765ada26053e41bb3"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "paraphrase",
+      "split": "development",
+      "class": "paraphrase",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "This rolls the service back, not the database. With release approval and staging confirmed, use `docuctl releases rollback r41 --environment staging`. Afterwards, inspect service health.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "be389063c90e9e5a95e67d9bad69bed553a98fdb390317f49a0900f37113d407"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "negation",
+      "split": "development",
+      "class": "negation",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "No: rollback does not restore database contents. Obtain release approval and confirm staging before `docuctl releases rollback r41 --environment staging`. It changes the deployed service version. Check service health afterwards.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "37ceae41bc1f382789c99a7b7e7f0b8c72cc348813b29a24a5601c348e2ed188"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "unsupported-guarantee",
+      "split": "development",
+      "class": "unsupported-guarantee",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. It guarantees zero downtime.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "6be81d83e8edb7aba60cc4901c121ac01ec91359fd9aa64210a26141e4a69c52"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "missing-verification",
+      "split": "development",
+      "class": "missing-verification",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "4ffbe1973ee05448289728a99157b1c239f84bd0bd4412bed580eb47bbb28fea"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "wrong-command",
+      "split": "development",
+      "class": "wrong-command",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "Obtain release approval and confirm staging first. Run `docuctl rollback r41 --env staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "092a72bd3555bc75ae9616c569d69fb1537cb06c2d7dbaa007a38a15e4c6253b"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "uncertain-wording",
+      "split": "development",
+      "class": "uncertain-wording",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. Your data will be safe.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "a28cfbb68c16db4ab304863121ee77df4248f632bd73e26b1ca2fe695a37e63f"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    },
+    {
+      "id": "not-reviewed",
+      "split": "development",
+      "class": "not-reviewed",
+      "input": {
+        "question": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+        "answer": {
+          "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. Ask the release maintainer if anything is unclear.",
+          "citation": "docuctl-3-staging-rollback"
+        }
+      },
+      "expected": {
+        "acceptable": true,
+        "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+        "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+        "review_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "fail_if": [],
+      "why": "Authored contrast example for task-specific rubric design; not model output."
+    }
+  ]
+}

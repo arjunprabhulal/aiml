@@ -1,0 +1,2414 @@
+{
+  "eval_set_result_id": "docs_assistant_scenarios_1792772256.214602",
+  "eval_set_result_name": "docs_assistant_scenarios_1792772256.214602",
+  "eval_set_id": "scenarios",
+  "eval_case_results": [
+    {
+      "eval_set_file": "scenarios",
+      "eval_set_id": "scenarios",
+      "eval_id": "6be7706e",
+      "final_eval_status": 1,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "hallucinations_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "include_intermediate_responses_in_final": false,
+            "evaluate_intermediate_nl_responses": true,
+            "judge_model_options": {
+              "judge_model": "gemini-3.8-flash",
+              "num_samples": 1
+            }
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "per_turn_user_simulator_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "include_intermediate_responses_in_final": false,
+            "judge_model_options": {
+              "judge_model": "gemini-3.8-flash",
+              "num_samples": 1
+            }
+          },
+          "custom_function_path": null,
+          "score": 1.0,
+          "eval_status": 1,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "tool_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 2.5,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "inference_call_count_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 3.5,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        },
+        {
+          "metric_name": "token_usage_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 1368.0,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": {
+              "total_tokens": 1368.0,
+              "input_tokens": 1309.0,
+              "prompt_tokens": 1309.0,
+              "cached_tokens": null,
+              "tool_use_tokens": null,
+              "output_tokens": 59.0,
+              "candidates_tokens": 59.0,
+              "reasoning_tokens": null
+            }
+          }
+        },
+        {
+          "metric_name": "invocation_duration_v1",
+          "threshold": null,
+          "criterion": null,
+          "custom_function_path": null,
+          "score": 6.9110000000000005,
+          "eval_status": 4,
+          "details": {
+            "rubric_scores": null,
+            "token_usage_details": null
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "How do I make the assistant use a local model instead of Gemini?",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "You can make the assistant use a local model instead of Gemini by setting `OLLAMA_API_BASE` (install.md).",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_49272",
+                          "args": {},
+                          "name": "list_pages",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 10,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 181,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 181
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 191,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_49272",
+                          "name": "list_pages",
+                          "response": {
+                            "pages": [
+                              "cli.md",
+                              "install.md",
+                              "troubleshooting.md"
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_76328",
+                          "args": {
+                            "path": "cli.md"
+                          },
+                          "name": "read_page",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 18,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 220,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 220
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 238,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_76328",
+                          "name": "read_page",
+                          "response": {
+                            "path": "cli.md",
+                            "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_49449",
+                          "args": {
+                            "path": "install.md"
+                          },
+                          "name": "read_page",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 18,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 316,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 316
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 334,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_49449",
+                          "name": "read_page",
+                          "response": {
+                            "path": "install.md",
+                            "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": null,
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 28,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 405,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 405
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 433,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                }
+              ]
+            },
+            "creation_timestamp": 1792772199.66145,
+            "duration": 8.268,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "docs_assistant": {
+                  "name": "docs_assistant",
+                  "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses. If the question does not say what is failing, ask one short question about the symptom first.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "google_maps": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "List the docs pages by path.",
+                          "name": "list_pages",
+                          "parameters": null,
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+                          "name": "read_page",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "path": {
+                                "title": "Path",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "path"
+                            ],
+                            "title": "read_pageParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_search_retrieval": null,
+                      "parallel_ai_search": null,
+                      "url_context": null,
+                      "mcp_servers": null,
+                      "exa_ai_search": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": null,
+          "eval_metric_results": [
+            {
+              "metric_name": "hallucinations_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "evaluate_intermediate_nl_responses": true,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.8-flash",
+                  "num_samples": 1
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [],
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "per_turn_user_simulator_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.8-flash",
+                  "num_samples": 1
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "tool_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 3.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "inference_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 4.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "token_usage_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 1196.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": {
+                  "total_tokens": 1196.0,
+                  "input_tokens": 1122.0,
+                  "prompt_tokens": 1122.0,
+                  "cached_tokens": null,
+                  "tool_use_tokens": null,
+                  "output_tokens": 74.0,
+                  "candidates_tokens": 74.0,
+                  "reasoning_tokens": null
+                }
+              }
+            },
+            {
+              "metric_name": "invocation_duration_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 8.268,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            }
+          ]
+        },
+        {
+          "actual_invocation": {
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Which Python version does the project require?",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "The project requires Python 3.12 or later (install.md).",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1230165",
+                          "args": {},
+                          "name": "list_pages",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 10,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 443,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 443
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 453,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1230165",
+                          "name": "list_pages",
+                          "response": {
+                            "pages": [
+                              "cli.md",
+                              "install.md",
+                              "troubleshooting.md"
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "call_1125083",
+                          "args": {
+                            "path": "install.md"
+                          },
+                          "name": "read_page",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 18,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 482,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 482
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 500,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "call_1125083",
+                          "name": "read_page",
+                          "response": {
+                            "path": "install.md",
+                            "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "video_metadata": null,
+                        "tool_call": null,
+                        "tool_response": null,
+                        "part_metadata": null,
+                        "audio_transcription": null,
+                        "media_processing": null,
+                        "speech_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  },
+                  "grounding_metadata": null,
+                  "usage_metadata": null,
+                  "model_version": null
+                },
+                {
+                  "author": "docs_assistant",
+                  "content": null,
+                  "grounding_metadata": null,
+                  "usage_metadata": {
+                    "cache_tokens_details": null,
+                    "cached_content_token_count": null,
+                    "candidates_token_count": 16,
+                    "candidates_tokens_details": null,
+                    "prompt_token_count": 571,
+                    "prompt_tokens_details": [
+                      {
+                        "modality": "TEXT",
+                        "token_count": 571
+                      }
+                    ],
+                    "thoughts_token_count": null,
+                    "tool_use_prompt_token_count": null,
+                    "tool_use_prompt_tokens_details": null,
+                    "total_token_count": 587,
+                    "traffic_type": null
+                  },
+                  "model_version": "gemini-3.8-flash"
+                }
+              ]
+            },
+            "creation_timestamp": 1792772215.9370592,
+            "duration": 5.554,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "docs_assistant": {
+                  "name": "docs_assistant",
+                  "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses. If the question does not say what is failing, ask one short question about the symptom first.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "google_maps": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "List the docs pages by path.",
+                          "name": "list_pages",
+                          "parameters": null,
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+                          "name": "read_page",
+                          "parameters": null,
+                          "parameters_json_schema": {
+                            "properties": {
+                              "path": {
+                                "title": "Path",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "path"
+                            ],
+                            "title": "read_pageParams",
+                            "type": "object"
+                          },
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_search_retrieval": null,
+                      "parallel_ai_search": null,
+                      "url_context": null,
+                      "mcp_servers": null,
+                      "exa_ai_search": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": null,
+          "eval_metric_results": [
+            {
+              "metric_name": "hallucinations_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "evaluate_intermediate_nl_responses": true,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.8-flash",
+                  "num_samples": 1
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": [],
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "per_turn_user_simulator_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "include_intermediate_responses_in_final": false,
+                "judge_model_options": {
+                  "judge_model": "gemini-3.8-flash",
+                  "num_samples": 1
+                }
+              },
+              "custom_function_path": null,
+              "score": 1.0,
+              "eval_status": 1,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "tool_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 2.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "inference_call_count_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 3.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            },
+            {
+              "metric_name": "token_usage_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 1540.0,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": {
+                  "total_tokens": 1540.0,
+                  "input_tokens": 1496.0,
+                  "prompt_tokens": 1496.0,
+                  "cached_tokens": null,
+                  "tool_use_tokens": null,
+                  "output_tokens": 44.0,
+                  "candidates_tokens": 44.0,
+                  "reasoning_tokens": null
+                }
+              }
+            },
+            {
+              "metric_name": "invocation_duration_v1",
+              "threshold": null,
+              "criterion": null,
+              "custom_function_path": null,
+              "score": 5.554,
+              "eval_status": 4,
+              "details": {
+                "rubric_scores": null,
+                "token_usage_details": null
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "adk-eval-session-5d52c351-7355-414b-a74c-92dd9880dbf7",
+      "session_details": {
+        "id": "adk-eval-session-5d52c351-7355-414b-a74c-92dd9880dbf7",
+        "app_name": "docs_assistant",
+        "user_id": "dev",
+        "state": {
+          "__llm_request_key__": "a1d863f5-448e-4930-ab46-02b7d4acfb2e"
+        },
+        "events": [
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "How do I make the assistant use a local model instead of Gemini?",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "eaaa079b-b34e-4ed2-81fa-d4fbb8a410dc",
+            "timestamp": 1792772197.843059
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "call_49272",
+                    "args": {},
+                    "name": "list_pages",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "6acb765e-80db-4dc0-be99-affabbe0e5a3"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 10,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 181,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 181
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 191,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "6acb765e-80db-4dc0-be99-affabbe0e5a3"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "isolation_scope": null,
+            "id": "eea95c06-e603-41ff-80db-d35d4a586a61",
+            "timestamp": 1792772197.858932
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "call_49272",
+                    "name": "list_pages",
+                    "response": {
+                      "pages": [
+                        "cli.md",
+                        "install.md",
+                        "troubleshooting.md"
+                      ]
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "e15b9f54-04f1-4763-9658-5fe3b9d0fd7e",
+            "timestamp": 1792772199.662715
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "call_76328",
+                    "args": {
+                      "path": "cli.md"
+                    },
+                    "name": "read_page",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "6f5bcf06-b190-48fb-b15a-4dc63a5696fd"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 18,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 220,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 220
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 238,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "6f5bcf06-b190-48fb-b15a-4dc63a5696fd"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "isolation_scope": null,
+            "id": "a8091fa5-4620-42b5-bde3-353d2f5c4a88",
+            "timestamp": 1792772199.66357
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "call_76328",
+                    "name": "read_page",
+                    "response": {
+                      "path": "cli.md",
+                      "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "eff454d2-2196-4535-a121-e5806f07417f",
+            "timestamp": 1792772201.117342
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "call_49449",
+                    "args": {
+                      "path": "install.md"
+                    },
+                    "name": "read_page",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "ca0f7122-6e67-445e-9450-5e14d99c52fd"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 18,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 316,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 316
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 334,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "ca0f7122-6e67-445e-9450-5e14d99c52fd"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "isolation_scope": null,
+            "id": "d18d5307-1f00-4a11-b442-00a4033e1652",
+            "timestamp": 1792772201.117995
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "call_49449",
+                    "name": "read_page",
+                    "response": {
+                      "path": "install.md",
+                      "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "9b190896-6fe9-4143-b926-5f8bb7f4a884",
+            "timestamp": 1792772202.9551091
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "You can make the assistant use a local model instead of Gemini by setting `OLLAMA_API_BASE` (install.md).",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "df0061dc-c148-4310-ae41-4b1d95e9a95c"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 28,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 405,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 405
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 433,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-a48aa4bc-1492-41c7-bf19-e06f132663ba",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "df0061dc-c148-4310-ae41-4b1d95e9a95c"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "2485c830-bafd-4a73-8979-95d755012e84",
+            "timestamp": 1792772202.955903
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Which Python version does the project require?",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "author": "user",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "d9cbe974-2826-45f1-b698-9625fb359787",
+            "timestamp": 1792772213.2028558
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "call_1230165",
+                    "args": {},
+                    "name": "list_pages",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "7d7a87ae-ab20-4e4e-8eba-145e5c16fdc2"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 10,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 443,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 443
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 453,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "7d7a87ae-ab20-4e4e-8eba-145e5c16fdc2"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "isolation_scope": null,
+            "id": "49e006b4-ba39-42da-bb67-78d0c591f168",
+            "timestamp": 1792772213.203725
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "call_1230165",
+                    "name": "list_pages",
+                    "response": {
+                      "pages": [
+                        "cli.md",
+                        "install.md",
+                        "troubleshooting.md"
+                      ]
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "539e6c2a-60cf-43f1-8b35-cda3d6a609d4",
+            "timestamp": 1792772215.937588
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": {
+                    "id": "call_1125083",
+                    "args": {
+                      "path": "install.md"
+                    },
+                    "name": "read_page",
+                    "partial_args": null,
+                    "will_continue": null
+                  },
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "42e81b83-4a34-440b-a0d7-80924663ac7f"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 18,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 482,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 482
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 500,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "42e81b83-4a34-440b-a0d7-80924663ac7f"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": [],
+            "branch": null,
+            "isolation_scope": null,
+            "id": "eccfe4a6-bca1-4574-9b15-518982862195",
+            "timestamp": 1792772215.938379
+          },
+          {
+            "model_version": null,
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": {
+                    "will_continue": null,
+                    "scheduling": null,
+                    "parts": null,
+                    "id": "call_1125083",
+                    "name": "read_page",
+                    "response": {
+                      "path": "install.md",
+                      "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+                    }
+                  },
+                  "inline_data": null,
+                  "text": null,
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": null,
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": null,
+            "usage_metadata": null,
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {},
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "a3544254-a566-4c66-83e0-3d67fc7335ac",
+            "timestamp": 1792772217.3944
+          },
+          {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "The project requires Python 3.12 or later (install.md).",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "grounding_metadata": null,
+            "partial": null,
+            "turn_complete": null,
+            "turn_complete_reason": null,
+            "interaction_status": null,
+            "finish_reason": "STOP",
+            "error_code": null,
+            "error_message": null,
+            "interrupted": null,
+            "custom_metadata": {
+              "__llm_request_key__": "a1d863f5-448e-4930-ab46-02b7d4acfb2e"
+            },
+            "usage_metadata": {
+              "cache_tokens_details": null,
+              "cached_content_token_count": null,
+              "candidates_token_count": 16,
+              "candidates_tokens_details": null,
+              "prompt_token_count": 571,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 571
+                }
+              ],
+              "thoughts_token_count": null,
+              "tool_use_prompt_token_count": null,
+              "tool_use_prompt_tokens_details": null,
+              "total_token_count": 587,
+              "traffic_type": null
+            },
+            "live_session_resumption_update": null,
+            "live_session_id": null,
+            "go_away": null,
+            "voice_activity": null,
+            "input_transcription": null,
+            "output_transcription": null,
+            "avg_logprobs": null,
+            "logprobs_result": null,
+            "cache_metadata": null,
+            "citation_metadata": null,
+            "interaction_id": null,
+            "environment_id": null,
+            "invocation_id": "e-c0b1495c-10be-4efc-9bf0-472f67abe79e",
+            "author": "docs_assistant",
+            "actions": {
+              "skip_summarization": null,
+              "state_delta": {
+                "__llm_request_key__": "a1d863f5-448e-4930-ab46-02b7d4acfb2e"
+              },
+              "artifact_delta": {},
+              "transfer_to_agent": null,
+              "transfer_reason": null,
+              "escalate": null,
+              "requested_auth_configs": {},
+              "requested_tool_confirmations": {},
+              "compaction": null,
+              "end_of_agent": null,
+              "agent_state": null,
+              "rewind_before_invocation_id": null,
+              "route": null,
+              "render_ui_widgets": null,
+              "set_model_response": null
+            },
+            "output": null,
+            "node_info": {
+              "path": "docs_assistant@1",
+              "output_for": null,
+              "message_as_output": null
+            },
+            "long_running_tool_ids": null,
+            "branch": null,
+            "isolation_scope": null,
+            "id": "3a6b9edf-e5d3-4c16-8884-77b050e22685",
+            "timestamp": 1792772217.3952498
+          }
+        ],
+        "last_update_time": 1792772217.3952498
+      },
+      "user_id": "dev"
+    }
+  ],
+  "creation_timestamp": 1792772256.214602
+}

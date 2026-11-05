@@ -1,0 +1,87 @@
+{
+  "execution_scope": "fixed four development cases only; no heldout cases, vectors or model calls",
+  "exact_files": {
+    "version_documents.py": {
+      "origin": "public/examples/compare-retrieval-configurations/version_documents.py",
+      "sha256": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+    },
+    "load_documents.py": {
+      "origin": "public/examples/compare-retrieval-configurations/load_documents.py",
+      "sha256": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431"
+    },
+    "fixtures/baseline-snapshot.json": {
+      "origin": "public/examples/compare-retrieval-configurations/fixtures/snapshot.json",
+      "sha256": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19"
+    },
+    "fixtures/development-cases.json": {
+      "origin": "public/examples/compare-retrieval-configurations/fixtures/development-cases.json",
+      "sha256": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c"
+    }
+  },
+  "verbatim_extractions": [
+    {
+      "origin": "public/examples/build-hybrid-retrieval/vector_retriever.py",
+      "symbol": "version_filter",
+      "start_line": 51,
+      "end_line": 58,
+      "sha256": "51ed6162e2f82ea0c37b150233fdab69c2389733b5a7ab5dd0dad3ceac29eb90"
+    },
+    {
+      "origin": "public/examples/build-hybrid-retrieval/vector_retriever.py",
+      "symbol": "rows_from_snapshot",
+      "start_line": 61,
+      "end_line": 70,
+      "sha256": "699587e844012ec1407174aa635ccd078fcb5a0ffc988b680cfe62c7afc431c6"
+    },
+    {
+      "origin": "public/examples/build-hybrid-retrieval/hybrid.py",
+      "symbol": "positive_int",
+      "start_line": 9,
+      "end_line": 11,
+      "sha256": "8683605a35527c50a9aa9e2241841b1172154f22dfab56b45e669c3d5785fa7d"
+    },
+    {
+      "origin": "public/examples/build-hybrid-retrieval/hybrid.py",
+      "symbol": "question_terms",
+      "start_line": 13,
+      "end_line": 19,
+      "sha256": "1dde4f467b5a5d790da9c1a5ad422ae3f03f0536b0904aeaf6c3144cc3640bbd"
+    },
+    {
+      "origin": "public/examples/build-hybrid-retrieval/hybrid.py",
+      "symbol": "QuestionLexicalRetriever",
+      "start_line": 21,
+      "end_line": 41,
+      "sha256": "ce454b81ce9d7368c565c49a83e3e95310a2e2c39f80f57fb56aa8f2c825f8a6"
+    },
+    {
+      "origin": "public/examples/compare-retrieval-configurations/compare.py",
+      "symbol": "bind_targets",
+      "start_line": 26,
+      "end_line": 44,
+      "sha256": "f18d1a818323ec3421c9400b70743c9ffa4ab9e6820bfacde97d63b8530c4c07"
+    },
+    {
+      "origin": "public/examples/compare-retrieval-configurations/compare.py",
+      "symbol": "metrics",
+      "start_line": 47,
+      "end_line": 53,
+      "sha256": "dae0f59917a3ae33a05c0eec6336f67e5933578bf0c7d2318349dd6f2fba0a43"
+    }
+  ],
+  "fixture_sha256": {
+    "fixtures/baseline/docs/json-text.md": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+    "fixtures/baseline/docs/path-read-3-13.md": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+    "fixtures/baseline/docs/path-read.md": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+    "fixtures/baseline/docs/path-write.md": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+    "fixtures/baseline/source-manifest.json": "aeeaa53f9c0b7d8d14ab4153304ed389f8a5cb433204f97fc02070a1a25143e9",
+    "fixtures/baseline-snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/reannotations.json": "0bc6e86423c6d7cfa9f8eb4e18f8298e0d59ca22fdc24fa6d2d30e2bda2b7e91",
+    "fixtures/updated/docs/path-read-3-13.md": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+    "fixtures/updated/docs/path-read.md": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+    "fixtures/updated/docs/path-write.md": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e",
+    "fixtures/updated/source-manifest.json": "1a34ebf7c3f80c52e5b4a1777ee262137aabb80c00a154d4a3335ba816319a88",
+    "fixtures/updated-snapshot.json": "c577222211726fe1884fd25ce7a091d1cf2d1733b69e1c80df7b3daf24e859b3"
+  }
+}

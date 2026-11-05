@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "per kind \u00b7 Find a hotel in Porto like the one we booked last time.": {
+      "pass": 5,
+      "fail": 0,
+      "incomplete": 0,
+      "reasons": []
+    },
+    "pooled \u00b7 Find a hotel in Porto like the one we booked last time.": {
+      "pass": 0,
+      "fail": 5,
+      "incomplete": 0,
+      "reasons": [
+        "missing: trip dates, budget"
+      ]
+    },
+    "per kind \u00b7 What should Alice eat at the hotel restaurant? Is she vegetarian?": {
+      "pass": 5,
+      "fail": 0,
+      "incomplete": 0,
+      "reasons": []
+    },
+    "pooled \u00b7 What should Alice eat at the hotel restaurant? Is she vegetarian?": {
+      "pass": 5,
+      "fail": 0,
+      "incomplete": 0,
+      "reasons": []
+    }
+  },
+  "graded": {
+    "per kind \u00b7 Find a hotel in Porto like the one we booked last time.": [
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "pooled \u00b7 Find a hotel in Porto like the one we booked last time.": [
+      "fail",
+      "fail",
+      "fail",
+      "fail",
+      "fail"
+    ],
+    "per kind \u00b7 What should Alice eat at the hotel restaurant? Is she vegetarian?": [
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "pooled \u00b7 What should Alice eat at the hotel restaurant? Is she vegetarian?": [
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ]
+  }
+}

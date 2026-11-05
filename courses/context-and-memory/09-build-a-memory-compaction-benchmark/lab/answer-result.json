@@ -1,0 +1,374 @@
+{
+ "model": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "google/gemma-4-E2B-it",
+  "license": "Apache-2.0",
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14",
+  "quantization": "Q4_K_M",
+  "parameters": "4.6B total (E2B: about 2B effective)",
+  "options": {
+   "temperature": 1.0,
+   "top_k": 64,
+   "top_p": 0.95
+  },
+  "think": false,
+  "trials": 5,
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "checkpoints": {
+  "recent · turn 40": 40,
+  "notes · turn 40": 40,
+  "append-only · turn 40": 40,
+  "managed · turn 40": 40,
+  "recent · turn 50": 50,
+  "notes · turn 50": 50,
+  "append-only · turn 50": 50,
+  "managed · turn 50": 50
+ },
+ "answers": {
+  "recent · turn 40": [
+   {
+    "seed": 1,
+    "answer": "Based on the information provided so far, here is a summary of the trip plan:\n\n*   **Expense Form:**\n    *   Line 1 contains routine details for the offsite.\n    *   Line 2 contains routine details for the offsite.\n*   **Meeting Notes:**\n    *   Line 1 contains routine details for the offsite.\n    *   Line 2 contains routine details for the offsite.\n*   **Room Layout:**\n    *   Line 1 contains routine details for the offsite.\n    *   Line 2 contains routine details for the offsite.",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 226,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 2,
+    "answer": "So far, the trip plan includes:\n\n*   **Expense Form:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Meeting Notes:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Room Layout:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Trip Date Change:** The trip has been moved to **November 10 to 13**.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 226,
+    "answer_tokens": 123
+   },
+   {
+    "seed": 3,
+    "answer": "So far, the trip plan includes:\n\n*   **Expense Form:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Meeting Notes:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Room Layout:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Date Change:** The trip has been moved to November 10 to 13.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 226,
+    "answer_tokens": 121
+   },
+   {
+    "seed": 4,
+    "answer": "Here is a summary of the trip plan so far based on the information provided:\n\n*   **Expense Form:** Line 1 contains routine details for the offsite, and Line 2 contains routine details for the offsite.\n*   **Meeting Notes:** Line 1 contains routine details for the offsite, and Line 2 contains routine details for the offsite.\n*   **Room Layout:** Line 1 contains routine details for the offsite, and Line 2 contains routine details for the offsite.\n*   **Trip Date Update:** The trip has been moved to **November 10 to 1",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 226,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 5,
+    "answer": "So far, the trip plan includes:\n\n*   **Expense Form:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Meeting Notes:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Room Layout:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Trip Date:** The trip has been moved to **10 to 13 November**.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 226,
+    "answer_tokens": 121
+   }
+  ],
+  "notes · turn 40": [
+   {
+    "seed": 1,
+    "answer": "Based on the information provided so far, here is a summary of the trip plan:\n\n*   **Expense Form:**\n    *   Line 1 contains routine details for the offsite.\n    *   Line 2 contains routine details for the offsite.\n*   **Meeting Notes:**\n    *   Line 1 contains routine details for the offsite.\n    *   Line 2 contains routine details for the offsite.\n*   **Room Layout:**\n    *   Line 1 contains routine details for the offsite.\n    *   Line 2 contains routine details for the offsite.",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 226,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 2,
+    "answer": "So far, the trip plan includes:\n\n*   **Expense Form:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Meeting Notes:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Room Layout:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Trip Date Change:** The trip has been moved to **November 10 to 13**.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 226,
+    "answer_tokens": 123
+   },
+   {
+    "seed": 3,
+    "answer": "So far, the trip plan includes:\n\n*   **Expense Form:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Meeting Notes:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Room Layout:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Date Change:** The trip has been moved to November 10 to 13.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 226,
+    "answer_tokens": 121
+   },
+   {
+    "seed": 4,
+    "answer": "Here is a summary of the trip plan so far based on the information provided:\n\n*   **Expense Form:** Line 1 contains routine details for the offsite, and Line 2 contains routine details for the offsite.\n*   **Meeting Notes:** Line 1 contains routine details for the offsite, and Line 2 contains routine details for the offsite.\n*   **Room Layout:** Line 1 contains routine details for the offsite, and Line 2 contains routine details for the offsite.\n*   **Trip Date Update:** The trip has been moved to **November 10 to 1",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 226,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 5,
+    "answer": "So far, the trip plan includes:\n\n*   **Expense Form:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Meeting Notes:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Room Layout:** Line 1 has routine details for the offsite, and Line 2 has routine details for the offsite.\n*   **Trip Date:** The trip has been moved to **10 to 13 November**.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 226,
+    "answer_tokens": 121
+   }
+  ],
+  "append-only · turn 40": [
+   {
+    "seed": 1,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Trip Dates:** The trip has been moved to **10 to 13 November**. (This is noted in [#10, turn-40], although there is also a note [#5, turn-15] stating travel from 3 to 6 November, which seems to be a conflicting or previous detail.)\n*   **Destination:** The destination is **Porto**. ([#3, turn-8])\n*   **Accommodation Preference:** The user wants a hotel **near the river**. ([#6",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 304,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 2,
+    "answer": "Here is a summary of the trip plan so far based on the stored notes:\n\n*   **Trip Dates:** The trip is planned from **November 3rd to November 6th** (from note [#5, turn-15]). However, there is a separate instruction to move the trip to **November 10th to 13th** (from note [#10, turn-40]).\n*   **Destination:** The destination is **Porto** (from note [#3, turn-8]).\n*   **Budget:** The budget has been raised to **180 euros per night",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 304,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 3,
+    "answer": "Here is a summary of the trip plan so far, based on the stored notes:\n\n*   **Dates:** The trip has been moved to **10 to 13 November**. (This is based on note [#10, turn-40])\n*   **Destination:** The destination is **Porto**. (Based on note [#3, turn-8])\n*   **Accommodation Preference:** The user wants a **hotel near the river**. (Based on note [#6, turn-18])\n*   **Budget:** The budget has been raised to **180 euros per night**. (Based",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 304,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 4,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Trip Dates:** The trip is planned to be from **3 to 6 November** (from note [#5, turn-15]).\n*   **New Trip Dates:** The trip has been moved to **10 to 13 November** (from note [#10, turn-40]).\n*   **Destination:** The destination is **Porto** (from note [#3, turn-8]).\n*   **Budget:** The budget has been raised to **180 euros per night** (from note [#",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 304,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 5,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Dates:** The trip is currently planned for November 3rd to 6th, but a change has been requested to move it to **November 10th to 13th**.\n*   **Destination:** The destination is **Porto**.\n*   **Accommodation:** The user wants a hotel **near the river**.\n*   **Budget:** The budget has been raised to **180 euros per night**.\n*   **Flights:** There is a request to **book the morning flight if possible**.\n*   ",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 304,
+    "answer_tokens": 128
+   }
+  ],
+  "managed · turn 40": [
+   {
+    "seed": 1,
+    "answer": "The trip plan has the following details based on the stored notes:\n\n*   **Trip Dates:** Moved to November 10 to 13.\n*   **Location:** Porto.\n*   **Flight:** Book the morning flight if possible.\n*   **Budget:** Raise the budget to 180 euros per night.\n*   **Accommodation:** The user wants a hotel near the river.\n*   **Dietary Note:** The user eats fish now but still no meat.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 315,
+    "answer_tokens": 104
+   },
+   {
+    "seed": 2,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Trip Dates:** The trip has been moved to **November 10 to 13**.\n*   **Location:** The destination is **Porto**.\n*   **Flight Preference:** There was a suggestion to **book the morning flight if possible**.\n*   **Budget:** The budget has been raised to **180 euros per night**.\n*   **Accommodation Preference:** There is a desire for a **hotel near the river**.\n*   **Personal Note:** One note mentions a dietary preference: \"I",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 315,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 3,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Trip Dates:** The trip has been moved to **November 10 to 13**.\n*   **Destination:** The destination is **Porto**.\n*   **Budget:** The budget has been raised to **180 euros per night**.\n*   **Accommodation Preference:** There is a preference for a **hotel near the river**.\n*   **Flights:** There is a request to **book the morning flight if possible**.\n*   **Dietary Note:** One note mentions, \"I eat fish now",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 315,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 4,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Trip Dates:** The trip has been moved to **November 10 to 13**.\n*   **Location:** The destination is **Porto**.\n*   **Flight:** The request to **book the morning flight if possible** was made.\n*   **Accommodation:** There is a preference for a **hotel near the river**.\n*   **Budget:** The budget has been **raised to 180 euros per night**.\n*   **Dietary Note (Quote):** The user mentioned, \"I eat fish",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 315,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 5,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Trip Dates:** The trip has been moved to **November 10 to 13**.\n*   **Budget:** The budget has been raised to **180 euros per night**.\n*   **Travel Preferences:**\n    *   There is a request to **book the morning flight if possible**.\n    *   There is a preference for a **hotel near the river**.\n*   **Destination:** The destination is **Porto**.\n*   **Dietary Note (User Quote):** The user notes",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 315,
+    "answer_tokens": 128
+   }
+  ],
+  "recent · turn 50": [
+   {
+    "seed": 1,
+    "answer": "So far, you have provided:\n\n1.  **Line 1 of the slides:** Routine details for the offsite.\n2.  **Line 2 of the slides:** Routine details for the offsite.\n3.  **Line 1 of the venue map:** Routine details for the offsite.\n4.  **Line 2 of the venue map:** Routine details for the offsite.\n\n**I do not have enough information to provide a full summary of the trip plan.** I only have routine details from the slides and the venue map.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 142,
+    "answer_tokens": 117
+   },
+   {
+    "seed": 2,
+    "answer": "Based on what you've provided, here is a summary of the trip plan so far:\n\n*   **Slides:** You have provided two lines of slides containing routine details for the offsite.\n*   **Venue Map:** You have provided two lines of the venue map containing routine details for the offsite.\n\n**However, I do not have the actual content of these slides or the venue map.** Therefore, I can only summarize that the plan includes routine details for the offsite in both the presentation material and the venue map.\n\nCould you please provide the actual content of the slides and the venue map so I can give",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 142,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 3,
+    "answer": "Based on the information you've provided, here is a summary of the trip plan so far:\n\n*   **Slide 1:** Contains routine details for the offsite.\n*   **Slide 2:** Contains routine details for the offsite.\n*   **Venue Map, Line 1:** Contains routine details for the offsite.\n*   **Venue Map, Line 2:** Contains routine details for the offsite.\n\nEssentially, the slides and the venue map currently contain routine details for the offsite.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 142,
+    "answer_tokens": 109
+   },
+   {
+    "seed": 4,
+    "answer": "Based on the information you've provided so far, I have the following:\n\n*   **Slide 1:** Contains routine details for the offsite.\n*   **Slide 2:** Contains routine details for the offsite.\n*   **Venue Map, Line 1:** Contains routine details for the offsite.\n*   **Venue Map, Line 2:** Contains routine details for the offsite.\n\n**However, I do not have the actual content of these slides or the map.** Therefore, I cannot provide a summary of the trip plan because the details themselves are missing.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 142,
+    "answer_tokens": 123
+   },
+   {
+    "seed": 5,
+    "answer": "Based on the information you've provided so far, here is a summary of the trip plan:\n\n*   **Slide 1:** Contains routine details for the offsite.\n*   **Slide 2:** Contains routine details for the offsite.\n*   **Venue Map, Line 1:** Contains routine details for the offsite.\n*   **Venue Map, Line 2:** Contains routine details for the offsite.\n\n**However, I do not have the actual content of these slides or the map.** Therefore, I can only tell you that the plan currently contains the *routine details* for the off",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 142,
+    "answer_tokens": 128
+   }
+  ],
+  "notes · turn 50": [
+   {
+    "seed": 1,
+    "answer": "So far, you have provided:\n\n1.  **Line 1 of the slides:** Routine details for the offsite.\n2.  **Line 2 of the slides:** Routine details for the offsite.\n3.  **Line 1 of the venue map:** Routine details for the offsite.\n4.  **Line 2 of the venue map:** Routine details for the offsite.\n\n**I do not have enough information to provide a full summary of the trip plan.** I only have routine details from the slides and the venue map.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 142,
+    "answer_tokens": 117
+   },
+   {
+    "seed": 2,
+    "answer": "Based on what you've provided, here is a summary of the trip plan so far:\n\n*   **Slides:** You have provided two lines of slides containing routine details for the offsite.\n*   **Venue Map:** You have provided two lines of the venue map containing routine details for the offsite.\n\n**However, I do not have the actual content of these slides or the venue map.** Therefore, I can only summarize that the plan includes routine details for the offsite in both the presentation material and the venue map.\n\nCould you please provide the actual content of the slides and the venue map so I can give",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 142,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 3,
+    "answer": "Based on the information you've provided, here is a summary of the trip plan so far:\n\n*   **Slide 1:** Contains routine details for the offsite.\n*   **Slide 2:** Contains routine details for the offsite.\n*   **Venue Map, Line 1:** Contains routine details for the offsite.\n*   **Venue Map, Line 2:** Contains routine details for the offsite.\n\nEssentially, the slides and the venue map currently contain routine details for the offsite.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 142,
+    "answer_tokens": 109
+   },
+   {
+    "seed": 4,
+    "answer": "Based on the information you've provided so far, I have the following:\n\n*   **Slide 1:** Contains routine details for the offsite.\n*   **Slide 2:** Contains routine details for the offsite.\n*   **Venue Map, Line 1:** Contains routine details for the offsite.\n*   **Venue Map, Line 2:** Contains routine details for the offsite.\n\n**However, I do not have the actual content of these slides or the map.** Therefore, I cannot provide a summary of the trip plan because the details themselves are missing.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 142,
+    "answer_tokens": 123
+   },
+   {
+    "seed": 5,
+    "answer": "Based on the information you've provided so far, here is a summary of the trip plan:\n\n*   **Slide 1:** Contains routine details for the offsite.\n*   **Slide 2:** Contains routine details for the offsite.\n*   **Venue Map, Line 1:** Contains routine details for the offsite.\n*   **Venue Map, Line 2:** Contains routine details for the offsite.\n\n**However, I do not have the actual content of these slides or the map.** Therefore, I can only tell you that the plan currently contains the *routine details* for the off",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 142,
+    "answer_tokens": 128
+   }
+  ],
+  "append-only · turn 50": [
+   {
+    "seed": 1,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Hotel Preference:** There is a desire to stay in a hotel near the river (mentioned twice).\n*   **Attendees:** Bob will join on the second day.\n*   **Dates:** There was a suggestion to move the trip to November 10 to 13, and another note mentions traveling from November 3 to 6.\n*   **Flights:** There is a request to book the morning flight if possible.\n*   **Budget:** The budget has been raised to 180 euros per night.\n*",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 329,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 2,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Accommodation Preference:** There is a desire for a hotel near the river (mentioned in notes [#12] and [#6]).\n*   **Travel Dates:** The travel dates have been mentioned as November 3rd to 6th (note [#5]), and there was a suggestion to move the trip to November 10th to 13th (note [#10]).\n*   **Attendees:** Bob is scheduled to join the group on the second day (note [#11]).\n*   **Flights:**",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 329,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 3,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Accommodation Preference:** The user has expressed a desire for a hotel near the river twice.\n*   **Attendees:** Bob will be joining on the second day.\n*   **Dates:** There were requests to move the trip to November 10 to 13, and another indication of travel dates from November 3 to 6.\n*   **Flights:** There was a request to book the morning flight if possible.\n*   **Budget:** The budget was raised to 180 euros per night.\n",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 329,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 4,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Accommodation:** There is a request for a hotel near the river.\n*   **Attendees:** Bob will join on the second day.\n*   **Dates:** The trip is planned to be from November 3rd to November 6th.\n*   **Budget:** The budget has been raised to 180 euros per night.\n*   **Flights:** There is a request to book the morning flight if possible.\n*   **Dietary Note:** One person currently eats fish but still avoids meat.\n*   **",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 329,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 5,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Accommodation Preference:** The user wants a hotel near the river (mentioned twice).\n*   **Attendees:** Bob will join on the second day.\n*   **Dates:** The trip was moved to November 10 to 13, and travel dates were set from November 3 to 6 (there is a slight conflict here, but both date ranges were noted).\n*   **Flights:** It was requested to book the morning flight if possible.\n*   **Dietary:** The user currently eats fish but is",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 329,
+    "answer_tokens": 128
+   }
+  ],
+  "managed · turn 50": [
+   {
+    "seed": 1,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Date Change:** The trip has been moved to **November 10 to 13**.\n*   **Location:** The destination is **Porto**.\n*   **Attendees:** **Bob** will join the group on the second day.\n*   **Accommodation Preference:** There is a preference for a **hotel near the river**.\n*   **Budget:** The budget has been raised to **180 euros per night**.\n*   **Travel:** It is recommended to **book the morning flight if possible**.\n*   ",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 305,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 2,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n* **Attendees:** Bob will join on the second day.\n* **Dates:** The trip has been moved to November 10 to 13.\n* **Location:** The destination is Porto.\n* **Budget:** The budget has been raised to 180 euros per night.\n* **Accommodation Preference:** There is a preference for a hotel near the river.\n* **Travel:** It is suggested to book the morning flight if possible.\n* **Dietary Note:** One person currently eats fish but still avoids meat",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 305,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 3,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Attendees:** Bob will join on the second day.\n*   **Dates:** The trip has been moved to November 10 to 13.\n*   **Location:** The destination is Porto.\n*   **Dietary Note:** One person eats fish but still avoids meat.\n*   **Accommodation Preference:** There is a request for a hotel near the river.\n*   **Travel:** It is suggested to book the morning flight if possible.\n*   **Budget:** The budget has been raised to ",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 305,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 4,
+    "answer": "Here is a summary of the trip plan based on the stored notes:\n\n*   **Attendees:** Bob will join on the second day.\n*   **Dates:** The trip has been moved to November 10 to 13.\n*   **Location:** The destination is Porto.\n*   **Dietary Notes:** One person currently eats fish but has no meat.\n*   **Accommodation:** There is a preference for a hotel near the river.\n*   **Flights:** It is recommended to book the morning flight if possible.\n*   **Budget:** The budget has been raised to 180",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 305,
+    "answer_tokens": 128
+   },
+   {
+    "seed": 5,
+    "answer": "Based on the stored notes, here is a summary of the trip plan so far:\n\n*   **Attendees:** Bob will join on the second day.\n*   **Dates:** The trip has been moved to November 10 to 13.\n*   **Location:** The destination is Porto.\n*   **Dietary Note:** The user currently eats fish but still does not eat meat.\n*   **Accommodation Preference:** The user wants a hotel near the river.\n*   **Flight Preference:** It was suggested to book the morning flight if possible.\n*   **Budget:** The budget has been raised",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 305,
+    "answer_tokens": 128
+   }
+  ]
+ }
+}

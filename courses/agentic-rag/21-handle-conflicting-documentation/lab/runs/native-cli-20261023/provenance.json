@@ -1,0 +1,104 @@
+{
+  "lesson_id": "handle-conflicting-documentation",
+  "execution": "Actual learner CLI in original PTY, no model/provider/network",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py"
+  ],
+  "cwd": "/tmp/aiml-rag-native-cli-12-preparation-20261023/projects/handle-conflicting-documentation",
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "64718055ee47b4c78a30a4256f9c7fdb17a37ae2e6e66c25e8ae3e1ab026a512",
+    "conflicts.py": "5e76cc09f56a2b4673b6f48ab6c48476840e8ce7d95d6f4b0cf2989e7517b2e6",
+    "fixtures/docs/quill-conflicting-guide.md": "b67b7e53117f9e954edd60cc050b3eed2541bdebb3349a12ab6d4ded376e85df",
+    "fixtures/docs/quill-guide.md": "d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2",
+    "fixtures/docs/quill-malformed.md": "cf0b03a77726cd8104e448adb92133fe4b8d895fbf947c112145140b44058246",
+    "fixtures/docs/quill-missing-claim.md": "0a7961fd2038ee6bd540d7bfdea5dbd4b2b491b191b5c9db666d1f12265455cb",
+    "fixtures/docs/quill-new-version.md": "887db29c705f65022795671652624382704e2c258d87091ff0c889f259ae5878",
+    "fixtures/docs/quill-reference.md": "77dac3a322bf772c26674696a7820c55e947b52eb475e6599b95c14ed9075d92",
+    "fixtures/docs/quill-unknown-value.md": "9e963312bffb0e7408fe04f219903c24dd1b4dc54689a4e95387a5feac801e98",
+    "fixtures/source-manifest.json": "b38748b2eb89802d034919f30033ab3159a292d91ceb203bc4d8a3fa8a227c43",
+    "load_documents.py": "84d30170889fc4b9f5ecbece4cdac392afe0ca3786ae09f92a9e0e49175222d7",
+    "render_output.py": "f9dada0e3398a4d97700c6bc35815d087878c45168e336bb67a1ac7d9c398aa5",
+    "requirements.lock": "a8016fa5e2f4076b17d2edd47a1af4fd549c86069ed30b3ad97a2b2ced5413d4",
+    "requirements.txt": "ffc11c7f61c86ad74982d0c627a6f5a97b8c5ae62e7d147d50955d4d9fe14343",
+    "run.py": "84a75822f8ddadb72b765757a7051eeee5920eac23e41913d496fb017147af41",
+    "runs/2026-10-23-conflicts/execution.json": "f75018a68f5a07e2de1f84e7b22d3a15477e389d5bcf354585d2daf5860d7b8d",
+    "runs/2026-10-23-conflicts/media.json": "65e54e44cb93fc343d32e3fe9770400e78e767da018ac2fc3a3cc38ab583406b",
+    "runs/2026-10-23-conflicts/output-mobile.png": "e1a1edf5006c1d56ed8ffb418f1be577905771c0f85e2a54d4ccdbfc0b090999",
+    "runs/2026-10-23-conflicts/output-small.png": "f39ffb348f36e46980d699dc405f7535ae1841fd01f7e28493bb926a2eaa79fc",
+    "runs/2026-10-23-conflicts/output.png": "db18117309845484ae57f5bd9fb2a2032d70292ca3a3dc57037931dbf6ac1c22",
+    "runs/2026-10-23-conflicts/result.json": "115bb118ed253727b4e056876b644e6f5e07326a4546abd75de363967f71c410",
+    "runs/2026-10-23-conflicts/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-conflicts/stdout.txt": "115bb118ed253727b4e056876b644e6f5e07326a4546abd75de363967f71c410",
+    "runs/2026-10-23-conflicts/tests.txt": "ce718f3fae433fecf8ff431aef634ce4d0433cae296114de609d45d2dbd38bbd",
+    "test_conflicts.py": "d59303143e0e181a93071f6a12cf678b3f0a707c079faac4ab15f1eba735f46e"
+  },
+  "stdout_sha256": "13fd0c213a54e0a272e88dc8dfc81b61221075f08bf9bc42d11cb75cbec75bb8",
+  "result_sha256": "115bb118ed253727b4e056876b644e6f5e07326a4546abd75de363967f71c410",
+  "source_files_unchanged": true,
+  "exit_code": 0,
+  "input_bytes": 0,
+  "network_attempts": 0,
+  "credentials_in_environment": false,
+  "historical_fixture": "handle-conflicting-documentation/runs/2026-10-23-conflicts/result.json",
+  "same_deterministic_result_as_historical": true,
+  "historical_differences": [],
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "05f6c3ccfd4bb409ee031b0f861105dd7c5a6d8e6bc0b68f02b3801808ea983c",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 296,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "{\n  \"execution_mode\": \"offline-explicit-synthetic-directive-gate\",\n  \"model_called\": false,\n  \"fixture_kind\": \"original synthetic developer documentation; Quill is fictional\",\n  \"grammar\": \"exact whole line @quill create_copy existing_path=refuse|overwrite or close_required=yes|no\",\n  \"cases\": [\n    {\n      \"case_id\": \"newer-wrong-version-excluded\",\n      \"candidate_ids\": [\n        \"quill-guide\",\n        \"quill-new-version\"\n      ],\n      \"requested_version\": \"1.0\",\n      \"claim_key\": \"existing_path\",\n      \"result\": {\n        \"requested_version\": \"1.0\",\n        \"claim_key\": \"existing_path\",\n        \"operation\": \"create_copy\",\n        \"candidate_ids\": [\n          \"quill-guide\",\n          \"quill-new-version\"\n        ],\n        \"eligible_source_ids\": [\n          \"quill-guide\"\n        ],\n        \"excluded_wrong_version_ids\": [\n          \"quill-new-version\"\n        ],\n        \"answer_request\": {\n          \"messages\": [\n            {\n              \"role\": \"system\",\n              \"content\": \"Describe only the supplied explicit fictional API contract. Cite every supplied source ID. Do not invent an unsupported rule.\"\n            },\n            {\n              \"role\": \"user\",\n              \"content\": \"{\\\"claim_key\\\": \\\"existing_path\\\", \\\"operation\\\": \\\"create_copy\\\", \\\"requested_version\\\": \\\"1.0\\\", \\\"source_claims\\\": [{\\\"claim_key\\\": \\\"existing_path\\\", \\\"\ndocument_revision\\\": \\\"fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4\\\", \\\"end\\\": 172, \\\"end_line\\\": 5, \\\"operation\\\": \\\"create_copy\\\", \\\"path\\\": \\\"docs/quill-guide\n.md\\\", \\\"quote\\\": \\\"@quill create_copy existing_path=refuse\\\", \\\"source_id\\\": \\\"quill-guide\\\", \\\"source_sha256\\\": \\\"d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2\\\"\n, \\\"start\\\": 133, \\\"start_line\\\": 5, \\\"url\\\": \\\"https://quill.invalid/teaching/1.0/quill-guide\\\", \\\"value\\\": \\\"refuse\\\", \\\"version\\\": \\\"1.0\\\"}]}\"\n            }\n          ]\n        },\n        \"status\": \"ready\",\n        \"reason\": \"eligible_directives_agree\",\n        \"agreed_value\": \"refuse\",\n        \"claims\": [\n          {\n            \"source_id\": \"quill-guide\","
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "2e556906e4561c05262e19ed1c3a7ec4ac23593b5c47ad663040797ac771c245",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 296,
+        "viewportY": 296,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "            \"start_line\": 5,\n            \"end_line\": 5,\n            \"start\": 133,\n            \"end\": 172,\n            \"quote\": \"@quill create_copy existing_path=refuse\"\n          }\n        ]\n      }\n    },\n    {\n      \"case_id\": \"unknown-directive-value\",\n      \"candidate_ids\": [\n        \"quill-unknown-value\"\n      ],\n      \"requested_version\": \"1.0\",\n      \"claim_key\": \"existing_path\",\n      \"result\": {\n        \"status\": \"refused\",\n        \"error\": \"DirectiveError\",\n        \"reason\": \"unknown_directive_value\",\n        \"answer_request\": null\n      }\n    },\n    {\n      \"case_id\": \"malformed-directive\",\n      \"candidate_ids\": [\n        \"quill-malformed\"\n      ],\n      \"requested_version\": \"1.0\",\n      \"claim_key\": \"existing_path\",\n      \"result\": {\n        \"status\": \"refused\",\n        \"error\": \"DirectiveError\",\n        \"reason\": \"malformed_directive\",\n        \"answer_request\": null\n      }\n    }\n  ],\n  \"changed_source\": {\n    \"status\": \"refused\",\n    \"error\": \"IngestionError\",\n    \"reason\": \"hash_mismatch\",\n    \"answer_request\": null\n  },\n  \"policy\": \"Exact requested version before directive parsing. Any eligible source missing the requested key withholds the request. No source-priority or newest-version winner.\",\n  \"limit\": \"This parses explicit machine-readable teaching contracts, not arbitrary prose contradictions or semantic agreement. A prepared cited request is not a generated answer or \na correctness/security guarantee.\"\n}\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "raw_stdout_representation": "Original PTY CRLF bytes preserved; result.json parses actual stdout or copies the actual --output file. No raw output rewriting.",
+  "stdout_prefix_note": null,
+  "time": "2026-10-23T18:43:21.051725+00:00",
+  "dependencies": {
+    "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": {
+      "numpy": "2.5.4",
+      "langchain-core": "1.6.12",
+      "transformers": "5.20.1",
+      "tokenizers": "0.23.3"
+    },
+    "sqlite_version": "3.45.3",
+    "python_executable": "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python"
+  },
+  "capture_view_review": "All unique original top/end views personally inspected; eight short-output top/end pairs are byte-identical."
+}

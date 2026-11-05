@@ -1,0 +1,1973 @@
+{
+ "top_k": 4,
+ "sources": 37,
+ "run": {
+  "answer_model": {
+   "ollama_tag": "gemma4:e2b",
+   "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2"
+  },
+  "embedding_model": {
+   "ollama_tag": "qwen3-embedding:0.6b",
+   "ollama_digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d"
+  },
+  "ollama_version": "0.32.14",
+  "options": {
+   "temperature": 0,
+   "seed": 42,
+   "num_predict": 400,
+   "num_ctx": 8192,
+   "think": false
+  },
+  "recorded_with": {
+   "machine": "Apple M4 Pro, 48 GB memory (Mac16,7)",
+   "os": "macOS 27.0.1",
+   "python": "3.15.0",
+   "date": "2026-10-20"
+  }
+ },
+ "results": {
+  "development/images": {
+   "questions": 10,
+   "pass": 9,
+   "fail": 1,
+   "incomplete": 0,
+   "verified": 10,
+   "flagged": 0,
+   "pass_and_flagged": 0,
+   "fail_and_verified": 1,
+   "source_retrieved": 10
+  },
+  "development/text": {
+   "questions": 10,
+   "pass": 10,
+   "fail": 0,
+   "incomplete": 0,
+   "verified": 10,
+   "flagged": 0,
+   "pass_and_flagged": 0,
+   "fail_and_verified": 0,
+   "source_retrieved": 10
+  },
+  "held-out/images": {
+   "questions": 8,
+   "pass": 8,
+   "fail": 0,
+   "incomplete": 0,
+   "verified": 7,
+   "flagged": 1,
+   "pass_and_flagged": 1,
+   "fail_and_verified": 0,
+   "source_retrieved": 8
+  },
+  "held-out/text": {
+   "questions": 8,
+   "pass": 7,
+   "fail": 1,
+   "incomplete": 0,
+   "verified": 8,
+   "flagged": 0,
+   "pass_and_flagged": 0,
+   "fail_and_verified": 1,
+   "source_retrieved": 8
+  }
+ },
+ "answer_ms_median": 1922.0,
+ "answer_ms_max": 4579,
+ "per_question": [
+  {
+   "id": "d01",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c04",
+     "kind": "page",
+     "score": 0.588722
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c08",
+     "kind": "page",
+     "score": 0.455482
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.437603
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.424918
+    }
+   ],
+   "reply": {
+    "answer": "The version check must return 0.32.14 after a restart.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "GET /api/version returns 0.32.14",
+      "source": "S1",
+      "quote": "GET /api/version returns 0.32.14"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 491,
+    "output_tokens": 96,
+    "total_ms": 4579
+   }
+  },
+  {
+   "id": "d01",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c04",
+     "kind": "page",
+     "score": 0.588722
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c08",
+     "kind": "page",
+     "score": 0.455482
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.437603
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.424918
+    }
+   ],
+   "reply": {
+    "answer": "The version check must return 0.32.14 after a restart.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "GET /api/version returns 0.32.14",
+      "source": "S1",
+      "quote": "GET /api/version returns 0.32.14"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 491,
+    "output_tokens": 96,
+    "total_ms": 4579
+   }
+  },
+  {
+   "id": "d02",
+   "split": "development",
+   "mode": "images",
+   "grade": false,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "latency-p95",
+     "kind": "figure",
+     "score": 0.752482
+    },
+    {
+     "label": "S2",
+     "id": "latency-p50",
+     "kind": "figure",
+     "score": 0.690943
+    },
+    {
+     "label": "S3",
+     "id": "fallback-flow",
+     "kind": "figure",
+     "score": 0.435747
+    },
+    {
+     "label": "S4",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.415986
+    }
+   ],
+   "reply": {
+    "answer": "The small model has the lowest p95 latency.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "p95 latency by model",
+      "source": "S1",
+      "quote": "p95 latency by model"
+     },
+     {
+      "text": "410",
+      "source": "S1",
+      "quote": "410"
+     },
+     {
+      "text": "1290",
+      "source": "S1",
+      "quote": "1290"
+     },
+     {
+      "text": "p95 latency",
+      "source": "S1",
+      "quote": "p95 latency"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 606,
+    "output_tokens": 132,
+    "total_ms": 2654
+   }
+  },
+  {
+   "id": "d02",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "latency-p95",
+     "kind": "figure",
+     "score": 0.752482
+    },
+    {
+     "label": "S2",
+     "id": "latency-p50",
+     "kind": "figure",
+     "score": 0.690943
+    },
+    {
+     "label": "S3",
+     "id": "fallback-flow",
+     "kind": "figure",
+     "score": 0.435747
+    },
+    {
+     "label": "S4",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.415986
+    }
+   ],
+   "reply": {
+    "answer": "The medium model size has the lowest p95 latency.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The bar for medium has a height of 380 ms.",
+      "source": "S1",
+      "quote": "The bar for medium has a height of 380 ms."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 673,
+    "output_tokens": 98,
+    "total_ms": 1797
+   }
+  },
+  {
+   "id": "d03",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "context-budget",
+     "kind": "figure",
+     "score": 0.685074
+    },
+    {
+     "label": "S2",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.495311
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.36367
+    },
+    {
+     "label": "S4",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.357788
+    }
+   ],
+   "reply": {
+    "answer": "The context budget reserve is 728 tokens.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "reserve 728",
+      "source": "S1",
+      "quote": "reserve 728"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 534,
+    "output_tokens": 57,
+    "total_ms": 1666
+   }
+  },
+  {
+   "id": "d03",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "context-budget",
+     "kind": "figure",
+     "score": 0.685074
+    },
+    {
+     "label": "S2",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.495311
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.36367
+    },
+    {
+     "label": "S4",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.357788
+    }
+   ],
+   "reply": {
+    "answer": "The context budget reserve value is 728.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "There is also a reserve value of 728.",
+      "source": "S1",
+      "quote": "There is also a reserve value of 728."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 588,
+    "output_tokens": 84,
+    "total_ms": 1616
+   }
+  },
+  {
+   "id": "d04",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.590567
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c04",
+     "kind": "page",
+     "score": 0.553426
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c08",
+     "kind": "page",
+     "score": 0.485647
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.366859
+    }
+   ],
+   "reply": {
+    "answer": "The operator should stop at the first failed check, record its name, time, and full error text in the incident log, and roll back to the previous release.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Stop at the first failed check. Record its name, the time and the full error text in the incident log then roll back to the previous release.",
+      "source": "S1",
+      "quote": "Stop at the first failed check. Record its name, the time and the full error text in the incident log then roll back to the previous release."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 474,
+    "output_tokens": 151,
+    "total_ms": 2053
+   }
+  },
+  {
+   "id": "d04",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.590567
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c04",
+     "kind": "page",
+     "score": 0.553426
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c08",
+     "kind": "page",
+     "score": 0.485647
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.366859
+    }
+   ],
+   "reply": {
+    "answer": "The operator should stop at the first failed check, record its name, time, and full error text in the incident log, and roll back to the previous release.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Stop at the first failed check. Record its name, the time and the full error text in the incident log then roll back to the previous release.",
+      "source": "S1",
+      "quote": "Stop at the first failed check. Record its name, the time and the full error text in the incident log then roll back to the previous release."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 474,
+    "output_tokens": 151,
+    "total_ms": 2053
+   }
+  },
+  {
+   "id": "d05",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "latency-p50",
+     "kind": "figure",
+     "score": 0.757525
+    },
+    {
+     "label": "S2",
+     "id": "latency-p95",
+     "kind": "figure",
+     "score": 0.749349
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.468249
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.449017
+    }
+   ],
+   "reply": {
+    "answer": "The p50 latency of the large model is 640 ms.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "640",
+      "source": "S1",
+      "quote": "640"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 508,
+    "output_tokens": 73,
+    "total_ms": 1757
+   }
+  },
+  {
+   "id": "d05",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "latency-p50",
+     "kind": "figure",
+     "score": 0.757525
+    },
+    {
+     "label": "S2",
+     "id": "latency-p95",
+     "kind": "figure",
+     "score": 0.749349
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.468249
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.449017
+    }
+   ],
+   "reply": {
+    "answer": "The p50 latency of the large model is 640 ms.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The bar for large has the greatest height at 640 ms.",
+      "source": "S1",
+      "quote": "The bar for large has the greatest height at 640 ms."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 581,
+    "output_tokens": 80,
+    "total_ms": 1612
+   }
+  },
+  {
+   "id": "d06",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "job-states",
+     "kind": "figure",
+     "score": 0.599787
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c04",
+     "kind": "page",
+     "score": 0.572936
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.458024
+    },
+    {
+     "label": "S4",
+     "id": "errors-grid",
+     "kind": "figure",
+     "score": 0.416111
+    }
+   ],
+   "reply": {
+    "answer": "A running job moves to the failed state when there is an error.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "running",
+      "source": "S1",
+      "quote": "running"
+     },
+     {
+      "text": "failed",
+      "source": "S1",
+      "quote": "failed"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 480,
+    "output_tokens": 107,
+    "total_ms": 2140
+   }
+  },
+  {
+   "id": "d06",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "job-states",
+     "kind": "figure",
+     "score": 0.599787
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c04",
+     "kind": "page",
+     "score": 0.572936
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.458024
+    },
+    {
+     "label": "S4",
+     "id": "errors-grid",
+     "kind": "figure",
+     "score": 0.416111
+    }
+   ],
+   "reply": {
+    "answer": "A running job can move to the done state or the failed state.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "An arrow connects running to done.",
+      "source": "S1",
+      "quote": "An arrow connects running to done."
+     },
+     {
+      "text": "An arrow connects running to failed.",
+      "source": "S1",
+      "quote": "An arrow connects running to failed."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 464,
+    "output_tokens": 113,
+    "total_ms": 1946
+   }
+  },
+  {
+   "id": "d07",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.800032
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.470469
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.379112
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c06",
+     "kind": "page",
+     "score": 0.37509
+    }
+   ],
+   "reply": {
+    "answer": "At least 6 GB of memory must be free before loading the vision model.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Free at least 6 GB of memory before loading the vision model.",
+      "source": "S1",
+      "quote": "Free at least 6 GB of memory before loading the vision model."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 345,
+    "output_tokens": 102,
+    "total_ms": 1682
+   }
+  },
+  {
+   "id": "d07",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.800032
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.470469
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.379112
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c06",
+     "kind": "page",
+     "score": 0.37509
+    }
+   ],
+   "reply": {
+    "answer": "At least 6 GB of memory must be free before loading the vision model.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Free at least 6 GB of memory before loading the vision model.",
+      "source": "S1",
+      "quote": "Free at least 6 GB of memory before loading the vision model."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 345,
+    "output_tokens": 102,
+    "total_ms": 1682
+   }
+  },
+  {
+   "id": "d08",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c01",
+     "kind": "page",
+     "score": 0.448653
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.431342
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.404825
+    },
+    {
+     "label": "S4",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.392406
+    }
+   ],
+   "reply": {
+    "answer": "The provided sources do not contain information about which GPU the inference server needs.",
+    "not_in_sources": true,
+    "claims": []
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 427,
+    "output_tokens": 42,
+    "total_ms": 1282
+   }
+  },
+  {
+   "id": "d08",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c01",
+     "kind": "page",
+     "score": 0.448653
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c02",
+     "kind": "page",
+     "score": 0.431342
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.404825
+    },
+    {
+     "label": "S4",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.392406
+    }
+   ],
+   "reply": {
+    "answer": "The provided sources do not mention which GPU the inference server needs.",
+    "not_in_sources": true,
+    "claims": []
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 443,
+    "output_tokens": 38,
+    "total_ms": 1153
+   }
+  },
+  {
+   "id": "d09",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "confusion",
+     "kind": "figure",
+     "score": 0.719518
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.42799
+    },
+    {
+     "label": "S3",
+     "id": "errors-grid",
+     "kind": "figure",
+     "score": 0.422936
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.420513
+    }
+   ],
+   "reply": {
+    "answer": "The number of cases both graders marked as fail is 11.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "11",
+      "source": "S1",
+      "quote": "fail"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 523,
+    "output_tokens": 77,
+    "total_ms": 1871
+   }
+  },
+  {
+   "id": "d09",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "confusion",
+     "kind": "figure",
+     "score": 0.719518
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.42799
+    },
+    {
+     "label": "S3",
+     "id": "errors-grid",
+     "kind": "figure",
+     "score": 0.422936
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.420513
+    }
+   ],
+   "reply": {
+    "answer": "The number of cases both graders marked as fail is 11.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The bottom right cell shows 11.",
+      "source": "S1",
+      "quote": "The bottom right cell shows 11."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 539,
+    "output_tokens": 66,
+    "total_ms": 1614
+   }
+  },
+  {
+   "id": "d10",
+   "split": "development",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c03",
+     "kind": "page",
+     "score": 0.691368
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c01",
+     "kind": "page",
+     "score": 0.394553
+    },
+    {
+     "label": "S3",
+     "id": "init-sequence",
+     "kind": "figure",
+     "score": 0.390433
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c04",
+     "kind": "page",
+     "score": 0.379606
+    }
+   ],
+   "reply": {
+    "answer": "The start script writes its process ID to run/server.pid.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The script writes its process ID to run/server.pid.",
+      "source": "S1",
+      "quote": "The script writes its process ID to run/server.pid."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 456,
+    "output_tokens": 98,
+    "total_ms": 1924
+   }
+  },
+  {
+   "id": "d10",
+   "split": "development",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c03",
+     "kind": "page",
+     "score": 0.691368
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c01",
+     "kind": "page",
+     "score": 0.394553
+    },
+    {
+     "label": "S3",
+     "id": "init-sequence",
+     "kind": "figure",
+     "score": 0.390433
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c04",
+     "kind": "page",
+     "score": 0.379606
+    }
+   ],
+   "reply": {
+    "answer": "The start script writes its process ID to run/server.pid.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The script writes its process ID to run/server.pid.",
+      "source": "S1",
+      "quote": "The script writes its process ID to run/server.pid."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 430,
+    "output_tokens": 89,
+    "total_ms": 1565
+   }
+  },
+  {
+   "id": "h01",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "throughput-bars",
+     "kind": "figure",
+     "score": 0.700192
+    },
+    {
+     "label": "S2",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.547853
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.354868
+    },
+    {
+     "label": "S4",
+     "id": "tool-sequence",
+     "kind": "figure",
+     "score": 0.344707
+    }
+   ],
+   "reply": {
+    "answer": "4 workers handle 130 requests per second.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "130",
+      "source": "S1",
+      "quote": "130"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 597,
+    "output_tokens": 53,
+    "total_ms": 1962
+   }
+  },
+  {
+   "id": "h01",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "throughput-bars",
+     "kind": "figure",
+     "score": 0.700192
+    },
+    {
+     "label": "S2",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.547853
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.354868
+    },
+    {
+     "label": "S4",
+     "id": "tool-sequence",
+     "kind": "figure",
+     "score": 0.344707
+    }
+   ],
+   "reply": {
+    "answer": "4 workers handle 130 requests per second.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The bar for 4 workers is at a level of 130 requests per second.",
+      "source": "S1",
+      "quote": "The bar for 4 workers is at a level of 130 requests per second."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 644,
+    "output_tokens": 107,
+    "total_ms": 1968
+   }
+  },
+  {
+   "id": "h02",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "pass-rate-line",
+     "kind": "figure",
+     "score": 0.606875
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.452853
+    },
+    {
+     "label": "S3",
+     "id": "confusion",
+     "kind": "figure",
+     "score": 0.411737
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.401007
+    }
+   ],
+   "reply": {
+    "answer": "Prompt version 4 has the highest pass rate.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Pass rate by prompt version",
+      "source": "S1",
+      "quote": "Pass rate by prompt version"
+     },
+     {
+      "text": "pass rate (max 0.7)",
+      "source": "S1",
+      "quote": "pass rate (max 0.7)"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 496,
+    "output_tokens": 111,
+    "total_ms": 2455
+   }
+  },
+  {
+   "id": "h02",
+   "split": "held-out",
+   "mode": "text",
+   "grade": false,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "pass-rate-line",
+     "kind": "figure",
+     "score": 0.606875
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.452853
+    },
+    {
+     "label": "S3",
+     "id": "confusion",
+     "kind": "figure",
+     "score": 0.411737
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.401007
+    }
+   ],
+   "reply": {
+    "answer": "Version four has the highest pass rate.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The pass rate starts low at version one, increases to a higher point at version two, decreases slightly at version three, and then increases sharply to the highest point at version four.",
+      "source": "S1",
+      "quote": "The pass rate starts low at version one, increases to a higher point at version two, decreases slightly at version three, and then increases sharply to the highest point at version four."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 541,
+    "output_tokens": 114,
+    "total_ms": 2135
+   }
+  },
+  {
+   "id": "h03",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "flagged",
+   "flags": [
+    "claim_1_quote_not_in_source"
+   ],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "chunk-pie",
+     "kind": "figure",
+     "score": 0.672033
+    },
+    {
+     "label": "S2",
+     "id": "split-pie",
+     "kind": "figure",
+     "score": 0.442717
+    },
+    {
+     "label": "S3",
+     "id": "latency-p50",
+     "kind": "figure",
+     "score": 0.430357
+    },
+    {
+     "label": "S4",
+     "id": "latency-p95",
+     "kind": "figure",
+     "score": 0.418652
+    }
+   ],
+   "reply": {
+    "answer": "The medium chunks make up 50% of the total.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "medium 50%",
+      "source": "S1",
+      "quote": "medium 50%"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 664,
+    "output_tokens": 81,
+    "total_ms": 2642
+   }
+  },
+  {
+   "id": "h03",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "chunk-pie",
+     "kind": "figure",
+     "score": 0.672033
+    },
+    {
+     "label": "S2",
+     "id": "split-pie",
+     "kind": "figure",
+     "score": 0.442717
+    },
+    {
+     "label": "S3",
+     "id": "latency-p50",
+     "kind": "figure",
+     "score": 0.430357
+    },
+    {
+     "label": "S4",
+     "id": "latency-p95",
+     "kind": "figure",
+     "score": 0.418652
+    }
+   ],
+   "reply": {
+    "answer": "The medium chunk size represents 50 percent.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The second section is labeled medium and represents 50 percent.",
+      "source": "S1",
+      "quote": "The second section is labeled medium and represents 50 percent."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 700,
+    "output_tokens": 94,
+    "total_ms": 1984
+   }
+  },
+  {
+   "id": "h04",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "errors-grid",
+     "kind": "figure",
+     "score": 0.750907
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.423786
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.411254
+    },
+    {
+     "label": "S4",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.350336
+    }
+   ],
+   "reply": {
+    "answer": "There were 0 read errors in the west region.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "west",
+      "source": "S1",
+      "quote": "west"
+     },
+     {
+      "text": "0",
+      "source": "S1",
+      "quote": "0"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 520,
+    "output_tokens": 90,
+    "total_ms": 2219
+   }
+  },
+  {
+   "id": "h04",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "errors-grid",
+     "kind": "figure",
+     "score": 0.750907
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c05",
+     "kind": "page",
+     "score": 0.423786
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.411254
+    },
+    {
+     "label": "S4",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.350336
+    }
+   ],
+   "reply": {
+    "answer": "There were 0 read errors in the west region.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "The west region has 0 errors in read and 4 errors in write.",
+      "source": "S1",
+      "quote": "The west region has 0 errors in read and 4 errors in write."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 545,
+    "output_tokens": 92,
+    "total_ms": 1805
+   }
+  },
+  {
+   "id": "h05",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "embedjob-c03",
+     "kind": "page",
+     "score": 0.638844
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c06",
+     "kind": "page",
+     "score": 0.611757
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.536733
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.405678
+    }
+   ],
+   "reply": {
+    "answer": "The SHA-256 of corpus.json should be written next to the vectors.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Write the SHA-256 of corpus.json next to the vectors.",
+      "source": "S1",
+      "quote": "Write the SHA-256 of corpus.json next to the vectors."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 405,
+    "output_tokens": 108,
+    "total_ms": 1920
+   }
+  },
+  {
+   "id": "h05",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "embedjob-c03",
+     "kind": "page",
+     "score": 0.638844
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c06",
+     "kind": "page",
+     "score": 0.611757
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.536733
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.405678
+    }
+   ],
+   "reply": {
+    "answer": "The SHA-256 of corpus.json should be written next to the vectors.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Write the SHA-256 of corpus.json next to the vectors.",
+      "source": "S1",
+      "quote": "Write the SHA-256 of corpus.json next to the vectors."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 405,
+    "output_tokens": 108,
+    "total_ms": 1920
+   }
+  },
+  {
+   "id": "h06",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "embedjob-c01",
+     "kind": "page",
+     "score": 0.757389
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.713396
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c03",
+     "kind": "page",
+     "score": 0.553326
+    },
+    {
+     "label": "S4",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.420095
+    }
+   ],
+   "reply": {
+    "answer": "Each passage in corpus.json needs an ID, a lesson slug, and plain text with no page markup.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Each passage needs an ID, the lesson slug and plain text with no page markup.",
+      "source": "S1",
+      "quote": "Export the lesson sections to corpus.json. Each passage needs an ID, the lesson slug and plain text with no page markup."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 486,
+    "output_tokens": 123,
+    "total_ms": 2321
+   }
+  },
+  {
+   "id": "h06",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "embedjob-c01",
+     "kind": "page",
+     "score": 0.757389
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c05",
+     "kind": "page",
+     "score": 0.713396
+    },
+    {
+     "label": "S3",
+     "id": "embedjob-c03",
+     "kind": "page",
+     "score": 0.553326
+    },
+    {
+     "label": "S4",
+     "id": "tokens-grouped",
+     "kind": "figure",
+     "score": 0.420095
+    }
+   ],
+   "reply": {
+    "answer": "Each passage in corpus.json needs a lesson slug and plain text with no page markup besides its ID.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "Each passage needs an ID, the lesson slug and plain text with no page markup.",
+      "source": "S1",
+      "quote": "Export the lesson sections to corpus.json. Each passage needs an ID, the lesson slug and plain text with no page markup."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 502,
+    "output_tokens": 113,
+    "total_ms": 2128
+   }
+  },
+  {
+   "id": "h07",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "cache-states",
+     "kind": "figure",
+     "score": 0.66964
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.410912
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c07",
+     "kind": "page",
+     "score": 0.395378
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c03",
+     "kind": "page",
+     "score": 0.349893
+    }
+   ],
+   "reply": {
+    "answer": "A fresh cache entry moves to a stale state when it expires.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "fresh",
+      "source": "S1",
+      "quote": "fresh"
+     },
+     {
+      "text": "stale",
+      "source": "S1",
+      "quote": "stale"
+     },
+     {
+      "text": "expired",
+      "source": "S1",
+      "quote": "expired"
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 521,
+    "output_tokens": 139,
+    "total_ms": 2599
+   }
+  },
+  {
+   "id": "h07",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "cache-states",
+     "kind": "figure",
+     "score": 0.66964
+    },
+    {
+     "label": "S2",
+     "id": "embedjob-c07",
+     "kind": "page",
+     "score": 0.410912
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c07",
+     "kind": "page",
+     "score": 0.395378
+    },
+    {
+     "label": "S4",
+     "id": "embedjob-c03",
+     "kind": "page",
+     "score": 0.349893
+    }
+   ],
+   "reply": {
+    "answer": "A fresh cache entry moves to stale when it expires.",
+    "not_in_sources": false,
+    "claims": [
+     {
+      "text": "An arrow goes from fresh to stale.",
+      "source": "S1",
+      "quote": "An arrow goes from fresh to stale."
+     }
+    ]
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 527,
+    "output_tokens": 85,
+    "total_ms": 1867
+   }
+  },
+  {
+   "id": "h08",
+   "split": "held-out",
+   "mode": "images",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c01",
+     "kind": "page",
+     "score": 0.412908
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c03",
+     "kind": "page",
+     "score": 0.368272
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c04",
+     "kind": "page",
+     "score": 0.368162
+    },
+    {
+     "label": "S4",
+     "id": "init-sequence",
+     "kind": "figure",
+     "score": 0.326786
+    }
+   ],
+   "reply": {
+    "answer": "The provided sources do not contain information about the warranty on the server hardware.",
+    "not_in_sources": true,
+    "claims": []
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 565,
+    "output_tokens": 42,
+    "total_ms": 1477
+   }
+  },
+  {
+   "id": "h08",
+   "split": "held-out",
+   "mode": "text",
+   "grade": true,
+   "source_retrieved": true,
+   "status": "verified",
+   "flags": [],
+   "retrieved": [
+    {
+     "label": "S1",
+     "id": "runbook-c01",
+     "kind": "page",
+     "score": 0.412908
+    },
+    {
+     "label": "S2",
+     "id": "runbook-c03",
+     "kind": "page",
+     "score": 0.368272
+    },
+    {
+     "label": "S3",
+     "id": "runbook-c04",
+     "kind": "page",
+     "score": 0.368162
+    },
+    {
+     "label": "S4",
+     "id": "init-sequence",
+     "kind": "figure",
+     "score": 0.326786
+    }
+   ],
+   "reply": {
+    "answer": "The provided sources do not contain information about the warranty on the server hardware.",
+    "not_in_sources": true,
+    "claims": []
+   },
+   "raw": null,
+   "model": {
+    "prompt_tokens": 539,
+    "output_tokens": 39,
+    "total_ms": 1214
+   }
+  }
+ ]
+}

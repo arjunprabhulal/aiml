@@ -1,0 +1,90 @@
+{
+ "eval_set_id": "validation",
+ "name": "validation",
+ "eval_cases": [
+  {
+   "eval_id": "local-model",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "How do I point the assistant at a local model?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "Set `OLLAMA_API_BASE` (install.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  },
+  {
+   "eval_id": "ollama-unreachable",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "The assistant can't reach Ollama. What do I check?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "Check that `OLLAMA_API_BASE` points to a running Ollama server (troubleshooting.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  },
+  {
+   "eval_id": "drop-index",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "What command drops the search index?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "`docs-assistant index --rebuild` drops the search index and builds it again (cli.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  }
+ ]
+}

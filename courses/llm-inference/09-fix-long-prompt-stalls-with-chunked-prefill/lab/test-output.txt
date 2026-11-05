@@ -1,0 +1,11 @@
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+test_chunked_2048_meets_tpot_slo_and_completes_all_requests (test_lab.TestChunkedPrefillLab.test_chunked_2048_meets_tpot_slo_and_completes_all_requests) ... ok
+test_decode_reservation_exceeding_token_budget_raises (test_lab.TestChunkedPrefillLab.test_decode_reservation_exceeding_token_budget_raises) ... ok
+test_monolithic_100k_prefill_stalls_active_decodes (test_lab.TestChunkedPrefillLab.test_monolithic_100k_prefill_stalls_active_decodes) ... ok
+test_oversized_chunk_budget_violates_tpot_slo (test_lab.TestChunkedPrefillLab.test_oversized_chunk_budget_violates_tpot_slo) ... ok
+test_prefill_progress_exact_token_accounting (test_lab.TestChunkedPrefillLab.test_prefill_progress_exact_token_accounting) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

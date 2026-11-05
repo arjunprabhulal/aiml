@@ -1,0 +1,59 @@
+{
+  "projection": {
+    "mode": "Parsed saved request and response; only opaque thoughtSignature/thought_signature fields removed",
+    "original_private_request_sha256": "5fcb18a0c90d8847bddb572a33a89f6367bcbde3e42165fb7be74d2b5768eb72",
+    "original_private_response_sha256": "9d7c891f11629dc461feca1b2cba90858a92728131dcea6179ef4bf348918ea9",
+    "originals_preserved": true,
+    "removed_field_paths": [
+      "$.candidates[0].content.parts[0].thoughtSignature"
+    ]
+  },
+  "request": {
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Write release notes for version 2.5.0: one Markdown bullet per merged pull request, user-facing wording, keep the #number.\n#409 Add a per-client timeout override\n#412 Retry webhook delivery on 503\n#418 Remove the unused legacy CSV export"
+          }
+        ],
+        "role": "user"
+      }
+    ],
+    "safetySettings": [],
+    "generationConfig": {
+      "candidateCount": 1,
+      "maxOutputTokens": 1024
+    }
+  },
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "## Version 2.5.0\n\n* Added the ability to configure custom timeout overrides for individual clients (#409).\n* Improved webhook reliability by automatically retrying delivery when receiving a 503 (Service Unavailable) response (#412).\n* Removed the legacy CSV export option to streamline export functionality (#418)."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 67,
+      "candidatesTokenCount": 70,
+      "totalTokenCount": 641,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 67
+        }
+      ],
+      "thoughtsTokenCount": 504,
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.8-flash",
+    "responseId": "y2Dbaq-NDeH6wbUPz_29iQg"
+  }
+}

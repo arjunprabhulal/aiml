@@ -1,0 +1,42 @@
+{
+  "instructions": "Answer only from the conversation and the notes. If a fact is missing, say so.",
+  "current": "List the decisions that still apply to the database and the exports.",
+  "history": [
+    {
+      "user": "We need audit logs, export jobs and billing reports. The audit logs must keep 400 days of history.",
+      "assistant": "Noted. Audit logs keep 400 days of history."
+    },
+    {
+      "user": "For the first version we will use MySQL.",
+      "assistant": "Understood. MySQL for the first version."
+    },
+    {
+      "user": "Exports must finish within 15 minutes.",
+      "assistant": "I will keep exports under 15 minutes."
+    },
+    {
+      "user": "Call the export service ledger-export.",
+      "assistant": "The export service is now called ledger-export."
+    },
+    {
+      "user": "We chose PostgreSQL for the application. It replaces MySQL because we need row-level security.",
+      "assistant": "Understood. PostgreSQL is the selected database."
+    },
+    {
+      "user": "The deadline for billing reports is 02:00 UTC each night.",
+      "assistant": "Billing reports will be ready by 02:00 UTC."
+    },
+    {
+      "user": "The export job failed again. Here is the log: 2026-10-14T09:00:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:01:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:02:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:03:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:04:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:05:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:06:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:07:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:08:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:09:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:10:00Z export-worker timeout after 30s waiting for a database connection. 2026-10-14T09:11:00Z export-worker timeout after 30s waiting for a database connection.",
+      "assistant": "The timeouts come from the connection pool. Raise the pool size from 10 to 20."
+    },
+    {
+      "user": "Which tables need row security first?",
+      "assistant": "Invoices and exports need row security first."
+    }
+  ],
+  "context_limit": 512,
+  "max_new_tokens": 128,
+  "margin": 32,
+  "notes_reserve": 160
+}

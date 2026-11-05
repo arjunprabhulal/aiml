@@ -1,0 +1,76 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "equivalence_check": {
+    "seq_len": 64,
+    "head_dim": 16,
+    "block_q": 16,
+    "block_kv": 16,
+    "max_abs_diff": 1.388e-16,
+    "standard_materialized_elements": 4160,
+    "flash_materialized_hbm_elements": 0,
+    "flash_sram_tile_elements": 256,
+    "flash_tiles_visited": 10,
+    "sample_row0_first4": [
+      -0.267257,
+      0.731232,
+      -0.775466,
+      0.699456
+    ],
+    "sample_last_row_first4": [
+      0.017991,
+      -0.007947,
+      0.059253,
+      0.070964
+    ]
+  },
+  "hbm_traffic_sweep": [
+    {
+      "seq_len": 1024,
+      "num_heads": 32,
+      "head_dim": 128,
+      "standard_qkv_o_mb": 33.55,
+      "standard_nxn_matrix_hbm_mb": 268.44,
+      "standard_total_hbm_mb": 301.99,
+      "tiled_logical_access_mb_no_cache_reuse": 92.27,
+      "qkvo_compulsory_bytes_mb": 33.55,
+      "num_q_blocks": 8,
+      "accounting": "logical accesses, not measured HBM traffic; dense baseline and causal tiled loop differ in work"
+    },
+    {
+      "seq_len": 4096,
+      "num_heads": 32,
+      "head_dim": 128,
+      "standard_qkv_o_mb": 134.22,
+      "standard_nxn_matrix_hbm_mb": 4294.97,
+      "standard_total_hbm_mb": 4429.19,
+      "tiled_logical_access_mb_no_cache_reuse": 1174.41,
+      "qkvo_compulsory_bytes_mb": 134.22,
+      "num_q_blocks": 32,
+      "accounting": "logical accesses, not measured HBM traffic; dense baseline and causal tiled loop differ in work"
+    },
+    {
+      "seq_len": 16384,
+      "num_heads": 32,
+      "head_dim": 128,
+      "standard_qkv_o_mb": 536.87,
+      "standard_nxn_matrix_hbm_mb": 68719.48,
+      "standard_total_hbm_mb": 69256.35,
+      "tiled_logical_access_mb_no_cache_reuse": 17582.52,
+      "qkvo_compulsory_bytes_mb": 536.87,
+      "num_q_blocks": 128,
+      "accounting": "logical accesses, not measured HBM traffic; dense baseline and causal tiled loop differ in work"
+    },
+    {
+      "seq_len": 32768,
+      "num_heads": 32,
+      "head_dim": 128,
+      "standard_qkv_o_mb": 1073.74,
+      "standard_nxn_matrix_hbm_mb": 274877.91,
+      "standard_total_hbm_mb": 275951.65,
+      "tiled_logical_access_mb_no_cache_reuse": 69524.78,
+      "qkvo_compulsory_bytes_mb": 1073.74,
+      "num_q_blocks": 256,
+      "accounting": "logical accesses, not measured HBM traffic; dense baseline and causal tiled loop differ in work"
+    }
+  ]
+}

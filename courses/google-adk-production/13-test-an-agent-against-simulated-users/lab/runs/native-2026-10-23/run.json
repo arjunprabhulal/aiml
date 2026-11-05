@@ -1,0 +1,54 @@
+{
+  "scenario": "native_user_simulation",
+  "native_command": [
+    "adk",
+    "eval",
+    "docs_assistant",
+    "scenarios:6be7706e",
+    "--config_file_path",
+    "eval_config.json",
+    "--print_detailed_results"
+  ],
+  "model": "gemini-3.8-flash",
+  "eval_id": "6be7706e",
+  "native_result_file": "receipts/docs_assistant_scenarios_1792772256.214602.evalset_result.json",
+  "provider_requests": 15,
+  "request_cap": 20,
+  "max_output_tokens_per_request": 1024,
+  "automatic_reruns": 0,
+  "process_exit": 0,
+  "turn_count": 2,
+  "observer_starts": {
+    "agent": 7,
+    "simulator": 2,
+    "judge": 6
+  },
+  "observer_boundary": "Roles classified heuristically from original SDKcaller stack; supplementary receipt labels, not authoritative perrole provider accounting. Locked guardledger counts HTTPattempts.",
+  "judge_metrics": {
+    "hallucinations_v1": {
+      "score": 1.0,
+      "threshold": 0.8,
+      "status": 1
+    },
+    "per_turn_user_simulator_quality_v1": {
+      "score": 1.0,
+      "threshold": 0.8,
+      "status": 1
+    }
+  },
+  "native_means": {
+    "inference_call_count_v1": 3.5,
+    "tool_call_count_v1": 2.5,
+    "token_usage_v1": 1368.0,
+    "invocation_duration_v1": 6.9110000000000005
+  },
+  "metric_boundary": "Native informational scores are per-agent-invocation means over the two turns; they are not all-nested HTTPattempt or token/billing totals. Judge scores are sampled model assessments of this selected trajectory.",
+  "grounding": "OLLAMA_API_BASE and Python3.12 match supplied scenario install.md. No Ollama/modelruntime launched or runtimeconfiguration verified.",
+  "simulation": "Generated Pythonversion followup, then simulator stop text ending </finished>; actual responses preserved.",
+  "cloud_eval_or_task_success_metric_exercised": false,
+  "native_web_ui_exercised": false,
+  "fixture_answers": {
+    "model_setting": "OLLAMA_API_BASE",
+    "python_requirement": "Python 3.12 or later"
+  }
+}

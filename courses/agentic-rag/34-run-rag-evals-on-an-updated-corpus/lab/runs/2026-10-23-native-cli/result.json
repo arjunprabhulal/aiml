@@ -1,0 +1,717 @@
+{
+  "schema_version": 1,
+  "mode": "actual-offline-sqlite-fixed-development-evaluation",
+  "model_called": false,
+  "synthetic_update": {
+    "description": "Retain original path-write summary; append explicit synthetic non-factual length padding; delete json-text. Not an official documentation update.",
+    "before_snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+    "after_snapshot_id": "a73b29dc573ae0d6aceccf24fd827a2c3b05dade0739d8f95ea0170b1654bdc9"
+  },
+  "config": {
+    "retriever": "sqlite-fts5-bm25",
+    "tokenizer": "module6-ascii-quoted-or-v1",
+    "candidate_budget": 3,
+    "cutoffs": [
+      1,
+      2
+    ]
+  },
+  "stale_binding_refusal": {
+    "status": "refused",
+    "code": "target_binding_not_bijective"
+  },
+  "baseline_run": {
+    "snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+    "requests": [
+      {
+        "case_id": "utf8-write",
+        "query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+        "version": "3.12"
+      },
+      {
+        "case_id": "replace-file",
+        "query": "Will write_text replace the contents of an existing file?",
+        "version": "3.12"
+      },
+      {
+        "case_id": "json-result-type",
+        "query": "Does json.dumps produce text or a bytes object?",
+        "version": "3.12"
+      },
+      {
+        "case_id": "backup-schedule",
+        "query": "How frequently does our cloud provider back up these files?",
+        "version": "3.12"
+      }
+    ],
+    "request_sha256": "ef92a4d049718e959037f38b80c6624ea5c45aa6612cf8d69b5218276fc1f388",
+    "config": {
+      "retriever": "sqlite-fts5-bm25",
+      "tokenizer": "module6-ascii-quoted-or-v1",
+      "candidate_budget": 3,
+      "cutoffs": [
+        1,
+        2
+      ]
+    },
+    "config_sha256": "b546787ceb372881fb58a2dd847b58dac1661c31d4ca4e9d829eb0f847eaa92c",
+    "rows": [
+      {
+        "case_id": "utf8-write",
+        "query_terms": [
+          "how",
+          "do",
+          "i",
+          "explicitly",
+          "select",
+          "utf",
+          "8",
+          "when",
+          "saving",
+          "text",
+          "with",
+          "pathlib"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "native_score": -0.8901430296001853
+          },
+          {
+            "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "source_id": "path-write",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+            "native_score": -4.904418516387322e-06
+          },
+          {
+            "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "source_id": "json-text",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+            "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+            "native_score": -9.765013054830289e-07
+          }
+        ]
+      },
+      {
+        "case_id": "replace-file",
+        "query_terms": [
+          "will",
+          "write",
+          "text",
+          "replace",
+          "the",
+          "contents",
+          "of",
+          "an",
+          "existing",
+          "file"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "source_id": "path-write",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+            "native_score": -2.3976548397386743
+          },
+          {
+            "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "native_score": -4.084683995209214e-06
+          },
+          {
+            "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "source_id": "json-text",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+            "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+            "native_score": -3.3056246724488786e-06
+          }
+        ]
+      },
+      {
+        "case_id": "json-result-type",
+        "query_terms": [
+          "does",
+          "json",
+          "dumps",
+          "produce",
+          "text",
+          "or",
+          "a",
+          "bytes",
+          "object"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "source_id": "json-text",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+            "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+            "native_score": -3.628237730877387
+          },
+          {
+            "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "native_score": -3.0341221974564053e-06
+          },
+          {
+            "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "source_id": "path-write",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+            "native_score": -2.263641817358195e-06
+          }
+        ]
+      },
+      {
+        "case_id": "backup-schedule",
+        "query_terms": [
+          "how",
+          "frequently",
+          "does",
+          "our",
+          "cloud",
+          "provider",
+          "back",
+          "up",
+          "these",
+          "files"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "source_id": "json-text",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+            "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+            "native_score": -0.8273874668010814
+          }
+        ]
+      }
+    ],
+    "run_sha256": "3ff3b453089f014ef37512b5b1f379f507077c9ec50b023c1e7e931e680d395e"
+  },
+  "updated_run": {
+    "snapshot_id": "a73b29dc573ae0d6aceccf24fd827a2c3b05dade0739d8f95ea0170b1654bdc9",
+    "requests": [
+      {
+        "case_id": "utf8-write",
+        "query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+        "version": "3.12"
+      },
+      {
+        "case_id": "replace-file",
+        "query": "Will write_text replace the contents of an existing file?",
+        "version": "3.12"
+      },
+      {
+        "case_id": "json-result-type",
+        "query": "Does json.dumps produce text or a bytes object?",
+        "version": "3.12"
+      },
+      {
+        "case_id": "backup-schedule",
+        "query": "How frequently does our cloud provider back up these files?",
+        "version": "3.12"
+      }
+    ],
+    "request_sha256": "ef92a4d049718e959037f38b80c6624ea5c45aa6612cf8d69b5218276fc1f388",
+    "config": {
+      "retriever": "sqlite-fts5-bm25",
+      "tokenizer": "module6-ascii-quoted-or-v1",
+      "candidate_budget": 3,
+      "cutoffs": [
+        1,
+        2
+      ]
+    },
+    "config_sha256": "b546787ceb372881fb58a2dd847b58dac1661c31d4ca4e9d829eb0f847eaa92c",
+    "rows": [
+      {
+        "case_id": "utf8-write",
+        "query_terms": [
+          "how",
+          "do",
+          "i",
+          "explicitly",
+          "select",
+          "utf",
+          "8",
+          "when",
+          "saving",
+          "text",
+          "with",
+          "pathlib"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "native_score": -0.7120246369373029
+          },
+          {
+            "chunk_id": "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062",
+            "source_id": "path-write",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\nSYNTHETIC EVALUATION LENGTH PADDING (not Python API documentation): quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz end synthetic padding.",
+            "native_score": -0.32726262306934556
+          }
+        ]
+      },
+      {
+        "case_id": "replace-file",
+        "query_terms": [
+          "will",
+          "write",
+          "text",
+          "replace",
+          "the",
+          "contents",
+          "of",
+          "an",
+          "existing",
+          "file"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062",
+            "source_id": "path-write",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\nSYNTHETIC EVALUATION LENGTH PADDING (not Python API documentation): quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz end synthetic padding.",
+            "native_score": -1.3090415613310908
+          },
+          {
+            "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "native_score": -4.944802852803522e-06
+          }
+        ]
+      },
+      {
+        "case_id": "json-result-type",
+        "query_terms": [
+          "does",
+          "json",
+          "dumps",
+          "produce",
+          "text",
+          "or",
+          "a",
+          "bytes",
+          "object"
+        ],
+        "ranked": [
+          {
+            "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "native_score": -3.550942630726448e-06
+          },
+          {
+            "chunk_id": "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062",
+            "source_id": "path-write",
+            "version": "3.12",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\nSYNTHETIC EVALUATION LENGTH PADDING (not Python API documentation): quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz end synthetic padding.",
+            "native_score": -1.6329758196466427e-06
+          }
+        ]
+      },
+      {
+        "case_id": "backup-schedule",
+        "query_terms": [
+          "how",
+          "frequently",
+          "does",
+          "our",
+          "cloud",
+          "provider",
+          "back",
+          "up",
+          "these",
+          "files"
+        ],
+        "ranked": []
+      }
+    ],
+    "run_sha256": "3c6d8d5989ee1f1267389d2fbce98bbdc2b755eb83318248ba63397fb05e440f"
+  },
+  "comparison": {
+    "same_request_sha256": "ef92a4d049718e959037f38b80c6624ea5c45aa6612cf8d69b5218276fc1f388",
+    "same_config_sha256": "b546787ceb372881fb58a2dd847b58dac1661c31d4ca4e9d829eb0f847eaa92c",
+    "stale_binding_attempt": [
+      {
+        "case_id": "utf8-write",
+        "status": "not-comparable",
+        "reason": "stale_target_binding",
+        "metrics": null
+      },
+      {
+        "case_id": "replace-file",
+        "status": "not-comparable",
+        "reason": "stale_target_binding",
+        "metrics": null
+      },
+      {
+        "case_id": "json-result-type",
+        "status": "not-comparable",
+        "reason": "deleted_target_source",
+        "metrics": null
+      },
+      {
+        "case_id": "backup-schedule",
+        "status": "unsupported-excluded",
+        "target_chunk_ids": [],
+        "returned_count": 0,
+        "metrics": {
+          "1": {
+            "target_ranks": [],
+            "recall_at_k": null,
+            "reciprocal_rank_at_k": null,
+            "status": "unsupported-excluded",
+            "target_count": 0,
+            "miss": null
+          },
+          "2": {
+            "target_ranks": [],
+            "recall_at_k": null,
+            "reciprocal_rank_at_k": null,
+            "status": "unsupported-excluded",
+            "target_count": 0,
+            "miss": null
+          }
+        }
+      }
+    ],
+    "reannotation_receipts": [
+      {
+        "case_id": "utf8-write",
+        "old_snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "new_snapshot_id": "a73b29dc573ae0d6aceccf24fd827a2c3b05dade0739d8f95ea0170b1654bdc9",
+        "old_target": {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "source_version": "3.12",
+          "source_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "chunk_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        },
+        "new_target": {
+          "source_id": "path-write",
+          "chunk_id": "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062",
+          "source_version": "3.12",
+          "source_text_sha256": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e",
+          "chunk_text_sha256": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e"
+        },
+        "reason": "Original answer-bearing summary is retained verbatim as prefix; explicit synthetic non-factual padding changes byte/chunk identity. Local operator explicitly rebinds this target, not a model decision.",
+        "new_current_chunk_ids": [
+          "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062"
+        ],
+        "old_target_sha256": "0bcdf743b34827b0aed93b558f1e39399d8aacb20c07d2ab64b09b44887c6ef3",
+        "new_target_sha256": "f00a632a08e25e7b3d8d5e0ab4568d23bfd41f8e2e533f82d7677b15ab2c44e3",
+        "receipt_sha256": "323ea6ca8d5b41de8078ec7285621ad48e7afe664490ff610dace9cb7bd18c13"
+      },
+      {
+        "case_id": "replace-file",
+        "old_snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "new_snapshot_id": "a73b29dc573ae0d6aceccf24fd827a2c3b05dade0739d8f95ea0170b1654bdc9",
+        "old_target": {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "source_version": "3.12",
+          "source_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "chunk_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        },
+        "new_target": {
+          "source_id": "path-write",
+          "chunk_id": "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062",
+          "source_version": "3.12",
+          "source_text_sha256": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e",
+          "chunk_text_sha256": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e"
+        },
+        "reason": "Original answer-bearing summary is retained verbatim as prefix; explicit synthetic non-factual padding changes byte/chunk identity. Local operator explicitly rebinds this target, not a model decision.",
+        "new_current_chunk_ids": [
+          "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062"
+        ],
+        "old_target_sha256": "0bcdf743b34827b0aed93b558f1e39399d8aacb20c07d2ab64b09b44887c6ef3",
+        "new_target_sha256": "f00a632a08e25e7b3d8d5e0ab4568d23bfd41f8e2e533f82d7677b15ab2c44e3",
+        "receipt_sha256": "d7d58cdd541b020eed42d776d853bf8aa4ac1b02c4eb43189e08f8204ff93723"
+      }
+    ],
+    "per_case": [
+      {
+        "case_id": "utf8-write",
+        "before": {
+          "case_id": "utf8-write",
+          "status": "supported",
+          "target_chunk_ids": [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+          ],
+          "returned_count": 3,
+          "metrics": {
+            "1": {
+              "target_ranks": [
+                2
+              ],
+              "recall_at_k": 0.0,
+              "reciprocal_rank_at_k": 0.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": true
+            },
+            "2": {
+              "target_ranks": [
+                2
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 0.5,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            }
+          }
+        },
+        "after": {
+          "case_id": "utf8-write",
+          "status": "supported",
+          "target_chunk_ids": [
+            "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062"
+          ],
+          "returned_count": 2,
+          "metrics": {
+            "1": {
+              "target_ranks": [
+                2
+              ],
+              "recall_at_k": 0.0,
+              "reciprocal_rank_at_k": 0.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": true
+            },
+            "2": {
+              "target_ranks": [
+                2
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 0.5,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            }
+          }
+        },
+        "comparison": "paired-supported",
+        "recall_delta": {
+          "1": 0.0,
+          "2": 0.0
+        }
+      },
+      {
+        "case_id": "replace-file",
+        "before": {
+          "case_id": "replace-file",
+          "status": "supported",
+          "target_chunk_ids": [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+          ],
+          "returned_count": 3,
+          "metrics": {
+            "1": {
+              "target_ranks": [
+                1
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 1.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            },
+            "2": {
+              "target_ranks": [
+                1
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 1.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            }
+          }
+        },
+        "after": {
+          "case_id": "replace-file",
+          "status": "supported",
+          "target_chunk_ids": [
+            "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062"
+          ],
+          "returned_count": 2,
+          "metrics": {
+            "1": {
+              "target_ranks": [
+                1
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 1.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            },
+            "2": {
+              "target_ranks": [
+                1
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 1.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            }
+          }
+        },
+        "comparison": "paired-supported",
+        "recall_delta": {
+          "1": 0.0,
+          "2": 0.0
+        }
+      },
+      {
+        "case_id": "json-result-type",
+        "before": {
+          "case_id": "json-result-type",
+          "status": "supported",
+          "target_chunk_ids": [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c"
+          ],
+          "returned_count": 3,
+          "metrics": {
+            "1": {
+              "target_ranks": [
+                1
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 1.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            },
+            "2": {
+              "target_ranks": [
+                1
+              ],
+              "recall_at_k": 1.0,
+              "reciprocal_rank_at_k": 1.0,
+              "status": "supported",
+              "target_count": 1,
+              "miss": false
+            }
+          }
+        },
+        "after": {
+          "case_id": "json-result-type",
+          "status": "not-comparable",
+          "reason": "deleted_target_source",
+          "metrics": null
+        },
+        "comparison": "not-comparable"
+      },
+      {
+        "case_id": "backup-schedule",
+        "before": {
+          "case_id": "backup-schedule",
+          "status": "unsupported-excluded",
+          "target_chunk_ids": [],
+          "returned_count": 1,
+          "metrics": {
+            "1": {
+              "target_ranks": [],
+              "recall_at_k": null,
+              "reciprocal_rank_at_k": null,
+              "status": "unsupported-excluded",
+              "target_count": 0,
+              "miss": null
+            },
+            "2": {
+              "target_ranks": [],
+              "recall_at_k": null,
+              "reciprocal_rank_at_k": null,
+              "status": "unsupported-excluded",
+              "target_count": 0,
+              "miss": null
+            }
+          }
+        },
+        "after": {
+          "case_id": "backup-schedule",
+          "status": "unsupported-excluded",
+          "target_chunk_ids": [],
+          "returned_count": 0,
+          "metrics": {
+            "1": {
+              "target_ranks": [],
+              "recall_at_k": null,
+              "reciprocal_rank_at_k": null,
+              "status": "unsupported-excluded",
+              "target_count": 0,
+              "miss": null
+            },
+            "2": {
+              "target_ranks": [],
+              "recall_at_k": null,
+              "reciprocal_rank_at_k": null,
+              "status": "unsupported-excluded",
+              "target_count": 0,
+              "miss": null
+            }
+          }
+        },
+        "comparison": "unsupported-excluded"
+      }
+    ],
+    "paired_aggregate": {
+      "1": {
+        "paired_supported_denominator": 2,
+        "before_mean_recall": 0.5,
+        "after_mean_recall": 0.5
+      },
+      "2": {
+        "paired_supported_denominator": 2,
+        "before_mean_recall": 1.0,
+        "after_mean_recall": 1.0
+      }
+    },
+    "not_comparable_cases": [
+      "json-result-type"
+    ],
+    "unsupported_cases": [
+      "backup-schedule"
+    ]
+  },
+  "network_connection_attempts": []
+}

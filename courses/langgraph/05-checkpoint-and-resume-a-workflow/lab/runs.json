@@ -1,0 +1,174 @@
+{
+ "model": "gemini-3.8-flash",
+ "scenarios": [
+  {
+   "name": "crash between steps, then resume",
+   "processes": [
+    {
+     "command": "CRASH_AT='after summarize' python workflow.py --thread r1 --version 2.5.0",
+     "exit": 1,
+     "output": [
+      "finished collect",
+      "finished summarize",
+      "!! process killed in after summarize"
+     ]
+    },
+    {
+     "command": "python workflow.py --thread r1",
+     "exit": 0,
+     "output": [
+      "resuming r1 at write_file",
+      "finished write_file",
+      "finished announce"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "crash inside a step with a side effect",
+   "processes": [
+    {
+     "command": "CRASH_AT='announce' python workflow.py --thread r2 --version 2.5.1",
+     "exit": 1,
+     "output": [
+      "finished collect",
+      "finished summarize",
+      "finished write_file",
+      "!! process killed in announce"
+     ]
+    },
+    {
+     "command": "python workflow.py --thread r2",
+     "exit": 0,
+     "output": [
+      "resuming r2 at announce",
+      "finished announce"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "resume under a new thread id",
+   "processes": [
+    {
+     "command": "CRASH_AT='after summarize' python workflow.py --thread r3 --version 2.5.2",
+     "exit": 1,
+     "output": [
+      "finished collect",
+      "finished summarize",
+      "!! process killed in after summarize"
+     ]
+    },
+    {
+     "command": "python workflow.py --thread r3-retry --version 2.5.2",
+     "exit": 0,
+     "output": [
+      "finished collect",
+      "finished summarize",
+      "finished write_file",
+      "finished announce"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "durability exit, then a crash",
+   "processes": [
+    {
+     "command": "CRASH_AT='after summarize' python workflow.py --thread r4 --version 2.5.3 --durability exit",
+     "exit": 1,
+     "output": [
+      "finished collect",
+      "finished summarize",
+      "!! process killed in after summarize"
+     ]
+    },
+    {
+     "command": "python workflow.py --thread r4 --version 2.5.3 --durability exit",
+     "exit": 0,
+     "output": [
+      "finished collect",
+      "finished summarize",
+      "finished write_file",
+      "finished announce"
+     ]
+    }
+   ]
+  }
+ ],
+ "announcements": [
+  "Released 2.5.0: out/2.5.0.md",
+  "Released 2.5.1: out/2.5.1.md",
+  "Released 2.5.1: out/2.5.1.md",
+  "Released 2.5.2: out/2.5.2.md",
+  "Released 2.5.3: out/2.5.3.md"
+ ],
+ "notes_2_5_0": "# Release 2.5.0\n\n## Version 2.5.0\n\n* Added the ability to configure custom timeout overrides on a per-client basis (#409).\n* Improved webhook reliability by automatically retrying deliveries when receiving an HTTP 503 (Service Unavailable) response (#412).\n* Removed the deprecated legacy CSV export option (#418).\n",
+ "r1_checkpoints": [
+  {
+   "step": -1,
+   "source": "input",
+   "next": [
+    "__start__"
+   ],
+   "keys": []
+  },
+  {
+   "step": 0,
+   "source": "loop",
+   "next": [
+    "collect"
+   ],
+   "keys": [
+    "version"
+   ]
+  },
+  {
+   "step": 1,
+   "source": "loop",
+   "next": [
+    "summarize"
+   ],
+   "keys": [
+    "prs",
+    "version"
+   ]
+  },
+  {
+   "step": 2,
+   "source": "loop",
+   "next": [
+    "write_file"
+   ],
+   "keys": [
+    "notes",
+    "prs",
+    "version"
+   ]
+  },
+  {
+   "step": 3,
+   "source": "loop",
+   "next": [
+    "announce"
+   ],
+   "keys": [
+    "notes",
+    "path",
+    "prs",
+    "version"
+   ]
+  },
+  {
+   "step": 4,
+   "source": "loop",
+   "next": [],
+   "keys": [
+    "notes",
+    "path",
+    "prs",
+    "version"
+   ]
+  }
+ ]
+}

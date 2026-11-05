@@ -1,0 +1,32 @@
+{
+  "check_version": "1",
+  "case_set": {
+    "name": "inbox-triage-robustness",
+    "sha256": "945fb939580c38abcadcd8df25534d2a51011800b00d7c0ed2c44587e0fa288c"
+  },
+  "cases": {
+    "development": 44,
+    "held_out": 42
+  },
+  "artifacts": [
+    "triage_changes.py"
+  ],
+  "locked": false,
+  "decision": "review",
+  "findings": [
+    {
+      "check": "held-out-only term",
+      "severity": "review",
+      "artifact": "triage_changes.py",
+      "term": "log in",
+      "held_out": [
+        "cannot-log-in",
+        "cannot-log-in--uppercase",
+        "cannot-log-in--typo",
+        "cannot-log-in--greeting",
+        "cannot-log-in--emphasis"
+      ]
+    }
+  ],
+  "held_out_runs": []
+}

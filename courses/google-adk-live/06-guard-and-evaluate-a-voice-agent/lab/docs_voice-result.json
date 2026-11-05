@@ -1,0 +1,484 @@
+{
+ "eval_set_result_id": "docs_voice_docs_voice_live_1792632250.7604082",
+ "eval_set_result_name": "docs_voice_docs_voice_live_1792632250.7604082",
+ "eval_set_id": "docs_voice_live",
+ "eval_case_results": [
+  {
+   "eval_set_file": "docs_voice_live",
+   "eval_set_id": "docs_voice_live",
+   "eval_id": "adk_name_and_mic_rate",
+   "final_eval_status": 2,
+   "overall_eval_metric_results": [],
+   "eval_metric_result_per_invocation": [],
+   "session_id": "adk-eval-session-c539aa54-490b-4b27-b4d0-6c027672c398",
+   "session_details": {
+    "id": "adk-eval-session-c539aa54-490b-4b27-b4d0-6c027672c398",
+    "app_name": "docs_voice",
+    "user_id": "eval",
+    "state": {},
+    "events": [
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "voice_activity": {
+       "voice_activity_type": "ACTIVITY_START",
+       "audio_offset": "0s"
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "ed0d2a5c-a390-45b6-a3eb-6f65354ee449",
+      "timestamp": 1792632116.611841
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "input_transcription": {
+       "text": "What does ADK stand for?",
+       "finished": true
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "93cff529-664f-4b0e-a0e9-69f5f7ca7d39",
+      "timestamp": 1792632118.102821
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "voice_activity": {
+       "voice_activity_type": "ACTIVITY_END",
+       "audio_offset": "3s"
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "9a91c767-16d7-416e-9d5d-1865fdabee59",
+      "timestamp": 1792632118.103106
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "live_session_resumption_update": {
+       "new_handle": "562f90ee-c921-4058-8eef-fabd0fc771c1",
+       "resumable": true
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "4b98d01e-aebc-48dc-9166-07b62b3abe63",
+      "timestamp": 1792632118.801118
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "output_transcription": {
+       "text": "I'm sorry, I don't see any mention of what ADK stands for in these docs.",
+       "finished": true
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "fcc7755c-51cc-4c33-b220-22d2ae38c401",
+      "timestamp": 1792632119.741357
+     },
+     {
+      "model_version": "gemini-3.1-flash-live-preview",
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 105,
+       "candidates_tokens_details": [
+        {
+         "modality": "AUDIO",
+         "token_count": 105
+        }
+       ],
+       "prompt_token_count": 378,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 248
+        },
+        {
+         "modality": "AUDIO",
+         "token_count": 73
+        }
+       ],
+       "total_token_count": 483
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "d63c7d0c-5600-40ad-90d8-8e2270f56999",
+      "timestamp": 1792632122.678289
+     },
+     {
+      "model_version": "gemini-3.1-flash-live-preview",
+      "grounding_metadata": {},
+      "turn_complete": true,
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "dfdc39c2-f871-4204-b115-831d5577e7ec",
+      "timestamp": 1792632122.681021
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "live_session_resumption_update": {
+       "new_handle": "dcece044-4b58-4f67-916f-6bd83f5069e5",
+       "resumable": true
+      },
+      "invocation_id": "a0f1dfb1-4975-4185-9911-4fc720c75ec8",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "752c0e43-7e8c-412c-bdab-56fb10d6e912",
+      "timestamp": 1792632123.2293508
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "voice_activity": {
+       "voice_activity_type": "ACTIVITY_START",
+       "audio_offset": "3.120s"
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "0802ff87-2467-4281-91e4-b29ee74923a6",
+      "timestamp": 1792632130.7460759
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "input_transcription": {
+       "text": "Are you sure? Could you please check again to see what ADK stands for?",
+       "finished": true
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "5a0ba4e1-de97-4a69-abc3-a5a305b7a1e7",
+      "timestamp": 1792632133.229165
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "voice_activity": {
+       "voice_activity_type": "ACTIVITY_END",
+       "audio_offset": "9.127437500s"
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "b8cc0290-17fd-4f8c-ba92-4f4a66e51ec6",
+      "timestamp": 1792632133.229569
+     },
+     {
+      "model_version": "gemini-3.1-flash-live-preview",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "fc_17268786906942197683",
+          "args": {
+           "name": "tools.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "long_running_tool_ids": [],
+      "id": "e61dd666-33c5-4bde-9ad1-61a169f5c2e9",
+      "timestamp": 1792632133.674544
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "fc_17268786906942197683",
+          "name": "read_page",
+          "response": {
+           "name": "tools.md",
+           "text": "# Tools in the docs assistant\n\nADK runs a live agent's tool calls itself and sends each result back to the model.\nA tool that returns in under a second can block. A slow tool should be non-blocking or streaming,\nso the agent keeps talking while it runs. Call `stop_streaming` to cancel a streaming tool.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "7265d3e2-4079-4e10-9a9c-69e37cd45160",
+      "timestamp": 1792632133.67915
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "live_session_resumption_update": {
+       "new_handle": "d575d38e-08f9-4f1d-be3b-a3c08452a1d2",
+       "resumable": true
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "10fc72c8-7a32-459f-9db2-5fba65f6a7d7",
+      "timestamp": 1792632134.068864
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "output_transcription": {
+       "text": "Yes, I just checked again. The tools document mentions ADK runs tool calls, but it doesn't define what the abbreviation stands for.",
+       "finished": true
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "4615e62c-685e-4814-9b44-545ff69b23b2",
+      "timestamp": 1792632136.333977
+     },
+     {
+      "model_version": "gemini-3.1-flash-live-preview",
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 217,
+       "candidates_tokens_details": [
+        {
+         "modality": "AUDIO",
+         "token_count": 203
+        }
+       ],
+       "prompt_token_count": 1522,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 662
+        },
+        {
+         "modality": "AUDIO",
+         "token_count": 660
+        }
+       ],
+       "total_token_count": 1739
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "ac600ac9-206e-487e-ac43-9bc16cfafdf4",
+      "timestamp": 1792632142.137141
+     },
+     {
+      "model_version": "gemini-3.1-flash-live-preview",
+      "grounding_metadata": {},
+      "turn_complete": true,
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "1235aa29-2204-4538-824f-313e51a65935",
+      "timestamp": 1792632142.137258
+     },
+     {
+      "custom_metadata": {
+       "__llm_request_key__": "ebffead3-3d3e-458b-89e6-06af1486f631"
+      },
+      "live_session_resumption_update": {
+       "new_handle": "5b99e833-dc24-4f8d-9e50-8bc12ac7c040",
+       "resumable": true
+      },
+      "invocation_id": "9cdcbc05-59b1-41c3-9014-fe4bff7e1303",
+      "author": "docs_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "48872b1b-eaae-445c-9c10-2f98f5de164c",
+      "timestamp": 1792632142.529361
+     }
+    ],
+    "last_update_time": 1792632142.529361
+   },
+   "user_id": "eval"
+  }
+ ],
+ "creation_timestamp": 1792632250.7604082
+}

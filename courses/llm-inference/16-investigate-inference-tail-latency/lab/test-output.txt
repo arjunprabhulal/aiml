@@ -1,0 +1,12 @@
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+test_first_token_is_not_counted_as_an_extra_decode (test_lab.TelemetryBoundaryTests.test_first_token_is_not_counted_as_an_extra_decode) ... ok
+test_no_matching_rule_does_not_claim_slo_success (test_lab.TelemetryBoundaryTests.test_no_matching_rule_does_not_claim_slo_success) ... ok
+test_averaging_latency_hides_10x_p99_preemption_spike (test_lab.TestInferenceMetricsAndP99Spikes.test_averaging_latency_hides_10x_p99_preemption_spike) ... ok
+test_kv_headroom_gating_and_chunked_prefill_collapse_p99_spike (test_lab.TestInferenceMetricsAndP99Spikes.test_kv_headroom_gating_and_chunked_prefill_collapse_p99_spike) ... ok
+test_kv_thrashing_cascades_recompute_queue_delay (test_lab.TestInferenceMetricsAndP99Spikes.test_kv_thrashing_cascades_recompute_queue_delay) ... ok
+test_single_token_and_zero_duration_metrics_are_undefined (test_lab.TestInferenceMetricsAndP99Spikes.test_single_token_and_zero_duration_metrics_are_undefined) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

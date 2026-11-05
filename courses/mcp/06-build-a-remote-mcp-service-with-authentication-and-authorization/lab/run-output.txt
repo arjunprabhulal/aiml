@@ -1,0 +1,49 @@
+no token                                       401
+protected resource metadata                    200
+authorization server metadata                  200
+token without resource                         400
+token with a scope the client lacks            400
+token for a resource the client was not given  400
+reader searches                                200
+reader calls publish_page                      403
+Mcp-Name search_docs, body publish_page        403
+body that is not JSON                          400
+body with a repeated key                       400
+body over 1 MB                                 413
+foreign Origin header                          403
+token issued for another server                401
+expired token                                  401
+token in the query string                      401
+SDK client docs-editor: granted 'docs:read docs:write'
+  search_docs    result
+  publish_page   result
+  search_docs    result
+    POST http://{service}/mcp (server/discover) -> 401
+    GET http://{service}/.well-known/oauth-protected-resource/mcp -> 200
+    GET http://{issuer}/.well-known/oauth-authorization-server -> 200
+    POST http://{issuer}/token -> 200
+    POST http://{service}/mcp (server/discover) -> 200
+    POST http://{service}/mcp (tools/call) -> 200
+    POST http://{service}/mcp (tools/list) -> 200
+    POST http://{service}/mcp (tools/call) -> 403
+    POST http://{issuer}/token -> 200
+    POST http://{service}/mcp (tools/call) -> 200
+    POST http://{service}/mcp (tools/call) -> 200
+SDK client docs-reader: granted 'docs:read'
+  search_docs    result
+  -              authorization_failed
+    POST http://{service}/mcp (server/discover) -> 401
+    GET http://{service}/.well-known/oauth-protected-resource/mcp -> 200
+    GET http://{issuer}/.well-known/oauth-authorization-server -> 200
+    POST http://{issuer}/token -> 200
+    POST http://{service}/mcp (server/discover) -> 200
+    POST http://{service}/mcp (tools/call) -> 200
+    POST http://{service}/mcp (tools/list) -> 200
+    POST http://{service}/mcp (tools/call) -> 403
+    POST http://{issuer}/token -> 400
+SDK client docs-editor pinned to another issuer: granted None
+  -              authorization_failed
+    POST http://{service}/mcp (server/discover) -> 401
+    GET http://{service}/.well-known/oauth-protected-resource/mcp -> 200
+    GET http://{issuer}/.well-known/oauth-authorization-server -> 200
+wrote auth-flows.json

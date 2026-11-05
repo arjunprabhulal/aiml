@@ -1,0 +1,5 @@
+{"architecture": "filtered_lookup", "baseline_matches_source": true, "case": "older-staging-lookup", "citation": "rollback-v2-staging", "command_template": "docuctl rollback RELEASE --env staging", "executed": false}
+{"architecture": "filtered_lookup", "baseline_matches_source": false, "case": "current-production-lookup", "citation": "rollback-v3-production", "command_template": "docuctl releases rollback RELEASE --environment production", "executed": false}
+{"approval_required": true, "architecture": "bounded_workflow", "baseline_matches_source": false, "case": "maintainer-proposal", "citation": "rollback-v3-production", "executed": false, "proposed_command": "docuctl releases rollback r41 --environment production"}
+{"case": "reader-action-refused", "refused": "maintainer role required for an action proposal"}
+{"case": "unknown-version", "refused": "expected one matching page; review missing or conflicting evidence"}

@@ -1,0 +1,13 @@
+{
+  "about": "Alert rules for this build. Thresholds were chosen for teaching; a real service derives them from its own targets.",
+  "rules": [
+    {"name": "HighErrorRate", "metric": "error_rate", "threshold": 0.05, "for_windows": 2,
+     "why": "More than 5% of requests ended in a 503 or a timeout for two windows in a row."},
+    {"name": "SlowAnswers", "metric": "latency_ms.p95_from_buckets", "threshold": 2000, "for_windows": 1,
+     "why": "The estimated 95th-percentile latency of answered requests reached 2 seconds."},
+    {"name": "QueueBacklog", "metric": "max_queue_depth", "threshold": 15, "for_windows": 1,
+     "why": "An arriving request found 15 or more requests ahead of it."},
+    {"name": "TokenSpend", "metric": "output_tokens", "threshold": 3000, "for_windows": 1,
+     "why": "The model generated 3,000 or more output tokens in one window."}
+  ]
+}

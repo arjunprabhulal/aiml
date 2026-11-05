@@ -1,0 +1,21 @@
+{
+  "execution_mode": "fresh-local-http-with-hosted-gemini-generation",
+  "command": [
+    "python",
+    "record_demo.py",
+    "--provider",
+    "gemini",
+    "--execute-approved"
+  ],
+  "raw_http_record_sha256": "47e78715e2e1865ee15525fb1bb198e516452d76d11046fa3f283fcd2e15b412",
+  "provider_raws_retained_privately": true,
+  "public_provider_projection": "Only opaque provider signature fields omitted",
+  "private_provider_response_sha256": {
+    "response-01.json": "e0c3224f41fcbafba355d9fa7dbdfab6490ef58ce0d633539233f92c5f905597",
+    "response-02.json": "c525b76a09a87628e0cd77b262d750744da3e03b2d135cc5326605899f96b4a0",
+    "response-03.json": "2d2affa2aabeb9166c8dd8eeeb7244168cc90dda28dc72df0fa9d9e280a8a1d7",
+    "response-04.json": "e9b636ac92f485e3e32ca44ab843450d32512d51bc0803fe00a67ffa0e06b455"
+  },
+  "recording_scope": "Actual programmatic HTTP activities; browser screenshots are separate review evidence.",
+  "post_recording_changes": "Offline recording tests now check the current corpus; UI name labels and public provider projection omit opaque signature fields. Answer-generation inputs are unchanged."
+}

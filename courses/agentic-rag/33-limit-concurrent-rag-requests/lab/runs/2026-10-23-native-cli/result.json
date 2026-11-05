@@ -1,0 +1,320 @@
+{
+  "execution_mode": "actual-concurrent-loopback-http-single-process",
+  "model_called": false,
+  "controlled_delay_seconds": 0.35,
+  "cases": {
+    "active_observed": {
+      "active": 1,
+      "waiting": 0,
+      "events": [
+        {
+          "order": 1,
+          "status": "admitted",
+          "active": 1,
+          "waiting": 0
+        }
+      ],
+      "max_active": 1,
+      "max_waiting": 1,
+      "wait_seconds": 0.15
+    },
+    "queued_observed": {
+      "active": 1,
+      "waiting": 1,
+      "events": [
+        {
+          "order": 1,
+          "status": "admitted",
+          "active": 1,
+          "waiting": 0
+        },
+        {
+          "order": 2,
+          "status": "queued",
+          "active": 1,
+          "waiting": 1
+        }
+      ],
+      "max_active": 1,
+      "max_waiting": 1,
+      "wait_seconds": 0.15
+    },
+    "queue_overflow": {
+      "http_status": 429,
+      "status": "queue_full"
+    },
+    "wait_deadline": {
+      "http_status": 503,
+      "status": "wait_timeout"
+    },
+    "first_completed": {
+      "http_status": 200,
+      "status": "completed"
+    },
+    "idle": {
+      "active": 0,
+      "waiting": 0,
+      "events": [
+        {
+          "order": 1,
+          "status": "admitted",
+          "active": 1,
+          "waiting": 0
+        },
+        {
+          "order": 2,
+          "status": "queued",
+          "active": 1,
+          "waiting": 1
+        },
+        {
+          "order": 3,
+          "status": "queue_full",
+          "active": 1,
+          "waiting": 1
+        },
+        {
+          "order": 4,
+          "status": "wait_timeout",
+          "active": 1,
+          "waiting": 0
+        },
+        {
+          "order": 5,
+          "status": "released",
+          "active": 0,
+          "waiting": 0
+        }
+      ],
+      "max_active": 1,
+      "max_waiting": 1,
+      "wait_seconds": 0.15
+    },
+    "client_timeout": {
+      "client_exception": "ReadTimeout",
+      "server_after_timeout": {
+        "active": 1,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "queued",
+            "active": 1,
+            "waiting": 1
+          },
+          {
+            "order": 3,
+            "status": "queue_full",
+            "active": 1,
+            "waiting": 1
+          },
+          {
+            "order": 4,
+            "status": "wait_timeout",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 5,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          },
+          {
+            "order": 6,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.15
+      },
+      "server_after_completion": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "queued",
+            "active": 1,
+            "waiting": 1
+          },
+          {
+            "order": 3,
+            "status": "queue_full",
+            "active": 1,
+            "waiting": 1
+          },
+          {
+            "order": 4,
+            "status": "wait_timeout",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 5,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          },
+          {
+            "order": 6,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 7,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.15
+      }
+    },
+    "fifo_promotion": {
+      "responses": [
+        {
+          "http_status": 200,
+          "status": "completed"
+        },
+        {
+          "http_status": 200,
+          "status": "completed"
+        }
+      ],
+      "state": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "queued",
+            "active": 1,
+            "waiting": 1
+          },
+          {
+            "order": 3,
+            "status": "released",
+            "active": 0,
+            "waiting": 1
+          },
+          {
+            "order": 4,
+            "status": "promoted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 5,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 1
+      }
+    },
+    "server_constructor_failure": {
+      "response": {
+        "http_status": 500,
+        "status": "internal_error"
+      },
+      "state": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.15
+      }
+    }
+  },
+  "lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "delay_fixture:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [46036]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [46036]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "success_lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "success_fixture:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [46038]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [46038]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "fault_lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "fault_fixture:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [46100]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [46100]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "scope": "Trusted fixture delay exposes admission states; not a latency or capacity benchmark. Client timeout did not cancel server work. Direct task cancellation is tested separately. Corpus setup is outside gate; SQLite tools are created per worker after admission."
+}

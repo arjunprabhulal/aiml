@@ -1,0 +1,282 @@
+{
+ "vision": {
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2"
+ },
+ "embedding": {
+  "ollama_tag": "qwen3-embedding:0.6b",
+  "ollama_digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+  "dimensions": 1024,
+  "query_instruction": "Given a search for a figure, retrieve descriptions of diagrams and charts that match it"
+ },
+ "prompts": {
+  "describe": "Describe this figure for a search index. Say what type of figure it is, its title, its parts and how they are connected or compared, and its overall shape or trend. Use plain sentences, with no Markdown.",
+  "read": "List every word and number printed in this image, in reading order. Output only the text, separated by spaces."
+ },
+ "figures": [
+  {
+   "id": "retriever-flow",
+   "image": "images/retriever-flow.png",
+   "pixel_sha256": "7ae8b089ebef112f8b670c20486a853b38d2918ad578d0138f15bcd99d31508e",
+   "description": "This figure is a diagram of a retrieval pipeline.\nThe title of the figure is Retriever pipeline.\nThe parts of the figure are Query, Embed, Search, and Top 5.\nThese parts are connected in a sequence from left to right.\nThe Query is the starting point.\nThe Query is connected to the Embed step.\nThe Embed step is connected to the Search step.\nThe Search step is connected to the Top 5 step.\nThe overall shape of the figure is a linear flow or a sequence of steps.\nIt shows a process where an input query goes through a series of processing steps to produce a final result set.",
+   "printed_text": "Retriever pipeline Query Embed Search Top 5",
+   "text_sha256": {
+    "text": "e0cbc7340ab698a964ae9cadb15fb902ec0755340f5e8f8d282c67424a065c60",
+    "description": "6380e839af2991e0e0e11d33e2c025570ccd4e5d45328692f1be0ac0a2470b6d",
+    "both": "55f27e1723da45ed34f0aeb677ea34e74eeec39dee4372d100b9d01fc6ee9823"
+   }
+  },
+  {
+   "id": "retry-loop",
+   "image": "images/retry-loop.png",
+   "pixel_sha256": "470ec179fe69baca4c8a4a84b2562c6506f28c4f19ac90464fbd81322a104ca8",
+   "description": "This figure is a flowchart.\nThe title of the flowchart is Call with retries.\nThe flowchart has several rectangular boxes representing actions or states.\nThe boxes are Call, Error?, and Wait.\nThere is a decision point represented by the Error? box which has two outgoing paths.\nThe path from Error? leads to a decision labeled no.\nThe path from Error? also leads to a path labeled yes, which is not explicitly shown but implied by the flow to Done.\nThe path from the decision labeled no leads to the Done box.\nThe path from the decision labeled yes leads to the Wait box.\nThe Wait box leads to the Done box.\nThe overall shape of the flowchart is a sequence of steps with a decision point leading to different outcomes, ultimately concluding in a Done state.",
+   "printed_text": "Call with retries try again Call Error? no Done Wait",
+   "text_sha256": {
+    "text": "8d88bf7aa8fe39e9d9dd977961e49a8fbdf2860070b3c60b8b683ff073ae1eae",
+    "description": "907c6d7979e3c751d72e15abe588f594ba047318e2e4f90f84550e9c68d3e428",
+    "both": "76b14b0b1a8848a98847f969bbd892062d7cef6e0f0c4cac57e63c00bdf6ace7"
+   }
+  },
+  {
+   "id": "latency-p50",
+   "image": "images/latency-p50.png",
+   "pixel_sha256": "96794097a2092fd56a9a1176a9cfa350560cd83156e95471ef43ecd4d6b1f6d3",
+   "description": "This is a bar chart.\nThe title of the figure is p50 latency by model.\nThe figure has three categories on the horizontal axis labeled small, medium, and large.\nThe vertical axis represents latency in milliseconds (ms).\nThere are three bars corresponding to the three models.\nThe bar for small has a height of 120 ms.\nThe bar for medium has a height of 310 ms.\nThe bar for large has the greatest height at 640 ms.\nThe trend shows an increasing p50 latency as the model size increases from small to medium to large.",
+   "printed_text": "p50 latency by model small 120 medium 310 large 640 ms",
+   "text_sha256": {
+    "text": "43810e13bd36fa90a01a1fdfb30d91b7c657c43753502b5e02876352e38212ca",
+    "description": "170248ed2ac30614dfe35810c062b5dc91d7ab0102891884bf3032a1db4fa9a5",
+    "both": "94f8ad40bb6d901893ad98c585dd2fed63ae8132ec26f864b49add5da7ec8a66"
+   }
+  },
+  {
+   "id": "latency-p95",
+   "image": "images/latency-p95.png",
+   "pixel_sha256": "da71cc486460a97d5c72bbb6950d5d4a4460f3df90a184b6485b4f99eeb3de1f",
+   "description": "This is a bar chart.\nThe title of the figure is p95 latency by model.\nThe figure has three categories on the horizontal axis labeled small, medium, and large.\nThe vertical axis represents latency in milliseconds (ms).\nThere are three bars, one for each model size.\nThe bar for small has a height of 410 ms.\nThe bar for medium has a height of 380 ms.\nThe bar for large has the greatest height at 1290 ms.\nThe overall trend shows that the p95 latency increases as the model size increases.",
+   "printed_text": "p95 latency by model small 410 medium 380 large 1290 ms",
+   "text_sha256": {
+    "text": "047c233bc0a45c00707f00e677e79af38bea1717adfe9e27a7dd1e0d81ec8a6d",
+    "description": "27c5f6a1bf49916c047e54a8ddc31c729a72cb6c1c344ea67cad114e252c3acf",
+    "both": "0720bc62aecf2c9de2c8fb4bf067898d161866d044eded142acd21ef0cd4a38b"
+   }
+  },
+  {
+   "id": "tokens-grouped",
+   "image": "images/tokens-grouped.png",
+   "pixel_sha256": "5882c815a2dc69c68105d98a6c0478d0452f072c411d7345534a6eb26776b17a",
+   "description": "This is a bar chart. The title of the figure is Tokens per request. The figure has three categories on the x-axis labeled chat, summary, and extract. There are two types of bars for each category labeled input and output. The bars for input and output are grouped together for each request type. The heights of the bars show the number of tokens for input and output for each request type. The summary has the highest input tokens. The chat and extract have lower input tokens. The output tokens are relatively low across all categories.",
+   "printed_text": "Tokens per request chat 420 summary 1800 extract 950 input output",
+   "text_sha256": {
+    "text": "6e86b399a1f1fe8d158c580e2bc0dea256c36a3bb5fc36030b47a8e81c788570",
+    "description": "cfdaf3b85340ce6a3e516660660b4a0ae0238a5d99bac80c6cf31501b167e6c4",
+    "both": "7ea99b7e9a728e490fbe75b8dd65804c9b9173b483ac22cc67231cbbf0f0f16a"
+   }
+  },
+  {
+   "id": "loss-curve",
+   "image": "images/loss-curve.png",
+   "pixel_sha256": "ea88bf4a17f113cdd498050fbeccbe994877fab094efb924377c0ed4196cf957",
+   "description": "This is a line graph.\nThe title of the figure is Training loss.\nThe horizontal axis is labeled epoch, showing values from 1 to 5.\nThe vertical axis is labeled loss (max 2.4).\nThe line plots the training loss against the epoch number.\nThe line shows a decreasing trend. The loss starts high at epoch 1 and generally decreases as the epoch number increases. The rate of decrease appears to slow down towards the end of the training process.",
+   "printed_text": "Training loss epoch 1 loss max 2.4",
+   "text_sha256": {
+    "text": "0e501b29946b064339fbadc438e2995c26e6d5ba47fa1a3a9e62f4fd34f0b8ec",
+    "description": "7c7647a8f82b8115457c8fb6f4112001e5d30ea14cccc24ef37ef75466300e74",
+    "both": "4204647ee695862e727af23158b493428ff07c0b51f763e39c97585f2282252c"
+   }
+  },
+  {
+   "id": "recall-probes",
+   "image": "images/recall-probes.png",
+   "pixel_sha256": "72594fb593b59430bda1616578d095fc0b0882598834fd04f2354cf49126d363",
+   "description": "This figure is a line graph.\nThe title of the figure is Recall at 5 by probes.\nThe figure has a horizontal axis labeled probes and a vertical axis labeled recall with a maximum value of 0.97.\nThe figure displays data points showing the recall value for different numbers of probes.\nThe data points are at probe values of 1, 2, 4, 5, and 8.\nThe recall values corresponding to these probes are approximately 0.3, 0.5, 0.65, 0.75, and 0.85.\nThe overall shape of the trend is an increasing curve.\nThe recall value increases as the number of probes increases, but the rate of increase slows down as the number of probes gets larger.",
+   "printed_text": "Recall at 5 by probes 1 2 3 4 5 6 7 8 recall max 0.97 probes",
+   "text_sha256": {
+    "text": "db1aecdda000edad3f23fd3061420dc981a562a9646f30742488c8b380e4ef3d",
+    "description": "bb9903603718193762756c879c7cdabffa7a2fab1c3188ad2c2ff6441c1204e6",
+    "both": "58e3cd38cf8a30c59bc8db3220f2e970e1e9b4db75f37cf2c9b5e2be3e01613f"
+   }
+  },
+  {
+   "id": "split-pie",
+   "image": "images/split-pie.png",
+   "pixel_sha256": "40d6f00fd6f57a0c0061c90516220f1d12a4832bdeccd9a92cdbbbde75045b70",
+   "description": "This is a pie chart. The title of the figure is Evaluation cases. The pie chart is divided into two sections. One section is labeled development and it represents 60 percent. The other section is labeled held-out and it represents 40 percent. The two sections together make up the whole circle representing all evaluation cases.",
+   "printed_text": "Evaluation cases development 60 held-out 40",
+   "text_sha256": {
+    "text": "290e2063e8c86f09a7d7bd6f5d3d0ae4cb1b8b169226c3c26ae77113c2d3ea27",
+    "description": "4d6accb743f646b97083efbe502e2c6c9cd02166f6164e737c001046cc436e45",
+    "both": "ec34215c0f8b9dc8580c3e5eff5f935a0c49e645c5581adcc81ace324bec1197"
+   }
+  },
+  {
+   "id": "init-sequence",
+   "image": "images/init-sequence.png",
+   "pixel_sha256": "4040b2b4bfec8f23318bc084afcb0f262965a80f285f2dfa6f2cfe8aa0f500ce",
+   "description": "This figure is a sequence diagram. Its title is Session start. It has two main parts labeled client and server. These two parts are connected by a series of messages. The messages are initialize capabilities initialized and tools/list. The connections show the client sending messages to the server. The overall shape is a vertical flow of interactions between the client and the server during a session start process.",
+   "printed_text": "Session start client server initialize capabilities initialized tools/list",
+   "text_sha256": {
+    "text": "93b904ce67637608df32e79a69babb5c8a9a6e962d249eb45ddbe736f01b9410",
+    "description": "99de224d58bd35dffed7b37527460e47bc812e2a32cd00f91ae78b786f77a139",
+    "both": "4d2bb3efc77135fa39d077aba973694906fbd1b96dae0a8fcdead757bcbd200c"
+   }
+  },
+  {
+   "id": "job-states",
+   "image": "images/job-states.png",
+   "pixel_sha256": "e0f964ecb0fb581e9b1f5fe610816582960b8e4ce114cdedf2318cba9fc59470",
+   "description": "This figure is a flowchart.\nThe title of the figure is Job states.\nThe figure shows a sequence of job states.\nThe states are pending, running, done, and failed.\nAn arrow connects pending to running.\nAn arrow connects running to done.\nAn arrow connects running to failed.\nThe overall shape of the figure is a directed graph showing possible transitions between job states.",
+   "printed_text": "Job states pending running done error failed",
+   "text_sha256": {
+    "text": "05cb4c1ffa5f934b53d820e71b70ae769f81c1f05a8c5ecaa053c501c59bd627",
+    "description": "84eb1ace0a64629093403fe25aedb489a9469b3e4fb1d983741f753d473239a5",
+    "both": "a3d5161ace4318ea202673c1e0655f5163ffe22f96e1390a9d3b2a95f205c2fd"
+   }
+  },
+  {
+   "id": "context-budget",
+   "image": "images/context-budget.png",
+   "pixel_sha256": "ef09325c3ffcb165f075fec18d0e251b6274dc5f47e51bf392637c87f41138a6",
+   "description": "This is a bar chart.\nThe title of the figure is Context budget.\nThe figure has three bars representing different components of the context budget.\nThe parts are system, history, and question.\nThe values for these parts are system 300, history 900, and question 120.\nThere is also a reserve value of 728.\nThe total number of tokens in total is 2048.\nThe bars are arranged horizontally.\nThe overall shape is a comparison of the token usage for different categories within a total budget.",
+   "printed_text": "Context budget system 300 history 900 question 120 reserve 728 2048 tokens in total",
+   "text_sha256": {
+    "text": "a4d5dae3dae87a58649247bf9416f7ccdf1da250360459c5ff5cf7ea1ee4b19a",
+    "description": "7ff20a4d4b6a8c184477afa5fd54afe4ef68c96228e0b4dfe1d57e8cc196d6dc",
+    "both": "e67d4955619cc5b0ca83122d9565ab3e90ce8bb640f4456ab394e4b4e49fc7e4"
+   }
+  },
+  {
+   "id": "confusion",
+   "image": "images/confusion.png",
+   "pixel_sha256": "66197e22f195868003a38fdb17fd9a9cd6110eeb884b772b88e1e550e560cb89",
+   "description": "This is a 2x2 table. The title of the figure is Grader agreement. The table has two rows and two columns. The rows are labeled pass and fail. The columns are labeled pass and fail. The cells contain numbers representing the agreement counts. The top left cell shows 41. The top right cell shows 3. The bottom left cell shows 5. The bottom right cell shows 11. The figure shows the distribution of grader agreement based on pass or fail outcomes in two categories.",
+   "printed_text": "Grader agreement pass 41 3 fail 5 11",
+   "text_sha256": {
+    "text": "ed7f474e2aa185193477c2bc24a698e002a166c1f8479ff4910582853d92c003",
+    "description": "2bff00a183e0006f4356490fc1f313896d2c34bab33e0bdb7a624da961fc3ea1",
+    "both": "5ff396826ff4bcd537fda30884b608114bfcf50a119893fd54fd80ef2655f4f5"
+   }
+  },
+  {
+   "id": "cost-quality",
+   "image": "images/cost-quality.png",
+   "pixel_sha256": "d717eadf7b649193db580f3c1fdfabb2df00237a9f66311bddff2f07e3873a39",
+   "description": "This figure is a scatter plot.\nThe title of the figure is Cost and score.\nThe figure has a horizontal axis labeled cost per 1000 requests.\nThe figure has a vertical axis labeled score.\nThere are three data points labeled A, B, and C on the plot.\nPoint A is located at a low cost and a low score.\nPoint B is located at a medium cost and a medium score.\nPoint C is located at a high cost and a high score.\nThe points suggest a positive correlation between cost and score. As the cost increases, the score also tends to increase.",
+   "printed_text": "Cost and score cost per 1000 requests A B C",
+   "text_sha256": {
+    "text": "1cde88e5045602ce8446932da5a8d53ed6c217401c9164d92e78d0aca901da52",
+    "description": "606e4640f779f1400bc84caf34c1bc18851318aa15c2a1601c67dbea5ae73cb8",
+    "both": "bfb06a2e63deb25f8b2ead3ecd164aa164803a5f29d952a9911e7aa958b18753"
+   }
+  },
+  {
+   "id": "tools-resources",
+   "image": "images/tools-resources.png",
+   "pixel_sha256": "bc0c14904d36af25a451bd92f192aa80ea5d7209081f4bc226f73c97061c7901",
+   "description": "This is a Venn diagram. The title of the figure is MCP primitives. The figure has two overlapping circles. One circle is labeled tools. The other circle is labeled listed. The overlapping area between the two circles is labeled resources. This diagram shows the relationship and overlap between tools and listed items in the context of MCP primitives. The overall shape is two intersecting circles.",
+   "printed_text": "MCP primitives tools listed resources MCP primitives",
+   "text_sha256": {
+    "text": "22b827b7f274ec7dc2df2ed67a7ee76e7dcd03b833f6635f4fdd1ebf943b0d73",
+    "description": "06498e365e8170e437c1f8b4261fb43c358dbb2efec338342b766c87782ffa72",
+    "both": "edc7058aea2e1348439187cb192332ff9000fb807c91cd0e8afe23918921e24f"
+   }
+  },
+  {
+   "id": "rerank-flow",
+   "image": "images/rerank-flow.png",
+   "pixel_sha256": "027e4ee0958bea88ecf063c93db396af603ebd4270f9c2c821b19eeb13c8ce81",
+   "description": "This figure is a flowchart or a process diagram.\nThe title of the figure is Search with reranking.\nThe parts of the figure are Query, Search, Rerank, and Top 3.\nThese parts are connected by arrows indicating a sequence of steps or a process flow.\nThe Query leads to the Search step.\nThe Search step leads to the Rerank step.\nThe Rerank step leads to the Top 3 step.\nThe overall shape or trend is a linear progression showing a sequence of operations to achieve a final result of the Top 3 results.",
+   "printed_text": "Search with reranking Query Search Rerank Top 3",
+   "text_sha256": {
+    "text": "8923a0d9d3a764f91e294451d3f5127bc8867d5ed9709b4e886f244948b54934",
+    "description": "42ac7107f7a0ebd7987aadc33fb2f1f99002385cf26ffde9cc214e0d3f95ca56",
+    "both": "0dfaf8ddffdc77cad68d837f2d7c27db19cd1f876c670a63d996dbcec5d576d1"
+   }
+  },
+  {
+   "id": "fallback-flow",
+   "image": "images/fallback-flow.png",
+   "pixel_sha256": "3f15b188feb3e61f07130ede9b8eda99d55865d1cc322b301cba038ca7ecd623",
+   "description": "This figure is a flowchart. Its title is Model fallback. The figure has three main parts: Primary, Timeout?, and Fallback, and Answer. The Primary box is connected by an arrow to the Timeout? box. The Timeout? box has two possible outcomes indicated by arrows: one leading to Fallback, and another leading to Answer, specifically when the outcome is no. The overall shape of the figure is a decision tree or a process flow showing a decision point leading to different outcomes.",
+   "printed_text": "Model fallback Primary Timeout? Fallback no Answer",
+   "text_sha256": {
+    "text": "0ed87b6c69315000d215e2fb14b74d943840cdcdaf507db3cad9ce39b8def3c4",
+    "description": "5301df84839d7c9f0c17228afa9065b685035f811170e3a7064441368b64b2d8",
+    "both": "403f3fe47de9ef0f2474da6c41c9d749c340f714fc9d885efbc382bdbacd3090"
+   }
+  },
+  {
+   "id": "throughput-bars",
+   "image": "images/throughput-bars.png",
+   "pixel_sha256": "b9e1b318ddc7c66a83461e4057a0fc8d195469c6cc682813f9a183d88424bcf0",
+   "description": "This is a bar chart. The title of the figure is Requests per second. The figure has three categories on the horizontal axis representing the number of workers: 1 worker, 2 workers, and 4 workers. The vertical axis represents the number of requests per second. The bars show the number of requests per second for each number of workers. The bar for 1 worker is at a level of 40 requests per second. The bar for 2 workers is at a level of 75 requests per second. The bar for 4 workers is at a level of 130 requests per second. The trend shows that as the number of workers increases, the number of requests per second also increases.",
+   "printed_text": "Requests per second 1 worker 40 2 workers 75 4 workers 130",
+   "text_sha256": {
+    "text": "3bb0569b5706743dd0a301b970b95213ceaac027e3aac51bba88af84e8aa3713",
+    "description": "1372f64db6750fc8f9f2092b3a84c2b07d39f92b88a0775d466fb967f315d8d4",
+    "both": "11fea6d80113c2e46e448ffb99b4d8fe961f20221833d7fc5a3c8f35a3faae7e"
+   }
+  },
+  {
+   "id": "pass-rate-line",
+   "image": "images/pass-rate-line.png",
+   "pixel_sha256": "e85064945706dcffcb398effecc879285da057ded34011b0c6afbdac9225a4a7",
+   "description": "This is a line graph.\nThe title of the figure is Pass rate by prompt version.\nThe horizontal axis is labeled version and it shows the values one, two, three, and four.\nThe vertical axis is labeled pass rate (max 0.7) and it shows the pass rate values.\nThe line connects data points representing the pass rate for each version.\nThe pass rate starts low at version one, increases to a higher point at version two, decreases slightly at version three, and then increases sharply to the highest point at version four.\nOverall the trend shows fluctuation with an increasing trend towards the end.",
+   "printed_text": "Pass rate by prompt version 1 2 3 4 pass rate (max 0.7) version",
+   "text_sha256": {
+    "text": "de6145c954356d7f571623fb9c4edc5b1e5193549751f292f7aecd6a627b4db3",
+    "description": "b0be7e1982939707f2d18b29092a207a02381248e54435ec02e10052e3617938",
+    "both": "1af38bd22b6519e2a06b2315870b682c7adf0a8c92cbcafe31f272a916ca8cf3"
+   }
+  },
+  {
+   "id": "chunk-pie",
+   "image": "images/chunk-pie.png",
+   "pixel_sha256": "1f0c2081dd3c919101fff6e3945c12d10a47e79bf6637daab23cb2bac40c0638",
+   "description": "This is a pie chart. The title of the figure is Chunks by size. The pie chart is divided into three sections representing different chunk sizes. The first section is labeled short and represents 25 percent. The second section is labeled medium and represents 50 percent. The third section is labeled long and represents 25 percent. The three sections together make up the whole circle. The overall shape is a circle divided into three unequal slices.",
+   "printed_text": "Chunks by size short 25 percent medium 50 percent long 25 percent",
+   "text_sha256": {
+    "text": "4fc43ffa807f8f7a70c66682ba5ba2dd36fdde416af9847f4366c7bea7f207ee",
+    "description": "bcd2aba6df1e5c4840b7668628875ee24dd107374337ce34a19dc90bdd68d8e7",
+    "both": "b034ca4fca8fadd0924287da8836d6e5e789680b894a6d3938589030f54f4bee"
+   }
+  },
+  {
+   "id": "tool-sequence",
+   "image": "images/tool-sequence.png",
+   "pixel_sha256": "efe82c754cc64bc5619028f59e6c112f47fcd4364d038d6c429465693a81fb9e",
+   "description": "This figure is a diagram.\nThe title of the figure is Tool use.\nThe figure has two main parts labeled agent and tool.\nThese two parts are connected by lines indicating interactions.\nThere are four connections between agent and tool.\nTwo connections are labeled call.\nTwo connections are labeled result.\nThe overall shape of the figure shows a sequence of interactions between an agent and a tool.",
+   "printed_text": "Tool use agent tool call result call result",
+   "text_sha256": {
+    "text": "7375549149dedcd61b8a11d81a74ae7fa4d38a5fdbdcf031e222c1c97daa34f5",
+    "description": "8753dc24882c8638858665013f89ef922deb471f1342ad3e32ec8ccdf9132cb0",
+    "both": "4a9bfe64ee2a61b18247bc2253385f73e7b9a144c32099c0e566909dcc3ca1ac"
+   }
+  },
+  {
+   "id": "cache-states",
+   "image": "images/cache-states.png",
+   "pixel_sha256": "53c56a34812351e6a3da86c9c639de359c4c7f11fffedf436739515211004c5b",
+   "description": "This figure is a flowchart.\nThe title of the figure is Cache entry.\nThe figure has several rectangular boxes representing states or entries in a cache.\nThe boxes are empty, filling, fresh, and stale.\nArrows connect these boxes to show the transitions or flow between these states.\nAn arrow goes from empty to filling.\nAn arrow goes from filling to fresh.\nAn arrow goes from fresh to stale.\nThe overall shape of the figure is a linear progression or a state transition diagram showing the lifecycle of a cache entry.",
+   "printed_text": "Cache entry empty request filling stored fresh expired stale",
+   "text_sha256": {
+    "text": "9f170a8a0710cde5bc3972b0ecb18088b8e359fc0c9518f29669dd481be03218",
+    "description": "0677ac8556683227877617f006f1d30d47fb33e3f52c015a9e67ffef7aa161bf",
+    "both": "e37cc47ce3ee309b3a97ab6d6af42e5122bc853e5351dd3e489f2f6c062079bd"
+   }
+  },
+  {
+   "id": "errors-grid",
+   "image": "images/errors-grid.png",
+   "pixel_sha256": "ee5773d2312ebe1a9f54167125b49807e2fdefd7c5604682425b6d46ba670fb2",
+   "description": "This is a table figure.\nThe title of the figure is Errors by region.\nThe table has two rows labeled east and west.\nThe table has two columns labeled read and write.\nThe cells in the table contain numbers representing the number of errors in each region and for each operation.\nThe east region has 2 errors in read and 9 errors in write.\nThe west region has 0 errors in read and 4 errors in write.\nThe overall shape is a 2 by 2 grid.",
+   "printed_text": "Errors by region east 2 9 west 0 4 read write",
+   "text_sha256": {
+    "text": "cea509f2f08fb198d760d6aab307e1c65490dd731b92662d239c117b96ca3ea9",
+    "description": "8ffe352186e6eb6a468aeaea04436c998b5ed9f72de69d4068fa8e1f04314414",
+    "both": "cc4406d3f252bfba251712524ccfcf25fcaee91db85b45ead977efb3b2eeb884"
+   }
+  }
+ ]
+}

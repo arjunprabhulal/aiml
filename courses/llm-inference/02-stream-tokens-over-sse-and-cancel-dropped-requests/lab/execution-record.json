@@ -1,0 +1,44 @@
+{
+  "execution_mode": "executed local algorithm or offline analysis; live model executions have separate raw records",
+  "commands": [
+    "python3 lab.py",
+    "python3 -m unittest -v test_server.py"
+  ],
+  "exit_statuses": [
+    0,
+    0
+  ],
+  "environment": {
+    "python": "3.15.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "elapsed_wall_seconds": 2.673624,
+  "source_sha256": {
+    "server.py": "b019d96d81528e8b44ce25239ee0ba6942505375f8757ca6d6267681353d769a",
+    "test_server.py": "a71421364200e6a13b545eb896153366e98678f9b7a15bf49037f1a8c4923b21",
+    "test_lab.py": "bafb5dbf841930082396152974e975df8233abc4a2dd6cd797648478263d0e2e",
+    "live_inference.py": "754d9bf81d04694541e53d5c0472f984c9f046886070c33b376ca071c81c8086",
+    "lab.py": "d37f7424cc78121acb9876b9bb211808ce4d623aef30eb6ec541fae417b626a4"
+  },
+  "output_sha256": "06e078db14855567ab4f830b2e0780739252eee9bec32bf23b9f3aadedc729db",
+  "offline_guard_mutation_check": {
+    "method": "Remove one raise statement at a time in an isolated copy and rerun its unittest files; detection means nonzero exit or an eight-second mutant timeout. Live-model scripts are excluded.",
+    "mutations": [
+      {
+        "file": "server.py",
+        "line": 26,
+        "detected": true
+      },
+      {
+        "file": "server.py",
+        "line": 31,
+        "detected": true
+      },
+      {
+        "file": "server.py",
+        "line": 33,
+        "detected": true
+      }
+    ]
+  }
+}

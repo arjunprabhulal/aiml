@@ -1,0 +1,71 @@
+{
+  "threshold": 0.7,
+  "rows": [
+    {
+      "id": "invented-storage",
+      "metric": "faithfulness",
+      "defect": "the answer invents a storage engine and a backup command",
+      "scores": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "caught": true
+    },
+    {
+      "id": "csv-removes-color",
+      "metric": "faithfulness",
+      "defect": "a gemma4:e2b answer from an earlier run: claims --format csv removes color codes, which no retrieved page says",
+      "scores": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "caught": false
+    },
+    {
+      "id": "config-page-missing",
+      "metric": "contextual_recall",
+      "defect": "a gemma4:e2b trace from an earlier run: the config page that says color = never was not retrieved",
+      "scores": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "caught": true
+    },
+    {
+      "id": "debug-page-missing",
+      "metric": "contextual_recall",
+      "defect": "a gemma4:e2b trace from an earlier run: only issue 218 was looked up; nothing says where debug output goes",
+      "scores": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "caught": true
+    },
+    {
+      "id": "invented-storage-strict",
+      "metric": "faithfulness_strict",
+      "defect": "the answer invents a storage engine and a backup command",
+      "scores": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "caught": true
+    },
+    {
+      "id": "csv-removes-color-strict",
+      "metric": "faithfulness_strict",
+      "defect": "a gemma4:e2b answer from an earlier run: claims --format csv removes color codes, which no retrieved page says",
+      "scores": [
+        0.6,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "caught": true
+    }
+  ]
+}

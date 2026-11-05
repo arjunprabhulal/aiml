@@ -1,0 +1,43 @@
+Agents CLI v1.11.0
+No saved metadata found - using standard overwrite mode.
+⚠️  Warning: docuctl-cli-fresh-enhance declares no agents-cli configuration, so it is treated as an ADK template. Add .template/templateconfig.yaml to say otherwise.
+
+Template inherits from base: adk
+
+No saved metadata found - defaulting to Python as project language.
+ℹ️  Using CLI-specified agent directory: docs_helper
+✅ Found docs_helper/agent.py
+✅ Found 'root_agent' definition in agent.py
+📦 Creating backup before modification...
+Backup created: /Users/arjunprabhulal/.agents-cli/backups/docuctl-cli-fresh-enhance_20261025_223331
+
+Using local template: /private/tmp/docuctl-cli-fresh-enhance
+⚠️  Warning: docuctl-cli-fresh-enhance declares no agents-cli configuration, so it is treated as an ADK template. Add .template/templateconfig.yaml to say otherwise.
+⚠️  Warning: --session-type cannot be used with agent_runtime deployment target, it will be unset. Agent Runtime in Gemini platform handles session management internally.
+ℹ️  Adding 'app' object to docs_helper/agent.py for backward compatibility
+
+✓ Ensuring base template 'adk' dependencies
+  Adding the following dependencies:
+    • Kept: google-adk[gcp,otel-gcp,bigquery-analytics]>=2.12.0,<3.0.0
+    • Kept: opentelemetry-resourcedetector-gcp<=1.12.0a0
+    • Kept: gcsfs>=2026.10.0
+    • Kept: a2a-sdk[http-server]>=1.0,<2
+    • Kept: aiohttp>=3.13.4
+    • Kept: google-cloud-aiplatform[evaluation]>=2.2.0,<3.0.0
+    • Kept: google-cloud-agentplatform[agent-engines]>=2.2.0,<3.0.0
+    • Kept: google-cloud-logging>=3.12.0,<4.0.0
+    • Kept: protobuf>=6.31.1,<7.0.0
+✓ Auto-installing dependencies: google-adk>=2.12.0,<3.0.0, opentelemetry-resourcedetector-gcp<=1.12.0a0, gcsfs>=2026.10.0, a2a-sdk>=1.0,<2, aiohttp>=3.13.4
+✓ Dependencies added successfully
+
+
+✅ Success! Your agent project is ready.
+
+📖 Documentation
+   README:    cat ./README.md
+
+💡 Tip
+   Once ready for production, run: agents-cli scaffold enhance
+
+🚀 Get Started
+   cd . && agents-cli install && agents-cli playground

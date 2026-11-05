@@ -1,0 +1,613 @@
+{
+ "eval_set_result_id": "docs_voice_docs_voice_live_1792632466.607316",
+ "eval_set_result_name": "docs_voice_docs_voice_live_1792632466.607316",
+ "eval_set_id": "docs_voice_live",
+ "eval_case_results": [
+  {
+   "eval_set_file": "docs_voice_live",
+   "eval_set_id": "docs_voice_live",
+   "eval_id": "adk_name_and_mic_rate",
+   "final_eval_status": 2,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+     "threshold": 1.0,
+     "criterion": {
+      "threshold": 1.0,
+      "include_intermediate_responses_in_final": false,
+      "judge_model_options": {
+       "judge_model": "gemini-3.8-flash",
+       "num_samples": 1
+      },
+      "rubrics": [
+       {
+        "rubric_id": "names_adk",
+        "rubric_content": {
+         "text_property": "The agent says that ADK stands for Agent Development Kit."
+        }
+       },
+       {
+        "rubric_id": "mic_rate",
+        "rubric_content": {
+         "text_property": "The agent says that microphone audio uses a 16 kHz sample rate."
+        }
+       }
+      ]
+     },
+     "score": 0.0,
+     "eval_status": 2,
+     "details": {
+      "rubric_scores": [
+       {
+        "rubric_id": "names_adk",
+        "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+        "score": 0.0
+       },
+       {
+        "rubric_id": "mic_rate",
+        "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+        "score": 0.0
+       }
+      ]
+     }
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 0.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 83.5,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {}
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "1ae3b569-8a7a-4547-814b-d57dd5a8b60b",
+      "user_content": {
+       "parts": [
+        {
+         "text": " What does ADK stand for?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "**Defining the Acronym**\n\nI've addressed the initial query about \"ADK\" by providing a straightforward definition. I've confirmed that \"ADK\" is widely understood to mean \"Android Development Kit,\" responding as directly and concisely as possible.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "bare_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "**Defining the Acronym**\n\nI've addressed the initial query about \"ADK\" by providing a straightforward definition. I've confirmed that \"ADK\" is widely understood to mean \"Android Development Kit,\" responding as directly and concisely as possible.\n\n\n",
+            "thought": true
+           }
+          ]
+         },
+         "model_version": "gemini-2.5-flash-native-audio-preview-12-2025"
+        },
+        {
+         "author": "bare_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "ADK typically stands for Android Development Kit."
+           }
+          ],
+          "role": "model"
+         }
+        },
+        {
+         "author": "bare_voice"
+        }
+       ]
+      },
+      "creation_timestamp": 1792632436.861711,
+      "app_details": {
+       "agent_details": {
+        "bare_voice": {
+         "name": "bare_voice",
+         "instructions": "You are a docs assistant on a voice call. Answer in one or two short sentences.\n\nYou are an agent. Your internal name is \"bare_voice\".",
+         "tool_declarations": []
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "judge_model_options": {
+         "judge_model": "gemini-3.8-flash",
+         "num_samples": 1
+        },
+        "rubrics": [
+         {
+          "rubric_id": "names_adk",
+          "rubric_content": {
+           "text_property": "The agent says that ADK stands for Agent Development Kit."
+          }
+         },
+         {
+          "rubric_id": "mic_rate",
+          "rubric_content": {
+           "text_property": "The agent says that microphone audio uses a 16 kHz sample rate."
+          }
+         }
+        ]
+       },
+       "eval_status": 3,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 0.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 60.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {}
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    },
+    {
+     "actual_invocation": {
+      "invocation_id": "d546c633-cfaa-46fc-80d5-7849cd971759",
+      "user_content": {
+       "parts": [
+        {
+         "text": " What sample rate should microphone audio use?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "**Defining Sample Rate Standards**\n\nI'm focusing on providing the user a concise, standard professional sample rate recommendation for microphone audio. The goal is to be direct and helpful, quickly delivering the accepted best practice. I'll stick to established guidelines.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "bare_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "**Defining Sample Rate Standards**\n\nI'm focusing on providing the user a concise, standard professional sample rate recommendation for microphone audio. The goal is to be direct and helpful, quickly delivering the accepted best practice. I'll stick to established guidelines.\n\n\n",
+            "thought": true
+           }
+          ]
+         },
+         "model_version": "gemini-2.5-flash-native-audio-preview-12-2025"
+        },
+        {
+         "author": "bare_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "A sample rate of 44.1 or 48 kHz is commonly recommended."
+           }
+          ],
+          "role": "model"
+         }
+        },
+        {
+         "author": "bare_voice"
+        }
+       ]
+      },
+      "creation_timestamp": 1792632451.706604,
+      "app_details": {
+       "agent_details": {
+        "bare_voice": {
+         "name": "bare_voice",
+         "instructions": "You are a docs assistant on a voice call. Answer in one or two short sentences.\n\nYou are an agent. Your internal name is \"bare_voice\".",
+         "tool_declarations": []
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "judge_model_options": {
+         "judge_model": "gemini-3.8-flash",
+         "num_samples": 1
+        },
+        "rubrics": [
+         {
+          "rubric_id": "names_adk",
+          "rubric_content": {
+           "text_property": "The agent says that ADK stands for Agent Development Kit."
+          }
+         },
+         {
+          "rubric_id": "mic_rate",
+          "rubric_content": {
+           "text_property": "The agent says that microphone audio uses a 16 kHz sample rate."
+          }
+         }
+        ]
+       },
+       "score": 0.0,
+       "eval_status": 2,
+       "details": {
+        "rubric_scores": [
+         {
+          "rubric_id": "names_adk",
+          "rationale": "In Assistant Turn 1, the agent stated that ADK stands for \"Android Development Kit\" rather than \"Agent Development Kit\".",
+          "score": 0.0
+         },
+         {
+          "rubric_id": "mic_rate",
+          "rationale": "In Assistant Turn 2, the agent stated that a sample rate of 44.1 or 48 kHz is commonly recommended, failing to state that microphone audio uses a 16 kHz sample rate.",
+          "score": 0.0
+         }
+        ]
+       }
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 0.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 107.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {}
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-0302bc45-8314-4823-9ef4-baf19171a108",
+   "session_details": {
+    "id": "adk-eval-session-0302bc45-8314-4823-9ef4-baf19171a108",
+    "app_name": "docs_voice",
+    "user_id": "eval",
+    "state": {},
+    "events": [
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "input_transcription": {
+       "text": " What does ADK stand for?",
+       "finished": true
+      },
+      "invocation_id": "1ae3b569-8a7a-4547-814b-d57dd5a8b60b",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "9bd40e21-c955-45b1-8ba1-6f6f8dd65a22",
+      "timestamp": 1792632436.861711
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "output_transcription": {
+       "text": "ADK typically stands for Android Development Kit.",
+       "finished": true
+      },
+      "invocation_id": "1ae3b569-8a7a-4547-814b-d57dd5a8b60b",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "d5320e3e-8224-40fa-a81a-74ddc068777d",
+      "timestamp": 1792632436.8619158
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 89,
+       "candidates_tokens_details": [
+        {
+         "modality": "AUDIO",
+         "token_count": 89
+        }
+       ],
+       "prompt_token_count": 479,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 478
+        },
+        {
+         "modality": "AUDIO",
+         "token_count": 1
+        }
+       ],
+       "thoughts_token_count": 37,
+       "total_token_count": 568
+      },
+      "invocation_id": "1ae3b569-8a7a-4547-814b-d57dd5a8b60b",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "5d045b8e-29b6-4da9-a3ff-b61c22de2131",
+      "timestamp": 1792632439.667606
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "**Defining the Acronym**\n\nI've addressed the initial query about \"ADK\" by providing a straightforward definition. I've confirmed that \"ADK\" is widely understood to mean \"Android Development Kit,\" responding as directly and concisely as possible.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "partial": false,
+      "interrupted": false,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "invocation_id": "1ae3b569-8a7a-4547-814b-d57dd5a8b60b",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "73ccfb23-d51d-44dc-8c05-10eebae273f2",
+      "timestamp": 1792632439.667742
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "turn_complete": true,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "invocation_id": "1ae3b569-8a7a-4547-814b-d57dd5a8b60b",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "0fb88368-689c-4143-9215-c184a0954378",
+      "timestamp": 1792632439.6677911
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "input_transcription": {
+       "text": " What sample rate should microphone audio use?",
+       "finished": true
+      },
+      "invocation_id": "d546c633-cfaa-46fc-80d5-7849cd971759",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "2291599f-d45b-439b-9307-e68484e9c517",
+      "timestamp": 1792632451.706604
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "output_transcription": {
+       "text": "A sample rate of 44.1 or 48 kHz is commonly recommended.",
+       "finished": true
+      },
+      "invocation_id": "d546c633-cfaa-46fc-80d5-7849cd971759",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "a6ae5c7e-85cf-4b46-adb9-094ab58413eb",
+      "timestamp": 1792632451.706847
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 136,
+       "candidates_tokens_details": [
+        {
+         "modality": "AUDIO",
+         "token_count": 136
+        }
+       ],
+       "prompt_token_count": 686,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 678
+        },
+        {
+         "modality": "AUDIO",
+         "token_count": 8
+        }
+       ],
+       "thoughts_token_count": 22,
+       "total_token_count": 822
+      },
+      "invocation_id": "d546c633-cfaa-46fc-80d5-7849cd971759",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "1999b8b6-4be0-4ba6-99db-422fcd67e10b",
+      "timestamp": 1792632455.508001
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "**Defining Sample Rate Standards**\n\nI'm focusing on providing the user a concise, standard professional sample rate recommendation for microphone audio. The goal is to be direct and helpful, quickly delivering the accepted best practice. I'll stick to established guidelines.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "partial": false,
+      "interrupted": false,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "invocation_id": "d546c633-cfaa-46fc-80d5-7849cd971759",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "9f8a6ff3-2437-42f2-885a-e2e7c423c691",
+      "timestamp": 1792632455.508136
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "turn_complete": true,
+      "custom_metadata": {
+       "__llm_request_key__": "e9728973-488b-4246-8494-a1680628b569"
+      },
+      "invocation_id": "d546c633-cfaa-46fc-80d5-7849cd971759",
+      "author": "bare_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "dffd2a83-4bfe-4da1-a604-aef7207b18b1",
+      "timestamp": 1792632455.5081868
+     }
+    ],
+    "last_update_time": 1792632455.5081868
+   },
+   "user_id": "eval"
+  }
+ ],
+ "creation_timestamp": 1792632466.607316
+}

@@ -1,0 +1,90 @@
+$ python agent.py "Write the release notes for docuctl 2.4.0."   # run: release
+call   list_skills {}
+result list_skills {'result': '<available_skills>\n<skill>\n<name>\ndocs-page-review\n</name>\n<description>\nReview one docuctl documentation page against the docs checklist. Use
+call   load_skill {'skill_name': 'release-notes'}
+result load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\n\n1. Call `list_merged_prs` with the version the user named.\n2. Run `scripts/grou
+call   list_merged_prs {'version': '2.4.0'}
+result list_merged_prs {'version': '2.4.0', 'pull_requests': [{'number': 212, 'title': 'feat: add --dry-run to rollback'}, {'number': 215, 'title': 'fix: keep the token cache after a 
+call   run_skill_script {'positional_args': ['feat: add --dry-run to rollback', 'fix: keep the token cache after a failed login', 'feat!: remove the deprecated release revert command', 'docs: document rollback --to', 'ci: cache the Go toolchain'], 'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py'}
+result run_skill_script {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'stdout': '{"breaking": ["remove the deprecated release revert command"], "features": [
+call   load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md'}
+result load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md', 'content': '# Release notes style\n\n- Start with `## docuctl <version>`.\n- Sections, in th
+answer ## docuctl 2.4.0
+
+### Breaking changes
+- Remove the deprecated release revert command (#218)
+
+### Features
+- Add --dry-run to rollback (#212)
+
+### Fixes
+- Keep the token cache after a failed login (#215)
+
+### Docs
+- Document rollback --to (#220)
+
+$ python agent.py "Write the release notes for docuctl 2.4.0."   # run: eager
+call   load_skill {'skill_name': 'release-notes'}
+result load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\n\n1. Call `list_merged_prs` with the version the user named.\n2. Run `scripts/grou
+call   list_merged_prs {'version': '2.4.0'}
+result list_merged_prs {'version': '2.4.0', 'pull_requests': [{'number': 212, 'title': 'feat: add --dry-run to rollback'}, {'number': 215, 'title': 'fix: keep the token cache after a 
+call   run_skill_script {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'positional_args': ['feat: add --dry-run to rollback', 'fix: keep the token cache after a failed login', 'feat!: remove the deprecated release revert command', 'docs: document rollback --to', 'ci: cache the Go toolchain']}
+result run_skill_script {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'stdout': '{"breaking": ["remove the deprecated release revert command"], "features": [
+call   load_skill_resource {'file_path': 'references/style.md', 'skill_name': 'release-notes'}
+result load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md', 'content': '# Release notes style\n\n- Start with `## docuctl <version>`.\n- Sections, in th
+answer ## docuctl 2.4.0
+
+### Breaking changes
+- Remove the deprecated release revert command (#218)
+
+### Features
+- Add --dry-run to rollback (#212)
+
+### Fixes
+- Keep the token cache after a failed login (#215)
+
+### Docs
+- Document rollback --to (#220)
+
+$ python agent.py "Write the release notes for docuctl 9.9.0."   # run: unknown-version
+call   list_skills {}
+result list_skills {'result': '<available_skills>\n<skill>\n<name>\ndocs-page-review\n</name>\n<description>\nReview one docuctl documentation page against the docs checklist. Use
+call   load_skill {'skill_name': 'release-notes'}
+result load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\n\n1. Call `list_merged_prs` with the version the user named.\n2. Run `scripts/grou
+call   list_merged_prs {'version': '9.9.0'}
+result list_merged_prs {'error': "No release '9.9.0'. Known: 2.4.0."}
+answer I cannot write release notes for docuctl 9.9.0 because `list_merged_prs` returned the following error:
+
+> No release '9.9.0'. Known: 2.4.0.
+
+$ python agent.py "Write the release notes for docuctl 2.4.0."   # run: no-executor
+call   list_skills {}
+result list_skills {'result': '<available_skills>\n<skill>\n<name>\ndocs-page-review\n</name>\n<description>\nReview one docuctl documentation page against the docs checklist. Use
+call   load_skill {'skill_name': 'release-notes'}
+result load_skill {'skill_name': 'release-notes', 'instructions': 'Follow these steps exactly.\n\n1. Call `list_merged_prs` with the version the user named.\n2. Run `scripts/grou
+call   list_merged_prs {'version': '2.4.0'}
+call   load_skill_resource {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py'}
+call   load_skill_resource {'file_path': 'references/style.md', 'skill_name': 'release-notes'}
+result list_merged_prs {'version': '2.4.0', 'pull_requests': [{'number': 212, 'title': 'feat: add --dry-run to rollback'}, {'number': 215, 'title': 'fix: keep the token cache after a 
+result load_skill_resource {'skill_name': 'release-notes', 'file_path': 'scripts/group_changes.py', 'content': '"""Group pull request titles by Conventional Commits type and print JSON.""
+result load_skill_resource {'skill_name': 'release-notes', 'file_path': 'references/style.md', 'content': '# Release notes style\n\n- Start with `## docuctl <version>`.\n- Sections, in th
+answer ## docuctl 2.4.0
+
+### Breaking changes
+
+- Remove the deprecated release revert command (#218)
+
+### Features
+
+- Add --dry-run to rollback (#212)
+
+### Fixes
+
+- Keep the token cache after a failed login (#215)
+
+### Docs
+
+- Document rollback --to (#220)
+
+$ load_skill_from_dir(skills copied to release_notes/)
+ValueError: Skill name 'release-notes' does not match directory name 'release_notes'.

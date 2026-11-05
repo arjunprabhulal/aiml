@@ -1,0 +1,113 @@
+{
+ "model": "gemini-3.8-flash",
+ "budget": 400,
+ "runs": [
+  {
+   "thread": "review",
+   "pinned": [],
+   "stored_messages": 10,
+   "turns": [
+    {
+     "question": "For #415 we agreed to keep DEFAULT_TIMEOUT at 10s and add a per-client timeout override instead.",
+     "sent": 1,
+     "stored": 1,
+     "estimated_tokens": 83,
+     "chars_only_estimate": 83,
+     "server_tokens": 74,
+     "reply": "Understood, I have noted that for #415 the team agreed to keep `DEFAULT_TIMEOUT` at 10s and add a per-client timeout override instead. Please let me know which review in the queue you would like to look at next."
+    },
+    {
+     "question": "mlee reviews #412, and it must merge before the 2.5 freeze on November 14.",
+     "sent": 1,
+     "stored": 3,
+     "estimated_tokens": 78,
+     "chars_only_estimate": 78,
+     "server_tokens": 72,
+     "reply": "Understood. I have noted that mlee is assigned to review #412 and that it must merge before the 2.5 freeze on November 14. Let me know how you would like to proceed with the review queue."
+    },
+    {
+     "question": "Here is the CI log from #415. Does anything look wrong?",
+     "sent": 1,
+     "stored": 5,
+     "estimated_tokens": 292,
+     "chars_only_estimate": 292,
+     "server_tokens": 501,
+     "reply": "I do not have the pinned decisions or context to determine whether anything is considered wrong with this run. From the log provided in the conversation, all fifteen listed tests passed, though the run ends at 98%."
+    },
+    {
+     "question": "Draft a one-line review comment for #415.",
+     "sent": 1,
+     "stored": 7,
+     "estimated_tokens": 70,
+     "chars_only_estimate": 70,
+     "server_tokens": 60,
+     "reply": "I do not have the information needed to draft a review comment for #415."
+    },
+    {
+     "question": "Who reviews #412, and when must it merge?",
+     "sent": 3,
+     "stored": 9,
+     "estimated_tokens": 271,
+     "chars_only_estimate": 109,
+     "server_tokens": 255,
+     "reply": "I do not have the information regarding who reviews #412 or when it must merge."
+    }
+   ]
+  },
+  {
+   "thread": "review-pinned",
+   "pinned": [
+    "mlee reviews #412, and it must merge before the 2.5 freeze on November 14."
+   ],
+   "stored_messages": 10,
+   "turns": [
+    {
+     "question": "For #415 we agreed to keep DEFAULT_TIMEOUT at 10s and add a per-client timeout override instead.",
+     "sent": 1,
+     "stored": 1,
+     "estimated_tokens": 83,
+     "chars_only_estimate": 83,
+     "server_tokens": 74,
+     "reply": "Understood. I have noted that for #415, `DEFAULT_TIMEOUT` will stay at 10s with a per-client timeout override added instead. Let me know which pull request or review you would like to look at next."
+    },
+    {
+     "question": "mlee reviews #412, and it must merge before the 2.5 freeze on November 14.",
+     "sent": 1,
+     "stored": 3,
+     "estimated_tokens": 102,
+     "chars_only_estimate": 102,
+     "server_tokens": 103,
+     "reply": "Understood. That matches the pinned decision: mlee is assigned to review PR #412, and it must merge before the 2.5 freeze on November 14."
+    },
+    {
+     "question": "Here is the CI log from #415. Does anything look wrong?",
+     "sent": 1,
+     "stored": 5,
+     "estimated_tokens": 316,
+     "chars_only_estimate": 316,
+     "server_tokens": 532,
+     "reply": "The provided log shows 15 passing tests ending at 98%. However, I do not have the information to determine whether anything is wrong with the run."
+    },
+    {
+     "question": "Draft a one-line review comment for #415.",
+     "sent": 1,
+     "stored": 7,
+     "estimated_tokens": 94,
+     "chars_only_estimate": 94,
+     "server_tokens": 91,
+     "reply": "I do not have information about #415 to draft a review comment."
+    },
+    {
+     "question": "Who reviews #412, and when must it merge?",
+     "sent": 3,
+     "stored": 9,
+     "estimated_tokens": 328,
+     "chars_only_estimate": 130,
+     "server_tokens": 320,
+     "reply": "mlee reviews #412. It must merge before the 2.5 freeze on November 14."
+    }
+   ]
+  }
+ ],
+ "overflow": "ContextTooLarge: the question needs more than the 345 tokens left after the instructions"
+}

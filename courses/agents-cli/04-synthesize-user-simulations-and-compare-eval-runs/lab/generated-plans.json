@@ -1,0 +1,26 @@
+{
+  "execution_mode": "actual-managed-scenario-generation",
+  "eval_cases": [
+    {
+      "eval_case_id": "6f854c17-b075-4a0f-9830-b3945d39d731",
+      "user_scenario": {
+        "starting_prompt": "I need to urgently roll back our last deploy using docuctl. How do I do that? We are currently running docuctl 2.1.",
+        "conversation_plan": "When the agent provides the rollback command for docuctl 2.x, express doubt and push back by asking if passing '--force' is required to skip manual confirmation prompts during an outage. After the agent responds, ask whether the exact same rollback command works for a legacy microservice currently running docuctl 1.8."
+      }
+    },
+    {
+      "eval_case_id": "a3c12ee5-e838-4b52-adbf-5b315ccaf20a",
+      "user_scenario": {
+        "starting_prompt": "Our CI pipeline authorization failed this morning. How long do docuctl auth tokens stay valid and what command do I use to renew them? We are on docuctl version 1.4.",
+        "conversation_plan": "When the agent answers with the docuctl 1.x renewal instructions, challenge the agent by stating that running 'docuctl token refresh --env=prod' resulted in an unknown flag error. Ask for clarification on whether additional flags exist or if docuctl 2.x changed token renewal mechanics entirely."
+      }
+    },
+    {
+      "eval_case_id": "15534937-ef12-4fce-8b45-693540de1879",
+      "user_scenario": {
+        "starting_prompt": "What is the docuctl command to configure an automated 10% canary traffic split during deploy? We are on docuctl 2.0.",
+        "conversation_plan": "When the agent indicates whether canary traffic splitting is supported in deploy docs, insist that a senior engineer said it could be set under the CLI config. Ask the agent to check the config documentation to see if any traffic splitting or canary percentage setting exists there, and if not, request the standard deploy command for version 2.x."
+      }
+    }
+  ]
+}

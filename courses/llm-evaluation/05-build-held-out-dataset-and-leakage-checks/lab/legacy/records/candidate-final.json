@@ -1,0 +1,435 @@
+{
+  "manifest": {
+    "harness_version": "1",
+    "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+    "started_at": "2026-10-20T16:29:58+00:00",
+    "case_set": {
+      "name": "inbox-triage",
+      "sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6"
+    },
+    "task": {
+      "name": "inbox-triage",
+      "version": "1",
+      "sha256": "7e81b30b5e01033ba59d25d9b21f596ac5f300dac36fd9783e729daf0d8e280e"
+    },
+    "system": {
+      "name": "keyword-triage",
+      "version": "2",
+      "mode": "replay",
+      "model": null,
+      "prompt": null,
+      "tools": null
+    },
+    "recording_sha256": "4e419bbf25ac5657ec0c119ee7c40ac743fc8afc0312bbfaac42d2ad4545e08b",
+    "graders": [
+      {
+        "name": "triage-contract",
+        "version": "1",
+        "kind": "contract"
+      },
+      {
+        "name": "triage-outcome",
+        "version": "1",
+        "kind": "outcome"
+      },
+      {
+        "name": "failure-criteria",
+        "version": "1",
+        "kind": "outcome"
+      }
+    ],
+    "splits": [
+      "development",
+      "held_out"
+    ],
+    "trials": 1,
+    "environment": {
+      "python": "3.15.0",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+    }
+  },
+  "summary": {
+    "development": {
+      "cases": 9,
+      "trials": 9,
+      "pass": 9,
+      "fail": 0,
+      "incomplete": 0,
+      "cases_passing_any_trial": 9,
+      "cases_passing_every_trial": 9,
+      "per_case": {
+        "charged-twice": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "stuck-tracking": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "password-changed": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "product-advice": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "refund-missing": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "charged-after-closing": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "blank-message": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "missing-body": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "late-order": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        }
+      }
+    },
+    "held_out": {
+      "cases": 7,
+      "trials": 7,
+      "pass": 4,
+      "fail": 3,
+      "incomplete": 0,
+      "cases_passing_any_trial": 4,
+      "cases_passing_every_trial": 4,
+      "per_case": {
+        "two-payments": {
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0
+        },
+        "cannot-log-in": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "stranger-buying": {
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0
+        },
+        "arrived-damaged": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "stop-charging": {
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0
+        },
+        "shop-hours": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "never-opened": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 3e-06
+      },
+      "latency_s": 8e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 3e-06
+      },
+      "latency_s": 3e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "recorded_latency_s": 2e-06
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "other",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 0.0
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 8e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 4e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "two-payments",
+      "split": "held_out",
+      "class": "billing",
+      "trial": 0,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'billing', got 'delivery'",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "cannot-log-in",
+      "split": "held_out",
+      "class": "account",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "stranger-buying",
+      "split": "held_out",
+      "class": "account security",
+      "trial": 0,
+      "verdict": "fail",
+      "check": "failure-criteria",
+      "kind": "outcome",
+      "reason": "failure criterion met: {\"needs_human\":false}",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "arrived-damaged",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stop-charging",
+      "split": "held_out",
+      "class": "billing",
+      "trial": 0,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'billing', got 'other'",
+      "output": {
+        "category": "other",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "shop-hours",
+      "split": "held_out",
+      "class": "out of scope",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "other",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 1e-06
+      },
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "never-opened",
+      "split": "held_out",
+      "class": "billing, ambiguous wording",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "recorded_latency_s": 0.0
+      },
+      "latency_s": 1e-06
+    }
+  ]
+}

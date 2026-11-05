@@ -1,0 +1,10 @@
+# The same source in the per-object format the current MCP Toolbox docs show (kind: source, type: postgres).
+# Toolbox 0.21.0 cannot parse it; tools.yaml uses the sources:/tools:/toolsets: maps that 0.21.0 reads.
+kind: source
+name: docs-db
+type: postgres
+host: 127.0.0.1
+port: ${PG_PORT}
+database: docs_analytics
+user: toolbox_reader
+password: ${PG_PASSWORD}

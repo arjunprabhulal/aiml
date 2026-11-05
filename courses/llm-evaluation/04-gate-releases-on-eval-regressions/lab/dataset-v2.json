@@ -1,0 +1,149 @@
+{
+  "name": "issue-triage",
+  "version": 2,
+  "cases": [
+    {
+      "id": "sync-crash-no-due-date",
+      "issue": "`tracker sync` crashes with KeyError: 'due' when a task has no due date. Traceback ends in sync/merge.py line 88. Started after upgrading to 2.4.0.",
+      "expected": {
+        "label": "bug"
+      },
+      "must_mention": [
+        "sync"
+      ]
+    },
+    {
+      "id": "token-in-debug-log",
+      "issue": "Running `tracker push --debug` prints my full API token in plain text to the terminal and to ~/.tracker/debug.log. Anyone who can read the log can use my account.",
+      "expected": {
+        "label": "bug",
+        "priority": "p0"
+      },
+      "must_mention": [
+        "token"
+      ]
+    },
+    {
+      "id": "import-drops-tasks",
+      "issue": "Importing a CSV with 500 rows with `tracker import tasks.csv` reports success, but only 312 tasks exist afterwards. The rest are silently dropped and the original file is already moved to the archive folder.",
+      "expected": {
+        "label": "bug",
+        "priority": "p0"
+      },
+      "must_mention": [
+        "import"
+      ]
+    },
+    {
+      "id": "color-in-pipes",
+      "issue": "When I pipe `tracker list` into grep, the output still contains ANSI color codes, so my grep patterns fail. Colors should turn off when stdout is not a terminal.",
+      "expected": {
+        "label": "bug"
+      },
+      "must_mention": [
+        "color"
+      ]
+    },
+    {
+      "id": "recurring-tasks",
+      "issue": "Please add recurring tasks, for example `tracker add \"water plants\" --every 3d`. Right now I re-create the same task by hand every few days.",
+      "expected": {
+        "label": "feature"
+      },
+      "must_mention": [
+        "recurring"
+      ]
+    },
+    {
+      "id": "json-output",
+      "issue": "It would help scripting if `tracker list` had a `--json` flag that prints tasks as JSON instead of the table.",
+      "expected": {
+        "label": "feature"
+      },
+      "must_mention": [
+        "json"
+      ]
+    },
+    {
+      "id": "calendar-export",
+      "issue": "Feature request: export tasks with due dates to an .ics file so they show up in my calendar app.",
+      "expected": {
+        "label": "feature"
+      },
+      "must_mention": [
+        "export"
+      ]
+    },
+    {
+      "id": "readme-wrong-flag",
+      "issue": "The README says to run `tracker init --path ~/tasks`, but the flag is actually `--dir`. The example fails with 'unknown option --path'.",
+      "expected": {
+        "label": "docs"
+      },
+      "must_mention": [
+        "readme"
+      ]
+    },
+    {
+      "id": "missing-config-docs",
+      "issue": "The docs do not list the keys allowed in config.toml. I had to read the source to find `default_project` and `week_start`.",
+      "expected": {
+        "label": "docs"
+      },
+      "must_mention": [
+        "config"
+      ]
+    },
+    {
+      "id": "two-machines",
+      "issue": "Is it safe to run `tracker sync` from two laptops against the same remote at the same time, or should I wait for one to finish?",
+      "expected": {
+        "label": "question"
+      },
+      "must_mention": [
+        "sync"
+      ]
+    },
+    {
+      "id": "where-is-data",
+      "issue": "Where does tracker store its database on disk? I want to include it in my backups.",
+      "expected": {
+        "label": "question"
+      },
+      "must_mention": [
+        "backup"
+      ]
+    },
+    {
+      "id": "archive-vs-delete",
+      "issue": "What is the difference between `tracker archive` and `tracker delete`? Can archived tasks be restored?",
+      "expected": {
+        "label": "question"
+      },
+      "must_mention": [
+        "archive"
+      ]
+    },
+    {
+      "id": "tags-lost-on-edit",
+      "issue": "Editing a task with `tracker edit 7 --title \"new\"` removes all of its tags. They do not come back after `tracker sync`.",
+      "expected": {
+        "label": "bug",
+        "priority": "p0"
+      },
+      "must_mention": [
+        "tags"
+      ]
+    },
+    {
+      "id": "week-start-question",
+      "issue": "Can I make the weekly view start on Sunday instead of Monday?",
+      "expected": {
+        "label": "question"
+      },
+      "must_mention": [
+        "week"
+      ]
+    }
+  ]
+}

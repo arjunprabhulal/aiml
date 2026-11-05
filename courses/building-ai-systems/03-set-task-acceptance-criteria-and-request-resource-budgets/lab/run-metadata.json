@@ -1,0 +1,65 @@
+{
+  "mode": "Local application acceptance and actual local capacity admission; no model/provider call",
+  "written_at_utc": "2026-10-24T06:54:02.370606+00:00",
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "inspect_acceptance.py",
+        "--save",
+        "result.json"
+      ],
+      "exit_status": 0,
+      "stdout_file": "run-output.txt"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "-m",
+        "unittest",
+        "-v",
+        "test_acceptance.py"
+      ],
+      "exit_status": 0,
+      "tests": 14
+    }
+  ],
+  "files": {
+    "README.md": "74c08eb8b3a453b558097b824869f47b6d828e20614b02233f62490de7eabd94",
+    "acceptance.py": "c0b566d292f1e28ef4d1935fee5686881870db583c930e4a784efcb54142d6f9",
+    "architecture.py": "c2ac843c561904d54c1f789d1b10d54f19f7f0d8c5df52e58e4fdd34f8065881",
+    "cases.json": "e088ec1662e1ffaa2eab48164b228f562836577ffc9bfaa06adf10902d1f9087",
+    "inspect_acceptance.py": "f908d6c9a5f0603c6706d01d0182c6f48721f975566385891c401cd5fa9a63d8",
+    "pages.json": "d2d0748472de2483acde6f5cbd9f2d072f8561c047aafcc0b1bfb350c4c64e69",
+    "policy.json": "36d040e21e41314cf9b3eee0705754a166f87c0869429a96d55885dcd416f678",
+    "requirements-lock.txt": "b0e2fcecf3f9534b6355650f2f9e32f3cdad611dfb5d2df32fde469099044ddd",
+    "result.json": "3937e6e091af3bb1cde22e68d5089245adc4d04fd8f84539e1ed86eaa2e6ab7e",
+    "run-output.txt": "927ff8d316dd0336bb0de6a91daa707e6943657aefd4e317ad239e3c4e3f7828",
+    "task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+    "test_acceptance.py": "09d0a83681da8b84f83467612dc2cbe14c708f24825cc830c9d99a4cb211f432",
+    "vendor/gate.py": "f875bb612e3eaafa0664026a0998f20aae12d7846b423c557761abb622caac6b",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54"
+  },
+  "reused_sources": {
+    "vendor/gate.py": {
+      "origin": "public/examples/limit-concurrent-rag-requests/gate.py",
+      "sha256": "f875bb612e3eaafa0664026a0998f20aae12d7846b423c557761abb622caac6b",
+      "unchanged": true
+    },
+    "vendor/harness.py": {
+      "origin": "public/examples/ai-system-evaluation/vendor/harness.py",
+      "sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+      "unchanged": true
+    },
+    "architecture.py": {
+      "origin": "public/examples/ai-system-evaluation/architecture.py",
+      "sha256": "c2ac843c561904d54c1f789d1b10d54f19f7f0d8c5df52e58e4fdd34f8065881",
+      "unchanged": true
+    },
+    "task.py": {
+      "origin": "public/examples/ai-system-evaluation/task.py",
+      "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+      "unchanged": true
+    }
+  }
+}

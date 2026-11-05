@@ -1,0 +1,60 @@
+{
+  "chosen": "gemma4:e2b",
+  "rule": "Meet every requirement on development cases; break ties by the smaller download.",
+  "candidates": [
+    {
+      "tag": "qwen3.5:0.8b",
+      "download_bytes": 1322069277,
+      "eligible": false,
+      "checks": [
+        {
+          "requirement": "artifact checks",
+          "met": true,
+          "value": "all passed"
+        },
+        {
+          "requirement": "development passes",
+          "met": false,
+          "value": "4 of 9"
+        },
+        {
+          "requirement": "median reply ms",
+          "met": true,
+          "value": 214.7
+        }
+      ],
+      "held_out": {
+        "pass": 4,
+        "fail": 2,
+        "incomplete": 0
+      }
+    },
+    {
+      "tag": "gemma4:e2b",
+      "download_bytes": 4587156505,
+      "eligible": true,
+      "checks": [
+        {
+          "requirement": "artifact checks",
+          "met": true,
+          "value": "all passed"
+        },
+        {
+          "requirement": "development passes",
+          "met": true,
+          "value": "9 of 9"
+        },
+        {
+          "requirement": "median reply ms",
+          "met": true,
+          "value": 363.6
+        }
+      ],
+      "held_out": {
+        "pass": 6,
+        "fail": 0,
+        "incomplete": 0
+      }
+    }
+  ]
+}

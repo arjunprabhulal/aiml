@@ -1,0 +1,14 @@
+{
+  "application": "Label one short developer report as bug, question or feature.",
+  "labels": ["bug", "question", "feature"],
+  "system_prompt": "Classify the developer report. Reply with exactly one word: bug, question, or feature.",
+  "max_report_characters": 500,
+  "licenses": ["Apache-2.0"],
+  "capability": "completion",
+  "context_tokens": 2048,
+  "output_tokens": 16,
+  "options": {"temperature": 0, "seed": 42},
+  "development_passes_required": 9,
+  "median_reply_ms_limit": 1000,
+  "tie_break": "smaller download"
+}

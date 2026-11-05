@@ -1,0 +1,9 @@
+ADR-012: Store production deploy approvals in PostgreSQL
+Team: platform
+Status: accepted, 2026-06-03
+
+Context: docuctl kept pending production approvals in memory on the API server. A restart lost every pending approval, and engineers approved the same release twice.
+
+Decision: approvals are rows in the approvals table of the deploy database. docuctl approve inserts a row keyed by release and approver. A unique constraint on (release, approver) makes a repeated approval a no-op. The deploy waits until the row count for its release reaches the required approvers, which is 2 for production.
+
+Consequences: approvals survive restarts. The deploy database is now on the production deploy path, so its outage blocks production deploys.

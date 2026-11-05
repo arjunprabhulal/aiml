@@ -1,0 +1,38 @@
+{
+  "version": "1",
+  "scope": "Public teaching data; manual review is separate from automatic contract checks.",
+  "cases": {
+    "utf8-write": [
+      "Uses Path.write_text with encoding=\"utf-8\".",
+      "Does not confuse newline handling or ensure_ascii with file encoding."
+    ],
+    "replace-file": [
+      "Says existing contents are overwritten/replaced, not appended.",
+      "Does not invent preservation or backup behavior."
+    ],
+    "json-result-type": [
+      "Says json.dumps returns str/text, not bytes.",
+      "Does not claim it writes a file or selects file encoding."
+    ],
+    "backup-schedule": [
+      "Returns not_in_docs without a backup interval or service-policy claim.",
+      "States only that this bounded corpus lacks that policy."
+    ],
+    "read-newline-312": [
+      "Answers no for Python3.12, using the 3.12 signature/target.",
+      "Does not apply the 3.13 addition to3.12."
+    ],
+    "read-newline-313": [
+      "Answers yes for Python3.13 using the 3.13 source.",
+      "Treats this source as documented-only; no claim of executing Python3.13."
+    ],
+    "json-throughput": [
+      "Returns not_in_docs without invented objects/second or deployment measurements.",
+      "Does not turn API semantics into a measured performance claim."
+    ],
+    "create-parents": [
+      "Returns not_in_docs because the supplied summaries omit parent-directory behavior.",
+      "An outside-corpus Python fact is not a supported answer for this task."
+    ]
+  }
+}

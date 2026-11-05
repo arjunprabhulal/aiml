@@ -1,0 +1,30 @@
+[
+  {
+    "id": "path-write",
+    "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+    "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+    "version": "3.12",
+    "fact_status": "original summary; primary docs checked"
+  },
+  {
+    "id": "path-read",
+    "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+    "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+    "version": "3.12",
+    "fact_status": "original summary; primary docs checked"
+  },
+  {
+    "id": "json-text",
+    "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+    "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+    "version": "3.12",
+    "fact_status": "original summary; primary docs checked"
+  },
+  {
+    "id": "path-read-3-13",
+    "version": "3.13",
+    "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+    "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+    "fact_status": "documented only; Python 3.13 not executed"
+  }
+]

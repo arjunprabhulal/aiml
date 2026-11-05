@@ -1,0 +1,10 @@
+test_workflow.py::test_the_default_policy_does_not_retry_a_timeout PASSED [ 11%]
+test_workflow.py::test_a_retry_without_a_key_files_a_duplicate PASSED    [ 22%]
+test_workflow.py::test_a_key_made_per_attempt_does_not_stop_the_duplicate PASSED [ 33%]
+test_workflow.py::test_a_stable_key_turns_the_retry_into_a_replay PASSED [ 44%]
+test_workflow.py::test_retries_stop_at_max_attempts PASSED               [ 55%]
+test_workflow.py::test_a_resumed_thread_reuses_the_key_and_skips_the_model PASSED [ 66%]
+test_workflow.py::test_the_default_policy_retries_connection_error_but_no_other_os_error PASSED [ 77%]
+test_workflow.py::test_the_lesson_policy_names_timeout_error PASSED      [ 88%]
+test_workflow.py::test_recorded_runs_match_the_lesson PASSED             [100%]Running teardown with pytest sessionfinish...
+============================== 9 passed in 3.01s ===============================

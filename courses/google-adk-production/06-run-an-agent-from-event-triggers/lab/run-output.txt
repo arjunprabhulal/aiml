@@ -1,0 +1,22 @@
+$ adk api_server --trigger_sources pubsub,eventarc --port 8767 .
+ValueError: trigger_sources requires trigger_oidc_audience or trigger_auth_verifier to be set.
+exit 1
+
+$ TRIGGER_TOKEN=local-dev-token python main.py
+$ python publish.py pubsub tokens --message-id 1001
+HTTP 200 {"status": "success"}  (6.4 s)
+$ python publish.py pubsub tokens --message-id 1001
+HTTP 200 {"status": "success"}  (6.5 s)
+$ python publish.py eventarc rollback --event-id ev-77
+HTTP 200 {"status": "success"}  (6.1 s)
+$ python publish.py pubsub tokens --message-id 1002 --raw-data 'not base64!'
+HTTP 400 {"detail": "Invalid base64 message data: Invalid base64-encoded string: number of data characters (9) cannot be 1 more than a multiple of 4"}  (0.0 s)
+$ TRIGGER_TOKEN=wrong-token python publish.py pubsub tokens --message-id 1004
+HTTP 401 {"detail": "Missing or wrong trigger token."}  (0.0 s)
+$ cat reviews.jsonl
+{"key": "pubsub:1001", "page": "tokens", "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."}
+{"key": "eventarc:ev-77", "page": "rollback", "summary": "Use `docuctl rollback` to point traffic to a previous or specified release without rebuilding, noting that database migrations are not automatically reverted."}
+
+$ adk api_server --trigger_sources pubsub --trigger_oidc_audience https://docs-reviewer.example --port 8768 --session_service_uri memory:// .
+$ curl -s -X POST -H 'Content-Type: application/json' -d @event.json http://127.0.0.1:8768/apps/docs_reviewer/trigger/pubsub
+HTTP 401 {"detail": "Missing or malformed Authorization bearer token."}

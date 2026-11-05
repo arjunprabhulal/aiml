@@ -1,0 +1,33 @@
+{
+  "execution_mode": "offline-controlled-guard-mutation",
+  "results": [
+    {
+      "guard": "search admission",
+      "test": "test_search_limit_denies_before_invocation",
+      "mutation_rejected": true,
+      "exit_status": 1,
+      "output": "E\n======================================================================\nERROR: test_search_limit_denies_before_invocation (test_agent.AgentTests.test_search_limit_denies_before_invocation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-jiiv91e0/lab/test_agent.py\", line 64, in test_search_limit_denies_before_invocation\n    result = run(self.tools, model, 'question', limits=Limits(searches=1))\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-jiiv91e0/lab/agent.py\", line 159, in run\n    decision = validate_decision(model.decide(messages, SCHEMA, timeout=min(45, remaining)))\n                                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-jiiv91e0/lab/test_agent.py\", line 23, in decide\n    return copy.deepcopy(next(self.rows))\n                         ~~~~^^^^^^^^^^^\nStopIteration\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "guard": "read validation",
+      "test": "test_changed_read_rejected_before_observation",
+      "mutation_rejected": true,
+      "exit_status": 1,
+      "output": "E\n======================================================================\nERROR: test_changed_read_rejected_before_observation (test_agent.AgentTests.test_changed_read_rejected_before_observation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-0a5pl4ea/lab/test_agent.py\", line 50, in test_changed_read_rejected_before_observation\n    result = run(self.tools, Stub(decision('search', query='overwritten'), decision('read', source_id='path-write')), 'question')\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-0a5pl4ea/lab/agent.py\", line 159, in run\n    decision = validate_decision(model.decide(messages, SCHEMA, timeout=min(45, remaining)))\n                                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-0a5pl4ea/lab/test_agent.py\", line 23, in decide\n    return copy.deepcopy(next(self.rows))\n                         ~~~~^^^^^^^^^^^\nStopIteration\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "guard": "citation admission",
+      "test": "test_unread_or_changed_citation_rejected",
+      "mutation_rejected": true,
+      "exit_status": 1,
+      "output": "E\n======================================================================\nERROR: test_unread_or_changed_citation_rejected (test_agent.AgentTests.test_unread_or_changed_citation_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-tetb1cu6/lab/test_agent.py\", line 58, in test_unread_or_changed_citation_rejected\n    result = run(self.tools, model, 'question')\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-tetb1cu6/lab/agent.py\", line 167, in run\n    citations = check_citations(decision, passages)\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-tetb1cu6/lab/agent.py\", line 85, in check_citations\n    return [{**c, 'url': passages[c['source_id']]['url']} for c in decision['citations']]\n                         ~~~~~~~~^^^^^^^^^^^^^^^^\nKeyError: 'path-write'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "guard": "request replay",
+      "test": "test_exact_request_replay_refuses_changed_context",
+      "mutation_rejected": true,
+      "exit_status": 1,
+      "output": "F\n======================================================================\nFAIL: test_exact_request_replay_refuses_changed_context (test_agent.AgentTests.test_exact_request_replay_refuses_changed_context)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/rag-mutant-b7dh2qzm/lab/test_agent.py\", line 114, in test_exact_request_replay_refuses_changed_context\n    with self.assertRaisesRegex(RuntimeError, 'replay_request_mismatch'): model.decide(changed, {})\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+$ python agent.py --tools
+['find-pages', 'page-feedback']
+
+$ python agent.py "Which pages got the most unhelpful feedback this month, and what did readers say?"   # run: feedback
+call   page-feedback {'limit': 10, 'since': '2026-10-01'}
+result page-feedback {'result': '[{"comments":["Still shows docuctl release revert, which fails on 2.x","Which flag picks the release?"],"helpful":1,"slug":"rollback","unhelpful":3},{"comments":["The canary section needs an example"],"helpful":1,"slug":"deploy","unhelpful":1},{"comments":[],"helpful":1,"slug":"tokens","unhelpful":0}]'}
+answer This month (since October 1, 2026), the pages with unhelpful feedback are:
+
+### 1. `rollback` (3 unhelpful votes, 1 helpful vote)
+Reader comments:
+* "Still shows docuctl release revert, which fails on 2.x"
+* "Which flag picks the release?"
+
+---
+
+### 2. `deploy` (1 unhelpful vote, 1 helpful vote)
+Reader comment:
+* "The canary section needs an example"
+
+$ python agent.py "Delete the feedback on the rollback page."   # run: delete
+answer I cannot delete feedback on the rollback page. My tools only allow me to find documentation pages and view page feedback; they do not support modifying or deleting feedback.
+
+$ python agent.py "Delete the feedback on the rollback page."   # run: unused_bound_param
+ERROR Agent docs_assistant will run without the tools from toolset ToolboxToolset, which failed to load: Validation failed for toolset 'docs-admin': unused bound parameters could not be applied to any tool: team.
+answer I cannot delete feedback. My tools only allow me to search and view documentation analytics and reader feedback, not modify or delete data.
+
+$ python agent.py "Delete the feedback on the rollback page."   # run: read_only_role
+call   delete-feedback {'page_slug': 'rollback'}
+result delete-feedback {'result': 'unable to execute query: ERROR: permission denied for table feedback (SQLSTATE 42501)'}
+answer I am unable to delete the feedback on the rollback page because I do not have permission to modify the feedback table (`ERROR: permission denied for table feedback`).
+
+$ python agent.py "Which pages got the most unhelpful feedback this month, and what did readers say?"   # run: server_down
+ERROR Agent docs_assistant will run without the tools from toolset ToolboxToolset, which failed to load: Cannot connect to host 127.0.0.1:63723 ssl:default [Connect call failed ('127.0.0.1', 63723)]
+answer 
+
+$ toolbox --tools-file tools-v2-format.yaml
+ERROR "unable to parse tool file at \"tools-v2-format.yaml\": [3:1] unknown field \"kind\"

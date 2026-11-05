@@ -1,0 +1,14 @@
+test_buying_peak_tflops_for_small_batch_decode_wastes_budget (test_lab.GpuRooflineTest.test_buying_peak_tflops_for_small_batch_decode_wastes_budget)
+Doubling peak TFLOPS without raising HBM bandwidth leaves small-batch decode TPOT unchanged. ... ok
+test_insufficient_vram_rejects_single_card_fit (test_lab.GpuRooflineTest.test_insufficient_vram_rejects_single_card_fit)
+A workload whose weights + KV cache + activations exceed GPU VRAM raises ValueError. ... ok
+test_prefill_is_compute_bound_while_small_batch_decode_is_bandwidth_bound (test_lab.GpuRooflineTest.test_prefill_is_compute_bound_while_small_batch_decode_is_bandwidth_bound) ... ok
+test_report_structure_is_deterministic (test_lab.GpuRooflineTest.test_report_structure_is_deterministic) ... ok
+test_ridge_points_reflect_compute_to_bandwidth_ratio (test_lab.GpuRooflineTest.test_ridge_points_reflect_compute_to_bandwidth_ratio) ... ok
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+test_first_output_token_has_no_decode_interval (test_lab.RooflineUnitsTests.test_first_output_token_has_no_decode_interval) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

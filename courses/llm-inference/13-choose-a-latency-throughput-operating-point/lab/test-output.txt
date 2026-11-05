@@ -1,0 +1,11 @@
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+test_bf16_single_gpu_70b_rejected_by_hbm_capacity (test_lab.TestLatencyThroughputPareto.test_bf16_single_gpu_70b_rejected_by_hbm_capacity) ... ok
+test_oversized_batch_pushes_tpot_past_sla (test_lab.TestLatencyThroughputPareto.test_oversized_batch_pushes_tpot_past_sla) ... ok
+test_pareto_frontier_excludes_dominated_points (test_lab.TestLatencyThroughputPareto.test_pareto_frontier_excludes_dominated_points) ... ok
+test_selected_config_satisfies_sla_and_beats_small_batch (test_lab.TestLatencyThroughputPareto.test_selected_config_satisfies_sla_and_beats_small_batch) ... ok
+test_tensor_parallel_over_pcie_adds_allreduce_bottleneck (test_lab.TestLatencyThroughputPareto.test_tensor_parallel_over_pcie_adds_allreduce_bottleneck) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

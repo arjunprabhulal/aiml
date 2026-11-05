@@ -1,0 +1,20 @@
+test_a_raising_tool_ends_the_whole_live_session (test_live_tools.LiveTools.test_a_raising_tool_ends_the_whole_live_session) ... /Users/arjunprabhulal/aiml-lanes/envs/venv-agents/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+ok
+test_a_stop_after_the_stream_finished_finds_nothing (test_live_tools.LiveTools.test_a_stop_after_the_stream_finished_finds_nothing) ... ok
+test_activity_signals_complete_the_recorded_lookup (test_live_tools.LiveTools.test_activity_signals_complete_the_recorded_lookup) ... ok
+test_adk_runs_the_lookup_and_sends_the_result_back (test_live_tools.LiveTools.test_adk_runs_the_lookup_and_sends_the_result_back) ... ok
+test_async_tools_are_declared_non_blocking (test_live_tools.LiveTools.test_async_tools_are_declared_non_blocking) ... ok
+test_each_streamed_update_goes_back_to_the_model (test_live_tools.LiveTools.test_each_streamed_update_goes_back_to_the_model) ... ok
+test_gemini_2_5_tool_calls_never_reach_adk (test_live_tools.LiveTools.test_gemini_2_5_tool_calls_never_reach_adk) ... ok
+test_lookup_explicitly_declares_blocking_for_current_live_model (test_live_tools.LiveTools.test_lookup_explicitly_declares_blocking_for_current_live_model) ... ok
+test_push_to_talk_marks_both_activity_boundaries (test_live_tools.LiveTools.test_push_to_talk_marks_both_activity_boundaries) ... ok
+test_scheduled_result_on_gemini_3_1_is_never_announced (test_live_tools.LiveTools.test_scheduled_result_on_gemini_3_1_is_never_announced) ... ok
+test_search_reports_a_miss_instead_of_inventing_a_hit (test_live_tools.LiveTools.test_search_reports_a_miss_instead_of_inventing_a_hit) ... ok
+test_streamed_updates_reach_the_model_but_are_not_narrated (test_live_tools.LiveTools.test_streamed_updates_reach_the_model_but_are_not_narrated) ... ok
+test_the_pending_status_is_spoken_as_its_own_turn (test_live_tools.LiveTools.test_the_pending_status_is_spoken_as_its_own_turn) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 4.386s
+
+OK

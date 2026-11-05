@@ -1,0 +1,93 @@
+{
+  "execution_mode": "Genuine Gemini API tool proposals followed by a native LangGraph step-limit stop",
+  "date": "2026-10-23",
+  "model": "gemini-3.8-flash",
+  "question": "For pull request #415, inspect its diff and CI status. In at most three sentences, explain why CI fails and which changed constant conflicts with the test. Use the supplied read-only tools; do not change files or CI.",
+  "node_path": [
+    "agent",
+    "stop"
+  ],
+  "recursion_limit": 3,
+  "stop_reason": "step_limit",
+  "generation_requests": 1,
+  "token_count_requests": 1,
+  "executed_tools": 0,
+  "provider_usage": {
+    "input_tokens": 243,
+    "candidate_tokens": 34,
+    "total_tokens": 277,
+    "thinking_tokens": "No separate thoughtsTokenCount field supplied"
+  },
+  "reviewed_limits": {
+    "lesson": "02",
+    "max_count_http": 1,
+    "max_generation_http": 1,
+    "max_http": 2,
+    "max_input_tokens": 4096,
+    "max_output_tokens": 4096,
+    "model": "gemini-3.8-flash",
+    "redirects": false,
+    "retries": 0,
+    "thinking_level": "low",
+    "timeout_seconds": 45
+  },
+  "execution_command": [
+    "/tmp/langgraph-agents-venv/bin/python",
+    "/tmp/aiml-langgraph-genuine-model-proof/.scratch/lesson02-preparation/live_operator.py",
+    "--lesson",
+    "02",
+    "--mode",
+    "approved-actual"
+  ],
+  "operator_availability": "External single-use approval-bound operator retained with private transport evidence; not bundled. Direct live_probe.py execution refuses before SDK or credential access.",
+  "source_sha256": {
+    "graph.py": "2ac8514310996f48d3854d0951d05a8ffd828b526f9c7657e1fac9541cd0853f",
+    "review_queue.py": "0e5b0f214fa334208ba3b985fc4247860687fe3fc004defab02996e6bf5e80e1",
+    "live_probe.py": "42ce035054d8c11c2c23cb92dbe72b991589d96b7d428290b68b563252d3a01d",
+    "requirements-lock.txt": "2a700aa8c9b9c67cec52e69f9fdc41998ca32deaf6d8f6dfd703e53a95672576"
+  },
+  "scope_sha256": "bca3bf38a8109201104cf3c424e015bd71fa3297a821a134bc502f8bc521e79c",
+  "versions": {
+    "google-genai": "2.32.0",
+    "httpx": "0.28.1",
+    "langchain-core": "1.6.12",
+    "langchain-google-genai": "4.4.2",
+    "langgraph": "1.2.16"
+  },
+  "stdout_sha256": "ad5ecb2acd63833d3586addf18b4cb70bdb0d6781925d2f0958a974c0914ae82",
+  "events_sha256": "0619e67c0c64a1461359838427ad6078444cad3a7cd14840d20fdfbcd498cbb3",
+  "images": [
+    {
+      "file": "images/completed-end-1440@2x.png",
+      "width_css": 1440,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 2880,
+      "height_pixels": 2200,
+      "sha256": "e160ee49a3f06785c32bed94e7602e27db7af02d4cbd6ca500722ba27c8e6cac",
+      "state": "Original completed process scrollback; one process, no reruns"
+    },
+    {
+      "file": "images/completed-end-390@2x.png",
+      "width_css": 390,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 780,
+      "height_pixels": 2200,
+      "sha256": "b2f0088056c95aa0aaf098b70b027774fb69c9f4c825888cb783fbe5f862f855",
+      "state": "Original completed process scrollback; one process, no reruns"
+    },
+    {
+      "file": "images/completed-end-320@2x.png",
+      "width_css": 320,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 640,
+      "height_pixels": 2200,
+      "sha256": "0916009dfa7f6bdd0e9133df9f2970d600e692a32af5b1f64b131dc158e5cc04",
+      "state": "Original completed process scrollback; one process, no reruns"
+    }
+  ],
+  "outcome_review": "outcome-review.json",
+  "claim_boundary": "The model proposed the tools; the graph generated the stop message. Neither tool ran. No model answer or CI-observation claim. Historical runs.json remains unchanged."
+}

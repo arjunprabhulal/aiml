@@ -1,0 +1,10 @@
+
+🔎 Validating the deployment (no resources are changed)...
+  ✅ APIs enabled: aiplatform.googleapis.com
+  ❌ Target engine: Agent Runtime 'projects/913703049174/locations/us-central1/reasoningEngines/8806439701503279104' not found.
+  The resource recorded in deployment_metadata.json may have been deleted.
+  Delete the metadata file to deploy a new engine, or check your permissions.
+  ✅ IAM permissions: aiplatform.reasoningEngines.create, aiplatform.reasoningEngines.update granted
+agents-cli v1.11.0
+❌ Error: Pre-deploy validation failed (1 of 3 checks): Target engine.
+  Fix the items above, then run the deploy.

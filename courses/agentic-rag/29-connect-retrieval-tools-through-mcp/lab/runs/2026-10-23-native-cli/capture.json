@@ -1,0 +1,58 @@
+{
+  "classification": "actual_native_feature_CLI_original_PTY_capture",
+  "lesson": "connect-retrieval-tools-through-mcp",
+  "argv": [
+    "/tmp/aiml-review-venv/bin/python",
+    "-u",
+    "run.py",
+    "--output",
+    "runs/2026-10-23-native-cli/result.json"
+  ],
+  "source_before_sha256": {
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "run.py": "c214805e443901d51ddef302563ed0290b04abfd632df464fc12c7e47993450f",
+    "server.py": "3e4be24ea87c97dfbef64884fc365aadf11e792260e35f5dd81ffd11e18b9d95",
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "requirements.txt": "b463e72eb9dec4f29234a9bdfb685185129f9af552caeccccb7eecbaeca626ef",
+    "client.py": "831a56a4829895658d0dc5dbf981f71c18dc2d4b23dedd5484118e371848ef0e",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "README.md": "528fa954a1e072450d0b667764982e936b1154b068d7c6e813042d79d69c9822",
+    "schemas.py": "d77adbd8e7147843c7780b3aad03995013870e08e3eba635aa28ffe2341cccd2",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66",
+    "render_output.py": "b8449b61d93ce8ee0267f136e6b525ad5685e2de4c424c4d33ecd691b251775c",
+    "test_mcp.py": "269e4572f63716665774d1f67103064473d89c52b152d97832693cdb93d8667c",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "requirements.lock": "fe25f9302799ea7689fa0215831cde9ea79e38f30906c92ecc6c776dacf3817e",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19"
+  },
+  "original_terminal": {
+    "image": "terminal.png",
+    "sha256": "c9784b2d02ff89ed1417b29fd30a383b19cd2bea21bd1bb2bd25d39aa736ad19",
+    "width": 3840,
+    "height": 2200,
+    "CSS_width": 1920,
+    "CSS_height": 1100,
+    "DPR": 2,
+    "raw_output": "terminal.txt",
+    "output_sha256": "af82e8df9b8015e5af79d2a7b8c0ff62a3bbcb98e839efe0b6d5c79ff53f0713",
+    "session": "session.json",
+    "session_sha256": "a8462e7f5217fe8fa53f8118a29c05ac3c6b17a10ae40cdc3a4ca61086788dd4"
+  },
+  "method": "Original process output streamed from PTY directly into installed xterm, captured in same resident terminal; no log read/replay.",
+  "executed_source_files_unchanged": true,
+  "captured_while_original_terminal_resident": true,
+  "saved_stdout_replayed": false,
+  "new_model_provider_requests": 0,
+  "packages_downloaded": 0,
+  "connection_policy": "Minimal environment; Python socket guard permits literal loopback/Unix IPC only; audited fixed Node tests use no network. This is not an OS network sandbox.",
+  "external_python_connection_attempts": 0,
+  "capture_tool_sha256": {
+    "/tmp/rag-module10-native-cli/terminal_server.py": "59afab3b7dec55287006ef187e0a0a97436c17587c9b5e1a7ddaf5930e687672",
+    "/tmp/rag-module10-native-cli/capture.py": "7bf2204a018f25ea58cc3f05a853d7f7918f24ba60e24f2c91b434bdce1efb78",
+    "/tmp/rag-module10-native-cli/terminal.html": "9ebd1d976cf37081ba71e9c4fee55266833fea733d587fe667d259813623e671",
+    "/tmp/rag-module10-native-cli/guard/sitecustomize.py": "6938fa24e6841aecba121324902c302cf9f0bf75bccdc1aa08935827ed6081a9"
+  },
+  "historical_documentation": "previous-readme.md preserves exact README bytes bound by the older archived execution records; this CLI attachment changes only README documentation, not executed code.",
+  "actual_result_sha256": "92705c2dc98e4b00e90d4293821877bed23de74239089576bc701eb1031b77f9"
+}

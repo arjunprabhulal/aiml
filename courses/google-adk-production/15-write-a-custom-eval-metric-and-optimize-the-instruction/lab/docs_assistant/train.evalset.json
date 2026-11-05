@@ -1,0 +1,118 @@
+{
+ "eval_set_id": "train",
+ "name": "train",
+ "eval_cases": [
+  {
+   "eval_id": "rebuild-index",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "How do I rebuild the search index?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "Run `docs-assistant index --rebuild` (cli.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  },
+  {
+   "eval_id": "python-version",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "Which Python version do I need?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "Python 3.12 or later (install.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  },
+  {
+   "eval_id": "wrong-citation",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "The assistant cites the wrong page. What should I do?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "Rebuild the search index with `docs-assistant index --rebuild` (troubleshooting.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  },
+  {
+   "eval_id": "ask-output",
+   "conversation": [
+    {
+     "invocation_id": "inv1",
+     "user_content": {
+      "role": "user",
+      "parts": [
+       {
+        "text": "What does the ask command print?"
+       }
+      ]
+     },
+     "final_response": {
+      "role": "model",
+      "parts": [
+       {
+        "text": "`docs-assistant ask QUESTION` prints an answer with citation links (cli.md)."
+       }
+      ]
+     }
+    }
+   ],
+   "session_input": {
+    "app_name": "docs_assistant",
+    "user_id": "dev"
+   }
+  }
+ ]
+}

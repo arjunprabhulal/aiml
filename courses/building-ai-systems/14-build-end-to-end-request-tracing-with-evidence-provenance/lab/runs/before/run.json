@@ -1,0 +1,622 @@
+{
+  "manifest": {
+    "harness_version": "1",
+    "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+    "started_at": "2026-10-20T17:19:10+00:00",
+    "case_set": {
+      "name": "grounded-support",
+      "sha256": "3a38cea9ec476d0893bc5a0905d65bbc863d08c8110e41c5f357fbb4b11cdf07"
+    },
+    "task": {
+      "name": "grounded-support",
+      "version": "1",
+      "sha256": "8d7ce82159e41a63fc9453e919dd066a71dec614da8276832a0e38224d0d2c12"
+    },
+    "system": {
+      "name": "grounded-support",
+      "version": "1",
+      "mode": "live",
+      "model": "gemma4:e2b@b37049369adf (replayed)",
+      "prompt": "support-instructions-v1",
+      "tools": null
+    },
+    "recording_sha256": null,
+    "graders": [
+      {
+        "name": "grounded-contract",
+        "version": "1",
+        "kind": "contract"
+      },
+      {
+        "name": "grounded-provenance",
+        "version": "1",
+        "kind": "outcome"
+      },
+      {
+        "name": "grounded-fact",
+        "version": "1",
+        "kind": "outcome"
+      },
+      {
+        "name": "failure-criteria",
+        "version": "1",
+        "kind": "outcome"
+      }
+    ],
+    "splits": [
+      "development",
+      "held_out"
+    ],
+    "trials": 3,
+    "environment": {
+      "python": "3.15.0",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+    }
+  },
+  "summary": {
+    "development": {
+      "cases": 5,
+      "trials": 15,
+      "pass": 9,
+      "fail": 6,
+      "incomplete": 0,
+      "cases_passing_any_trial": 3,
+      "cases_passing_every_trial": 3,
+      "per_case": {
+        "refund-window": {
+          "pass": 0,
+          "fail": 3,
+          "incomplete": 0
+        },
+        "standard-delivery": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "change-address": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "unwanted-parcel": {
+          "pass": 0,
+          "fail": 3,
+          "incomplete": 0
+        },
+        "blank-question": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        }
+      }
+    },
+    "held_out": {
+      "cases": 4,
+      "trials": 12,
+      "pass": 12,
+      "fail": 0,
+      "incomplete": 0,
+      "cases_passing_any_trial": 4,
+      "cases_passing_every_trial": 4,
+      "per_case": {
+        "dropped-laptop": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "password-changed": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "arrival-date": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "express-speed": {
+          "pass": 3,
+          "fail": 0,
+          "incomplete": 0
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "refund-window",
+      "split": "development",
+      "class": "policy window",
+      "trial": 0,
+      "verdict": "fail",
+      "check": "grounded-provenance",
+      "kind": "outcome",
+      "reason": "provenance stale",
+      "output": {
+        "answer": "You can ask for a refund within 14 days of delivery [refund-policy].",
+        "cited": "refund-policy",
+        "provenance": "stale"
+      },
+      "metadata": {
+        "trace_id": "f823204960517abb6fd1fb2069672552"
+      },
+      "latency_s": 0.01258
+    },
+    {
+      "case_id": "refund-window",
+      "split": "development",
+      "class": "policy window",
+      "trial": 1,
+      "verdict": "fail",
+      "check": "grounded-provenance",
+      "kind": "outcome",
+      "reason": "provenance stale",
+      "output": {
+        "answer": "You can ask for a refund within 14 days of delivery [refund-policy].",
+        "cited": "refund-policy",
+        "provenance": "stale"
+      },
+      "metadata": {
+        "trace_id": "106cc72602144fb57835b2748f8373ec"
+      },
+      "latency_s": 0.000968
+    },
+    {
+      "case_id": "refund-window",
+      "split": "development",
+      "class": "policy window",
+      "trial": 2,
+      "verdict": "fail",
+      "check": "grounded-provenance",
+      "kind": "outcome",
+      "reason": "provenance stale",
+      "output": {
+        "answer": "You can ask for a refund within 14 days of delivery [refund-policy].",
+        "cited": "refund-policy",
+        "provenance": "stale"
+      },
+      "metadata": {
+        "trace_id": "8ccd032ac5f37cc791996818282ee966"
+      },
+      "latency_s": 0.000764
+    },
+    {
+      "case_id": "standard-delivery",
+      "split": "development",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "Standard delivery takes 3 to 5 working days [delivery-times].",
+        "cited": "delivery-times",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "d5e59d5fa32c120587a73ceb155dcd69"
+      },
+      "latency_s": 0.00072
+    },
+    {
+      "case_id": "standard-delivery",
+      "split": "development",
+      "class": "delivery",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "Standard delivery takes 3 to 5 working days [delivery-times].",
+        "cited": "delivery-times",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "87353e5fb0c9f213b75780d79e6643d4"
+      },
+      "latency_s": 0.000717
+    },
+    {
+      "case_id": "standard-delivery",
+      "split": "development",
+      "class": "delivery",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "Standard delivery takes 3 to 5 working days [delivery-times].",
+        "cited": "delivery-times",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "8b12796a1ba8e5544f8cbcddedc2ee7c"
+      },
+      "latency_s": 0.000683
+    },
+    {
+      "case_id": "change-address",
+      "split": "development",
+      "class": "order change",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "You can change the delivery address on your order page until the order ships. After it ships, you should contact the carrier [address-change].",
+        "cited": "address-change",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "acb14fcebab97173df30c5f859bcdb53"
+      },
+      "latency_s": 0.00067
+    },
+    {
+      "case_id": "change-address",
+      "split": "development",
+      "class": "order change",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "You can change the delivery address on your order page until the order ships. After it ships, you should contact the carrier [address-change].",
+        "cited": "address-change",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "2fa88f58dd59f73a60438eb7740602b5"
+      },
+      "latency_s": 0.000669
+    },
+    {
+      "case_id": "change-address",
+      "split": "development",
+      "class": "order change",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "You can change the delivery address on your order page until the order ships. After it ships, you should contact the carrier [address-change].",
+        "cited": "address-change",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "89aca4ce5751cd761419637e47b06191"
+      },
+      "latency_s": 0.00067
+    },
+    {
+      "case_id": "unwanted-parcel",
+      "split": "development",
+      "class": "returns",
+      "trial": 0,
+      "verdict": "fail",
+      "check": "grounded-provenance",
+      "kind": "outcome",
+      "reason": "provenance uncited",
+      "output": {
+        "answer": "I do not know.",
+        "cited": "",
+        "provenance": "uncited"
+      },
+      "metadata": {
+        "trace_id": "679d121435dddd1ebc8490b4d198aff2"
+      },
+      "latency_s": 0.000715
+    },
+    {
+      "case_id": "unwanted-parcel",
+      "split": "development",
+      "class": "returns",
+      "trial": 1,
+      "verdict": "fail",
+      "check": "grounded-provenance",
+      "kind": "outcome",
+      "reason": "provenance uncited",
+      "output": {
+        "answer": "I do not know.",
+        "cited": "",
+        "provenance": "uncited"
+      },
+      "metadata": {
+        "trace_id": "df78743750a1fd0a29bc1bb306fb0b5c"
+      },
+      "latency_s": 0.000718
+    },
+    {
+      "case_id": "unwanted-parcel",
+      "split": "development",
+      "class": "returns",
+      "trial": 2,
+      "verdict": "fail",
+      "check": "grounded-provenance",
+      "kind": "outcome",
+      "reason": "provenance uncited",
+      "output": {
+        "answer": "I do not know.",
+        "cited": "",
+        "provenance": "uncited"
+      },
+      "metadata": {
+        "trace_id": "7904aef50516a2b7becbfa70d82705d8"
+      },
+      "latency_s": 0.000734
+    },
+    {
+      "case_id": "blank-question",
+      "split": "development",
+      "class": "invalid input",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: question is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 5e-05
+    },
+    {
+      "case_id": "blank-question",
+      "split": "development",
+      "class": "invalid input",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: question is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 4.3e-05
+    },
+    {
+      "case_id": "blank-question",
+      "split": "development",
+      "class": "invalid input",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: question is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 5.8e-05
+    },
+    {
+      "case_id": "dropped-laptop",
+      "split": "held_out",
+      "class": "warranty",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "The warranty covers manufacturing defects, not accidental damage [warranty].",
+        "cited": "warranty",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "c5f6528639ebd9ae86f83b9a77cceda9"
+      },
+      "latency_s": 0.000672
+    },
+    {
+      "case_id": "dropped-laptop",
+      "split": "held_out",
+      "class": "warranty",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "The warranty covers manufacturing defects, not accidental damage [warranty].",
+        "cited": "warranty",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "ed7eaffb280478f66cc28caf4a7973e0"
+      },
+      "latency_s": 0.000668
+    },
+    {
+      "case_id": "dropped-laptop",
+      "split": "held_out",
+      "class": "warranty",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "The warranty covers manufacturing defects, not accidental damage [warranty].",
+        "cited": "warranty",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "80d7dd1d8d6bace06559a17cb7603bde"
+      },
+      "latency_s": 0.000668
+    },
+    {
+      "case_id": "password-changed",
+      "split": "held_out",
+      "class": "account security",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "If your password was changed without your permission, you should reset it from the sign-in page and contact support at once [account-security].",
+        "cited": "account-security",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "39ea0f26b269a130f50efcabe2bb8872"
+      },
+      "latency_s": 0.000683
+    },
+    {
+      "case_id": "password-changed",
+      "split": "held_out",
+      "class": "account security",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "If your password was changed without your permission, reset it from the sign-in page and contact support at once [account-security].",
+        "cited": "account-security",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "ab3c7bc2dd34d5b7f56fec90f474070d"
+      },
+      "latency_s": 0.000705
+    },
+    {
+      "case_id": "password-changed",
+      "split": "held_out",
+      "class": "account security",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "If your password was changed without your permission, reset it from the sign-in page and contact support at once [account-security].",
+        "cited": "account-security",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "72730e0331c5b8574e055482a5cbfbbe"
+      },
+      "latency_s": 0.000653
+    },
+    {
+      "case_id": "arrival-date",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "The tracking link in your confirmation email shows where your order is and when it should arrive [order-tracking].",
+        "cited": "order-tracking",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "40a01e687a7bc71fc5b716c9e27d06b7"
+      },
+      "latency_s": 0.000641
+    },
+    {
+      "case_id": "arrival-date",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "The tracking link in your confirmation email shows where your order is and when it should arrive [order-tracking].",
+        "cited": "order-tracking",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "cfa15cfb04c8801eb8b258b6526e440e"
+      },
+      "latency_s": 0.000632
+    },
+    {
+      "case_id": "arrival-date",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "The tracking link in your confirmation email shows where your order is and when it should arrive [order-tracking].",
+        "cited": "order-tracking",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "99f01ff3cdb22581b23264c45ab97727"
+      },
+      "latency_s": 0.000619
+    },
+    {
+      "case_id": "express-speed",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "Express delivery takes 1 working day [delivery-times].",
+        "cited": "delivery-times",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "78dfe6d60459c93726c7ec33243573f0"
+      },
+      "latency_s": 0.000885
+    },
+    {
+      "case_id": "express-speed",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "Express delivery takes 1 working day [delivery-times].",
+        "cited": "delivery-times",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "fa2217d90498594f253712d751d6e8ee"
+      },
+      "latency_s": 0.000671
+    },
+    {
+      "case_id": "express-speed",
+      "split": "held_out",
+      "class": "delivery",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "answer": "Express delivery takes 1 working day [delivery-times].",
+        "cited": "delivery-times",
+        "provenance": "supported"
+      },
+      "metadata": {
+        "trace_id": "bc87ec8344cbba859744fe73fca9db4d"
+      },
+      "latency_s": 0.00066
+    }
+  ]
+}

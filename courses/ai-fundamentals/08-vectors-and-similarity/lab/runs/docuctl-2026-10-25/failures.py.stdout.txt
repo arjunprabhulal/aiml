@@ -1,0 +1,5 @@
+1. query embedded with dimensions=512: 512 values, pages have 1024
+   -> ValueError matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)-
+1b. a chat model as the embedder -> 501 This server does not support embeddings. Start it with `--embeddings`
+2. 'what is the capital of France' -> top page config.md at 0.182
+2. 'how do I pin a Python dependency' -> top page config.md at 0.383

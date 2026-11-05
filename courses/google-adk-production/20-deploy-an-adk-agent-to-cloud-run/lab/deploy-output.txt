@@ -1,0 +1,21 @@
+$ /private/tmp/docuctl-adk-venv/bin/adk deploy cloud_run --project vertex-ai-experminent --region us-central1 --service_name docuctl-lab-b67bf640 --app_name docs_helper --session_service_uri memory:// --env GOOGLE_CLOUD_PROJECT=vertex-ai-experminent --env GOOGLE_CLOUD_LOCATION=global --env GOOGLE_GENAI_USE_VERTEXAI=true docs_helper -- --no-allow-unauthenticated --service-account=docuctl-lab-b67bf640@vertex-ai-experminent.iam.gserviceaccount.com --min-instances=0 --max-instances=1 --cpu=1 --memory=512Mi --timeout=120 --concurrency=1 --labels=aiml-lesson=deploy-an-adk-agent-to-cloud-run
+Start generating cloud_run source files in /var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/deploy_src/20261025_222921
+Copying agent source code...
+Copying agent source code completed.
+Creating Dockerfile...
+Creating Dockerfile complete: /var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/deploy_src/20261025_222921/Dockerfile
+Deploying to cloud_run...
+Cleaning up the temp folder: /var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/deploy_src/20261025_222921
+Building using Dockerfile and deploying container to Cloud Run service [docuctl-lab-b67bf640] in project [vertex-ai-experminent] region [us-central1]
+Building and deploying new service...
+Validating Service.......done
+Uploading sources........INFO: Not using ignore file.
+INFO: Uploading [/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/tmpz3v7re9n/file.zip] to [run-sources-vertex-ai-experminent-us-central1/services/docuctl-lab-b67bf640/1792981765.048481-d592f8ab2ba44ac4aab4df098fbee809.zip]
+.done
+Building Container.........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+Creating Revision.........................................................................................................................................................................................................................................................................done
+Routing traffic.....done
+Done.
+Service [docuctl-lab-b67bf640] revision [docuctl-lab-b67bf640-00001-v87] has been deployed and is serving 100 percent of traffic.
+Service URL: https://docuctl-lab-b67bf640-913703049174.us-central1.run.app
+INFO: Display format: "none"

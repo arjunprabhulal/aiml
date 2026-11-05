@@ -1,0 +1,20 @@
+--- typos
+`tracker sync` crashes with KeyError: 'due' when a task has no due date. Tarceback ends in snyc/merge.py line 88. Started after upgrading to 2.4.0.
+--- lowercase
+`tracker sync` crashes with keyerror: 'due' when a task has no due date. traceback ends in sync/merge.py line 88. started after upgrading to 2.4.0.
+--- shouting
+`tracker sync` CRASHES WITH KEYERROR: 'DUE' WHEN A TASK HAS NO DUE DATE. TRACEBACK ENDS IN SYNC/MERGE.PY LINE 88. STARTED AFTER UPGRADING TO 2.4.0.
+--- pleasantries
+Hi team, hope you are well!
+
+`tracker sync` crashes with KeyError: 'due' when a task has no due date. Traceback ends in sync/merge.py line 88. Started after upgrading to 2.4.0.
+
+Thanks a lot for maintaining tracker :)
+--- log_paste
+`tracker sync` crashes with KeyError: 'due' when a task has no due date. Traceback ends in sync/merge.py line 88. Started after upgrading to 2.4.0.
+
+```
+2026-10-19 09:14:00 DEBUG tracker.http GET /api/tasks?page=0 200 OK
+2026-10-19 09:14:01 DEBUG tracker.http GET /api/tasks?page=1 200 OK
+2026-10-19 09:14:02 DEBUG tracker.http GET /api/tasks?page=2 200 OK
+... 28 more lines

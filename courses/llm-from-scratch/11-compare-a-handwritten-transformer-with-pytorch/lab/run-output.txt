@@ -1,0 +1,7 @@
+CPU float64; one head; five positions; dropout=0; causal scale=1/sqrt(4)
+explicit: logits max error=1.388e-17; loss error=4.441e-16; gradient max error=8.327e-17; 18 tensors/268 elements; passed=True
+sdpa: logits max error=1.388e-17; loss error=4.441e-16; gradient max error=8.327e-17; 18 tensors/268 elements; passed=True
+no_causal_mask: logits max error=1.142e-03; within tolerance=False
+unscaled_attention: logits max error=2.205e-06; within tolerance=False
+wrong_layernorm_epsilon: logits max error=1.042e-01; within tolerance=False
+Invalid inputs refused: 4

@@ -1,0 +1,141 @@
+{
+ "model": "gemini-3.8-flash",
+ "runs": [
+  {
+   "question": "Which open pull request has failing CI, and why?",
+   "recursion_limit": 12,
+   "path": [
+    "agent",
+    "tools",
+    "agent",
+    "tools",
+    "agent",
+    "tools",
+    "agent"
+   ],
+   "steps": 7,
+   "tool_calls": [
+    {
+     "name": "list_open_prs",
+     "args": {}
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 412
+     }
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 415
+     }
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 418
+     }
+    },
+    {
+     "name": "get_diff",
+     "args": {
+      "number": 415
+     }
+    }
+   ],
+   "outcome": "answered",
+   "final": "Pull request #415 has failing CI. It failed `tests/test_client.py::test_default_timeout` because the test expected a default timeout value of 10, but got 30 after `DEFAULT_TIMEOUT` was updated."
+  },
+  {
+   "question": "What does pull request 418 change, and did its CI pass?",
+   "recursion_limit": 12,
+   "path": [
+    "agent",
+    "tools",
+    "agent"
+   ],
+   "steps": 3,
+   "tool_calls": [
+    {
+     "name": "get_diff",
+     "args": {
+      "number": 418
+     }
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 418
+     }
+    }
+   ],
+   "outcome": "answered",
+   "final": "Pull request 418 removes `export/csv_legacy.py` and drops the `csv_legacy` import from `export/__init__.py`. Its CI build passed."
+  },
+  {
+   "question": "Has CI been re-run on #415 since the last push? Check until it passes.",
+   "recursion_limit": 12,
+   "path": [
+    "agent",
+    "tools",
+    "agent",
+    "stop"
+   ],
+   "steps": 4,
+   "tool_calls": [
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 415
+     }
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 415
+     }
+    }
+   ],
+   "outcome": "repeated_call",
+   "final": "I stopped before answering (repeated_call)."
+  },
+  {
+   "question": "Which open pull request has failing CI, and why?",
+   "recursion_limit": 5,
+   "path": [
+    "agent",
+    "tools",
+    "agent",
+    "stop"
+   ],
+   "steps": 4,
+   "tool_calls": [
+    {
+     "name": "list_open_prs",
+     "args": {}
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 412
+     }
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 415
+     }
+    },
+    {
+     "name": "get_ci_status",
+     "args": {
+      "number": 418
+     }
+    }
+   ],
+   "outcome": "step_limit",
+   "final": "I stopped before answering (step_limit)."
+  }
+ ]
+}

@@ -1,0 +1,1066 @@
+{
+  "mechanism_check": {
+    "scope": "controlled candidate-order contract check; not an evaluation case or quality gain",
+    "query": "Will write_text replace the contents of an existing file?",
+    "before": [
+      {
+        "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+        "source_id": "json-text",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+        "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+        "lexical_score": -3.3056246724488786e-06,
+        "vector_score": 0.36746132784169144,
+        "lexical_rank": 3,
+        "vector_rank": 3,
+        "lexical_contribution": 0.015873015873015872,
+        "vector_contribution": 0.015873015873015872,
+        "fused_score": 0.031746031746031744
+      },
+      {
+        "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "source_id": "path-read",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+        "lexical_score": -4.084683995209214e-06,
+        "vector_score": 0.5547892797395033,
+        "lexical_rank": 2,
+        "vector_rank": 2,
+        "lexical_contribution": 0.016129032258064516,
+        "vector_contribution": 0.016129032258064516,
+        "fused_score": 0.03225806451612903
+      },
+      {
+        "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "source_id": "path-write",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+        "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+        "lexical_score": -2.3976548397386743,
+        "vector_score": 0.6357498076122466,
+        "lexical_rank": 1,
+        "vector_rank": 1,
+        "lexical_contribution": 0.01639344262295082,
+        "vector_contribution": 0.01639344262295082,
+        "fused_score": 0.03278688524590164
+      }
+    ],
+    "after": [
+      {
+        "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "source_id": "path-write",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+        "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+        "lexical_score": -2.3976548397386743,
+        "vector_score": 0.6357498076122466,
+        "lexical_rank": 1,
+        "vector_rank": 1,
+        "lexical_contribution": 0.01639344262295082,
+        "vector_contribution": 0.01639344262295082,
+        "fused_score": 0.03278688524590164,
+        "incoming_rank": 3,
+        "rerank_features": {
+          "query_tokens": [
+            "will",
+            "write",
+            "text",
+            "replace",
+            "the",
+            "contents",
+            "of",
+            "an",
+            "existing",
+            "file"
+          ],
+          "matched_tokens": [
+            "an",
+            "existing",
+            "file",
+            "of",
+            "text",
+            "the",
+            "write"
+          ],
+          "matched_count": 7,
+          "query_token_count": 10
+        },
+        "coverage_score": 0.7,
+        "rerank_rank": 1
+      },
+      {
+        "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+        "source_id": "json-text",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+        "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+        "lexical_score": -3.3056246724488786e-06,
+        "vector_score": 0.36746132784169144,
+        "lexical_rank": 3,
+        "vector_rank": 3,
+        "lexical_contribution": 0.015873015873015872,
+        "vector_contribution": 0.015873015873015872,
+        "fused_score": 0.031746031746031744,
+        "incoming_rank": 1,
+        "rerank_features": {
+          "query_tokens": [
+            "will",
+            "write",
+            "text",
+            "replace",
+            "the",
+            "contents",
+            "of",
+            "an",
+            "existing",
+            "file"
+          ],
+          "matched_tokens": [
+            "file",
+            "the",
+            "write"
+          ],
+          "matched_count": 3,
+          "query_token_count": 10
+        },
+        "coverage_score": 0.3,
+        "rerank_rank": 2
+      },
+      {
+        "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "source_id": "path-read",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+        "lexical_score": -4.084683995209214e-06,
+        "vector_score": 0.5547892797395033,
+        "lexical_rank": 2,
+        "vector_rank": 2,
+        "lexical_contribution": 0.016129032258064516,
+        "vector_contribution": 0.016129032258064516,
+        "fused_score": 0.03225806451612903,
+        "incoming_rank": 2,
+        "rerank_features": {
+          "query_tokens": [
+            "will",
+            "write",
+            "text",
+            "replace",
+            "the",
+            "contents",
+            "of",
+            "an",
+            "existing",
+            "file"
+          ],
+          "matched_tokens": [
+            "file",
+            "text",
+            "the"
+          ],
+          "matched_count": 3,
+          "query_token_count": 10
+        },
+        "coverage_score": 0.3,
+        "rerank_rank": 3
+      }
+    ]
+  },
+  "execution_mode": "offline-transparent-coverage-reranking",
+  "model_called": false,
+  "learned_reranker": false,
+  "snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+  "configuration": {
+    "candidate_budget": 3,
+    "rank_constant": 60,
+    "rerank_k": 3,
+    "score": "unique query token coverage",
+    "tie": "incoming rank"
+  },
+  "development_cases": [
+    {
+      "case_id": "utf8-write",
+      "query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "requested_version": "3.12",
+      "before": [
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": -0.8901430296001853,
+          "vector_score": 0.637539995393079,
+          "lexical_rank": 1,
+          "vector_rank": 1,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.03278688524590164
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": -4.904418516387322e-06,
+          "vector_score": 0.5762678845903342,
+          "lexical_rank": 2,
+          "vector_rank": 2,
+          "lexical_contribution": 0.016129032258064516,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.03225806451612903
+        },
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -9.765013054830289e-07,
+          "vector_score": 0.4948350231504922,
+          "lexical_rank": 3,
+          "vector_rank": 3,
+          "lexical_contribution": 0.015873015873015872,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.031746031746031744
+        }
+      ],
+      "after": [
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": -0.8901430296001853,
+          "vector_score": 0.637539995393079,
+          "lexical_rank": 1,
+          "vector_rank": 1,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.03278688524590164,
+          "incoming_rank": 1,
+          "rerank_features": {
+            "query_tokens": [
+              "how",
+              "do",
+              "i",
+              "explicitly",
+              "select",
+              "utf",
+              "8",
+              "when",
+              "saving",
+              "text",
+              "with",
+              "pathlib"
+            ],
+            "matched_tokens": [
+              "8",
+              "text",
+              "utf",
+              "when"
+            ],
+            "matched_count": 4,
+            "query_token_count": 12
+          },
+          "coverage_score": 0.3333333333333333,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": -4.904418516387322e-06,
+          "vector_score": 0.5762678845903342,
+          "lexical_rank": 2,
+          "vector_rank": 2,
+          "lexical_contribution": 0.016129032258064516,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.03225806451612903,
+          "incoming_rank": 2,
+          "rerank_features": {
+            "query_tokens": [
+              "how",
+              "do",
+              "i",
+              "explicitly",
+              "select",
+              "utf",
+              "8",
+              "when",
+              "saving",
+              "text",
+              "with",
+              "pathlib"
+            ],
+            "matched_tokens": [
+              "8",
+              "select",
+              "text",
+              "utf"
+            ],
+            "matched_count": 4,
+            "query_token_count": 12
+          },
+          "coverage_score": 0.3333333333333333,
+          "rerank_rank": 2
+        },
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -9.765013054830289e-07,
+          "vector_score": 0.4948350231504922,
+          "lexical_rank": 3,
+          "vector_rank": 3,
+          "lexical_contribution": 0.015873015873015872,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.031746031746031744,
+          "incoming_rank": 3,
+          "rerank_features": {
+            "query_tokens": [
+              "how",
+              "do",
+              "i",
+              "explicitly",
+              "select",
+              "utf",
+              "8",
+              "when",
+              "saving",
+              "text",
+              "with",
+              "pathlib"
+            ],
+            "matched_tokens": [
+              "select"
+            ],
+            "matched_count": 1,
+            "query_token_count": 12
+          },
+          "coverage_score": 0.08333333333333333,
+          "rerank_rank": 3
+        }
+      ]
+    },
+    {
+      "case_id": "replace-file",
+      "query": "Will write_text replace the contents of an existing file?",
+      "requested_version": "3.12",
+      "before": [
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": -2.3976548397386743,
+          "vector_score": 0.6357498076122466,
+          "lexical_rank": 1,
+          "vector_rank": 1,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.03278688524590164
+        },
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": -4.084683995209214e-06,
+          "vector_score": 0.5547892797395033,
+          "lexical_rank": 2,
+          "vector_rank": 2,
+          "lexical_contribution": 0.016129032258064516,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.03225806451612903
+        },
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -3.3056246724488786e-06,
+          "vector_score": 0.36746132784169144,
+          "lexical_rank": 3,
+          "vector_rank": 3,
+          "lexical_contribution": 0.015873015873015872,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.031746031746031744
+        }
+      ],
+      "after": [
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": -2.3976548397386743,
+          "vector_score": 0.6357498076122466,
+          "lexical_rank": 1,
+          "vector_rank": 1,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.03278688524590164,
+          "incoming_rank": 1,
+          "rerank_features": {
+            "query_tokens": [
+              "will",
+              "write",
+              "text",
+              "replace",
+              "the",
+              "contents",
+              "of",
+              "an",
+              "existing",
+              "file"
+            ],
+            "matched_tokens": [
+              "an",
+              "existing",
+              "file",
+              "of",
+              "text",
+              "the",
+              "write"
+            ],
+            "matched_count": 7,
+            "query_token_count": 10
+          },
+          "coverage_score": 0.7,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": -4.084683995209214e-06,
+          "vector_score": 0.5547892797395033,
+          "lexical_rank": 2,
+          "vector_rank": 2,
+          "lexical_contribution": 0.016129032258064516,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.03225806451612903,
+          "incoming_rank": 2,
+          "rerank_features": {
+            "query_tokens": [
+              "will",
+              "write",
+              "text",
+              "replace",
+              "the",
+              "contents",
+              "of",
+              "an",
+              "existing",
+              "file"
+            ],
+            "matched_tokens": [
+              "file",
+              "text",
+              "the"
+            ],
+            "matched_count": 3,
+            "query_token_count": 10
+          },
+          "coverage_score": 0.3,
+          "rerank_rank": 2
+        },
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -3.3056246724488786e-06,
+          "vector_score": 0.36746132784169144,
+          "lexical_rank": 3,
+          "vector_rank": 3,
+          "lexical_contribution": 0.015873015873015872,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.031746031746031744,
+          "incoming_rank": 3,
+          "rerank_features": {
+            "query_tokens": [
+              "will",
+              "write",
+              "text",
+              "replace",
+              "the",
+              "contents",
+              "of",
+              "an",
+              "existing",
+              "file"
+            ],
+            "matched_tokens": [
+              "file",
+              "the",
+              "write"
+            ],
+            "matched_count": 3,
+            "query_token_count": 10
+          },
+          "coverage_score": 0.3,
+          "rerank_rank": 3
+        }
+      ]
+    },
+    {
+      "case_id": "json-result-type",
+      "query": "Does json.dumps produce text or a bytes object?",
+      "requested_version": "3.12",
+      "before": [
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -3.628237730877387,
+          "vector_score": 0.652333570145617,
+          "lexical_rank": 1,
+          "vector_rank": 1,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.03278688524590164
+        },
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": -3.0341221974564053e-06,
+          "vector_score": 0.42563890525675496,
+          "lexical_rank": 2,
+          "vector_rank": 2,
+          "lexical_contribution": 0.016129032258064516,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.03225806451612903
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": -2.263641817358195e-06,
+          "vector_score": 0.4145266500154773,
+          "lexical_rank": 3,
+          "vector_rank": 3,
+          "lexical_contribution": 0.015873015873015872,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.031746031746031744
+        }
+      ],
+      "after": [
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -3.628237730877387,
+          "vector_score": 0.652333570145617,
+          "lexical_rank": 1,
+          "vector_rank": 1,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.03278688524590164,
+          "incoming_rank": 1,
+          "rerank_features": {
+            "query_tokens": [
+              "does",
+              "json",
+              "dumps",
+              "produce",
+              "text",
+              "or",
+              "a",
+              "bytes",
+              "object"
+            ],
+            "matched_tokens": [
+              "a",
+              "does",
+              "dumps",
+              "json",
+              "or"
+            ],
+            "matched_count": 5,
+            "query_token_count": 9
+          },
+          "coverage_score": 0.5555555555555556,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": -3.0341221974564053e-06,
+          "vector_score": 0.42563890525675496,
+          "lexical_rank": 2,
+          "vector_rank": 2,
+          "lexical_contribution": 0.016129032258064516,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.03225806451612903,
+          "incoming_rank": 2,
+          "rerank_features": {
+            "query_tokens": [
+              "does",
+              "json",
+              "dumps",
+              "produce",
+              "text",
+              "or",
+              "a",
+              "bytes",
+              "object"
+            ],
+            "matched_tokens": [
+              "a",
+              "text"
+            ],
+            "matched_count": 2,
+            "query_token_count": 9
+          },
+          "coverage_score": 0.2222222222222222,
+          "rerank_rank": 2
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": -2.263641817358195e-06,
+          "vector_score": 0.4145266500154773,
+          "lexical_rank": 3,
+          "vector_rank": 3,
+          "lexical_contribution": 0.015873015873015872,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.031746031746031744,
+          "incoming_rank": 3,
+          "rerank_features": {
+            "query_tokens": [
+              "does",
+              "json",
+              "dumps",
+              "produce",
+              "text",
+              "or",
+              "a",
+              "bytes",
+              "object"
+            ],
+            "matched_tokens": [
+              "a",
+              "text"
+            ],
+            "matched_count": 2,
+            "query_token_count": 9
+          },
+          "coverage_score": 0.2222222222222222,
+          "rerank_rank": 3
+        }
+      ]
+    },
+    {
+      "case_id": "backup-schedule",
+      "query": "How frequently does our cloud provider back up these files?",
+      "requested_version": "3.12",
+      "before": [
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -0.8273874668010814,
+          "vector_score": 0.2488070454064458,
+          "lexical_rank": 1,
+          "vector_rank": 3,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.032266458495966696
+        },
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": null,
+          "vector_score": 0.3202785226491292,
+          "lexical_rank": null,
+          "vector_rank": 1,
+          "lexical_contribution": 0.0,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.01639344262295082
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": null,
+          "vector_score": 0.26563513588901855,
+          "lexical_rank": null,
+          "vector_rank": 2,
+          "lexical_contribution": 0.0,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.016129032258064516
+        }
+      ],
+      "after": [
+        {
+          "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+          "source_id": "json-text",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+          "lexical_score": -0.8273874668010814,
+          "vector_score": 0.2488070454064458,
+          "lexical_rank": 1,
+          "vector_rank": 3,
+          "lexical_contribution": 0.01639344262295082,
+          "vector_contribution": 0.015873015873015872,
+          "fused_score": 0.032266458495966696,
+          "incoming_rank": 1,
+          "rerank_features": {
+            "query_tokens": [
+              "how",
+              "frequently",
+              "does",
+              "our",
+              "cloud",
+              "provider",
+              "back",
+              "up",
+              "these",
+              "files"
+            ],
+            "matched_tokens": [
+              "does"
+            ],
+            "matched_count": 1,
+            "query_token_count": 10
+          },
+          "coverage_score": 0.1,
+          "rerank_rank": 1
+        },
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "lexical_score": null,
+          "vector_score": 0.3202785226491292,
+          "lexical_rank": null,
+          "vector_rank": 1,
+          "lexical_contribution": 0.0,
+          "vector_contribution": 0.01639344262295082,
+          "fused_score": 0.01639344262295082,
+          "incoming_rank": 2,
+          "rerank_features": {
+            "query_tokens": [
+              "how",
+              "frequently",
+              "does",
+              "our",
+              "cloud",
+              "provider",
+              "back",
+              "up",
+              "these",
+              "files"
+            ],
+            "matched_tokens": [],
+            "matched_count": 0,
+            "query_token_count": 10
+          },
+          "coverage_score": 0.0,
+          "rerank_rank": 2
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "lexical_score": null,
+          "vector_score": 0.26563513588901855,
+          "lexical_rank": null,
+          "vector_rank": 2,
+          "lexical_contribution": 0.0,
+          "vector_contribution": 0.016129032258064516,
+          "fused_score": 0.016129032258064516,
+          "incoming_rank": 3,
+          "rerank_features": {
+            "query_tokens": [
+              "how",
+              "frequently",
+              "does",
+              "our",
+              "cloud",
+              "provider",
+              "back",
+              "up",
+              "these",
+              "files"
+            ],
+            "matched_tokens": [],
+            "matched_count": 0,
+            "query_token_count": 10
+          },
+          "coverage_score": 0.0,
+          "rerank_rank": 3
+        }
+      ]
+    }
+  ],
+  "unfiltered_read_write_diagnostic": {
+    "query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+    "policy": null,
+    "before": [
+      {
+        "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "source_id": "path-read",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+        "lexical_score": -0.8901430296001853,
+        "vector_score": 0.637539995393079,
+        "lexical_rank": 1,
+        "vector_rank": 2,
+        "lexical_contribution": 0.01639344262295082,
+        "vector_contribution": 0.016129032258064516,
+        "fused_score": 0.03252247488101534
+      },
+      {
+        "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+        "source_id": "path-read-3-13",
+        "version": "3.13",
+        "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+        "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+        "lexical_score": -1.409990574929312e-06,
+        "vector_score": 0.6510841890363557,
+        "lexical_rank": 3,
+        "vector_rank": 1,
+        "lexical_contribution": 0.015873015873015872,
+        "vector_contribution": 0.01639344262295082,
+        "fused_score": 0.032266458495966696
+      },
+      {
+        "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "source_id": "path-write",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+        "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+        "lexical_score": -4.904418516387322e-06,
+        "vector_score": 0.5762678845903342,
+        "lexical_rank": 2,
+        "vector_rank": 3,
+        "lexical_contribution": 0.016129032258064516,
+        "vector_contribution": 0.015873015873015872,
+        "fused_score": 0.03200204813108039
+      },
+      {
+        "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+        "source_id": "json-text",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+        "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+        "lexical_score": -9.765013054830289e-07,
+        "vector_score": 0.4948350231504922,
+        "lexical_rank": 4,
+        "vector_rank": 4,
+        "lexical_contribution": 0.015625,
+        "vector_contribution": 0.015625,
+        "fused_score": 0.03125
+      }
+    ],
+    "after": [
+      {
+        "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "source_id": "path-read",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+        "lexical_score": -0.8901430296001853,
+        "vector_score": 0.637539995393079,
+        "lexical_rank": 1,
+        "vector_rank": 2,
+        "lexical_contribution": 0.01639344262295082,
+        "vector_contribution": 0.016129032258064516,
+        "fused_score": 0.03252247488101534,
+        "incoming_rank": 1,
+        "rerank_features": {
+          "query_tokens": [
+            "how",
+            "do",
+            "i",
+            "explicitly",
+            "select",
+            "utf",
+            "8",
+            "when",
+            "saving",
+            "text",
+            "with",
+            "pathlib"
+          ],
+          "matched_tokens": [
+            "8",
+            "text",
+            "utf",
+            "when"
+          ],
+          "matched_count": 4,
+          "query_token_count": 12
+        },
+        "coverage_score": 0.3333333333333333,
+        "rerank_rank": 1
+      },
+      {
+        "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "source_id": "path-write",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+        "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+        "lexical_score": -4.904418516387322e-06,
+        "vector_score": 0.5762678845903342,
+        "lexical_rank": 2,
+        "vector_rank": 3,
+        "lexical_contribution": 0.016129032258064516,
+        "vector_contribution": 0.015873015873015872,
+        "fused_score": 0.03200204813108039,
+        "incoming_rank": 3,
+        "rerank_features": {
+          "query_tokens": [
+            "how",
+            "do",
+            "i",
+            "explicitly",
+            "select",
+            "utf",
+            "8",
+            "when",
+            "saving",
+            "text",
+            "with",
+            "pathlib"
+          ],
+          "matched_tokens": [
+            "8",
+            "select",
+            "text",
+            "utf"
+          ],
+          "matched_count": 4,
+          "query_token_count": 12
+        },
+        "coverage_score": 0.3333333333333333,
+        "rerank_rank": 2
+      },
+      {
+        "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+        "source_id": "path-read-3-13",
+        "version": "3.13",
+        "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+        "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+        "lexical_score": -1.409990574929312e-06,
+        "vector_score": 0.6510841890363557,
+        "lexical_rank": 3,
+        "vector_rank": 1,
+        "lexical_contribution": 0.015873015873015872,
+        "vector_contribution": 0.01639344262295082,
+        "fused_score": 0.032266458495966696,
+        "incoming_rank": 2,
+        "rerank_features": {
+          "query_tokens": [
+            "how",
+            "do",
+            "i",
+            "explicitly",
+            "select",
+            "utf",
+            "8",
+            "when",
+            "saving",
+            "text",
+            "with",
+            "pathlib"
+          ],
+          "matched_tokens": [
+            "text"
+          ],
+          "matched_count": 1,
+          "query_token_count": 12
+        },
+        "coverage_score": 0.08333333333333333,
+        "rerank_rank": 3
+      },
+      {
+        "chunk_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+        "source_id": "json-text",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+        "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+        "lexical_score": -9.765013054830289e-07,
+        "vector_score": 0.4948350231504922,
+        "lexical_rank": 4,
+        "vector_rank": 4,
+        "lexical_contribution": 0.015625,
+        "vector_contribution": 0.015625,
+        "fused_score": 0.03125,
+        "incoming_rank": 4,
+        "rerank_features": {
+          "query_tokens": [
+            "how",
+            "do",
+            "i",
+            "explicitly",
+            "select",
+            "utf",
+            "8",
+            "when",
+            "saving",
+            "text",
+            "with",
+            "pathlib"
+          ],
+          "matched_tokens": [
+            "select"
+          ],
+          "matched_count": 1,
+          "query_token_count": 12
+        },
+        "coverage_score": 0.08333333333333333,
+        "rerank_rank": 4
+      }
+    ],
+    "scope": "read/write lexical overlap diagnostic, not a new evaluation case"
+  },
+  "empty_candidates": [],
+  "altered_candidate_refusal": "candidate_payload_mismatch",
+  "limit": "Token overlap does not establish that a passage answers the question; it does not understand write versus read or unsupported requests."
+}

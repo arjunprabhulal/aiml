@@ -1,0 +1,233 @@
+{
+  "execution": "actual local Prefect and MLflow integrations, fresh CPU fitting, real local batch/HTTP predictions and controlled failure drills",
+  "environment": {
+    "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "pins": "requirements-platform.txt",
+    "prefect_home": "/tmp/aiml-mlops-final-prefect",
+    "telemetry_disabled": true
+  },
+  "commands": [
+    {
+      "name": "tracking",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "tracking.py",
+        "--workspace",
+        "recorded-platform/tracking-work",
+        "--out",
+        "recorded-platform/tracking.json"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 1.8679449558258057
+    },
+    {
+      "name": "pipeline",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "pipeline",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 5.951016187667847
+    },
+    {
+      "name": "retries",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "retries",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 5.820520877838135
+    },
+    {
+      "name": "ci-checks",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "ci-checks",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 9.370150089263916
+    },
+    {
+      "name": "candidate-gate",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "candidate-gate",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6085362434387207
+    },
+    {
+      "name": "registry",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "registry",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6435129642486572
+    },
+    {
+      "name": "serving",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "serving",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.939633846282959
+    },
+    {
+      "name": "rollout",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "rollout",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.7069058418273926
+    },
+    {
+      "name": "rollback",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "rollback",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6023409366607666
+    },
+    {
+      "name": "monitoring",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "monitoring",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6063168048858643
+    },
+    {
+      "name": "delayed-evaluation",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "delayed-evaluation",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5589029788970947
+    },
+    {
+      "name": "drift",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "drift",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5497128963470459
+    },
+    {
+      "name": "recovery",
+      "argv": [
+        "/tmp/aiml-mlops-platform-venv/bin/python",
+        "course.py",
+        "recovery",
+        "--workspace",
+        "recorded-platform/work"
+      ],
+      "cwd": "mlops-return-workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 5.340458154678345
+    }
+  ],
+  "files_sha256": {
+    "release.py": "aace04ddb0d15278682df7f2667e1559d415455e7624047a8be8c7d23136bb86",
+    "course.py": "b21751c41f71206a2d585bab43697bb2df99d800bc07f6570ee9711e8ca54105",
+    "serving.py": "3ee796be03c6ba7a3f978b1e7b0089d856697733578fc528e8cf1ba183206b75",
+    "ci.py": "61e9508d06db8f864530807bdc7c9f71abf09197aa38c931d81a351fa27e7d6d",
+    "history_reuse.py": "83349b3fc9877350fd3b5047d9d3f08f47b9e80de0326914e1ec8eeba8175f07",
+    "test_workflow.py": "e8d8cc956d19837939cbea04c8ba72bad56fd3c9b41aa6fc4cd4d2c71dd5f67a",
+    "operations.py": "2a0e5ce56b17df07bedd8da9c143863cf814dc751a93cb24963a8504bb9238f0",
+    "test_tracking.py": "0bf153c5bfa308f734edda37a9ebea4b2993dc5f9bcd408624bf5aec31fcf9e4",
+    "test_foundations.py": "10380d14fa4984005d4d27aa2592abdfe89cb281a988748505b96a98137174b9",
+    "pipeline.py": "0bbee9f5a68abfd9bb8ee86ea28fa343c3acb49ee81482aaad9d1e1450b91290",
+    "rollout.py": "9fed68c409ea6203124d2e3c53d0dcfa2a32ccff4a8b6ea64cbf89d45415c4ff",
+    "adapt.py": "ff585e04ef2dac898201fe891ebc20c5ad260a37f9ed16fc46528799092071c0",
+    "workflow.py": "294a9ec66f614d6fc356bb0fdece2b0c2dd6d7f8f5e37e78c249fe1902e63be1",
+    "test_platform.py": "f161cdaaaca32c3bd4a5dd4173778743b0e427c54d6e1d1b9bf905d96e508746",
+    "tracking.py": "9e7fed5323f592bccbf83a7076402e267ed77101176e35c94bb2e99c7a1435e8",
+    "foundations.py": "b939bb9a6726363efa052eaae84667fe84b71c871a5eeedc4cd674c4e3e3f2ab",
+    "quarantine_reuse.py": "7be58f6b43aa9785947ba3a68be3791241a3ea628be9de32796a2ed30b507edd",
+    "make_fixture.py": "56c40601987632ef5f0a9193380c4e0a26644df5d35300d7c21763dd37763ca5",
+    "vendor/partitions.py": "0fb0abe0fded003ec910d26beb16a3673b912448fc21937316d2cecf0297e712",
+    "vendor/baseline.py": "41b40a9ac8cc6b5b53b45f7b2f696f0fe9488b7fd583da1f20be53b293af97a9",
+    "vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "vendor/availability.py": "3039969944686e05ee6d2fc9990807d9f576f653403681671e8d656f717a3efb",
+    "vendor/feature_math.py": "477c12bf3d2cea0f8493e3ecb26af6a14092e4359dfecb01ba32100522e889fd",
+    "join.sql": "4add0ce2bcad1981f8ae708899b4b8a878651114452bd133b6d456590ab5bbc2",
+    "requirements-platform.txt": "f57c25bc12dcd5412eb75db4a4b816976ff54ed77e02b1bde4165b64628071ef",
+    "scenario.json": "5d009da4b520ee466b7919ab6d3bd5507c5d6c0e56be4d64302bb1ee9c347619",
+    "ci.yml": "0ffd290e80c1a69ede39c4d4f7e0be8e7c2bf8ee26d4ff2be357baa91b5953ca"
+  },
+  "outputs_sha256": {
+    "registry.json": "79342bba0b176526fe17878f41a358e75e8b0ee603b0189a15471e9d722959ac",
+    "serving.json": "fbf02969205aee214258b7dfe488aee88c86af6c50e7af8b7722a05c1c0a06da",
+    "rollout.json": "13e530207ed2c0c3079933695e88b9ee74341da3c50ee01b60a9c10abe2c31fe",
+    "rollback.json": "ceaf4b9efb746671fb09673b3637c015b6ed2f76f12ba6e9bc5ff102721d35ac",
+    "drift.json": "5d1dcca7656c3d3b690f7fc60599660afd6d74821fd3a8bf9c3c56c5a57e0bc5",
+    "retries.json": "9f8ff69fc6592b1237ad920afd68c666173afb1a0197684db33dd937ff8fbcbf",
+    "ci-checks.json": "966f7040c46dfc5f8b3c91155845a83539c58bebd462d76884a5012620dc32e3",
+    "delayed-evaluation.json": "0d283eea482f4349adedeacf2401a762ed5bf84774e76a1cadce55a92164af77",
+    "tracking.json": "61c7cb5d81caf65e8865eaa009a3133600d84b149174b8db230d7438c651cd41",
+    "monitoring.json": "d2578341f1efab8351f56586c73051843a0a262a56937e3dc1efed1e7b73dd2f",
+    "recovery.json": "757eab368484c11d2b452ab2e63b23cb0ee15511e6de7b18c16a414c1f1bd386",
+    "pipeline.json": "a37e4fc80d98e54836b95ad197930d1ad02f3371f667bd4f37057ad691b01561",
+    "candidate-gate.json": "258c496f2a1840ac17488bfa875218f1b7598a15cc39e21076af3bc1ed7a8767"
+  },
+  "limits": [
+    "synthetic authored data",
+    "same validation observations reused for interface/operation checks",
+    "no final-test scoring",
+    "no hosted CI dispatch",
+    "no Docker build",
+    "no public service or paid resource"
+  ]
+}

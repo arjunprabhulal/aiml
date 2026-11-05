@@ -1,0 +1,1251 @@
+{
+  "execution_mode": "fresh-hosted-model-run through Python Runner",
+  "projection": "Request and response bodies omit only opaque thoughtSignature/thought_signature fields. Authentication headers are never recorded. Raw original bytes remain private; hashes bind them. No native CLI or Web execution is claimed.",
+  "requests": [
+    {
+      "number": 1267,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Is the google-adk pin on the dependencies page current?"
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "codeExecution": {}
+          },
+          {
+            "googleSearch": {}
+          },
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "toolConfig": {
+          "includeServerSideToolInvocations": true
+        },
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "functionCall": {
+                    "name": "read_page",
+                    "args": {
+                      "page": "dependencies"
+                    },
+                    "id": "call_2111012"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "finishMessage": "Model generated function call(s)."
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 152,
+          "candidatesTokenCount": 16,
+          "totalTokenCount": 168,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 152
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "PrneaqzPNq6oxdIPmd6gsAs"
+      },
+      "status": 200,
+      "started_epoch": 1792981310.626514,
+      "finished_epoch": 1792981312.846907,
+      "original_private_request_sha256": "b004654fcb575029484625fb4124b6c712f20ffc62660813ae2192e974bbdfad",
+      "original_private_response_sha256": "593a45d57fd731d380824c8f55566ac3c3b78df2d8d7b39186433c3fc575947e",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1269,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Is the google-adk pin on the dependencies page current?"
+              }
+            ],
+            "role": "user"
+          },
+          {
+            "parts": [
+              {
+                "functionCall": {
+                  "id": "call_2111012",
+                  "args": {
+                    "page": "dependencies"
+                  },
+                  "name": "read_page"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "functionResponse": {
+                  "id": "call_2111012",
+                  "name": "read_page",
+                  "response": {
+                    "page": "dependencies",
+                    "text": "# Dependencies\n\nThe docuctl 2.4 agent plugin is tested with these Python packages:\n\n- google-adk 2.10.0\n- mcp 2.1.0\n\nUpdate this page when you bump a pin.\n"
+                  }
+                }
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "codeExecution": {}
+          },
+          {
+            "googleSearch": {}
+          },
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "toolConfig": {
+          "includeServerSideToolInvocations": true
+        },
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "toolCall": {
+                    "toolType": "GOOGLE_SEARCH_WEB",
+                    "args": {
+                      "queries": [
+                        "site pypi org project google genai adk",
+                        "site pypi org project google adk",
+                        "pypi google adk release latest version",
+                        "pypi google genai adk"
+                      ]
+                    },
+                    "id": "call_2964795"
+                  }
+                },
+                {
+                  "toolResponse": {
+                    "toolType": "GOOGLE_SEARCH_WEB",
+                    "response": {
+                      "search_suggestions": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=pypi+google+adk+release+latest+version&client=app-vertex-grounding&safesearch=active\">pypi google adk release latest version</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=site+pypi+org+project+google+adk&client=app-vertex-grounding&safesearch=active\">site pypi org project google adk</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=pypi+google+genai+adk&client=app-vertex-grounding&safesearch=active\">pypi google genai adk</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=site+pypi+org+project+google+genai+adk&client=app-vertex-grounding&safesearch=active\">site pypi org project google genai adk</a>\n  </div>\n</div>"
+                    },
+                    "id": "call_2964795"
+                  }
+                },
+                {
+                  "toolCall": {
+                    "toolType": "GOOGLE_SEARCH_WEB",
+                    "args": {
+                      "queries": [
+                        "site:pypi.org/project/google-adk/",
+                        "\"google-adk\" \"2.13.0\" pypi"
+                      ]
+                    },
+                    "id": "call_2964817"
+                  }
+                },
+                {
+                  "toolResponse": {
+                    "toolType": "GOOGLE_SEARCH_WEB",
+                    "response": {
+                      "search_suggestions": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22google-adk%22+%222.13.0%22+pypi&client=app-vertex-grounding&safesearch=active\">&quot;google-adk&quot; &quot;2.13.0&quot; pypi</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=site:pypi.org/project/google-adk/&client=app-vertex-grounding&safesearch=active\">site:pypi.org/project/google-adk/</a>\n  </div>\n</div>"
+                    },
+                    "id": "call_2964817"
+                  }
+                },
+                {
+                  "text": "**No, the `google-adk` pin on the dependencies page is not current.**\n\n### Details & Sources\n* **Current Pin in Documentation:** According to the `dependencies` page in the docuctl documentation, `google-adk` is currently pinned to version **`2.10.0`**.\n* **Latest Release:** According to PyPI and the `google/adk-python` GitHub releases, the latest release of `google-adk` is **`2.13.0`** (released October 22\u201323, 2026)."
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "groundingMetadata": {
+              "searchEntryPoint": {
+                "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=pypi+google+adk+release+latest+version&client=app-vertex-grounding&safesearch=active\">pypi google adk release latest version</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22google-adk%22+%222.13.0%22+pypi&client=app-vertex-grounding&safesearch=active\">&quot;google-adk&quot; &quot;2.13.0&quot; pypi</a>\n  </div>\n</div>"
+              },
+              "groundingChunks": [
+                {
+                  "web": {
+                    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-4gCj5HhFLpI6z_UamyftFN2d0yYlyizfaVqEyRV10COKACXj0eaa-F6pKqRroMQAahSAPquBQZeaOy6mQspgXZj5qk6xJ_9tdTyOeMSk7v2jviwZ8Ci9EoU6r00Fy6_z9ro=",
+                    "title": "github.com"
+                  }
+                },
+                {
+                  "web": {
+                    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP8MI4H10V6XuWH4Xos9qMW8Yuy6YKagPXK59yn9FiSkehTC9_MXYkfl3DwZiulvCyJa7J1ZjCzuh0cFkkpuUgwDlhTnfeG7hC-ITgJhB4-tOUkMrDRA4D_Nk=",
+                    "title": "pypi.org"
+                  }
+                },
+                {
+                  "web": {
+                    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFcFFmr_epqwO3njBinWZGF_WZyy_IibJHpJcNiyZ7NK9l6OH3NFIq0kstHGVS9D2XOuMKt247mQkJxdZBqrqutWlLDBDR1kZzI3WMiRmfG775DMQBGFtm6EsOvINlKax-D8der5Vu8ko=",
+                    "title": "techgazette.com.br"
+                  }
+                },
+                {
+                  "web": {
+                    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLxYDwFx1Z9hhTZSDQbCrdKwnNAf1_POb0LS0bl6NFcLZozoP-I1Kqa1vTdVFKE5p6mUx_A-DnUsdFjH5zUn14ij_T0Kvy75mOXPMmo2v-n8RaHOw6DSGDBEwKYBI_wuhzuxw=",
+                    "title": "github.com"
+                  }
+                }
+              ],
+              "groundingSupports": [
+                {
+                  "segment": {
+                    "startIndex": 256,
+                    "endIndex": 337,
+                    "text": "**Latest Release:** According to PyPI and the `google/adk-python` GitHub releases"
+                  },
+                  "groundingChunkIndices": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "segment": {
+                    "startIndex": 256,
+                    "endIndex": 422,
+                    "text": "**Latest Release:** According to PyPI and the `google/adk-python` GitHub releases, the latest release of `google-adk` is **`2.13.0`** (released October 22\u201323, 2026)"
+                  },
+                  "groundingChunkIndices": [
+                    2,
+                    3
+                  ]
+                }
+              ],
+              "webSearchQueries": [
+                "pypi google adk release latest version",
+                "\"google-adk\" \"2.13.0\" pypi"
+              ]
+            }
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 241,
+          "candidatesTokenCount": 154,
+          "totalTokenCount": 395,
+          "cachedContentTokenCount": 107,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 241
+            }
+          ],
+          "cacheTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 107
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "Qbneatonr7bF0g_9n8PIBw"
+      },
+      "status": 200,
+      "started_epoch": 1792981312.859274,
+      "finished_epoch": 1792981320.294105,
+      "original_private_request_sha256": "5c0559c74ad2503904de2949dfe3284cdf06b6456cc0849888339a78832081cb",
+      "original_private_response_sha256": "94334707a5f7d148ca98ac03275db5a57a6046438be14c2c7eb882fd76f328ab",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1271,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Do the deploy timings meet the SLO?"
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "codeExecution": {}
+          },
+          {
+            "googleSearch": {}
+          },
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "toolConfig": {
+          "includeServerSideToolInvocations": true
+        },
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "functionCall": {
+                    "name": "read_page",
+                    "args": {
+                      "page": "deploy-timings"
+                    },
+                    "id": "call_2366511"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "finishMessage": "Model generated function call(s)."
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 147,
+          "candidatesTokenCount": 19,
+          "totalTokenCount": 166,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 147
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "SLnearLlHtS-xdIPi-3mEA"
+      },
+      "status": 200,
+      "started_epoch": 1792981320.331351,
+      "finished_epoch": 1792981322.032402,
+      "original_private_request_sha256": "b015b70ce49405d1fe22c9720ee06fed0c32b18460577365d157860995f46731",
+      "original_private_response_sha256": "632cd87b83242e84fdde6888d6a576570b050c0f75f26e1454fd400839c005f7",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1272,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Do the deploy timings meet the SLO?"
+              }
+            ],
+            "role": "user"
+          },
+          {
+            "parts": [
+              {
+                "functionCall": {
+                  "id": "call_2366511",
+                  "args": {
+                    "page": "deploy-timings"
+                  },
+                  "name": "read_page"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "functionResponse": {
+                  "id": "call_2366511",
+                  "name": "read_page",
+                  "response": {
+                    "page": "deploy-timings",
+                    "text": "# Deploy timings\n\nWall-clock seconds for the last 20 production deploys, oldest first:\n\n41, 38, 44, 40, 39, 122, 42, 43, 37, 45, 40, 41, 39, 118, 44, 42, 40, 38, 43, 41\n\nThe deploy SLO is a p95 under 90 seconds.\n"
+                  }
+                }
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "codeExecution": {}
+          },
+          {
+            "googleSearch": {}
+          },
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "toolConfig": {
+          "includeServerSideToolInvocations": true
+        },
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "executableCode": {
+                    "language": "PYTHON",
+                    "code": "import numpy as np\n\ntimings = [41, 38, 44, 40, 39, 122, 42, 43, 37, 45, 40, 41, 39, 118, 44, 42, 40, 38, 43, 41]\ntimings_sorted = sorted(timings)\nprint(f\"Sorted timings (len={len(timings_sorted)}): {timings_sorted}\")\n\n# Check various percentile definitions (nearest rank, linear interpolation, etc.)\np95_linear = np.percentile(timings, 95)\np95_nearest = np.percentile(timings, 95, method='nearest')\np95_lower = np.percentile(timings, 95, method='lower')\np95_higher = np.percentile(timings, 95, method='higher')\np95_weibull = np.percentile(timings, 95, method='weibull')\n\nprint(f\"p95 linear: {p95_linear}\")\nprint(f\"p95 nearest: {p95_nearest}\")\nprint(f\"p95 lower: {p95_lower}\")\nprint(f\"p95 higher: {p95_higher}\")\nprint(f\"p95 weibull: {p95_weibull}\")\n",
+                    "id": "call_515129"
+                  }
+                },
+                {
+                  "codeExecutionResult": {
+                    "outcome": "OUTCOME_OK",
+                    "output": "Sorted timings (len=20): [37, 38, 38, 39, 39, 40, 40, 40, 41, 41, 41, 42, 42, 43, 43, 44, 44, 45, 118, 122]\np95 linear: 118.2\np95 nearest: 118\np95 lower: 118\np95 higher: 122\np95 weibull: 121.8\n",
+                    "id": "call_515129"
+                  }
+                },
+                {
+                  "text": "**No, the deploy timings do not meet the SLO.**\n\n### Details and Calculation\n\nAccording to the **`deploy-timings`** documentation page:\n- **Deploy SLO:** p95 under 90 seconds.\n- **Last 20 deploy timings (in seconds):**\n  `41, 38, 44, 40, 39, 122, 42, 43, 37, 45, 40, 41, 39, 118, 44, 42, 40, 38, 43, 41`\n\nSorted in ascending order:\n`[37, 38, 38, 39, 39, 40, 40, 40, 41, 41, 41, 42, 42, 43, 43, 44, 44, 45, 118, 122]`\n\n- Under standard linear interpolation, the **p95 is 118.2 seconds** (or **118 seconds** using the nearest-rank method).\n- Since $118.2\\text{ s} > 90\\text{ s}$, the current deploys violate the SLO target."
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 306,
+          "candidatesTokenCount": 660,
+          "totalTokenCount": 1761,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 306
+            }
+          ],
+          "toolUsePromptTokenCount": 795,
+          "toolUsePromptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 795
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "SrneapTpC7zDxdIPssTd8QE"
+      },
+      "status": 200,
+      "started_epoch": 1792981322.039087,
+      "finished_epoch": 1792981328.807992,
+      "original_private_request_sha256": "20a4023c202baa40eb8bc2a6c9644f7db6e70349a90cbeddecf346a740f77eff",
+      "original_private_response_sha256": "5066e1a0a126ca245a18663f490ffc7195d06193c674f690ea21c653aedc2113",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1273,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Is the google-adk pin on the dependencies page current?"
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              },
+              {
+                "description": "An agent for performing Google search using built-in search grounding",
+                "name": "google_search_agent",
+                "parameters_json_schema": {
+                  "type": "object",
+                  "properties": {
+                    "request": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "request"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "functionCall": {
+                    "name": "read_page",
+                    "args": {
+                      "page": "dependencies"
+                    },
+                    "id": "call_1401746"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "finishMessage": "Model generated function call(s)."
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 203,
+          "candidatesTokenCount": 16,
+          "totalTokenCount": 219,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 203
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "UbneavoezvzBtQ_K_faxCw"
+      },
+      "status": 200,
+      "started_epoch": 1792981328.834635,
+      "finished_epoch": 1792981330.076739,
+      "original_private_request_sha256": "a87de1dc64fb3b7ee2661b73c35dca9118daacfe6c65b99848ca2bee2e747966",
+      "original_private_response_sha256": "063aa227589a7109a93fe650dc1e4351d4656c4d250bab9ece3d43a05e22c993",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1274,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Is the google-adk pin on the dependencies page current?"
+              }
+            ],
+            "role": "user"
+          },
+          {
+            "parts": [
+              {
+                "functionCall": {
+                  "id": "call_1401746",
+                  "args": {
+                    "page": "dependencies"
+                  },
+                  "name": "read_page"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "functionResponse": {
+                  "id": "call_1401746",
+                  "name": "read_page",
+                  "response": {
+                    "page": "dependencies",
+                    "text": "# Dependencies\n\nThe docuctl 2.4 agent plugin is tested with these Python packages:\n\n- google-adk 2.10.0\n- mcp 2.1.0\n\nUpdate this page when you bump a pin.\n"
+                  }
+                }
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              },
+              {
+                "description": "An agent for performing Google search using built-in search grounding",
+                "name": "google_search_agent",
+                "parameters_json_schema": {
+                  "type": "object",
+                  "properties": {
+                    "request": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "request"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "functionCall": {
+                    "name": "google_search_agent",
+                    "args": {
+                      "request": "\"google-adk\" latest release PyPI version"
+                    },
+                    "id": "call_1337093"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "finishMessage": "Model generated function call(s)."
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 292,
+          "candidatesTokenCount": 28,
+          "totalTokenCount": 320,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 292
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "UrneaqbDD8aoxdIPy_SGqAc"
+      },
+      "status": 200,
+      "started_epoch": 1792981330.081381,
+      "finished_epoch": 1792981331.560468,
+      "original_private_request_sha256": "326d2f61741964eb1f6fcdaa1561f794332414128334e76bbb0794779f0da34a",
+      "original_private_response_sha256": "c0c3c6ad3655bdb42ba62726d40624c57b188d834343fd018927400409e3c14d",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1275,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "\"google-adk\" latest release PyPI version"
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "\n        You are a specialized Google search agent.\n\n        Answer the given search query directly using your built-in Google Search\n        grounding capabilities. Do not attempt to invoke a client-side function\n        call.\n      \n\nYou are an agent. Your internal name is \"google_search_agent\". The description about you is \"An agent for performing Google search using built-in search grounding\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "googleSearch": {}
+          }
+        ],
+        "generationConfig": {
+          "maxOutputTokens": 8192,
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "text": "The latest release of **`google-adk`** on PyPI is **`2.13.0`** (released on October 23, 2026)."
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "groundingMetadata": {
+              "searchEntryPoint": {
+                "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22google-adk%22+%222.12.%22+site:pypi.org&client=app-vertex-grounding&safesearch=active\">&quot;google-adk&quot; &quot;2.12.&quot; site:pypi.org</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22google-adk+2.13.0%22+site:pypi.org&client=app-vertex-grounding&safesearch=active\">&quot;google-adk 2.13.0&quot; site:pypi.org</a>\n  </div>\n</div>"
+              },
+              "groundingChunks": [
+                {
+                  "web": {
+                    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeCYvmO1suKCZaelV4c0h8-Hpiv-pucwCtC_qRQnQyvt10UtJ9NlXNhYV8O8n_KD_t0aRyJgkCP0d9dfy-I22EfeMWeOD4mVSTc7C8SweU_O9UFeccDxdkgyo=",
+                    "title": "pypi.org"
+                  }
+                },
+                {
+                  "web": {
+                    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG50ANA97NYEnZjJBwlJkBflcth8AIRtVxoSS_z9k_g9YA-RYoRuC4AE6rctQTN70HEA1ZI_4a4lD6qSwuPX4Gl6wPzg6P6X5-mTNPFmWX14Ixg-1v9CLTGzeQ=",
+                    "title": "pypi.org"
+                  }
+                }
+              ],
+              "groundingSupports": [
+                {
+                  "segment": {
+                    "endIndex": 62,
+                    "text": "The latest release of **`google-adk`** on PyPI is **`2.13.0`**"
+                  },
+                  "groundingChunkIndices": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "segment": {
+                    "endIndex": 93,
+                    "text": "The latest release of **`google-adk`** on PyPI is **`2.13.0`** (released on October 23, 2026)"
+                  },
+                  "groundingChunkIndices": [
+                    0
+                  ]
+                }
+              ],
+              "webSearchQueries": [
+                "\"google-adk\" \"2.12.\" site:pypi.org",
+                "\"google-adk 2.13.0\" site:pypi.org"
+              ]
+            }
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 457,
+          "candidatesTokenCount": 61,
+          "totalTokenCount": 920,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 457
+            }
+          ],
+          "thoughtsTokenCount": 402,
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "U7neapTeK_et5NoPjJv2-QM"
+      },
+      "status": 200,
+      "started_epoch": 1792981331.564325,
+      "finished_epoch": 1792981341.133582,
+      "original_private_request_sha256": "9b8c81d1116a01db73d6d27ef550fe668fdd69f727eccef781c1f6455ae5b0c6",
+      "original_private_response_sha256": "e5b84522ac9d0f9ddad3890a1d5f0a81dbd0b5e0cbabcb660efc22a26501e0d7",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1276,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Is the google-adk pin on the dependencies page current?"
+              }
+            ],
+            "role": "user"
+          },
+          {
+            "parts": [
+              {
+                "functionCall": {
+                  "id": "call_1401746",
+                  "args": {
+                    "page": "dependencies"
+                  },
+                  "name": "read_page"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "functionResponse": {
+                  "id": "call_1401746",
+                  "name": "read_page",
+                  "response": {
+                    "page": "dependencies",
+                    "text": "# Dependencies\n\nThe docuctl 2.4 agent plugin is tested with these Python packages:\n\n- google-adk 2.10.0\n- mcp 2.1.0\n\nUpdate this page when you bump a pin.\n"
+                  }
+                }
+              }
+            ],
+            "role": "user"
+          },
+          {
+            "parts": [
+              {
+                "functionCall": {
+                  "id": "call_1337093",
+                  "args": {
+                    "request": "\"google-adk\" latest release PyPI version"
+                  },
+                  "name": "google_search_agent"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "functionResponse": {
+                  "id": "call_1337093",
+                  "name": "google_search_agent",
+                  "response": {
+                    "result": "The latest release of **`google-adk`** on PyPI is **`2.13.0`** (released on October 23, 2026)."
+                  }
+                }
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              },
+              {
+                "description": "An agent for performing Google search using built-in search grounding",
+                "name": "google_search_agent",
+                "parameters_json_schema": {
+                  "type": "object",
+                  "properties": {
+                    "request": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "request"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "text": "No, the `google-adk` pin is **not current**.\n\n* According to the **dependencies** page of the documentation, `google-adk` is currently pinned to version **`2.10.0`**.\n* According to **PyPI (Google Search)**, the latest release of `google-adk` is **`2.13.0`**."
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 375,
+          "candidatesTokenCount": 82,
+          "totalTokenCount": 457,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 375
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "XbneaoGVEsaoxdIP6fKGqAc"
+      },
+      "status": 200,
+      "started_epoch": 1792981341.138355,
+      "finished_epoch": 1792981343.158465,
+      "original_private_request_sha256": "366e5a5114e71917e44c3d5c65a387428292c1f9f5a1c2c0009e7d58109cb90e",
+      "original_private_response_sha256": "2bb5a977bea7bdd45f7960a13f8bc775431a59386dbe77c79ab5c356345f5736",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    },
+    {
+      "number": 1279,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Is the google-adk pin on the dependencies page current?"
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You help developers keep the docuctl documentation correct. Read pages with read_page. Use Google Search for facts that change, such as the latest release of a package. Use code for any arithmetic or statistics. Say which page or source each fact comes from.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "codeExecution": {}
+          },
+          {
+            "googleSearch": {}
+          },
+          {
+            "functionDeclarations": [
+              {
+                "description": "Read one page of the docuctl documentation: dependencies or deploy-timings.",
+                "name": "read_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "read_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxOutputTokens": 2048,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "error": {
+          "code": 400,
+          "message": "Please enable tool_config.include_server_side_tool_invocations to use Built-in tools with Function calling.",
+          "status": "INVALID_ARGUMENT"
+        }
+      },
+      "status": 400,
+      "started_epoch": 1792981394.216351,
+      "finished_epoch": 1792981394.4741812,
+      "original_private_request_sha256": "bc57f9685aedd02c7e199d3ae96c03af4948049ed92555646560109bc1635a9c",
+      "original_private_response_sha256": "129457f1ba564d56abd7f1c7624f8800f1dd3908f60bdb9113815026ad8b4e9c",
+      "executed_source_sha256": {
+        "agent.py": "aa1d1e89aa7f9db6fc33e17410cb389a553d20e99c3b7b1cd9d173d25ac85eef",
+        "record.py": "346588f5d5b2dbed2a73423a78125130eff98fc5ead903c5c5e080a1dc569090",
+        "docs/dependencies.md": "f66e324fcd519595163ebc0f06a42bff848458d501b8ef9c0300f91c81cc4ba9",
+        "docs/deploy-timings.md": "3e5c715d5be6b2b874f99c89350ba907caad1ac491e619a658ccb373706406a1"
+      }
+    }
+  ]
+}

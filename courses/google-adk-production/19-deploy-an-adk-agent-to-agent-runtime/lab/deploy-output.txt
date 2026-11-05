@@ -1,0 +1,26 @@
+$ /private/tmp/docuctl-adk-venv/bin/adk deploy agent_engine --project vertex-ai-experminent --region us-central1 --display_name docuctl-runtime-3c36cf84 --service_account docuctl-rt-3c36cf84@vertex-ai-experminent.iam.gserviceaccount.com --agent_engine_config_file /private/tmp/docuctl-recordings/runtime-config.json --temp_folder /private/tmp/docuctl-runtime-build-3c36cf84 docs_helper
+Copying agent source code...
+Copying agent source code complete.
+Resolving files and dependencies...
+Reading agent platform config from /private/tmp/docuctl-recordings/runtime-config.json
+Overriding display_name in agent platform config with docuctl-runtime-3c36cf84
+Creating /private/tmp/docuctl-runtime-build-3c36cf84/agents/docs_helper/requirements.txt...
+Using google-adk[a2a]==2.12.0 in requirements
+Created /private/tmp/docuctl-runtime-build-3c36cf84/agents/docs_helper/requirements.txt
+Initializing Agent Platform client...
+Agent Platform client initialized with project and region.
+Deploying to Agent Platform...
+/private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/google/auth/_default.py:113: UserWarning: Your application has authenticated using end user credentials from Google Cloud SDK without a quota project. You might receive a "quota exceeded" or "API not enabled" error. See the following page for troubleshooting: https://cloud.google.com/docs/authentication/adc-troubleshooting/user-creds. 
+  warnings.warn(_CLOUD_SDK_CREDENTIALS_WARNING)
+Created a new instance: projects/913703049174/locations/us-central1/reasoningEngines/3761845168894902272
+Creating Dockerfile...
+Dockerfile created at /private/tmp/docuctl-runtime-build-3c36cf84/Dockerfile.
+Deployed to Agent Platform: projects/913703049174/locations/us-central1/reasoningEngines/3761845168894902272
+
+🎉 View your deployed agent here:
+https://console.cloud.google.com/vertex-ai/agents/agent-engines/locations/us-central1/agent-engines/3761845168894902272/playground?project=913703049174
+
+To make this agent available in Gemini Enterprise, register it by following:
+https://docs.cloud.google.com/gemini/enterprise/docs/register-and-manage-an-adk-agent
+
+Cleaning up the temp folder: /private/tmp/docuctl-runtime-build-3c36cf84

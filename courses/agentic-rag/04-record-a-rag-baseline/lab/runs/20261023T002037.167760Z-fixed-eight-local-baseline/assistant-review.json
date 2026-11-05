@@ -1,0 +1,366 @@
+{
+  "created_at_utc": "2026-10-23T00:22:49.404968+00:00",
+  "reviewer": "Codex author assistant; not an independent reviewer or human owner",
+  "assessment_kind": "assistant_semantic_inspection",
+  "raw_record_file_sha256": "193d4c3c91e66432d3717bf85dced0034b572e804cd50efc246042b574baeaa0",
+  "observations_file_sha256": "00b9d380c5f67ffa80f129bb5d22e4c137b8dcbd82856e3af41add5f7f8e475a",
+  "rubric_file_sha256": "9879ecc82fcfb369b2fbbb1993fe841db97ebd11a05e7e825c772764ceb47b47",
+  "dataset_canonical_sha256": "1603dde3e9e4d3fbafb14126e5c002584c6f945c29968488b01406618a6035b9",
+  "cases": {
+    "utf8-write": {
+      "verdict": "fail",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Uses Path.write_text with encoding=\"utf-8\".",
+          "met": false
+        },
+        {
+          "criterion": "Does not confuse newline handling or ensure_ascii with file encoding.",
+          "met": true
+        }
+      ],
+      "notes": "The final response abstains and omits Path.write_text(encoding=\"utf-8\"). The retriever selected only the two read_text summaries; the abstention is consistent with that selected context, but does not meet the supported task. This is a retrieval miss plus a failed end-to-end answer, not an invented UTF-8 command.",
+      "output_sha256": "fdd6cab46d2a22de57652e9bc42d42b85f292cf81a7e1db2f400f42032632bc9",
+      "raw_generation_sha256": "200804c2a68a51a97a81ede511eabab5ddfeb0b3a7d62c03e343fa966001103f",
+      "request_sha256": "a991e9ebf13290c7725aab2642c1b7468253bdca7835f40593635c94f90fdcc5",
+      "selected_passages": [
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        },
+        {
+          "source_id": "path-read",
+          "chunk_id": "path-read:1f1129b8d1011a82",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+        }
+      ],
+      "final_output": {
+        "question": "How do I explicitly select UTF-8 when saving text with pathlib?",
+        "context_ids": [
+          "path-read-3-13",
+          "path-read"
+        ],
+        "status": "not_in_docs",
+        "answer": "The provided documentation does not contain information on how to explicitly select UTF-8 when saving text with pathlib.",
+        "source_ids": [],
+        "source_links": []
+      },
+      "completion_error": null
+    },
+    "replace-file": {
+      "verdict": "pass",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Says existing contents are overwritten/replaced, not appended.",
+          "met": true
+        },
+        {
+          "criterion": "Does not invent preservation or backup behavior.",
+          "met": true
+        }
+      ],
+      "notes": "The final response says the existing file is overwritten and links path-write; this is stated directly in the selected summary. It makes no backup/preservation claim.",
+      "output_sha256": "b91f4f2de5570781fad3aeb5d166120e9ecfe31cd7fdc4352b6c88973c665dc1",
+      "raw_generation_sha256": "8af407c193638212e48878dbe56b885de4a789d91f5882dd625d7cc3fed34282",
+      "request_sha256": "776dcc0c6157a6970d2ad2964cecd429173d1a3758ca7b596f6c7ace2d21ef8c",
+      "selected_passages": [
+        {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+        },
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        }
+      ],
+      "final_output": {
+        "question": "Will write_text replace the contents of an existing file?",
+        "context_ids": [
+          "path-write",
+          "path-read-3-13"
+        ],
+        "status": "answered",
+        "answer": "Yes, an existing file is overwritten.",
+        "source_ids": [
+          "path-write"
+        ],
+        "source_links": [
+          "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+        ]
+      },
+      "completion_error": null
+    },
+    "json-result-type": {
+      "verdict": "pass",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Says json.dumps returns str/text, not bytes.",
+          "met": true
+        },
+        {
+          "criterion": "Does not claim it writes a file or selects file encoding.",
+          "met": true
+        }
+      ],
+      "notes": "The final response says json.dumps returns a JSON string and links json-text. It does not claim bytes, a file write, or file encoding.",
+      "output_sha256": "d62e53613c124167ce9b5c12070081740065dee4a537adc96c16d635c10dc1f7",
+      "raw_generation_sha256": "c12a84b45d7083c28f70d37b53d4bbe2af671869324ec6d581ec24a7626bb35c",
+      "request_sha256": "31fbf2a45170afd7ffb623b6281debc1817969075c5d5bf49233d2432cf7714d",
+      "selected_passages": [
+        {
+          "source_id": "json-text",
+          "chunk_id": "json-text:8a17e251a41ccb3b",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+        },
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        }
+      ],
+      "final_output": {
+        "question": "Does json.dumps produce text or a bytes object?",
+        "context_ids": [
+          "json-text",
+          "path-read-3-13"
+        ],
+        "status": "answered",
+        "answer": "json.dumps(obj, ensure_ascii=True) returns a JSON string.",
+        "source_ids": [
+          "json-text"
+        ],
+        "source_links": [
+          "https://docs.python.org/3.12/library/json.html#json.dumps"
+        ]
+      },
+      "completion_error": null
+    },
+    "backup-schedule": {
+      "verdict": "pass",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Returns not_in_docs without a backup interval or service-policy claim.",
+          "met": true
+        },
+        {
+          "criterion": "States only that this bounded corpus lacks that policy.",
+          "met": true
+        }
+      ],
+      "notes": "The final response returns not_in_docs with no source IDs and states only that the supplied documentation lacks the backup schedule. No provider interval is invented.",
+      "output_sha256": "d6c716363e129f1cc3b1d28a763a99202be5df2f179eacebf9abf97f7d5e753d",
+      "raw_generation_sha256": "e21a10070770e1f02bffbbf1764acbb32392df720b4c0cb86a476d0e1cbf1198",
+      "request_sha256": "e13d0483ca5a2b4ec06bea07518a126300443ef3a11ab56d83b3ecccc8aef544",
+      "selected_passages": [
+        {
+          "source_id": "path-read",
+          "chunk_id": "path-read:1f1129b8d1011a82",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+        },
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        }
+      ],
+      "final_output": {
+        "question": "How frequently does our cloud provider back up these files?",
+        "context_ids": [
+          "path-read",
+          "path-read-3-13"
+        ],
+        "status": "not_in_docs",
+        "answer": "The provided documentation does not contain information regarding how frequently the cloud provider backs up files.",
+        "source_ids": [],
+        "source_links": []
+      },
+      "completion_error": null
+    },
+    "read-newline-312": {
+      "verdict": "needs_review",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Answers no for Python3.12, using the 3.12 signature/target.",
+          "met": false
+        },
+        {
+          "criterion": "Does not apply the 3.13 addition to3.12.",
+          "met": true
+        }
+      ],
+      "notes": "The answer text correctly states that newline was added in Python3.13 and is not available in3.12, but the structured status is not_in_docs and no source is linked. The correct3.12 target was retrieved at rank2; the response relies explicitly on the3.13 addition instead of citing the3.12 signature. The factual sentence is not the same failure as a hallucinated3.12 parameter; status/source alignment fails.",
+      "output_sha256": "6126ff5c7c154f1e03ff10a86be83f375f1564a09ca56815d9ffd992f318affd",
+      "raw_generation_sha256": "118c538238936ba376b532fd6b1f8188e686eda2bbbd100e95f23f21883964e6",
+      "request_sha256": "6f36a7ca7b49de75fbc4fcf330a23ce53e3abe5e93ae845e70bd1121830c84db",
+      "selected_passages": [
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        },
+        {
+          "source_id": "path-read",
+          "chunk_id": "path-read:1f1129b8d1011a82",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+        }
+      ],
+      "final_output": {
+        "question": "Can Path.read_text take a newline argument in Python 3.12?",
+        "context_ids": [
+          "path-read-3-13",
+          "path-read"
+        ],
+        "status": "not_in_docs",
+        "answer": "The provided documentation states that the `newline` parameter was added in Python 3.13, meaning it is not available in Python 3.12 according to this context.",
+        "source_ids": [],
+        "source_links": []
+      },
+      "completion_error": null
+    },
+    "read-newline-313": {
+      "verdict": "pass",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Answers yes for Python3.13 using the 3.13 source.",
+          "met": true
+        },
+        {
+          "criterion": "Treats this source as documented-only; no claim of executing Python3.13.",
+          "met": true
+        }
+      ],
+      "notes": "The final response says newline is accepted/added in3.13 and links the3.13 source. It makes no claim of having executed Python3.13.",
+      "output_sha256": "095f6e4c6dfe204b570a9947698cf29934a0969eac9e2e23285f631d8402c7ce",
+      "raw_generation_sha256": "3865f62a4d66de189c507e6665a49393025adb53d77a3df28b4d2d01a94a298a",
+      "request_sha256": "0e6a2ebb853e07c615d17ebf5590e3aba878b95e0bd48e0124a96e7f91bc8635",
+      "selected_passages": [
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        },
+        {
+          "source_id": "path-read",
+          "chunk_id": "path-read:1f1129b8d1011a82",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+        }
+      ],
+      "final_output": {
+        "question": "In Python 3.13, is newline an accepted Path.read_text parameter?",
+        "context_ids": [
+          "path-read-3-13",
+          "path-read"
+        ],
+        "status": "answered",
+        "answer": "In Python 3.13, Path.read_text accepts encoding, errors, and newline. The newline parameter was added in Python 3.13.",
+        "source_ids": [
+          "path-read-3-13"
+        ],
+        "source_links": [
+          "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text"
+        ]
+      },
+      "completion_error": null
+    },
+    "json-throughput": {
+      "verdict": "pass",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Returns not_in_docs without invented objects/second or deployment measurements.",
+          "met": true
+        },
+        {
+          "criterion": "Does not turn API semantics into a measured performance claim.",
+          "met": true
+        }
+      ],
+      "notes": "The final response returns not_in_docs without a throughput number or measured-deployment claim.",
+      "output_sha256": "120d1c7631de80402ff8bdec9b6984cf54350b05197182cadad206714c1d947d",
+      "raw_generation_sha256": "a929286553a9c72498faaa7c5111da457386d3d46737737f32566c6b713acaa1",
+      "request_sha256": "1b06194be361766d4f5106c1f70128d290b3deda537dde1f3da9f88b55c899af",
+      "selected_passages": [
+        {
+          "source_id": "json-text",
+          "chunk_id": "json-text:8a17e251a41ccb3b",
+          "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+        },
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        }
+      ],
+      "final_output": {
+        "question": "How many objects per second can this deployment serialize?",
+        "context_ids": [
+          "json-text",
+          "path-read-3-13"
+        ],
+        "status": "not_in_docs",
+        "answer": "The provided documentation does not contain information about how many objects per second this deployment can serialize.",
+        "source_ids": [],
+        "source_links": []
+      },
+      "completion_error": null
+    },
+    "create-parents": {
+      "verdict": "needs_review",
+      "assessment_kind": "assistant_semantic_inspection_not_owner_review",
+      "criteria": [
+        {
+          "criterion": "Returns not_in_docs because the supplied summaries omit parent-directory behavior.",
+          "met": null
+        },
+        {
+          "criterion": "An outside-corpus Python fact is not a supported answer for this task.",
+          "met": null
+        }
+      ],
+      "notes": "No final answer was returned. The wire stream ended with done_reason=length, final content empty and eval_count400; the structured parser error is saved without repair. There is no completed factual response to assess, and no claim that the expected abstention was delivered.",
+      "output_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "raw_generation_sha256": "273c1cc4c16ecd69f2385ecb333d948dd16c0d874fca0e2c485f67826274efbc",
+      "request_sha256": "2be59a501cad8a7da3fa717933b7bd21e33c753acb9d8ff16649548b0a364f99",
+      "selected_passages": [
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+        },
+        {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+        }
+      ],
+      "final_output": null,
+      "completion_error": {
+        "types": [
+          "ValueError",
+          "Exception"
+        ],
+        "message": "Structured reply could not be parsed; raw reply retained, no repair"
+      }
+    }
+  },
+  "summary": {
+    "fail": 1,
+    "pass": 5,
+    "needs_review": 2
+  },
+  "limits": [
+    "Not owner review, not independent approval, not a general accuracy estimate.",
+    "Automatic contract pass/fail/incomplete is separate from this assistant inspection.",
+    "Needs_review does not imply successful completion; read-newline-312 has wrong status/missing source and create-parents has no assessable final answer.",
+    "Human-review.json remains completely unreviewed. No new inference, repairs, retries or source changes."
+  ]
+}

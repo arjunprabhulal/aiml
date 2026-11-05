@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "kind": "actual-offline-sdk-execution",
+  "lesson": "build-a-graph-agent-with-tools",
+  "started_utc": "2026-10-23T14:41:47.940314+00:00",
+  "command": [
+    "/private/tmp/langgraph-agents-venv/bin/python",
+    "-m",
+    "pytest",
+    "-v",
+    "--no-header",
+    "--tb=short",
+    "--color=no",
+    "test_graph.py"
+  ],
+  "exit_code": 0,
+  "model": "scripted test doubles; no inference",
+  "network": "Python socket transport blocked; credentials removed",
+  "network_guard_sha256": "7d8f54ce35cc81ebe0b19b0d7a5749d04f6f41a43323a6ec23dfd758fd15ce3f",
+  "environment": {
+    "langgraph": "1.2.16",
+    "langchain-google-genai": "4.4.2",
+    "langgraph-checkpoint-sqlite": "3.1.2",
+    "langchain": "1.4.6",
+    "langchain-core": "1.6.12",
+    "pytest": "9.1.1"
+  },
+  "source_sha256": {
+    "review_queue.py": "0e5b0f214fa334208ba3b985fc4247860687fe3fc004defab02996e6bf5e80e1",
+    "graph.py": "a32a9697da108958e72a07615c8f708bf2f3120dc83ea78967d8fef403e7b774",
+    "record.py": "d6b827b4b84a8e5bd426a66051409c0a088b20a443313b2d537f7bf4194a306d",
+    "test_graph.py": "c693e704d595fd3e4d717b3d8a839108f7886090d980a019e472b6615872e491",
+    "requirements-lock.txt": "2a700aa8c9b9c67cec52e69f9fdc41998ca32deaf6d8f6dfd703e53a95672576"
+  },
+  "stdout_sha256": "e01db1bc94439b2927937194bcb3b3aa616d5e4b65e41128246da92ebf9c2df0",
+  "screenshots": {
+    "images/stdout-1440@2x.png": {
+      "sha256": "7ee5402ec7eae46c2d233eadcfbd221c5318a83043cc4aec280ae31d33e88076",
+      "viewport_css": {
+        "width": 1440,
+        "height": 1100
+      },
+      "image_pixels": {
+        "width": 2880,
+        "height": 2200
+      },
+      "device_scale_factor": 2,
+      "full_page": true
+    },
+    "images/stdout-390@2x.png": {
+      "sha256": "133f7c8ca7706ebbacdf87555978cb6d96c652700b0154b43bef59a867587653",
+      "viewport_css": {
+        "width": 390,
+        "height": 1100
+      },
+      "image_pixels": {
+        "width": 780,
+        "height": 2200
+      },
+      "device_scale_factor": 2,
+      "full_page": true
+    },
+    "images/stdout-320@2x.png": {
+      "sha256": "953ee23197f0095f111dc96d5af142f4dd1d4c876fdbf2c2d8c91e5692514a29",
+      "viewport_css": {
+        "width": 320,
+        "height": 1100
+      },
+      "image_pixels": {
+        "width": 640,
+        "height": 2200
+      },
+      "device_scale_factor": 2,
+      "full_page": true
+    }
+  },
+  "capture": "Unmodified browser screenshots of the raw text/plain subprocess stdout. Not native terminal screenshots and not model proof.",
+  "tests_passed": 10
+}

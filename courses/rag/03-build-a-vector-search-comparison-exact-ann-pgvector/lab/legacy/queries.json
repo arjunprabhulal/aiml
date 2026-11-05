@@ -1,0 +1,29 @@
+{
+  "note": "Learner questions written for this build. Each lists the published lessons whose passages answer it. Questions are phrased differently from the lesson text on purpose.",
+  "queries": [
+    {"id": "q01", "question": "How does LoRA cut the number of trainable parameters?", "relevant": ["adaptation-methods"]},
+    {"id": "q02", "question": "Why can't I just keep deleting the oldest chat messages when a conversation gets too long?", "relevant": ["build-a-context-budget-manager", "build-context-compaction"]},
+    {"id": "q03", "question": "Why does a word that appears in almost every document count for less?", "relevant": ["keyword-ranking", "build-a-retriever"]},
+    {"id": "q04", "question": "How do I know whether an evaluation score means anything?", "relevant": ["datasets-baselines-and-held-out-cases", "what-is-an-evaluation"]},
+    {"id": "q05", "question": "Should the model obey instructions it finds inside a web page?", "relevant": ["human-control", "build-a-context-assembler"]},
+    {"id": "q06", "question": "What happens between sending a prompt and getting the first word back?", "relevant": ["model-request-lifecycle", "what-is-inference"]},
+    {"id": "q07", "question": "Why does the same prompt give a different answer each time?", "relevant": ["generation-controls", "repeated-trials-and-quality-tradeoffs"]},
+    {"id": "q08", "question": "How can two sentences with no words in common still be close together?", "relevant": ["vectors-and-similarity"]},
+    {"id": "q09", "question": "Is an open-weight model the same thing as open source?", "relevant": ["closed-open-weight-open-source", "model-labels"]},
+    {"id": "q10", "question": "What should be checked before a proposed tool call actually runs?", "relevant": ["tools-and-permissions"]},
+    {"id": "q11", "question": "What is a test fixture for?", "relevant": ["tests-and-failures"]},
+    {"id": "q12", "question": "Where should API keys live in a project?", "relevant": ["environments-and-secrets"]},
+    {"id": "q13", "question": "How does a transformer decide which earlier words matter for the current one?", "relevant": ["attention-and-sequences"]},
+    {"id": "q14", "question": "What does the optimizer do with the error after each batch?", "relevant": ["loss-and-updates", "how-models-learn"]},
+    {"id": "q15", "question": "How can a long-running agent job survive a restart?", "relevant": ["tasks-and-handoffs", "state-and-workflows"]},
+    {"id": "q16", "question": "How do I stop one user's saved notes from showing up for another user?", "relevant": ["build-isolated-contexts"]},
+    {"id": "q17", "question": "How can I tell whether shortening a conversation lost an important fact?", "relevant": ["build-context-compaction"]},
+    {"id": "q18", "question": "Which parts of the conversation does the model see on a new turn?", "relevant": ["messages-and-context", "build-a-context-budget-manager"]},
+    {"id": "q19", "question": "Why should an answer point to the passages it relied on?", "relevant": ["rag-and-evidence"]},
+    {"id": "q20", "question": "How much memory do I need to run a model on my own machine?", "relevant": ["model-runtime-and-hardware", "local-models-and-hosted-apis"]},
+    {"id": "q21", "question": "How is text broken into the pieces a model reads?", "relevant": ["tokens-and-tokenizers"]},
+    {"id": "q22", "question": "Why keep some test cases hidden while tuning a system?", "relevant": ["datasets-baselines-and-held-out-cases", "compare-context-selection-strategies"]},
+    {"id": "q23", "question": "How does an MCP client learn which tools a server offers?", "relevant": ["protocol-boundaries"]},
+    {"id": "q24", "question": "Can a reply be valid JSON and still be wrong?", "relevant": ["checking-model-results", "json-and-files"]}
+  ]
+}

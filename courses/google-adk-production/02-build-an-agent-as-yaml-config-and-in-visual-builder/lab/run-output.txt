@@ -1,0 +1,50 @@
+$ adk create --type=config --model gemini-3.8-flash --api_key your-gemini-api-key docs_config
+created docs_config/: .env, .gitignore, root_agent.yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: root_agent
+description: A helpful assistant for user questions.
+instruction: Answer user questions to the best of your knowledge
+model: gemini-3.8-flash
+
+$ adk run --in_memory docs_config 'How do I roll back production?'
+[docs_assistant]: To roll back production to the previous release, run:
+`docuctl rollback --env production`
+To roll back to a specific release (for example, `r41`), use the `--to` flag:
+`docuctl rollback --env production --to r41`
+Note that database migrations are not rolled back automatically. If the release ran a migration, you must write a new migration to reverse it.
+
+$ python load.py 'How do I roll back production?'
+LlmAgent docs_assistant model=gemini-3.8-flash tools=['read_page']
+temperature=0.2 thinking_level=LOW
+docs_assistant  call read_page({'page': 'rollback'})
+docs_assistant  result read_page
+docs_assistant  'To roll back production to a specific re'
+answer: To roll back production to a specific release, run:
+
+`docuctl rollback --env production --to r41`
+
+Without `--to`, `docuctl rollback` moves the environment back to the previous release:
+
+`docuctl rollback`
+
+Key details:
+- It points traffic to the specified release without rebuilding anything.
+- The rollback is recorded as a new release and appears in `docuctl releases`.
+- Database migrations are not rolled back; write a new migration to reverse any changes if needed.
+
+from_config misspelled_field: ValidationError: 2 validation errors for LlmAgentConfig
+from_config missing_tool: AttributeError: module 'docs_config.tools' has no attribute 'read_pages'
+from_config stdlib_tool: ValueError: Blocked module reference: 'os.system'. Agent configurations cannot import from 'os'. The Python standard library is blocked in full because too much of it can execute arbitrary code. Reference your own agent package, 'google.adk', or a third-party package instead.
+
+$ adk web --port 8766 .
+$ curl -s http://127.0.0.1:8766/dev/apps/docs_config/builder
+HTTP 200
+$ curl -s -X POST http://127.0.0.1:8766/dev/apps/docs_config/builder/save -F 'files=@edit.yaml;filename=docs_config/root_agent.yaml'
+true
+HTTP 200
+$ curl -s -X POST http://127.0.0.1:8766/dev/apps/docs_config/builder/save -F 'files=@args_key.yaml;filename=docs_config/root_agent.yaml'
+{"detail":"Blocked key 'args' found in 'docs_config/root_agent.yaml'. The 'args' field is not allowed in builder uploads because it can execute arbitrary code."}
+HTTP 400
+$ curl -s -X POST http://127.0.0.1:8766/dev/apps/docs_config/builder/save -F 'files=@outside_code.yaml;filename=docs_config/root_agent.yaml'
+{"detail":"Blocked code reference 'subprocess.run' in 'docs_config/root_agent.yaml'. The 'tools' field may only reference code under 'docs_config' or an ADK built-in."}
+HTTP 400

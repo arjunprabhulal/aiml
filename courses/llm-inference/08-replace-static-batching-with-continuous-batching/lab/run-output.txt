@@ -1,0 +1,188 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "workload_summary": {
+    "num_requests": 12,
+    "max_batch_size": 4,
+    "total_generated_tokens": 1504
+  },
+  "static_batching": {
+    "mode": "static_batching",
+    "requests_completed": 12,
+    "total_elapsed_ms": 13176.16,
+    "valid_output_tokens": 1504,
+    "wasted_pad_token_steps": 2848,
+    "pad_waste_ratio": 0.6544,
+    "avg_queue_delay_ms": 6004.91,
+    "avg_short_request_e2e_ms": 7221.28,
+    "p50_e2e_latency_ms": 6743.52,
+    "p95_e2e_latency_ms": 12756.16,
+    "effective_tokens_per_sec": 114.15,
+    "per_request": [
+      {
+        "req_id": "req-01",
+        "output_tokens": 512,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 6183.2
+      },
+      {
+        "req_id": "req-02",
+        "output_tokens": 32,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 423.2
+      },
+      {
+        "req_id": "req-03",
+        "output_tokens": 48,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 615.2
+      },
+      {
+        "req_id": "req-04",
+        "output_tokens": 64,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 807.2
+      },
+      {
+        "req_id": "req-05",
+        "output_tokens": 48,
+        "queue_delay_ms": 6123.2,
+        "e2e_latency_ms": 6743.52
+      },
+      {
+        "req_id": "req-06",
+        "output_tokens": 32,
+        "queue_delay_ms": 6063.2,
+        "e2e_latency_ms": 6491.52
+      },
+      {
+        "req_id": "req-07",
+        "output_tokens": 512,
+        "queue_delay_ms": 6003.2,
+        "e2e_latency_ms": 12191.52
+      },
+      {
+        "req_id": "req-08",
+        "output_tokens": 64,
+        "queue_delay_ms": 5943.2,
+        "e2e_latency_ms": 6755.52
+      },
+      {
+        "req_id": "req-09",
+        "output_tokens": 48,
+        "queue_delay_ms": 12071.52,
+        "e2e_latency_ms": 12684.16
+      },
+      {
+        "req_id": "req-10",
+        "output_tokens": 32,
+        "queue_delay_ms": 12011.52,
+        "e2e_latency_ms": 12432.16
+      },
+      {
+        "req_id": "req-11",
+        "output_tokens": 64,
+        "queue_delay_ms": 11951.52,
+        "e2e_latency_ms": 12756.16
+      },
+      {
+        "req_id": "req-12",
+        "output_tokens": 48,
+        "queue_delay_ms": 11891.52,
+        "e2e_latency_ms": 12504.16
+      }
+    ]
+  },
+  "continuous_batching": {
+    "mode": "continuous_batching",
+    "requests_completed": 12,
+    "total_elapsed_ms": 7044.16,
+    "valid_output_tokens": 1504,
+    "wasted_pad_token_steps": 0,
+    "pad_waste_ratio": 0.0,
+    "avg_queue_delay_ms": 604.49,
+    "avg_short_request_e2e_ms": 1263.02,
+    "p50_e2e_latency_ms": 1320.32,
+    "p95_e2e_latency_ms": 6864.16,
+    "effective_tokens_per_sec": 213.51,
+    "per_request": [
+      {
+        "req_id": "req-01",
+        "output_tokens": 512,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 6288.16
+      },
+      {
+        "req_id": "req-02",
+        "output_tokens": 32,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 423.2
+      },
+      {
+        "req_id": "req-03",
+        "output_tokens": 48,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 630.56
+      },
+      {
+        "req_id": "req-04",
+        "output_tokens": 64,
+        "queue_delay_ms": 0.0,
+        "e2e_latency_ms": 832.8
+      },
+      {
+        "req_id": "req-05",
+        "output_tokens": 48,
+        "queue_delay_ms": 363.2,
+        "e2e_latency_ms": 973.28
+      },
+      {
+        "req_id": "req-06",
+        "output_tokens": 32,
+        "queue_delay_ms": 510.56,
+        "e2e_latency_ms": 913.28
+      },
+      {
+        "req_id": "req-07",
+        "output_tokens": 512,
+        "queue_delay_ms": 652.8,
+        "e2e_latency_ms": 6864.16
+      },
+      {
+        "req_id": "req-08",
+        "output_tokens": 64,
+        "queue_delay_ms": 793.28,
+        "e2e_latency_ms": 1582.56
+      },
+      {
+        "req_id": "req-09",
+        "output_tokens": 48,
+        "queue_delay_ms": 733.28,
+        "e2e_latency_ms": 1320.32
+      },
+      {
+        "req_id": "req-10",
+        "output_tokens": 32,
+        "queue_delay_ms": 1260.32,
+        "e2e_latency_ms": 1657.92
+      },
+      {
+        "req_id": "req-11",
+        "output_tokens": 64,
+        "queue_delay_ms": 1402.56,
+        "e2e_latency_ms": 2184.16
+      },
+      {
+        "req_id": "req-12",
+        "output_tokens": 48,
+        "queue_delay_ms": 1537.92,
+        "e2e_latency_ms": 2112.16
+      }
+    ],
+    "peak_kv_tokens": 1471
+  },
+  "speedup_metrics": {
+    "throughput_gain_x": 1.87,
+    "short_request_latency_reduction_x": 5.72,
+    "p95_latency_reduction_x": 1.86
+  }
+}

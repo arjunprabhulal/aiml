@@ -1,0 +1,220 @@
+{
+ "model": "gemini-3.8-flash",
+ "toolbox": "0.21.0",
+ "runs": {
+  "feedback": {
+   "question": "Which pages got the most unhelpful feedback this month, and what did readers say?",
+   "transcript": "call   page-feedback {'limit': 10, 'since': '2026-10-01'}\nresult page-feedback {'result': '[{\"comments\":[\"Still shows docuctl release revert, which fails on 2.x\",\"Which flag picks the release?\"],\"helpful\":1,\"slug\":\"rollback\",\"unhelpful\":3},{\"comments\":[\"The canary section needs an example\"],\"helpful\":1,\"slug\":\"deploy\",\"unhelpful\":1},{\"comments\":[],\"helpful\":1,\"slug\":\"tokens\",\"unhelpful\":0}]'}\nanswer This month (since October 1, 2026), the pages with unhelpful feedback are:\n\n### 1. `rollback` (3 unhelpful votes, 1 helpful vote)\nReader comments:\n* \"Still shows docuctl release revert, which fails on 2.x\"\n* \"Which flag picks the release?\"\n\n---\n\n### 2. `deploy` (1 unhelpful vote, 1 helpful vote)\nReader comment:\n* \"The canary section needs an example\"",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2353695",
+        "args": {
+         "limit": 10,
+         "since": "2026-10-01"
+        },
+        "name": "page-feedback"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "This month (since October 1, 2026), the pages with unhelpful feedback are:\n\n### 1. `rollback` (3 unhelpful votes, 1 helpful vote)\nReader comments:\n* \"Still shows docuctl release revert, which fails on 2.x\"\n* \"Which flag picks the release?\"\n\n---\n\n### 2. `deploy` (1 unhelpful vote, 1 helpful vote)\nReader comment:\n* \"The canary section needs an example\""
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "declarations": {
+    "find-pages": {
+     "description": "Find documentation pages of a team whose title contains the given text. Returns slug, title and last update date.\n\nArgs:\n    title_contains (str): Text to look for in the page title, such as \"rollback\".",
+     "name": "find-pages",
+     "parameters": {
+      "properties": {
+       "title_contains": {
+        "description": "Text to look for in the page title, such as \"rollback\".",
+        "type": "STRING"
+       }
+      },
+      "required": [
+       "title_contains"
+      ],
+      "type": "OBJECT"
+     }
+    },
+    "page-feedback": {
+     "description": "Count helpful and unhelpful votes per page of a team since a date, with the written comments, worst pages first.\n\nArgs:\n    limit (int): How many pages to return, at most 10.\n    since (str): The first day to count, as YYYY-MM-DD.",
+     "name": "page-feedback",
+     "parameters": {
+      "properties": {
+       "limit": {
+        "description": "How many pages to return, at most 10.",
+        "type": "INTEGER"
+       },
+       "since": {
+        "description": "The first day to count, as YYYY-MM-DD.",
+        "type": "STRING"
+       }
+      },
+      "required": [
+       "limit",
+       "since"
+      ],
+      "type": "OBJECT"
+     }
+    }
+   },
+   "errors": []
+  },
+  "delete": {
+   "question": "Delete the feedback on the rollback page.",
+   "transcript": "answer I cannot delete feedback on the rollback page. My tools only allow me to find documentation pages and view page feedback; they do not support modifying or deleting feedback.",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "text": "I cannot delete feedback on the rollback page. My tools only allow me to find documentation pages and view page feedback; they do not support modifying or deleting feedback."
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "declarations": {
+    "find-pages": {
+     "description": "Find documentation pages of a team whose title contains the given text. Returns slug, title and last update date.\n\nArgs:\n    title_contains (str): Text to look for in the page title, such as \"rollback\".",
+     "name": "find-pages",
+     "parameters": {
+      "properties": {
+       "title_contains": {
+        "description": "Text to look for in the page title, such as \"rollback\".",
+        "type": "STRING"
+       }
+      },
+      "required": [
+       "title_contains"
+      ],
+      "type": "OBJECT"
+     }
+    },
+    "page-feedback": {
+     "description": "Count helpful and unhelpful votes per page of a team since a date, with the written comments, worst pages first.\n\nArgs:\n    limit (int): How many pages to return, at most 10.\n    since (str): The first day to count, as YYYY-MM-DD.",
+     "name": "page-feedback",
+     "parameters": {
+      "properties": {
+       "limit": {
+        "description": "How many pages to return, at most 10.",
+        "type": "INTEGER"
+       },
+       "since": {
+        "description": "The first day to count, as YYYY-MM-DD.",
+        "type": "STRING"
+       }
+      },
+      "required": [
+       "limit",
+       "since"
+      ],
+      "type": "OBJECT"
+     }
+    }
+   },
+   "errors": []
+  }
+ },
+ "failures": {
+  "unused_bound_param": {
+   "question": "Delete the feedback on the rollback page.",
+   "transcript": "answer I cannot delete feedback. My tools only allow me to search and view documentation analytics and reader feedback, not modify or delete data.",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "text": "I cannot delete feedback. My tools only allow me to search and view documentation analytics and reader feedback, not modify or delete data."
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "declarations": {},
+   "errors": [
+    "Agent docs_assistant will run without the tools from toolset ToolboxToolset, which failed to load: Validation failed for toolset 'docs-admin': unused bound parameters could not be applied to any tool: team."
+   ]
+  },
+  "read_only_role": {
+   "question": "Delete the feedback on the rollback page.",
+   "transcript": "call   delete-feedback {'page_slug': 'rollback'}\nresult delete-feedback {'result': 'unable to execute query: ERROR: permission denied for table feedback (SQLSTATE 42501)'}\nanswer I am unable to delete the feedback on the rollback page because I do not have permission to modify the feedback table (`ERROR: permission denied for table feedback`).",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1715549",
+        "args": {
+         "page_slug": "rollback"
+        },
+        "name": "delete-feedback"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "I am unable to delete the feedback on the rollback page because I do not have permission to modify the feedback table (`ERROR: permission denied for table feedback`)."
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "declarations": {
+    "delete-feedback": {
+     "description": "Delete all feedback for a page.\n\nArgs:\n    page_slug (str): The page whose feedback to delete.",
+     "name": "delete-feedback",
+     "parameters": {
+      "properties": {
+       "page_slug": {
+        "description": "The page whose feedback to delete.",
+        "type": "STRING"
+       }
+      },
+      "required": [
+       "page_slug"
+      ],
+      "type": "OBJECT"
+     }
+    }
+   },
+   "errors": []
+  },
+  "server_down": {
+   "question": "Which pages got the most unhelpful feedback this month, and what did readers say?",
+   "transcript": "answer ",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "text": ""
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "declarations": {},
+   "errors": [
+    "Agent docs_assistant will run without the tools from toolset ToolboxToolset, which failed to load: Cannot connect to host 127.0.0.1:63723 ssl:default [Connect call failed ('127.0.0.1', 63723)]"
+   ]
+  }
+ },
+ "discovery": [
+  "find-pages",
+  "page-feedback"
+ ],
+ "feedback_rows_after": 8,
+ "config_error": "\"unable to parse tool file at \\\"tools-v2-format.yaml\\\": [3:1] unknown field \\\"kind\\\""
+}

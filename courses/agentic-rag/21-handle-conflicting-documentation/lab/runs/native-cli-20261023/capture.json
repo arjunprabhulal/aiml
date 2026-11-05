@@ -1,0 +1,51 @@
+{
+  "lesson_id": "handle-conflicting-documentation",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py"
+  ],
+  "exit_code": 0,
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "05f6c3ccfd4bb409ee031b0f861105dd7c5a6d8e6bc0b68f02b3801808ea983c",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 296,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "{\n  \"execution_mode\": \"offline-explicit-synthetic-directive-gate\",\n  \"model_called\": false,\n  \"fixture_kind\": \"original synthetic developer documentation; Quill is fictional\",\n  \"grammar\": \"exact whole line @quill create_copy existing_path=refuse|overwrite or close_required=yes|no\",\n  \"cases\": [\n    {\n      \"case_id\": \"newer-wrong-version-excluded\",\n      \"candidate_ids\": [\n        \"quill-guide\",\n        \"quill-new-version\"\n      ],\n      \"requested_version\": \"1.0\",\n      \"claim_key\": \"existing_path\",\n      \"result\": {\n        \"requested_version\": \"1.0\",\n        \"claim_key\": \"existing_path\",\n        \"operation\": \"create_copy\",\n        \"candidate_ids\": [\n          \"quill-guide\",\n          \"quill-new-version\"\n        ],\n        \"eligible_source_ids\": [\n          \"quill-guide\"\n        ],\n        \"excluded_wrong_version_ids\": [\n          \"quill-new-version\"\n        ],\n        \"answer_request\": {\n          \"messages\": [\n            {\n              \"role\": \"system\",\n              \"content\": \"Describe only the supplied explicit fictional API contract. Cite every supplied source ID. Do not invent an unsupported rule.\"\n            },\n            {\n              \"role\": \"user\",\n              \"content\": \"{\\\"claim_key\\\": \\\"existing_path\\\", \\\"operation\\\": \\\"create_copy\\\", \\\"requested_version\\\": \\\"1.0\\\", \\\"source_claims\\\": [{\\\"claim_key\\\": \\\"existing_path\\\", \\\"\ndocument_revision\\\": \\\"fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4\\\", \\\"end\\\": 172, \\\"end_line\\\": 5, \\\"operation\\\": \\\"create_copy\\\", \\\"path\\\": \\\"docs/quill-guide\n.md\\\", \\\"quote\\\": \\\"@quill create_copy existing_path=refuse\\\", \\\"source_id\\\": \\\"quill-guide\\\", \\\"source_sha256\\\": \\\"d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2\\\"\n, \\\"start\\\": 133, \\\"start_line\\\": 5, \\\"url\\\": \\\"https://quill.invalid/teaching/1.0/quill-guide\\\", \\\"value\\\": \\\"refuse\\\", \\\"version\\\": \\\"1.0\\\"}]}\"\n            }\n          ]\n        },\n        \"status\": \"ready\",\n        \"reason\": \"eligible_directives_agree\",\n        \"agreed_value\": \"refuse\",\n        \"claims\": [\n          {\n            \"source_id\": \"quill-guide\","
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "2e556906e4561c05262e19ed1c3a7ec4ac23593b5c47ad663040797ac771c245",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 296,
+        "viewportY": 296,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "            \"start_line\": 5,\n            \"end_line\": 5,\n            \"start\": 133,\n            \"end\": 172,\n            \"quote\": \"@quill create_copy existing_path=refuse\"\n          }\n        ]\n      }\n    },\n    {\n      \"case_id\": \"unknown-directive-value\",\n      \"candidate_ids\": [\n        \"quill-unknown-value\"\n      ],\n      \"requested_version\": \"1.0\",\n      \"claim_key\": \"existing_path\",\n      \"result\": {\n        \"status\": \"refused\",\n        \"error\": \"DirectiveError\",\n        \"reason\": \"unknown_directive_value\",\n        \"answer_request\": null\n      }\n    },\n    {\n      \"case_id\": \"malformed-directive\",\n      \"candidate_ids\": [\n        \"quill-malformed\"\n      ],\n      \"requested_version\": \"1.0\",\n      \"claim_key\": \"existing_path\",\n      \"result\": {\n        \"status\": \"refused\",\n        \"error\": \"DirectiveError\",\n        \"reason\": \"malformed_directive\",\n        \"answer_request\": null\n      }\n    }\n  ],\n  \"changed_source\": {\n    \"status\": \"refused\",\n    \"error\": \"IngestionError\",\n    \"reason\": \"hash_mismatch\",\n    \"answer_request\": null\n  },\n  \"policy\": \"Exact requested version before directive parsing. Any eligible source missing the requested key withholds the request. No source-priority or newest-version winner.\",\n  \"limit\": \"This parses explicit machine-readable teaching contracts, not arbitrary prose contradictions or semantic agreement. A prepared cited request is not a generated answer or \na correctness/security guarantee.\"\n}\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "classification": "One original local learner CLI PTY, original resident buffer; no replay or output reconstruction"
+}

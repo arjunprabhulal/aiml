@@ -1,0 +1,371 @@
+{
+ "model": "gemini-3.8-flash",
+ "discovery": [
+  "add_task",
+  "list_tasks"
+ ],
+ "runs": {
+  "add": {
+   "question": "The rollback page still mentions docuctl 1.x. Add a docs task to fix it.",
+   "transcript": "call   list_tasks {'status': 'open'}\nresult list_tasks isError=False {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 2}\ncall   add_task {'title': 'Update rollback page to remove docuctl 1.x mentions', 'priority': 'normal'}\nresult add_task isError=False {'id': 'T-4', 'title': 'Update rollback page to remove docuctl 1.x mentions', 'priority': 'normal', 'status': 'open'}\nanswer I have checked the current open tasks and confirmed that no duplicate task exists. I've added a new task to track this update:\n\n- **ID:** T-4\n- **Title:** Update rollback page to remove docuctl 1.x mentions\n- **Priority:** normal\n- **Status:** open",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1293759",
+        "args": {
+         "status": "open"
+        },
+        "name": "list_tasks"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_464233",
+        "args": {
+         "title": "Update rollback page to remove docuctl 1.x mentions",
+         "priority": "normal"
+        },
+        "name": "add_task"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "I have checked the current open tasks and confirmed that no duplicate task exists. I've added a new task to track this update:\n\n- **ID:** T-4\n- **Title:** Update rollback page to remove docuctl 1.x mentions\n- **Priority:** normal\n- **Status:** open"
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "tool_results": [
+    {
+     "tool": "list_tasks",
+     "type": "MCPTool",
+     "response": {
+      "content": [
+       {
+        "type": "text",
+        "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 2\n}"
+       }
+      ],
+      "structuredContent": {
+       "tasks": [
+        {
+         "id": "T-1",
+         "title": "Write the release notes",
+         "priority": "normal",
+         "status": "open"
+        },
+        {
+         "id": "T-3",
+         "title": "Update the API docs",
+         "priority": "low",
+         "status": "open"
+        }
+       ],
+       "count": 2
+      },
+      "isError": false
+     }
+    },
+    {
+     "tool": "add_task",
+     "type": "MCPTool",
+     "response": {
+      "content": [
+       {
+        "type": "text",
+        "text": "{\n  \"id\": \"T-4\",\n  \"title\": \"Update rollback page to remove docuctl 1.x mentions\",\n  \"priority\": \"normal\",\n  \"status\": \"open\"\n}"
+       }
+      ],
+      "structuredContent": {
+       "id": "T-4",
+       "title": "Update rollback page to remove docuctl 1.x mentions",
+       "priority": "normal",
+       "status": "open"
+      },
+      "isError": false
+     }
+    }
+   ]
+  },
+  "filtered": {
+   "question": "Mark the API docs task as done.",
+   "transcript": "answer I cannot mark the task as done because my available tools only support listing and adding tasks, not updating or completing existing ones.",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "text": "I cannot mark the task as done because my available tools only support listing and adding tasks, not updating or completing existing ones."
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "tool_results": []
+  },
+  "server-error": {
+   "question": "Add a task titled 'ok'.",
+   "transcript": "call   list_tasks {}\nresult list_tasks isError=False {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\nanswer I cannot add a task titled 'ok' because task titles must be at least 3 characters long. Please provide a title with 3 or more characters.",
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1643694",
+        "args": {},
+        "name": "list_tasks"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "I cannot add a task titled 'ok' because task titles must be at least 3 characters long. Please provide a title with 3 or more characters."
+      }
+     ],
+     "role": "model"
+    }
+   ],
+   "tool_results": [
+    {
+     "tool": "list_tasks",
+     "type": "MCPTool",
+     "response": {
+      "content": [
+       {
+        "type": "text",
+        "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}"
+       }
+      ],
+      "structuredContent": {
+       "tasks": [
+        {
+         "id": "T-1",
+         "title": "Write the release notes",
+         "priority": "normal",
+         "status": "open"
+        },
+        {
+         "id": "T-2",
+         "title": "Fix the login redirect bug",
+         "priority": "high",
+         "status": "done"
+        },
+        {
+         "id": "T-3",
+         "title": "Update the API docs",
+         "priority": "low",
+         "status": "open"
+        }
+       ],
+       "count": 3
+      },
+      "isError": false
+     }
+    }
+   ]
+  }
+ },
+ "declarations": {
+  "read_page": {
+   "description": "Read one page of the docuctl documentation: config, deploy, rollback or tokens.",
+   "name": "read_page",
+   "parameters_json_schema": {
+    "properties": {
+     "page": {
+      "title": "Page",
+      "type": "string"
+     }
+    },
+    "required": [
+     "page"
+    ],
+    "title": "read_pageParams",
+    "type": "object"
+   }
+  },
+  "add_task": {
+   "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAdd an open task and return it with its new ID.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+   "name": "add_task",
+   "parameters_json_schema": {
+    "properties": {
+     "title": {
+      "maxLength": 80,
+      "minLength": 3,
+      "title": "Title",
+      "type": "string"
+     },
+     "priority": {
+      "default": "normal",
+      "enum": [
+       "low",
+       "normal",
+       "high"
+      ],
+      "title": "Priority",
+      "type": "string"
+     }
+    },
+    "required": [
+     "title"
+    ],
+    "type": "object",
+    "title": "add_taskArguments"
+   },
+   "response_json_schema": {
+    "properties": {
+     "id": {
+      "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nTask ID such as T-1.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+      "title": "Id",
+      "type": "string"
+     },
+     "title": {
+      "title": "Title",
+      "type": "string"
+     },
+     "priority": {
+      "enum": [
+       "low",
+       "normal",
+       "high"
+      ],
+      "title": "Priority",
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "open",
+       "done"
+      ],
+      "title": "Status",
+      "type": "string"
+     }
+    },
+    "required": [
+     "id",
+     "title",
+     "priority",
+     "status"
+    ],
+    "type": "object",
+    "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOne task in the tracker.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+    "title": "Task"
+   }
+  },
+  "list_tasks": {
+   "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList the project's tasks. Pass status to return only open or only done tasks.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+   "name": "list_tasks",
+   "parameters_json_schema": {
+    "properties": {
+     "status": {
+      "anyOf": [
+       {
+        "enum": [
+         "open",
+         "done"
+        ],
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "default": null,
+      "title": "Status"
+     }
+    },
+    "type": "object",
+    "title": "list_tasksArguments"
+   },
+   "response_json_schema": {
+    "properties": {
+     "tasks": {
+      "items": {
+       "$ref": "#/$defs/Task"
+      },
+      "title": "Tasks",
+      "type": "array"
+     },
+     "count": {
+      "title": "Count",
+      "type": "integer"
+     }
+    },
+    "required": [
+     "tasks",
+     "count"
+    ],
+    "type": "object",
+    "$defs": {
+     "Task": {
+      "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOne task in the tracker.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+      "properties": {
+       "id": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nTask ID such as T-1.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "title": "Id",
+        "type": "string"
+       },
+       "title": {
+        "title": "Title",
+        "type": "string"
+       },
+       "priority": {
+        "enum": [
+         "low",
+         "normal",
+         "high"
+        ],
+        "title": "Priority",
+        "type": "string"
+       },
+       "status": {
+        "enum": [
+         "open",
+         "done"
+        ],
+        "title": "Status",
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "title",
+       "priority",
+       "status"
+      ],
+      "title": "Task",
+      "type": "object"
+     }
+    },
+    "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe tasks that match a filter.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+    "title": "TaskList"
+   }
+  }
+ },
+ "unfiltered": [
+  "add_task",
+  "complete_task",
+  "list_tasks"
+ ],
+ "failures": {
+  "bad_command": {
+   "transcript": "answer I cannot list the open tasks because I do not have access to any task tracker tools.",
+   "log": [
+    "Agent docs_assistant will run without the tools from toolset McpToolset, which failed to load: Failed to create MCP session: Failed to create MCP session: [Errno 2] No such file or directory: '/no/such/python'"
+   ]
+  }
+ }
+}

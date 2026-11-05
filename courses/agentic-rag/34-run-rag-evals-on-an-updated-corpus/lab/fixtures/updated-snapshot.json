@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "execution_mode": "offline-local-files",
+  "chunker": {
+    "name": "paragraphs",
+    "version": 1,
+    "newline_policy": "CRLF-to-LF",
+    "separator": "blank-line"
+  },
+  "snapshot_id": "a73b29dc573ae0d6aceccf24fd827a2c3b05dade0739d8f95ea0170b1654bdc9",
+  "documents": [
+    {
+      "source_id": "path-read",
+      "path": "docs/path-read.md",
+      "title": "path-read",
+      "sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "original summary; primary docs checked",
+      "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+      "metadata_sha256": "1f1afc1a151fe961715da50dad4c18a19fa67b1f94117123153731c63dd9a1a8",
+      "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+      "chunks": [
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0"
+        }
+      ]
+    },
+    {
+      "source_id": "path-read-3-13",
+      "path": "docs/path-read-3-13.md",
+      "title": "path-read-3-13",
+      "sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+      "version": "3.13",
+      "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "documented only; Python 3.13 not executed",
+      "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+      "metadata_sha256": "a757e6201998dfaf780a87d8544ee4079bb5f1e5ab97ad035a77cd3afdbf0d01",
+      "document_revision": "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9",
+      "chunks": [
+        {
+          "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+          "source_id": "path-read-3-13",
+          "document_revision": "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+          "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+        }
+      ]
+    },
+    {
+      "source_id": "path-write",
+      "path": "docs/path-write.md",
+      "title": "path-write",
+      "sha256": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "fact_status": "original summary retained; appended explicitly synthetic length padding, not official documentation",
+      "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\nSYNTHETIC EVALUATION LENGTH PADDING (not Python API documentation): quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz end synthetic padding.",
+      "metadata_sha256": "a12abf9d328c68efcd932a0cf5f332149c80aeb4b34622ecce0be02ec860000f",
+      "document_revision": "7cc7ad1026311c82df536e08932f373c43788582da07690ec346e6165d21d879",
+      "chunks": [
+        {
+          "chunk_id": "f0b79b313377631927e732d10c888aa25a11a480986465651bf16193a23d1062",
+          "source_id": "path-write",
+          "document_revision": "7cc7ad1026311c82df536e08932f373c43788582da07690ec346e6165d21d879",
+          "start_line": 1,
+          "end_line": 2,
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\nSYNTHETIC EVALUATION LENGTH PADDING (not Python API documentation): quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz quartz end synthetic padding.",
+          "text_sha256": "d4f6834b416b81968ef89b23b3e06337fa97254fcb83250f7418a5a9f10ff36e"
+        }
+      ]
+    }
+  ]
+}

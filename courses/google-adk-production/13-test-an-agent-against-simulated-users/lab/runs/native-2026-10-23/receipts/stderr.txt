@@ -1,0 +1,54 @@
+2026-10-23 12:16:37,708 - INFO - eval_config.py:228 - eval_config.user_simulator_config has no `type` discriminator; defaulting to 'llm_backed'. Add `"type": "llm_backed"` to your config to make this explicit.
+2026-10-23 12:16:37,709 - INFO - plugin_manager.py:121 - Plugin 'request_intercepter_plugin' registered.
+2026-10-23 12:16:37,709 - INFO - plugin_manager.py:121 - Plugin 'ensure_retry_options' registered.
+2026-10-23 12:16:38,050 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:39,652 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:39,660 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:39,665 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:41,115 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:41,116 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:41,119 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:42,953 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:42,953 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:42,957 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:45,977 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:45,977 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:46,113 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:46,114 - INFO - models.py:8527 - AFC is enabled with max remote calls: 10.
+2026-10-23 12:16:53,200 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:53,201 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:53,223 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:55,934 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:55,935 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:55,939 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:57,392 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:57,392 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:57,396 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:58,752 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:16:58,754 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:16:58,760 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:16:58,760 - INFO - models.py:8527 - AFC is enabled with max remote calls: 10.
+2026-10-23 12:17:08,830 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:08,831 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:08,831 - INFO - llm_backed_user_simulator.py:296 - Stopping user message generation as the stop signal was detected.
+2026-10-23 12:17:08,832 - INFO - runners.py:2335 - Closing runner...
+2026-10-23 12:17:08,832 - INFO - runners.py:2348 - Runner closed.
+2026-10-23 12:17:08,852 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:17:12,621 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:12,622 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:12,623 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:17:17,391 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:17,392 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:17,394 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:17:18,741 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:18,742 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:18,744 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:17:22,652 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:22,653 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:22,677 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:17:29,970 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:29,971 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:29,976 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-23 12:17:36,209 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent "HTTP/1.1 200 OK"
+2026-10-23 12:17:36,210 - INFO - google_llm.py:360 - Response received from the model.
+2026-10-23 12:17:36,214 - INFO - local_eval_set_results_manager.py:67 - Writing eval result to file: /private/tmp/aiml-course2-live20-20261023/native_user_simulation/result/adk-user-simulation/docs_assistant/.adk/eval_history/docs_assistant_scenarios_1792772256.214602.evalset_result.json

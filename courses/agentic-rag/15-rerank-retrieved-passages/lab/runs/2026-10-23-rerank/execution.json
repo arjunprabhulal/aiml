@@ -1,0 +1,34 @@
+{
+  "execution_mode": "offline-transparent-coverage-reranking",
+  "model_called": false,
+  "command": "python run.py (outbound socket connections denied by recording harness)",
+  "exit_code": 0,
+  "network_guard": "socket.socket.connect and socket.create_connection raise RuntimeError",
+  "environment": {
+    "python": "3.12.8",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "packages": {
+      "langchain-core": "1.7.0",
+      "numpy": "2.5.4",
+      "pydantic": "2.14.1"
+    }
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "a2cd06aa3d94a009856e92c9d6261b2704ba9636d0a1485280d4d2b292a7f05c",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/provenance.json": "394372449fefd247b3338983764a10ec24d0ecc8826425902d093a646b964907",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "fixtures/vectors.json": "bbadb40c26e0241de36f09f6068354f7589b9ce1a38bb49ba6998be4ca3b25e6",
+    "hybrid.py": "7275cfeca034edc9602d1e2f8f28a23d5e07c53925d3b6406df38fdb0eea14ff",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "render_output.py": "be4982ac3f3125d4bb1179e5112158d4766c56d560a4a71f5f26ebb2a69e4dc2",
+    "requirements.lock": "4d2302f1d37acd13aa886acc334e3459d5633734328b5b536f10cbaf410ccf0b",
+    "requirements.txt": "c26967b06d976ea0693b36940090ee8d40004c0083bad9928c19574bf65ccc68",
+    "rerank.py": "93b1403a31495091d9ec992f9244b4448b4264f6f0ba63ce75a17136c9713757",
+    "run.py": "8f52abf4749def50af3ff2059c7d467834655a153d0c05a5f9136bc344c3503d",
+    "test_rerank.py": "326f8d4bfd2f60c56d88d3eb2bc132054a551ea1102f5140e1fed223f14aae43",
+    "vector_retriever.py": "950d21daccda66fb2f8dba9a74d1fabec836ccfe677725c48bf2880279976ee5",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  }
+}

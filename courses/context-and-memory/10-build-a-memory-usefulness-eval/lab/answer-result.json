@@ -1,0 +1,1295 @@
+{
+ "model": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "google/gemma-4-E2B-it",
+  "license": "Apache-2.0",
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14",
+  "quantization": "Q4_K_M",
+  "parameters": "4.6B total (E2B: about 2B effective)",
+  "options": {
+   "temperature": 1.0,
+   "top_k": 64,
+   "top_p": 0.95
+  },
+  "think": false,
+  "trials": 5,
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "system": "You are a helpful assistant. Answer from the memories in the user message; say when something is missing.",
+ "answers": {
+  "managed-all": {
+   "What should I eat for dinner?": [
+    {
+     "seed": 1,
+     "answer": "I see a note that says, \"I eat fish now, but still no meat.\"",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 19
+    },
+    {
+     "seed": 2,
+     "answer": "I see that one of the stored notes mentions: \"I eat fish now, but still no meat.\"\n\nHowever, I do not have specific instructions on what you should eat for dinner.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 39
+    },
+    {
+     "seed": 3,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 5,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 11
+    }
+   ],
+   "What is the budget per night for the hotel?": [
+    {
+     "seed": 1,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 163,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 2,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 163,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 3,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 163,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 4,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 163,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 5,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 163,
+     "answer_tokens": 15
+    }
+   ],
+   "When do we travel to Porto?": [
+    {
+     "seed": 1,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 2,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 3,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 4,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 5,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 160,
+     "answer_tokens": 7
+    }
+   ],
+   "Can you fill in my passport number on the form?": [
+    {
+     "seed": 1,
+     "answer": "I do not have access to your personal information, such as your passport number. Therefore, I cannot fill that in for you.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 164,
+     "answer_tokens": 27
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have access to your personal information, such as your passport number, so I cannot fill that in for you.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 164,
+     "answer_tokens": 26
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have access to your personal information, such as your passport number. Therefore, I cannot fill that in for you.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 164,
+     "answer_tokens": 27
+    },
+    {
+     "seed": 4,
+     "answer": "I am sorry, but I cannot fill in your passport number on a form. I am an AI and do not have access to personal documents or the ability to handle sensitive personal information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 164,
+     "answer_tokens": 38
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have access to your personal information, such as your passport number, so I cannot fill that in for you.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 164,
+     "answer_tokens": 26
+    }
+   ],
+   "Which operating system should the laptop setup guide cover?": [
+    {
+     "seed": 1,
+     "answer": "The laptop setup guide should cover **macOS**, as the user switched to it last week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 126,
+     "answer_tokens": 20
+    },
+    {
+     "seed": 2,
+     "answer": "The laptop setup guide should cover **macOS**, as the user switched to it last week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 126,
+     "answer_tokens": 20
+    },
+    {
+     "seed": 3,
+     "answer": "The laptop setup guide should cover **macOS**, as the user switched to it last week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 126,
+     "answer_tokens": 20
+    },
+    {
+     "seed": 4,
+     "answer": "The laptop setup guide should cover **macOS**, as the user switched to it last week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 126,
+     "answer_tokens": 20
+    },
+    {
+     "seed": 5,
+     "answer": "The laptop setup guide should cover **macOS**, as the user switched to it last week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 126,
+     "answer_tokens": 20
+    }
+   ],
+   "Who approves my desk order?": [
+    {
+     "seed": 1,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 122,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have any stored notes that indicate who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 122,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any stored notes that indicate who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 122,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 122,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any stored notes that mention who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 122,
+     "answer_tokens": 16
+    }
+   ],
+   "Where should the welcome package be sent?": [
+    {
+     "seed": 1,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 124,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 124,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 124,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 124,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 124,
+     "answer_tokens": 17
+    }
+   ],
+   "Which database does the billing service use?": [
+    {
+     "seed": 1,
+     "answer": "MySQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 128,
+     "answer_tokens": 2
+    },
+    {
+     "seed": 2,
+     "answer": "* MySQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 128,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 3,
+     "answer": "* MySQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 128,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 4,
+     "answer": "* MySQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 128,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 5,
+     "answer": "* MySQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 128,
+     "answer_tokens": 3
+    }
+   ],
+   "Order snacks for the team meeting.": [
+    {
+     "seed": 1,
+     "answer": "*   Peanuts are an allergen.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "Here are some snack ideas for the team meeting:\n\n*   Peanut-free options (as you are allergic).\n*   Easy-to-eat items.\n*   Consider options like fruit, pretzels, or crackers.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 48
+    },
+    {
+     "seed": 3,
+     "answer": "Here are some snack ideas for the team meeting:\n\n*   Peanut-free options (since you are allergic).\n*   Easy-to-eat items.\n*   Consider options like fruit, crackers, or pretzels.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 48
+    },
+    {
+     "seed": 4,
+     "answer": "*   Check for any allergies (e.g., peanuts).\n*   Consider team preferences.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 21
+    },
+    {
+     "seed": 5,
+     "answer": "Here are some suggestions for snacks for the team meeting:\n\n*   **Peanut-free options:** Since you are allergic to peanuts, ensure any snacks are clearly labeled or avoid them entirely.\n*   **Easy to eat:** Choose items that don't require extensive preparation or utensils.\n*   **Variety:** Offer a mix of sweet and savory options.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 75
+    }
+   ],
+   "When does on-call change?": [
+    {
+     "seed": 1,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 2,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 5,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 127,
+     "answer_tokens": 11
+    }
+   ]
+  },
+  "managed-relevant": {
+   "What should I eat for dinner?": [
+    {
+     "seed": 1,
+     "answer": "I see a note that says, \"I eat fish now, but still no meat.\" However, I don't have any information about what you like or what you have available for dinner right now.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 42
+    },
+    {
+     "seed": 2,
+     "answer": "Based on the stored notes, the user currently eats fish but no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 3,
+     "answer": "Based on your stored notes, you mentioned, \"I eat fish now, but still no meat.\"",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 21
+    },
+    {
+     "seed": 4,
+     "answer": "I see you've mentioned that you eat fish now but still no meat. However, I don't have any specific recommendations for what you should eat for dinner.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 35
+    },
+    {
+     "seed": 5,
+     "answer": "Based on your stored notes, you mentioned that you eat fish now but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 19
+    }
+   ],
+   "What is the budget per night for the hotel?": [
+    {
+     "seed": 1,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 104,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 2,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 104,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 3,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 104,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 4,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 104,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 5,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 104,
+     "answer_tokens": 15
+    }
+   ],
+   "When do we travel to Porto?": [
+    {
+     "seed": 1,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 2,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 3,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 4,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 5,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 7
+    }
+   ],
+   "Can you fill in my passport number on the form?": [
+    {
+     "seed": 1,
+     "answer": "I am sorry, but I cannot fill in personal information like passport numbers on forms. I am an AI and do not have access to or the ability to handle sensitive personal documents.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 75,
+     "answer_tokens": 37
+    },
+    {
+     "seed": 2,
+     "answer": "I am sorry, but I cannot fill in personal information like your passport number on a form. I am an AI and do not have access to your personal documents or the ability to complete official forms.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 75,
+     "answer_tokens": 41
+    },
+    {
+     "seed": 3,
+     "answer": "I am sorry, but I cannot fill in personal information like passport numbers on forms. I am an AI and do not have access to personal documents or the ability to handle sensitive personal data.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 75,
+     "answer_tokens": 39
+    },
+    {
+     "seed": 4,
+     "answer": "I cannot fill in personal information like your passport number on a form. I am an AI and do not have access to your personal documents or the ability to interact with external forms in that way.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 75,
+     "answer_tokens": 40
+    },
+    {
+     "seed": 5,
+     "answer": "I am sorry, but I cannot fill in personal information like passport numbers on forms. I am an AI and do not have the capability to handle or process sensitive personal documents.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 75,
+     "answer_tokens": 36
+    }
+   ],
+   "Which operating system should the laptop setup guide cover?": [
+    {
+     "seed": 1,
+     "answer": "Please provide the stored notes about the user so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 74,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 2,
+     "answer": "Please provide the stored notes about the user so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 74,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 3,
+     "answer": "Please provide the stored notes about the user so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 74,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide the stored notes about the user so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 74,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 5,
+     "answer": "Please provide the stored notes about the user so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 74,
+     "answer_tokens": 16
+    }
+   ],
+   "Who approves my desk order?": [
+    {
+     "seed": 1,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 15
+    }
+   ],
+   "Where should the welcome package be sent?": [
+    {
+     "seed": 1,
+     "answer": "Please provide the stored notes so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 72,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 2,
+     "answer": "Please provide the stored notes so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 72,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 3,
+     "answer": "Please provide the stored notes so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 72,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide the stored notes so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 72,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 5,
+     "answer": "Please provide the stored notes so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 72,
+     "answer_tokens": 13
+    }
+   ],
+   "Which database does the billing service use?": [
+    {
+     "seed": 1,
+     "answer": "The billing service uses MySQL.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 87,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 2,
+     "answer": "The billing service uses MySQL.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 87,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 3,
+     "answer": "The billing service uses MySQL.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 87,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 4,
+     "answer": "The billing service uses MySQL.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 87,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 5,
+     "answer": "The billing service uses MySQL.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 87,
+     "answer_tokens": 7
+    }
+   ],
+   "Order snacks for the team meeting.": [
+    {
+     "seed": 1,
+     "answer": "Please provide me with more information about what kind of snacks you are looking for or what the team meeting details are so I can help you order them!",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 71,
+     "answer_tokens": 31
+    },
+    {
+     "seed": 2,
+     "answer": "I don't have any stored notes about you that would help me order snacks for the team meeting. Could you please provide more context or details about what you need?",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 71,
+     "answer_tokens": 35
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any stored notes about this user.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 71,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide more context. I need more information to help you order snacks for the team meeting. For example, tell me:\n\n* **How many people are attending?**\n* **What kind of snacks are you looking for?** (e.g., healthy options, sweet treats, savory items, dietary restrictions like vegan, gluten-free, allergies?)\n* **What is your budget?**\n* **Are there any preferences or themes for the snacks?**",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 71,
+     "answer_tokens": 97
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any stored notes about the user that contain information about ordering snacks for a team meeting.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 71,
+     "answer_tokens": 22
+    }
+   ],
+   "When does on-call change?": [
+    {
+     "seed": 1,
+     "answer": "The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 3,
+     "answer": "The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 4,
+     "answer": "The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 86,
+     "answer_tokens": 10
+    }
+   ]
+  },
+  "append-all": {
+   "What should I eat for dinner?": [
+    {
+     "seed": 1,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 2,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "I see that one of the stored notes mentions, \"I eat fish now, but still no meat.\" However, I do not have enough information to tell you what you should eat for dinner.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 40
+    },
+    {
+     "seed": 5,
+     "answer": "I eat fish now, but still no meat.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 11
+    }
+   ],
+   "What is the budget per night for the hotel?": [
+    {
+     "seed": 1,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 196,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 2,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 196,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 3,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 196,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 4,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 196,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 5,
+     "answer": "The budget per night for the hotel is 180 euros.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 196,
+     "answer_tokens": 15
+    }
+   ],
+   "When do we travel to Porto?": [
+    {
+     "seed": 1,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 2,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 3,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 4,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 5,
+     "answer": "We are going to Porto.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 193,
+     "answer_tokens": 7
+    }
+   ],
+   "Can you fill in my passport number on the form?": [
+    {
+     "seed": 1,
+     "answer": "The passport number stored is P1234567.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 197,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 2,
+     "answer": "Yes, your passport number is P1234567.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 197,
+     "answer_tokens": 16
+    },
+    {
+     "seed": 3,
+     "answer": "Yes, I can see your passport number in the stored notes. It is **P1234567**.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 197,
+     "answer_tokens": 26
+    },
+    {
+     "seed": 4,
+     "answer": "Your passport number is P1234567.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 197,
+     "answer_tokens": 14
+    },
+    {
+     "seed": 5,
+     "answer": "Yes, I see your passport number in the stored notes: **P1234567**.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 197,
+     "answer_tokens": 23
+    }
+   ],
+   "Which operating system should the laptop setup guide cover?": [
+    {
+     "seed": 1,
+     "answer": "The laptop setup guide should cover **Linux**.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 153,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "The laptop setup guide should cover **Linux**, as the user's laptop runs Linux.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 153,
+     "answer_tokens": 19
+    },
+    {
+     "seed": 3,
+     "answer": "The laptop setup guide should cover **Linux**, as the user's laptop runs Linux.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 153,
+     "answer_tokens": 19
+    },
+    {
+     "seed": 4,
+     "answer": "The laptop setup guide should cover **Linux**.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 153,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "The laptop setup guide should cover **Linux**.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 153,
+     "answer_tokens": 10
+    }
+   ],
+   "Who approves my desk order?": [
+    {
+     "seed": 1,
+     "answer": "I do not have any stored notes that tell me who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 149,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 149,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 149,
+     "answer_tokens": 15
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have any stored notes that tell me who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 149,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any stored notes about who approves your desk order.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 149,
+     "answer_tokens": 15
+    }
+   ],
+   "Where should the welcome package be sent?": [
+    {
+     "seed": 1,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 151,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 151,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 151,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 151,
+     "answer_tokens": 17
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any stored notes about where the welcome package should be sent.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 151,
+     "answer_tokens": 17
+    }
+   ],
+   "Which database does the billing service use?": [
+    {
+     "seed": 1,
+     "answer": "* PostgreSQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 143,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 2,
+     "answer": "* PostgreSQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 143,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 3,
+     "answer": "* PostgreSQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 143,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 4,
+     "answer": "* PostgreSQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 143,
+     "answer_tokens": 3
+    },
+    {
+     "seed": 5,
+     "answer": "* PostgreSQL",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 143,
+     "answer_tokens": 3
+    }
+   ],
+   "Order snacks for the team meeting.": [
+    {
+     "seed": 1,
+     "answer": "Here are some options for snacks:\n\n*   Peanut-free options (due to allergy).\n*   Consider what kind of meeting it is (e.g., quick, long).\n*   Keep it simple.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 47
+    },
+    {
+     "seed": 2,
+     "answer": "*   Allergy to peanuts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 3,
+     "answer": "*   I am allergic to peanuts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 4,
+     "answer": "Here are some snack ideas for the team meeting:\n\n*   Peanut-free options are important (due to allergy).\n*   Consider variety (e.g., fruit, crackers, non-nut products).",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 45
+    },
+    {
+     "seed": 5,
+     "answer": "*   I am allergic to peanuts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 9
+    }
+   ],
+   "When does on-call change?": [
+    {
+     "seed": 1,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 2,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 5,
+     "answer": "* The on-call rotation changes every Monday.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 142,
+     "answer_tokens": 11
+    }
+   ]
+  }
+ }
+}

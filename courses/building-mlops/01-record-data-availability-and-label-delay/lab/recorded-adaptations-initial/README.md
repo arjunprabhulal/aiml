@@ -1,0 +1,1 @@
+Historical first adaptation run, retained unchanged. The active run is in recorded-adaptations/. This capture preceded the ingestion-wrapper correction. source/ retains the actual code and selected manual model/cohort for its recorded identities. It is not the current recommended workshop.

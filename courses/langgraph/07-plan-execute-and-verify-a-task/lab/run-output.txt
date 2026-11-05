@@ -1,0 +1,43 @@
+== step_limit=8  attempts: 2  last plan:
+  1. client/http.py: Set DEFAULT_TIMEOUT back to 10. Update Client.__init__ to accept a timeout keyword argumen
+  2. CHANGELOG.md: Under the '## Unreleased' section header, add the line '- #415 Add a per-client timeout ov
+  attempt 1 step 1  read_file  client/http.py -> DEFAULT_TIMEOUT = 30
+  attempt 1 step 1  read_file  CHANGELOG.md -> # Changelog
+  attempt 1 step 1  read_file  tests/test_http.py -> No file tests/test_http.py.
+  attempt 1 step 1  read_file  tests/test_client.py -> from client.http import DEFAULT_TIMEOUT, Cli
+  attempt 1 step 1  report: (no report: stopped at the step limit of 8)
+  attempt 1 step 2  read_file  CHANGELOG.md -> # Changelog
+  attempt 1 step 2  write_file CHANGELOG.md -> Wrote 106 characters to CHANGELOG.md.
+  attempt 1 step 2  report: Added the entry `- #415 Add a per-client timeout override` under the `## Unreleased` heading in CHANGE
+  attempt 2 step 1  read_file  client/http.py -> DEFAULT_TIMEOUT = 30
+  attempt 2 step 1  read_file  tests/test_http.py -> No file tests/test_http.py.
+  attempt 2 step 1  read_file  test_client.py -> No file test_client.py.
+  attempt 2 step 1  read_file  tests/test_client.py -> from client.http import DEFAULT_TIMEOUT, Cli
+  attempt 2 step 1  report: (no report: stopped at the step limit of 8)
+  attempt 2 step 2  read_file  CHANGELOG.md -> # Changelog
+  attempt 2 step 2  write_file CHANGELOG.md -> Wrote 106 characters to CHANGELOG.md.
+  attempt 2 step 2  report: Added the line `- #415 Add a per-client timeout override` under the `## Unreleased` section header in 
+  FAIL  tests/test_client.py  pytest  2 failed in 0.05s
+  PASS  tests/test_client.py  unchanged
+  PASS  CHANGELOG.md  "## Unreleased\n- #415 Add a per-client timeout override"
+  PASS  CHANGELOG.md  "## 2.4.0\n- #398 Stream large exports"
+  verdict: fail
+== step_limit=16  attempts: 1  last plan:
+  1. client/http.py: Set DEFAULT_TIMEOUT to 10. Update Client.__init__ to accept a timeout keyword argument def
+  2. CHANGELOG.md: Under the '## Unreleased' section, add the bullet point: '- #415 Add a per-client timeout 
+  attempt 1 step 1  read_file  client/http.py -> DEFAULT_TIMEOUT = 30
+  attempt 1 step 1  read_file  tests/test_http.py -> No file tests/test_http.py.
+  attempt 1 step 1  read_file  CHANGELOG.md -> # Changelog
+  attempt 1 step 1  read_file  tests/test_client.py -> from client.http import DEFAULT_TIMEOUT, Cli
+  attempt 1 step 1  read_file  pyproject.toml -> No file pyproject.toml.
+  attempt 1 step 1  read_file  client/__init__.py -> No file client/__init__.py.
+  attempt 1 step 1  write_file client/http.py -> Wrote 165 characters to client/http.py.
+  attempt 1 step 1  report: Updated `DEFAULT_TIMEOUT` to 10 and modified `Client.__init__` in `client/http.py` to accept an option
+  attempt 1 step 2  read_file  CHANGELOG.md -> # Changelog
+  attempt 1 step 2  write_file CHANGELOG.md -> Wrote 106 characters to CHANGELOG.md.
+  attempt 1 step 2  report: Added the bullet point `- #415 Add a per-client timeout override` under the `## Unreleased` section in
+  PASS  tests/test_client.py  pytest  2 passed in 0.01s
+  PASS  tests/test_client.py  unchanged
+  PASS  CHANGELOG.md  "## Unreleased\n- #415 Add a per-client timeout override"
+  PASS  CHANGELOG.md  "## 2.4.0\n- #398 Stream large exports"
+  verdict: pass

@@ -1,0 +1,13 @@
+{
+  "supported": {
+    "question": "How do I deploy to staging and list its releases?",
+    "commands_to_check": [
+      "docuctl deploy --env staging",
+      "docuctl releases --env staging"
+    ]
+  },
+  "unsupported": {
+    "question": "How do I configure automatic database backups?",
+    "check": "The guide does not describe backups; the assistant should say so."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "mode": "plan_only_no_model_call",
+  "case_ids": [
+    "utf8-write",
+    "replace-file",
+    "json-result-type",
+    "backup-schedule",
+    "read-newline-312",
+    "read-newline-313",
+    "json-throughput",
+    "create-parents"
+  ],
+  "splits": [
+    "development",
+    "held_out"
+  ],
+  "include_held_out": true,
+  "trials": 1,
+  "config": {
+    "embedding_model": "qwen3-embedding:0.6b",
+    "answer_model": "gemma4:e2b",
+    "query_instruction": "Retrieve Python documentation that answers the developer question",
+    "k": 2,
+    "splitter": {
+      "name": "RecursiveCharacterTextSplitter",
+      "chunk_size": 280,
+      "chunk_overlap": 40
+    },
+    "temperature": 0,
+    "num_predict": 400,
+    "structured_output_method": "json_schema",
+    "trials": 1,
+    "embedding_http_timeout_seconds": 120,
+    "generation_http_timeout_seconds": 180,
+    "whole_child_timeout_seconds": 1200,
+    "automatic_retries": 0,
+    "judge_calls": 0
+  },
+  "case_set_sha256": "1603dde3e9e4d3fbafb14126e5c002584c6f945c29968488b01406618a6035b9",
+  "corpus_canonical_sha256": "acd2e77291bdfae40dcc8aacbaec250e507375ca8e55511c31eaa630d3b531cb",
+  "rubric_sha256": "9879ecc82fcfb369b2fbbb1993fe841db97ebd11a05e7e825c772764ceb47b47",
+  "code_bundle_sha256": "f1d5776e582b503c87e8842f9c650e5c175a4106931069ef7bc9813849aa8e6c",
+  "model_digests": {
+    "qwen3-embedding:0.6b": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+    "gemma4:e2b": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2"
+  },
+  "max_document_embedding_calls": 1,
+  "max_query_embedding_calls": 8,
+  "max_generation_calls": 8,
+  "max_inference_http_calls": 17,
+  "requested_generation_token_ceiling": 3200,
+  "max_metadata_calls": 3,
+  "teaching_split": "Public4development/4held_out fixtures; not unseen external data.",
+  "root_review_required_before_inference": true
+}

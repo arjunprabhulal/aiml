@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "execution_mode": "offline-local-files",
+  "documents": [
+    {
+      "source_id": "path-write",
+      "path": "docs/path-write.md",
+      "title": "path-write",
+      "sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "fact_status": "original summary; primary docs checked",
+      "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+    },
+    {
+      "source_id": "path-read",
+      "path": "docs/path-read.md",
+      "title": "path-read",
+      "sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "original summary; primary docs checked",
+      "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+    },
+    {
+      "source_id": "json-text",
+      "path": "docs/json-text.md",
+      "title": "json-text",
+      "sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+      "fact_status": "original summary; primary docs checked",
+      "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+    },
+    {
+      "source_id": "path-read-3-13",
+      "path": "docs/path-read-3-13.md",
+      "title": "path-read-3-13",
+      "sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+      "version": "3.13",
+      "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "documented only; Python 3.13 not executed",
+      "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+    }
+  ]
+}

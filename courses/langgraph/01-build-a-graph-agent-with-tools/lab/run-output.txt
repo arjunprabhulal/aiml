@@ -1,0 +1,44 @@
+== Which open pull request has failing CI, and why?  (recursion_limit=12)
+  agent  -> list_open_prs({})
+  tools  -> list_open_prs [success]: [{"number": 412, "title": "Retry webhook delivery on 503", "author": "mlee"}, {"number": 415, "title": "Raise the default HTTP timeout to 30s", "author": "dkim"}, {"number": 418, "title": "Remove the unused legacy CSV export", "author": "apatel"}]
+  agent  -> get_ci_status({"number": 412}), get_ci_status({"number": 415}), get_ci_status({"number": 418})
+  tools  -> get_ci_status [success]: passed
+            get_ci_status [success]: failed: tests/test_client.py::test_default_timeout expected 10, got 30
+            get_ci_status [success]: passed
+  agent  -> get_diff({"number": 415})
+  tools  -> get_diff [success]: client/http.py: DEFAULT_TIMEOUT = 10 -> DEFAULT_TIMEOUT = 30
+  answer: Pull request #415 has failing CI. The test `tests/test_client.py::test_default_timeout` failed because it expected a timeout value of 10, but got 30 after the default HTTP timeout was increased.
+  state:  human | ai: calls list_open_prs | tool: list_open_prs | ai: calls get_ci_status, get_ci_status, get_ci_status | tool: get_ci_status | tool: get_ci_status | tool: get_ci_status | ai: calls get_diff | tool: get_diff | ai
+  completed graph steps: 7 (agent → tools → agent → tools → agent → tools → agent), model calls: 4, tool calls: 5, messages in state: 10
+== What does pull request 418 change, and did its CI pass?  (recursion_limit=12)
+  agent  -> get_diff({"number": 418}), get_ci_status({"number": 418})
+  tools  -> get_diff [success]: export/csv_legacy.py: deleted (212 lines)
+export/__init__.py: drop csv_legacy import
+            get_ci_status [success]: passed
+  answer: Pull request 418 deletes `export/csv_legacy.py` (212 lines) and removes the `csv_legacy` import from `export/__init__.py`. Its CI check passed.
+  state:  human | ai: calls get_diff, get_ci_status | tool: get_diff | tool: get_ci_status | ai
+  completed graph steps: 3 (agent → tools → agent), model calls: 2, tool calls: 2, messages in state: 5
+== Is CI green on pull request 999?  (recursion_limit=12)
+  agent  -> get_ci_status({"number": 999})
+  tools  -> get_ci_status [error]: Error: UnknownPullRequest('There is no open pull request #999.')
+ Please fix your mistakes.
+  agent  -> list_open_prs({})
+  tools  -> list_open_prs [success]: [{"number": 412, "title": "Retry webhook delivery on 503", "author": "mlee"}, {"number": 415, "title": "Raise the default HTTP timeout to 30s", "author": "dkim"}, {"number": 418, "title": "Remove the unused legacy CSV export", "author": "apatel"}]
+  answer: Pull request #999 does not exist. The currently open pull requests are #412, #415, and #418.
+  state:  human | ai: calls get_ci_status | tool: get_ci_status | ai: calls list_open_prs | tool: list_open_prs | ai
+  completed graph steps: 5 (agent → tools → agent → tools → agent), model calls: 3, tool calls: 2, messages in state: 6
+== Is CI green on pull request 999?  [default tool errors]  (recursion_limit=12)
+  agent  -> get_ci_status({"number": 999})
+  error:  UnknownPullRequest: There is no open pull request #999.
+  state:  human | ai: calls get_ci_status
+  completed graph steps: 1 (agent), model calls: 1, tool calls: 1, messages in state: 2
+== Which open pull request has failing CI, and why?  (recursion_limit=4)
+  agent  -> list_open_prs({})
+  tools  -> list_open_prs [success]: [{"number": 412, "title": "Retry webhook delivery on 503", "author": "mlee"}, {"number": 415, "title": "Raise the default HTTP timeout to 30s", "author": "dkim"}, {"number": 418, "title": "Remove the unused legacy CSV export", "author": "apatel"}]
+  agent  -> get_ci_status({"number": 412}), get_ci_status({"number": 415}), get_ci_status({"number": 418})
+  tools  -> get_ci_status [success]: passed
+            get_ci_status [success]: failed: tests/test_client.py::test_default_timeout expected 10, got 30
+            get_ci_status [success]: passed
+  error:  GraphRecursionError: Recursion limit of 4 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+  state:  human | ai: calls list_open_prs | tool: list_open_prs | ai: calls get_ci_status, get_ci_status, get_ci_status | tool: get_ci_status | tool: get_ci_status | tool: get_ci_status
+  completed graph steps: 4 (agent → tools → agent → tools), model calls: 2, tool calls: 4, messages in state: 7

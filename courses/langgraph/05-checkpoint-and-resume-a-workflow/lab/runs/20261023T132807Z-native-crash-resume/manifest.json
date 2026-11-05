@@ -1,0 +1,120 @@
+{
+  "execution_mode": "Actual native Python workflow intentional crash after summarize and same-thread keyless resume",
+  "recorded_at_utc": "2026-10-23T13:27:38.108272+00:00",
+  "recorded_at_America_New_York": "2026-10-23T09:27:38.108272-04:00",
+  "visible_recorded_date": "October 23, 2026, at 9:27 AM EDT",
+  "model": "gemini-3.8-flash",
+  "provider_HTTP_attempts": 1,
+  "HTTP_status": 200,
+  "finish_reason": "STOP",
+  "resume_HTTP_dispatches": 0,
+  "start_exit": 1,
+  "resume_exit": 0,
+  "max_output_tokens": 1024,
+  "SDK_retries": 0,
+  "transport_retries": 0,
+  "tools": [],
+  "next_after_start": [
+    "write_file"
+  ],
+  "next_after_resume": [],
+  "notes_unchanged_after_resume": true,
+  "local_announcement_lines": 1,
+  "source_sha256": {
+    "prs.json": "9c63c5c4889a88216a7a2e5f542389a14907b4f87cbd587cdef86423d564529f",
+    "requirements.txt": "7660e14a62ff14c3f911f9be711172a2ca31a1303f62529fe8a0e13de8ffbbe7",
+    "test_record.py": "2189ba79afe79f951fa48a9fb732166243bee78cf159799a6fb60b3ebf0df990",
+    "README.md": "647b136d7cd82dfc0f17c304bb109d180cc4df006ce40d68c450d5ac240e093f",
+    "test_workflow.py": "b311cb56643e25f00a7bf0356b2bd32ffe255d889f4323d1970ec5edb723cb8f",
+    "record.py": "4b8822c7ad6093ab59831da736c8982f80201ebcdba85bec0324eee5fa880442",
+    "test-output.txt": "bcc337556aa74268f68a0b5f2e60423ec1856e4eb5a5bf260e59d5d7ef8a23f8",
+    "workflow.py": "0409b43960cdfd4383b388e2112e233d534675adc936a10e95747a1b4aa2d86d",
+    "requirements-lock.txt": "738656ad651cbe981c662988d88e8f1aebd8ddc9e3a0dd94e77c695f9e8445e1",
+    "run-output.txt": "796c9e83e6d1abbe8517e2a51830975a2d08b3636e7eaab661fa23fd93d0673a",
+    "runs.json": "7e737be5e5dec647371feba5b2e377739e9afc22e6b151a1c3aa878a09277ac6"
+  },
+  "actual_private_freeze_sha256": "8e8aea172fafa1d1ae849cbf0ee4252b892e493313fec2c05fe4d6a244cb85fe",
+  "independent_actual_review_sha256": "b5ab8a4bed4ebbfafdbddc3240d4b43433d4bd1f457413b893d902c1910ad728",
+  "private_actual_result_sha256": "84ee146290efd2c4cf5d2342aba0de4daf69705ce191389ef3667aa7e293a25e",
+  "reported_usage": {
+    "promptTokenCount": 67,
+    "candidatesTokenCount": 70,
+    "totalTokenCount": 641,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 67
+      }
+    ],
+    "thoughtsTokenCount": 504,
+    "serviceTier": "standard"
+  },
+  "invoice_verified": false,
+  "commands": {
+    "start": "CRASH_AT=\"after summarize\" python workflow.py --work-dir <same-run>/work --thread bounded-release-2-5 --version 2.5.0",
+    "resume": "python workflow.py --work-dir <same-run>/work --thread bounded-release-2-5 --version 2.5.0"
+  },
+  "command_path_policy": "Absolute private run paths normalized to <same-run>; original exact argv retained in private process records. Same source and run directory/thread used.",
+  "capture_policy": "Nine unedited post-completion scroll viewports of ONE original PTY transcript. start/middle/end name scroll positions, not temporal stages or nine runs; three desktop images happen to be byte-identical.",
+  "scope_limit": "Checkpoint continuation and saved artifact/log consistency demonstrated, not comprehensive factual release-note quality validation.",
+  "observed_unsupported_phrase": "to streamline export functionality",
+  "unsupported_phrase_source_boundary": "The terse PR fixture states removal of the unused legacy CSV export; it does not supply this purpose. Original model text retained.",
+  "public_projection_policy": "Provider projection removes only opaque thoughtSignature/thought_signature fields; original request/response hashes retained. State, Markdown, announcement and terminal/stdout attachments are original bytes. No private approval, key, server log or operator code is published.",
+  "files_sha256": {
+    "start-output.txt": "d80921193ba94380a566746823447eadd6f9de96995ded49c8c4d88ffb9907cc",
+    "provider-projection.json": "78cad21518696c58912b17a696334a20460129d626509c494a44075b5e3956ba",
+    "announcements.log": "9c238b266f64029a4d0764b39753570e5a88023025fbab75652c44d7452a27a5",
+    "after-start.state.json": "c6b52d54f1382376e0168580a799d10559d7a9643b362cf105b81350717a9d60",
+    "after-resume.state.json": "e004a426a4f0159b973226c1539febea4e4c161443609e50701d557018323517",
+    "terminal-output.txt": "ff06cbc21d8e1c76d94c0afff12c1f42ab042bda9964c204b02aa01423e1bdd2",
+    "release-2.5.0.md": "0a17d0635b6076928b76fb741cbcd6122f1d8b30515d984644bdb17d1e6e9b0b",
+    "resume-output.txt": "b26ae7d615290197712795b94aabed5b7aed96231d5ca81e1a415f5de8e7477a",
+    "images/checkpoint-start-390@2x.png": "40f3bdde628deb2b898a54389259d029997a26a723dec7dbcd507ddcd35ea119",
+    "images/checkpoint-end-320@2x.png": "9e6168d7e2bd7985e70446fd842fc0f5c4aaa598d62f820597b357eb089cc22f",
+    "images/checkpoint-start-1440@2x.png": "079ef4b5a8fd724a178676baa0c9b7690edbf5507eefeb7e197c7c43bd265adb",
+    "images/checkpoint-end-390@2x.png": "cd78f4c6e40bab71955b633d51f96ff2fae1d5f2ad66e2b95fc702c280cd0141",
+    "images/checkpoint-start-320@2x.png": "30f6ae3f44ac38f61a2f5d583103762b48b8f3d77e4f825af0b3414fc1695805",
+    "images/checkpoint-middle-320@2x.png": "e1157013068a9f04eb063446c470a0c2b50ef42c76f5e6c784d75ec0717d551a",
+    "images/checkpoint-end-1440@2x.png": "079ef4b5a8fd724a178676baa0c9b7690edbf5507eefeb7e197c7c43bd265adb",
+    "images/checkpoint-middle-1440@2x.png": "079ef4b5a8fd724a178676baa0c9b7690edbf5507eefeb7e197c7c43bd265adb",
+    "images/checkpoint-middle-390@2x.png": "c619fe27293f246ba58d302bbfce47cfdba1cf420445ba04666a47d453362d48"
+  },
+  "images": [
+    {
+      "path": "images/checkpoint-end-1440@2x.png",
+      "sha256": "079ef4b5a8fd724a178676baa0c9b7690edbf5507eefeb7e197c7c43bd265adb"
+    },
+    {
+      "path": "images/checkpoint-end-320@2x.png",
+      "sha256": "9e6168d7e2bd7985e70446fd842fc0f5c4aaa598d62f820597b357eb089cc22f"
+    },
+    {
+      "path": "images/checkpoint-end-390@2x.png",
+      "sha256": "cd78f4c6e40bab71955b633d51f96ff2fae1d5f2ad66e2b95fc702c280cd0141"
+    },
+    {
+      "path": "images/checkpoint-middle-1440@2x.png",
+      "sha256": "079ef4b5a8fd724a178676baa0c9b7690edbf5507eefeb7e197c7c43bd265adb"
+    },
+    {
+      "path": "images/checkpoint-middle-320@2x.png",
+      "sha256": "e1157013068a9f04eb063446c470a0c2b50ef42c76f5e6c784d75ec0717d551a"
+    },
+    {
+      "path": "images/checkpoint-middle-390@2x.png",
+      "sha256": "c619fe27293f246ba58d302bbfce47cfdba1cf420445ba04666a47d453362d48"
+    },
+    {
+      "path": "images/checkpoint-start-1440@2x.png",
+      "sha256": "079ef4b5a8fd724a178676baa0c9b7690edbf5507eefeb7e197c7c43bd265adb"
+    },
+    {
+      "path": "images/checkpoint-start-320@2x.png",
+      "sha256": "30f6ae3f44ac38f61a2f5d583103762b48b8f3d77e4f825af0b3414fc1695805"
+    },
+    {
+      "path": "images/checkpoint-start-390@2x.png",
+      "sha256": "40f3bdde628deb2b898a54389259d029997a26a723dec7dbcd507ddcd35ea119"
+    }
+  ]
+}

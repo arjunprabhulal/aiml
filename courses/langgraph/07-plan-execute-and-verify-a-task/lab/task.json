@@ -1,0 +1,26 @@
+{
+ "request": "Apply the review decision on pull request 415: set DEFAULT_TIMEOUT back to 10 in client/http.py, give Client.__init__ a timeout keyword argument that defaults to DEFAULT_TIMEOUT and is stored as self.timeout, and add the line '- #415 Add a per-client timeout override' under '## Unreleased' in CHANGELOG.md. Do not change the tests.",
+ "files": {
+  "client/http.py": "DEFAULT_TIMEOUT = 30\n\n\nclass Client:\n    def __init__(self, base_url: str):\n        self.base_url = base_url\n        self.timeout = DEFAULT_TIMEOUT\n",
+  "tests/test_client.py": "from client.http import DEFAULT_TIMEOUT, Client\n\n\ndef test_default_timeout():\n    assert DEFAULT_TIMEOUT == 10\n\n\ndef test_per_client_timeout():\n    assert Client(\"https://api.example.test\", timeout=5).timeout == 5\n    assert Client(\"https://api.example.test\").timeout == 10\n",
+  "CHANGELOG.md": "# Changelog\n\n## Unreleased\n\n## 2.4.0\n- #398 Stream large exports\n"
+ },
+ "checks": [
+  {
+   "path": "tests/test_client.py",
+   "pytest": true
+  },
+  {
+   "path": "tests/test_client.py",
+   "unchanged": true
+  },
+  {
+   "path": "CHANGELOG.md",
+   "contains": "## Unreleased\n- #415 Add a per-client timeout override"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "contains": "## 2.4.0\n- #398 Stream large exports"
+  }
+ ]
+}

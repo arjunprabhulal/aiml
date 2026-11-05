@@ -1,0 +1,23 @@
+{
+  "decision": "block",
+  "reasons": [
+    "2 regression(s); policy allows 0",
+    "1 critical test(s) fail"
+  ],
+  "changed": {
+    "model": [
+      "gemini-3.8-flash",
+      "gemma4:e2b"
+    ]
+  },
+  "pass_rate": 0.961,
+  "regressed": [
+    "test_triage.py::test_priority[import-drops-tasks]",
+    "test_triage.py::test_summary_is_short_and_specific[where-is-data]"
+  ],
+  "fixed": [],
+  "critical_failures": [
+    "test_triage.py::test_priority[import-drops-tasks]"
+  ],
+  "missing_critical": []
+}

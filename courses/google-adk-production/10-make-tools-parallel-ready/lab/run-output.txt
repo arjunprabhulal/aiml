@@ -1,0 +1,20 @@
+> Check that the rollback, migrations, hooks, approvals and canary pages are reachable.
+model turns: [5, 0] function calls per turn
+call   fetch_page {'page': 'rollback'}
+call   fetch_page {'page': 'migrations'}
+call   fetch_page {'page': 'hooks'}
+call   fetch_page {'page': 'approvals'}
+call   fetch_page {'page': 'canary'}
+result {"page": "rollback", "ok": true, "title": "Roll back a release", "words": 92}
+result {"page": "migrations", "ok": true, "title": "Database migrations", "words": 244}
+result {"page": "hooks", "ok": true, "title": "Deploy hooks", "words": 227}
+result {"page": "approvals", "ok": true, "title": "Approvals", "words": 209}
+result {"page": "canary", "ok": false, "status": 404}
+server {'requests': 5, 'span_seconds': 1.0, 'max_in_flight': 5}
+answer Here is the status of the requested pages:  - **Rollback**: Reachable ("Roll back a release") - **Migrations**: Reachable ("Database migrations") - **Hooks**: Reachable ("Deploy hooks") - **Approvals**: Reachable ("Approvals") - **Canary**: Not reachable (No title / 404)
+
+# the same model turns replayed; the docs host takes 1.0s per page
+async tool                             span=1.0s in_flight=5 wall=1.06s
+sync tool                              span=5.05s in_flight=1 wall=5.07s
+sync tool + thread pool                span=2.01s in_flight=4 wall=2.13s
+async def that blocks + thread pool    span=5.05s in_flight=1 wall=5.07s

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "execution_mode": "actual-local-staging-http-and-artifact-registry",
+  "model_called": false,
+  "release_ids": {
+    "previous_fixture": "c1d499c3dbac6c76eb213339d5cd5c2109aa476df55d3420e655fae06ce0670c",
+    "candidate": "7375e5ceb066fdf6e88eee9d12b5bfada7023f2cd064ee741b5a518cfb272e74"
+  },
+  "runtime_smoke": {
+    "release_id": "7375e5ceb066fdf6e88eee9d12b5bfada7023f2cd064ee741b5a518cfb272e74",
+    "checks": {
+      "health": true,
+      "valid_request": true,
+      "strict_refusal": true,
+      "wire_digest": true,
+      "no_model": true
+    },
+    "passed": true,
+    "scope": "local-runtime-smoke-only",
+    "lifecycle": {
+      "command": [
+        "python3",
+        "serve.py",
+        "--fd",
+        "<inherited-loopback-socket>",
+        "--app",
+        "api:app"
+      ],
+      "startup_observed": true,
+      "shutdown_exit_status": -15,
+      "stdout": "",
+      "stderr": "INFO:     Started server process [59856]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [59856]\n",
+      "shutdown_complete_observed": true,
+      "server_process_reaped": true
+    }
+  },
+  "task_gate": {
+    "decision": "FAIL",
+    "release_id": "7375e5ceb066fdf6e88eee9d12b5bfada7023f2cd064ee741b5a518cfb272e74",
+    "report_sha256": "f89e7459226cee8cb810b59a6dae61246f04d0ce805c988c38d9e66fe4a6fb39",
+    "result": {
+      "status": "FAIL",
+      "reason": "fixture_thresholds_not_met",
+      "thresholds": {
+        "minimum_supported_pass_fraction": 1.0,
+        "maximum_integrity_failures": 0,
+        "require_deterministic_repeats": true
+      },
+      "supported_trials": 6,
+      "supported_outcomes": {
+        "pass": 4,
+        "fail": 0,
+        "incomplete": 2
+      },
+      "unsupported_trials": 2,
+      "integrity_failures": 0,
+      "deterministic_repeats": true
+    },
+    "scope": "archived-scripted-development-fixtures-only"
+  },
+  "promotion": {
+    "refused": "task_gate_not_accepted",
+    "pointer_unchanged": true
+  },
+  "rollback": {
+    "setup": "synthetic two-entry artifact registry; not prior deployment",
+    "restored_previous_identity": true
+  },
+  "changed_artifact": {
+    "refused": "file_hash_mismatch"
+  },
+  "scope": "The staged service really ran over loopback HTTP. Promotion was blocked by archived task failures. Only a local artifact pointer is changed in the rollback drill; no running traffic, cloud release or answer-quality approval."
+}

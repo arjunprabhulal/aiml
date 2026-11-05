@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "judge/archive-vs-delete": {
+      "reason": "The output accurately captures the core problems from the input\u2014specifically the difference between `tracker archive` and `tracker delete` and the ability to restore archived tasks\u2014without adding any extraneous details, omitting key aspects, or hallucinating information.",
+      "score": 1.0
+    },
+    "judge/calendar-export": {
+      "reason": "The output accurately captures the primary feature request from the input, preserving key details such as exporting tasks with due dates to an .ics file for calendar apps, without introducing external or speculative information.",
+      "score": 1.0
+    },
+    "judge/calibration": {
+      "reason": "The output fails to identify or preserve the primary problem from the input, which is a crash caused by a KeyError: 'due' on tasks without a due date after upgrading to 2.4.0. Instead, it introduces completely fabricated details about slowness on Windows during network drops.",
+      "score": 0.0
+    },
+    "judge/color-in-pipes": {
+      "reason": "The output accurately captures the core issue from the input, stating that `tracker list` outputs ANSI color codes when stdout is not a TTY (terminal). It contains no hallucinations or unsupported claims.",
+      "score": 1.0
+    },
+    "judge/import-drops-tasks": {
+      "reason": "The output accurately captures the primary issue of tasks being silently dropped during the import command without introducing any unsupported or contradictory information. However, it omits several specific factual details from the input, such as the exact row counts (500 to 312), the false success report, and the archiving of the original file.",
+      "score": 0.8
+    },
+    "judge/json-output": {
+      "reason": "The output clearly and accurately captures the core feature request from the input to add a --json flag to tracker list for outputting tasks as JSON, adhering strictly to the facts provided without introducing any unverified details.",
+      "score": 1.0
+    },
+    "judge/missing-config-docs": {
+      "reason": "The output accurately captures and clearly conveys the primary issue regarding missing config.toml keys in the documentation, without introducing any unsupported or fabricated facts. However, it omits the specific examples mentioned in the input (default_project and week_start).",
+      "score": 0.9
+    },
+    "judge/readme-wrong-flag": {
+      "reason": "The output accurately captures the core problem from the input, correctly noting that the README documents the incorrect '--path' flag instead of '--dir' for 'tracker init'. It introduces no hallucinations or unsupported assumptions, aligning cleanly with all evaluation steps.",
+      "score": 1.0
+    },
+    "judge/recurring-tasks": {
+      "reason": "The output accurately captures the primary request from the input to add recurring task functionality to the `tracker add` command without introducing any contradictory, external, or unsupported details.",
+      "score": 1.0
+    },
+    "judge/sync-crash-no-due-date": {
+      "reason": "The output accurately captures the core crash details and traceback location without introducing hallucinations or unsupported claims. However, it omits the key triggering condition (when a task has no due date) and the context regarding the 2.4.0 upgrade.",
+      "score": 0.8
+    },
+    "judge/token-in-debug-log": {
+      "reason": "The output accurately captures the primary issue described in the input, specifically noting that running 'tracker push --debug' exposes the full API token in both the terminal and ~/.tracker/debug.log. Furthermore, all details are strictly grounded in the input with no external or contradictory information introduced.",
+      "score": 1.0
+    },
+    "judge/two-machines": {
+      "reason": "The output accurately captures the core inquiry from the input regarding the safety of running tracker sync concurrently from two laptops to the same remote, relying strictly on facts mentioned without adding extraneous information.",
+      "score": 1.0
+    },
+    "judge/where-is-data": {
+      "reason": "The output accurately captures the primary question regarding where tracker stores its database on disk and correctly includes the intended purpose for backups, containing only supported facts with no extraneous details.",
+      "score": 1.0
+    },
+    "triage/archive-vs-delete": "{\"label\":\"question\",\"priority\":\"p2\",\"summary\":\"Difference between `tracker archive` and `tracker delete` and whether archived tasks can be restored\"}",
+    "triage/calendar-export": "{\"label\":\"feature\",\"priority\":\"p2\",\"summary\":\"Request to export tasks with due dates to an .ics file for calendar apps.\"}",
+    "triage/color-in-pipes": "{\"label\":\"bug\",\"priority\":\"p1\",\"summary\":\"`tracker list` outputs ANSI color codes when stdout is not a TTY.\"}",
+    "triage/import-drops-tasks": "{\"label\":\"bug\",\"priority\":\"p0\",\"summary\":\"Running `tracker import tasks.csv` silently drops rows, causing data loss.\"}",
+    "triage/json-output": "{\"label\":\"feature\",\"priority\":\"p2\",\"summary\":\"Request for a --json flag in `tracker list` to output tasks as JSON.\"}",
+    "triage/missing-config-docs": "{\"label\":\"docs\",\"priority\":\"p2\",\"summary\":\"Documentation lacks a list of allowed keys for config.toml.\"}",
+    "triage/readme-wrong-flag": "{\"label\":\"docs\",\"priority\":\"p2\",\"summary\":\"README documents incorrect `--path` flag for `tracker init` instead of `--dir`\"}",
+    "triage/recurring-tasks": "{\"label\":\"feature\",\"priority\":\"p2\",\"summary\":\"Add recurring tasks support to `tracker add`\"}",
+    "triage/sync-crash-no-due-date": "{\"label\":\"bug\",\"priority\":\"p1\",\"summary\":\"`tracker sync` crashes with KeyError: 'due' in sync/merge.py line 88\"}",
+    "triage/token-in-debug-log": "{\"label\":\"bug\",\"priority\":\"p0\",\"summary\":\"Running tracker push --debug leaks full API token in terminal and ~/.tracker/debug.log\"}",
+    "triage/two-machines": "{\"label\":\"question\",\"priority\":\"p2\",\"summary\":\"Inquiry about whether running tracker sync concurrently from two laptops against the same remote is safe.\"}",
+    "triage/where-is-data": "{\"label\":\"question\",\"priority\":\"p2\",\"summary\":\"User asking where tracker stores its database on disk for backups.\"}"
+  },
+  "key": {
+    "dataset": "issue-triage@1",
+    "dataset_sha": "e12a5e739a1e",
+    "judge_model": "gemini-3.8-flash",
+    "model": "gemini-3.8-flash",
+    "prompt_sha": "01859a9d3df1",
+    "prompt_version": "v1"
+  }
+}

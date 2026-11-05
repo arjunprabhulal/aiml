@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "description": "Synthetic teaching collections and PUBLIC demonstration tokens; no production permissions.",
+  "collections": {"serialization": ["json-text"], "files": ["path-read", "path-read-3-13", "path-write"]},
+  "tokens": {"demo-reader": "reader", "demo-editor": "editor"},
+  "grants": {"reader": ["serialization"], "editor": ["serialization", "files"]}
+}

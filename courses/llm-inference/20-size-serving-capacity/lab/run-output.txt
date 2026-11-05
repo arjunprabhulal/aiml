@@ -1,0 +1,38 @@
+{
+  "execution_mode": "capacity arithmetic over labeled test inputs",
+  "base": {
+    "daily_requests_assumed": 100000,
+    "peak_to_average_assumed": 3,
+    "peak_rps": 3.472222,
+    "active_replicas": 2,
+    "reserve_replicas": 1,
+    "total_replicas": 3,
+    "peak_hour_cost": 3.0,
+    "evidence": {
+      "sustainable_requests_per_second": 2.5,
+      "hourly_replica_cost": 1.0,
+      "workload": "controlled calculator test workload",
+      "latency_and_quality_accepted": true,
+      "record_reference": "unit-test fixture; not measured serving capacity"
+    },
+    "limits": "Arithmetic assumes independent replicas and identical workload. Load-test routing, shared dependencies, cold starts and a lost replica before deployment."
+  },
+  "higher_peak": {
+    "daily_requests_assumed": 100000,
+    "peak_to_average_assumed": 5,
+    "peak_rps": 5.787037,
+    "active_replicas": 3,
+    "reserve_replicas": 1,
+    "total_replicas": 4,
+    "peak_hour_cost": 4.0,
+    "evidence": {
+      "sustainable_requests_per_second": 2.5,
+      "hourly_replica_cost": 1.0,
+      "workload": "controlled calculator test workload",
+      "latency_and_quality_accepted": true,
+      "record_reference": "unit-test fixture; not measured serving capacity"
+    },
+    "limits": "Arithmetic assumes independent replicas and identical workload. Load-test routing, shared dependencies, cold starts and a lost replica before deployment."
+  },
+  "limits": "No million-user deployment or percentage cost saving is claimed. Replace the test inputs with accepted, workload-matched measurements."
+}

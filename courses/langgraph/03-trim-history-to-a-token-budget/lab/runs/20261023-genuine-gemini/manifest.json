@@ -1,0 +1,99 @@
+{
+  "execution_mode": "Genuine Gemini API replies in two independent native LangGraph five-turn threads, plain and pinned",
+  "date": "2026-10-23",
+  "model": "gemini-3.8-flash",
+  "generation_requests": 10,
+  "token_count_requests": 10,
+  "stored_messages_after_reply": {
+    "plain": 10,
+    "pinned": 10
+  },
+  "approximate_lesson_budget": 400,
+  "provider_usage": {
+    "provider_input_tokens": 2485,
+    "candidate_tokens": 345,
+    "reported_thought_tokens": 641,
+    "total_tokens": 3471
+  },
+  "reviewed_limits": {
+    "lesson": "03",
+    "max_count_http": 10,
+    "max_generation_http": 10,
+    "max_http": 20,
+    "max_input_tokens": 4096,
+    "max_output_tokens": 4096,
+    "model": "gemini-3.8-flash",
+    "redirects": false,
+    "retries": 0,
+    "thinking_level": "low",
+    "timeout_seconds": 45
+  },
+  "execution_command": [
+    "/tmp/langgraph-agents-venv/bin/python",
+    "/private/tmp/aiml-langgraph-genuine-model-proof/.scratch/lesson03-preparation/live_operator.py",
+    "--lesson",
+    "03",
+    "--mode",
+    "approved-actual"
+  ],
+  "operator_availability": "External approval-bound operator retained with private transport evidence; not bundled. Direct live_probe.py execution refuses before SDK or credential access.",
+  "source_sha256": {
+    "graph.py": "4d8d4525ad9a600e15d2db78dc37e68460720c0b8ad625c81cf8b82109e46a9d",
+    "live_probe.py": "50e51f5ae35cc1c4404a0bbbcfc48c209f0ee129f8960918fc13a5c8bec644e0",
+    "requirements-lock.txt": "2a700aa8c9b9c67cec52e69f9fdc41998ca32deaf6d8f6dfd703e53a95672576"
+  },
+  "scope_sha256": "cc71a6fbff289d1f40d9e7f88cd6401153ab70be4afbe09d14cb60dca010b9f7",
+  "versions": {
+    "google-genai": "2.32.0",
+    "httpx": "0.28.1",
+    "langchain-core": "1.6.12",
+    "langchain-google-genai": "4.4.2",
+    "langgraph": "1.2.16"
+  },
+  "stdout_sha256": "961e05b7aca62c5929513f33c243b23a0e84cdd0e53538a13b4642bd85e7813a",
+  "events_sha256": "a8c90620553ec57b8a9d6bd7aecbfdb24e77c2b2999dc86b81039a2dabf4fbc8",
+  "accounting": "accounting.json",
+  "images": [
+    {
+      "file": "images/completed-end-1440@2x.png",
+      "width_css": 1440,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 2880,
+      "height_pixels": 2200,
+      "sha256": "19a21fe3eecd5d7417b3ffff38080cdce2daca34cfea4c71e251b7e4774e5dff",
+      "state": "Original completed Python PTY scrollback; one process, no reruns"
+    },
+    {
+      "file": "images/completed-end-390@2x.png",
+      "width_css": 390,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 780,
+      "height_pixels": 2200,
+      "sha256": "6f694d4459a5d1156fa3e4d4f251edd22dffb7da862c1d56d485d0bd789ace82",
+      "state": "Original completed Python PTY scrollback; one process, no reruns"
+    },
+    {
+      "file": "images/completed-end-320@2x.png",
+      "width_css": 320,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 640,
+      "height_pixels": 2200,
+      "sha256": "d042f721ed169398291b61e1bb7d7bbbfa3c4e134f9cd6844a2ad9f8f207800a",
+      "state": "Original completed Python PTY scrollback; one process, no reruns"
+    }
+  ],
+  "outcome_review": "outcome-review.json",
+  "claim_boundary": [
+    "400 is an approximate trimming budget, not a hard provider input limit.",
+    "Preflight token counts and reported provider input differed on two turns:145 versus326 and171 versus330. Do not treat the count endpoint as a general billing cap.",
+    "Observed maximum provider input464 and output including thinking218 were below the reviewed4096 limits.",
+    "A missing thoughtsTokenCount field is kept as null here; no claim that thinking was disabled.",
+    "Usage records are not an invoice.",
+    "One supplied conversation comparison, not general model accuracy or memory mastery.",
+    "The15 passing log entries and14-second timestamp span are fixture contents, not new CI or performance measurements."
+  ],
+  "historical_recordings": "Existing runs.json and run-output.txt remain unchanged and separate."
+}

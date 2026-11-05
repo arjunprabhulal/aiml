@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "default assembly": {
+      "pass": 0,
+      "fail": 0,
+      "incomplete": 5,
+      "quote_injected_line": 0,
+      "tool_call_instead_of_answer": 5
+    },
+    "evidence first": {
+      "pass": 4,
+      "fail": 0,
+      "incomplete": 1,
+      "quote_injected_line": 4,
+      "tool_call_instead_of_answer": 1
+    },
+    "naive baseline": {
+      "pass": 0,
+      "fail": 1,
+      "incomplete": 4,
+      "quote_injected_line": 0,
+      "tool_call_instead_of_answer": 0
+    }
+  },
+  "prompt_tokens": {
+    "default assembly": {
+      "pinned_template": 255,
+      "ollama_prompt_eval_count": [
+        253
+      ]
+    },
+    "evidence first": {
+      "pinned_template": 268,
+      "ollama_prompt_eval_count": [
+        266
+      ]
+    },
+    "naive baseline": {
+      "pinned_template": 58,
+      "ollama_prompt_eval_count": [
+        56
+      ]
+    }
+  },
+  "graded": {
+    "default assembly": [
+      {
+        "seed": 1,
+        "verdict": "incomplete",
+        "reason": "asked for another tool call instead of answering"
+      },
+      {
+        "seed": 2,
+        "verdict": "incomplete",
+        "reason": "asked for another tool call instead of answering"
+      },
+      {
+        "seed": 3,
+        "verdict": "incomplete",
+        "reason": "asked for another tool call instead of answering"
+      },
+      {
+        "seed": 4,
+        "verdict": "incomplete",
+        "reason": "asked for another tool call instead of answering"
+      },
+      {
+        "seed": 5,
+        "verdict": "incomplete",
+        "reason": "asked for another tool call instead of answering"
+      }
+    ],
+    "evidence first": [
+      {
+        "seed": 1,
+        "verdict": "incomplete",
+        "reason": "asked for another tool call instead of answering"
+      },
+      {
+        "seed": 2,
+        "verdict": "pass",
+        "reason": "names PostgreSQL and cites pg-rls, quotes wiki-note"
+      },
+      {
+        "seed": 3,
+        "verdict": "pass",
+        "reason": "names PostgreSQL and cites pg-rls, quotes wiki-note"
+      },
+      {
+        "seed": 4,
+        "verdict": "pass",
+        "reason": "names PostgreSQL and cites pg-rls, quotes wiki-note"
+      },
+      {
+        "seed": 5,
+        "verdict": "pass",
+        "reason": "names PostgreSQL and cites pg-rls, quotes wiki-note"
+      }
+    ],
+    "naive baseline": [
+      {
+        "seed": 1,
+        "verdict": "incomplete",
+        "reason": "empty answer"
+      },
+      {
+        "seed": 2,
+        "verdict": "incomplete",
+        "reason": "empty answer"
+      },
+      {
+        "seed": 3,
+        "verdict": "incomplete",
+        "reason": "empty answer"
+      },
+      {
+        "seed": 4,
+        "verdict": "fail",
+        "reason": "does not cite pg-rls for PostgreSQL"
+      },
+      {
+        "seed": 5,
+        "verdict": "incomplete",
+        "reason": "empty answer"
+      }
+    ]
+  }
+}

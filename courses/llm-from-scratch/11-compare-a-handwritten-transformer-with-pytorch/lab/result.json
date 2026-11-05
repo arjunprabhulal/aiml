@@ -1,0 +1,284 @@
+{
+  "execution_mode": "CPU float64 forward and full parameter-backward comparison; no training update",
+  "command": [
+    "python",
+    "bridge.py",
+    "--record"
+  ],
+  "exit_status": 0,
+  "config": {
+    "vocab": 9,
+    "d": 4,
+    "hidden": 7,
+    "max_len": 8,
+    "seed": 31
+  },
+  "ids": [
+    1,
+    3,
+    1,
+    5,
+    2
+  ],
+  "targets": [
+    3,
+    1,
+    5,
+    2,
+    6
+  ],
+  "dtype": "float64",
+  "device": "cpu",
+  "dropout_p": 0.0,
+  "is_causal": true,
+  "attention_scale": 0.5,
+  "layernorm_eps": 1e-05,
+  "loss_reduction": "mean",
+  "sdpa_backend": "MATH",
+  "tolerance": {
+    "atol": 1e-10,
+    "rtol": 1e-08
+  },
+  "comparisons": {
+    "explicit": {
+      "logits": {
+        "max_abs_error": 1.3877787807814457e-17,
+        "passed": true
+      },
+      "loss": {
+        "max_abs_error": 4.440892098500626e-16,
+        "passed": true
+      },
+      "loss_value": 2.2123630835609824,
+      "parameter_gradients": {
+        "tok_emb": {
+          "max_abs_error": 8.326672684688674e-17,
+          "passed": true
+        },
+        "pos_emb": {
+          "max_abs_error": 4.683753385137379e-17,
+          "passed": true
+        },
+        "ln1_g": {
+          "max_abs_error": 7.453889935837843e-20,
+          "passed": true
+        },
+        "ln1_b": {
+          "max_abs_error": 8.809142651444724e-20,
+          "passed": true
+        },
+        "Wq": {
+          "max_abs_error": 1.6940658945086007e-21,
+          "passed": true
+        },
+        "Wk": {
+          "max_abs_error": 2.541098841762901e-21,
+          "passed": true
+        },
+        "Wv": {
+          "max_abs_error": 3.469446951953614e-18,
+          "passed": true
+        },
+        "Wo": {
+          "max_abs_error": 2.6020852139652106e-18,
+          "passed": true
+        },
+        "ln2_g": {
+          "max_abs_error": 1.0842021724855044e-19,
+          "passed": true
+        },
+        "ln2_b": {
+          "max_abs_error": 9.486769009248164e-20,
+          "passed": true
+        },
+        "W1": {
+          "max_abs_error": 3.3610267347050637e-18,
+          "passed": true
+        },
+        "b1": {
+          "max_abs_error": 2.6020852139652106e-18,
+          "passed": true
+        },
+        "W2": {
+          "max_abs_error": 6.938893903907228e-18,
+          "passed": true
+        },
+        "b2": {
+          "max_abs_error": 8.326672684688674e-17,
+          "passed": true
+        },
+        "lnf_g": {
+          "max_abs_error": 1.734723475976807e-18,
+          "passed": true
+        },
+        "lnf_b": {
+          "max_abs_error": 1.734723475976807e-18,
+          "passed": true
+        },
+        "W_out": {
+          "max_abs_error": 5.551115123125783e-17,
+          "passed": true
+        },
+        "b_out": {
+          "max_abs_error": 5.551115123125783e-17,
+          "passed": true
+        }
+      },
+      "compared_gradient_elements": 268,
+      "nonzero_manual_gradient_tensors": 18,
+      "passed": true
+    },
+    "sdpa": {
+      "logits": {
+        "max_abs_error": 1.3877787807814457e-17,
+        "passed": true
+      },
+      "loss": {
+        "max_abs_error": 4.440892098500626e-16,
+        "passed": true
+      },
+      "loss_value": 2.2123630835609824,
+      "parameter_gradients": {
+        "tok_emb": {
+          "max_abs_error": 8.326672684688674e-17,
+          "passed": true
+        },
+        "pos_emb": {
+          "max_abs_error": 4.683753385137379e-17,
+          "passed": true
+        },
+        "ln1_g": {
+          "max_abs_error": 7.453889935837843e-20,
+          "passed": true
+        },
+        "ln1_b": {
+          "max_abs_error": 8.809142651444724e-20,
+          "passed": true
+        },
+        "Wq": {
+          "max_abs_error": 2.964615315390051e-21,
+          "passed": true
+        },
+        "Wk": {
+          "max_abs_error": 1.6940658945086007e-21,
+          "passed": true
+        },
+        "Wv": {
+          "max_abs_error": 3.469446951953614e-18,
+          "passed": true
+        },
+        "Wo": {
+          "max_abs_error": 2.6020852139652106e-18,
+          "passed": true
+        },
+        "ln2_g": {
+          "max_abs_error": 1.0842021724855044e-19,
+          "passed": true
+        },
+        "ln2_b": {
+          "max_abs_error": 9.486769009248164e-20,
+          "passed": true
+        },
+        "W1": {
+          "max_abs_error": 3.3610267347050637e-18,
+          "passed": true
+        },
+        "b1": {
+          "max_abs_error": 2.6020852139652106e-18,
+          "passed": true
+        },
+        "W2": {
+          "max_abs_error": 6.938893903907228e-18,
+          "passed": true
+        },
+        "b2": {
+          "max_abs_error": 8.326672684688674e-17,
+          "passed": true
+        },
+        "lnf_g": {
+          "max_abs_error": 1.734723475976807e-18,
+          "passed": true
+        },
+        "lnf_b": {
+          "max_abs_error": 1.734723475976807e-18,
+          "passed": true
+        },
+        "W_out": {
+          "max_abs_error": 5.551115123125783e-17,
+          "passed": true
+        },
+        "b_out": {
+          "max_abs_error": 5.551115123125783e-17,
+          "passed": true
+        }
+      },
+      "compared_gradient_elements": 268,
+      "nonzero_manual_gradient_tensors": 18,
+      "passed": true
+    }
+  },
+  "failures": {
+    "mismatch_probes": {
+      "no_causal_mask": {
+        "max_abs_error": 0.0011422361111528834,
+        "passed": false
+      },
+      "unscaled_attention": {
+        "max_abs_error": 2.2051807196665774e-06,
+        "passed": false
+      },
+      "wrong_layernorm_epsilon": {
+        "max_abs_error": 0.10415960526522108,
+        "passed": false
+      }
+    },
+    "refused_inputs": [
+      {
+        "ids": [],
+        "targets": [],
+        "error": "require nonempty in-range integer IDs, matching targets and available positions"
+      },
+      {
+        "ids": [
+          1,
+          2
+        ],
+        "targets": [
+          2
+        ],
+        "error": "require nonempty in-range integer IDs, matching targets and available positions"
+      },
+      {
+        "ids": [
+          1,
+          9
+        ],
+        "targets": [
+          2,
+          3
+        ],
+        "error": "require nonempty in-range integer IDs, matching targets and available positions"
+      },
+      {
+        "ids": [
+          true
+        ],
+        "targets": [
+          1
+        ],
+        "error": "require nonempty in-range integer IDs, matching targets and available positions"
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.12.8",
+    "torch": "2.14.1",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "sources": {
+    "bridge.py": "5706ca21af551b17ee54ca00f5a6011981b327e03b1e880b6712c06dd7d1c39a",
+    "vendor/model.py": "0d3d469afd5f35ef19b04e0b0587143c39f8fbca37d6154e6435c4ed4e8b80fc",
+    "test_bridge.py": "d187bb4f7b175ae2bef081d1387aed99806540aadac8a005ce9894396aedb3a1",
+    "requirements.txt": "cb4c768c4b63fc20b154157c1985323973f5d1a5fc45a134beec628e0d803b97"
+  }
+}

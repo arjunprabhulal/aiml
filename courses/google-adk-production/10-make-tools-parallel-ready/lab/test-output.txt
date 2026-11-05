@@ -1,0 +1,27 @@
+test_actual_requests_used_current_sources_and_explicit_cap (test_actual_run.FreshProviderEvidence.test_actual_requests_used_current_sources_and_explicit_cap) ... ok
+test_opaque_fields_are_omitted_without_reconstructing_native_capture (test_actual_run.FreshProviderEvidence.test_opaque_fields_are_omitted_without_reconstructing_native_capture) ... ok
+test_public_records_match_bound_bytes (test_actual_run.FreshProviderEvidence.test_public_records_match_bound_bytes) ... ok
+test_a_missing_page_is_a_result_not_an_exception (test_assistant.ParallelTools.test_a_missing_page_is_a_result_not_an_exception) ... ok
+test_an_async_def_that_blocks_gets_no_help_from_the_pool (test_assistant.ParallelTools.test_an_async_def_that_blocks_gets_no_help_from_the_pool) ... ok
+test_async_tool_calls_overlap (test_assistant.ParallelTools.test_async_tool_calls_overlap) ... ok
+test_sync_tool_calls_run_one_at_a_time (test_assistant.ParallelTools.test_sync_tool_calls_run_one_at_a_time) ... ok
+test_the_model_asked_for_every_page_in_one_response (test_assistant.ParallelTools.test_the_model_asked_for_every_page_in_one_response) ... ok
+test_the_thread_pool_runs_at_most_max_workers_sync_calls (test_assistant.ParallelTools.test_the_thread_pool_runs_at_most_max_workers_sync_calls) ... ok
+test_empty_question_refused_before_model_work (test_native_entrypoint.NativeEntrypoint.test_empty_question_refused_before_model_work) ... usage: python -m unittest [-h] [--tool {async,sync,blocking-async}]
+                          [--workers WORKERS]
+                          question
+python -m unittest: error: the following arguments are required: question
+ok
+test_invalid_worker_count_refused_before_model_work (test_native_entrypoint.NativeEntrypoint.test_invalid_worker_count_refused_before_model_work) ... usage: python -m unittest [-h] [--tool {async,sync,blocking-async}]
+                          [--workers WORKERS]
+                          question
+python -m unittest: error: --workers must be at least 1
+ok
+test_native_package_uses_the_async_tool (test_native_entrypoint.NativeEntrypoint.test_native_package_uses_the_async_tool) ... ok
+test_programmatic_sync_selection_preserves_worker_pool_config (test_native_entrypoint.NativeEntrypoint.test_programmatic_sync_selection_preserves_worker_pool_config) ... ok
+test_recording_requires_explicit_opt_in (test_native_entrypoint.NativeEntrypoint.test_recording_requires_explicit_opt_in) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.561s
+
+OK

@@ -1,0 +1,321 @@
+{
+  "environment": {
+    "google-adk": "2.12.0",
+    "google-genai": "2.32.0",
+    "model": "gemini-3.8-flash"
+  },
+  "request": "Add a nullable section column to pages so search results can show the section heading, and index it for filtering by section.",
+  "runs": [
+    {
+      "review": {
+        "verdict": "approve",
+        "reviewer": "maya"
+      },
+      "paused": [
+        {
+          "author": "draft_migration",
+          "node_info": {
+            "path": "migration_gate@1/draft_migration@1",
+            "output_for": [
+              "migration_gate@1/draft_migration@1"
+            ]
+          },
+          "output": {
+            "summary": "Add a nullable section column to the pages table and create an index on it to support filtering by section.",
+            "up_sql": [
+              "ALTER TABLE pages ADD COLUMN section TEXT",
+              "CREATE INDEX idx_pages_section ON pages(section)"
+            ]
+          },
+          "message": "{\"summary\":\"Add a nullable section column to the pages table and create an index on it to support filtering by section.\",\"up_sql\":[\"ALTER TABLE pages ADD COLUMN section TEXT\",\"CREATE INDEX idx_pages_section ON pages(section)\"]}"
+        },
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/check_migration@1",
+            "output_for": [
+              "migration_gate@1/check_migration@1"
+            ]
+          },
+          "output": {
+            "summary": "Add a nullable section column to the pages table and create an index on it to support filtering by section.",
+            "up_sql": [
+              "ALTER TABLE pages ADD COLUMN section TEXT",
+              "CREATE INDEX idx_pages_section ON pages(section)"
+            ]
+          },
+          "route": "review",
+          "state": {
+            "migration": {
+              "summary": "Add a nullable section column to the pages table and create an index on it to support filtering by section.",
+              "up_sql": [
+                "ALTER TABLE pages ADD COLUMN section TEXT",
+                "CREATE INDEX idx_pages_section ON pages(section)"
+              ]
+            }
+          }
+        },
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/request_approval@1"
+          },
+          "calls": [
+            {
+              "id": "4a223920-5ab3-4a51-b01f-9df7db87284f",
+              "name": "adk_request_input",
+              "args": {
+                "interruptId": "4a223920-5ab3-4a51-b01f-9df7db87284f",
+                "payload": {
+                  "summary": "Add a nullable section column to the pages table and create an index on it to support filtering by section.",
+                  "up_sql": [
+                    "ALTER TABLE pages ADD COLUMN section TEXT",
+                    "CREATE INDEX idx_pages_section ON pages(section)"
+                  ]
+                },
+                "message": "Apply this migration? Add a nullable section column to the pages table and create an index on it to support filtering by section.",
+                "response_schema": {
+                  "properties": {
+                    "verdict": {
+                      "enum": [
+                        "approve",
+                        "reject"
+                      ],
+                      "title": "Verdict",
+                      "type": "string"
+                    },
+                    "reviewer": {
+                      "title": "Reviewer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "verdict",
+                    "reviewer"
+                  ],
+                  "title": "Decision",
+                  "type": "object"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "resumed": [
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/read_decision@1",
+            "output_for": [
+              "migration_gate@1/read_decision@1"
+            ]
+          },
+          "output": {
+            "verdict": "approve",
+            "reviewer": "maya"
+          },
+          "route": "approve"
+        },
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/apply_migration@1"
+          },
+          "message": "Applied migration 733cee3401c3, approved by maya."
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "439e385c781e",
+          "request": "Add a nullable section column to pages so search results can show the section heading, and index it for filtering by section.",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"summary\":\"Add a nullable section column to the pages table and create an index on it to support filtering by section.\",\"up_sql\":[\"ALTER TABLE pages ADD COLUMN section TEXT\",\"CREATE INDEX idx_pages_section ON pages(section)\"]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 50,
+              "prompt_token_count": 71,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 71
+                }
+              ],
+              "thoughts_token_count": 347,
+              "total_token_count": 468
+            }
+          },
+          "latency_s": 4.97
+        }
+      ],
+      "columns_after": [
+        "url",
+        "title",
+        "body",
+        "section"
+      ]
+    },
+    {
+      "review": {
+        "verdict": "reject",
+        "reviewer": "lee"
+      },
+      "paused": [
+        {
+          "author": "draft_migration",
+          "node_info": {
+            "path": "migration_gate@1/draft_migration@1",
+            "output_for": [
+              "migration_gate@1/draft_migration@1"
+            ]
+          },
+          "output": {
+            "summary": "Add a nullable section column to the pages table and an index to support filtering by section.",
+            "up_sql": [
+              "ALTER TABLE pages ADD COLUMN section TEXT",
+              "CREATE INDEX idx_pages_section ON pages(section)"
+            ]
+          },
+          "message": "{\"summary\":\"Add a nullable section column to the pages table and an index to support filtering by section.\",\"up_sql\":[\"ALTER TABLE pages ADD COLUMN section TEXT\",\"CREATE INDEX idx_pages_section ON pages(section)\"]}"
+        },
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/check_migration@1",
+            "output_for": [
+              "migration_gate@1/check_migration@1"
+            ]
+          },
+          "output": {
+            "summary": "Add a nullable section column to the pages table and an index to support filtering by section.",
+            "up_sql": [
+              "ALTER TABLE pages ADD COLUMN section TEXT",
+              "CREATE INDEX idx_pages_section ON pages(section)"
+            ]
+          },
+          "route": "review",
+          "state": {
+            "migration": {
+              "summary": "Add a nullable section column to the pages table and an index to support filtering by section.",
+              "up_sql": [
+                "ALTER TABLE pages ADD COLUMN section TEXT",
+                "CREATE INDEX idx_pages_section ON pages(section)"
+              ]
+            }
+          }
+        },
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/request_approval@1"
+          },
+          "calls": [
+            {
+              "id": "d7295177-fc08-4a9f-8e38-dc7ea1621d03",
+              "name": "adk_request_input",
+              "args": {
+                "interruptId": "d7295177-fc08-4a9f-8e38-dc7ea1621d03",
+                "payload": {
+                  "summary": "Add a nullable section column to the pages table and an index to support filtering by section.",
+                  "up_sql": [
+                    "ALTER TABLE pages ADD COLUMN section TEXT",
+                    "CREATE INDEX idx_pages_section ON pages(section)"
+                  ]
+                },
+                "message": "Apply this migration? Add a nullable section column to the pages table and an index to support filtering by section.",
+                "response_schema": {
+                  "properties": {
+                    "verdict": {
+                      "enum": [
+                        "approve",
+                        "reject"
+                      ],
+                      "title": "Verdict",
+                      "type": "string"
+                    },
+                    "reviewer": {
+                      "title": "Reviewer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "verdict",
+                    "reviewer"
+                  ],
+                  "title": "Decision",
+                  "type": "object"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "resumed": [
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/read_decision@1",
+            "output_for": [
+              "migration_gate@1/read_decision@1"
+            ]
+          },
+          "output": {
+            "verdict": "reject",
+            "reviewer": "lee"
+          },
+          "route": "reject"
+        },
+        {
+          "author": "migration_gate",
+          "node_info": {
+            "path": "migration_gate@1/record_rejection@1"
+          },
+          "message": "Migration rejected by lee; the index is unchanged."
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "439e385c781e",
+          "request": "Add a nullable section column to pages so search results can show the section heading, and index it for filtering by section.",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"summary\":\"Add a nullable section column to the pages table and an index to support filtering by section.\",\"up_sql\":[\"ALTER TABLE pages ADD COLUMN section TEXT\",\"CREATE INDEX idx_pages_section ON pages(section)\"]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 48,
+              "prompt_token_count": 71,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 71
+                }
+              ],
+              "thoughts_token_count": 274,
+              "total_token_count": 393
+            }
+          },
+          "latency_s": 4.51
+        }
+      ],
+      "columns_after": [
+        "url",
+        "title",
+        "body"
+      ]
+    }
+  ]
+}

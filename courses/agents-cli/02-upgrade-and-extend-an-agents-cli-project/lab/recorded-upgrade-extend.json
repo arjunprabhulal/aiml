@@ -1,0 +1,32 @@
+{
+  "cli_version": "1.11.0",
+  "execution_mode": "actual-local-CLI",
+  "enhance": {
+    "manifest_diff": {
+      "deployment_target": {
+        "before": "none",
+        "after": "cloud_run"
+      }
+    },
+    "output": "Agents CLI v1.11.0\n\nGenerating templates for comparison...\n  - Old template...\n  - New template...\n\nComparing files...\n\nWill auto-update (unchanged by you):\n  \u2713 README.md\n\nWill preserve (you modified, template unchanged):\n  \u2713 AGENTS.md\n  \u2713 app/__init__.py\n  \u2713 tests/eval/eval_config.yaml\n\nSkipping (your code):\n  - .env\n  - app/agent.py\n\nFiles to add:\n  + .github/workflows/deploy-to-prod.yaml\n  + .github/workflows/pr_checks.yaml\n  + .github/workflows/staging.yaml\n  + deployment/terraform/cicd/apis.tf\n  + deployment/terraform/cicd/github.tf\n  + deployment/terraform/cicd/iam.tf\n  + deployment/terraform/cicd/locals.tf\n  + deployment/terraform/cicd/outputs.tf\n  + deployment/terraform/cicd/providers.tf\n  + deployment/terraform/cicd/service.tf\n  + deployment/terraform/cicd/service_accounts.tf\n  + deployment/terraform/cicd/service_outputs.tf\n  + deployment/terraform/cicd/storage.tf\n  + deployment/terraform/cicd/telemetry.tf\n  + deployment/terraform/cicd/telemetry_outputs.tf\n  + deployment/terraform/cicd/variables.tf\n  + deployment/terraform/cicd/vars/env.tfvars\n  + deployment/terraform/cicd/wif.tf\n  + deployment/terraform/shared/completions.sql\n  + deployment/terraform/shared/genai_logs_schema.json\n  + deployment/terraform/single-project/apis.tf\n  + deployment/terraform/single-project/iam.tf\n  + deployment/terraform/single-project/outputs.tf\n  + deployment/terraform/single-project/providers.tf\n  + deployment/terraform/single-project/service.tf\n  + deployment/terraform/single-project/service_outputs.tf\n  + deployment/terraform/single-project/storage.tf\n  + deployment/terraform/single-project/telemetry.tf\n  + deployment/terraform/single-project/telemetry_outputs.tf\n  + deployment/terraform/single-project/variables.tf\n  + deployment/terraform/single-project/vars/env.tfvars\n  + tests/load_test/.results/.placeholder\n  + tests/load_test/README.md\n  + tests/load_test/load_test.py\n\nDependency changes:\n  + Add: google-cloud-aiplatform[evaluation]>=2.2.0,<3.0.0\n  + Add: fastapi>=0.115.8,<1.0.0\n  + Add: uvicorn~=0.34.0\n  + Add: asyncpg>=0.30.0,<1.0.0\n  + Add: sqlalchemy[asyncio]>=2,<3\n  + Add: python-multipart>=0.0.20,<1.0.0\n\n\ud83d\udce6 Creating backup before modification...\nBackup created: /Users/arjunprabhulal/.agents-cli/backups/docuctl-enhance_20261025_222115\n Dependencies updated \u2014 run agents-cli install to install the new versions.\nRecorded changes to agents-cli-manifest.yaml.\n\n  Updated: 1 files\n  Added: 34 files\n  Removed: 0 files\n\n\u2705 Enhancement complete!\n"
+  },
+  "upgrade_dry_run": {
+    "preserved": [],
+    "output": "Resolved project root to: /private/tmp/docuctl-cli-work/docuctl-enhance\n\u2705 Project is already at version 1.11.0\n"
+  },
+  "upgrade_force_dry_run": {
+    "will_overwrite": [],
+    "output": "Resolved project root to: /private/tmp/docuctl-cli-work/docuctl-enhance\n\u2705 Project is already at version 1.11.0\n"
+  },
+  "extension_execution": {
+    "release_check": {
+      "exit_code": 0,
+      "output": "   Building docuctl-docs @ file:///private/tmp/docuctl-cli-work/docuctl-enhance\n      Built docuctl-docs @ file:///private/tmp/docuctl-cli-work/docuctl-enhance\nUninstalled 2 packages in 8ms\nInstalled 34 packages in 276ms\n============================= test session starts ==============================\nplatform darwin -- Python 3.13.2, pytest-9.1.1, pluggy-1.7.0 -- /private/tmp/docuctl-cli-work/docuctl-docs/.venv/bin/python\ncachedir: .pytest_cache\nrootdir: /private/tmp/docuctl-cli-work/docuctl-enhance\nconfigfile: pyproject.toml\nplugins: asyncio-1.4.1, anyio-4.15.1\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=session, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntests/unit/test_dummy.py::test_dummy PASSED                              [100%]\n\n============================== 1 passed in 0.01s ===============================\n"
+    },
+    "deploy_override": {
+      "exit_code": 0,
+      "output": "running 'deploy' via extension 'docuctl-enhance' (project scope)\n.                                                                        [100%]\n1 passed in 0.00s\n"
+    }
+  },
+  "recorded_at": "2026-10-26T02:22:09.228573+00:00"
+}

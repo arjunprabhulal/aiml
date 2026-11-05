@@ -1,0 +1,19 @@
+{
+  "user": ["alice", "trip-planning"],
+  "steps": [
+    {"day": 0, "op": "remember", "key": "diet", "level": "user", "text": "Alice is vegetarian.", "source": "trip-planning/turn-3"},
+    {"day": 0, "op": "remember", "key": "booking", "level": "task", "text": "The Lisbon hotel booking code is 4F7Q.", "source": "trip-planning/turn-5", "ttl_days": 7},
+    {"day": 0, "op": "remember", "key": "passport", "level": "user", "text": "Alice's passport number is P1234567.", "source": "trip-planning/turn-6"},
+    {"day": 0, "op": "recall", "query": "What food does Alice eat? Is she vegetarian?"},
+    {"day": 2, "op": "correct", "key": "diet", "new_key": "diet-2", "text": "Alice eats fish but no meat, so she is not vegetarian.", "source": "trip-planning/turn-12"},
+    {"day": 2, "op": "recall", "query": "What food does Alice eat? Is she vegetarian?"},
+    {"day": 2, "op": "history", "key": "diet-2"},
+    {"day": 2, "op": "recall", "query": "What is the hotel booking code?"},
+    {"day": 8, "op": "recall", "query": "What is the hotel booking code?"},
+    {"day": 8, "op": "purge_expired"},
+    {"day": 8, "op": "forget", "key": "passport", "reason": "user request at trip-planning/turn-20"},
+    {"day": 8, "op": "recall", "query": "What is Alice's passport number?"},
+    {"day": 8, "op": "deletions"}
+  ],
+  "probe_text": "P1234567"
+}

@@ -1,0 +1,69 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "rollback_prod_r41",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "I use docuctl 2.x. How do I roll production back to r41?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "Run `docuctl rollback --env production --to r41`. Note that `docuctl release revert` was removed in 2.0 and database migrations are not rolled back automatically."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "create_ci_token",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "How do I create a deploy token for staging CI and check when tokens expire?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "Run `docuctl tokens create --name ci-docs-api --scope deploy:staging` and store it as `DOCUCTL_TOKEN`. Tokens expire after 90 days; check expiry with `docuctl tokens list`."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "continued_staging_rollback",
+      "agent_data": {
+        "turns": [
+          {
+            "turn_index": 0,
+            "events": [
+              {
+                "author": "user",
+                "content": {
+                  "role": "user",
+                  "parts": [{"text": "I use docuctl 2.x. How do I roll production back to r41?"}]
+                }
+              },
+              {
+                "author": "docuctl_docs",
+                "content": {
+                  "role": "model",
+                  "parts": [{"text": "Run `docuctl rollback --env production --to r41`."}]
+                }
+              },
+              {
+                "author": "user",
+                "content": {
+                  "role": "user",
+                  "parts": [{"text": "And on staging?"}]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "Run `docuctl rollback --env staging --to r41`."}]
+        }
+      }
+    }
+  ]
+}

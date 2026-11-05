@@ -1,0 +1,208 @@
+{
+  "comparison_version": "1",
+  "resamples": 2000,
+  "seed": 20261020,
+  "case_set": {
+    "name": "inbox-triage-robustness",
+    "sha256": "945fb939580c38abcadcd8df25534d2a51011800b00d7c0ed2c44587e0fa288c"
+  },
+  "trials": 5,
+  "baseline": {
+    "name": "model-triage-qwen3.5",
+    "version": "v1",
+    "mode": "replay",
+    "model": "qwen3.5:0.8b@de63045f2975",
+    "prompt": "triage-v1 sha256:053fdf51b21d891e",
+    "tools": null,
+    "index": null
+  },
+  "candidate": {
+    "name": "model-triage-qwen3.5",
+    "version": "v2",
+    "mode": "replay",
+    "model": "qwen3.5:0.8b@de63045f2975",
+    "prompt": "triage-v2 sha256:d3ebc88d046c97b5",
+    "tools": null,
+    "index": null
+  },
+  "overall": {
+    "cases": 44,
+    "baseline": 0.85,
+    "candidate": 0.8864,
+    "difference": 0.0364,
+    "interval_95": [
+      0.0091,
+      0.0682
+    ],
+    "better": 6,
+    "worse": 0,
+    "same": 38,
+    "trial_level_interval_95": [
+      0.0091,
+      0.0636
+    ],
+    "source_groups": 9,
+    "source_cluster_method": "exact over 24310 draws",
+    "source_cluster_interval_95": [
+      0.0,
+      0.0727
+    ],
+    "source_no_gain_share": 0.026
+  },
+  "trial_pairs": {
+    "both_pass": 186,
+    "only_baseline": 1,
+    "only_candidate": 9,
+    "neither": 24
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "cases": 37,
+        "baseline": 0.8595,
+        "candidate": 0.8919,
+        "difference": 0.0324,
+        "interval_95": [
+          0.0054,
+          0.0649
+        ],
+        "better": 5,
+        "worse": 0,
+        "same": 32,
+        "few_cases": false
+      },
+      "es": {
+        "cases": 7,
+        "baseline": 0.8,
+        "candidate": 0.8571,
+        "difference": 0.0571,
+        "interval_95": [
+          0.0,
+          0.1714
+        ],
+        "better": 1,
+        "worse": 0,
+        "same": 6,
+        "few_cases": true
+      }
+    },
+    "variant": {
+      "emphasis": {
+        "cases": 7,
+        "baseline": 0.8571,
+        "candidate": 0.9143,
+        "difference": 0.0571,
+        "interval_95": [
+          0.0,
+          0.1714
+        ],
+        "better": 1,
+        "worse": 0,
+        "same": 6,
+        "few_cases": true
+      },
+      "greeting": {
+        "cases": 7,
+        "baseline": 0.8571,
+        "candidate": 0.8571,
+        "difference": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ],
+        "better": 0,
+        "worse": 0,
+        "same": 7,
+        "few_cases": true
+      },
+      "original": {
+        "cases": 9,
+        "baseline": 0.8889,
+        "candidate": 0.9333,
+        "difference": 0.0444,
+        "interval_95": [
+          0.0,
+          0.1111
+        ],
+        "better": 2,
+        "worse": 0,
+        "same": 7,
+        "few_cases": true
+      },
+      "translation": {
+        "cases": 7,
+        "baseline": 0.8,
+        "candidate": 0.8571,
+        "difference": 0.0571,
+        "interval_95": [
+          0.0,
+          0.1714
+        ],
+        "better": 1,
+        "worse": 0,
+        "same": 6,
+        "few_cases": true
+      },
+      "typo": {
+        "cases": 7,
+        "baseline": 0.8286,
+        "candidate": 0.8857,
+        "difference": 0.0571,
+        "interval_95": [
+          0.0,
+          0.1143
+        ],
+        "better": 2,
+        "worse": 0,
+        "same": 5,
+        "few_cases": true
+      },
+      "uppercase": {
+        "cases": 7,
+        "baseline": 0.8571,
+        "candidate": 0.8571,
+        "difference": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ],
+        "better": 0,
+        "worse": 0,
+        "same": 7,
+        "few_cases": true
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "password-changed",
+      "baseline": 0.8,
+      "candidate": 1.0
+    },
+    {
+      "case_id": "password-changed--typo",
+      "baseline": 0.8,
+      "candidate": 1.0
+    },
+    {
+      "case_id": "product-advice",
+      "baseline": 0.2,
+      "candidate": 0.4
+    },
+    {
+      "case_id": "product-advice--typo",
+      "baseline": 0.0,
+      "candidate": 0.2
+    },
+    {
+      "case_id": "product-advice--emphasis",
+      "baseline": 0.0,
+      "candidate": 0.4
+    },
+    {
+      "case_id": "charged-after-closing--es",
+      "baseline": 0.6,
+      "candidate": 1.0
+    }
+  ]
+}

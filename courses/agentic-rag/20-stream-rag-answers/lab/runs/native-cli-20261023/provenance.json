@@ -1,0 +1,101 @@
+{
+  "lesson_id": "stream-rag-answers",
+  "execution": "Actual learner CLI in original PTY, no model/provider/network",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py",
+    "--output",
+    "runs/native-cli-20261023/result.json"
+  ],
+  "cwd": "/tmp/aiml-rag-native-cli-12-preparation-20261023/projects/stream-rag-answers",
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "80a3577ed490f8b9d598bcec6d821528c8907e2e6c72279e56ab9d25987b1ef7",
+    "fixtures/provenance.json": "fe5a2846699daf65bd92feb7f60037a90107167e39d272de98b43e9c5eb12f02",
+    "fixtures/recording.json": "193d4c3c91e66432d3717bf85dced0034b572e804cd50efc246042b574baeaa0",
+    "render_output.py": "9efaf27d08293e670cb6135802e8ca4f817b947087f14f22e67e28c21898f955",
+    "run.py": "53724d7d199ae15d7aab2b98b83402e706ac63846c8538b67398cdafbcede654",
+    "runs/2026-10-23-stream/execution.json": "469bf83a8694852f8f5f738e8893f1e75ba95a8f7c560b69de1bb112afeaef41",
+    "runs/2026-10-23-stream/media.json": "5289bb16f3efa7ac5286a63f925232de90758bef5f6211e1211e550fa0a027c1",
+    "runs/2026-10-23-stream/output-mobile.png": "5baee9ba2c1e8700c8ab79919e4f58bfb509073e6dbfe951c9ee9df614ac14e5",
+    "runs/2026-10-23-stream/output-small.png": "ff4d6b9931fcbb881b334a6026c04440b2c6a4e2dd5ad3915d2b10c4952a109d",
+    "runs/2026-10-23-stream/output.png": "dccdd5c45c31295120043e30aa44d5dda69ebea49145e533166e9e85c6b2585f",
+    "runs/2026-10-23-stream/result.json": "e5496c481de80da8108cfaa148f39ef002b44ad647d371decf22bf3a46359125",
+    "runs/2026-10-23-stream/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-stream/stdout.txt": "58ca079ffe5e4929633bd174067bf6dfbe4de8679c138c458b5c49dab36119b8",
+    "runs/2026-10-23-stream/tests.txt": "1b2135bc85fa4a99555f2be1dd6232c364ac0cbe307bdf7eb9cff41ac12f4c34",
+    "stream_core.py": "ef3789e92319e89b548b19f2121c1d5f92f8a62542564eadbf97042081373988",
+    "test_stream.py": "9dfecea9ff3986b766715126d37710c1b82896b1b376c28c6879f844b3ce880c"
+  },
+  "stdout_sha256": "98a9b938309a8ea1db70f105be1c3fdc6cbc2cade6607f860aaef16b0749c39d",
+  "result_sha256": "e5496c481de80da8108cfaa148f39ef002b44ad647d371decf22bf3a46359125",
+  "source_files_unchanged": true,
+  "exit_code": 0,
+  "input_bytes": 0,
+  "network_attempts": 0,
+  "credentials_in_environment": false,
+  "historical_fixture": "stream-rag-answers/runs/2026-10-23-stream/result.json",
+  "same_deterministic_result_as_historical": true,
+  "historical_differences": [],
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "c27425408df6b75c67455b7b4853182c6e0f0bfd6b0945fdee89e7a141d74d6f",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 0,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py",
+          "--output",
+          "runs/native-cli-20261023/result.json"
+        ],
+        "terminalText": "{\"controlled_failures\": [{\"accepted_answer\": null, \"scenario\": \"controlled_local_cancel\", \"status\": \"cancelled\"}, {\"accepted_answer\": null, \"scenario\": \"controlled_local_error\", \"sta\ntus\": \"error\"}, {\"accepted_answer\": null, \"scenario\": \"controlled_transport_eof_before_terminal\", \"status\": \"incomplete\"}, {\"accepted_answer\": null, \"scenario\": \"controlled_local_tra\nnsport_io_error\", \"status\": \"error\"}], \"development_cases\": [{\"answer_status\": \"not_in_docs\", \"application_frames\": 15, \"case_id\": \"utf8-write\", \"status\": \"complete\", \"transport_frag\nments\": 450}, {\"answer_status\": \"answered\", \"application_frames\": 10, \"case_id\": \"replace-file\", \"status\": \"complete\", \"transport_fragments\": 299}, {\"answer_status\": \"answered\", \"app\nlication_frames\": 11, \"case_id\": \"json-result-type\", \"status\": \"complete\", \"transport_fragments\": 328}, {\"answer_status\": \"not_in_docs\", \"application_frames\": 15, \"case_id\": \"backup-\nschedule\", \"status\": \"complete\", \"transport_fragments\": 449}], \"execution_mode\": \"offline-derived-ndjson-frame-replay\"}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "c27425408df6b75c67455b7b4853182c6e0f0bfd6b0945fdee89e7a141d74d6f",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 0,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py",
+          "--output",
+          "runs/native-cli-20261023/result.json"
+        ],
+        "terminalText": "{\"controlled_failures\": [{\"accepted_answer\": null, \"scenario\": \"controlled_local_cancel\", \"status\": \"cancelled\"}, {\"accepted_answer\": null, \"scenario\": \"controlled_local_error\", \"sta\ntus\": \"error\"}, {\"accepted_answer\": null, \"scenario\": \"controlled_transport_eof_before_terminal\", \"status\": \"incomplete\"}, {\"accepted_answer\": null, \"scenario\": \"controlled_local_tra\nnsport_io_error\", \"status\": \"error\"}], \"development_cases\": [{\"answer_status\": \"not_in_docs\", \"application_frames\": 15, \"case_id\": \"utf8-write\", \"status\": \"complete\", \"transport_frag\nments\": 450}, {\"answer_status\": \"answered\", \"application_frames\": 10, \"case_id\": \"replace-file\", \"status\": \"complete\", \"transport_fragments\": 299}, {\"answer_status\": \"answered\", \"app\nlication_frames\": 11, \"case_id\": \"json-result-type\", \"status\": \"complete\", \"transport_fragments\": 328}, {\"answer_status\": \"not_in_docs\", \"application_frames\": 15, \"case_id\": \"backup-\nschedule\", \"status\": \"complete\", \"transport_fragments\": 449}], \"execution_mode\": \"offline-derived-ndjson-frame-replay\"}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "raw_stdout_representation": "Original PTY CRLF bytes preserved; result.json parses actual stdout or copies the actual --output file. No raw output rewriting.",
+  "stdout_prefix_note": null,
+  "time": "2026-10-23T18:43:21.048680+00:00",
+  "dependencies": {
+    "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": {
+      "numpy": "2.5.4",
+      "langchain-core": "1.6.12",
+      "transformers": "5.20.1",
+      "tokenizers": "0.23.3"
+    },
+    "sqlite_version": "3.45.3",
+    "python_executable": "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python"
+  },
+  "capture_view_review": "All unique original top/end views personally inspected; eight short-output top/end pairs are byte-identical."
+}

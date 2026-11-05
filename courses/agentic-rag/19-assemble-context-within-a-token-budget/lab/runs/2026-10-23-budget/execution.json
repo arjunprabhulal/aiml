@@ -1,0 +1,45 @@
+{
+  "execution_mode": "offline-pinned-tokenizer-request-assembly",
+  "model_called": false,
+  "command": "TOKENIZER_PATH=<prepared-local-assets> python run.py (socket connections denied by recording harness)",
+  "exit_code": 0,
+  "environment": {
+    "python_executable": "/Users/arjunprabhulal/aiml/.venv-context-budget/bin/python",
+    "tokenizer_path": "/Users/arjunprabhulal/aiml/.cache/gemma-tokenizer",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "transformers": "5.20.1",
+      "huggingface-hub": "2.2.0",
+      "jinja2": "3.1.6"
+    },
+    "python": "3.11.11"
+  },
+  "actual_local_tokenizer_sha256": {
+    "tokenizer_config.json": "9f4fec4b1dc6ecddf8f4a92e9caea5971c0e67d81309f3f9066a2bee8c362633",
+    "config.json": "1b28f3d2c3100f6c594754b81107428bd7b822a7f48272ca681dae9d2ec38330",
+    "tokenizer.json": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+    "chat_template.jinja": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5"
+  },
+  "network_guard": "outbound socket connect and create_connection rejected; offline asset flags set",
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "2cf08f0bda7582bc91f7d24536326bac1f2a65e3a2483a70fd82f276632a6055",
+    "assembler.py": "dd5de6c2f6e915e5b3c64a21afb1d93d948cca165999bd109c85204ac8f5ea1e",
+    "budget_windows.py": "9db3d92359d6e0733df298290e90454c519f85f11d950a2795278d13ed574341",
+    "chunk_index.py": "8c1dfc379f48d68f20510758dc5bcd85bebffa17139976411d304f9a254188de",
+    "contracts.py": "86ac0282a7d94486b83d6aab32c40e0d08763468bd2b91f8e76561695a98dd0d",
+    "fixture_cases.py": "39ab5b7b5c247d4fe34e78ce50fd3715d86b34538647350a9ef3f90845e983bb",
+    "fixtures/docs/aster-copy-v1.md": "34257e6c9c3ec0e75af47dd465cd370b63dc4c5e45a6a3413f87b15baf643bfd",
+    "fixtures/docs/aster-copy-v2.md": "ee85252a1f2997476d3ee9fd9ff17648af3bede369201f82d2d230d3fd370f5b",
+    "fixtures/source-manifest.json": "5ad198cc3d6fe506bff4532302c806d201afe3e82900e00eafdb5a62e16b1153",
+    "load_documents.py": "84d30170889fc4b9f5ecbece4cdac392afe0ca3786ae09f92a9e0e49175222d7",
+    "render_output.py": "da3f76382331611ebe67648948b70a0ac5e43ca63eda31cafbd1de116fe9fa0f",
+    "requirements.lock": "5b084671d175c707081746b55a7fae6f9444959a32107990d269bbb7b5353a2c",
+    "requirements.txt": "127dba7d9fb62f64d1fad8d8878305969eb2c1517bffb9030e6d31232123c60d",
+    "run.py": "a7f991087802b0940f38865e0f39dccf3fa4831ae300edd02b7528e2212e745a",
+    "surround.py": "441f1b4d122c0ba05a46edb142302a0c0da506d7e8b197591075e67dfe814153",
+    "test_budget_windows.py": "0f88aedbcc800f95a6ad3508037e2fe7683f3fbbcee2b740e90aa30e1a7a1c07",
+    "tokenizer-manifest.json": "13fdb279d284653bed8b0af8b344eac7c2d0cc5e7a76c0cbc23ae250f5bd3181",
+    "tokenizer.py": "104fadb0c654d19d81a3e71b7b86fea4c8e5bdef72fc0836ee758a05d78b6746"
+  }
+}

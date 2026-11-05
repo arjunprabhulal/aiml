@@ -1,0 +1,76 @@
+{
+  "execution_mode": "fresh local inference; CPU operator profiler around Metal execution",
+  "environment": {
+    "torch": "2.14.1",
+    "transformers": "5.20.2",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "python": "3.12.8"
+  },
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "source_sha256": "f09d10cf253f5c7cc013997835f56d5aced87588786efa1e575bef4bc04334da",
+  "profiled_wall_ms": 55.753,
+  "operators": [
+    {
+      "name": "aten::linear",
+      "calls": 169,
+      "self_cpu_us": 3648.743
+    },
+    {
+      "name": "aten::bmm",
+      "calls": 48,
+      "self_cpu_us": 1436.852
+    },
+    {
+      "name": "aten::_softmax",
+      "calls": 24,
+      "self_cpu_us": 687.908
+    },
+    {
+      "name": "aten::mul",
+      "calls": 245,
+      "self_cpu_us": 492.195
+    },
+    {
+      "name": "aten::add",
+      "calls": 172,
+      "self_cpu_us": 386.367
+    },
+    {
+      "name": "aten::copy_",
+      "calls": 196,
+      "self_cpu_us": 216.708
+    },
+    {
+      "name": "aten::cat",
+      "calls": 97,
+      "self_cpu_us": 187.702
+    },
+    {
+      "name": "aten::empty",
+      "calls": 298,
+      "self_cpu_us": 153.942
+    },
+    {
+      "name": "aten::flatten",
+      "calls": 338,
+      "self_cpu_us": 124.089
+    },
+    {
+      "name": "aten::matmul",
+      "calls": 48,
+      "self_cpu_us": 117.886
+    },
+    {
+      "name": "aten::pow",
+      "calls": 49,
+      "self_cpu_us": 112.667
+    },
+    {
+      "name": "aten::_to_copy",
+      "calls": 124,
+      "self_cpu_us": 106.667
+    }
+  ],
+  "limits": "CPU operator durations include dispatch and synchronization overhead, not GPU kernel duration or occupancy. Profiling changes runtime; compare unprofiled repetitions separately."
+}

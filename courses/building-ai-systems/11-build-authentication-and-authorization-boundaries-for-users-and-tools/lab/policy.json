@@ -1,0 +1,35 @@
+{
+  "about": "Teaching data for this build: users, roles, tools and orders. All names are synthetic.",
+  "users": {
+    "ana": {"tenant": "north-shop", "role": "agent"},
+    "ben": {"tenant": "north-shop", "role": "viewer"},
+    "cara": {"tenant": "south-shop", "role": "agent"}
+  },
+  "roles": {
+    "viewer": ["orders:read"],
+    "agent": ["orders:read", "refunds:write"]
+  },
+  "tools": {
+    "lookup_order": {
+      "service": "orders-service", "scope": "orders:read",
+      "description": "Look up the status of one order by its ID.",
+      "input_schema": {"type": "object", "properties": {"order_id": {"type": "string"}},
+                       "required": ["order_id"], "additionalProperties": false}
+    },
+    "issue_refund": {
+      "service": "refunds-service", "scope": "refunds:write",
+      "description": "Refund one order. Use only when the customer reports a damaged, late or wrong item.",
+      "input_schema": {"type": "object",
+                       "properties": {"order_id": {"type": "string"},
+                                      "reason": {"type": "string", "enum": ["damaged", "late", "wrong_item"]}},
+                       "required": ["order_id", "reason"], "additionalProperties": false}
+    }
+  },
+  "orders": {
+    "n-1001": {"tenant": "north-shop", "status": "shipped"},
+    "n-1002": {"tenant": "north-shop", "status": "delivered"},
+    "s-2001": {"tenant": "south-shop", "status": "delivered"}
+  },
+  "agent": "support-agent",
+  "delegated_token_seconds": 60
+}

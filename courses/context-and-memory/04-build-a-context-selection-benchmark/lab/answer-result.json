@@ -1,0 +1,1044 @@
+{
+ "model": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "google/gemma-4-E2B-it",
+  "license": "Apache-2.0",
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14",
+  "quantization": "Q4_K_M",
+  "parameters": "4.6B total (E2B: about 2B effective)",
+  "options": {
+   "temperature": 1.0,
+   "top_k": 64,
+   "top_p": 0.95
+  },
+  "think": false,
+  "trials": 5,
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "answers": {
+  "recent": {
+   "held-latest": [
+    {
+     "seed": 1,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 5,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    }
+   ],
+   "held-old-decision": [
+    {
+     "seed": 1,
+     "answer": "I do not have information about where uploads are stored.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 51,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have information about where uploads are stored.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 51,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have information about where uploads are stored.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 51,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have information about where uploads are stored.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 51,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have information about where uploads are stored.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 51,
+     "answer_tokens": 12
+    }
+   ],
+   "held-correction": [
+    {
+     "seed": 1,
+     "answer": "Please provide more context so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 38,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 38,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 38,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide more context so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 38,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 38,
+     "answer_tokens": 8
+    }
+   ],
+   "held-pronoun": [
+    {
+     "seed": 1,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 36,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 36,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 36,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 36,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 36,
+     "answer_tokens": 8
+    }
+   ],
+   "held-spread": [
+    {
+     "seed": 1,
+     "answer": "I do not have information about the password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 84,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have information about the password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 84,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have information about the password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 84,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have information about the password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 84,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have information about the password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 84,
+     "answer_tokens": 13
+    }
+   ],
+   "held-buried": [
+    {
+     "seed": 1,
+     "answer": "What connection limit must the gateway allow?",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide more context about what you are referring to so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 18
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 8
+    }
+   ]
+  },
+  "relevant": {
+   "held-latest": [
+    {
+     "seed": 1,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 5,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    }
+   ],
+   "held-old-decision": [
+    {
+     "seed": 1,
+     "answer": "You decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 3,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 4,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 10
+    }
+   ],
+   "held-correction": [
+    {
+     "seed": 1,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 3,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 4,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    }
+   ],
+   "held-pronoun": [
+    {
+     "seed": 1,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 2,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 3,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 4,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 5,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    }
+   ],
+   "held-spread": [
+    {
+     "seed": 1,
+     "answer": "I do not have any information about password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 2,
+     "answer": "Please provide more context so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 3,
+     "answer": "Please provide the context for what you are referring to.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 4,
+     "answer": "I do not have any information about password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 5,
+     "answer": "Please provide the conversation you are referring to so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 16
+    }
+   ],
+   "held-buried": [
+    {
+     "seed": 1,
+     "answer": "What connection limit must the gateway allow?",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "Please provide the context for your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 3,
+     "answer": "Please provide more context.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 6
+    },
+    {
+     "seed": 4,
+     "answer": "What connection limit must the gateway allow?",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 5,
+     "answer": "Please provide more context.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 37,
+     "answer_tokens": 6
+    }
+   ]
+  },
+  "notes": {
+   "held-latest": [
+    {
+     "seed": 1,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 5,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    }
+   ],
+   "held-old-decision": [
+    {
+     "seed": 1,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 96,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 96,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 3,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 96,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 4,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 96,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 96,
+     "answer_tokens": 10
+    }
+   ],
+   "held-correction": [
+    {
+     "seed": 1,
+     "answer": "We decided to use RabbitMQ for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 85,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 2,
+     "answer": "We decided to use RabbitMQ for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 85,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 3,
+     "answer": "We decided to use RabbitMQ for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 85,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 4,
+     "answer": "We decided to use RabbitMQ for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 85,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 5,
+     "answer": "We decided to use RabbitMQ for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 85,
+     "answer_tokens": 12
+    }
+   ],
+   "held-pronoun": [
+    {
+     "seed": 1,
+     "answer": "She set the invoice retry limit to three attempts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 2,
+     "answer": "She set the invoice retry limit to three attempts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "She set the invoice retry limit to three attempts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "She set the invoice retry limit to three attempts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 5,
+     "answer": "She set the invoice retry limit to three attempts.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 82,
+     "answer_tokens": 11
+    }
+   ],
+   "held-spread": [
+    {
+     "seed": 1,
+     "answer": "Passwords must have at least 14 characters, and sessions must expire after 30 minutes of inactivity.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 131,
+     "answer_tokens": 23
+    },
+    {
+     "seed": 2,
+     "answer": "Passwords must have at least 14 characters, and sessions must expire after 30 minutes of inactivity.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 131,
+     "answer_tokens": 23
+    },
+    {
+     "seed": 3,
+     "answer": "Passwords must have at least 14 characters, and sessions must expire after 30 minutes of inactivity.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 131,
+     "answer_tokens": 23
+    },
+    {
+     "seed": 4,
+     "answer": "Passwords must have at least 14 characters, and sessions must expire after 30 minutes of inactivity.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 131,
+     "answer_tokens": 23
+    },
+    {
+     "seed": 5,
+     "answer": "Passwords must have at least 14 characters, and sessions must expire after 30 minutes of inactivity.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 131,
+     "answer_tokens": 23
+    }
+   ],
+   "held-buried": [
+    {
+     "seed": 1,
+     "answer": "The gateway must allow 200 connections.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 120,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 2,
+     "answer": "The gateway must allow 200 connections.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 120,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "The gateway must allow 200 connections.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 120,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "The gateway must allow 200 connections.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 120,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 5,
+     "answer": "The gateway must allow 200 connections.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 120,
+     "answer_tokens": 11
+    }
+   ]
+  },
+  "hybrid": {
+   "held-latest": [
+    {
+     "seed": 1,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 3,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    },
+    {
+     "seed": 4,
+     "answer": "Mateo is on call this week.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 5,
+     "answer": "The on-call engineer this week is Mateo.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 62,
+     "answer_tokens": 11
+    }
+   ],
+   "held-old-decision": [
+    {
+     "seed": 1,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 77,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 77,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 3,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 77,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 4,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 77,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "We decided to store uploads in object storage.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 77,
+     "answer_tokens": 10
+    }
+   ],
+   "held-correction": [
+    {
+     "seed": 1,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 2,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 3,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 4,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    },
+    {
+     "seed": 5,
+     "answer": "We use Redis streams for the job queue.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 94,
+     "answer_tokens": 10
+    }
+   ],
+   "held-pronoun": [
+    {
+     "seed": 1,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 2,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 3,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 4,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    },
+    {
+     "seed": 5,
+     "answer": "Invoices retry three times.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 61,
+     "answer_tokens": 7
+    }
+   ],
+   "held-spread": [
+    {
+     "seed": 1,
+     "answer": "Please provide more context so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have any information about password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have any information about password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 13
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide more context so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 12
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have any information about password and session rules.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 13
+    }
+   ],
+   "held-buried": [
+    {
+     "seed": 1,
+     "answer": "What connection limit must the gateway allow?",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 9
+    },
+    {
+     "seed": 2,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 3,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 8
+    },
+    {
+     "seed": 4,
+     "answer": "Please provide more context about what you are referring to so I can answer your question.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 18
+    },
+    {
+     "seed": 5,
+     "answer": "I do not have that information.",
+     "tool_calls": [],
+     "done_reason": "stop",
+     "prompt_tokens": 54,
+     "answer_tokens": 8
+    }
+   ]
+  }
+ }
+}

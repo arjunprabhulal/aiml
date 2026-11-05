@@ -1,0 +1,54 @@
+{
+  "execution": "fresh local CPU training and new-process prediction",
+  "python": "3.15.0",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "dataset": "original authored synthetic event/outcome fixture; no real users",
+  "commands": [
+    [
+      "python",
+      "workflow.py",
+      "prepare",
+      "--out",
+      "recorded/cohort.json"
+    ],
+    [
+      "python",
+      "workflow.py",
+      "train",
+      "--cohort",
+      "recorded/cohort.json",
+      "--out",
+      "recorded/candidate.json"
+    ],
+    [
+      "python",
+      "workflow.py",
+      "evaluate",
+      "--cohort",
+      "recorded/cohort.json",
+      "--model",
+      "recorded/candidate.json",
+      "--out",
+      "recorded/validation.json"
+    ],
+    [
+      "python",
+      "workflow.py",
+      "predict",
+      "--model",
+      "recorded/candidate.json",
+      "--event-count",
+      "3"
+    ]
+  ],
+  "source_sha256": {
+    "workflow.py": "294a9ec66f614d6fc356bb0fdece2b0c2dd6d7f8f5e37e78c249fe1902e63be1",
+    "make_fixture.py": "56c40601987632ef5f0a9193380c4e0a26644df5d35300d7c21763dd37763ca5",
+    "scenario.json": "5d009da4b520ee466b7919ab6d3bd5507c5d6c0e56be4d64302bb1ee9c347619",
+    "vendor/availability.py": "3039969944686e05ee6d2fc9990807d9f576f653403681671e8d656f717a3efb",
+    "vendor/baseline.py": "41b40a9ac8cc6b5b53b45f7b2f696f0fe9488b7fd583da1f20be53b293af97a9"
+  },
+  "test_evaluation": "not executed; final-test window retained",
+  "model_calls": 0,
+  "gpu_jobs": 0
+}

@@ -1,0 +1,9 @@
+Declared request policy; actual local calls, byte counts and capacity outcomes
+normal: called=True; quality=pass; resource=within_limits; bytes=167; meets_contract=True
+wrong_command: called=True; quality=fail; resource=within_limits; bytes=147; meets_contract=False
+oversized_source: called=False; quality=not_run; resource=source_too_large; bytes=0; meets_contract=False
+output_limit: called=True; quality=pass; resource=output_too_large; bytes=167; meets_contract=False
+queue_full: called=False; quality=not_run; resource=queue_full; bytes=0; meets_contract=False
+wait_timeout: called=False; quality=not_run; resource=wait_timeout; bytes=0; meets_contract=False
+required_refusal: called=True; quality=pass; resource=within_limits; bytes=61; meets_contract=True
+Queue wait is bounded; execution time, memory and provider charges are not bounded by this policy.

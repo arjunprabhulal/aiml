@@ -1,0 +1,385 @@
+{
+  "execution_mode": "fresh-hosted-model-run through Python Runner",
+  "projection": "Request and response bodies omit only opaque thoughtSignature/thought_signature fields. Authentication headers are never recorded. Raw original bytes remain private; hashes bind them. No native CLI or Web execution is claimed.",
+  "requests": [
+    {
+      "number": 1277,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Check that the rollback, migrations, hooks, approvals and canary pages are reachable."
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You check the docuctl manual for broken pages.\nWhen asked about several pages, call fetch_page once for each page, all in the same response.\nThen list each page as reachable or not, with its title. Keep answers under 80 words.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "functionDeclarations": [
+              {
+                "description": "Fetch one page of the docuctl manual, such as rollback or hooks, and report whether it is reachable.\nCall this once per page; several calls can run at the same time.",
+                "name": "fetch_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "fetch_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "generationConfig": {
+          "temperature": 0.2,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "maxOutputTokens": 8192,
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "functionCall": {
+                    "name": "fetch_page",
+                    "args": {
+                      "page": "rollback"
+                    },
+                    "id": "call_1678171"
+                  }
+                },
+                {
+                  "functionCall": {
+                    "name": "fetch_page",
+                    "args": {
+                      "page": "migrations"
+                    },
+                    "id": "call_1678172"
+                  }
+                },
+                {
+                  "functionCall": {
+                    "name": "fetch_page",
+                    "args": {
+                      "page": "hooks"
+                    },
+                    "id": "call_1678173"
+                  }
+                },
+                {
+                  "functionCall": {
+                    "name": "fetch_page",
+                    "args": {
+                      "page": "approvals"
+                    },
+                    "id": "call_1678174"
+                  }
+                },
+                {
+                  "functionCall": {
+                    "name": "fetch_page",
+                    "args": {
+                      "page": "canary"
+                    },
+                    "id": "call_1678175"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0,
+            "finishMessage": "Model generated function call(s)."
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 179,
+          "candidatesTokenCount": 82,
+          "totalTokenCount": 261,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 179
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "arneatzzAonWiLMPkcyyuAY"
+      },
+      "status": 200,
+      "started_epoch": 1792981353.836292,
+      "finished_epoch": 1792981355.543173,
+      "original_private_request_sha256": "f83f3b8c37986199046a14b7d786bb54111a6e634c0d5c0af7c48c6e4560fae7",
+      "original_private_response_sha256": "4a98c875c76bd629f0c48a5297d14d9cc7a59a72252d16fecadd3d644f6e9a45",
+      "executed_source_sha256": {
+        "assistant.py": "61f052d0cb76e27813b954045dcc62e87c8b62a2a64b1ccb1759969256104ecb",
+        "record.py": "7865d920fed48c5b627716f9f99fcaa3b3d02698cb16792ca306340b01082f8e",
+        "docs_server.py": "b9a8c73c8677d79aa8629c40091287db937038998e06be6d98d9e70872b75352",
+        "docs/environments.md": "acbf9a721af2726a0084a8023a407467f4cd6820ce22e1a9235fe3820b2aeb48",
+        "docs/migrations.md": "db6ab2f2430f7c8ebe8d21d1a54f9194f24ee75a89492b55f5f6b7c3c3798344",
+        "docs/releases.md": "d53fd762ccac3f5e9d0fe1d1ee7f413e2f45bb75fad84dc71b3f45d17709c44a",
+        "docs/secrets.md": "2afe8f92b0fa2997142469009182ca0834a6240e6684a19d6920f1d8acb4e80e",
+        "docs/logs.md": "03e09ad9d2c44fd0a1d52a7b076e22599fde65123c15f04c79b8543906a7411d",
+        "docs/troubleshooting.md": "e195180cd184eda585029a10fcd4ee6591478ff3d81ceb4f9d29d371dcd47dbc",
+        "docs/config.md": "3041df53d5c02048153ab118b1e26c1b26d9405d49cd6de9165e799fbd74b143",
+        "docs/deploy.md": "788263b26f152642f7fe8675f9ac3dc07f4bfac15c75a8a8592419f080ded28c",
+        "docs/approvals.md": "0ba28ef4cd841fdd1e33ca16484603c22ee520e235915a7a6b89676607554d62",
+        "docs/upgrade-2x.md": "bed647d497cbdbd0b68d9f8b17c1302565e53922225d29cdddeb22ea9bed0025",
+        "docs/hooks.md": "7fb726567ef0a206e8d0cc2a28796914ba57bbd0796753f11b1bd9cd44664131",
+        "docs/rollback.md": "4daea33b4cb3f0049db23d41bbd0a303afe7776cf53152fd54a4feeace007484",
+        "docs/health-checks.md": "e793531d88bd28d6f85d50abc56bb8347288459a49e11ac13c3bd1519d4e7fc1",
+        "docs/tokens.md": "fd5fb6905064b4c1eae5bbaac3d523f59289aad401c635fc0ee1653473741f49",
+        "docs/ci.md": "bd06d55322be37dd1632b66c31ad9b19846d80088cf133ea089a6deb077b04a9",
+        "docs_checker/__init__.py": "148d2ae36db6cc6a1363334da22ea89ea3f8c5c4f4e2b26c060454bf6f6e0068",
+        "docs_checker/agent.py": "5898b347ee4d7ae0d0f01668d42151fd532f2077650315304212e1efd478c84a"
+      }
+    },
+    {
+      "number": 1278,
+      "request": {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Check that the rollback, migrations, hooks, approvals and canary pages are reachable."
+              }
+            ],
+            "role": "user"
+          },
+          {
+            "parts": [
+              {
+                "functionCall": {
+                  "id": "call_1678171",
+                  "args": {
+                    "page": "rollback"
+                  },
+                  "name": "fetch_page"
+                }
+              },
+              {
+                "functionCall": {
+                  "id": "call_1678172",
+                  "args": {
+                    "page": "migrations"
+                  },
+                  "name": "fetch_page"
+                }
+              },
+              {
+                "functionCall": {
+                  "id": "call_1678173",
+                  "args": {
+                    "page": "hooks"
+                  },
+                  "name": "fetch_page"
+                }
+              },
+              {
+                "functionCall": {
+                  "id": "call_1678174",
+                  "args": {
+                    "page": "approvals"
+                  },
+                  "name": "fetch_page"
+                }
+              },
+              {
+                "functionCall": {
+                  "id": "call_1678175",
+                  "args": {
+                    "page": "canary"
+                  },
+                  "name": "fetch_page"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "functionResponse": {
+                  "id": "call_1678171",
+                  "name": "fetch_page",
+                  "response": {
+                    "page": "rollback",
+                    "ok": true,
+                    "title": "Roll back a release",
+                    "words": 92
+                  }
+                }
+              },
+              {
+                "functionResponse": {
+                  "id": "call_1678172",
+                  "name": "fetch_page",
+                  "response": {
+                    "page": "migrations",
+                    "ok": true,
+                    "title": "Database migrations",
+                    "words": 244
+                  }
+                }
+              },
+              {
+                "functionResponse": {
+                  "id": "call_1678173",
+                  "name": "fetch_page",
+                  "response": {
+                    "page": "hooks",
+                    "ok": true,
+                    "title": "Deploy hooks",
+                    "words": 227
+                  }
+                }
+              },
+              {
+                "functionResponse": {
+                  "id": "call_1678174",
+                  "name": "fetch_page",
+                  "response": {
+                    "page": "approvals",
+                    "ok": true,
+                    "title": "Approvals",
+                    "words": 209
+                  }
+                }
+              },
+              {
+                "functionResponse": {
+                  "id": "call_1678175",
+                  "name": "fetch_page",
+                  "response": {
+                    "page": "canary",
+                    "ok": false,
+                    "status": 404
+                  }
+                }
+              }
+            ],
+            "role": "user"
+          }
+        ],
+        "systemInstruction": {
+          "parts": [
+            {
+              "text": "You check the docuctl manual for broken pages.\nWhen asked about several pages, call fetch_page once for each page, all in the same response.\nThen list each page as reachable or not, with its title. Keep answers under 80 words.\n\nYou are an agent. Your internal name is \"docs_assistant\"."
+            }
+          ],
+          "role": "user"
+        },
+        "tools": [
+          {
+            "functionDeclarations": [
+              {
+                "description": "Fetch one page of the docuctl manual, such as rollback or hooks, and report whether it is reachable.\nCall this once per page; several calls can run at the same time.",
+                "name": "fetch_page",
+                "parameters_json_schema": {
+                  "properties": {
+                    "page": {
+                      "title": "Page",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page"
+                  ],
+                  "title": "fetch_pageParams",
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        ],
+        "generationConfig": {
+          "temperature": 0.2,
+          "thinkingConfig": {
+            "thinking_level": "LOW"
+          },
+          "maxOutputTokens": 8192,
+          "candidateCount": 1
+        }
+      },
+      "response": {
+        "candidates": [
+          {
+            "content": {
+              "parts": [
+                {
+                  "text": "Here is the status of the requested pages:\n\n- **Rollback**: Reachable (\"Roll back a release\")\n- **Migrations**: Reachable (\"Database migrations\")\n- **Hooks**: Reachable (\"Deploy hooks\")\n- **Approvals**: Reachable (\"Approvals\")\n- **Canary**: Not reachable (No title / 404)"
+                }
+              ],
+              "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+          }
+        ],
+        "usageMetadata": {
+          "promptTokenCount": 404,
+          "candidatesTokenCount": 74,
+          "totalTokenCount": 478,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 404
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "modelVersion": "gemini-3.8-flash",
+        "responseId": "bLneasvqLsuq5NoPlsrm8QM"
+      },
+      "status": 200,
+      "started_epoch": 1792981356.6134999,
+      "finished_epoch": 1792981360.903687,
+      "original_private_request_sha256": "f7341ad7a36f9a60bb095d782f4d552cf21099c2a3e43bb7a51354821459b14d",
+      "original_private_response_sha256": "823ff539148540e3fae14b26dbb7a39715a5b084c78cc35e20fa6c93a2937dce",
+      "executed_source_sha256": {
+        "assistant.py": "61f052d0cb76e27813b954045dcc62e87c8b62a2a64b1ccb1759969256104ecb",
+        "record.py": "7865d920fed48c5b627716f9f99fcaa3b3d02698cb16792ca306340b01082f8e",
+        "docs_server.py": "b9a8c73c8677d79aa8629c40091287db937038998e06be6d98d9e70872b75352",
+        "docs/environments.md": "acbf9a721af2726a0084a8023a407467f4cd6820ce22e1a9235fe3820b2aeb48",
+        "docs/migrations.md": "db6ab2f2430f7c8ebe8d21d1a54f9194f24ee75a89492b55f5f6b7c3c3798344",
+        "docs/releases.md": "d53fd762ccac3f5e9d0fe1d1ee7f413e2f45bb75fad84dc71b3f45d17709c44a",
+        "docs/secrets.md": "2afe8f92b0fa2997142469009182ca0834a6240e6684a19d6920f1d8acb4e80e",
+        "docs/logs.md": "03e09ad9d2c44fd0a1d52a7b076e22599fde65123c15f04c79b8543906a7411d",
+        "docs/troubleshooting.md": "e195180cd184eda585029a10fcd4ee6591478ff3d81ceb4f9d29d371dcd47dbc",
+        "docs/config.md": "3041df53d5c02048153ab118b1e26c1b26d9405d49cd6de9165e799fbd74b143",
+        "docs/deploy.md": "788263b26f152642f7fe8675f9ac3dc07f4bfac15c75a8a8592419f080ded28c",
+        "docs/approvals.md": "0ba28ef4cd841fdd1e33ca16484603c22ee520e235915a7a6b89676607554d62",
+        "docs/upgrade-2x.md": "bed647d497cbdbd0b68d9f8b17c1302565e53922225d29cdddeb22ea9bed0025",
+        "docs/hooks.md": "7fb726567ef0a206e8d0cc2a28796914ba57bbd0796753f11b1bd9cd44664131",
+        "docs/rollback.md": "4daea33b4cb3f0049db23d41bbd0a303afe7776cf53152fd54a4feeace007484",
+        "docs/health-checks.md": "e793531d88bd28d6f85d50abc56bb8347288459a49e11ac13c3bd1519d4e7fc1",
+        "docs/tokens.md": "fd5fb6905064b4c1eae5bbaac3d523f59289aad401c635fc0ee1653473741f49",
+        "docs/ci.md": "bd06d55322be37dd1632b66c31ad9b19846d80088cf133ea089a6deb077b04a9",
+        "docs_checker/__init__.py": "148d2ae36db6cc6a1363334da22ea89ea3f8c5c4f4e2b26c060454bf6f6e0068",
+        "docs_checker/agent.py": "5898b347ee4d7ae0d0f01668d42151fd532f2077650315304212e1efd478c84a"
+      }
+    }
+  ]
+}

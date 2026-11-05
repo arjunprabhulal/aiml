@@ -1,0 +1,182 @@
+{
+  "model": "gemini-3.8-flash",
+  "same_connection": {
+    "server": {
+      "name": "docuctl_docs",
+      "instructions": "Ask docuctl questions in plain English.",
+      "capabilities": [
+        "prompts",
+        "resources",
+        "tools"
+      ]
+    },
+    "tools": [
+      {
+        "name": "docuctl_docs",
+        "description": "Answer a question about docuctl, the team's deploy CLI, from its manual. Pass the full question; follow-up questions on the same connection keep the context.",
+        "inputSchema": {
+          "properties": {
+            "request": {
+              "title": "Request",
+              "type": "string"
+            }
+          },
+          "required": [
+            "request"
+          ],
+          "title": "call_agentArguments",
+          "type": "object"
+        }
+      }
+    ],
+    "calls": [
+      {
+        "request": "I'm on docuctl 1.x. How do I roll back production to r41?",
+        "is_error": false,
+        "text": "In docuctl 1.x, use:\n\n```bash\ndocuctl release revert r41\n```\n\n(In docuctl 2.x, this was replaced by `docuctl rollback --env production --to r41`.)",
+        "seconds": 9.3
+      },
+      {
+        "request": "And how do I list the releases of production?",
+        "is_error": false,
+        "text": "In docuctl 1.x, use:\n\n```bash\ndocuctl release list --env production\n```\n\n(In docuctl 2.x, this was replaced by `docuctl releases --env production`.)",
+        "seconds": 5.7
+      }
+    ]
+  },
+  "new_connection": {
+    "server": {
+      "name": "docuctl_docs",
+      "instructions": "Ask docuctl questions in plain English.",
+      "capabilities": [
+        "prompts",
+        "resources",
+        "tools"
+      ]
+    },
+    "tools": [
+      {
+        "name": "docuctl_docs",
+        "description": "Answer a question about docuctl, the team's deploy CLI, from its manual. Pass the full question; follow-up questions on the same connection keep the context.",
+        "inputSchema": {
+          "properties": {
+            "request": {
+              "title": "Request",
+              "type": "string"
+            }
+          },
+          "required": [
+            "request"
+          ],
+          "title": "call_agentArguments",
+          "type": "object"
+        }
+      }
+    ],
+    "calls": [
+      {
+        "request": "And how do I list the releases of production?",
+        "is_error": false,
+        "text": "To list the releases for the production environment, run:\n\n```bash\ndocuctl releases --env production\n```\n\nThis lists the releases newest first, along with their status (`live`, `previous`, `degraded`, `failed`, or `pending`).",
+        "seconds": 3.2
+      }
+    ]
+  },
+  "failures": {
+    "no_key": {
+      "server": {
+        "name": "docuctl_docs",
+        "instructions": "Ask docuctl questions in plain English.",
+        "capabilities": [
+          "prompts",
+          "resources",
+          "tools"
+        ]
+      },
+      "tools": [
+        {
+          "name": "docuctl_docs",
+          "description": "Answer a question about docuctl, the team's deploy CLI, from its manual. Pass the full question; follow-up questions on the same connection keep the context.",
+          "inputSchema": {
+            "properties": {
+              "request": {
+                "title": "Request",
+                "type": "string"
+              }
+            },
+            "required": [
+              "request"
+            ],
+            "title": "call_agentArguments",
+            "type": "object"
+          }
+        }
+      ],
+      "calls": [
+        {
+          "request": "I'm on docuctl 1.x. How do I roll back production to r41?",
+          "is_error": true,
+          "text": "Error executing tool docuctl_docs: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.",
+          "seconds": 0.0
+        }
+      ]
+    },
+    "default_timeout": {
+      "question": "Staging deploy r42 failed in pre_deploy. Ask the docs whether rolling staging back undoes its migration.",
+      "timeout": null,
+      "calls": [
+        {
+          "name": "docs_docuctl_docs",
+          "args": {
+            "request": "Does rolling staging back undo its migration after a pre_deploy failure?"
+          }
+        },
+        {
+          "name": "docs_docuctl_docs",
+          "args": {
+            "request": "Does rolling staging back undo its migration?"
+          }
+        }
+      ],
+      "results": [
+        {
+          "error": "MCP tool execution failed: Timed out while waiting for response to ClientRequest. Waited 5.0 seconds."
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "No. `docuctl rollback` only points traffic back to an earlier release and does not run any hooks, so it never undoes a migration. \n\nTo undo a migration, write a new migration that reverses the change and deploy it as a new release before rolling back the application."
+            }
+          ],
+          "isError": false
+        }
+      ],
+      "answer": "No, rolling staging back does not undo its migration. `docuctl rollback` only redirects traffic to an earlier release without running any hooks. To reverse a migration, you must deploy a new migration that undoes the changes."
+    }
+  },
+  "release_bot": {
+    "question": "Staging deploy r42 failed in pre_deploy. Ask the docs whether rolling staging back undoes its migration.",
+    "timeout": 60,
+    "calls": [
+      {
+        "name": "docs_docuctl_docs",
+        "args": {
+          "request": "Does rolling staging back undo its migration after failing in pre_deploy?"
+        }
+      }
+    ],
+    "results": [
+      {
+        "content": [
+          {
+            "type": "text",
+            "text": "No. Running `docuctl rollback` does not undo database migrations. \n\n`docuctl rollback` only shifts traffic back to an earlier release without running any hooks. Even if `pre_deploy` failed mid-run, any migration changes that took effect remain. To reverse a migration, you must write a new migration that reverses the changes and deploy it as a new release."
+          }
+        ],
+        "isError": false
+      }
+    ],
+    "answer": "No, rolling back staging does not undo migrations. `docuctl rollback` only routes traffic back to a previous release without executing hooks; any migration changes that already ran remain applied. To undo a migration, you must author and deploy a new release containing a rollback/reversal migration."
+  }
+}

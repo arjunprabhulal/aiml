@@ -1,0 +1,52 @@
+{
+  "mode": "Local function execution and controlled faults through reused standard-library harness; no model call",
+  "written_at_utc": "2026-10-24T06:24:44.668515+00:00",
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "evaluate_cases.py",
+        "--save",
+        "result.json"
+      ],
+      "exit_status": 0,
+      "stdout_file": "run-output.txt"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "-m",
+        "unittest",
+        "-v",
+        "test_evaluation.py"
+      ],
+      "exit_status": 0,
+      "tests": 15
+    }
+  ],
+  "files": {
+    "README.md": "4f9f30aec9be2b30d6411f4205912927ccb3f6e6901670879e263ef74d6e5d9b",
+    "architecture.py": "c2ac843c561904d54c1f789d1b10d54f19f7f0d8c5df52e58e4fdd34f8065881",
+    "cases.json": "e088ec1662e1ffaa2eab48164b228f562836577ffc9bfaa06adf10902d1f9087",
+    "evaluate_cases.py": "20da50f1800755fd4f415ea404fbe4e5befd70e89da032c2fe7c77690034045e",
+    "pages.json": "d2d0748472de2483acde6f5cbd9f2d072f8561c047aafcc0b1bfb350c4c64e69",
+    "requirements-lock.txt": "b0e2fcecf3f9534b6355650f2f9e32f3cdad611dfb5d2df32fde469099044ddd",
+    "result.json": "c4ca79d4f05c7c91e4fb49de0443227aaf4eac460fbd080b56538a6540cac49b",
+    "run-output.txt": "ddfffe4165128db0b7a2c89b9ef53777892c1103899f340e61ee46978f6055f6",
+    "systems.py": "10e76cc3681a27cda1c8dbc721f57223f87f796672e9f9ae070050e91828e97f",
+    "task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+    "test_evaluation.py": "1dfbb10185460cdb77fb6e7404c77deed5ceb1a53750f09bdbdcdf631c5da1dd",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54"
+  },
+  "reused_sources": {
+    "vendor/harness.py": {
+      "origin": "public/examples/build-acceptance-fixtures-from-a-spec/harness.py",
+      "sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+      "unchanged": true
+    },
+    "architecture.py": {
+      "origin": "public/examples/ai-system-architecture/architecture.py",
+      "unchanged": true
+    }
+  }
+}

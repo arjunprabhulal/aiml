@@ -1,0 +1,5 @@
+serialize-and-save-fixed-1: answered / pass / queries=['In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?'] / calls=1
+serialize-and-save-agent-1: answered / pass / queries=['json dump ensure_ascii utf-8', 'write_text encoding utf-8 open'] / calls=6
+serialize-and-save-fixed-2: answered / pass / queries=['In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?'] / calls=1
+serialize-and-save-agent-2: answered / pass / queries=['json dump ensure_ascii utf-8', 'Path write_text encoding utf-8 open'] / calls=6
+{"agent": {"fail": 0, "incomplete": 0, "pass": 2}, "fixed": {"fail": 0, "incomplete": 0, "pass": 2}}

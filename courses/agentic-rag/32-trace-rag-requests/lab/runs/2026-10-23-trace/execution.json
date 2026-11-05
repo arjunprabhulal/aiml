@@ -1,0 +1,91 @@
+{
+  "command": [
+    "python",
+    "run.py",
+    "--output",
+    "runs/2026-10-23-trace/result.json"
+  ],
+  "execution_mode": "actual-offline-loopback-http",
+  "model_called": false,
+  "returncode": 0,
+  "test_returncode": 0,
+  "python": "3.12.8",
+  "dependencies": {
+    "fastapi": "0.141.1",
+    "starlette": "1.9.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.1"
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "f489e13fa71725744ddac7fde6b5e4e5551f4906c6b32a036055f10dec752689",
+    "app.py": "ac79720f448d6c434573586a3b3b162d992a07c716c0cee51c934ee23347738f",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "fault_fixture.py": "648e3485bc14da0b135b0a6afa494ea8e4182ff2855fa65fd7d4491ee3231884",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "http_contract.py": "82159308da477305fbffc8c51470835de3702611b9117910e08161e50cd0c4bd",
+    "limits.py": "bd7acae9935c04642d8fd5d1563d3bcf8ca135b46ae2ff5ecd106063c9c0c60f",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "loopback.py": "f9eaf16f2e32984de43b95cc37de814e82eb41dbeaa5503527dae515d81d1a8f",
+    "recorder.py": "7c77ffa5df103d18cd639988500288793c2f7d3c7437c1836147b47fd6dfcf87",
+    "refine.py": "fce4b5bd581fbfc4aaf6039bb486c8f477c3a5f80e95fc5c58473739a75e7235",
+    "requirements.lock": "c03cdf1e60393462ed82c8565aabfe77475c6072b689972af62cb0fe34fbe919",
+    "requirements.txt": "3886b4b89cb52fed466ad0fbd38de17165d184c15274e9abed42670bd99054bc",
+    "run.py": "f6594b17ab5112eb20b10adf792cc24b8e0b7e58c67c5d180bb29896efeea88d",
+    "serve.py": "6ca8338f3cd407a354c714385e318e34749c8d2c844623af3cd7217fb4667b3e",
+    "service.py": "c8dfe0a848faaeb92844603a1cb6d1b387586a4c98618d07d6740e132e306173",
+    "test_http.py": "ee588e70e0f84210a55d268d7d427a453ba60465966233cd546d2d6a742dbceb",
+    "test_trace.py": "bb3919760379cf4f73929c67f5a4f7acb1e418ad11e7bcf0e74c577b7f43faa6",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "traced.py": "1dc83995418a93d79ca9bf3bcfb3c74568032a3d815b7408c5db4906395d836a",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "m10_source_parity": {
+    "service.py": true,
+    "tools.py": true,
+    "refine.py": true,
+    "limits.py": true,
+    "bm25.py": true,
+    "version_documents.py": true,
+    "load_documents.py": true,
+    "loopback.py": true,
+    "serve.py": true,
+    "requirements.txt": true,
+    "requirements.lock": true,
+    "LICENSE": true,
+    "http_contract.py == app.py": true,
+    "fixtures": true
+  },
+  "result_sha256": "7e527a9ac272d3e90f23901fd9fb942aae81f0718730550badab0e60aedf8a38",
+  "mutations": [
+    {
+      "lab": "trace-rag-requests",
+      "mutation": "unknown_span_allowed",
+      "test": "test_trace.TraceTests.test_unknown_span_fields_fail_closed",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_unknown_span_fields_fail_closed (test_trace.TraceTests.test_unknown_span_fields_fail_closed) ... FAIL\n\n======================================================================\nFAIL: test_unknown_span_fields_fail_closed (test_trace.TraceTests.test_unknown_span_fields_fail_closed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m11-mutation-hc4kldi6/lab/test_trace.py\", line 48, in test_unknown_span_fields_fail_closed\n    with self.assertRaises(ValueError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "lab": "trace-rag-requests",
+      "mutation": "context_not_reset",
+      "test": "test_trace.TraceTests.test_fixed_fields_redact_inputs_and_errors",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_fixed_fields_redact_inputs_and_errors (test_trace.TraceTests.test_fixed_fields_redact_inputs_and_errors) ... FAIL\n\n======================================================================\nFAIL: test_fixed_fields_redact_inputs_and_errors (test_trace.TraceTests.test_fixed_fields_redact_inputs_and_errors)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m11-mutation-qd9dou59/lab/test_trace.py\", line 17, in test_fixed_fields_redact_inputs_and_errors\n    self.assertIsNone(current_trace.get())\nAssertionError: 'b6e703b690ea416983117e01fdca903f' is not None\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "lab": "trace-rag-requests",
+      "mutation": "retention_unbounded",
+      "test": "test_trace.TraceTests.test_retention_and_invalid_limits",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_retention_and_invalid_limits (test_trace.TraceTests.test_retention_and_invalid_limits) ... FAIL\n\n======================================================================\nFAIL: test_retention_and_invalid_limits (test_trace.TraceTests.test_retention_and_invalid_limits)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m11-mutation-9rct6xbi/lab/test_trace.py\", line 62, in test_retention_and_invalid_limits\n    self.assertEqual(len(r.snapshot()),1);self.assertEqual(r.stats()['dropped_traces'],2)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 3 != 1\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (failures=1)\n"
+    }
+  ]
+}

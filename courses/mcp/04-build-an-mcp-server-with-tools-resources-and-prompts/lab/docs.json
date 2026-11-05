@@ -1,0 +1,17 @@
+{
+  "project": "taskq, a sample job-queue library used only in this lesson",
+  "pages": {
+    "quickstart": {
+      "title": "Quickstart",
+      "body": "# Quickstart\n\nCreate a queue with `Queue(\"emails\")` and add a job with `queue.put(job)`. Start a worker with `taskq worker emails`. A worker takes one job at a time and acknowledges it when the handler returns.\n"
+    },
+    "configuration": {
+      "title": "Configuration",
+      "body": "# Configuration\n\nSet `TASKQ_BROKER_URL` to the broker address. `visibility_timeout` is the number of seconds a job stays hidden after a worker takes it; the default is 30. Set it longer than your slowest handler, or a second worker takes the same job.\n"
+    },
+    "retries": {
+      "title": "Retries",
+      "body": "# Retries\n\nA handler that raises is retried up to `max_retries` times, 3 by default, with exponential backoff. After the last attempt the job moves to the dead-letter queue. Make handlers idempotent: a retried job can run twice.\n"
+    }
+  }
+}

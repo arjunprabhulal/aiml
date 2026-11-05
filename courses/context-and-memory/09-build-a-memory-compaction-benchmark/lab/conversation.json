@@ -1,0 +1,394 @@
+{
+  "instructions": "Answer from the conversation and the stored memories. Say when a fact is missing.",
+  "turns": [
+    {
+      "turn": 1,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 2,
+      "user": "Here is the venue map: Line 1 of the venue map has routine details for the offsite. Line 2 of the venue map has routine details for the offsite.",
+      "assistant": "Thanks, I read the venue map."
+    },
+    {
+      "turn": 3,
+      "user": "I am vegetarian.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "diet"
+      }
+    },
+    {
+      "turn": 4,
+      "user": "Here is the travel policy: Line 1 of the travel policy has routine details for the offsite. Line 2 of the travel policy has routine details for the offsite. Line 3 of the travel policy has routine details for the offsite. Line 4 of the travel policy has routine details for the offsite. Line 5 of the travel policy has routine details for the offsite. Line 6 of the travel policy has routine details for the offsite. Line 7 of the travel policy has routine details for the offsite. Line 8 of the travel policy has routine details for the offsite. Line 9 of the travel policy has routine details for the offsite. Line 10 of the travel policy has routine details for the offsite. Line 11 of the travel policy has routine details for the offsite. Line 12 of the travel policy has routine details for the offsite. Line 13 of the travel policy has routine details for the offsite. Line 14 of the travel policy has routine details for the offsite.",
+      "assistant": "Thanks, I read the travel policy."
+    },
+    {
+      "turn": 5,
+      "user": "The budget is 150 euros per night.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "budget"
+      }
+    },
+    {
+      "turn": 6,
+      "user": "Here is the meeting notes: Line 1 of the meeting notes has routine details for the offsite. Line 2 of the meeting notes has routine details for the offsite.",
+      "assistant": "Thanks, I read the meeting notes."
+    },
+    {
+      "turn": 7,
+      "user": "Here is the room layout: Line 1 of the room layout has routine details for the offsite. Line 2 of the room layout has routine details for the offsite.",
+      "assistant": "Thanks, I read the room layout."
+    },
+    {
+      "turn": 8,
+      "user": "We are going to Porto.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "city"
+      }
+    },
+    {
+      "turn": 9,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 10,
+      "user": "Here is the venue map: Line 1 of the venue map has routine details for the offsite. Line 2 of the venue map has routine details for the offsite.",
+      "assistant": "Thanks, I read the venue map."
+    },
+    {
+      "turn": 11,
+      "user": "Here is the team list: Line 1 of the team list has routine details for the offsite. Line 2 of the team list has routine details for the offsite.",
+      "assistant": "Thanks, I read the team list."
+    },
+    {
+      "turn": 12,
+      "user": "My passport number is P1234567.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "passport"
+      }
+    },
+    {
+      "turn": 13,
+      "user": "Here is the expense form: Line 1 of the expense form has routine details for the offsite. Line 2 of the expense form has routine details for the offsite.",
+      "assistant": "Thanks, I read the expense form."
+    },
+    {
+      "turn": 14,
+      "user": "Here is the meeting notes: Line 1 of the meeting notes has routine details for the offsite. Line 2 of the meeting notes has routine details for the offsite.",
+      "assistant": "Thanks, I read the meeting notes."
+    },
+    {
+      "turn": 15,
+      "user": "We travel from 3 to 6 November.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "dates"
+      }
+    },
+    {
+      "turn": 16,
+      "user": "Here is the agenda: Line 1 of the agenda has routine details for the offsite. Line 2 of the agenda has routine details for the offsite. Line 3 of the agenda has routine details for the offsite. Line 4 of the agenda has routine details for the offsite. Line 5 of the agenda has routine details for the offsite. Line 6 of the agenda has routine details for the offsite. Line 7 of the agenda has routine details for the offsite. Line 8 of the agenda has routine details for the offsite. Line 9 of the agenda has routine details for the offsite. Line 10 of the agenda has routine details for the offsite. Line 11 of the agenda has routine details for the offsite. Line 12 of the agenda has routine details for the offsite. Line 13 of the agenda has routine details for the offsite. Line 14 of the agenda has routine details for the offsite.",
+      "assistant": "Thanks, I read the agenda."
+    },
+    {
+      "turn": 17,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 18,
+      "user": "I want a hotel near the river.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "hotel-area"
+      }
+    },
+    {
+      "turn": 19,
+      "user": "Here is the team list: Line 1 of the team list has routine details for the offsite. Line 2 of the team list has routine details for the offsite.",
+      "assistant": "Thanks, I read the team list."
+    },
+    {
+      "turn": 20,
+      "user": "Here is the travel policy: Line 1 of the travel policy has routine details for the offsite. Line 2 of the travel policy has routine details for the offsite. Line 3 of the travel policy has routine details for the offsite. Line 4 of the travel policy has routine details for the offsite. Line 5 of the travel policy has routine details for the offsite. Line 6 of the travel policy has routine details for the offsite. Line 7 of the travel policy has routine details for the offsite. Line 8 of the travel policy has routine details for the offsite. Line 9 of the travel policy has routine details for the offsite. Line 10 of the travel policy has routine details for the offsite. Line 11 of the travel policy has routine details for the offsite. Line 12 of the travel policy has routine details for the offsite. Line 13 of the travel policy has routine details for the offsite. Line 14 of the travel policy has routine details for the offsite.",
+      "assistant": "Thanks, I read the travel policy."
+    },
+    {
+      "turn": 21,
+      "user": "Here is the expense form: Line 1 of the expense form has routine details for the offsite. Line 2 of the expense form has routine details for the offsite.",
+      "assistant": "Thanks, I read the expense form."
+    },
+    {
+      "turn": 22,
+      "user": "Raise the budget to 180 euros per night.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "correct",
+        "attribute": "budget"
+      }
+    },
+    {
+      "turn": 23,
+      "user": "Here is the room layout: Line 1 of the room layout has routine details for the offsite. Line 2 of the room layout has routine details for the offsite.",
+      "assistant": "Thanks, I read the room layout."
+    },
+    {
+      "turn": 24,
+      "user": "Here is the agenda: Line 1 of the agenda has routine details for the offsite. Line 2 of the agenda has routine details for the offsite. Line 3 of the agenda has routine details for the offsite. Line 4 of the agenda has routine details for the offsite. Line 5 of the agenda has routine details for the offsite. Line 6 of the agenda has routine details for the offsite. Line 7 of the agenda has routine details for the offsite. Line 8 of the agenda has routine details for the offsite. Line 9 of the agenda has routine details for the offsite. Line 10 of the agenda has routine details for the offsite. Line 11 of the agenda has routine details for the offsite. Line 12 of the agenda has routine details for the offsite. Line 13 of the agenda has routine details for the offsite. Line 14 of the agenda has routine details for the offsite.",
+      "assistant": "Thanks, I read the agenda."
+    },
+    {
+      "turn": 25,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 26,
+      "user": "Here is the venue map: Line 1 of the venue map has routine details for the offsite. Line 2 of the venue map has routine details for the offsite.",
+      "assistant": "Thanks, I read the venue map."
+    },
+    {
+      "turn": 27,
+      "user": "Book the morning flight if possible.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "flight"
+      }
+    },
+    {
+      "turn": 28,
+      "user": "Here is the travel policy: Line 1 of the travel policy has routine details for the offsite. Line 2 of the travel policy has routine details for the offsite. Line 3 of the travel policy has routine details for the offsite. Line 4 of the travel policy has routine details for the offsite. Line 5 of the travel policy has routine details for the offsite. Line 6 of the travel policy has routine details for the offsite. Line 7 of the travel policy has routine details for the offsite. Line 8 of the travel policy has routine details for the offsite. Line 9 of the travel policy has routine details for the offsite. Line 10 of the travel policy has routine details for the offsite. Line 11 of the travel policy has routine details for the offsite. Line 12 of the travel policy has routine details for the offsite. Line 13 of the travel policy has routine details for the offsite. Line 14 of the travel policy has routine details for the offsite.",
+      "assistant": "Thanks, I read the travel policy."
+    },
+    {
+      "turn": 29,
+      "user": "Here is the expense form: Line 1 of the expense form has routine details for the offsite. Line 2 of the expense form has routine details for the offsite.",
+      "assistant": "Thanks, I read the expense form."
+    },
+    {
+      "turn": 30,
+      "user": "Here is the meeting notes: Line 1 of the meeting notes has routine details for the offsite. Line 2 of the meeting notes has routine details for the offsite.",
+      "assistant": "Thanks, I read the meeting notes."
+    },
+    {
+      "turn": 31,
+      "user": "I eat fish now, but still no meat.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "correct",
+        "attribute": "diet"
+      }
+    },
+    {
+      "turn": 32,
+      "user": "Here is the agenda: Line 1 of the agenda has routine details for the offsite. Line 2 of the agenda has routine details for the offsite. Line 3 of the agenda has routine details for the offsite. Line 4 of the agenda has routine details for the offsite. Line 5 of the agenda has routine details for the offsite. Line 6 of the agenda has routine details for the offsite. Line 7 of the agenda has routine details for the offsite. Line 8 of the agenda has routine details for the offsite. Line 9 of the agenda has routine details for the offsite. Line 10 of the agenda has routine details for the offsite. Line 11 of the agenda has routine details for the offsite. Line 12 of the agenda has routine details for the offsite. Line 13 of the agenda has routine details for the offsite. Line 14 of the agenda has routine details for the offsite.",
+      "assistant": "Thanks, I read the agenda."
+    },
+    {
+      "turn": 33,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 34,
+      "user": "Here is the venue map: Line 1 of the venue map has routine details for the offsite. Line 2 of the venue map has routine details for the offsite.",
+      "assistant": "Thanks, I read the venue map."
+    },
+    {
+      "turn": 35,
+      "user": "Please forget my passport number.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "forget",
+        "attribute": "passport"
+      }
+    },
+    {
+      "turn": 36,
+      "user": "Here is the travel policy: Line 1 of the travel policy has routine details for the offsite. Line 2 of the travel policy has routine details for the offsite. Line 3 of the travel policy has routine details for the offsite. Line 4 of the travel policy has routine details for the offsite. Line 5 of the travel policy has routine details for the offsite. Line 6 of the travel policy has routine details for the offsite. Line 7 of the travel policy has routine details for the offsite. Line 8 of the travel policy has routine details for the offsite. Line 9 of the travel policy has routine details for the offsite. Line 10 of the travel policy has routine details for the offsite. Line 11 of the travel policy has routine details for the offsite. Line 12 of the travel policy has routine details for the offsite. Line 13 of the travel policy has routine details for the offsite. Line 14 of the travel policy has routine details for the offsite.",
+      "assistant": "Thanks, I read the travel policy."
+    },
+    {
+      "turn": 37,
+      "user": "Here is the expense form: Line 1 of the expense form has routine details for the offsite. Line 2 of the expense form has routine details for the offsite.",
+      "assistant": "Thanks, I read the expense form."
+    },
+    {
+      "turn": 38,
+      "user": "Here is the meeting notes: Line 1 of the meeting notes has routine details for the offsite. Line 2 of the meeting notes has routine details for the offsite.",
+      "assistant": "Thanks, I read the meeting notes."
+    },
+    {
+      "turn": 39,
+      "user": "Here is the room layout: Line 1 of the room layout has routine details for the offsite. Line 2 of the room layout has routine details for the offsite.",
+      "assistant": "Thanks, I read the room layout."
+    },
+    {
+      "turn": 40,
+      "user": "Move the trip to 10 to 13 November.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "correct",
+        "attribute": "dates"
+      }
+    },
+    {
+      "turn": 41,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 42,
+      "user": "Here is the venue map: Line 1 of the venue map has routine details for the offsite. Line 2 of the venue map has routine details for the offsite.",
+      "assistant": "Thanks, I read the venue map."
+    },
+    {
+      "turn": 43,
+      "user": "Here is the team list: Line 1 of the team list has routine details for the offsite. Line 2 of the team list has routine details for the offsite.",
+      "assistant": "Thanks, I read the team list."
+    },
+    {
+      "turn": 44,
+      "user": "Bob will join us on the second day.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "attendee"
+      }
+    },
+    {
+      "turn": 45,
+      "user": "Here is the expense form: Line 1 of the expense form has routine details for the offsite. Line 2 of the expense form has routine details for the offsite.",
+      "assistant": "Thanks, I read the expense form."
+    },
+    {
+      "turn": 46,
+      "user": "Here is the meeting notes: Line 1 of the meeting notes has routine details for the offsite. Line 2 of the meeting notes has routine details for the offsite.",
+      "assistant": "Thanks, I read the meeting notes."
+    },
+    {
+      "turn": 47,
+      "user": "I want a hotel near the river.",
+      "assistant": "Noted.",
+      "memory": {
+        "op": "remember",
+        "attribute": "hotel-area"
+      }
+    },
+    {
+      "turn": 48,
+      "user": "Here is the agenda: Line 1 of the agenda has routine details for the offsite. Line 2 of the agenda has routine details for the offsite. Line 3 of the agenda has routine details for the offsite. Line 4 of the agenda has routine details for the offsite. Line 5 of the agenda has routine details for the offsite. Line 6 of the agenda has routine details for the offsite. Line 7 of the agenda has routine details for the offsite. Line 8 of the agenda has routine details for the offsite. Line 9 of the agenda has routine details for the offsite. Line 10 of the agenda has routine details for the offsite. Line 11 of the agenda has routine details for the offsite. Line 12 of the agenda has routine details for the offsite. Line 13 of the agenda has routine details for the offsite. Line 14 of the agenda has routine details for the offsite.",
+      "assistant": "Thanks, I read the agenda."
+    },
+    {
+      "turn": 49,
+      "user": "Here is the slides: Line 1 of the slides has routine details for the offsite. Line 2 of the slides has routine details for the offsite.",
+      "assistant": "Thanks, I read the slides."
+    },
+    {
+      "turn": 50,
+      "user": "Here is the venue map: Line 1 of the venue map has routine details for the offsite. Line 2 of the venue map has routine details for the offsite.",
+      "assistant": "Thanks, I read the venue map."
+    }
+  ],
+  "checkpoints": [
+    {
+      "after": 10,
+      "question": "Summarize the trip plan so far.",
+      "required": [
+        "I am vegetarian.",
+        "150 euros per night",
+        "going to Porto"
+      ],
+      "stale": [],
+      "deleted": []
+    },
+    {
+      "after": 20,
+      "question": "Summarize the trip plan so far.",
+      "required": [
+        "I am vegetarian.",
+        "150 euros per night",
+        "going to Porto",
+        "3 to 6 November",
+        "hotel near the river"
+      ],
+      "stale": [],
+      "deleted": []
+    },
+    {
+      "after": 30,
+      "question": "Summarize the trip plan so far.",
+      "required": [
+        "180 euros per night",
+        "going to Porto",
+        "3 to 6 November",
+        "hotel near the river",
+        "morning flight"
+      ],
+      "stale": [
+        "150 euros per night"
+      ],
+      "deleted": []
+    },
+    {
+      "after": 40,
+      "question": "Summarize the trip plan so far.",
+      "required": [
+        "fish now",
+        "180 euros per night",
+        "going to Porto",
+        "10 to 13 November",
+        "hotel near the river",
+        "morning flight"
+      ],
+      "stale": [
+        "I am vegetarian.",
+        "150 euros per night",
+        "3 to 6 November"
+      ],
+      "deleted": [
+        "P1234567"
+      ]
+    },
+    {
+      "after": 50,
+      "question": "Summarize the trip plan so far.",
+      "required": [
+        "fish now",
+        "180 euros per night",
+        "going to Porto",
+        "10 to 13 November",
+        "hotel near the river",
+        "morning flight",
+        "Bob will join"
+      ],
+      "stale": [
+        "I am vegetarian.",
+        "150 euros per night",
+        "3 to 6 November"
+      ],
+      "deleted": [
+        "P1234567"
+      ]
+    }
+  ],
+  "budget": {
+    "context_limit": 512,
+    "max_new_tokens": 128,
+    "margin": 32
+  }
+}

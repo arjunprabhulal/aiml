@@ -1,0 +1,35 @@
+{
+  "model": "gemini-3.8-flash",
+  "location": "us-central1",
+  "failures": {
+    "model_region": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher model `projects/vertex-ai-experminent/locations/us-central1/publishers/google/models/gemini-3.8-flash` was not found or your project does not have access to it. Ensure you are using a valid model name and that the model is available in the specified region. For more information, see: https://docs.cloud.google.com/gemini-enterprise-agent-",
+    "app_name": "ValueError: App name docs_helper is not valid. It should either be the full ReasoningEngine resource name, or the reasoning engine id."
+  },
+  "session_1": {
+    "id": "330377302544220160",
+    "stored_events": 4,
+    "authors": [
+      "user",
+      "docs_helper",
+      "docs_helper",
+      "docs_helper"
+    ]
+  },
+  "ingest_return_seconds": 0.02,
+  "memories_right_after_ingest": 0,
+  "searchable_after_seconds": 181,
+  "memories": [],
+  "session_2": {
+    "id": "3444616444870918144",
+    "lines": [
+      "call   load_memory {\"query\": \"docuctl version\"}",
+      "call   read_page {\"page\": \"rollback\"}",
+      "result load_memory {\"result\": {\"memories\": []}}",
+      "result read_page [\"page\", \"text\"]",
+      "call   load_memory {\"query\": \"docuctl\"}",
+      "result load_memory {\"result\": {\"memories\": []}}",
+      "answer Which major version of docuctl are you using (1.x or 2.x)?"
+    ]
+  },
+  "sessions_listed": 2
+}

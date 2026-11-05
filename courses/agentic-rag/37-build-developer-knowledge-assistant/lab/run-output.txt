@@ -1,0 +1,24 @@
+rollback: HTTP 200 · answered
+To undo a staging deployment in docuctl 3.5, list known releases with `docuctl releases --env staging`. Then run `docuctl rollback --env staging --to RELEASE_ID`.
+
+To deploy a staging release with docuctl 3.5, run `docuctl deploy --env staging --release RELEASE_ID`. Confirm the release with `docuctl status --env staging`.
+rotate-token: HTTP 200 · answered
+To rotate an API token in docuctl 3.5, create a replacement with `docuctl token create --name rotation`. Update the application's secret store and check a request before revoking the old token with `docuctl token revoke TOKEN_ID`.
+
+Never put an API token in documentation, a shell history or a support message. These instructions use TOKEN_ID as a placeholder, not a credential.
+previous-version: HTTP 200 · answered
+In docuctl 3.4, deploy with `docuctl deploy staging --tag RELEASE_ID`. Check the result with `docuctl status staging`. Version 3.5 replaces positional environments with `--env`.
+
+In docuctl 3.4, undo a staging deployment with `docuctl rollback staging RELEASE_ID`. Check the active release with `docuctl status staging`.
+production: HTTP 200 · answered
+Production deployment requires a reviewed release and approval from the on-call maintainer. A maintainer runs `docuctl deploy --env production --release RELEASE_ID --approval APPROVAL_ID`.
+
+If production health checks fail, the maintainer follows the approved rollback runbook and records the release ID in the incident. A reader token cannot retrieve this collection.
+repeat-rollback: HTTP 200 · answered
+To undo a staging deployment in docuctl 3.5, list known releases with `docuctl releases --env staging`. Then run `docuctl rollback --env staging --to RELEASE_ID`.
+
+To deploy a staging release with docuctl 3.5, run `docuctl deploy --env staging --release RELEASE_ID`. Confirm the release with `docuctl status --env staging`.
+unknown: HTTP 200 · abstain
+I could not find supporting documentation for that question in this collection and version.
+reader-denied: HTTP 403 · Collection access denied
+Provider: extractive. Saved 7 real HTTP activities.

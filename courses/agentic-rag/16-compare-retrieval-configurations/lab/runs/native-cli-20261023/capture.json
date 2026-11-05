@@ -1,0 +1,51 @@
+{
+  "lesson_id": "compare-retrieval-configurations",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py"
+  ],
+  "exit_code": 0,
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "1741cd40a33242e37d45db3a068f46bd7a8ee90b25c1fb26d898ff7130dc2479",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 1345,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "{\n  \"execution_mode\": \"offline-frozen-development-comparison\",\n  \"model_called\": false,\n  \"snapshot_id\": \"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\n  \"frozen_configuration\": {\n    \"names\": [\n      \"lexical\",\n      \"vector\",\n      \"rrf\",\n      \"rrf+coverage\"\n    ],\n    \"candidate_budget_per_branch\": 3,\n    \"rank_constant\": 60,\n    \"cutoffs\": [\n      1,\n      2\n    ],\n    \"scope\": \"four original development cases; no held-out queries; no configuration tuning\"\n  },\n  \"label_binding_receipts\": [\n    {\n      \"case_id\": \"utf8-write\",\n      \"legacy_chunk_id\": \"path-write:b71a2d18a53d86bf\",\n      \"current_chunk_id\": \"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\n      \"binding\": [\n        \"source_id\",\n        \"source_version\",\n        \"source_text_sha256\",\n        \"chunk_text_sha256\"\n      ]\n    },\n    {\n      \"case_id\": \"replace-file\",\n      \"legacy_chunk_id\": \"path-write:b71a2d18a53d86bf\",\n      \"current_chunk_id\": \"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\n      \"binding\": [\n        \"source_id\",\n        \"source_version\",\n        \"source_text_sha256\",\n        \"chunk_text_sha256\"\n      ]\n    },\n    {\n      \"case_id\": \"json-result-type\",\n      \"legacy_chunk_id\": \"json-text:8a17e251a41ccb3b\",\n      \"current_chunk_id\": \"e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c\",\n      \"binding\": [\n        \"source_id\",\n        \"source_version\","
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "db1f30625e38690a545b6ebcbf3d6f9880862288737a031fa3297d4db18f3639",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 1345,
+        "viewportY": 1345,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "      },\n      \"2\": {\n        \"supported_case_count\": 3,\n        \"mean_recall_at_k\": 1.0,\n        \"mean_reciprocal_rank_at_k\": 0.8333333333333334\n      }\n    },\n    \"rrf\": {\n      \"1\": {\n        \"supported_case_count\": 3,\n        \"mean_recall_at_k\": 0.6666666666666666,\n        \"mean_reciprocal_rank_at_k\": 0.6666666666666666\n      },\n      \"2\": {\n        \"supported_case_count\": 3,\n        \"mean_recall_at_k\": 1.0,\n        \"mean_reciprocal_rank_at_k\": 0.8333333333333334\n      }\n    },\n    \"rrf+coverage\": {\n      \"1\": {\n        \"supported_case_count\": 3,\n        \"mean_recall_at_k\": 0.6666666666666666,\n        \"mean_reciprocal_rank_at_k\": 0.6666666666666666\n      },\n      \"2\": {\n        \"supported_case_count\": 3,\n        \"mean_recall_at_k\": 1.0,\n        \"mean_reciprocal_rank_at_k\": 0.8333333333333334\n      }\n    }\n  },\n  \"unsupported_candidate_behavior\": [\n    {\n      \"case_id\": \"backup-schedule\",\n      \"returned_candidate_counts\": {\n        \"lexical\": 1,\n        \"vector\": 3,\n        \"rrf\": 3,\n        \"rrf+coverage\": 3\n      }\n    }\n  ],\n  \"supported_case_count\": 3,\n  \"unsupported_case_count\": 1,\n  \"limit\": \"Descriptive results on three supported development questions, not a general search-quality estimate or model comparison. Unsupported questions have no retrieval target an\nd are excluded from metric means.\"\n}\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "classification": "One original local learner CLI PTY, original resident buffer; no replay or output reconstruction"
+}

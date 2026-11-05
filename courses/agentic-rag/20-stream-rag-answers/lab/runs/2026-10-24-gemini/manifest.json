@@ -1,0 +1,72 @@
+{
+  "execution_mode": "fresh-gemini-api",
+  "environment": {
+    "python": "3.12.8",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "sqlite": "3.45.3",
+    "model": "gemini-3.1-flash-lite",
+    "seed": "not set; provider default",
+    "configuration": "serialized in every request record",
+    "endpoint": "Gemini Developer API v1beta",
+    "tls": "verified with the preinstalled certifi CA bundle",
+    "automatic_retries": 0
+  },
+  "source_sha256": {
+    "gemini_client.py": "738eb3baf9fd3f3dc5fd5503a0133b70eb1bab95ddce7f1d82f030042ff45d96",
+    "gemini_stream.py": "91052a0c5efcc44e45acc04fa84efa947ec10906b4cffc66b7a40203e3c175c4",
+    "render_output.py": "9efaf27d08293e670cb6135802e8ca4f817b947087f14f22e67e28c21898f955",
+    "run.py": "53724d7d199ae15d7aab2b98b83402e706ac63846c8538b67398cdafbcede654",
+    "stream_core.py": "ef3789e92319e89b548b19f2121c1d5f92f8a62542564eadbf97042081373988"
+  },
+  "result_sha256": "df215a9168f23f2ce82550fcb7c2e359c6e32c0b9c1dec3459b12f677a6a7d17",
+  "requests": [
+    {
+      "file": "requests/request-006.json",
+      "sha256": "75b615d406723c3aaf43b32e51a21afbba22abcc7ba4d04d29f7b5381a9dc06b"
+    },
+    {
+      "file": "requests/request-008.json",
+      "sha256": "39725530bb5f22d01530b33f27d153589fbff172b0d0d451d740baa274ba9939"
+    },
+    {
+      "file": "requests/request-010.json",
+      "sha256": "5bb78f8646e82dbf54e762b88688cff07b01663df781bc0df22c21afbbac0ab0"
+    },
+    {
+      "file": "requests/request-012.json",
+      "sha256": "1f3d994068a29b200fe6de95cdc4ff3cfb995d1737e69a9104cfc71d8328a379"
+    }
+  ],
+  "failed_attempts": 0,
+  "estimated_usd": 0.00040775,
+  "price_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "price_checked": "2026-10-24",
+  "scope": "Usage estimate, not an invoice. Session budget is shared across the three labs.",
+  "context_binding_scope": "Application frames retain the original context-binding hash for the existing consumer. It is not the new Gemini provider-request hash. The fresh model, system instruction, response schema and generation configuration are in the separately hashed provider payload.",
+  "case_request_bindings": [
+    {
+      "case_id": "utf8-write",
+      "historical_request_sha256": "a991e9ebf13290c7725aab2642c1b7468253bdca7835f40593635c94f90fdcc5",
+      "fresh_gemini_request_sha256": "f12806a0cf5f5420e7625703a549d192be4a75e0ab32f580fdaf0cc2740394f9",
+      "same_user_context": true
+    },
+    {
+      "case_id": "replace-file",
+      "historical_request_sha256": "776dcc0c6157a6970d2ad2964cecd429173d1a3758ca7b596f6c7ace2d21ef8c",
+      "fresh_gemini_request_sha256": "4f67aba792ebec82b86398a4740771ccf816860dd0b81a0a993e443446468cc1",
+      "same_user_context": true
+    },
+    {
+      "case_id": "json-result-type",
+      "historical_request_sha256": "31fbf2a45170afd7ffb623b6281debc1817969075c5d5bf49233d2432cf7714d",
+      "fresh_gemini_request_sha256": "15ad4281a090ce748f4d36fde417c1aedbaa58b4795fee25b709b486c7e1e985",
+      "same_user_context": true
+    },
+    {
+      "case_id": "backup-schedule",
+      "historical_request_sha256": "e13d0483ca5a2b4ec06bea07518a126300443ef3a11ab56d83b3ecccc8aef544",
+      "fresh_gemini_request_sha256": "103822d41a85483fb7545631b45825cd4eca7afcb29f1aa258d7d5d9fd1bbf8e",
+      "same_user_context": true
+    }
+  ]
+}

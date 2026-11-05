@@ -1,0 +1,74 @@
+{
+  "classification": "Original live local learner CLI PTY captured after exit, not a report or replay of stdout",
+  "source_base": "7ff11a520a840a1d0febef617cb82a23186861de",
+  "command": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py",
+    "--output",
+    "runs/native-cli-20261023/result.json"
+  ],
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "80a3577ed490f8b9d598bcec6d821528c8907e2e6c72279e56ab9d25987b1ef7",
+    "fixtures/provenance.json": "fe5a2846699daf65bd92feb7f60037a90107167e39d272de98b43e9c5eb12f02",
+    "fixtures/recording.json": "193d4c3c91e66432d3717bf85dced0034b572e804cd50efc246042b574baeaa0",
+    "render_output.py": "9efaf27d08293e670cb6135802e8ca4f817b947087f14f22e67e28c21898f955",
+    "run.py": "53724d7d199ae15d7aab2b98b83402e706ac63846c8538b67398cdafbcede654",
+    "runs/2026-10-23-stream/execution.json": "469bf83a8694852f8f5f738e8893f1e75ba95a8f7c560b69de1bb112afeaef41",
+    "runs/2026-10-23-stream/media.json": "5289bb16f3efa7ac5286a63f925232de90758bef5f6211e1211e550fa0a027c1",
+    "runs/2026-10-23-stream/output-mobile.png": "5baee9ba2c1e8700c8ab79919e4f58bfb509073e6dbfe951c9ee9df614ac14e5",
+    "runs/2026-10-23-stream/output-small.png": "ff4d6b9931fcbb881b334a6026c04440b2c6a4e2dd5ad3915d2b10c4952a109d",
+    "runs/2026-10-23-stream/output.png": "dccdd5c45c31295120043e30aa44d5dda69ebea49145e533166e9e85c6b2585f",
+    "runs/2026-10-23-stream/result.json": "e5496c481de80da8108cfaa148f39ef002b44ad647d371decf22bf3a46359125",
+    "runs/2026-10-23-stream/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-stream/stdout.txt": "58ca079ffe5e4929633bd174067bf6dfbe4de8679c138c458b5c49dab36119b8",
+    "runs/2026-10-23-stream/tests.txt": "1b2135bc85fa4a99555f2be1dd6232c364ac0cbe307bdf7eb9cff41ac12f4c34",
+    "stream_core.py": "ef3789e92319e89b548b19f2121c1d5f92f8a62542564eadbf97042081373988",
+    "test_stream.py": "9dfecea9ff3986b766715126d37710c1b82896b1b376c28c6879f844b3ce880c"
+  },
+  "executed_README": "source/README.md",
+  "source_resolution": "All code, fixtures and old records remain byte-identical. Current lab README only adds this capture section; its original executed bytes are retained in source/README.md.",
+  "guard_sha256": "cc3aa6a4d52abb883b7daad366dd78a3c542665ae5ce6dba178d87a7182c8ffd",
+  "capture_control_freeze_sha256": "487cef739ccdabb5db8d8e969939834e1be7e32e6c9978adfb0b6020c91d9a45",
+  "exit_code": 0,
+  "original_processes": 1,
+  "terminal_input_bytes": 0,
+  "network_attempts": 0,
+  "provider_requests": 0,
+  "original_stdout_sha256": "98a9b938309a8ea1db70f105be1c3fdc6cbc2cade6607f860aaef16b0749c39d",
+  "parsed_result_sha256": "e5496c481de80da8108cfaa148f39ef002b44ad647d371decf22bf3a46359125",
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "sha256": "c27425408df6b75c67455b7b4853182c6e0f0bfd6b0945fdee89e7a141d74d6f",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "state": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "sha256": "c27425408df6b75c67455b7b4853182c6e0f0bfd6b0945fdee89e7a141d74d6f",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "state": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "same_deterministic_result_as_historical": true,
+  "historical_difference": [],
+  "scope": "The actual command replays saved replies through derived application frames and retains cancellation, corrupt-frame, incomplete-input and transport-error cases. It does not capture fresh provider streaming.",
+  "record_files_sha256": {
+    "capture.json": "b9862734b8871155eecfc168e413f9d740ec57201297fc5a4810bd79de0b7eae",
+    "environment.json": "6f695b2ec797b284dffcd83177adac241a05234e7e0e2a7f746224e8dc930c7e",
+    "guard-ready.json": "f1d375dfaf1378085e0419559207068e700db0e6f69f99d088dc0c9c2bb6898d",
+    "images/completed-end-1920@2x.png": "c27425408df6b75c67455b7b4853182c6e0f0bfd6b0945fdee89e7a141d74d6f",
+    "images/completed-top-1920@2x.png": "c27425408df6b75c67455b7b4853182c6e0f0bfd6b0945fdee89e7a141d74d6f",
+    "launch.json": "478b616c1826e999ef54b7f544b719fad4f612c4914ebbac1d35fcf41384c840",
+    "process-result.json": "efc565295a84b7569d133ecd35afa9db64f7d4bac0d743ed0e0eb0efc65df917",
+    "provenance.json": "e987e119aa20eb8a2722f8edc1168c73b62fc0d7547b3253452c7e8c23eeacf5",
+    "result.json": "e5496c481de80da8108cfaa148f39ef002b44ad647d371decf22bf3a46359125",
+    "source/README.md": "80a3577ed490f8b9d598bcec6d821528c8907e2e6c72279e56ab9d25987b1ef7",
+    "stdout.txt": "98a9b938309a8ea1db70f105be1c3fdc6cbc2cade6607f860aaef16b0749c39d"
+  }
+}

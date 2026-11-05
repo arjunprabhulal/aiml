@@ -1,0 +1,71 @@
+Actual native command: adk eval docs_assistant scenarios:6be7706e --config_file_path eval_config.json --print_detailed_results
+Using evaluation criteria: criteria={'hallucinations_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False, evaluate_intermediate_nl_responses=True, judge_model_options={'judge_model': 'gemini-3.8-flash', 'num_samples': 1}), 'per_turn_user_simulator_quality_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False, judge_model_options={'judge_model': 'gemini-3.8-flash', 'num_samples': 1})} custom_metrics=None user_simulator_config=LlmBackedUserSimulatorConfig(type='llm_backed', model='gemini-3.8-flash', model_configuration=GenerateContentConfig(
+  thinking_config=ThinkingConfig(
+    include_thoughts=True,
+    thinking_budget=10240
+  )
+), max_allowed_invocations=6, custom_instructions=None, include_function_calls=False) live_model_config=None
+*********************************************************************
+Eval Run Summary
+scenarios:
+  Tests passed: 1
+  Tests failed: 0
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 6be7706e
+Overall Eval Status: PASSED
+---------------------------------------------------------------------
+Metric: hallucinations_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: per_turn_user_simulator_quality_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.5, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.5, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1368.0, Threshold: None
+Token breakdown:
+  total:            1368
+    input:          1309
+      prompt:       1309
+        cached:     n/a
+      tool use:     n/a
+    output:         59
+      candidates:   59
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 6.9110000000000005, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     How do I make the assistant use a local model instead of Gemini?
+  actual_response:            You can make the assistant use a local model instead of Gemini by setting
+                              `OLLAMA_API_BASE` (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='install.md')
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: PASSED (1.0)
+  tool_call_count_v1:         3
+  inference_call_count_v1:    4
+  token_usage_v1:             1196 (in 1122, out 74)
+  invocation_duration_v1:     8.27s
+
+Invocation 2 of 2
+  prompt:                     Which Python version does the project require?
+  actual_response:            The project requires Python 3.12 or later (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='install.md')
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: PASSED (1.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1540 (in 1496, out 44)
+  invocation_duration_v1:     5.55s
+
+
+Native EvalSetResult: docs_assistant_scenarios_1792772256.214602.evalset_result.json case: 6be7706e status: EvalStatus.PASSED

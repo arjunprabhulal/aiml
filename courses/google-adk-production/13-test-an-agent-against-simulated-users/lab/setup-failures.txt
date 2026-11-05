@@ -1,0 +1,9 @@
+# A venv with google-adk but without the [eval] extra
+$ adk eval docs_assistant scenarios --config_file_path eval_config.json
+Error: Eval module is not installed, please install via `pip install "google-adk[eval]"`.
+
+# A .env in a parent folder that selects Agent Platform (Vertex AI)
+$ adk eval docs_assistant scenarios --config_file_path eval_config.json
+2026-10-21 20:25:39,030 - INFO - google_llm.py:263 - Sending out request, model: gemini-3.8-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-10-21 20:25:39,690 - ERROR - local_eval_service.py:638 - Inference failed for eval case `6be7706e` with error 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher model `projects/PROJECT_ID/locations/us-central1/publi
+2026-10-21 20:25:39,722 - ERROR - local_eval_service.py:638 - Inference failed for eval case `1ae10b45` with error 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher model `projects/PROJECT_ID/locations/us-central1/publi

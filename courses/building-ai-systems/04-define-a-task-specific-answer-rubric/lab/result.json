@@ -1,0 +1,384 @@
+{
+  "mode": "authored answer/judgement fixtures; local decision execution; no model or human study",
+  "full_case_set_sha256": "8a8109bb6cf7157ed2ef42e24478e7a477b67683bb27b1569386ea71b26ffc74",
+  "coverage": {
+    "candidates": 8,
+    "graded": 6,
+    "pending": 2,
+    "pending_cases": [
+      {
+        "id": "uncertain-wording",
+        "reason": "missing or uncertain criterion judgement"
+      },
+      {
+        "id": "not-reviewed",
+        "reason": "no authored review fixture"
+      }
+    ]
+  },
+  "decisions": {
+    "complete": {
+      "status": "accepted",
+      "reason": "",
+      "ratings": {
+        "command": "meets",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "meets",
+        "support": "meets"
+      }
+    },
+    "paraphrase": {
+      "status": "accepted",
+      "reason": "",
+      "ratings": {
+        "command": "meets",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "meets",
+        "support": "meets"
+      }
+    },
+    "negation": {
+      "status": "accepted",
+      "reason": "",
+      "ratings": {
+        "command": "meets",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "meets",
+        "support": "meets"
+      }
+    },
+    "unsupported-guarantee": {
+      "status": "rejected",
+      "reason": "support",
+      "ratings": {
+        "command": "meets",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "meets",
+        "support": "does_not_meet"
+      }
+    },
+    "missing-verification": {
+      "status": "rejected",
+      "reason": "verification",
+      "ratings": {
+        "command": "meets",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "does_not_meet",
+        "support": "meets"
+      }
+    },
+    "wrong-command": {
+      "status": "rejected",
+      "reason": "command, support",
+      "ratings": {
+        "command": "does_not_meet",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "meets",
+        "support": "does_not_meet"
+      }
+    },
+    "uncertain-wording": {
+      "status": "pending",
+      "reason": "missing or uncertain criterion judgement",
+      "ratings": {
+        "command": "meets",
+        "preconditions": "meets",
+        "database_scope": "meets",
+        "verification": "meets",
+        "support": "uncertain"
+      }
+    },
+    "not-reviewed": {
+      "status": "pending",
+      "reason": "no authored review fixture",
+      "ratings": {}
+    }
+  },
+  "report": {
+    "manifest": {
+      "harness_version": "1",
+      "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+      "started_at": "2026-10-24T08:15:26+00:00",
+      "case_set": {
+        "name": "docuctl-answer-rubric-v1-completed-judgements",
+        "sha256": "012ef5d1602036416b905bed20017e01ac1c628a4417449af7edc0e16eb0599a"
+      },
+      "task": {
+        "name": "docuctl-explanation-rubric",
+        "version": "1",
+        "sha256": "1eb82686e7fef1258e7eea0a9145caf69a0a01923e6f58ffbd8ed3c5a014ed85"
+      },
+      "system": {
+        "name": "authored-rubric-adapter",
+        "version": "1",
+        "mode": "authored_annotation_fixture",
+        "model": null,
+        "prompt": null,
+        "tools": null
+      },
+      "recording_sha256": null,
+      "graders": [
+        {
+          "name": "decision-contract",
+          "version": "1",
+          "kind": "contract"
+        },
+        {
+          "name": "rubric-acceptance",
+          "version": "1",
+          "kind": "outcome"
+        },
+        {
+          "name": "failure-criteria",
+          "version": "1",
+          "kind": "outcome"
+        }
+      ],
+      "splits": [
+        "development"
+      ],
+      "trials": 1,
+      "environment": {
+        "python": "3.15.0",
+        "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+      }
+    },
+    "summary": {
+      "development": {
+        "cases": 6,
+        "trials": 6,
+        "pass": 3,
+        "fail": 3,
+        "incomplete": 0,
+        "cases_passing_any_trial": 3,
+        "cases_passing_every_trial": 3,
+        "per_case": {
+          "complete": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "paraphrase": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "negation": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "unsupported-guarantee": {
+            "pass": 0,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "missing-verification": {
+            "pass": 0,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "wrong-command": {
+            "pass": 0,
+            "fail": 1,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "complete",
+        "split": "development",
+        "class": "complete",
+        "trial": 0,
+        "verdict": "pass",
+        "check": null,
+        "kind": null,
+        "reason": "",
+        "output": {
+          "answer_id": "complete",
+          "acceptable": true
+        },
+        "metadata": {
+          "origin": "authored judgement fixture",
+          "ratings": {
+            "command": "meets",
+            "preconditions": "meets",
+            "database_scope": "meets",
+            "verification": "meets",
+            "support": "meets"
+          },
+          "answer": {
+            "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.",
+            "citation": "docuctl-3-staging-rollback"
+          },
+          "reason": ""
+        },
+        "latency_s": 8e-06
+      },
+      {
+        "case_id": "paraphrase",
+        "split": "development",
+        "class": "paraphrase",
+        "trial": 0,
+        "verdict": "pass",
+        "check": null,
+        "kind": null,
+        "reason": "",
+        "output": {
+          "answer_id": "paraphrase",
+          "acceptable": true
+        },
+        "metadata": {
+          "origin": "authored judgement fixture",
+          "ratings": {
+            "command": "meets",
+            "preconditions": "meets",
+            "database_scope": "meets",
+            "verification": "meets",
+            "support": "meets"
+          },
+          "answer": {
+            "text": "This rolls the service back, not the database. With release approval and staging confirmed, use `docuctl releases rollback r41 --environment staging`. Afterwards, inspect service health.",
+            "citation": "docuctl-3-staging-rollback"
+          },
+          "reason": ""
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "case_id": "negation",
+        "split": "development",
+        "class": "negation",
+        "trial": 0,
+        "verdict": "pass",
+        "check": null,
+        "kind": null,
+        "reason": "",
+        "output": {
+          "answer_id": "negation",
+          "acceptable": true
+        },
+        "metadata": {
+          "origin": "authored judgement fixture",
+          "ratings": {
+            "command": "meets",
+            "preconditions": "meets",
+            "database_scope": "meets",
+            "verification": "meets",
+            "support": "meets"
+          },
+          "answer": {
+            "text": "No: rollback does not restore database contents. Obtain release approval and confirm staging before `docuctl releases rollback r41 --environment staging`. It changes the deployed service version. Check service health afterwards.",
+            "citation": "docuctl-3-staging-rollback"
+          },
+          "reason": ""
+        },
+        "latency_s": 1e-06
+      },
+      {
+        "case_id": "unsupported-guarantee",
+        "split": "development",
+        "class": "unsupported-guarantee",
+        "trial": 0,
+        "verdict": "fail",
+        "check": "rubric-acceptance",
+        "kind": "outcome",
+        "reason": "one or more required rubric criteria did not meet",
+        "output": {
+          "answer_id": "unsupported-guarantee",
+          "acceptable": false
+        },
+        "metadata": {
+          "origin": "authored judgement fixture",
+          "ratings": {
+            "command": "meets",
+            "preconditions": "meets",
+            "database_scope": "meets",
+            "verification": "meets",
+            "support": "does_not_meet"
+          },
+          "answer": {
+            "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. It guarantees zero downtime.",
+            "citation": "docuctl-3-staging-rollback"
+          },
+          "reason": "support"
+        },
+        "latency_s": 1e-06
+      },
+      {
+        "case_id": "missing-verification",
+        "split": "development",
+        "class": "missing-verification",
+        "trial": 0,
+        "verdict": "fail",
+        "check": "rubric-acceptance",
+        "kind": "outcome",
+        "reason": "one or more required rubric criteria did not meet",
+        "output": {
+          "answer_id": "missing-verification",
+          "acceptable": false
+        },
+        "metadata": {
+          "origin": "authored judgement fixture",
+          "ratings": {
+            "command": "meets",
+            "preconditions": "meets",
+            "database_scope": "meets",
+            "verification": "does_not_meet",
+            "support": "meets"
+          },
+          "answer": {
+            "text": "Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents.",
+            "citation": "docuctl-3-staging-rollback"
+          },
+          "reason": "verification"
+        },
+        "latency_s": 1e-06
+      },
+      {
+        "case_id": "wrong-command",
+        "split": "development",
+        "class": "wrong-command",
+        "trial": 0,
+        "verdict": "fail",
+        "check": "rubric-acceptance",
+        "kind": "outcome",
+        "reason": "one or more required rubric criteria did not meet",
+        "output": {
+          "answer_id": "wrong-command",
+          "acceptable": false
+        },
+        "metadata": {
+          "origin": "authored judgement fixture",
+          "ratings": {
+            "command": "does_not_meet",
+            "preconditions": "meets",
+            "database_scope": "meets",
+            "verification": "meets",
+            "support": "does_not_meet"
+          },
+          "answer": {
+            "text": "Obtain release approval and confirm staging first. Run `docuctl rollback r41 --env staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.",
+            "citation": "docuctl-3-staging-rollback"
+          },
+          "reason": "command, support"
+        },
+        "latency_s": 0.0
+      }
+    ]
+  },
+  "files": {
+    "source.txt": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+    "rubric.json": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+    "cases.json": "b9eabe707498edfd0444bab82630985fbb7c607162a80e82e88465da01ea4370",
+    "annotations.json": "12f29c4c569193e1f7d1caa5ea04638f9061f8dd4705a28b26eb2bde370085cb"
+  }
+}

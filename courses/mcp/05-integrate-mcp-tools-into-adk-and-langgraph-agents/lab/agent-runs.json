@@ -1,0 +1,1026 @@
+{
+  "model": {
+    "ollama_tag": "gemma4:e2b",
+    "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+    "options": "Ollama defaults"
+  },
+  "versions": {
+    "python": "3.12.8",
+    "google-adk": "2.12.0",
+    "litellm": "1.102.4",
+    "langchain": "1.4.6",
+    "langgraph": "1.2.16",
+    "langchain-mcp-adapters": "0.3.2",
+    "langchain-ollama": "1.1.0",
+    "mcp": "1.30.0",
+    "server mcp": "2.3.0"
+  },
+  "discovery": {
+    "adk": "tool   add_task ['title'] ['title', 'priority']\ntool   complete_task ['task_id'] ['task_id']\ntool   list_tasks [] ['status']\n",
+    "langgraph": "tool   list_tasks [] ['status']\ntool   add_task ['title'] ['title', 'priority']\ntool   complete_task ['task_id'] ['task_id']\n",
+    "declarations": {
+      "adk": {
+        "description": "Mark one task as done and return it.",
+        "name": "complete_task",
+        "parameters_json_schema": {
+          "properties": {
+            "task_id": {
+              "description": "A task ID such as T-1, as returned by list_tasks.",
+              "pattern": "^T-\\d+$",
+              "title": "Task Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_id"
+          ],
+          "type": "object",
+          "title": "complete_taskArguments"
+        },
+        "response_json_schema": {
+          "properties": {
+            "id": {
+              "description": "Task ID such as T-1.",
+              "title": "Id",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "priority": {
+              "enum": [
+                "low",
+                "normal",
+                "high"
+              ],
+              "title": "Priority",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "open",
+                "done"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "priority",
+            "status"
+          ],
+          "type": "object",
+          "description": "One task in the tracker.",
+          "title": "Task"
+        }
+      },
+      "langgraph": {
+        "name": "complete_task",
+        "description": "Mark one task as done and return it.",
+        "args_schema": {
+          "properties": {
+            "task_id": {
+              "description": "A task ID such as T-1, as returned by list_tasks.",
+              "pattern": "^T-\\d+$",
+              "title": "Task Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_id"
+          ],
+          "type": "object",
+          "title": "complete_taskArguments"
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "framework": "adk",
+      "question": "Close the docs task.",
+      "trials": [
+        {
+          "seconds": 24.75,
+          "calls": [
+            "list_tasks {}",
+            "ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}",
+            "complete_task {'task_id': 'T-3'}",
+            "ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}"
+          ],
+          "transcript": "call   list_tasks {}\nresult ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\ncall   complete_task {'task_id': 'T-3'}\nresult ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}\nanswer Task 'Update the API docs' (T-3) has been successfully closed.\n",
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the Request:** The user wants to \"Close the docs task.\"\n\n2. **Identify Necessary Actions:** To close a task, I need to use the `complete_task` tool.\n\n3. **Examine Available Tools:**\n    * `add_task`: Used for creating new tasks. (Not relevant)\n    * `complete_task`: Used for marking a task as done. (Relevant)\n    * `list_tasks`: Used for retrieving tasks. (Potentially needed to find the task ID, but the user specified \"docs task\".)\n\n4. **Determine Required Information for `complete_task`:** The `complete_task` tool requires a `task_id`.\n\n5. **Check for Missing Information:** The user specified \"docs task\", but did not provide a specific ID.\n\n6. **Formulate a Plan:**\n    * Step 1: Use `list_tasks` to get a list of tasks, hopefully including the \"docs task\" and its ID. I should probably list open tasks first to see if it exists.\n    * Step 2: If found, call `complete_task` with the correct ID.\n    * Step 3: If not found, inform the user.\n\n7. **Execute Step 1 (Simulated - First Tool Call):** Call `list_tasks` without a status to see all tasks, or perhaps just `list_tasks(status=\"open\")` if I assume \"close\" implies completing an open task. Since the user didn't specify *which* status, listing all tasks is the safest first step to identify the \"docs task\".\n\n8. **Constraint Check:** The current instruction is to generate the *next* tool call. I need to start by listing the tasks to find the ID.\n\n9. **Final Tool Call Selection:** `list_tasks()` seems the most appropriate initial step.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_ssbmiqhn",
+                    "args": {},
+                    "name": "list_tasks"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the Previous State:** The last action was `list_tasks()`. The response provided a list of tasks.\n\n2. **Examine the Task List:**\n    * Task T-1: \"Write the release notes\" (Status: open)\n    * Task T-2: \"Fix the login redirect bug\" (Status: done)\n    * Task T-3: \"Update the API docs\" (Status: open)\n\n3. **Match Request to Data:** The user asked to \"Close the docs task.\"\n    * I need to identify which task is the \"docs task\". \"Update the API docs\" (T-3) is the most likely candidate.\n\n4. **Determine the Next Action:** I need to use the `complete_task` tool to mark T-3 as done.\n\n5. **Formulate the Tool Call:** Call `complete_task` with `task_id=\"T-3\"`.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_12oybife",
+                    "args": {
+                      "task_id": "T-3"
+                    },
+                    "name": "complete_task"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Task 'Update the API docs' (T-3) has been successfully closed."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "tool_results": [
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "id": "T-1",
+                    "title": "Write the release notes",
+                    "priority": "normal",
+                    "status": "open"
+                  },
+                  {
+                    "id": "T-2",
+                    "title": "Fix the login redirect bug",
+                    "priority": "high",
+                    "status": "done"
+                  },
+                  {
+                    "id": "T-3",
+                    "title": "Update the API docs",
+                    "priority": "low",
+                    "status": "open"
+                  }
+                ],
+                "count": 3
+              },
+              "isError": false
+            },
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"id\": \"T-3\",\n  \"title\": \"Update the API docs\",\n  \"priority\": \"low\",\n  \"status\": \"done\"\n}"
+                }
+              ],
+              "structuredContent": {
+                "id": "T-3",
+                "title": "Update the API docs",
+                "priority": "low",
+                "status": "done"
+              },
+              "isError": false
+            }
+          ]
+        },
+        {
+          "seconds": 31.65,
+          "calls": [
+            "list_tasks {}",
+            "ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}",
+            "complete_task {'task_id': 'T-3'}",
+            "ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}"
+          ],
+          "transcript": "call   list_tasks {}\nresult ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\ncall   complete_task {'task_id': 'T-3'}\nresult ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}\nanswer Task \"Update the API docs\" (T-3) has been successfully marked as done.\n",
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the Request:** The user wants to \"Close the docs task.\"\n\n2. **Identify Necessary Tools:** The available tools are `add_task`, `complete_task`, and `list_tasks`. The request implies completing or closing an existing task. The `complete_task` tool seems appropriate for this action.\n\n3. **Determine Required Information for `complete_task`:** The `complete_task` tool requires a `task_id`.\n\n4. **Check for Missing Information:** The user requested to close the \"docs task,\" but did not provide a specific task ID.\n\n5. **Formulate a Strategy:**\n    * To find the task ID for \"docs task\", I need to list the current tasks first.\n    * I should use `list_tasks` to retrieve the list of tasks. Since the user wants to close a task, listing open tasks first might be the most relevant step, or listing all tasks.\n\n6. **Execute Strategy (Step 1: List Tasks):** Call `list_tasks()` to get the task list.\n\n7. **Wait for Tool Output (Simulated):** (Assuming the tool returns a list of tasks).\n\n8. **Analyze Tool Output (Simulated):** (If the output contains a task titled \"docs\" or similar, I can extract its ID and call `complete_task`.)\n\n9. **Refine Strategy (Self-Correction/Refinement):** Since I don't have the output yet, I must first call the tool to get the data. The immediate next step is to call `list_tasks()`.\n\n10. **Final Tool Call Generation:** Generate the tool call to list tasks.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_xpp1yp2x",
+                    "args": {},
+                    "name": "list_tasks"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the Request:** The user wants to \"Close the docs task.\"\n\n2. **Review Previous State:** I have just executed `list_tasks()` and received the task list.\n\n3. **Examine Tool Output:**\n   The output is:\n   ```json\n   {\n     \"content\": [\n       {\n         \"type\": \"text\",\n         \"text\": \"{\\n  \\\"tasks\\\": [\\n    {\\n      \\\"id\\\": \\\"T-1\\\",\\n      \\\"title\\\": \\\"Write the release notes\\\",\\n      \\\"priority\\\": \\\"normal\\\",\\n      \\\"status\\\": \\\"open\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"T-2\\\",\\n      \\\"title\\\": \\\"Fix the login redirect bug\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"status\\\": \\\"done\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"T-3\\\",\\n      \\\"title\\\": \\\"Update the API docs\\\",\\n      \\\"priority\\\": \\\"low\\\",\\n      \\\"status\\\": \\\"open\\\"\\n    }\\n  ],\\n  \\\"count\\\": 3\\n}\"\n       }\n     ],\n     \"structuredContent\": {\n       \"tasks\": [\n         {\"id\": \"T-1\", \"title\": \"Write the release notes\", \"priority\": \"normal\", \"status\": \"open\"},\n         {\"id\": \"T-2\", \"title\": \"Fix the login redirect bug\", \"priority\": \"high\", \"status\": \"done\"},\n         {\"id\": \"T-3\", \"title\": \"Update the API docs\", \"priority\": \"low\", \"status\": \"open\"}\n       ],\n       \"count\": 3\n     },\n     \"isError\": false\n   }\n   ```\n\n4. **Identify the Target Task:** I need to find the task related to \"docs\".\n    * Task T-1: \"Write the release notes\"\n    * Task T-2: \"Fix the login redirect bug\"\n    * Task T-3: \"Update the API docs\"\n\n    Task \"Update the API docs\" (ID: T-3) is the most likely candidate for the \"docs task\".\n\n5. **Determine the Action:** The user wants to \"Close\" the task. The `complete_task` tool is used to mark a task as done.\n\n6. **Formulate the Tool Call:** Call `complete_task` with `task_id=\"T-3\"`.\n\n7. **Final Output Generation:** Generate the tool call.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_0aub3xk8",
+                    "args": {
+                      "task_id": "T-3"
+                    },
+                    "name": "complete_task"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Task \"Update the API docs\" (T-3) has been successfully marked as done."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "tool_results": [
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "id": "T-1",
+                    "title": "Write the release notes",
+                    "priority": "normal",
+                    "status": "open"
+                  },
+                  {
+                    "id": "T-2",
+                    "title": "Fix the login redirect bug",
+                    "priority": "high",
+                    "status": "done"
+                  },
+                  {
+                    "id": "T-3",
+                    "title": "Update the API docs",
+                    "priority": "low",
+                    "status": "open"
+                  }
+                ],
+                "count": 3
+              },
+              "isError": false
+            },
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"id\": \"T-3\",\n  \"title\": \"Update the API docs\",\n  \"priority\": \"low\",\n  \"status\": \"done\"\n}"
+                }
+              ],
+              "structuredContent": {
+                "id": "T-3",
+                "title": "Update the API docs",
+                "priority": "low",
+                "status": "done"
+              },
+              "isError": false
+            }
+          ]
+        },
+        {
+          "seconds": 20.71,
+          "calls": [
+            "list_tasks {}",
+            "ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}",
+            "complete_task {'task_id': 'T-3'}",
+            "ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}"
+          ],
+          "transcript": "call   list_tasks {}\nresult ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\ncall   complete_task {'task_id': 'T-3'}\nresult ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}\nanswer Task \"Update the API docs\" (T-3) has been marked as done.\n",
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "text": "1. **Search**: The user wants to \"Close the docs task\". This implies updating the status of a task to \"done\".\n2. **Parameters**: To close a task, I need the `task_id`.\n3. **Tool Selection**: I have `complete_task`, `add_task`, and `list_tasks`. The `complete_task` tool is designed to mark a task as done, which matches the user's request.\n4. **Information Gap**: I don't have the `task_id` for the \"docs task\".\n5. **Strategy**: I need to first list the tasks to find the ID corresponding to \"docs\". Since the user specified \"Close the docs task\", I should probably check the open tasks first, or just list all tasks to find it. `list_tasks` can be used without arguments to list all tasks, or with `status=\"open\"` or `status=\"done\"`. Since the goal is to *close* it, it's likely open.\n6. **Tool Call (Step 1)**: Call `list_tasks` to get the current task list.\n7. **Wait for Output**: (Simulated wait for tool output)\n8. **Action based on Output**: Once I have the list, I will search for a task with a title containing \"docs\" (or similar) and extract its ID.\n9. **Tool Call (Step 2)**: If found, call `complete_task` with the correct ID.\n\n*(Self-Correction/Refinement)*: The user's request is very direct: \"Close the docs task.\" If I assume \"docs task\" is unique, I could potentially skip listing all tasks if I had a search tool. But I only have `list_tasks` (which filters by status, not title) and `complete_task` (which requires an ID). Therefore, the first step must be to list the tasks to find the ID.\n\n*Initial thought process leads to calling `list_tasks`.*",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_siqcabct",
+                    "args": {},
+                    "name": "list_tasks"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze previous state**: I have executed `list_tasks` and received a response.\n2. **Examine the response**: The tasks are:\n    * T-1: \"Write the release notes\" (status: open)\n    * T-2: \"Fix the login redirect bug\" (status: done)\n    * T-3: \"Update the API docs\" (status: open)\n3. **Match Request to Data**: The user asked to \"Close the docs task\". The task \"Update the API docs\" (T-3) is the most relevant match.\n4. **Determine Action**: I need to use the `complete_task` tool to mark task T-3 as done.\n5. **Tool Call**: Call `complete_task` with `task_id=\"T-3\"`.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_jpxxuhy7",
+                    "args": {
+                      "task_id": "T-3"
+                    },
+                    "name": "complete_task"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Task \"Update the API docs\" (T-3) has been marked as done."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "tool_results": [
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "id": "T-1",
+                    "title": "Write the release notes",
+                    "priority": "normal",
+                    "status": "open"
+                  },
+                  {
+                    "id": "T-2",
+                    "title": "Fix the login redirect bug",
+                    "priority": "high",
+                    "status": "done"
+                  },
+                  {
+                    "id": "T-3",
+                    "title": "Update the API docs",
+                    "priority": "low",
+                    "status": "open"
+                  }
+                ],
+                "count": 3
+              },
+              "isError": false
+            },
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"id\": \"T-3\",\n  \"title\": \"Update the API docs\",\n  \"priority\": \"low\",\n  \"status\": \"done\"\n}"
+                }
+              ],
+              "structuredContent": {
+                "id": "T-3",
+                "title": "Update the API docs",
+                "priority": "low",
+                "status": "done"
+              },
+              "isError": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "adk",
+      "question": "Mark task T-9 as done.",
+      "trials": [
+        {
+          "seconds": 15.91,
+          "calls": [
+            "complete_task {'task_id': 'T-9'}",
+            "error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+          ],
+          "transcript": "call   complete_task {'task_id': 'T-9'}\nresult error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\nanswer I could not find a task with the ID T-9. Please use the `list_tasks` tool to see the current list of available task IDs.\n",
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the user request:** The user wants to \"Mark task T-9 as done.\"\n\n2. **Identify relevant tools:** The available tools are `add_task`, `complete_task`, and `list_tasks`. The request specifically asks to mark a task as done, which corresponds to the `complete_task` tool.\n\n3. **Examine `complete_task` tool signature:**\n   - `complete_task(task_id: str)`: Marks a task as done given its ID.\n\n4. **Determine required arguments:** The `complete_task` tool requires `task_id`.\n\n5. **Extract arguments from the request:** The user provided \"T-9\" as the task ID.\n\n6. **Construct the tool call:** `complete_task(task_id=\"T-9\")`\n\n7. **Format the output:** Generate the tool call in the required JSON format.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_j8q6njxq",
+                    "args": {
+                      "task_id": "T-9"
+                    },
+                    "name": "complete_task"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the previous interaction:** The user requested to mark task T-9 as done. I called `complete_task(task_id=\"T-9\")`. The tool response indicated an error: \"Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\"\n\n2. **Determine the next step:** Since the task ID provided by the user does not exist, I need to inform the user about the error and suggest a way to find the correct task IDs, which is to list the tasks.\n\n3. **Formulate the response:** I should acknowledge the failure and suggest using `list_tasks` to verify the existing tasks.",
+                  "thought": true
+                },
+                {
+                  "text": "I could not find a task with the ID T-9. Please use the `list_tasks` tool to see the current list of available task IDs."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "tool_results": [
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+                }
+              ],
+              "isError": true
+            }
+          ]
+        },
+        {
+          "seconds": 24.03,
+          "calls": [
+            "complete_task {'task_id': 'T-9'}",
+            "error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.",
+            "list_tasks {}",
+            "ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}"
+          ],
+          "transcript": "call   complete_task {'task_id': 'T-9'}\nresult error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\ncall   list_tasks {}\nresult ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\nanswer I was unable to mark task T-9 as done because no task with that ID exists in the tracker.\n\nHere are the current open and done tasks:\n*   **T-1**: Write the release notes (Priority: normal, Status: open)\n*   **T-2**: Fix the login redirect bug (Priority: high, Status: done)\n*   **T-3**: Update the API docs (Priority: low, Status: open)\n\nPlease provide a valid task ID if you would like to update its status.\n",
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the user request:** The user wants to \"Mark task T-9 as done.\"\n\n2. **Identify relevant tools:** The available tools are `add_task`, `complete_task`, and `list_tasks`. The request involves marking a task as done, which directly corresponds to the `complete_task` tool.\n\n3. **Examine the `complete_task` tool definition:**\n   - Description: \"Mark one task as done and return it.\"\n   - Parameters: `task_id` (required, type: string).\n\n4. **Determine the required arguments:** The user specified \"T-9\" as the task ID.\n\n5. **Construct the tool call:** Call `complete_task` with `task_id='T-9'`.\n\n6. **Final output generation:** Generate the tool call in the required JSON format.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_cjcbls19",
+                    "args": {
+                      "task_id": "T-9"
+                    },
+                    "name": "complete_task"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the previous tool execution:** The previous call to `complete_task` for `task_id='T-9'` failed with an error message: \"Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\"\n\n2. **Analyze the original user request:** The user asked to \"Mark task T-9 as done.\"\n\n3. **Determine the next step:** Since the requested action failed because the task ID does not exist, I need to inform the user about the failure and suggest a way to verify the existing tasks, as the error message suggested. The appropriate tool to check existing tasks is `list_tasks`.\n\n4. **Construct the tool call:** Call `list_tasks` without a specific status to get all tasks, or perhaps with a specific status to see what's available. Since the user provided a specific ID that failed, listing all tasks is the most helpful next step.\n\n5. **Final output generation:** Call `list_tasks` to allow the user to see available tasks and correct the ID if necessary.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_fjjabncz",
+                    "args": {},
+                    "name": "list_tasks"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the previous steps:**\n    - User requested to mark task \"T-9\" as done.\n    - Attempted `complete_task` for \"T-9\", which failed because the task ID did not exist.\n    - Called `list_tasks` to check available tasks.\n\n2. **Analyze the result of `list_tasks`:** The tool returned a list of tasks with IDs \"T-1\", \"T-2\", and \"T-3\".\n\n3. **Determine the next action:** The original request was to mark \"T-9\" as done. The available tasks do not include \"T-9\". I must inform the user that the task ID is invalid and list the available tasks so they can make a correct request.\n\n4. **Formulate the response:** State clearly that task T-9 was not found and list the tasks that *do* exist.",
+                  "thought": true
+                },
+                {
+                  "text": "I was unable to mark task T-9 as done because no task with that ID exists in the tracker.\n\nHere are the current open and done tasks:\n*   **T-1**: Write the release notes (Priority: normal, Status: open)\n*   **T-2**: Fix the login redirect bug (Priority: high, Status: done)\n*   **T-3**: Update the API docs (Priority: low, Status: open)\n\nPlease provide a valid task ID if you would like to update its status."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "tool_results": [
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+                }
+              ],
+              "isError": true
+            },
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "id": "T-1",
+                    "title": "Write the release notes",
+                    "priority": "normal",
+                    "status": "open"
+                  },
+                  {
+                    "id": "T-2",
+                    "title": "Fix the login redirect bug",
+                    "priority": "high",
+                    "status": "done"
+                  },
+                  {
+                    "id": "T-3",
+                    "title": "Update the API docs",
+                    "priority": "low",
+                    "status": "open"
+                  }
+                ],
+                "count": 3
+              },
+              "isError": false
+            }
+          ]
+        },
+        {
+          "seconds": 14.76,
+          "calls": [
+            "complete_task {'task_id': 'T-9'}",
+            "error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+          ],
+          "transcript": "call   complete_task {'task_id': 'T-9'}\nresult error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\nanswer I was unable to mark task T-9 as done because no task with that ID was found in the tracker. Please run `list_tasks` to see the available task IDs.\n",
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the user request:** The user wants to \"Mark task T-9 as done.\"\n\n2. **Identify relevant tools:** The available tools are `add_task`, `complete_task`, and `list_tasks`. The request involves marking a task as done, so `complete_task` is the appropriate tool.\n\n3. **Examine `complete_task` tool definition:**\n   - Description: \"Mark one task as done and return it.\"\n   - Parameters: `task_id` (required, type: STRING).\n   - Description for `task_id`: \"A task ID such as T-1, as returned by list_tasks.\"\n\n4. **Determine required arguments:** The user provided the task ID \"T-9\".\n\n5. **Construct the tool call:** Call `complete_task` with `task_id=\"T-9\"`.\n\n6. **Final Output Generation:** Generate the tool call in the required format.",
+                  "thought": true
+                },
+                {
+                  "function_call": {
+                    "id": "call_6lkh9261",
+                    "args": {
+                      "task_id": "T-9"
+                    },
+                    "name": "complete_task"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "1. **Analyze the previous tool execution:** The previous attempt to call `complete_task` with `task_id=\"T-9\"` failed. The error message was: \"Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\"\n\n2. **Re-evaluate the user request:** The user requested to \"Mark task T-9 as done.\"\n\n3. **Determine the next step:** Since the requested task ID does not exist according to the tracker, I cannot complete the task. I need to inform the user about the issue and suggest a way to verify the task list. The tool description for `complete_task` explicitly mentions that the ID should be returned by `list_tasks`.\n\n4. **Formulate the response:** Inform the user that task T-9 was not found and suggest listing the tasks to check the correct IDs.",
+                  "thought": true
+                },
+                {
+                  "text": "I was unable to mark task T-9 as done because no task with that ID was found in the tracker. Please run `list_tasks` to see the available task IDs."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "tool_results": [
+            {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+                }
+              ],
+              "isError": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "langgraph",
+      "question": "Close the docs task.",
+      "trials": [
+        {
+          "seconds": 15.5,
+          "calls": [
+            "list_tasks {}",
+            "success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}",
+            "complete_task {'task_id': 'T-3'}",
+            "success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}"
+          ],
+          "transcript": "call   list_tasks {}\nresult success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\ncall   complete_task {'task_id': 'T-3'}\nresult success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}\nanswer Task \"Update the API docs\" (T-3) has been closed.\n",
+          "model_turns": [
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "list_tasks",
+                  "args": {}
+                }
+              ]
+            },
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "complete_task",
+                  "args": {
+                    "task_id": "T-3"
+                  }
+                }
+              ]
+            },
+            {
+              "content": "Task \"Update the API docs\" (T-3) has been closed.",
+              "tool_calls": []
+            }
+          ],
+          "tool_results": [
+            {
+              "status": "success",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}",
+                  "id": "lc_3c297f93-a22f-4113-8be7-e4b5be540908"
+                }
+              ],
+              "artifact": {
+                "structured_content": {
+                  "tasks": [
+                    {
+                      "id": "T-1",
+                      "title": "Write the release notes",
+                      "priority": "normal",
+                      "status": "open"
+                    },
+                    {
+                      "id": "T-2",
+                      "title": "Fix the login redirect bug",
+                      "priority": "high",
+                      "status": "done"
+                    },
+                    {
+                      "id": "T-3",
+                      "title": "Update the API docs",
+                      "priority": "low",
+                      "status": "open"
+                    }
+                  ],
+                  "count": 3
+                }
+              }
+            },
+            {
+              "status": "success",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"id\": \"T-3\",\n  \"title\": \"Update the API docs\",\n  \"priority\": \"low\",\n  \"status\": \"done\"\n}",
+                  "id": "lc_2ffe948c-48d5-44e2-be63-5d611135baf5"
+                }
+              ],
+              "artifact": {
+                "structured_content": {
+                  "id": "T-3",
+                  "title": "Update the API docs",
+                  "priority": "low",
+                  "status": "done"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 24.7,
+          "calls": [
+            "list_tasks {}",
+            "success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}",
+            "complete_task {'task_id': 'T-3'}",
+            "success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}"
+          ],
+          "transcript": "call   list_tasks {}\nresult success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\ncall   complete_task {'task_id': 'T-3'}\nresult success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}\nanswer I have closed the \"Update the API docs\" task.\n",
+          "model_turns": [
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "list_tasks",
+                  "args": {}
+                }
+              ]
+            },
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "complete_task",
+                  "args": {
+                    "task_id": "T-3"
+                  }
+                }
+              ]
+            },
+            {
+              "content": "I have closed the \"Update the API docs\" task.",
+              "tool_calls": []
+            }
+          ],
+          "tool_results": [
+            {
+              "status": "success",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}",
+                  "id": "lc_1dfaba62-4c5b-4912-86b8-1a5ff0c58096"
+                }
+              ],
+              "artifact": {
+                "structured_content": {
+                  "tasks": [
+                    {
+                      "id": "T-1",
+                      "title": "Write the release notes",
+                      "priority": "normal",
+                      "status": "open"
+                    },
+                    {
+                      "id": "T-2",
+                      "title": "Fix the login redirect bug",
+                      "priority": "high",
+                      "status": "done"
+                    },
+                    {
+                      "id": "T-3",
+                      "title": "Update the API docs",
+                      "priority": "low",
+                      "status": "open"
+                    }
+                  ],
+                  "count": 3
+                }
+              }
+            },
+            {
+              "status": "success",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"id\": \"T-3\",\n  \"title\": \"Update the API docs\",\n  \"priority\": \"low\",\n  \"status\": \"done\"\n}",
+                  "id": "lc_ebb60400-5b66-40a5-9d39-1b963153bd6d"
+                }
+              ],
+              "artifact": {
+                "structured_content": {
+                  "id": "T-3",
+                  "title": "Update the API docs",
+                  "priority": "low",
+                  "status": "done"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 19.35,
+          "calls": [
+            "list_tasks {}",
+            "success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}",
+            "complete_task {'task_id': 'T-3'}",
+            "success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}"
+          ],
+          "transcript": "call   list_tasks {}\nresult success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}\ncall   complete_task {'task_id': 'T-3'}\nresult success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}\nanswer I have closed the \"Update the API docs\" task (T-3).\n",
+          "model_turns": [
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "list_tasks",
+                  "args": {}
+                }
+              ]
+            },
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "complete_task",
+                  "args": {
+                    "task_id": "T-3"
+                  }
+                }
+              ]
+            },
+            {
+              "content": "I have closed the \"Update the API docs\" task (T-3).",
+              "tool_calls": []
+            }
+          ],
+          "tool_results": [
+            {
+              "status": "success",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"tasks\": [\n    {\n      \"id\": \"T-1\",\n      \"title\": \"Write the release notes\",\n      \"priority\": \"normal\",\n      \"status\": \"open\"\n    },\n    {\n      \"id\": \"T-2\",\n      \"title\": \"Fix the login redirect bug\",\n      \"priority\": \"high\",\n      \"status\": \"done\"\n    },\n    {\n      \"id\": \"T-3\",\n      \"title\": \"Update the API docs\",\n      \"priority\": \"low\",\n      \"status\": \"open\"\n    }\n  ],\n  \"count\": 3\n}",
+                  "id": "lc_50d712e7-b49d-4fc2-97df-541bc32bcdf0"
+                }
+              ],
+              "artifact": {
+                "structured_content": {
+                  "tasks": [
+                    {
+                      "id": "T-1",
+                      "title": "Write the release notes",
+                      "priority": "normal",
+                      "status": "open"
+                    },
+                    {
+                      "id": "T-2",
+                      "title": "Fix the login redirect bug",
+                      "priority": "high",
+                      "status": "done"
+                    },
+                    {
+                      "id": "T-3",
+                      "title": "Update the API docs",
+                      "priority": "low",
+                      "status": "open"
+                    }
+                  ],
+                  "count": 3
+                }
+              }
+            },
+            {
+              "status": "success",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\n  \"id\": \"T-3\",\n  \"title\": \"Update the API docs\",\n  \"priority\": \"low\",\n  \"status\": \"done\"\n}",
+                  "id": "lc_0f0b1165-117e-4162-8285-c40c5d43fca7"
+                }
+              ],
+              "artifact": {
+                "structured_content": {
+                  "id": "T-3",
+                  "title": "Update the API docs",
+                  "priority": "low",
+                  "status": "done"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "langgraph",
+      "question": "Mark task T-9 as done.",
+      "trials": [
+        {
+          "seconds": 10.45,
+          "calls": [
+            "complete_task {'task_id': 'T-9'}",
+            "error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+          ],
+          "transcript": "call   complete_task {'task_id': 'T-9'}\nresult error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\nanswer I was unable to mark task T-9 as done because no task with that ID was found. Please list the tasks to see the valid IDs.\n",
+          "model_turns": [
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "complete_task",
+                  "args": {
+                    "task_id": "T-9"
+                  }
+                }
+              ]
+            },
+            {
+              "content": "I was unable to mark task T-9 as done because no task with that ID was found. Please list the tasks to see the valid IDs.",
+              "tool_calls": []
+            }
+          ],
+          "tool_results": [
+            {
+              "status": "error",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.",
+                  "id": "lc_5545cc2e-759c-4b5f-8de8-692ec581ef7f"
+                }
+              ],
+              "artifact": null
+            }
+          ]
+        },
+        {
+          "seconds": 12.22,
+          "calls": [
+            "complete_task {'task_id': 'T-9'}",
+            "error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+          ],
+          "transcript": "call   complete_task {'task_id': 'T-9'}\nresult error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\nanswer I was unable to mark task T-9 as done because no task with that ID was found. Please check the task list for the correct task ID.\n",
+          "model_turns": [
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "complete_task",
+                  "args": {
+                    "task_id": "T-9"
+                  }
+                }
+              ]
+            },
+            {
+              "content": "I was unable to mark task T-9 as done because no task with that ID was found. Please check the task list for the correct task ID.",
+              "tool_calls": []
+            }
+          ],
+          "tool_results": [
+            {
+              "status": "error",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.",
+                  "id": "lc_0d92eb29-1bbe-47b6-b9b4-e299fdaa19dc"
+                }
+              ],
+              "artifact": null
+            }
+          ]
+        },
+        {
+          "seconds": 10.12,
+          "calls": [
+            "complete_task {'task_id': 'T-9'}",
+            "error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs."
+          ],
+          "transcript": "call   complete_task {'task_id': 'T-9'}\nresult error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.\nanswer I was unable to mark task T-9 as done because no task with that ID was found. Please list the available tasks so I can help you with the correct task ID.\n",
+          "model_turns": [
+            {
+              "content": "",
+              "tool_calls": [
+                {
+                  "name": "complete_task",
+                  "args": {
+                    "task_id": "T-9"
+                  }
+                }
+              ]
+            },
+            {
+              "content": "I was unable to mark task T-9 as done because no task with that ID was found. Please list the available tasks so I can help you with the correct task ID.",
+              "tool_calls": []
+            }
+          ],
+          "tool_results": [
+            {
+              "status": "error",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.",
+                  "id": "lc_e2b9f73f-ab4f-43a0-90e6-78c3b9de07af"
+                }
+              ],
+              "artifact": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

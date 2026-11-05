@@ -1,0 +1,14 @@
+{
+  "execution_mode": "fresh-local-http-with-extractive-provider",
+  "command": [
+    "python",
+    "record_demo.py",
+    "--provider",
+    "extractive"
+  ],
+  "raw_http_record_sha256": "26d837b95e4cb99ba6f7b01808db2f2952dc1268829938b7d293ca62c36eee02",
+  "provider_raws_retained_privately": false,
+  "public_provider_projection": null,
+  "recording_scope": "Actual programmatic HTTP activities; browser screenshots are separate review evidence.",
+  "post_recording_changes": "Offline recording tests now check the current corpus; UI name labels and public provider projection omit opaque signature fields. Answer-generation inputs are unchanged."
+}

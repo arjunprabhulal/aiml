@@ -1,0 +1,208 @@
+{
+  "provider": "gemini",
+  "snapshot": "c7497b76c8d3ff525206db7ae6240741d9a9a57c5f249047033256414b6c3085",
+  "activities": [
+    {
+      "id": "rollback",
+      "request": {
+        "question": "How do I roll back a staging deployment?",
+        "version": "3.5"
+      },
+      "status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "In docuctl 3.5, list known releases by running `docuctl releases --env staging`, and then roll back by running `docuctl rollback --env staging --to RELEASE_ID`.",
+        "citations": [
+          {
+            "source_id": "rollback-35:p1",
+            "quote": "To undo a staging deployment in docuctl 3.5, list known releases with `docuctl releases --env staging`. Then run `docuctl rollback --env staging --to RELEASE_ID`."
+          }
+        ],
+        "sources": [
+          {
+            "id": "rollback-35:p1",
+            "document": "rollback-35",
+            "title": "Rollback a staging release",
+            "version": "3.5",
+            "quote": "To undo a staging deployment in docuctl 3.5, list known releases with `docuctl releases --env staging`. Then run `docuctl rollback --env staging --to RELEASE_ID`.",
+            "start": 30,
+            "end": 192
+          },
+          {
+            "id": "deploy-35:p1",
+            "document": "deploy-35",
+            "title": "Staging deployment",
+            "version": "3.5",
+            "quote": "To deploy a staging release with docuctl 3.5, run `docuctl deploy --env staging --release RELEASE_ID`. Confirm the release with `docuctl status --env staging`.",
+            "start": 22,
+            "end": 181
+          },
+          {
+            "id": "deploy-35:p2",
+            "document": "deploy-35",
+            "title": "Staging deployment",
+            "version": "3.5",
+            "quote": "The deploy command waits for the rollout. A failed health check stops the rollout; inspect `docuctl logs --env staging` before trying another release.",
+            "start": 183,
+            "end": 333
+          }
+        ],
+        "trace": {
+          "cache_hit": false,
+          "searches": 1,
+          "refined": false,
+          "context_bytes": 575,
+          "source_reads": 3,
+          "snapshot": "c7497b76c8d3ff525206db7ae6240741d9a9a57c5f249047033256414b6c3085",
+          "provider": "gemini",
+          "model_requests": 1
+        }
+      }
+    },
+    {
+      "id": "rotate-token",
+      "request": {
+        "question": "How do I rotate an API token?",
+        "version": "3.5"
+      },
+      "status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "In docuctl 3.5, to rotate an API token, create a replacement using `docuctl token create --name rotation`. After updating the application's secret store and checking a request, revoke the old token by running `docuctl token revoke TOKEN_ID`.",
+        "citations": [
+          {
+            "source_id": "tokens-35:p1",
+            "quote": "To rotate an API token in docuctl 3.5, create a replacement with `docuctl token create --name rotation`. Update the application's secret store and check a request before revoking the old token with `docuctl token revoke TOKEN_ID`."
+          }
+        ],
+        "sources": [
+          {
+            "id": "tokens-35:p1",
+            "document": "tokens-35",
+            "title": "Rotate an API token",
+            "version": "3.5",
+            "quote": "To rotate an API token in docuctl 3.5, create a replacement with `docuctl token create --name rotation`. Update the application's secret store and check a request before revoking the old token with `docuctl token revoke TOKEN_ID`.",
+            "start": 23,
+            "end": 253
+          },
+          {
+            "id": "tokens-35:p2",
+            "document": "tokens-35",
+            "title": "Rotate an API token",
+            "version": "3.5",
+            "quote": "Never put an API token in documentation, a shell history or a support message. These instructions use TOKEN_ID as a placeholder, not a credential.",
+            "start": 255,
+            "end": 401
+          }
+        ],
+        "trace": {
+          "cache_hit": false,
+          "searches": 1,
+          "refined": false,
+          "context_bytes": 444,
+          "source_reads": 2,
+          "snapshot": "c7497b76c8d3ff525206db7ae6240741d9a9a57c5f249047033256414b6c3085",
+          "provider": "gemini",
+          "model_requests": 1
+        }
+      }
+    },
+    {
+      "id": "previous-version",
+      "request": {
+        "question": "How do I deploy staging with docuctl 3.4?",
+        "version": "3.4"
+      },
+      "status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "In docuctl 3.4, deploy staging by running `docuctl deploy staging --tag RELEASE_ID`.",
+        "citations": [
+          {
+            "source_id": "deploy-34:p1",
+            "quote": "In docuctl 3.4, deploy with `docuctl deploy staging --tag RELEASE_ID`."
+          }
+        ],
+        "sources": [
+          {
+            "id": "deploy-34:p1",
+            "document": "deploy-34",
+            "title": "Staging deployment",
+            "version": "3.4",
+            "quote": "In docuctl 3.4, deploy with `docuctl deploy staging --tag RELEASE_ID`. Check the result with `docuctl status staging`. Version 3.5 replaces positional environments with `--env`.",
+            "start": 22,
+            "end": 199
+          },
+          {
+            "id": "rollback-34:p1",
+            "document": "rollback-34",
+            "title": "Rollback a staging release",
+            "version": "3.4",
+            "quote": "In docuctl 3.4, undo a staging deployment with `docuctl rollback staging RELEASE_ID`. Check the active release with `docuctl status staging`.",
+            "start": 30,
+            "end": 171
+          }
+        ],
+        "trace": {
+          "cache_hit": false,
+          "searches": 1,
+          "refined": false,
+          "context_bytes": 388,
+          "source_reads": 2,
+          "snapshot": "c7497b76c8d3ff525206db7ae6240741d9a9a57c5f249047033256414b6c3085",
+          "provider": "gemini",
+          "model_requests": 1
+        }
+      }
+    },
+    {
+      "id": "production",
+      "request": {
+        "question": "How does a maintainer deploy production?",
+        "version": "3.5",
+        "collection": "operations"
+      },
+      "status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Under version 3.5, deploying to production requires a reviewed release and approval from the on-call maintainer. A maintainer runs the following command: `docuctl deploy --env production --release RELEASE_ID --approval APPROVAL_ID`.",
+        "citations": [
+          {
+            "source_id": "production-35:p1",
+            "quote": "Production deployment requires a reviewed release and approval from the on-call maintainer. A maintainer runs `docuctl deploy --env production --release RELEASE_ID --approval APPROVAL_ID`."
+          }
+        ],
+        "sources": [
+          {
+            "id": "production-35:p1",
+            "document": "production-35",
+            "title": "Production deployment approval",
+            "version": "3.5",
+            "quote": "Production deployment requires a reviewed release and approval from the on-call maintainer. A maintainer runs `docuctl deploy --env production --release RELEASE_ID --approval APPROVAL_ID`.",
+            "start": 34,
+            "end": 222
+          },
+          {
+            "id": "production-35:p2",
+            "document": "production-35",
+            "title": "Production deployment approval",
+            "version": "3.5",
+            "quote": "If production health checks fail, the maintainer follows the approved rollback runbook and records the release ID in the incident. A reader token cannot retrieve this collection.",
+            "start": 224,
+            "end": 402
+          }
+        ],
+        "trace": {
+          "cache_hit": false,
+          "searches": 1,
+          "refined": false,
+          "context_bytes": 442,
+          "source_reads": 2,
+          "snapshot": "c7497b76c8d3ff525206db7ae6240741d9a9a57c5f249047033256414b6c3085",
+          "provider": "gemini",
+          "model_requests": 1
+        }
+      }
+    }
+  ]
+}

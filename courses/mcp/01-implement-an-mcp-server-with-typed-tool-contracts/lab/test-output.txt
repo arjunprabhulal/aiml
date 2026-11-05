@@ -1,0 +1,21 @@
+test_client_script_prints_the_recorded_output (test_tasks_server.TypedTools.test_client_script_prints_the_recorded_output) ... ok
+test_invalid_arguments_are_rejected_before_the_tool_runs (test_tasks_server.TypedTools.test_invalid_arguments_are_rejected_before_the_tool_runs) ... Tool 'add_task' rejected arguments: ['title']
+Tool 'add_task' rejected arguments: ['priority']
+Tool 'complete_task' rejected arguments: ['task_id']
+ok
+test_malformed_request_is_a_protocol_error (test_tasks_server.TypedTools.test_malformed_request_is_a_protocol_error) ... ok
+test_saved_calls_match_a_fresh_run (test_tasks_server.TypedTools.test_saved_calls_match_a_fresh_run) ... Tool 'add_task' rejected arguments: ['title']
+Tool 'complete_task' failed: 'Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.'
+ok
+test_structured_content_matches_the_output_schema (test_tasks_server.TypedTools.test_structured_content_matches_the_output_schema) ... ok
+test_tools_publish_input_and_output_schemas (test_tasks_server.TypedTools.test_tools_publish_input_and_output_schemas) ... ok
+test_unexpected_exception_hides_its_details (test_tasks_server.TypedTools.test_unexpected_exception_hides_its_details) ... ok
+test_unknown_task_id_is_a_tool_error_and_the_server_keeps_running (test_tasks_server.TypedTools.test_unknown_task_id_is_a_tool_error_and_the_server_keeps_running) ... Tool 'complete_task' failed: 'Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.'
+ok
+test_unknown_tool_name_is_a_tool_error_in_this_sdk (test_tasks_server.TypedTools.test_unknown_tool_name_is_a_tool_error_in_this_sdk) ... Tool 'delete_task' failed: 'Unknown tool: delete_task'
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.423s
+
+OK

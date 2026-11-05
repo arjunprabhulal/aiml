@@ -1,0 +1,2296 @@
+{
+ "eval_set_result_id": "docs_agent_docs_agent_smoke_1792613395.480086",
+ "eval_set_result_name": "docs_agent_docs_agent_smoke_1792613395.480086",
+ "eval_set_id": "docs_agent_smoke",
+ "eval_case_results": [
+  {
+   "eval_set_file": "docs_agent_smoke",
+   "eval_set_id": "docs_agent_smoke",
+   "eval_id": "rebuild_index",
+   "final_eval_status": 1,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "tool_trajectory_avg_score",
+     "threshold": 1.0,
+     "criterion": {
+      "threshold": 1.0,
+      "include_intermediate_responses_in_final": false,
+      "match_type": "EXACT"
+     },
+     "score": 1.0,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "response_match_score",
+     "threshold": 0.8,
+     "criterion": {
+      "threshold": 0.8,
+      "include_intermediate_responses_in_final": false
+     },
+     "score": 0.8717948717948718,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 2.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 3.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "score": 1203.0,
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {
+       "total_tokens": 1203.0,
+       "input_tokens": 869.0,
+       "prompt_tokens": 869.0,
+       "output_tokens": 334.0,
+       "candidates_tokens": 56.0,
+       "reasoning_tokens": 278.0
+      }
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "score": 7.194,
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "user_content": {
+       "parts": [
+        {
+         "text": "How do I rebuild the search index?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "Run `docs-assistant index --rebuild` to drop the search index and rebuild it from the docs folder. (cli.md)"
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_469158",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 156,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 156
+           }
+          ],
+          "thoughts_token_count": 66,
+          "total_token_count": 232
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_469158",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_409265",
+             "args": {
+              "path": "cli.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 261,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 261
+           }
+          ],
+          "thoughts_token_count": 95,
+          "total_token_count": 374
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_409265",
+             "name": "read_page",
+             "response": {
+              "path": "cli.md",
+              "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 28,
+          "prompt_token_count": 452,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 452
+           }
+          ],
+          "thoughts_token_count": 117,
+          "total_token_count": 597
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792613384.0796869,
+      "duration": 7.194,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "expected_invocation": {
+      "invocation_id": "rebuild_index-1",
+      "user_content": {
+       "parts": [
+        {
+         "text": "How do I rebuild the search index?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "Run docs-assistant index --rebuild, which drops the search index and builds it again from the docs folder (cli.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "tool_uses": [
+        {
+         "args": {},
+         "name": "list_pages"
+        },
+        {
+         "args": {
+          "path": "cli.md"
+         },
+         "name": "read_page"
+        }
+       ],
+       "tool_responses": [],
+       "intermediate_responses": []
+      },
+      "creation_timestamp": 0.0
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "tool_trajectory_avg_score",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "match_type": "EXACT"
+       },
+       "score": 1.0,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "response_match_score",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "score": 0.8717948717948718,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 2.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 3.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 1203.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 1203.0,
+         "input_tokens": 869.0,
+         "prompt_tokens": 869.0,
+         "output_tokens": 334.0,
+         "candidates_tokens": 56.0,
+         "reasoning_tokens": 278.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 7.194,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-1473791e-90fd-4f0e-b71b-9067666302ec",
+   "session_details": {
+    "id": "adk-eval-session-1473791e-90fd-4f0e-b71b-9067666302ec",
+    "app_name": "docs_agent",
+    "user_id": "dev",
+    "state": {
+     "__llm_request_key__": "86e55030-24fc-4a42-b4df-dc7fe0051a11"
+    },
+    "events": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "How do I rebuild the search index?"
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "4a938f92-fb98-4462-9be7-b5eed478f826",
+      "timestamp": 1792613382.0444648
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_469158",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "09242fca-fb5e-41e5-b148-d8ac0fd1066e"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 156,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 156
+        }
+       ],
+       "thoughts_token_count": 66,
+       "total_token_count": 232
+      },
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "09242fca-fb5e-41e5-b148-d8ac0fd1066e"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "cd359599-e64a-476d-bba7-18f693282131",
+      "timestamp": 1792613382.060898
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_469158",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "aebcc86a-948c-427d-949e-5ccfa68143c8",
+      "timestamp": 1792613384.080608
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_409265",
+          "args": {
+           "path": "cli.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "fcd5993a-6660-4289-a2d4-4c74e32ed2bd"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 261,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 261
+        }
+       ],
+       "thoughts_token_count": 95,
+       "total_token_count": 374
+      },
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "fcd5993a-6660-4289-a2d4-4c74e32ed2bd"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "d2e75df2-fee5-472d-b13b-06399f8a581a",
+      "timestamp": 1792613384.0811741
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_409265",
+          "name": "read_page",
+          "response": {
+           "path": "cli.md",
+           "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "57e8c0ef-89f4-4d8f-85f6-2adfcf176f6f",
+      "timestamp": 1792613386.144066
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "Run `docs-assistant index --rebuild` to drop the search index and rebuild it from the docs folder. (cli.md)"
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "86e55030-24fc-4a42-b4df-dc7fe0051a11"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 28,
+       "prompt_token_count": 452,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 452
+        }
+       ],
+       "thoughts_token_count": 117,
+       "total_token_count": 597
+      },
+      "invocation_id": "e-3ce62005-27a0-454c-a158-ff1c4280bfef",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "86e55030-24fc-4a42-b4df-dc7fe0051a11"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "81330085-997c-4fc3-a261-0722438450b5",
+      "timestamp": 1792613386.1445959
+     }
+    ],
+    "last_update_time": 1792613386.1445959
+   },
+   "user_id": "dev"
+  },
+  {
+   "eval_set_file": "docs_agent_smoke",
+   "eval_set_id": "docs_agent_smoke",
+   "eval_id": "python_version",
+   "final_eval_status": 1,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "tool_trajectory_avg_score",
+     "threshold": 1.0,
+     "criterion": {
+      "threshold": 1.0,
+      "include_intermediate_responses_in_final": false,
+      "match_type": "EXACT"
+     },
+     "score": 1.0,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "response_match_score",
+     "threshold": 0.8,
+     "criterion": {
+      "threshold": 0.8,
+      "include_intermediate_responses_in_final": false
+     },
+     "score": 0.9,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 2.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 3.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "score": 1000.0,
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {
+       "total_tokens": 1000.0,
+       "input_tokens": 804.0,
+       "prompt_tokens": 804.0,
+       "output_tokens": 196.0,
+       "candidates_tokens": 44.0,
+       "reasoning_tokens": 152.0
+      }
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "score": 5.661,
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "user_content": {
+       "parts": [
+        {
+         "text": "Which Python version does the assistant need?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "The assistant requires Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_181021",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 156,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 156
+           }
+          ],
+          "thoughts_token_count": 78,
+          "total_token_count": 244
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_181021",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_299251",
+             "args": {
+              "path": "install.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 273,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 273
+           }
+          ],
+          "thoughts_token_count": 13,
+          "total_token_count": 304
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_299251",
+             "name": "read_page",
+             "response": {
+              "path": "install.md",
+              "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 16,
+          "prompt_token_count": 375,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 375
+           }
+          ],
+          "thoughts_token_count": 61,
+          "total_token_count": 452
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792613384.408013,
+      "duration": 5.661,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "expected_invocation": {
+      "invocation_id": "python_version-1",
+      "user_content": {
+       "parts": [
+        {
+         "text": "Which Python version does the assistant need?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "The assistant needs Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "tool_uses": [
+        {
+         "args": {},
+         "name": "list_pages"
+        },
+        {
+         "args": {
+          "path": "install.md"
+         },
+         "name": "read_page"
+        }
+       ],
+       "tool_responses": [],
+       "intermediate_responses": []
+      },
+      "creation_timestamp": 0.0
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "tool_trajectory_avg_score",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "match_type": "EXACT"
+       },
+       "score": 1.0,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "response_match_score",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "score": 0.9,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 2.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 3.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 1000.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 1000.0,
+         "input_tokens": 804.0,
+         "prompt_tokens": 804.0,
+         "output_tokens": 196.0,
+         "candidates_tokens": 44.0,
+         "reasoning_tokens": 152.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 5.661,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-dbe2175d-7efc-476a-832e-ff15fb99bde7",
+   "session_details": {
+    "id": "adk-eval-session-dbe2175d-7efc-476a-832e-ff15fb99bde7",
+    "app_name": "docs_agent",
+    "user_id": "dev",
+    "state": {
+     "__llm_request_key__": "d37966f8-9d41-4426-bb23-699b8be7d3a1"
+    },
+    "events": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "Which Python version does the assistant need?"
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "9d6b710b-8c73-4ac4-b88c-d1abd8278c76",
+      "timestamp": 1792613382.045086
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_181021",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "24baa6d1-f4e4-4af7-a696-a008bffd4624"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 156,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 156
+        }
+       ],
+       "thoughts_token_count": 78,
+       "total_token_count": 244
+      },
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "24baa6d1-f4e4-4af7-a696-a008bffd4624"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "5e15720f-6484-407f-985a-3b32a28e5456",
+      "timestamp": 1792613382.103362
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_181021",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "d1cb8ba0-f34b-47fb-9760-0e6c503188f1",
+      "timestamp": 1792613384.408364
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_299251",
+          "args": {
+           "path": "install.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "bbf6b933-383a-4853-b0f4-5ceefb2b79a7"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 273,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 273
+        }
+       ],
+       "thoughts_token_count": 13,
+       "total_token_count": 304
+      },
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "bbf6b933-383a-4853-b0f4-5ceefb2b79a7"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "de35a784-a53f-453e-964f-8a4b8314aa46",
+      "timestamp": 1792613384.40891
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_299251",
+          "name": "read_page",
+          "response": {
+           "path": "install.md",
+           "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "bf05903d-0062-41d8-ad9f-36caa35bb95f",
+      "timestamp": 1792613385.9353669
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "The assistant requires Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "d37966f8-9d41-4426-bb23-699b8be7d3a1"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 16,
+       "prompt_token_count": 375,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 375
+        }
+       ],
+       "thoughts_token_count": 61,
+       "total_token_count": 452
+      },
+      "invocation_id": "e-44885c57-a15f-4f3b-8bca-7d2e5012e4ca",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "d37966f8-9d41-4426-bb23-699b8be7d3a1"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "5afd2cd2-2140-4b1e-b42f-f25081fc9aa5",
+      "timestamp": 1792613385.935894
+     }
+    ],
+    "last_update_time": 1792613385.935894
+   },
+   "user_id": "dev"
+  },
+  {
+   "eval_set_file": "docs_agent_smoke",
+   "eval_set_id": "docs_agent_smoke",
+   "eval_id": "rebuild_index",
+   "final_eval_status": 2,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "tool_trajectory_avg_score",
+     "threshold": 1.0,
+     "criterion": {
+      "threshold": 1.0,
+      "include_intermediate_responses_in_final": false,
+      "match_type": "EXACT"
+     },
+     "score": 1.0,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "response_match_score",
+     "threshold": 0.8,
+     "criterion": {
+      "threshold": 0.8,
+      "include_intermediate_responses_in_final": false
+     },
+     "score": 0.588235294117647,
+     "eval_status": 2,
+     "details": {}
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 2.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 3.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "score": 1070.0,
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {
+       "total_tokens": 1070.0,
+       "input_tokens": 809.0,
+       "prompt_tokens": 809.0,
+       "output_tokens": 261.0,
+       "candidates_tokens": 50.0,
+       "reasoning_tokens": 211.0
+      }
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "score": 6.302,
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "user_content": {
+       "parts": [
+        {
+         "text": "How do I rebuild the search index?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "You can rebuild the search index by running `docs-assistant index --rebuild` (cli.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_240980",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 156,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 156
+           }
+          ],
+          "thoughts_token_count": 64,
+          "total_token_count": 230
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_240980",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_221523",
+             "args": {
+              "path": "cli.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 259,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 259
+           }
+          ],
+          "thoughts_token_count": 39,
+          "total_token_count": 316
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_221523",
+             "name": "read_page",
+             "response": {
+              "path": "cli.md",
+              "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 22,
+          "prompt_token_count": 394,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 394
+           }
+          ],
+          "thoughts_token_count": 108,
+          "total_token_count": 524
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792613390.9935849,
+      "duration": 6.302,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "expected_invocation": {
+      "invocation_id": "rebuild_index-1",
+      "user_content": {
+       "parts": [
+        {
+         "text": "How do I rebuild the search index?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "Run docs-assistant index --rebuild, which drops the search index and builds it again from the docs folder (cli.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "tool_uses": [
+        {
+         "args": {},
+         "name": "list_pages"
+        },
+        {
+         "args": {
+          "path": "cli.md"
+         },
+         "name": "read_page"
+        }
+       ],
+       "tool_responses": [],
+       "intermediate_responses": []
+      },
+      "creation_timestamp": 0.0
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "tool_trajectory_avg_score",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "match_type": "EXACT"
+       },
+       "score": 1.0,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "response_match_score",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "score": 0.588235294117647,
+       "eval_status": 2,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 2.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 3.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 1070.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 1070.0,
+         "input_tokens": 809.0,
+         "prompt_tokens": 809.0,
+         "output_tokens": 261.0,
+         "candidates_tokens": 50.0,
+         "reasoning_tokens": 211.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 6.302,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-879c9437-f29d-43c9-a3f5-618426bb6ae5",
+   "session_details": {
+    "id": "adk-eval-session-879c9437-f29d-43c9-a3f5-618426bb6ae5",
+    "app_name": "docs_agent",
+    "user_id": "dev",
+    "state": {
+     "__llm_request_key__": "c2e481cb-3be0-41c4-b132-e8eea46e9a6a"
+    },
+    "events": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "How do I rebuild the search index?"
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "48baf912-60ce-4084-8d85-e0ddd557a096",
+      "timestamp": 1792613389.174186
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_240980",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "b1956ec3-3dd8-4f5b-8543-17e2ccc5900a"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 156,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 156
+        }
+       ],
+       "thoughts_token_count": 64,
+       "total_token_count": 230
+      },
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "b1956ec3-3dd8-4f5b-8543-17e2ccc5900a"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "dd466cf1-4cc9-49dc-80d0-d61ab5a73422",
+      "timestamp": 1792613389.2044191
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_240980",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "308d4d58-e652-405a-9c78-6e4e57bc2335",
+      "timestamp": 1792613390.993919
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_221523",
+          "args": {
+           "path": "cli.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "32f9dd7d-62da-42f2-822d-1b7eec666a12"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 259,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 259
+        }
+       ],
+       "thoughts_token_count": 39,
+       "total_token_count": 316
+      },
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "32f9dd7d-62da-42f2-822d-1b7eec666a12"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "9bccb0c7-ac5e-4932-9039-fbeb3241822f",
+      "timestamp": 1792613390.994454
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_221523",
+          "name": "read_page",
+          "response": {
+           "path": "cli.md",
+           "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "e458832d-4b65-4f34-8bf8-b840fe0a596c",
+      "timestamp": 1792613393.276868
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "You can rebuild the search index by running `docs-assistant index --rebuild` (cli.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "c2e481cb-3be0-41c4-b132-e8eea46e9a6a"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 22,
+       "prompt_token_count": 394,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 394
+        }
+       ],
+       "thoughts_token_count": 108,
+       "total_token_count": 524
+      },
+      "invocation_id": "e-9a9905f9-8608-41bc-b1f9-43074fb2ea40",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "c2e481cb-3be0-41c4-b132-e8eea46e9a6a"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "91ca649f-2512-4e8e-87de-f5d29afa5627",
+      "timestamp": 1792613393.2774458
+     }
+    ],
+    "last_update_time": 1792613393.2774458
+   },
+   "user_id": "dev"
+  },
+  {
+   "eval_set_file": "docs_agent_smoke",
+   "eval_set_id": "docs_agent_smoke",
+   "eval_id": "python_version",
+   "final_eval_status": 1,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "tool_trajectory_avg_score",
+     "threshold": 1.0,
+     "criterion": {
+      "threshold": 1.0,
+      "include_intermediate_responses_in_final": false,
+      "match_type": "EXACT"
+     },
+     "score": 1.0,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "response_match_score",
+     "threshold": 0.8,
+     "criterion": {
+      "threshold": 0.8,
+      "include_intermediate_responses_in_final": false
+     },
+     "score": 0.9,
+     "eval_status": 1,
+     "details": {}
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 2.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 3.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "score": 998.0,
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {
+       "total_tokens": 998.0,
+       "input_tokens": 800.0,
+       "prompt_tokens": 800.0,
+       "output_tokens": 198.0,
+       "candidates_tokens": 44.0,
+       "reasoning_tokens": 154.0
+      }
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "score": 5.154,
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "user_content": {
+       "parts": [
+        {
+         "text": "Which Python version does the assistant need?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "The assistant requires Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_323570",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 156,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 156
+           }
+          ],
+          "thoughts_token_count": 76,
+          "total_token_count": 242
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_323570",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_436166",
+             "args": {
+              "path": "install.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 271,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 271
+           }
+          ],
+          "thoughts_token_count": 13,
+          "total_token_count": 302
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_436166",
+             "name": "read_page",
+             "response": {
+              "path": "install.md",
+              "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 16,
+          "prompt_token_count": 373,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 373
+           }
+          ],
+          "thoughts_token_count": 65,
+          "total_token_count": 454
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792613391.073318,
+      "duration": 5.154,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "expected_invocation": {
+      "invocation_id": "python_version-1",
+      "user_content": {
+       "parts": [
+        {
+         "text": "Which Python version does the assistant need?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "The assistant needs Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "tool_uses": [
+        {
+         "args": {},
+         "name": "list_pages"
+        },
+        {
+         "args": {
+          "path": "install.md"
+         },
+         "name": "read_page"
+        }
+       ],
+       "tool_responses": [],
+       "intermediate_responses": []
+      },
+      "creation_timestamp": 0.0
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "tool_trajectory_avg_score",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "match_type": "EXACT"
+       },
+       "score": 1.0,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "response_match_score",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "score": 0.9,
+       "eval_status": 1,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 2.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 3.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 998.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 998.0,
+         "input_tokens": 800.0,
+         "prompt_tokens": 800.0,
+         "output_tokens": 198.0,
+         "candidates_tokens": 44.0,
+         "reasoning_tokens": 154.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 5.154,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-7f28a8d6-a84b-4094-9665-fc850ddb8349",
+   "session_details": {
+    "id": "adk-eval-session-7f28a8d6-a84b-4094-9665-fc850ddb8349",
+    "app_name": "docs_agent",
+    "user_id": "dev",
+    "state": {
+     "__llm_request_key__": "90ea9767-9592-4926-bf35-923c563b7cdd"
+    },
+    "events": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "Which Python version does the assistant need?"
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "06892e34-af17-47ae-a94d-2115ef0b79d5",
+      "timestamp": 1792613389.173738
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_323570",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "4fa7f45b-4a88-4ed3-83cf-79336222c95d"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 156,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 156
+        }
+       ],
+       "thoughts_token_count": 76,
+       "total_token_count": 242
+      },
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "4fa7f45b-4a88-4ed3-83cf-79336222c95d"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "f67dd148-e163-40d7-ad72-d7de86b08fbc",
+      "timestamp": 1792613389.1754491
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_323570",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "510008c4-be0a-4ef6-8ece-b852b30f16ed",
+      "timestamp": 1792613391.0736058
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_436166",
+          "args": {
+           "path": "install.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "f6647eb6-5e59-4113-9718-e0d679e5938f"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 271,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 271
+        }
+       ],
+       "thoughts_token_count": 13,
+       "total_token_count": 302
+      },
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "f6647eb6-5e59-4113-9718-e0d679e5938f"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "77fd2963-6940-4d9c-972f-b286218c681c",
+      "timestamp": 1792613391.074101
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_436166",
+          "name": "read_page",
+          "response": {
+           "path": "install.md",
+           "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "ae70e695-82b1-4e22-a5c7-045d036279ce",
+      "timestamp": 1792613392.746505
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "The assistant requires Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "90ea9767-9592-4926-bf35-923c563b7cdd"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 16,
+       "prompt_token_count": 373,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 373
+        }
+       ],
+       "thoughts_token_count": 65,
+       "total_token_count": 454
+      },
+      "invocation_id": "e-367b9a89-b1d7-4d69-8fe9-85255752d052",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "90ea9767-9592-4926-bf35-923c563b7cdd"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "7dd31735-4e02-4d38-8a8b-5f95389ac1d7",
+      "timestamp": 1792613392.747046
+     }
+    ],
+    "last_update_time": 1792613392.747046
+   },
+   "user_id": "dev"
+  }
+ ],
+ "creation_timestamp": 1792613395.480086
+}

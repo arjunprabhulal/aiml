@@ -1,0 +1,17 @@
+--- without docs
+1. chose ' rollback'  candidates: ' rollback' 0.948  ' -' 0.016  ' release' 0.009
+2. chose ' r'         candidates: ' r' 0.714  ' --' 0.133  ' -' 0.112
+3. chose '4'          candidates: '4' 1.000  '3' 0.000  '2' 0.000
+4. chose '1'          candidates: '1' 1.000  '0' 0.000  '2' 0.000
+5. chose ''           candidates: (end of sequence)
+text: docuctl rollback r41
+--- with rollback.md
+1. chose ' rollback'  candidates: ' rollback' 1.000  ' rollout' 0.000  ' roll' 0.000
+2. chose ' --'        candidates: ' --' 1.000  ' -' 0.000  ' production' 0.000
+3. chose 'env'        candidates: 'env' 1.000  'environment' 0.000  ' env' 0.000
+4. chose ' production' candidates: ' production' 1.000  ' prod' 0.000  '=' 0.000
+5. chose ' --'        candidates: ' --' 1.000  ' \\' 0.000  ' -' 0.000
+6. chose 'to'         candidates: 'to' 1.000  'from' 0.000  '--' 0.000
+7. chose ' r'         candidates: ' r' 1.000  'r' 0.000  ' release' 0.000
+8. chose '4'          candidates: '4' 1.000  '1' 0.000  '3' 0.000
+text: docuctl rollback --env production --to r4

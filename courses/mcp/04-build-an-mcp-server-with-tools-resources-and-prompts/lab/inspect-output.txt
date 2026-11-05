@@ -1,0 +1,15 @@
+tools/list                     tools: search_docs
+resources/list                 resources: docs_index
+resources/templates/list       resourceTemplates: docs_page
+prompts/list                   prompts: review_page
+search worker                  ok
+search empty query             isError=true
+read index                     ok
+read page                      ok
+read missing page              error -32602: No docs page named scheduling.
+read unmatched URI             error -32602: Unknown resource: docs://drafts/retries
+get prompt                     ok
+get prompt for a missing page  error -32602: No docs page named scheduling.
+get prompt without slug        error -32602: Missing required arguments: slug
+get unknown prompt             error -32602: Unknown prompt: rewrite_docs
+wrote primitives-results.json

@@ -1,0 +1,13 @@
+Authored responses and semantic judgements; local checks, no model calls
+complete: format=pass, source=pass, action=pass, explanation=pass; accepted
+unsupported-claim: format=pass, source=fail, action=pass, explanation=fail; rejected
+wrong-proposal: format=pass, source=pass, action=fail, explanation=pass; rejected
+claims-execution: format=pass, source=pass, action=fail, explanation=pass; rejected
+missing-health-check: format=pass, source=pass, action=pass, explanation=fail; rejected
+uncertain-support: format=pass, source=pending, action=pass, explanation=pending; pending
+truncated-json: format=fail, source=not_run, action=not_run, explanation=not_run; rejected
+integer-for-boolean: format=fail, source=not_run, action=not_run, explanation=not_run; rejected
+unknown-field: format=fail, source=not_run, action=not_run, explanation=not_run; rejected
+changed-answer: format=pass, source=pending, action=pass, explanation=pending; pending
+Fixture decisions: 1 accepted; 7 rejected; 2 pending
+not_run means blocked by invalid format; pending means review is unfinished.

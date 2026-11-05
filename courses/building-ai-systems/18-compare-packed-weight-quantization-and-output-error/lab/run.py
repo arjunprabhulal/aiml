@@ -1,0 +1,38 @@
+"""Execute actual local objective updates and record their result and refusals."""
+import argparse
+import hashlib
+import html
+import json
+import platform
+from pathlib import Path
+import torch
+import experiment as u
+
+
+def record(stage):
+    result=u.quantization_run() if stage=='quantization' else u.batching_run()
+    try:
+        if stage=='quantization':u.quantize(torch.ones(2,2),3)
+        else:u.schedule(u.parameters(),[],capacity=0)
+    except ValueError as error:result['refusal']=str(error)
+    else:raise AssertionError('expected invalid experiment input refusal')
+    result['command']=['python','run.py',stage,'--record'];result['exit_status']=0
+    result['environment']={'python':platform.python_version(),'torch':torch.__version__,'platform':platform.platform()}
+    result['sources']={name:hashlib.sha256((u.HERE/name).read_bytes()).hexdigest() for name in ['experiment.py','decoder.py','vendor/model.py','run.py','test_experiment.py','params.json','tokenizer.json','bpe.py']}
+    return result
+
+
+def report(stage,result):
+    summary={key:value for key,value in result.items() if key not in ['trace','loss_history','environment','sources']}
+    if stage=='grpo':summary['first_group_samples']=result['trace'][0]['completions'];summary['first_group_rewards']=result['trace'][0]['rewards']
+    rows=''.join('<tr><th>'+html.escape(key.replace('_',' '))+'</th><td><pre>'+html.escape(json.dumps(value,indent=2))+'</pre></td></tr>' for key,value in summary.items())
+    return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Actual '+stage.upper()+' objective experiment</title><style>body{margin:0;padding:24px;color:#192136;background:white;font:18px system-ui}h1{font-size:28px}p{line-height:1.5;color:#596375}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border:1px solid #dfe4ed;padding:14px;vertical-align:top;text-align:left}th{width:27%}pre{font:16px/1.5 monospace;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}@media(max-width:600px){body{padding:14px}th,td{display:block;width:auto}th{background:#f5f7fb}}</style><h1>'+stage.upper()+': actual CPU objective experiment</h1><p>Previously trained course checkpoint. Actual CPU quantization or batched decoding; no GPU kernel, production traffic or measured throughput claim. This summary links to the full raw trace in the lesson.</p><table>'+rows+'</table></html>'
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['quantization','batching']);parser.add_argument('--record',action='store_true');args=parser.parse_args();torch.set_num_threads(1)
+    result=record(args.stage);text=json.dumps(result,indent=2,allow_nan=False)+'\n';print(text,end='')
+    if args.record:
+        (u.HERE/(args.stage+'-result.json')).write_text(text)
+        (u.HERE/(args.stage+'-output.txt')).write_text(text)
+        (u.HERE/(args.stage+'-report.html')).write_text(report(args.stage,result))

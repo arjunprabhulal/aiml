@@ -1,0 +1,9 @@
+[user]: How do I deploy to staging and list its releases?
+[docs_assistant]: To deploy the service in the current directory to staging, run:
+`docuctl deploy --env staging`
+
+To list the staging releases with the newest first, run:
+`docuctl releases --env staging`
+
+[user]: How do I configure automatic database backups?
+[docs_assistant]: The guide does not cover how to configure automatic database backups.

@@ -1,0 +1,1109 @@
+{
+  "mode": "offline replay of saved model responses; actual local tool and test execution; no model request",
+  "saved_model": "gemma4:e2b",
+  "saved_record_sha256": "adfbc7abe69d6e2a25cd067adc3692cef87b7d2b9303439d13b068bbed18ed4e",
+  "command": "python replay_output.py",
+  "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "before": {
+    "exit_code": 1,
+    "output": "..F.                                                                     [100%]\n=================================== FAILURES ===================================\n______________ test_accepts_windows_separators_from_change_lists _______________\n\n    def test_accepts_windows_separators_from_change_lists():\n>       assert python_sources([r\"src\\api\\routes.py\"]) == [\"src/api/routes.py\"]\nE       AssertionError: assert [] == ['src/api/routes.py']\nE         \nE         Right contains one more item: 'src/api/routes.py'\nE         Use -v to get more diff\n\ntests/test_path_rules.py:13: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_path_rules.py::test_accepts_windows_separators_from_change_lists\n1 failed, 3 passed in 0.01s\n"
+  },
+  "after": {
+    "exit_code": 0,
+    "output": "....                                                                     [100%]\n4 passed in 0.00s\n"
+  },
+  "response_turns": 5,
+  "events": [
+    {
+      "type": "model_start",
+      "turn": 1
+    },
+    {
+      "type": "tool_start",
+      "turn": 1,
+      "index": 0,
+      "name": "read_file",
+      "arguments": {
+        "path": "path_rules.py"
+      }
+    },
+    {
+      "type": "tool_result",
+      "turn": 1,
+      "index": 0,
+      "name": "read_file",
+      "result": {
+        "path": "path_rules.py",
+        "text": "\"\"\"Select changed Python source files for a CI check.\"\"\"\nfrom pathlib import PurePosixPath\n\n\ndef python_sources(changed_paths):\n    selected = []\n    for name in changed_paths:\n        path = PurePosixPath(name)\n        if path.parts and path.parts[0] == \"src\" and path.suffix == \".py\":\n            selected.append(path.as_posix())\n    return selected\n"
+      }
+    },
+    {
+      "type": "model_start",
+      "turn": 2
+    },
+    {
+      "type": "tool_start",
+      "turn": 2,
+      "index": 0,
+      "name": "read_file",
+      "arguments": {
+        "path": "tests/test_path_rules.py"
+      }
+    },
+    {
+      "type": "tool_result",
+      "turn": 2,
+      "index": 0,
+      "name": "read_file",
+      "result": {
+        "path": "tests/test_path_rules.py",
+        "text": "from path_rules import python_sources\n\n\ndef test_selects_only_python_under_src():\n    assert python_sources([\"src/app.py\", \"docs/setup.md\", \"tests/test_app.py\"]) == [\"src/app.py\"]\n\n\ndef test_preserves_nested_modules():\n    assert python_sources([\"src/api/routes.py\"]) == [\"src/api/routes.py\"]\n\n\ndef test_accepts_windows_separators_from_change_lists():\n    assert python_sources([r\"src\\api\\routes.py\"]) == [\"src/api/routes.py\"]\n\n\ndef test_empty_changes_select_nothing():\n    assert python_sources([]) == []\n"
+      }
+    },
+    {
+      "type": "model_start",
+      "turn": 3
+    },
+    {
+      "type": "tool_start",
+      "turn": 3,
+      "index": 0,
+      "name": "replace_text",
+      "arguments": {
+        "new": "        path = PurePosixPath(name.replace('\\\\', '/'))",
+        "old": "        path = PurePosixPath(name)"
+      }
+    },
+    {
+      "type": "tool_result",
+      "turn": 3,
+      "index": 0,
+      "name": "replace_text",
+      "result": {
+        "path": "path_rules.py",
+        "replaced": 1
+      }
+    },
+    {
+      "type": "model_start",
+      "turn": 4
+    },
+    {
+      "type": "tool_start",
+      "turn": 4,
+      "index": 0,
+      "name": "run_tests",
+      "arguments": {}
+    },
+    {
+      "type": "tool_result",
+      "turn": 4,
+      "index": 0,
+      "name": "run_tests",
+      "result": {
+        "exit_code": 0,
+        "output": "....                                                                     [100%]\n4 passed in 0.00s\n"
+      }
+    },
+    {
+      "type": "model_start",
+      "turn": 5
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "The"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " issue"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " regarding"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " Windows"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " back"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "sl"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "ashes"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " in"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " handling"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " has"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " been"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " addressed"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " by"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " modifying"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "rules"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "py"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\n\n"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "1"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "  "
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Inspection"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ":**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " I"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " read"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "rules"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "py"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " and"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "tests"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "/"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "test"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "rules"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "py"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " The"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " tests"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " included"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " a"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " case"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " specifically"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " checking"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " for"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " paths"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " with"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " Windows"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " separators"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " (`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "r"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\""
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "src"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\\"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "api"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\\"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "routes"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "py"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\"`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ")."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\n"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "2"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "  "
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Modification"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ":**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " I"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " used"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "replace"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "text"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " to"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " update"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "rules"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "py"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " The"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " line"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " responsible"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " for"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " creating"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " the"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Pure"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Pos"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "ix"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " was"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " changed"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " from"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " ="
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " Pure"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Pos"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "ix"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "("
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "name"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ")`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " to"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " ="
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " Pure"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Pos"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "ix"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "("
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "name"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "replace"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "('\\\\"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "',"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " '/"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "'))"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " to"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " ensure"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " that"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " Windows"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " back"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "sl"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "ashes"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " are"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " normalized"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " to"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " forward"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " sl"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "ashes"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " before"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " path"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " processing"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ","
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " satisfying"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " the"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " requirement"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\n"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "3"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "  "
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Testing"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ":**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " I"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " ran"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " `"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "run"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "tests"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "\n\n"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "Result"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ":**"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " The"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " tests"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " passed"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " successfully"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " (`"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "exit"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "_"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "code"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " "
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "0"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "`,"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " "
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "4"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " passed"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": ")."
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " The"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " fix"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " is"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": " verified"
+    },
+    {
+      "type": "text_delta",
+      "turn": 5,
+      "text": "."
+    },
+    {
+      "type": "stopped",
+      "turn": 5,
+      "reason": "assistant_finished"
+    }
+  ],
+  "sample_tests_unchanged": true
+}

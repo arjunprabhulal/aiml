@@ -1,0 +1,50 @@
+{
+  "question": "How do I rebuild the search index?",
+  "runs": {
+    "defaults": {
+      "env": {},
+      "exit_code": 0,
+      "spans": 10,
+      "span_names": [
+        "call_llm",
+        "execute_tool list_pages",
+        "execute_tool read_page",
+        "generate_content gemini-3.8-flash",
+        "invocation",
+        "invoke_agent docs_assistant"
+      ],
+      "service_name": null,
+      "content_attributes": [
+        "call_llm: gcp.vertex.agent.llm_request",
+        "call_llm: gcp.vertex.agent.llm_response",
+        "execute_tool read_page: gcp.vertex.agent.tool_response"
+      ]
+    },
+    "production": {
+      "env": {
+        "OTEL_SERVICE_NAME": "docs-assistant",
+        "ADK_CAPTURE_MESSAGE_CONTENT_IN_SPANS": "false"
+      },
+      "exit_code": 0,
+      "spans": 10,
+      "span_names": [
+        "call_llm",
+        "execute_tool list_pages",
+        "execute_tool read_page",
+        "generate_content gemini-3.8-flash",
+        "invocation",
+        "invoke_agent docs_assistant"
+      ],
+      "service_name": "docs-assistant",
+      "content_attributes": []
+    },
+    "otlp-without-exporter": {
+      "env": {
+        "OTEL_SERVICE_NAME": "docs-assistant",
+        "OTEL_EXPORTER_OTLP_ENDPOINT": "http://localhost:4318"
+      },
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: No module named 'opentelemetry.exporter'"
+    }
+  }
+}

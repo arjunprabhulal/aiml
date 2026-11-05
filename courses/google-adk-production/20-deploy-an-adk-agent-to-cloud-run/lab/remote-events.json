@@ -1,0 +1,262 @@
+[
+  {
+    "method": "GET",
+    "path": "/list-apps",
+    "status": 403,
+    "body": "<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>403 Forbidden</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Forbidden</h1>\n<h2>Your client does not have permission to get URL <code>/list-apps</code> from this server.</h2>\n<h2></h2>\n</body></html>"
+  },
+  {
+    "method": "POST",
+    "path": "/apps/docs_helper/users/dana/sessions",
+    "status": 200,
+    "body": {
+      "id": "edf2c2c7-a982-426f-b4d5-c6f4f63bd84e",
+      "appName": "docs_helper",
+      "userId": "dana",
+      "state": {},
+      "events": [],
+      "lastUpdateTime": 1792981870.2151625
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/run",
+    "status": 200,
+    "body": [
+      {
+        "modelVersion": "gemini-3.8-flash",
+        "content": {
+          "parts": [
+            {
+              "functionCall": {
+                "id": "call_2263504",
+                "args": {
+                  "page": "rollback"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 16,
+          "candidatesTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 16
+            }
+          ],
+          "promptTokenCount": 262,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 262
+            }
+          ],
+          "thoughtsTokenCount": 51,
+          "totalTokenCount": 329,
+          "trafficType": "ON_DEMAND"
+        },
+        "invocationId": "e-332ab297-3c83-41e1-8227-2eae84cd2972",
+        "author": "docs_helper",
+        "actions": {
+          "stateDelta": {},
+          "artifactDelta": {},
+          "requestedAuthConfigs": {},
+          "requestedToolConfirmations": {}
+        },
+        "nodeInfo": {
+          "path": "docs_helper@1"
+        },
+        "longRunningToolIds": [],
+        "id": "c228acf3-e321-4750-a380-ef97d47ea1d5",
+        "timestamp": 1792981872.1236007
+      },
+      {
+        "content": {
+          "parts": [
+            {
+              "functionResponse": {
+                "id": "call_2263504",
+                "name": "read_page",
+                "response": {
+                  "page": "rollback",
+                  "text": "# Roll back a release\n\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\n\n    docuctl rollback --env production --to r41\n\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\n\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\n\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\n"
+                }
+              }
+            }
+          ],
+          "role": "user"
+        },
+        "invocationId": "e-332ab297-3c83-41e1-8227-2eae84cd2972",
+        "author": "docs_helper",
+        "actions": {
+          "stateDelta": {},
+          "artifactDelta": {},
+          "requestedAuthConfigs": {},
+          "requestedToolConfirmations": {}
+        },
+        "nodeInfo": {
+          "path": "docs_helper@1"
+        },
+        "id": "0578d4ea-6789-4814-9c89-3d08969d05e3",
+        "timestamp": 1792981874.1828828
+      },
+      {
+        "modelVersion": "gemini-3.8-flash",
+        "content": {
+          "parts": [
+            {
+              "text": "In docuctl 1.x, use `docuctl release revert`:\n\n```bash\ndocuctl release revert r42 --env production\n```\n\nThis reverts release `r42` in production. Note that database migrations are not automatically rolled back, so any migrations introduced by `r42` must be reversed manually with a new migration."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 75,
+          "candidatesTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 75
+            }
+          ],
+          "promptTokenCount": 475,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 475
+            }
+          ],
+          "thoughtsTokenCount": 153,
+          "totalTokenCount": 703,
+          "trafficType": "ON_DEMAND"
+        },
+        "invocationId": "e-332ab297-3c83-41e1-8227-2eae84cd2972",
+        "author": "docs_helper",
+        "actions": {
+          "stateDelta": {},
+          "artifactDelta": {},
+          "requestedAuthConfigs": {},
+          "requestedToolConfirmations": {}
+        },
+        "nodeInfo": {
+          "path": "docs_helper@1"
+        },
+        "id": "0e329af2-3774-4305-97df-dbe314ebb98f",
+        "timestamp": 1792981874.1855567
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/run",
+    "status": 200,
+    "body": [
+      {
+        "modelVersion": "gemini-3.8-flash",
+        "content": {
+          "parts": [
+            {
+              "text": "In docuctl 1.x, run:\n\n```bash\ndocuctl release revert r42 --env production\n```\n\nThis reverts release `r42` in your production environment. Note that database migrations are not rolled back automatically; if `r42` included migrations, you must write and deploy a new migration to reverse them."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 73,
+          "candidatesTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 73
+            }
+          ],
+          "promptTokenCount": 724,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 724
+            }
+          ],
+          "totalTokenCount": 797,
+          "trafficType": "ON_DEMAND"
+        },
+        "invocationId": "e-01410fe1-723f-428f-87ac-ffc92b67ad1e",
+        "author": "docs_helper",
+        "actions": {
+          "stateDelta": {},
+          "artifactDelta": {},
+          "requestedAuthConfigs": {},
+          "requestedToolConfirmations": {}
+        },
+        "nodeInfo": {
+          "path": "docs_helper@1"
+        },
+        "id": "739f7e53-8060-4a96-b908-bd985df4d817",
+        "timestamp": 1792981886.9834101
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/run",
+    "status": 200,
+    "body": [
+      {
+        "modelVersion": "gemini-3.8-flash",
+        "content": {
+          "parts": [
+            {
+              "text": "You stated that you run **docuctl 1.x**."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 14,
+          "candidatesTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 14
+            }
+          ],
+          "promptTokenCount": 805,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 805
+            }
+          ],
+          "thoughtsTokenCount": 52,
+          "totalTokenCount": 871,
+          "trafficType": "ON_DEMAND"
+        },
+        "invocationId": "e-772134a5-d085-44ec-9ab5-c94d87e5ae6b",
+        "author": "docs_helper",
+        "actions": {
+          "stateDelta": {},
+          "artifactDelta": {},
+          "requestedAuthConfigs": {},
+          "requestedToolConfirmations": {}
+        },
+        "nodeInfo": {
+          "path": "docs_helper@1"
+        },
+        "id": "f3be24dd-6211-48b0-bf58-e23f27b79eb0",
+        "timestamp": 1792981889.1869297
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/apps/docs_helper/users/dana/sessions/edf2c2c7-a982-426f-b4d5-c6f4f63bd84e",
+    "status": 404,
+    "body": {
+      "detail": "Session not found"
+    }
+  }
+]

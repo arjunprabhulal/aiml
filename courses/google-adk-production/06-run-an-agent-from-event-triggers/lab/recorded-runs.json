@@ -1,0 +1,281 @@
+{
+  "model": "gemini-3.8-flash",
+  "oidc_server": "adk api_server --trigger_sources pubsub --trigger_oidc_audience https://docs-reviewer.example --port 8768 --session_service_uri memory:// .",
+  "deliveries": [
+    {
+      "command": "python publish.py pubsub tokens --message-id 1001",
+      "status": 200,
+      "body": {
+        "status": "success"
+      },
+      "seconds": 6.4,
+      "reviews": [
+        {
+          "key": "pubsub:1001",
+          "page": "tokens",
+          "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."
+        }
+      ],
+      "session": {
+        "user_id": "projects--docs--subscriptions--docs-changed",
+        "state": {
+          "trigger_delivery": {
+            "source": "pubsub",
+            "id": "1001",
+            "subscription": "projects/docs/subscriptions/docs-changed",
+            "publish_time": "2026-10-21T18:00:00Z"
+          }
+        },
+        "first_message": "{\"data\": {\"page\": \"tokens\", \"commit\": \"4f2a9c1\"}, \"attributes\": {\"repo\": \"docuctl-docs\"}}",
+        "model_turns": [
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "functionCall": {
+                    "id": "call_1723317",
+                    "args": {
+                      "page": "tokens"
+                    },
+                    "name": "read_page"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "functionCall": {
+                    "id": "call_1347233",
+                    "args": {
+                      "page": "tokens",
+                      "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."
+                    },
+                    "name": "post_review"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "text": "done"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "command": "python publish.py pubsub tokens --message-id 1001",
+      "status": 200,
+      "body": {
+        "status": "success"
+      },
+      "seconds": 6.5,
+      "reviews": [
+        {
+          "key": "pubsub:1001",
+          "page": "tokens",
+          "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."
+        }
+      ],
+      "session": {
+        "user_id": "projects--docs--subscriptions--docs-changed",
+        "state": {
+          "trigger_delivery": {
+            "source": "pubsub",
+            "id": "1001",
+            "subscription": "projects/docs/subscriptions/docs-changed",
+            "publish_time": "2026-10-21T18:00:00Z"
+          }
+        },
+        "first_message": "{\"data\": {\"page\": \"tokens\", \"commit\": \"4f2a9c1\"}, \"attributes\": {\"repo\": \"docuctl-docs\"}}",
+        "model_turns": [
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "functionCall": {
+                    "id": "call_2126149",
+                    "args": {
+                      "page": "tokens"
+                    },
+                    "name": "read_page"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "functionCall": {
+                    "id": "call_2755346",
+                    "args": {
+                      "page": "tokens",
+                      "summary": "CI jobs authenticate using deploy tokens created with `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` in CI secrets and expire after 90 days."
+                    },
+                    "name": "post_review"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "text": "done"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "command": "python publish.py eventarc rollback --event-id ev-77",
+      "status": 200,
+      "body": {
+        "status": "success"
+      },
+      "seconds": 6.1,
+      "reviews": [
+        {
+          "key": "pubsub:1001",
+          "page": "tokens",
+          "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."
+        },
+        {
+          "key": "eventarc:ev-77",
+          "page": "rollback",
+          "summary": "Use `docuctl rollback` to point traffic to a previous or specified release without rebuilding, noting that database migrations are not automatically reverted."
+        }
+      ],
+      "session": {
+        "user_id": "pubsub.googleapis.com--projects--docs--topics--docs-changed",
+        "state": {
+          "trigger_delivery": {
+            "source": "eventarc",
+            "id": "ev-77",
+            "event_source": "//pubsub.googleapis.com/projects/docs/topics/docs-changed",
+            "type": "google.cloud.pubsub.topic.v1.messagePublished"
+          }
+        },
+        "first_message": "{\"data\": {\"page\": \"rollback\", \"commit\": \"4f2a9c1\"}, \"attributes\": {\"repo\": \"docuctl-docs\"}}",
+        "model_turns": [
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "functionCall": {
+                    "id": "call_1258554",
+                    "args": {
+                      "page": "rollback"
+                    },
+                    "name": "read_page"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "functionCall": {
+                    "id": "call_1555458",
+                    "args": {
+                      "summary": "Use `docuctl rollback` to point traffic to a previous or specified release without rebuilding, noting that database migrations are not automatically reverted.",
+                      "page": "rollback"
+                    },
+                    "name": "post_review"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "content": {
+              "role": "model",
+              "parts": [
+                {
+                  "text": "done"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "command": "python publish.py pubsub tokens --message-id 1002 --raw-data 'not base64!'",
+      "status": 400,
+      "body": {
+        "detail": "Invalid base64 message data: Invalid base64-encoded string: number of data characters (9) cannot be 1 more than a multiple of 4"
+      },
+      "seconds": 0.0,
+      "reviews": [
+        {
+          "key": "pubsub:1001",
+          "page": "tokens",
+          "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."
+        },
+        {
+          "key": "eventarc:ev-77",
+          "page": "rollback",
+          "summary": "Use `docuctl rollback` to point traffic to a previous or specified release without rebuilding, noting that database migrations are not automatically reverted."
+        }
+      ],
+      "session": null
+    },
+    {
+      "command": "TRIGGER_TOKEN=wrong-token python publish.py pubsub tokens --message-id 1004",
+      "status": 401,
+      "body": {
+        "detail": "Missing or wrong trigger token."
+      },
+      "seconds": 0.0,
+      "reviews": [
+        {
+          "key": "pubsub:1001",
+          "page": "tokens",
+          "summary": "CI jobs authenticate using a deploy token created via `docuctl tokens create`, which must be stored as `DOCUCTL_TOKEN` and expires after 90 days."
+        },
+        {
+          "key": "eventarc:ev-77",
+          "page": "rollback",
+          "summary": "Use `docuctl rollback` to point traffic to a previous or specified release without rebuilding, noting that database migrations are not automatically reverted."
+        }
+      ],
+      "session": null
+    }
+  ],
+  "no_auth": {
+    "command": "adk api_server --trigger_sources pubsub,eventarc --port 8767 .",
+    "error": "ValueError: trigger_sources requires trigger_oidc_audience or trigger_auth_verifier to be set.",
+    "exit": 1
+  },
+  "oidc_missing_token": {
+    "status": 401,
+    "body": {
+      "detail": "Missing or malformed Authorization bearer token."
+    },
+    "reviews": 2
+  }
+}

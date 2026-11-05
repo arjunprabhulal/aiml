@@ -1,0 +1,116 @@
+{
+  "lesson_id": "add-search-and-read-tools",
+  "execution": "Actual learner CLI in original PTY, no model/provider/network",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py",
+    "--output",
+    "runs/native-cli-20261023/result.json"
+  ],
+  "cwd": "/tmp/aiml-rag-native-cli-12-preparation-20261023/projects/add-search-and-read-tools",
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "48ec3237702d714464457f3cb436cd8195d921041f1edfc4658bd91f274293b5",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "render_output.py": "7f8100cb47c9fc28be0806a2c80b23dc56f3ff3beef0ba901b63c885883ac8a0",
+    "run.py": "62b91639354fedcff30082283e4194ab23ead054ba2995a34244b277e5d031b1",
+    "runs/2026-10-23-tools/execution.json": "614f4f7f448a74b1b27713ad65974b8c4d205f861f97d7112df095fdd8ff2ae1",
+    "runs/2026-10-23-tools/media.json": "72586cf5d9d95cd0f1cacfd2946930093fc8c5dfabf28a41e8883c4a5f2f71ff",
+    "runs/2026-10-23-tools/output-mobile.png": "d6a1df0fac21e3a09bfb0b4620ef8077d62449174ac30b582fb1b2dc40856ca6",
+    "runs/2026-10-23-tools/output-small.png": "613a96036b8cae787c68aa76076cd49434684c9fa9dd0c72a3180774a048d058",
+    "runs/2026-10-23-tools/output.png": "a87ff2d4bcadd5b5bd3db3bca3e1c5e8ca9c56b4a7a68bc7cf6bdc1520335419",
+    "runs/2026-10-23-tools/result.json": "dfba498a41c41e0ccd9951fdc9c59623950c966d6054d0c77a339c89533b179c",
+    "runs/2026-10-23-tools/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-tools/stdout.txt": "c0c225f28d2439a93957734f9ae368937efa4f47a55cbd71d81212f803ddb89a",
+    "runs/2026-10-23-tools/tests.txt": "371a50d0b4de2af887ae55c07d1286293ccf61071e44303238e99026ec06cd77",
+    "test_tools.py": "6779d0b253338970212a03169ea37843ba7f7eae75bd8f3175234896a236857f",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "stdout_sha256": "1db30d658bb18a56fcaaebbb902711731a45d71743ac73755b006be9f96b292c",
+  "result_sha256": "c4097dec3beb84e91e9852512792e1ed47e602af19d77e4261b49cb71948d972",
+  "source_files_unchanged": true,
+  "exit_code": 0,
+  "input_bytes": 0,
+  "network_attempts": 0,
+  "credentials_in_environment": false,
+  "historical_fixture": "add-search-and-read-tools/runs/2026-10-23-tools/result.json",
+  "same_deterministic_result_as_historical": false,
+  "historical_differences": {
+    "file": "historical-diff.json",
+    "sha256": "9cdf33abc903e1ee1fa0758c53d4c009f467b2ec0c527de52271e82ca367a620",
+    "leaf_counts": {
+      "read_token": 2,
+      "native_score": 2,
+      "read_request_id": 1,
+      "result_sha256": 1
+    },
+    "maximum_native_score_absolute_difference": 1.1102230246251565e-16,
+    "interpretation": "Only BM25 floating-point values and their derived bound hash fields differ. Source passages, ordering, actions, statuses, budgets and outcomes are exact. Historical record kept, fresh result kept unchanged.",
+    "runtime_difference": "Historical SQLite3.53.4; this command uses SQLite3.45.3. No claim of byte-identical floating-point output across runtime versions."
+  },
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "d64525d63269e6b75c8b623c19227691c40e17f4402660a98d02c4def25e54f3",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 0,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py",
+          "--output",
+          "runs/native-cli-20261023/result.json"
+        ],
+        "terminalText": "{\"changed_handle_refusal\": \"invalid_read_handle\", \"empty_eligible_count\": 0, \"execution_mode\": \"offline-native-document-search-and-read\", \"no_match_count\": 0, \"read_source_ids\": [\"pa\nth-write\"], \"search_results\": 1}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "d64525d63269e6b75c8b623c19227691c40e17f4402660a98d02c4def25e54f3",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 0,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py",
+          "--output",
+          "runs/native-cli-20261023/result.json"
+        ],
+        "terminalText": "{\"changed_handle_refusal\": \"invalid_read_handle\", \"empty_eligible_count\": 0, \"execution_mode\": \"offline-native-document-search-and-read\", \"no_match_count\": 0, \"read_source_ids\": [\"pa\nth-write\"], \"search_results\": 1}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "raw_stdout_representation": "Original PTY CRLF bytes preserved; result.json parses actual stdout or copies the actual --output file. No raw output rewriting.",
+  "stdout_prefix_note": null,
+  "time": "2026-10-23T18:43:21.053436+00:00",
+  "dependencies": {
+    "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": {
+      "numpy": "2.5.4",
+      "langchain-core": "1.6.12",
+      "transformers": "5.20.1",
+      "tokenizers": "0.23.3"
+    },
+    "sqlite_version": "3.45.3",
+    "python_executable": "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python"
+  },
+  "capture_view_review": "All unique original top/end views personally inspected; eight short-output top/end pairs are byte-identical."
+}

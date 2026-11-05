@@ -1,0 +1,23 @@
+# Copy to .github/workflows/eval-gate.yml in a repository whose root holds this lab.
+# CI has no model server: it replays the recording committed with the change,
+# then gates that run against the baseline report on main.
+name: eval-gate
+on: pull_request
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-lock.txt
+      - name: Replay the candidate's recording
+        # pytest exits 1 when tests fail; the gate decides what that means. Any other code is an error.
+        run: pytest -q test_triage.py --json-report --json-report-file=candidate.json || [ $? -eq 1 ]
+      - name: Gate against the baseline on main
+        run: |
+          git show origin/main:runs/baseline.json > baseline.json
+          python gate.py baseline.json candidate.json --out gate.json

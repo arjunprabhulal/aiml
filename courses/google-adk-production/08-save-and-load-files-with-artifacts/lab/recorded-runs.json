@@ -1,0 +1,382 @@
+{
+  "model": "gemini-3.8-flash",
+  "steps": [
+    {
+      "step": 1,
+      "run": 1,
+      "kind": "upload",
+      "message": "Review this ship.toml before I deploy it to production.",
+      "calls": [
+        {
+          "name": "load_artifacts",
+          "args": {
+            "artifact_names": [
+              "ship.toml"
+            ]
+          }
+        },
+        {
+          "name": "read_page",
+          "args": {
+            "page": "config"
+          }
+        },
+        {
+          "name": "read_page",
+          "args": {
+            "page": "secrets"
+          }
+        },
+        {
+          "name": "load_artifacts",
+          "args": {
+            "artifact_names": [
+              "ship.toml"
+            ]
+          }
+        },
+        {
+          "name": "read_page",
+          "args": {
+            "page": "environments"
+          }
+        }
+      ],
+      "artifact_delta": {
+        "ship.toml": 0
+      },
+      "requests_with_file": 2,
+      "requests": 6,
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1330739",
+                "args": {
+                  "artifact_names": [
+                    "ship.toml"
+                  ]
+                },
+                "name": "load_artifacts"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1563463",
+                "args": {
+                  "page": "config"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1694671",
+                "args": {
+                  "page": "secrets"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1808582",
+                "args": {
+                  "artifact_names": [
+                    "ship.toml"
+                  ]
+                },
+                "name": "load_artifacts"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_2104142",
+                "args": {
+                  "page": "environments"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "Here are the issues found in `ship.toml`:\n\n- **Line 8**: Hardcoded secret in `DATABASE_URL = \"postgres://app:secretpass@db.internal:5432/app\"`.  \n  **Fix**: Store credentials securely and reference them using a secret: `DATABASE_URL = \"secret://prod-db-url\"`.\n- **Line 9**: Plaintext secret in `API_KEY = \"prod_live_9f83a2c01\"`.  \n  **Fix**: Replace with a secret reference: `API_KEY = \"secret://prod-api-key\"`.\n- **Line 14**: Missing production deployment safeguards.  \n  **Fix**: Under `[environments.production]`, add `approval = true` to require manual approval before deployment."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "answer": "Here are the issues found in `ship.toml`:\n\n- **Line 8**: Hardcoded secret in `DATABASE_URL = \"postgres://app:secretpass@db.internal:5432/app\"`.  \n  **Fix**: Store credentials securely and reference them using a secret: `DATABASE_URL = \"secret://prod-db-url\"`.\n- **Line 9**: Plaintext secret in `API_KEY = \"prod_live_9f83a2c01\"`.  \n  **Fix**: Replace with a secret reference: `API_KEY = \"secret://prod-api-key\"`.\n- **Line 14**: Missing production deployment safeguards.  \n  **Fix**: Under `[environments.production]`, add `approval = true` to require manual approval before deployment.",
+      "listed": [
+        "ship.toml"
+      ]
+    },
+    {
+      "step": 2,
+      "run": 1,
+      "kind": "text",
+      "message": "Save that review as review.md.",
+      "calls": [
+        {
+          "name": "save_text_file",
+          "args": {
+            "text": "# Review of `ship.toml`\n\nThe following issues were identified prior to deploying to production:\n\n- **Line 8**: Hardcoded secret in `DATABASE_URL = \"postgres://app:secretpass@db.internal:5432/app\"`.  \n  **Fix**: Store credentials securely using `docuctl secrets set` and reference them with a secret URI: `DATABASE_URL = \"secret://prod-db-url\"`.\n- **Line 9**: Plaintext secret in `API_KEY = \"prod_live_9f83a2c01\"`.  \n  **Fix**: Store the key in the secret store and reference it: `API_KEY = \"secret://prod-api-key\"`.\n- **Line 14**: Missing production deployment safeguards in `[environments.production]`.  \n  **Fix**: Add `approval = true` under `[environments.production]` to require manual approval for production deploys.\n",
+            "filename": "review.md"
+          }
+        }
+      ],
+      "artifact_delta": {
+        "review.md": 0
+      },
+      "requests_with_file": 0,
+      "requests": 2,
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_2266620",
+                "args": {
+                  "text": "# Review of `ship.toml`\n\nThe following issues were identified prior to deploying to production:\n\n- **Line 8**: Hardcoded secret in `DATABASE_URL = \"postgres://app:secretpass@db.internal:5432/app\"`.  \n  **Fix**: Store credentials securely using `docuctl secrets set` and reference them with a secret URI: `DATABASE_URL = \"secret://prod-db-url\"`.\n- **Line 9**: Plaintext secret in `API_KEY = \"prod_live_9f83a2c01\"`.  \n  **Fix**: Store the key in the secret store and reference it: `API_KEY = \"secret://prod-api-key\"`.\n- **Line 14**: Missing production deployment safeguards in `[environments.production]`.  \n  **Fix**: Add `approval = true` under `[environments.production]` to require manual approval for production deploys.\n",
+                  "filename": "review.md"
+                },
+                "name": "save_text_file"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "I have saved the review to `review.md`."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "answer": "I have saved the review to `review.md`.",
+      "listed": [
+        "review.md",
+        "ship.toml"
+      ]
+    },
+    {
+      "step": 3,
+      "run": 1,
+      "kind": "text",
+      "message": "We will fix all three problems before the deploy. Add that decision to the review and save it again.",
+      "calls": [
+        {
+          "name": "load_artifacts",
+          "args": {
+            "artifact_names": [
+              "review.md"
+            ]
+          }
+        },
+        {
+          "name": "save_text_file",
+          "args": {
+            "text": "# Review of `ship.toml`\n\nThe following issues were identified prior to deploying to production:\n\n- **Line 8**: Hardcoded secret in `DATABASE_URL = \"postgres://app:secretpass@db.internal:5432/app\"`.  \n  **Fix**: Store credentials securely using `docuctl secrets set` and reference them with a secret URI: `DATABASE_URL = \"secret://prod-db-url\"`.\n- **Line 9**: Plaintext secret in `API_KEY = \"prod_live_9f83a2c01\"`.  \n  **Fix**: Store the key in the secret store and reference it: `API_KEY = \"secret://prod-api-key\"`.\n- **Line 14**: Missing production deployment safeguards in `[environments.production]`.  \n  **Fix**: Add `approval = true` under `[environments.production]` to require manual approval for production deploys.\n\n## Decision\n\nAll three problems will be fixed before deploying to production.\n",
+            "filename": "review.md"
+          }
+        }
+      ],
+      "artifact_delta": {
+        "review.md": 1
+      },
+      "requests_with_file": 0,
+      "requests": 3,
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_2373884",
+                "args": {
+                  "artifact_names": [
+                    "review.md"
+                  ]
+                },
+                "name": "load_artifacts"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1938071",
+                "args": {
+                  "text": "# Review of `ship.toml`\n\nThe following issues were identified prior to deploying to production:\n\n- **Line 8**: Hardcoded secret in `DATABASE_URL = \"postgres://app:secretpass@db.internal:5432/app\"`.  \n  **Fix**: Store credentials securely using `docuctl secrets set` and reference them with a secret URI: `DATABASE_URL = \"secret://prod-db-url\"`.\n- **Line 9**: Plaintext secret in `API_KEY = \"prod_live_9f83a2c01\"`.  \n  **Fix**: Store the key in the secret store and reference it: `API_KEY = \"secret://prod-api-key\"`.\n- **Line 14**: Missing production deployment safeguards in `[environments.production]`.  \n  **Fix**: Add `approval = true` under `[environments.production]` to require manual approval for production deploys.\n\n## Decision\n\nAll three problems will be fixed before deploying to production.\n",
+                  "filename": "review.md"
+                },
+                "name": "save_text_file"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "I have updated `review.md` to include the decision to fix all three issues before deploying, and saved the new version."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "answer": "I have updated `review.md` to include the decision to fix all three issues before deploying, and saved the new version.",
+      "listed": [
+        "review.md",
+        "ship.toml"
+      ]
+    },
+    {
+      "step": 4,
+      "run": 1,
+      "kind": "text",
+      "message": "Save a five-item production deploy checklist for me as user:checklist.md, so I have it next time.",
+      "calls": [
+        {
+          "name": "save_text_file",
+          "args": {
+            "text": "# Production Deploy Checklist\n\n1. **Verify Secrets**: Ensure no plaintext credentials exist in `ship.toml` and all sensitive values use `secret://<name>`.\n2. **Confirm Secret Availability**: Run `docuctl secrets list --env production` to confirm all referenced secrets exist in production.\n3. **Enable Approvals**: Ensure `approval = true` is set under `[environments.production]` in `ship.toml`.\n4. **Run Dry Run**: Execute `docuctl deploy --dry-run --env production` to validate configuration and secret references without deploying.\n5. **Review Merged Config**: Run `docuctl config show --env production` to verify resolved variables and settings before starting the deploy.\n",
+            "filename": "user:checklist.md"
+          }
+        }
+      ],
+      "artifact_delta": {
+        "user:checklist.md": 0
+      },
+      "requests_with_file": 0,
+      "requests": 2,
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_2215166",
+                "args": {
+                  "text": "# Production Deploy Checklist\n\n1. **Verify Secrets**: Ensure no plaintext credentials exist in `ship.toml` and all sensitive values use `secret://<name>`.\n2. **Confirm Secret Availability**: Run `docuctl secrets list --env production` to confirm all referenced secrets exist in production.\n3. **Enable Approvals**: Ensure `approval = true` is set under `[environments.production]` in `ship.toml`.\n4. **Run Dry Run**: Execute `docuctl deploy --dry-run --env production` to validate configuration and secret references without deploying.\n5. **Review Merged Config**: Run `docuctl config show --env production` to verify resolved variables and settings before starting the deploy.\n",
+                  "filename": "user:checklist.md"
+                },
+                "name": "save_text_file"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "I have saved the five-item checklist to `user:checklist.md` across your sessions."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "answer": "I have saved the five-item checklist to `user:checklist.md` across your sessions.",
+      "listed": [
+        "review.md",
+        "ship.toml",
+        "user:checklist.md"
+      ]
+    },
+    {
+      "step": 5,
+      "run": 2,
+      "kind": "text",
+      "message": "Which files do you have for me? Show me my checklist.",
+      "calls": [
+        {
+          "name": "load_artifacts",
+          "args": {
+            "artifact_names": [
+              "user:checklist.md"
+            ]
+          }
+        }
+      ],
+      "artifact_delta": {},
+      "requests_with_file": 0,
+      "requests": 2,
+      "model_turns": [
+        {
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1570896",
+                "args": {
+                  "artifact_names": [
+                    "user:checklist.md"
+                  ]
+                },
+                "name": "load_artifacts"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        {
+          "parts": [
+            {
+              "text": "You have one file available: **`user:checklist.md`**.\n\nHere is your checklist:\n\n# Production Deploy Checklist\n\n1. **Verify Secrets**: Ensure no plaintext credentials exist in `ship.toml` and all sensitive values use `secret://<name>`.\n2. **Confirm Secret Availability**: Run `docuctl secrets list --env production` to confirm all referenced secrets exist in production.\n3. **Enable Approvals**: Ensure `approval = true` is set under `[environments.production]` in `ship.toml`.\n4. **Run Dry Run**: Execute `docuctl deploy --dry-run --env production` to validate configuration and secret references without deploying.\n5. **Review Merged Config**: Run `docuctl config show --env production` to verify resolved variables and settings before starting the deploy."
+            }
+          ],
+          "role": "model"
+        }
+      ],
+      "answer": "You have one file available: **`user:checklist.md`**.\n\nHere is your checklist:\n\n# Production Deploy Checklist\n\n1. **Verify Secrets**: Ensure no plaintext credentials exist in `ship.toml` and all sensitive values use `secret://<name>`.\n2. **Confirm Secret Availability**: Run `docuctl secrets list --env production` to confirm all referenced secrets exist in production.\n3. **Enable Approvals**: Ensure `approval = true` is set under `[environments.production]` in `ship.toml`.\n4. **Run Dry Run**: Execute `docuctl deploy --dry-run --env production` to validate configuration and secret references without deploying.\n5. **Review Merged Config**: Run `docuctl config show --env production` to verify resolved variables and settings before starting the deploy.",
+      "listed": [
+        "user:checklist.md"
+      ]
+    }
+  ],
+  "store": [
+    "apps/docs/users/dana/artifacts/checklist.md/versions/0/checklist.md",
+    "apps/docs/users/dana/artifacts/checklist.md/versions/0/metadata.json",
+    "apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/0/metadata.json",
+    "apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/0/review.md",
+    "apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/1/metadata.json",
+    "apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/1/review.md",
+    "apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/ship.toml/versions/0/metadata.json",
+    "apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/ship.toml/versions/0/ship.toml"
+  ],
+  "failures": {
+    "traversal": [
+      "InputValidationError: Artifact filename '../../ship.toml' must not contain parent traversal.",
+      "InputValidationError: Rooted or drive-qualified artifact filename '/etc/hosts' is not permitted; provide a path relative to the storage scope."
+    ],
+    "missing": "None",
+    "no_service": "ValueError: Artifact service is not initialized."
+  }
+}

@@ -1,0 +1,28 @@
+
+$ CRASH_AT="after summarize" /Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python workflow.py --work-dir /private/tmp/aiml-langgraph-checkpoint-native-preparation-20261023/approved-native-crash-resume-run/work --thread bounded-release-2-5 --version 2.5.0
+finished collect
+finished summarize
+!! process killed in after summarize
+Actual process exit: 1
+Saved checkpoint next: ["write_file"]
+
+$ /Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python workflow.py --work-dir /private/tmp/aiml-langgraph-checkpoint-native-preparation-20261023/approved-native-crash-resume-run/work --thread bounded-release-2-5 --version 2.5.0
+resuming bounded-release-2-5 at write_file
+finished write_file
+finished announce
+Actual process exit: 0
+Saved checkpoint next: []
+
+Actual generated Markdown: out/2.5.0.md
+# Release 2.5.0
+
+## Version 2.5.0
+
+* Added the ability to configure custom timeout overrides for individual clients (#409).
+* Improved webhook reliability by automatically retrying delivery when receiving a 503 (Service Unavailable) response (#412).
+* Removed the legacy CSV export option to streamline export functionality (#418).
+
+Actual local announcement log:
+Released 2.5.0: out/2.5.0.md
+
+CHECKPOINT CAPTURE FINISHED

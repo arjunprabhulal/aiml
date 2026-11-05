@@ -1,0 +1,312 @@
+{
+  "model": {
+    "publisher_model": "Qwen/Qwen3-Embedding-0.6B",
+    "publisher_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "ollama_tag": "qwen3-embedding:0.6b",
+    "ollama_digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+    "dimensions": 1024,
+    "license": "Apache-2.0"
+  },
+  "passages": 347,
+  "tokens": {
+    "total": 56647,
+    "min": 32,
+    "median": 160,
+    "max": 377
+  },
+  "norms": {
+    "min": 0.999999,
+    "max": 1.000001
+  },
+  "nearest_neighbors": {
+    "vectors-and-similarity#compare-meanings-instead-of-shared-words": [
+      {
+        "id": "tokens-and-tokenizers#how-text-becomes-vocabulary-ids-2",
+        "cosine": 0.6473
+      },
+      {
+        "id": "documents-and-queries#what-a-search-system-receives-and-returns",
+        "cosine": 0.6457
+      },
+      {
+        "id": "vectors-and-similarity#embed-the-query-compare-it-with-stored-vectors-rank",
+        "cosine": 0.6368
+      },
+      {
+        "id": "build-a-retriever#concepts-2",
+        "cosine": 0.6028
+      },
+      {
+        "id": "vectors-and-similarity#limits-takeaways-and-references",
+        "cosine": 0.5935
+      }
+    ],
+    "keyword-ranking#how-bm25-weighs-rare-terms-repeats-and-length": [
+      {
+        "id": "keyword-ranking#limits-takeaways-and-references-2",
+        "cosine": 0.8647
+      },
+      {
+        "id": "keyword-ranking#limits-takeaways-and-references",
+        "cosine": 0.7914
+      },
+      {
+        "id": "keyword-ranking#how-bm25-weighs-rare-terms-repeats-and-length-2",
+        "cosine": 0.7902
+      },
+      {
+        "id": "keyword-ranking#counting-query-words-puts-the-wrong-note-first-2",
+        "cosine": 0.786
+      },
+      {
+        "id": "keyword-ranking#counting-query-words-puts-the-wrong-note-first",
+        "cosine": 0.7286
+      }
+    ],
+    "build-isolated-contexts#problem": [
+      {
+        "id": "build-isolated-contexts#failure-cases-2",
+        "cosine": 0.809
+      },
+      {
+        "id": "build-isolated-contexts#working-code",
+        "cosine": 0.7651
+      },
+      {
+        "id": "build-isolated-contexts#key-takeaways",
+        "cosine": 0.7529
+      },
+      {
+        "id": "build-isolated-contexts#concepts-2",
+        "cosine": 0.7476
+      },
+      {
+        "id": "build-isolated-contexts#deployment",
+        "cosine": 0.7033
+      }
+    ]
+  },
+  "near_duplicates": {
+    "threshold": 0.95,
+    "pairs": 0,
+    "top": []
+  },
+  "query_instruction": {
+    "with": {
+      "questions_found_at_1": 17,
+      "questions_found_at_5": 22,
+      "mrr": 0.792,
+      "queries": 24
+    },
+    "without": {
+      "questions_found_at_1": 14,
+      "questions_found_at_5": 20,
+      "mrr": 0.693,
+      "queries": 24
+    },
+    "per_query": [
+      {
+        "id": "q01",
+        "question": "How does LoRA cut the number of trainable parameters?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "adaptation-methods#four-ways-to-change-model-weights-2"
+      },
+      {
+        "id": "q02",
+        "question": "Why can't I just keep deleting the oldest chat messages when a conversation gets too long?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "build-a-context-budget-manager#concepts-2"
+      },
+      {
+        "id": "q03",
+        "question": "Why does a word that appears in almost every document count for less?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "build-a-retriever#concepts"
+      },
+      {
+        "id": "q04",
+        "question": "How do I know whether an evaluation score means anything?",
+        "rank_with_instruction": 3,
+        "rank_without_instruction": 8,
+        "top_with_instruction": "tests-and-failures#tests-compare-behavior-with-a-contract-2"
+      },
+      {
+        "id": "q05",
+        "question": "Should the model obey instructions it finds inside a web page?",
+        "rank_with_instruction": 11,
+        "rank_without_instruction": 5,
+        "top_with_instruction": "what-is-ai#key-takeaways"
+      },
+      {
+        "id": "q06",
+        "question": "What happens between sending a prompt and getting the first word back?",
+        "rank_with_instruction": 5,
+        "rank_without_instruction": 8,
+        "top_with_instruction": "tokens-and-tokenizers#limits-takeaways-and-references-2"
+      },
+      {
+        "id": "q07",
+        "question": "Why does the same prompt give a different answer each time?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 8,
+        "top_with_instruction": "repeated-trials-and-quality-tradeoffs#limits-takeaways-and-references-2"
+      },
+      {
+        "id": "q08",
+        "question": "How can two sentences with no words in common still be close together?",
+        "rank_with_instruction": 8,
+        "rank_without_instruction": 7,
+        "top_with_instruction": "build-a-retriever#key-takeaways"
+      },
+      {
+        "id": "q09",
+        "question": "Is an open-weight model the same thing as open source?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "closed-open-weight-open-source#access-and-permission-are-different"
+      },
+      {
+        "id": "q10",
+        "question": "What should be checked before a proposed tool call actually runs?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 3,
+        "top_with_instruction": "tools-and-permissions#what-a-tool-definition-promises-and-what-it-cannot-2"
+      },
+      {
+        "id": "q11",
+        "question": "What is a test fixture for?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "tests-and-failures#limits-takeaways-and-references"
+      },
+      {
+        "id": "q12",
+        "question": "Where should API keys live in a project?",
+        "rank_with_instruction": 4,
+        "rank_without_instruction": 4,
+        "top_with_instruction": "local-models-and-hosted-apis#who-runs-the-model-2"
+      },
+      {
+        "id": "q13",
+        "question": "How does a transformer decide which earlier words matter for the current one?",
+        "rank_with_instruction": 2,
+        "rank_without_instruction": 3,
+        "top_with_instruction": "next-token-prediction#predicting-the-next-token-2"
+      },
+      {
+        "id": "q14",
+        "question": "What does the optimizer do with the error after each batch?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "loss-and-updates#one-training-step-then-the-next"
+      },
+      {
+        "id": "q15",
+        "question": "How can a long-running agent job survive a restart?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "tasks-and-handoffs#long-work-needs-a-record-that-outlives-the-process"
+      },
+      {
+        "id": "q16",
+        "question": "How do I stop one user's saved notes from showing up for another user?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "build-isolated-contexts#problem"
+      },
+      {
+        "id": "q17",
+        "question": "How can I tell whether shortening a conversation lost an important fact?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 2,
+        "top_with_instruction": "build-context-compaction#problem"
+      },
+      {
+        "id": "q18",
+        "question": "Which parts of the conversation does the model see on a new turn?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "build-a-context-budget-manager#concepts-2"
+      },
+      {
+        "id": "q19",
+        "question": "Why should an answer point to the passages it relied on?",
+        "rank_with_instruction": 2,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "graders-rubrics-and-human-review#try-it-and-check-your-understanding"
+      },
+      {
+        "id": "q20",
+        "question": "How much memory do I need to run a model on my own machine?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "model-runtime-and-hardware#limits-takeaways-and-references"
+      },
+      {
+        "id": "q21",
+        "question": "How is text broken into the pieces a model reads?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "tokens-and-tokenizers#how-text-becomes-vocabulary-ids"
+      },
+      {
+        "id": "q22",
+        "question": "Why keep some test cases hidden while tuning a system?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 2,
+        "top_with_instruction": "datasets-baselines-and-held-out-cases#a-score-means-little-without-a-baseline-and-unseen-cases-2"
+      },
+      {
+        "id": "q23",
+        "question": "How does an MCP client learn which tools a server offers?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "protocol-boundaries#a-protocol-fixes-the-messages-two-programs-exchange-2"
+      },
+      {
+        "id": "q24",
+        "question": "Can a reply be valid JSON and still be wrong?",
+        "rank_with_instruction": 1,
+        "rank_without_instruction": 1,
+        "top_with_instruction": "json-and-files#limits-takeaways-and-references"
+      }
+    ]
+  },
+  "drift": {
+    "sample_ids": [
+      "adaptation-methods#four-ways-to-change-model-weights",
+      "attention-and-sequences#attention-mixes-information-across-positions-2",
+      "closed-open-weight-open-source#try-it-and-check-your-understanding",
+      "documents-and-queries#what-a-search-system-receives-and-returns-2",
+      "generation-controls#limits-takeaways-and-references",
+      "http-client-and-server#limits-takeaways-and-references",
+      "keyword-ranking#try-it-and-check-your-understanding",
+      "messages-and-context#what-the-model-receives-with-each-request-2",
+      "next-token-prediction#predicting-the-next-token-2",
+      "python-data-and-functions#try-it-and-check-your-understanding",
+      "repeated-trials-and-quality-tradeoffs#one-run-of-a-varying-system-is-one-sample-3",
+      "state-and-workflows#trace-a-draft-through-a-branch-and-a-loop",
+      "tasks-cases-and-success-criteria#try-it-and-check-your-understanding",
+      "tokens-and-tokenizers#inspect-a-recorded-tokenization",
+      "training-data-and-evaluation#try-it-and-check-your-understanding",
+      "what-is-a-model#a-model-combines-structure-and-learned-weights",
+      "what-is-an-evaluation#a-unit-test-checks-code-an-evaluation-checks-a-task-2",
+      "build-a-context-assembler#concepts",
+      "build-a-context-assembler#best-practices",
+      "build-a-context-budget-manager#deployment",
+      "build-a-retriever#failure-cases",
+      "build-context-compaction#failure-cases",
+      "build-isolated-contexts#failure-cases",
+      "compare-context-selection-strategies#failure-cases"
+    ],
+    "compared_as": "float32, as vectors.f32 stores them",
+    "identical_vectors": 24,
+    "max_abs_difference": 0.0,
+    "min_cosine": 1.0,
+    "max_abs_difference_before_rounding": 7.377243038675374e-09,
+    "note": "stored passage vectors were embedded one at a time; the repeat used batches of 8"
+  }
+}

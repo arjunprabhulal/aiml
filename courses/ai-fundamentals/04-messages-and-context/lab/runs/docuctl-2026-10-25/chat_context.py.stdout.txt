@@ -1,0 +1,5 @@
+turn 1 (473 prompt tokens): The documentation does not specify which environment variable holds the CI deploy token. It mentions that CI jobs authenticate with a deploy token stored in your CI secret store as `DOCUCTL_TOKEN` after creating a token with `docuctl tokens create`.
+turn 2 (551 prompt tokens): docuctl tokens create --name ci-search-api --scope deploy:staging
+turn 2 without the history (474 prompt tokens): docuctl tokens create --name ci-docs-api --scope deploy:staging
+build log, num_ctx=16384 (5579 prompt tokens): m399
+build log, num_ctx=4096 (480 prompt tokens): I do not have access to your build logs, so I cannot tell you which module was compiled last.

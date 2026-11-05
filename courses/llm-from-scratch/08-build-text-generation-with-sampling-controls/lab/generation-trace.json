@@ -1,0 +1,386 @@
+{
+ "checkpoint": {
+  "step": 450,
+  "dev_loss": 0.2941
+ },
+ "greedy_example": {
+  "text": "mia has a red ball. mia goes to the kitchen. at the kitchen, mia gives the ball to ben. now ben has the yellow ball.\n",
+  "steps": [
+   {
+    "token": " mia",
+    "probability": 1.0
+   },
+   {
+    "token": " goes",
+    "probability": 1.0
+   },
+   {
+    "token": " to",
+    "probability": 1.0
+   },
+   {
+    "token": " the",
+    "probability": 1.0
+   },
+   {
+    "token": " kitchen",
+    "probability": 1.0
+   },
+   {
+    "token": ".",
+    "probability": 1.0
+   },
+   {
+    "token": " at",
+    "probability": 1.0
+   },
+   {
+    "token": " the",
+    "probability": 1.0
+   },
+   {
+    "token": " kitchen",
+    "probability": 1.0
+   },
+   {
+    "token": ",",
+    "probability": 1.0
+   },
+   {
+    "token": " mia",
+    "probability": 1.0
+   },
+   {
+    "token": " gives",
+    "probability": 1.0
+   },
+   {
+    "token": " the",
+    "probability": 1.0
+   },
+   {
+    "token": " ball",
+    "probability": 1.0
+   },
+   {
+    "token": " to",
+    "probability": 1.0
+   },
+   {
+    "token": " ben",
+    "probability": 1.0
+   },
+   {
+    "token": ".",
+    "probability": 1.0
+   },
+   {
+    "token": " now",
+    "probability": 1.0
+   },
+   {
+    "token": " ben",
+    "probability": 1.0
+   },
+   {
+    "token": " has",
+    "probability": 1.0
+   },
+   {
+    "token": " the",
+    "probability": 1.0
+   },
+   {
+    "token": " yellow",
+    "probability": 1.0
+   },
+   {
+    "token": " ball",
+    "probability": 1.0
+   },
+   {
+    "token": ".",
+    "probability": 1.0
+   },
+   {
+    "token": "\n",
+    "probability": 1.0
+   }
+  ],
+  "stopped": "end of story"
+ },
+ "unseen_words_example": {
+  "text": "maya has a purple umbrella. at the cup to mia has the blue cup.\n",
+  "steps": [
+   {
+    "token": " at",
+    "probability": 1.0
+   },
+   {
+    "token": " the",
+    "probability": 1.0
+   },
+   {
+    "token": " ",
+    "probability": 1.0
+   },
+   {
+    "token": "c",
+    "probability": 1.0
+   },
+   {
+    "token": "u",
+    "probability": 1.0
+   },
+   {
+    "token": "p",
+    "probability": 1.0
+   },
+   {
+    "token": " to",
+    "probability": 1.0
+   },
+   {
+    "token": " mia",
+    "probability": 1.0
+   },
+   {
+    "token": " has",
+    "probability": 1.0
+   },
+   {
+    "token": " the",
+    "probability": 1.0
+   },
+   {
+    "token": " b",
+    "probability": 1.0
+   },
+   {
+    "token": "l",
+    "probability": 1.0
+   },
+   {
+    "token": "u",
+    "probability": 1.0
+   },
+   {
+    "token": "e",
+    "probability": 1.0
+   },
+   {
+    "token": " ",
+    "probability": 1.0
+   },
+   {
+    "token": "c",
+    "probability": 1.0
+   },
+   {
+    "token": "u",
+    "probability": 1.0
+   },
+   {
+    "token": "p",
+    "probability": 1.0
+   },
+   {
+    "token": ".",
+    "probability": 1.0
+   },
+   {
+    "token": "\n",
+    "probability": 1.0
+   }
+  ],
+  "stopped": "end of story"
+ },
+ "seed_prompt": "zoe has a blue kite.",
+ "seeds": [
+  {
+   "seed": 1,
+   "text": "zoe has a blue kite. zoe goes to the park. at the park, zoe gives the bl mia. now leo.\n"
+  },
+  {
+   "seed": 2,
+   "text": "zoe has a blue kite. zoe goes to the park. at the park, zoe gives the kite to leo. now ava has the blue kite.\n"
+  },
+  {
+   "seed": 1,
+   "text": "zoe has a blue kite. zoe goes to the park. at the park, zoe gives the bl mia. now leo.\n"
+  }
+ ],
+ "seed_divergence": {
+  "first_different_step": 14,
+  "same_tokens_before": [
+   " zoe",
+   " goes",
+   " to",
+   " the",
+   " park",
+   ".",
+   " at",
+   " the",
+   " park",
+   ",",
+   " zoe",
+   " gives",
+   " the"
+  ],
+  "seed_1": {
+   "token": " b",
+   "probability": 0.0034
+  },
+  "seed_2": {
+   "token": " kit",
+   "probability": 0.9934
+  }
+ },
+ "color_prompt": "mia has a red ball. mia goes to the park. at the park, mia gives the ball to leo. now leo has the",
+ "next_token_at_color": {
+  "0.5": [
+   {
+    "token": " yellow",
+    "probability": 0.6052
+   },
+   {
+    "token": " red",
+    "probability": 0.2274
+   },
+   {
+    "token": " green",
+    "probability": 0.1673
+   },
+   {
+    "token": " b",
+    "probability": 0.0001
+   },
+   {
+    "token": " book",
+    "probability": 0.0
+   }
+  ],
+  "1.0": [
+   {
+    "token": " yellow",
+    "probability": 0.4628
+   },
+   {
+    "token": " red",
+    "probability": 0.2837
+   },
+   {
+    "token": " green",
+    "probability": 0.2433
+   },
+   {
+    "token": " b",
+    "probability": 0.0062
+   },
+   {
+    "token": " book",
+    "probability": 0.0015
+   }
+  ],
+  "2.0": [
+   {
+    "token": " yellow",
+    "probability": 0.3146
+   },
+   {
+    "token": " red",
+    "probability": 0.2463
+   },
+   {
+    "token": " green",
+    "probability": 0.2281
+   },
+   {
+    "token": " b",
+    "probability": 0.0364
+   },
+   {
+    "token": " book",
+    "probability": 0.0177
+   }
+  ]
+ },
+ "context_full_example": {
+  "prompt_tokens": 62,
+  "text": "mia has a red book. mia goes to the kitchen. at the kitchen, mia gives the book to ben. now ben has the red book.\nzoe has a green kite. zoe goes to the kitchen. at the kitchen, zoe gives the kite to leo. now leo has the green kite to",
+  "steps": [
+   {
+    "token": "e",
+    "probability": 1.0
+   },
+   {
+    "token": " to",
+    "probability": 1.0
+   }
+  ],
+  "stopped": "context full"
+ },
+ "dev_story_table": [
+  {
+   "setting": "greedy",
+   "temperature": 0.0,
+   "stories": 60,
+   "well_formed": 60,
+   "keeps_color_and_object": 27,
+   "stopped": {
+    "end of story": 60,
+    "max_new_tokens": 0,
+    "context full": 0
+   }
+  },
+  {
+   "setting": "temperature 0.5",
+   "temperature": 0.5,
+   "stories": 60,
+   "well_formed": 59,
+   "keeps_color_and_object": 31,
+   "stopped": {
+    "end of story": 60,
+    "max_new_tokens": 0,
+    "context full": 0
+   }
+  },
+  {
+   "setting": "temperature 1.0",
+   "temperature": 1.0,
+   "stories": 60,
+   "well_formed": 56,
+   "keeps_color_and_object": 30,
+   "stopped": {
+    "end of story": 60,
+    "max_new_tokens": 0,
+    "context full": 0
+   }
+  },
+  {
+   "setting": "temperature 1.5",
+   "temperature": 1.5,
+   "stories": 60,
+   "well_formed": 26,
+   "keeps_color_and_object": 11,
+   "stopped": {
+    "end of story": 59,
+    "max_new_tokens": 0,
+    "context full": 1
+   }
+  },
+  {
+   "setting": "temperature 1.0, top-k 3",
+   "temperature": 1.0,
+   "top_k": 3,
+   "stories": 60,
+   "well_formed": 57,
+   "keeps_color_and_object": 30,
+   "stopped": {
+    "end of story": 60,
+    "max_new_tokens": 0,
+    "context full": 0
+   }
+  }
+ ]
+}

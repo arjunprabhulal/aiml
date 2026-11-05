@@ -1,0 +1,142 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "experiment": "prefill-decode-disaggregation-and-moe-expert-parallelism",
+  "kv_spec": {
+    "name": "Llama-3-70B-GQA",
+    "layers": 80,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "bytes_per_element": 2
+  },
+  "pd_disaggregation_by_interconnect": {
+    "nvlink_900gbs": {
+      "interconnect": "nvlink_900gbs",
+      "interconnect_bandwidth_gbs": 900.0,
+      "prompt_tokens": 4096,
+      "decode_tokens": 256,
+      "kv_bytes_per_token": 327680,
+      "kv_transfer_mib": 1280.0,
+      "raw_kv_transfer_ms": 1.82,
+      "prefill_compute_ms": 221.41,
+      "colocated": {
+        "total_gpus": 22,
+        "p99_ttft_ms": 422.69,
+        "p99_tpot_ms": 50.5
+      },
+      "disaggregated": {
+        "prefill_gpus": 10,
+        "decode_gpus": 8,
+        "total_gpus": 18,
+        "pd_ratio": "10:8",
+        "p99_ttft_ms": 254.05,
+        "p99_tpot_ms": 21.0,
+        "ttft_improved_vs_colocated": true,
+        "tpot_reduction_ms": 29.5
+      }
+    },
+    "rdma_roce_50gbs": {
+      "interconnect": "rdma_roce_50gbs",
+      "interconnect_bandwidth_gbs": 50.0,
+      "prompt_tokens": 4096,
+      "decode_tokens": 256,
+      "kv_bytes_per_token": 327680,
+      "kv_transfer_mib": 1280.0,
+      "raw_kv_transfer_ms": 32.74,
+      "prefill_compute_ms": 221.41,
+      "colocated": {
+        "total_gpus": 22,
+        "p99_ttft_ms": 422.69,
+        "p99_tpot_ms": 50.5
+      },
+      "disaggregated": {
+        "prefill_gpus": 10,
+        "decode_gpus": 8,
+        "total_gpus": 18,
+        "pd_ratio": "10:8",
+        "p99_ttft_ms": 264.87,
+        "p99_tpot_ms": 21.0,
+        "ttft_improved_vs_colocated": true,
+        "tpot_reduction_ms": 29.5
+      }
+    },
+    "tcp_ethernet_12_5gbs": {
+      "interconnect": "tcp_ethernet_12_5gbs",
+      "interconnect_bandwidth_gbs": 12.5,
+      "prompt_tokens": 4096,
+      "decode_tokens": 256,
+      "kv_bytes_per_token": 327680,
+      "kv_transfer_mib": 1280.0,
+      "raw_kv_transfer_ms": 206.49,
+      "prefill_compute_ms": 221.41,
+      "colocated": {
+        "total_gpus": 22,
+        "p99_ttft_ms": 422.69,
+        "p99_tpot_ms": 50.5
+      },
+      "disaggregated": {
+        "prefill_gpus": 10,
+        "decode_gpus": 8,
+        "total_gpus": 18,
+        "pd_ratio": "10:8",
+        "p99_ttft_ms": 470.22,
+        "p99_tpot_ms": 21.0,
+        "ttft_improved_vs_colocated": false,
+        "tpot_reduction_ms": 29.5
+      }
+    }
+  },
+  "moe_parallelism": {
+    "pure_tp16_baseline": {
+      "model": "hypothetical-moe-scenario",
+      "strategy": "pure_tp16",
+      "num_gpus": 16,
+      "batch_tokens": 512,
+      "hot_expert_skew_factor": 1.15,
+      "enable_redundant_hot_experts": true,
+      "effective_straggler_multiplier": 1.0,
+      "compute_and_hbm_ms_per_layer": 0.182,
+      "comm_ms_per_layer": 0.5336,
+      "step_tpot_ms": 43.65,
+      "cluster_decode_tokens_per_sec": 11729.7
+    },
+    "hybrid_tp2_ep8_balanced": {
+      "model": "hypothetical-moe-scenario",
+      "strategy": "hybrid_tp2_ep8",
+      "num_gpus": 16,
+      "batch_tokens": 512,
+      "hot_expert_skew_factor": 1.15,
+      "enable_redundant_hot_experts": true,
+      "effective_straggler_multiplier": 1.018,
+      "compute_and_hbm_ms_per_layer": 0.181,
+      "comm_ms_per_layer": 0.4698,
+      "step_tpot_ms": 39.7,
+      "cluster_decode_tokens_per_sec": 12896.7
+    },
+    "hybrid_tp2_ep8_skewed_no_redundancy": {
+      "model": "hypothetical-moe-scenario",
+      "strategy": "hybrid_tp2_ep8",
+      "num_gpus": 16,
+      "batch_tokens": 512,
+      "hot_expert_skew_factor": 2.6,
+      "enable_redundant_hot_experts": false,
+      "effective_straggler_multiplier": 2.6,
+      "compute_and_hbm_ms_per_layer": 0.4623,
+      "comm_ms_per_layer": 1.1998,
+      "step_tpot_ms": 101.39,
+      "cluster_decode_tokens_per_sec": 5049.8
+    },
+    "hybrid_tp2_ep8_skewed_with_redundancy": {
+      "model": "hypothetical-moe-scenario",
+      "strategy": "hybrid_tp2_ep8",
+      "num_gpus": 16,
+      "batch_tokens": 512,
+      "hot_expert_skew_factor": 2.6,
+      "enable_redundant_hot_experts": true,
+      "effective_straggler_multiplier": 1.18,
+      "compute_and_hbm_ms_per_layer": 0.2098,
+      "comm_ms_per_layer": 0.5445,
+      "step_tpot_ms": 46.02,
+      "cluster_decode_tokens_per_sec": 11125.6
+    }
+  }
+}

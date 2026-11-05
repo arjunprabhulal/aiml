@@ -1,0 +1,322 @@
+{
+  "execution_mode": "actual-loopback-local-structured-tracing",
+  "model_called": false,
+  "cases": [
+    {
+      "http_status": 200,
+      "execution_trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+      "content_request_id": "c4b35bcad796671fdb9ebd92411172aa68574ee99fecbd854bcef13db24dc067",
+      "status": "completed"
+    },
+    {
+      "http_status": 200,
+      "execution_trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+      "content_request_id": "c4b35bcad796671fdb9ebd92411172aa68574ee99fecbd854bcef13db24dc067",
+      "status": "completed"
+    },
+    {
+      "http_status": 200,
+      "execution_trace_id": "73afe129bfbe4287ae6d188971b4bede",
+      "status": "limited"
+    }
+  ],
+  "invalid_request_http_status": 422,
+  "record": {
+    "traces": {
+      "f41ac9a758fb46d8b1f272ae4ded08c3": [
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "parent_span_id": null,
+          "order": 1,
+          "name": "request",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "592f01c360a74cf3ac76ebf810d6795f",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 2,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "1508258ea05f491eacd7dafe02493279",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 3,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "0d356286f2924700a092eacfb31159f3",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 4,
+          "name": "search",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "1da57f1bf61845289b317ff442b2bc50",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 5,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "fd6a7cdd734b4f81bb725fbfd22aa013",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 6,
+          "name": "read",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "8954631894be426b96144b010f018477",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 7,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "fb3ee1387a37498eaa129507917385d5",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 8,
+          "name": "search",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "414539321e2049a9be88cea4fe43f85e",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 9,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "f41ac9a758fb46d8b1f272ae4ded08c3",
+          "span_id": "ee0b31b08c8f4078a5ca8aa4a6c571a8",
+          "parent_span_id": "3ad572cd1c6c4fac91a0fed95d2aba16",
+          "order": 10,
+          "name": "read",
+          "status": "ok"
+        }
+      ],
+      "e8605a3ea1c64cdab9d1f9143cf062d6": [
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "338a29915a434122920443ac0609f8cc",
+          "parent_span_id": null,
+          "order": 1,
+          "name": "request",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "59b59d3a9d434b50bd3ecab221a6201b",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 2,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "3a67abea2551409baebf0687db893eb8",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 3,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "292c5d4b63684bd5bb269eaab9aefdcc",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 4,
+          "name": "search",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "8ca4fe9560d84817b039a5576c9d99fa",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 5,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "1dcefc1482754a77a6bf7f21694a7e6f",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 6,
+          "name": "read",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "36956f8a46cf49d7bb0694ad2d68f224",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 7,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "9e6ead0b5d1a4b0fad7844cc6799510b",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 8,
+          "name": "search",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "d2059664282d41449e3d66382262c6c9",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 9,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "e8605a3ea1c64cdab9d1f9143cf062d6",
+          "span_id": "9ec21c1ff7b34481aa674d5ad2b6661c",
+          "parent_span_id": "338a29915a434122920443ac0609f8cc",
+          "order": 10,
+          "name": "read",
+          "status": "ok"
+        }
+      ],
+      "73afe129bfbe4287ae6d188971b4bede": [
+        {
+          "trace_id": "73afe129bfbe4287ae6d188971b4bede",
+          "span_id": "8af8f93109154062870dd03f902055dc",
+          "parent_span_id": null,
+          "order": 1,
+          "name": "request",
+          "status": "ok"
+        },
+        {
+          "trace_id": "73afe129bfbe4287ae6d188971b4bede",
+          "span_id": "19fea853b7f94b5c94f1083c7e675b7f",
+          "parent_span_id": "8af8f93109154062870dd03f902055dc",
+          "order": 2,
+          "name": "admission",
+          "status": "ok"
+        },
+        {
+          "trace_id": "73afe129bfbe4287ae6d188971b4bede",
+          "span_id": "26ab76bb17dc467598b3652d6ac518f2",
+          "parent_span_id": "8af8f93109154062870dd03f902055dc",
+          "order": 3,
+          "name": "admission",
+          "status": "denied"
+        }
+      ]
+    },
+    "retention": {
+      "retained_traces": 3,
+      "dropped_traces": 0,
+      "dropped_spans": 0,
+      "serialized_utf8_bytes": 4314,
+      "max_traces": 32,
+      "max_spans_per_trace": 32,
+      "maximum_span_utf8_bytes": 320,
+      "maximum_retained_utf8_bytes": 328962
+    }
+  },
+  "controlled_tool_failure": {
+    "http_status": 503,
+    "status": "failed",
+    "execution_trace_id": "782b808354a34c3eae9597c7ed432af9",
+    "record": {
+      "traces": {
+        "782b808354a34c3eae9597c7ed432af9": [
+          {
+            "trace_id": "782b808354a34c3eae9597c7ed432af9",
+            "span_id": "c5545c8b70c64a30969b92e1f799d79f",
+            "parent_span_id": null,
+            "order": 1,
+            "name": "request",
+            "status": "error"
+          },
+          {
+            "trace_id": "782b808354a34c3eae9597c7ed432af9",
+            "span_id": "6d1d2bd08e344596b74abcc12855b4fb",
+            "parent_span_id": "c5545c8b70c64a30969b92e1f799d79f",
+            "order": 2,
+            "name": "admission",
+            "status": "ok"
+          },
+          {
+            "trace_id": "782b808354a34c3eae9597c7ed432af9",
+            "span_id": "0d2cd2f6021c46b0bc1a15ae683e1e30",
+            "parent_span_id": "c5545c8b70c64a30969b92e1f799d79f",
+            "order": 3,
+            "name": "admission",
+            "status": "ok"
+          },
+          {
+            "trace_id": "782b808354a34c3eae9597c7ed432af9",
+            "span_id": "4fed3ba902284a638e9f03c71d9f5831",
+            "parent_span_id": "c5545c8b70c64a30969b92e1f799d79f",
+            "order": 4,
+            "name": "search",
+            "status": "error"
+          },
+          {
+            "trace_id": "782b808354a34c3eae9597c7ed432af9",
+            "span_id": "4b118b9797cf4be4be12a2252befc26e",
+            "parent_span_id": "c5545c8b70c64a30969b92e1f799d79f",
+            "order": 5,
+            "name": "error",
+            "status": "ok"
+          }
+        ]
+      },
+      "retention": {
+        "retained_traces": 1,
+        "dropped_traces": 0,
+        "dropped_spans": 0,
+        "serialized_utf8_bytes": 945,
+        "max_traces": 32,
+        "max_spans_per_trace": 32,
+        "maximum_span_utf8_bytes": 320,
+        "maximum_retained_utf8_bytes": 328962
+      }
+    }
+  },
+  "lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "app:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [46028]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [46028]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "fault_lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "fault_fixture:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [46029]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [46029]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "scope": "Local bounded recorder; schema/body rejections occur before trace creation. Tool admission spans record actual core-admitted invocation, not denied actions. No raw questions or source text in spans; response content is not the trace log."
+}

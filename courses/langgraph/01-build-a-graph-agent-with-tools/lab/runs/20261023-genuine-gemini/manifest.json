@@ -1,0 +1,86 @@
+{
+  "execution_mode": "Genuine Gemini API inference with native LangGraph and local read-only fixture tools",
+  "date": "2026-10-23",
+  "model": "gemini-3.8-flash",
+  "task": "For pull request #415, inspect its diff and CI status. In at most three sentences, explain why CI fails and which changed constant conflicts with the test. Use the supplied read-only tools; do not change files or CI.",
+  "node_path": [
+    "agent",
+    "tools",
+    "agent"
+  ],
+  "generation_requests": 2,
+  "token_count_requests": 2,
+  "provider_usage": {
+    "input_tokens": 591,
+    "candidate_tokens": 106,
+    "total_tokens": 697,
+    "thinking_tokens": "No separate thoughtsTokenCount field supplied"
+  },
+  "approved_limits": {
+    "generation_requests": 3,
+    "token_count_requests": 3,
+    "input_tokens_per_generation": 4096,
+    "output_and_thinking_tokens_per_generation": 4096,
+    "thinking_level": "low",
+    "http_timeout_seconds": 45,
+    "retries": 0,
+    "spending_usd": 0.1
+  },
+  "execution_command": [
+    "/tmp/langgraph-agents-venv/bin/python",
+    "/tmp/aiml-langgraph-live-first-preparation-20261023/live_operator.py",
+    "--mode",
+    "approved-actual"
+  ],
+  "operator_availability": "External approval-bound operator retained privately with raw transport evidence; not included in the lab. live_probe.py refuses direct execution before SDK/key access.",
+  "scope_sha256": "06bc69ed7b2ed8e7dd4a73a9784a2188815ef10681de2b5931173c9f98366873",
+  "source_sha256": {
+    "graph.py": "a32a9697da108958e72a07615c8f708bf2f3120dc83ea78967d8fef403e7b774",
+    "review_queue.py": "0e5b0f214fa334208ba3b985fc4247860687fe3fc004defab02996e6bf5e80e1",
+    "live_probe.py": "fe8cb4cbc7408eb4bd52368efe1a767b8d31d5a8f7ba624a62b1f9c5de60df79",
+    "requirements-lock.txt": "2a700aa8c9b9c67cec52e69f9fdc41998ca32deaf6d8f6dfd703e53a95672576"
+  },
+  "versions": {
+    "google-genai": "2.32.0",
+    "httpx": "0.28.1",
+    "langchain-core": "1.6.12",
+    "langchain-google-genai": "4.4.2",
+    "langgraph": "1.2.16"
+  },
+  "stdout_sha256": "671cc6e5c8399ce0d590fc47166e61d76fa0cde6f43db05730aa10dba75b1019",
+  "events_sha256": "2442cd620da4a396573506e4eef8bf4820fddc1cbaedde4c035af5a92825e04f",
+  "images": [
+    {
+      "file": "images/completed-end-1440@2x.png",
+      "width_css": 1440,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 2880,
+      "height_pixels": 2200,
+      "sha256": "ed2305212ae1d01fe54aca4c0dc26742bc436b32eec2cdd3448ee8cac8c97595",
+      "state": "completed process scrollback; one original process, no rerun"
+    },
+    {
+      "file": "images/completed-end-390@2x.png",
+      "width_css": 390,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 780,
+      "height_pixels": 2200,
+      "sha256": "fe9b8cfca9e1206eeef5e7f5ad425b401056be37fcbe703f6735bf72623f26d0",
+      "state": "completed process scrollback; one original process, no rerun"
+    },
+    {
+      "file": "images/completed-end-320@2x.png",
+      "width_css": 320,
+      "height_css": 1100,
+      "scale": 2,
+      "width_pixels": 640,
+      "height_pixels": 2200,
+      "sha256": "26d28fe1df9632d9bb3a050742258ea0f87665370512d7e3791244b31df8c2d2",
+      "state": "completed process scrollback; one original process, no rerun"
+    }
+  ],
+  "outcome_review": "outcome-review.json",
+  "limits": "One supplied PR fixture, no external code-host writes, no live CI validation; historical runs.json remains unchanged."
+}

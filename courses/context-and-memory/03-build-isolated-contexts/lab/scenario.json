@@ -1,0 +1,155 @@
+{
+  "agents": [
+    {
+      "name": "planner",
+      "role": "Plan the task and delegate research.",
+      "tools": [
+        "search_docs",
+        "delegate"
+      ],
+      "reads": [
+        "app",
+        "user",
+        "task",
+        "agent"
+      ]
+    },
+    {
+      "name": "researcher",
+      "role": "Search the documentation and report findings.",
+      "tools": [
+        "search_docs"
+      ],
+      "reads": [
+        "app",
+        "agent"
+      ]
+    }
+  ],
+  "configuration": [
+    {
+      "id": "app-policy",
+      "text": "Answer from the context items. Say when a fact is missing."
+    }
+  ],
+  "steps": [
+    {
+      "op": "write",
+      "as": [
+        "alice",
+        "task-9",
+        "planner"
+      ],
+      "scope": "user",
+      "id": "alice-contact",
+      "text": "Alice's billing contact is alice@example.com."
+    },
+    {
+      "op": "write",
+      "as": [
+        "alice",
+        "task-9",
+        "planner"
+      ],
+      "scope": "task",
+      "id": "alice-export-limit",
+      "text": "Alice's export job must finish within 15 minutes."
+    },
+    {
+      "op": "write",
+      "as": [
+        "bob",
+        "task-17",
+        "planner"
+      ],
+      "scope": "user",
+      "id": "bob-style",
+      "text": "Bob prefers short answers."
+    },
+    {
+      "op": "write",
+      "as": [
+        "bob",
+        "task-17",
+        "planner"
+      ],
+      "scope": "task",
+      "id": "bob-export-plan",
+      "text": "Task 17: move the export job to PostgreSQL."
+    },
+    {
+      "op": "write",
+      "as": [
+        "bob",
+        "task-17",
+        "planner"
+      ],
+      "scope": "agent",
+      "id": "planner-scratch",
+      "text": "Draft: ask the researcher whether row-level security covers the exports table."
+    },
+    {
+      "op": "handoff",
+      "as": [
+        "bob",
+        "task-17",
+        "planner"
+      ],
+      "to": "researcher",
+      "items": [
+        "bob-export-plan"
+      ],
+      "brief": "Find whether PostgreSQL row-level security covers the exports table."
+    },
+    {
+      "op": "query",
+      "as": [
+        "bob",
+        "task-17",
+        "planner"
+      ],
+      "current": "What is the plan for the export job?"
+    },
+    {
+      "op": "query",
+      "as": [
+        "bob",
+        "task-17",
+        "researcher"
+      ],
+      "current": "What is the plan for the export job?"
+    },
+    {
+      "op": "query",
+      "as": [
+        "alice",
+        "task-9",
+        "planner"
+      ],
+      "current": "What is the plan for the export job?"
+    },
+    {
+      "op": "query",
+      "as": [
+        "bob",
+        "task-18",
+        "planner"
+      ],
+      "current": "What is the plan for the export job?"
+    },
+    {
+      "op": "close_task",
+      "user": "bob",
+      "task": "task-17"
+    },
+    {
+      "op": "query",
+      "as": [
+        "bob",
+        "task-17",
+        "planner"
+      ],
+      "current": "What is the plan for the export job?"
+    }
+  ]
+}

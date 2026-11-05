@@ -1,0 +1,44 @@
+# 1. Private service without an identity token
+GET /list-apps
+HTTP 403
+
+# 2. A first temporary deployment lacked model permission
+Session creation: HTTP 200
+POST /run: HTTP 500
+google.genai.errors.ClientError: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': "Permission 'aiplatform.endpoints.predict' denied on resource '//aiplatform.googleapis.com/projects/vertex-ai-experminent/locations/global/publishers/google/models/gemini-3.8-flash' (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.com/iam-admin/troubleshooter/summary;errorId=CiQwMWExNzYwNy1lYTBlLTc5OWMtYmQ1My05YTEwODFkNzJkMmQSWXByb2plY3RzL3ZlcnRleC1haS1leHBlcm1pbmVudC9sb2NhdGlvbnMvZ2xvYmFsL3B1Ymxpc2hlcnMvZ29vZ2xlL21vZGVscy9nZW1pbmktMy44LWZsYXNo .", 'status': 'PERMISSION_DENIED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'IAM_PERMISSION_DENIED', 'domain': 'aiplatform.googleapis.com', 'metadata': {'permission': 'aiplatform.endpoints.predict', 'troubleshooter_url': 'https://console.cloud.google.com/iam-admin/troubleshooter/summary;errorId=CiQwMWExNzYwNy1lYTBlLTc5OWMtYmQ1My05YTEwODFkNzJkMmQSWXByb2plY3RzL3ZlcnRleC1haS1leHBlcm1pbmVudC9sb2NhdGlvbnMvZ2xvYmFsL3B1Ymxpc2hlcnMvZ29vZ2xlL21vZGVscy9nZW1pbmktMy44LWZsYXNo', 'error_info_id': 'CiQwMWExNzYwNy1lYTBlLTc5OWMtYmQ1My05YTEwODFkNzJkMmQSWXByb2plY3RzL3ZlcnRleC1haS1leHBlcm1pbmVudC9sb2NhdGlvbnMvZ2xvYmFsL3B1Ymxpc2hlcnMvZ29vZ2xlL21vZGVscy9nZW1pbmktMy44LWZsYXNo', 'resource': 'projects/vertex-ai-experminent/locations/global/publishers/google/models/gemini-3.8-flash'}}]}}
+
+# 3. A separate deployment with model permission granted before build
+POST /apps/docs_helper/users/dana/sessions
+HTTP 200
+session edf2c2c7-a982-426f-b4d5-c6f4f63bd84e
+
+POST /run
+HTTP 200
+call   read_page {"page": "rollback"}
+result read_page
+answer In docuctl 1.x, use `docuctl release revert`:
+
+```bash
+docuctl release revert r42 --env production
+```
+
+This reverts release `r42` in production. Note that database migrations are not automatically rolled back, so any migrations introduced by `r42` must be reversed manually with a new migration.
+
+POST /run
+HTTP 200
+answer In docuctl 1.x, run:
+
+```bash
+docuctl release revert r42 --env production
+```
+
+This reverts release `r42` in your production environment. Note that database migrations are not rolled back automatically; if `r42` included migrations, you must write and deploy a new migration to reverse them.
+
+POST /run
+HTTP 200
+answer You stated that you run **docuctl 1.x**.
+
+# 4. After a new revision, the earlier local session is missing
+GET /apps/docs_helper/users/dana/sessions/edf2c2c7-a982-426f-b4d5-c6f4f63bd84e
+HTTP 404
+{"detail": "Session not found"}

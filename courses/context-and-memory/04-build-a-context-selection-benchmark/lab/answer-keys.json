@@ -1,0 +1,11 @@
+{
+  "note": "Written from each held-out case's required and stale facts before any answer was recorded. A pattern is a case-insensitive regular expression; every 'must' pattern has to match.",
+  "keys": {
+    "held-latest": {"must": ["mateo"], "stale": []},
+    "held-old-decision": {"must": ["object storage"], "stale": []},
+    "held-correction": {"must": ["redis"], "stale": ["rabbitmq"]},
+    "held-pronoun": {"must": ["\\bthree\\b|\\b3\\b"], "stale": []},
+    "held-spread": {"must": ["\\b14\\b", "\\b30\\b"], "stale": []},
+    "held-buried": {"must": ["\\b200\\b"], "stale": []}
+  }
+}

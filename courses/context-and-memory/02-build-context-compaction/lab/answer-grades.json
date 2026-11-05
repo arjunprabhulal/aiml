@@ -1,0 +1,90 @@
+{
+  "summary": {
+    "compacted": {
+      "pass": 0,
+      "fail": 5,
+      "incomplete": 0,
+      "presents_mysql_as_current": 2,
+      "names_postgresql": 0,
+      "names_export_limit": 5
+    },
+    "drop oldest": {
+      "pass": 0,
+      "fail": 5,
+      "incomplete": 0,
+      "presents_mysql_as_current": 0,
+      "names_postgresql": 0,
+      "names_export_limit": 0
+    }
+  },
+  "prompt_tokens": {
+    "compacted": {
+      "pinned_template": 197,
+      "ollama_prompt_eval_count": [
+        197
+      ]
+    },
+    "drop oldest": {
+      "pinned_template": 71,
+      "ollama_prompt_eval_count": [
+        71
+      ]
+    }
+  },
+  "graded": {
+    "compacted": [
+      {
+        "seed": 1,
+        "verdict": "fail",
+        "reason": "presents MySQL as current"
+      },
+      {
+        "seed": 2,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL"
+      },
+      {
+        "seed": 3,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL"
+      },
+      {
+        "seed": 4,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL"
+      },
+      {
+        "seed": 5,
+        "verdict": "fail",
+        "reason": "presents MySQL as current"
+      }
+    ],
+    "drop oldest": [
+      {
+        "seed": 1,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL and 15-minute export limit"
+      },
+      {
+        "seed": 2,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL and 15-minute export limit"
+      },
+      {
+        "seed": 3,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL and 15-minute export limit"
+      },
+      {
+        "seed": 4,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL and 15-minute export limit"
+      },
+      {
+        "seed": 5,
+        "verdict": "fail",
+        "reason": "leaves out PostgreSQL and 15-minute export limit"
+      }
+    ]
+  }
+}

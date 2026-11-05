@@ -1,0 +1,135 @@
+{
+  "execution_mode": "live HTTP requests",
+  "offered_requests": 6,
+  "client_shed_requests": 0,
+  "duration_s": 3.428,
+  "ttft_slo_ms": 500,
+  "ttft_goodput_rps": 0.875,
+  "requests": [
+    {
+      "status": "completed",
+      "ttft_ms": 286.882,
+      "event_gaps_ms": [
+        50.741,
+        33.183,
+        96.341,
+        51.815,
+        66.654,
+        47.32,
+        29.61,
+        28.277,
+        28.903,
+        37.82,
+        35.617,
+        34.327,
+        29.957,
+        30.287,
+        27.861,
+        28.229,
+        34.636,
+        28.27,
+        30.765,
+        34.718,
+        31.115,
+        31.47,
+        28.42
+      ],
+      "e2e_ms": 1163.249,
+      "text": "A cache is a temporary storage device that stores frequently accessed data in memory. When a program needs to access a piece of",
+      "content_events": 24
+    },
+    {
+      "status": "failed",
+      "error": "HTTP Error 429: Too Many Requests",
+      "e2e_ms": 1.148
+    },
+    {
+      "status": "failed",
+      "error": "HTTP Error 429: Too Many Requests",
+      "e2e_ms": 0.775
+    },
+    {
+      "status": "completed",
+      "ttft_ms": 42.988,
+      "event_gaps_ms": [
+        29.627,
+        27.375,
+        26.108,
+        26.265,
+        26.75,
+        25.804,
+        27.251,
+        25.603,
+        27.745,
+        29.644,
+        26.108,
+        25.73,
+        26.063,
+        27.207,
+        26.141,
+        29.924,
+        27.141,
+        28.426,
+        32.937,
+        27.496,
+        26.547,
+        27.139,
+        26.988
+      ],
+      "e2e_ms": 673.037,
+      "text": "A cache is a temporary storage device that stores frequently accessed data in memory. When a program needs to access a piece of",
+      "content_events": 24
+    },
+    {
+      "status": "failed",
+      "error": "HTTP Error 429: Too Many Requests",
+      "e2e_ms": 1.011
+    },
+    {
+      "status": "completed",
+      "ttft_ms": 41.93,
+      "event_gaps_ms": [
+        31.872,
+        27.103,
+        26.454,
+        26.67,
+        26.131,
+        25.989,
+        34.774,
+        41.762,
+        34.019,
+        27.688,
+        27.436,
+        27.602,
+        54.374,
+        31.225,
+        28.678,
+        56.612,
+        48.569,
+        50.115,
+        54.832,
+        61.134,
+        47.739,
+        51.438,
+        43.673
+      ],
+      "e2e_ms": 927.88,
+      "text": "A cache is a temporary storage device that stores frequently accessed data in memory. When a program needs to access a piece of",
+      "content_events": 24
+    }
+  ],
+  "limits": "TTFT-only goodput; SSE events are not necessarily model tokens. Client saturation and failed responses are disclosed.",
+  "run_context": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "license": "Apache-2.0",
+    "device": "M4 Pro / PyTorch MPS",
+    "command": "python3 benchmark.py --url http://127.0.0.1:8767/generate --requests 6 --rate 2 --output http-run.json",
+    "source_sha256": {
+      "benchmark-vllm-sglang-and-tensorrt-llm-on-real-traffic/benchmark.py": "3ecbf214b284bfddf6b72f50987459a719fca3822eb9dd9c29a3fbfe67380785",
+      "stream-tokens-over-sse-and-cancel-dropped-requests/server.py": "b019d96d81528e8b44ce25239ee0ba6942505375f8757ca6d6267681353d769a",
+      "stream-tokens-over-sse-and-cancel-dropped-requests/live_inference.py": "754d9bf81d04694541e53d5c0472f984c9f046886070c33b376ca071c81c8086"
+    },
+    "scope": "Six development requests against a single local model slot; not an engine comparison or production load test."
+  }
+}

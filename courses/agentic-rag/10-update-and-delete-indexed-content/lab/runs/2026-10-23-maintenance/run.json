@@ -1,0 +1,437 @@
+{
+  "execution_mode": "offline-sqlite-source-maintenance",
+  "model_called": false,
+  "sqlite_version": "3.53.4",
+  "initial_snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+  "updated_snapshot_id": "d1ee6e652c1c6d08e6e4e10314f53153d6e0b5e5850739fd135f455196d4ec0d",
+  "steps": [
+    {
+      "operation": "load-original-snapshot",
+      "state": {
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "path-write",
+            "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7"
+          ]
+        ],
+        "chunks": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "search_index": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ]
+      },
+      "query": "saving",
+      "matches": []
+    },
+    {
+      "operation": "interrupt-replacement-before-commit",
+      "status": "rolled-back",
+      "error": "injected interruption before index commit",
+      "state": {
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "path-write",
+            "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7"
+          ]
+        ],
+        "chunks": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "search_index": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ]
+      },
+      "query": "saving",
+      "matches": []
+    },
+    {
+      "operation": "replace-changed-source",
+      "source_id": "path-write",
+      "retired_chunk_ids": [
+        "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7"
+      ],
+      "state": {
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "path-write",
+            "a036f69e0484af8c5ddd938bb292a0cb63ec2f661379d871d3901a03dc987dd2"
+          ]
+        ],
+        "chunks": [
+          [
+            "99e7deb4a60f1d2a3e3e8f33f3283b654e2ea80568aa6e2aa819d4666714c42f",
+            "path-write",
+            "Local teaching revision: callers must review overwrite behavior before saving.\n"
+          ],
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "d27f0074d2d1a0c980e8bf541c26a83cf970e2f71e2c7f9a7d3da5442214b66b",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\n"
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "search_index": [
+          [
+            "99e7deb4a60f1d2a3e3e8f33f3283b654e2ea80568aa6e2aa819d4666714c42f",
+            "path-write",
+            "Local teaching revision: callers must review overwrite behavior before saving.\n"
+          ],
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "d27f0074d2d1a0c980e8bf541c26a83cf970e2f71e2c7f9a7d3da5442214b66b",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\n"
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ]
+      },
+      "query": "saving",
+      "matches": [
+        {
+          "chunk_id": "99e7deb4a60f1d2a3e3e8f33f3283b654e2ea80568aa6e2aa819d4666714c42f",
+          "source_id": "path-write",
+          "text": "Local teaching revision: callers must review overwrite behavior before saving.\n"
+        }
+      ]
+    },
+    {
+      "operation": "interrupt-deletion-before-commit",
+      "status": "rolled-back",
+      "error": "injected interruption before deletion commit",
+      "state": {
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "path-write",
+            "a036f69e0484af8c5ddd938bb292a0cb63ec2f661379d871d3901a03dc987dd2"
+          ]
+        ],
+        "chunks": [
+          [
+            "99e7deb4a60f1d2a3e3e8f33f3283b654e2ea80568aa6e2aa819d4666714c42f",
+            "path-write",
+            "Local teaching revision: callers must review overwrite behavior before saving.\n"
+          ],
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "d27f0074d2d1a0c980e8bf541c26a83cf970e2f71e2c7f9a7d3da5442214b66b",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\n"
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "search_index": [
+          [
+            "99e7deb4a60f1d2a3e3e8f33f3283b654e2ea80568aa6e2aa819d4666714c42f",
+            "path-write",
+            "Local teaching revision: callers must review overwrite behavior before saving.\n"
+          ],
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "d27f0074d2d1a0c980e8bf541c26a83cf970e2f71e2c7f9a7d3da5442214b66b",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\n"
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ]
+      },
+      "query": "saving",
+      "matches": [
+        {
+          "chunk_id": "99e7deb4a60f1d2a3e3e8f33f3283b654e2ea80568aa6e2aa819d4666714c42f",
+          "source_id": "path-write",
+          "text": "Local teaching revision: callers must review overwrite behavior before saving.\n"
+        }
+      ]
+    },
+    {
+      "operation": "delete-source",
+      "outcome": "deleted",
+      "state": {
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ]
+        ],
+        "chunks": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "search_index": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ]
+      },
+      "query": "saving",
+      "matches": []
+    },
+    {
+      "operation": "repeat-delete",
+      "outcome": "missing-no-op",
+      "state": {
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ]
+        ],
+        "chunks": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "search_index": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ]
+      },
+      "query": "saving",
+      "matches": []
+    }
+  ]
+}

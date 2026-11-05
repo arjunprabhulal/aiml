@@ -1,0 +1,84 @@
+{
+  "vocab_size": 96,
+  "split": {
+    "train": 280,
+    "dev": 60,
+    "test": 60,
+    "rule": "stories in file order: first 280 train, next 60 dev, last 60 test"
+  },
+  "uniform_loss_formula": 4.5643,
+  "dev_pairs": {
+    "total": 2121,
+    "unseen_in_training": 0
+  },
+  "dev_bigram_by_k": {
+    "0.001": {
+      "loss": 1.1683,
+      "perplexity": 3.22,
+      "tokens": 2121
+    },
+    "0.01": {
+      "loss": 1.1722,
+      "perplexity": 3.23,
+      "tokens": 2121
+    },
+    "0.1": {
+      "loss": 1.2105,
+      "perplexity": 3.36,
+      "tokens": 2121
+    },
+    "1": {
+      "loss": 1.5009,
+      "perplexity": 4.49,
+      "tokens": 2121
+    }
+  },
+  "chosen_k": 0.001,
+  "test": {
+    "uniform": {
+      "loss": 4.5643,
+      "perplexity": 96.0,
+      "tokens": 2109
+    },
+    "unigram": {
+      "loss": 3.4623,
+      "perplexity": 31.89,
+      "tokens": 2109
+    },
+    "bigram": {
+      "loss": 1.1702,
+      "perplexity": 3.22,
+      "tokens": 2109
+    }
+  },
+  "recall": {
+    "color": {
+      "correct": 0,
+      "total": 60,
+      "guesses": {
+        " school": 60
+      }
+    },
+    "object": {
+      "correct": 6,
+      "total": 60,
+      "guesses": {
+        " book": 18,
+        " box": 10,
+        " kit": 15,
+        ".": 17
+      }
+    }
+  },
+  "top_after_the": [
+    " school",
+    " kitchen",
+    " park",
+    " g"
+  ],
+  "samples": {
+    "seed": 1,
+    "sampled": "mia has the kitchen. at the book. mia.\n y s sch� bo sam has a red cup.\now cue.\ntrez cup.",
+    "greedy": "mia has the school, sam gives the school, sam gives the school, sam gives the school, sam gives the school, sam gives"
+  }
+}

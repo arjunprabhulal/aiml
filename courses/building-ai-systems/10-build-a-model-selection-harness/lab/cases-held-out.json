@@ -1,0 +1,13 @@
+{
+  "split": "held-out",
+  "written_on": "2026-10-20",
+  "note": "Synthetic developer reports written for this lesson before any recorded run. They are run once with the frozen prompt, and the selection rule never reads their results.",
+  "cases": [
+    {"id": "held-bug-1", "report": "Exporting to CSV drops the last row every time.", "expected": "bug"},
+    {"id": "held-bug-2", "report": "The --quiet option still prints warnings to the terminal.", "expected": "bug"},
+    {"id": "held-question-1", "report": "Where are the log files stored on Windows?", "expected": "question"},
+    {"id": "held-question-2", "report": "Does the tool keep my data after I close it?", "expected": "question"},
+    {"id": "held-feature-1", "report": "Add a dark theme for the settings page.", "expected": "feature"},
+    {"id": "held-feature-2", "report": "I'd like to schedule exports to run every night.", "expected": "feature"}
+  ]
+}

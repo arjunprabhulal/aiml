@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "execution_mode": "offline-local-files",
+  "status": "partial",
+  "documents": [
+    {
+      "source_id": "path-write",
+      "path": "docs/path-write.md",
+      "title": "path-write",
+      "sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "fact_status": "original summary; primary docs checked",
+      "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+    }
+  ],
+  "failures": [
+    {
+      "source_id": "path-read",
+      "path": "docs/path-read.md",
+      "error": "hash_mismatch"
+    },
+    {
+      "source_id": "json-text",
+      "path": "docs/json-text.md",
+      "error": "unreadable_source"
+    },
+    {
+      "source_id": "path-read-3-13",
+      "path": "docs/path-read-3-13.md",
+      "error": "invalid_utf8"
+    }
+  ]
+}

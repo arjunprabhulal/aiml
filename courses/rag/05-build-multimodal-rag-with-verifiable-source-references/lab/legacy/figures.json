@@ -1,0 +1,422 @@
+{
+ "note": "Synthetic figures drawn for this build (CC0). The 14 development figures were drawn first and used to check the prompts and the query instruction. The 8 held-out figures were drawn on 2026-10-20 after those were fixed, then indexed and searched once.",
+ "figures": [
+  {
+   "id": "retriever-flow",
+   "split": "development",
+   "kind": "flow",
+   "title": "Retriever pipeline",
+   "image": "images/retriever-flow.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "7ae8b089ebef112f8b670c20486a853b38d2918ad578d0138f15bcd99d31508e",
+   "printed": [
+    "Retriever pipeline",
+    "Query",
+    "Embed",
+    "Search",
+    "Top 5"
+   ]
+  },
+  {
+   "id": "retry-loop",
+   "split": "development",
+   "kind": "flow",
+   "title": "Call with retries",
+   "image": "images/retry-loop.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "470ec179fe69baca4c8a4a84b2562c6506f28c4f19ac90464fbd81322a104ca8",
+   "printed": [
+    "Call with retries",
+    "Call",
+    "Error?",
+    "Wait",
+    "try again",
+    "no",
+    "Done"
+   ]
+  },
+  {
+   "id": "latency-p50",
+   "split": "development",
+   "kind": "bars",
+   "title": "p50 latency by model",
+   "image": "images/latency-p50.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "96794097a2092fd56a9a1176a9cfa350560cd83156e95471ef43ecd4d6b1f6d3",
+   "printed": [
+    "p50 latency by model",
+    "120",
+    "small",
+    "310",
+    "medium",
+    "640",
+    "large",
+    "ms"
+   ]
+  },
+  {
+   "id": "latency-p95",
+   "split": "development",
+   "kind": "bars",
+   "title": "p95 latency by model",
+   "image": "images/latency-p95.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "da71cc486460a97d5c72bbb6950d5d4a4460f3df90a184b6485b4f99eeb3de1f",
+   "printed": [
+    "p95 latency by model",
+    "410",
+    "small",
+    "380",
+    "medium",
+    "1290",
+    "large",
+    "ms"
+   ]
+  },
+  {
+   "id": "tokens-grouped",
+   "split": "development",
+   "kind": "bars",
+   "title": "Tokens per request",
+   "image": "images/tokens-grouped.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "5882c815a2dc69c68105d98a6c0478d0452f072c411d7345534a6eb26776b17a",
+   "printed": [
+    "Tokens per request",
+    "420",
+    "90",
+    "chat",
+    "1800",
+    "160",
+    "summary",
+    "950",
+    "40",
+    "extract",
+    "tokens",
+    "input",
+    "output"
+   ]
+  },
+  {
+   "id": "loss-curve",
+   "split": "development",
+   "kind": "line",
+   "title": "Training loss",
+   "image": "images/loss-curve.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "ea88bf4a17f113cdd498050fbeccbe994877fab094efb924377c0ed4196cf957",
+   "printed": [
+    "Training loss",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "loss (max 2.4)",
+    "epoch"
+   ]
+  },
+  {
+   "id": "recall-probes",
+   "split": "development",
+   "kind": "line",
+   "title": "Recall at 5 by probes",
+   "image": "images/recall-probes.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "72594fb593b59430bda1616578d095fc0b0882598834fd04f2354cf49126d363",
+   "printed": [
+    "Recall at 5 by probes",
+    "1",
+    "2",
+    "4",
+    "8",
+    "recall (max 0.97)",
+    "probes"
+   ]
+  },
+  {
+   "id": "split-pie",
+   "split": "development",
+   "kind": "pie",
+   "title": "Evaluation cases",
+   "image": "images/split-pie.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "40d6f00fd6f57a0c0061c90516220f1d12a4832bdeccd9a92cdbbbde75045b70",
+   "printed": [
+    "Evaluation cases",
+    "development 60%",
+    "held-out 40%"
+   ]
+  },
+  {
+   "id": "init-sequence",
+   "split": "development",
+   "kind": "sequence",
+   "title": "Session start",
+   "image": "images/init-sequence.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "4040b2b4bfec8f23318bc084afcb0f262965a80f285f2dfa6f2cfe8aa0f500ce",
+   "printed": [
+    "Session start",
+    "client",
+    "server",
+    "initialize",
+    "capabilities",
+    "initialized",
+    "tools/list"
+   ]
+  },
+  {
+   "id": "job-states",
+   "split": "development",
+   "kind": "states",
+   "title": "Job states",
+   "image": "images/job-states.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "e0f964ecb0fb581e9b1f5fe610816582960b8e4ce114cdedf2318cba9fc59470",
+   "printed": [
+    "Job states",
+    "pending",
+    "running",
+    "done",
+    "failed",
+    "start",
+    "ok",
+    "error"
+   ]
+  },
+  {
+   "id": "context-budget",
+   "split": "development",
+   "kind": "stacked",
+   "title": "Context budget",
+   "image": "images/context-budget.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "ef09325c3ffcb165f075fec18d0e251b6274dc5f47e51bf392637c87f41138a6",
+   "printed": [
+    "Context budget",
+    "system 300",
+    "history 900",
+    "question 120",
+    "reserve 728",
+    "2048 tokens in total"
+   ]
+  },
+  {
+   "id": "confusion",
+   "split": "development",
+   "kind": "grid",
+   "title": "Grader agreement",
+   "image": "images/confusion.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "66197e22f195868003a38fdb17fd9a9cd6110eeb884b772b88e1e550e560cb89",
+   "printed": [
+    "Grader agreement",
+    "pass",
+    "fail",
+    "pass",
+    "41",
+    "3",
+    "fail",
+    "5",
+    "11"
+   ]
+  },
+  {
+   "id": "cost-quality",
+   "split": "development",
+   "kind": "scatter",
+   "title": "Cost and score",
+   "image": "images/cost-quality.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "d717eadf7b649193db580f3c1fdfabb2df00237a9f66311bddff2f07e3873a39",
+   "printed": [
+    "Cost and score",
+    "A",
+    "B",
+    "C",
+    "cost per 1000 requests",
+    "score"
+   ]
+  },
+  {
+   "id": "tools-resources",
+   "split": "development",
+   "kind": "venn",
+   "title": "MCP primitives",
+   "image": "images/tools-resources.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "bc0c14904d36af25a451bd92f192aa80ea5d7209081f4bc226f73c97061c7901",
+   "printed": [
+    "MCP primitives",
+    "tools",
+    "resources",
+    "listed"
+   ]
+  },
+  {
+   "id": "rerank-flow",
+   "split": "held-out",
+   "kind": "flow",
+   "title": "Search with reranking",
+   "image": "images/rerank-flow.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "027e4ee0958bea88ecf063c93db396af603ebd4270f9c2c821b19eeb13c8ce81",
+   "printed": [
+    "Search with reranking",
+    "Query",
+    "Search",
+    "Rerank",
+    "Top 3"
+   ]
+  },
+  {
+   "id": "fallback-flow",
+   "split": "held-out",
+   "kind": "flow",
+   "title": "Model fallback",
+   "image": "images/fallback-flow.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "3f15b188feb3e61f07130ede9b8eda99d55865d1cc322b301cba038ca7ecd623",
+   "printed": [
+    "Model fallback",
+    "Primary",
+    "Timeout?",
+    "Fallback",
+    "no",
+    "Answer"
+   ]
+  },
+  {
+   "id": "throughput-bars",
+   "split": "held-out",
+   "kind": "bars",
+   "title": "Requests per second",
+   "image": "images/throughput-bars.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "b9e1b318ddc7c66a83461e4057a0fc8d195469c6cc682813f9a183d88424bcf0",
+   "printed": [
+    "Requests per second",
+    "40",
+    "1 worker",
+    "75",
+    "2 workers",
+    "130",
+    "4 workers",
+    "req/s"
+   ]
+  },
+  {
+   "id": "pass-rate-line",
+   "split": "held-out",
+   "kind": "line",
+   "title": "Pass rate by prompt version",
+   "image": "images/pass-rate-line.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "e85064945706dcffcb398effecc879285da057ded34011b0c6afbdac9225a4a7",
+   "printed": [
+    "Pass rate by prompt version",
+    "1",
+    "2",
+    "3",
+    "4",
+    "pass rate (max 0.7)",
+    "version"
+   ]
+  },
+  {
+   "id": "chunk-pie",
+   "split": "held-out",
+   "kind": "pie",
+   "title": "Chunks by size",
+   "image": "images/chunk-pie.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "1f0c2081dd3c919101fff6e3945c12d10a47e79bf6637daab23cb2bac40c0638",
+   "printed": [
+    "Chunks by size",
+    "short 25%",
+    "medium 50%",
+    "long 25%"
+   ]
+  },
+  {
+   "id": "tool-sequence",
+   "split": "held-out",
+   "kind": "sequence",
+   "title": "Tool use",
+   "image": "images/tool-sequence.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "efe82c754cc64bc5619028f59e6c112f47fcd4364d038d6c429465693a81fb9e",
+   "printed": [
+    "Tool use",
+    "agent",
+    "tool",
+    "call",
+    "result",
+    "call",
+    "result"
+   ]
+  },
+  {
+   "id": "cache-states",
+   "split": "held-out",
+   "kind": "states",
+   "title": "Cache entry",
+   "image": "images/cache-states.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "53c56a34812351e6a3da86c9c639de359c4c7f11fffedf436739515211004c5b",
+   "printed": [
+    "Cache entry",
+    "empty",
+    "filling",
+    "fresh",
+    "stale",
+    "request",
+    "stored",
+    "expired"
+   ]
+  },
+  {
+   "id": "errors-grid",
+   "split": "held-out",
+   "kind": "grid",
+   "title": "Errors by region",
+   "image": "images/errors-grid.png",
+   "width": 640,
+   "height": 440,
+   "pixel_sha256": "ee5773d2312ebe1a9f54167125b49807e2fdefd7c5604682425b6d46ba670fb2",
+   "printed": [
+    "Errors by region",
+    "read",
+    "write",
+    "east",
+    "2",
+    "9",
+    "west",
+    "0",
+    "4"
+   ]
+  }
+ ]
+}

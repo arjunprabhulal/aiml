@@ -1,0 +1,52 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "pool_config": {
+    "total_token_capacity": 4096,
+    "max_seq_len": 512,
+    "block_size": 16,
+    "submitted_requests": 32
+  },
+  "contiguous": {
+    "admitted_requests": 8,
+    "rejected_requests": 24,
+    "active_sequences": 8,
+    "reserved_tokens": 4096,
+    "used_tokens": 758,
+    "wasted_tokens": 3338,
+    "waste_ratio": 0.8149,
+    "utilization_of_total_pool": 0.1851
+  },
+  "paged": {
+    "admitted_requests": 32,
+    "rejected_requests": 0,
+    "active_sequences": 32,
+    "allocated_blocks": 199,
+    "free_blocks": 57,
+    "reserved_tokens": 3184,
+    "physical_stored_tokens": 2942,
+    "logical_tokens_served": 2942,
+    "internal_fragmentation_tokens": 242,
+    "waste_ratio": 0.076,
+    "cow_copies_performed": 0
+  },
+  "concurrency_multiplier": 4.0,
+  "copy_on_write_demo": {
+    "prompt_tokens": 40,
+    "shared_beams": 3,
+    "blocks_before_decode_append": 3,
+    "active_sequences": 3,
+    "allocated_blocks": 5,
+    "free_blocks": 27,
+    "reserved_tokens": 80,
+    "physical_stored_tokens": 59,
+    "logical_tokens_served": 123,
+    "internal_fragmentation_tokens": 21,
+    "waste_ratio": 0.2625,
+    "cow_copies_performed": 2,
+    "beam_tails": {
+      "beam_0_last_token": 9000,
+      "beam_1_last_token": 9001,
+      "beam_2_last_token": 9002
+    }
+  }
+}

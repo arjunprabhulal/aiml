@@ -1,0 +1,12 @@
+Question: How do I save UTF-8 text with pathlib?
+Retrieved: path-read, path-write
+Status: answered
+Answer: To save UTF-8 text using pathlib, you should use the `Path.write_text(data, encoding=None, errors=None, newline=None)` method and set `encoding="utf-8"` to select UTF-8. This method writes text to a file and closes it. An existing file is overwritten, and the method returns the number of characters written.
+Sources: https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text
+
+Question: How many days does this service keep backups?
+Retrieved: path-read, path-write
+Status: not_in_docs
+Answer: The provided documentation does not contain information about how many days a service keeps backups.
+Sources: (none)
+

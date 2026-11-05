@@ -1,0 +1,9 @@
+[
+  {
+    "name": "read_page",
+    "arguments": {
+      "page": "rollback.md"
+    },
+    "result": "\"# Roll back a release\\n\\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\\n\\n    docuctl rollback --env production --to r41\\n\\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\\n\\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\\n\\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\\n\""
+  }
+]

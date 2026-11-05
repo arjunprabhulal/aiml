@@ -1,0 +1,12 @@
+Runbook: rotate the release signing key
+Team: platform
+Last reviewed: 2026-09-14
+
+docuctl signs every release artifact with the release signing key kept in the secret store as RELEASE_SIGNING_KEY. Rotate it every 180 days, or at once if it may have leaked.
+
+1. Create the new key with docuctl keys create --purpose release-signing. It is stored under a new version; the old version stays valid.
+2. Run docuctl keys promote <new-version>. New releases are signed with the new key from this point.
+3. Wait 7 days, so every running release has been redeployed or verified with the new key.
+4. Run docuctl keys revoke <old-version>.
+
+Never delete the old version before step 4: releases signed with it would fail verification and could not be rolled back to.

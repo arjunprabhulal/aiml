@@ -1,0 +1,48 @@
+# run 1, step 1 (ship.toml attached)
+> Review this ship.toml before I deploy it to production.
+call   load_artifacts {"artifact_names": ["ship.toml"]}
+call   read_page {"page": "config"}
+call   read_page {"page": "secrets"}
+call   load_artifacts {"artifact_names": ["ship.toml"]}
+call   read_page {"page": "environments"}
+saved  {'ship.toml': 0}
+listed ['ship.toml']
+answer Here are the issues found in `ship.toml`:  - **Line 8**: Hardcoded secret in `DATABASE_URL = "postgres://app:secretpass@db.internal:5432/app"`.     **Fix**: Store credentials securely and reference them using a secret: `DATABASE_URL = "secret://prod-db-url"`. - **Line 9**: Plaintext secret in `API_K
+
+# run 1, step 2
+> Save that review as review.md.
+call   save_text_file {"text": "# Review of `ship.toml`\n\nThe following issues were identified prior to deploying to production:\n\
+saved  {'review.md': 0}
+listed ['review.md', 'ship.toml']
+answer I have saved the review to `review.md`.
+
+# run 1, step 3
+> We will fix all three problems before the deploy. Add that decision to the review and save it again.
+call   load_artifacts {"artifact_names": ["review.md"]}
+call   save_text_file {"text": "# Review of `ship.toml`\n\nThe following issues were identified prior to deploying to production:\n\
+saved  {'review.md': 1}
+listed ['review.md', 'ship.toml']
+answer I have updated `review.md` to include the decision to fix all three issues before deploying, and saved the new version.
+
+# run 1, step 4
+> Save a five-item production deploy checklist for me as user:checklist.md, so I have it next time.
+call   save_text_file {"text": "# Production Deploy Checklist\n\n1. **Verify Secrets**: Ensure no plaintext credentials exist in `sh
+saved  {'user:checklist.md': 0}
+listed ['review.md', 'ship.toml', 'user:checklist.md']
+answer I have saved the five-item checklist to `user:checklist.md` across your sessions.
+
+# run 2, step 5
+> Which files do you have for me? Show me my checklist.
+call   load_artifacts {"artifact_names": ["user:checklist.md"]}
+listed ['user:checklist.md']
+answer You have one file available: **`user:checklist.md`**.  Here is your checklist:  # Production Deploy Checklist  1. **Verify Secrets**: Ensure no plaintext credentials exist in `ship.toml` and all sensitive values use `secret://<name>`. 2. **Confirm Secret Availability**: Run `docuctl secrets list --e
+
+# artifact store on disk
+apps/docs/users/dana/artifacts/checklist.md/versions/0/checklist.md
+apps/docs/users/dana/artifacts/checklist.md/versions/0/metadata.json
+apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/0/metadata.json
+apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/0/review.md
+apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/1/metadata.json
+apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/review.md/versions/1/review.md
+apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/ship.toml/versions/0/metadata.json
+apps/docs/users/dana/sessions/0defce14-502f-411f-a325-909b69cf26df/artifacts/ship.toml/versions/0/ship.toml

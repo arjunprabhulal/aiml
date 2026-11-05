@@ -1,0 +1,51 @@
+{
+  "about": "Synthetic traffic for this build: a steady load, a burst, and a phase in which every model call takes twice as long. The rates and the slowdown were chosen for teaching; they describe no real service.",
+  "window_seconds": 60,
+  "client_timeout_ms": 3000,
+  "phases": [
+    {
+      "name": "steady",
+      "seconds": 240,
+      "requests_per_minute": 100,
+      "model_slowdown": 1
+    },
+    {
+      "name": "burst",
+      "seconds": 120,
+      "requests_per_minute": 220,
+      "model_slowdown": 1
+    },
+    {
+      "name": "steady again",
+      "seconds": 60,
+      "requests_per_minute": 100,
+      "model_slowdown": 1
+    },
+    {
+      "name": "slow model",
+      "seconds": 120,
+      "requests_per_minute": 100,
+      "model_slowdown": 2
+    },
+    {
+      "name": "recovered",
+      "seconds": 120,
+      "requests_per_minute": 100,
+      "model_slowdown": 1
+    }
+  ],
+  "configs": [
+    {
+      "name": "A",
+      "label": "queue of 20; the worker runs every queued call",
+      "queue_limit": 20,
+      "drop_expired": false
+    },
+    {
+      "name": "B",
+      "label": "queue of 6; the worker skips calls whose client has given up",
+      "queue_limit": 6,
+      "drop_expired": true
+    }
+  ]
+}

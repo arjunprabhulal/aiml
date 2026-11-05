@@ -1,0 +1,9 @@
+rollback: HTTP 200 · answered
+In docuctl 3.5, list known releases by running `docuctl releases --env staging`, and then roll back by running `docuctl rollback --env staging --to RELEASE_ID`.
+rotate-token: HTTP 200 · answered
+In docuctl 3.5, to rotate an API token, create a replacement using `docuctl token create --name rotation`. After updating the application's secret store and checking a request, revoke the old token by running `docuctl token revoke TOKEN_ID`.
+previous-version: HTTP 200 · answered
+In docuctl 3.4, deploy staging by running `docuctl deploy staging --tag RELEASE_ID`.
+production: HTTP 200 · answered
+Under version 3.5, deploying to production requires a reviewed release and approval from the on-call maintainer. A maintainer runs the following command: `docuctl deploy --env production --release RELEASE_ID --approval APPROVAL_ID`.
+Provider: gemini. Saved 4 real HTTP activities.

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "deploy-v2",
+    "version": "v2",
+    "title": "Deploy to staging",
+    "text": "Publish a tested build to the staging environment.",
+    "command": "docuctl deploy --env staging"
+  },
+  {
+    "id": "rollback-v2",
+    "version": "v2",
+    "title": "Rollback a staging deployment",
+    "text": "Restore the last known good release in staging.",
+    "command": "docuctl rollback --env staging --release LAST_GOOD"
+  },
+  {
+    "id": "tokens-v2",
+    "version": "v2",
+    "title": "Rotate deploy tokens",
+    "text": "Replace a deployment credential for staging.",
+    "command": "docuctl tokens rotate --env staging --scope deploy"
+  },
+  {
+    "id": "config-v2",
+    "version": "v2",
+    "title": "Inspect staging configuration",
+    "text": "Read settings for staging without changing them.",
+    "command": "docuctl config show --env staging"
+  },
+  {
+    "id": "migrate-v2",
+    "version": "v2",
+    "title": "Plan a schema migration",
+    "text": "Preview a database schema change in staging.",
+    "command": "docuctl migrate plan --env staging"
+  },
+  {
+    "id": "releases-v2",
+    "version": "v2",
+    "title": "List staging releases",
+    "text": "Inspect previously published revisions in staging.",
+    "command": "docuctl releases list --env staging"
+  },
+  {
+    "id": "logs-v2",
+    "version": "v2",
+    "title": "Read staging logs",
+    "text": "Show the latest twenty diagnostic log lines.",
+    "command": "docuctl logs --env staging --tail 20"
+  },
+  {
+    "id": "health-v2",
+    "version": "v2",
+    "title": "Check staging health",
+    "text": "Read the readiness status of the staging service.",
+    "command": "docuctl health --env staging"
+  },
+  {
+    "id": "deploy-v1",
+    "version": "v1",
+    "title": "Deploy a staging release",
+    "text": "The older version creates a release with the target flag.",
+    "command": "docuctl release create --target staging"
+  }
+]

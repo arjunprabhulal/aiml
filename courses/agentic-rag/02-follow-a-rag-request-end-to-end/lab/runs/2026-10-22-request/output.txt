@@ -1,0 +1,12 @@
+actual local retrieval and request trace; saved model replies replayed, no fresh inference
+Question: How do I save UTF-8 text with pathlib?
+Status: answered
+Events: request_accepted -> retrieval_completed -> context_selected -> model_request_ready -> model_reply_returned -> reply_checked -> source_links_resolved -> request_completed
+Sources: https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text
+Question: How many days does this service keep backups?
+Status: not_in_docs
+Events: request_accepted -> retrieval_completed -> context_selected -> model_request_ready -> model_reply_returned -> reply_checked -> source_links_resolved -> request_completed
+Sources: (none)
+Empty context: model_skipped
+Changed replay prompt: ReplayRequestMismatch
+Source outside selected context: ValueError

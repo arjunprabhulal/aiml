@@ -1,0 +1,70 @@
+{
+  "execution_mode": "offline-native-document-search-and-read",
+  "model_called": false,
+  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+  "search": {
+    "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+    "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+    "query": "overwritten",
+    "version": "3.12",
+    "k": 2,
+    "results": [
+      {
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+        "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "source_id": "path-write",
+        "version": "3.12",
+        "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+        "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+        "start_line": 1,
+        "end_line": 1,
+        "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+        "byte_count": 224,
+        "native_score": -0.7992166451067193,
+        "rank": 1,
+        "read_token": "08b866d8cf00533f3484aac4d78ac512bd4df8767c9ea11fbd2e817eeeb1dd75"
+      }
+    ]
+  },
+  "reads": [
+    {
+      "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+      "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+      "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+      "source_id": "path-write",
+      "version": "3.12",
+      "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+      "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+      "start_line": 1,
+      "end_line": 1,
+      "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+      "byte_count": 224,
+      "native_score": -0.7992166451067193,
+      "rank": 1,
+      "read_token": "08b866d8cf00533f3484aac4d78ac512bd4df8767c9ea11fbd2e817eeeb1dd75",
+      "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "read_request_id": "a9ec642e4ed3206ac85e5dd03d4de9ff57de3167e134079eafe4a31de23cec67",
+      "result_sha256": "662c96d3b972224ac1549f9a6c3ad495b3ed885b6db477d52aeb7527ec1dbbb7"
+    }
+  ],
+  "no_match": {
+    "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+    "search_request_id": "f76beff608c3023ea069dea052656317ac6e5fbf4654fa39daeaaeed927c000f",
+    "query": "xyznotindexed",
+    "version": "3.12",
+    "k": 2,
+    "results": []
+  },
+  "empty_eligible_version": {
+    "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+    "search_request_id": "98f1cba586c00f8d9a3de99a7735dd9e5e453c850a0cff0ef67d2e2589eac672",
+    "query": "overwritten",
+    "version": "3.13",
+    "k": 2,
+    "results": []
+  },
+  "changed_handle_refusal": "invalid_read_handle",
+  "interpretation": "Tool contract checks and native retrieval only; no model selection, answer generation or permission system."
+}

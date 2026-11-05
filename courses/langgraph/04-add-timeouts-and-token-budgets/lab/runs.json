@@ -1,0 +1,184 @@
+{
+ "model": "gemini-3.8-flash",
+ "runs": [
+  {
+   "scenario": "answered",
+   "question": "Why is CI failing on pull request 415?",
+   "limits": {},
+   "outcome": "answered",
+   "tokens": 1675,
+   "steps": [
+    {
+     "node": "agent",
+     "seconds": 2.5,
+     "tokens": 279,
+     "reasoning": 83
+    },
+    {
+     "node": "tools",
+     "seconds": 0.1,
+     "results": [
+      "[{\"job_id\": 812, \"name\": \"unit-tests\"}]"
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 1.9,
+     "tokens": 390,
+     "reasoning": 62
+    },
+    {
+     "node": "tools",
+     "seconds": 0.2,
+     "results": [
+      "FAILED tests/test_client.py::test_default_timeout - AssertionError: expected 10, got 30"
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 4.1,
+     "tokens": 1006,
+     "reasoning": 496
+    }
+   ],
+   "final": "The failed CI job for pull request 415 is:\n- **unit-tests** (Job ID: 812)\n\nThe `unit-tests` job failed due to an `AssertionError` in `tests/test_client.py::test_default_timeout`. The test expected a default timeout of 10, but received 30 instead."
+  },
+  {
+   "scenario": "slow-tool",
+   "question": "Why is CI failing on pull request 421?",
+   "limits": {},
+   "outcome": "answered",
+   "tokens": 1821,
+   "steps": [
+    {
+     "node": "agent",
+     "seconds": 2.5,
+     "tokens": 278,
+     "reasoning": 82
+    },
+    {
+     "node": "tools",
+     "seconds": 0.1,
+     "results": [
+      "[{\"job_id\": 815, \"name\": \"integration\"}]"
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 1.7,
+     "tokens": 366,
+     "reasoning": 41
+    },
+    {
+     "node": "tools",
+     "seconds": 3.0,
+     "results": [
+      "The tool call did not finish within 3s, so its result is unknown. This says nothing about the CI job itself. Do not retry."
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 6.5,
+     "tokens": 1177,
+     "reasoning": 719
+    }
+   ],
+   "final": "The only failed CI job for pull request 421 is `integration` (job ID 815). I could not check the log for this job to determine the cause of the failure because fetching the log timed out."
+  },
+  {
+   "scenario": "budget-stopped",
+   "question": "Why is CI failing on pull request 415?",
+   "limits": {
+    "token_budget": 500
+   },
+   "outcome": "token_budget",
+   "tokens": 632,
+   "steps": [
+    {
+     "node": "agent",
+     "seconds": 2.2,
+     "tokens": 278,
+     "reasoning": 82
+    },
+    {
+     "node": "tools",
+     "seconds": 0.1,
+     "results": [
+      "[{\"job_id\": 812, \"name\": \"unit-tests\"}]"
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 2.2,
+     "tokens": 354,
+     "reasoning": 27
+    },
+    {
+     "node": "stop",
+     "seconds": 0.0
+    }
+   ],
+   "final": "Stopped: 632 of 500 tokens used."
+  },
+  {
+   "scenario": "budget-overshoot",
+   "question": "Why is CI failing on pull request 415?",
+   "limits": {
+    "token_budget": 1000
+   },
+   "outcome": "answered",
+   "tokens": 1649,
+   "steps": [
+    {
+     "node": "agent",
+     "seconds": 2.4,
+     "tokens": 309,
+     "reasoning": 113
+    },
+    {
+     "node": "tools",
+     "seconds": 0.1,
+     "results": [
+      "[{\"job_id\": 812, \"name\": \"unit-tests\"}]"
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 1.6,
+     "tokens": 389,
+     "reasoning": 31
+    },
+    {
+     "node": "tools",
+     "seconds": 0.2,
+     "results": [
+      "FAILED tests/test_client.py::test_default_timeout - AssertionError: expected 10, got 30"
+     ]
+    },
+    {
+     "node": "agent",
+     "seconds": 3.9,
+     "tokens": 951,
+     "reasoning": 441
+    }
+   ],
+   "final": "The failed job for pull request 415 is:\n* **unit-tests** (Job ID: 812)\n\nThe `unit-tests` job failed due to an `AssertionError` in `tests/test_client.py::test_default_timeout`. Specifically, the test expected a default timeout value of 10 but received 30 instead."
+  },
+  {
+   "scenario": "slow-model",
+   "question": "Why is CI failing on pull request 415?",
+   "limits": {
+    "model_timeout": 0.5
+   },
+   "outcome": "model_timeout",
+   "tokens": 0,
+   "steps": [
+    {
+     "node": "__error_handler__agent",
+     "seconds": 0.5
+    }
+   ],
+   "final": "Stopped: Node 'agent' exceeded its run timeout of 0.500s (elapsed: 0.501s)."
+  }
+ ]
+}

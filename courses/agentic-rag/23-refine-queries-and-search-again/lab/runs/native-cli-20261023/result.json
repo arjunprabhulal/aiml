@@ -1,0 +1,297 @@
+{
+  "execution_mode": "offline-scripted-retrieval-controller",
+  "model_called": false,
+  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+  "controller": {
+    "status": "completed",
+    "reason": "configured_context_marker_found",
+    "question": "Will write_text replace the contents of an existing file?",
+    "version": "3.12",
+    "policy": {
+      "name": "existing-path",
+      "initial_query": "text",
+      "refinement_query": "overwritten",
+      "required_marker": "overwritten",
+      "max_rounds": 2
+    },
+    "observations": [
+      {
+        "tool": "search",
+        "arguments": {
+          "query": "text",
+          "version": "3.12",
+          "k": 2
+        },
+        "result": {
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+          "query": "text",
+          "version": "3.12",
+          "k": 2,
+          "results": [
+            {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+            },
+            {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+              "source_id": "path-write",
+              "version": "3.12",
+              "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+              "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "byte_count": 224,
+              "native_score": -1.3203883495145633e-06,
+              "rank": 2,
+              "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+            }
+          ]
+        }
+      },
+      {
+        "tool": "read",
+        "arguments": {
+          "handle": {
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+            "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+            "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "byte_count": 154,
+            "native_score": -1.4220532319391636e-06,
+            "rank": 1,
+            "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+          }
+        },
+        "result": {
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+          "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+          "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+          "start_line": 1,
+          "end_line": 1,
+          "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+          "byte_count": 154,
+          "native_score": -1.4220532319391636e-06,
+          "rank": 1,
+          "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+          "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+        }
+      },
+      {
+        "tool": "search",
+        "arguments": {
+          "query": "overwritten",
+          "version": "3.12",
+          "k": 2
+        },
+        "result": {
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+          "query": "overwritten",
+          "version": "3.12",
+          "k": 2,
+          "results": [
+            {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+              "source_id": "path-write",
+              "version": "3.12",
+              "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+              "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "byte_count": 224,
+              "native_score": -0.7992166451067194,
+              "rank": 1,
+              "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+            }
+          ]
+        }
+      },
+      {
+        "tool": "read",
+        "arguments": {
+          "handle": {
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+            "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "source_id": "path-write",
+            "version": "3.12",
+            "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+            "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+            "byte_count": 224,
+            "native_score": -0.7992166451067194,
+            "rank": 1,
+            "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+          }
+        },
+        "result": {
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+          "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+          "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "start_line": 1,
+          "end_line": 1,
+          "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "byte_count": 224,
+          "native_score": -0.7992166451067194,
+          "rank": 1,
+          "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "read_request_id": "ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4",
+          "result_sha256": "b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38"
+        }
+      }
+    ],
+    "query_history": [
+      "text",
+      "overwritten"
+    ]
+  },
+  "controlled_duplicate_stop": {
+    "status": "incomplete",
+    "reason": "duplicate_query",
+    "question": "Will write_text replace the contents of an existing file?",
+    "version": "3.12",
+    "policy": {
+      "name": "controlled-duplicate-query",
+      "initial_query": "text",
+      "refinement_query": "text",
+      "required_marker": "not-present",
+      "max_rounds": 2
+    },
+    "observations": [
+      {
+        "tool": "search",
+        "arguments": {
+          "query": "text",
+          "version": "3.12",
+          "k": 2
+        },
+        "result": {
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+          "query": "text",
+          "version": "3.12",
+          "k": 2,
+          "results": [
+            {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+            },
+            {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+              "source_id": "path-write",
+              "version": "3.12",
+              "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+              "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "byte_count": 224,
+              "native_score": -1.3203883495145633e-06,
+              "rank": 2,
+              "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+            }
+          ]
+        }
+      },
+      {
+        "tool": "read",
+        "arguments": {
+          "handle": {
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+            "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+            "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "byte_count": 154,
+            "native_score": -1.4220532319391636e-06,
+            "rank": 1,
+            "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+          }
+        },
+        "result": {
+          "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+          "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+          "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+          "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+          "start_line": 1,
+          "end_line": 1,
+          "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+          "byte_count": 154,
+          "native_score": -1.4220532319391636e-06,
+          "rank": 1,
+          "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+          "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+        }
+      }
+    ],
+    "query_history": [
+      "text"
+    ]
+  },
+  "interpretation": "Declared question-only rules and literal passage checks; not an executed model agent or semantic quality experiment."
+}

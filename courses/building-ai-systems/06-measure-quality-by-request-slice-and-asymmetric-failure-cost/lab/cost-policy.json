@@ -1,0 +1,74 @@
+{
+  "id": "development-scenario-cost-v1",
+  "unit": "declared scenario penalty points; not currency or observed business loss",
+  "cost_by_boundary": {
+    "response-contract": 1,
+    "source-selection": 8,
+    "task-result": 8,
+    "action-policy": 25,
+    "authorization": 100,
+    "input-contract": 3
+  },
+  "incomplete_interval": [
+    0,
+    100
+  ],
+  "slices": [
+    {
+      "id": "all",
+      "where": {}
+    },
+    {
+      "id": "production",
+      "where": {
+        "environment": "production"
+      }
+    },
+    {
+      "id": "staging",
+      "where": {
+        "environment": "staging"
+      }
+    },
+    {
+      "id": "reader-production-proposal",
+      "where": {
+        "role": "reader",
+        "environment": "production",
+        "operation": "propose_rollback"
+      }
+    },
+    {
+      "id": "maintainer-production-proposal",
+      "where": {
+        "role": "maintainer",
+        "environment": "production",
+        "operation": "propose_rollback"
+      }
+    },
+    {
+      "id": "version-2",
+      "where": {
+        "version": "2"
+      }
+    },
+    {
+      "id": "version-3",
+      "where": {
+        "version": "3"
+      }
+    },
+    {
+      "id": "version-9",
+      "where": {
+        "version": "9"
+      }
+    },
+    {
+      "id": "version-4-empty",
+      "where": {
+        "version": "4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "requirement": "attempt is a zero-based nonnegative integer; permit a retry while attempt is below max_attempts",
+  "baseline": "attempt <= max_attempts",
+  "checks": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      0,
+      5
+    ]
+  ]
+}

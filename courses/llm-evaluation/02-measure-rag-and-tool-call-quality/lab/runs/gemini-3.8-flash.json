@@ -1,0 +1,361 @@
+{
+  "key": {
+    "cases": "docs-assistant@1",
+    "cases_sha": "98b0e5bca6c8",
+    "docs_sha": "ea13ab95ac63",
+    "prompt_sha": "a7990e4dc62c",
+    "k": 3,
+    "model": "gemini-3.8-flash",
+    "embedder": "gemini-embedding-2",
+    "judge": "gemini-3.8-flash",
+    "strict_faithfulness": true
+  },
+  "k": 3,
+  "threshold": 0.7,
+  "rows": [
+    {
+      "id": "backup",
+      "answer": "Tracker stores its data in a SQLite file named `tasks.db` inside the list folder, which defaults to `~/.tracker`. To back up every task, tag, and comment, back up that `tasks.db` file. Make sure to close running tracker commands before copying it.",
+      "calls": [
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly addresses where Tracker stores its data and what to back up, without any irrelevant information. Great job!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is completely aligned with the context without any contradictions, demonstrating perfect faithfulness!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the most relevant information was perfectly prioritized at the very top! The first node in the retrieval contexts directly answers the question by stating that \"Each task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default\" and instructing to \"Back up that file to back up every task, tag and comment,\" while the irrelevant nodes were correctly ranked lower."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 is completely and accurately supported by node 1 in retrieval context, making the retrieval perfectly spot on!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "two-laptops",
+      "answer": "Yes, running sync from two machines at once is safe. `tracker sync` takes a lock on the remote, so a second machine attempting to sync concurrently will wait up to 30 seconds and then exit with \"remote is locked.\"",
+      "calls": [
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly addresses the question with completely relevant information. Great job!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is completely faithful to the retrieval context, with no contradictions found! Great job!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the most relevant information is perfectly ranked at the top! The first node in the retrieval contexts directly answers the query, confirming that 'Running sync from two machines at once is safe' and clarifying that 'Sync takes a lock on the remote, so a second machine that syncs at the same time waits up to 30 seconds and then exits with \\'remote is locked\\'', while the irrelevant nodes concerning SQLite file storage and API tokens were correctly placed lower."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because both sentence 1 and sentence 2 are perfectly supported by node 1 in retrieval context, successfully covering all the expected details!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "restore",
+      "answer": "You can bring back an archived task using the command `tracker restore ID`.",
+      "calls": [
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly addresses how to restore an archived task with completely relevant and helpful information. Nicely done!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output aligns perfectly with the retrieval context with no contradictions detected. Great job!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is perfectly prioritized at the top, directly answering the question by stating that '`tracker restore ID` brings it back' ahead of irrelevant nodes."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 is fully supported by node 1 in retrieval context, providing a perfectly accurate retrieval!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "config-keys",
+      "answer": "You can include `default_project`, `week_start` (set to `monday` or `sunday`), `color` (set to `auto`, `always`, or `never`), and `editor` in `config.toml`.",
+      "calls": [
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly addresses which keys can be included in config.toml with completely relevant and helpful information."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions, and the actual output is completely faithful to the retrieval context!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is perfectly placed right at the top, directly answering the query by noting that 'Allowed keys are default_project, week_start (monday or sunday), color (auto, always or never) and editor.', cleanly outranking the irrelevant nodes."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 is completely and accurately supported by node 1 in retrieval context. Excellent retrieval quality!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "pipe-colors",
+      "answer": "Color output follows the `color` setting. Set `color = auto` so that tracker automatically turns color off when standard output is not a terminal (such as when piped to `grep`). Alternatively, you can use `tracker list --format csv` for comma-separated output without table formatting.",
+      "calls": [
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses how to disable color codes when piping tracker list, without any irrelevant information."
+        },
+        "faithfulness": {
+          "score": 0.6666666666666666,
+          "reason": "The score is 0.67 because while the retrieval context confirms color is disabled when standard output is not a terminal under auto settings, it does not specifically mention piping to 'grep' as an example."
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieval contexts are ranked perfectly! The first node in the retrieval contexts is directly relevant, explaining that 'with color = auto, tracker turns color off when standard output is not a terminal', while the irrelevant nodes discussing installation instructions and 'tasks.db' were correctly placed after it."
+        },
+        "contextual_recall": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because sentence 1 is not fully supported; while node 1 in retrieval context mentions turning color off when output is not a terminal under color = auto, the context completely lacks information on setting color = never in config.toml to turn it off always."
+        }
+      },
+      "first_failure": "retrieval"
+    },
+    {
+      "id": "dry-run-import",
+      "answer": "You can use the `--dry-run` flag when running the import command, such as `tracker import FILE.csv --dry-run`. This will display the import summary without writing any tasks.",
+      "calls": [
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly addresses the question with zero irrelevant information, providing a perfectly focused and helpful answer!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output aligns perfectly with the retrieval context with no contradictions found. Great job!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieval contexts are perfectly ordered! The first node is directly relevant as it explains that you can use `--dry-run` to 'see the summary without writing tasks', rightfully placing it ahead of the irrelevant second and third nodes that focus on 'output formats for `tracker list`' and 'debug logging'."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 is completely and accurately supported by node 1 in retrieval context, capturing the required command and flag perfectly!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "issue-212",
+      "answer": "Yes, issue 212 (\"`tracker sync` crashes with KeyError: 'due'\") is closed and fixed. The fix is included in version 2.4.1.",
+      "calls": [
+        "get_issue"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": null,
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly addresses both parts of the question clearly and contains no irrelevant information. Nicely done!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is completely faithful to the retrieval context with zero contradictions detected. Great job!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieval context performed brilliantly! The first node in the retrieval contexts is perfectly relevant, directly answering the query by showing that issue number 212 has \"state\": \"closed\" and was \"fixed_in\": \"2.4.1\"."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 is fully and accurately substantiated by node 1 in retrieval context, capturing all the key details flawlessly!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "issue-231",
+      "answer": "Issue 231, titled \"Import drops rows and reports success\", is currently open.",
+      "calls": [
+        "get_issue"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": null,
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses the status of issue 231 without any irrelevant information. Great job!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output aligns perfectly with the retrieval context, with no contradictions found! Great job!"
+        },
+        "contextual_precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is perfectly relevant, directly specifying that issue number 231 has the title 'Import drops rows and reports success' and its state is 'open'."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 is fully supported by node 1 in retrieval context, capturing the required information perfectly!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "token-leak",
+      "answer": "Issue 218 is fixed in version 2.4.1. When using `--debug`, request details are written to `debug.log` in the list folder.",
+      "calls": [
+        "get_issue",
+        "search_docs"
+      ],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses both questions with no irrelevant information included. Great job!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions whatsoever. Fantastic job!"
+        },
+        "contextual_precision": {
+          "score": 0.75,
+          "reason": "The score is 0.75 because the first node in retrieval contexts is correctly placed at the top, directly answering the query by stating '`--debug` writes request details to debug.log in the list folder' and that 'Version 2.4.1 redacts API tokens in debug output'. However, the score is not higher because the relevant fourth node, which confirms issue 218 was closed with '\"fixed_in\": \"2.4.1\"', is ranked below irrelevant nodes: the second node merely discusses 'output formats and color settings for `tracker list`', and the third node only details 'how `tracker login` stores tokens and when they expire, without addressing debug output or version fixes for issue 218'."
+        },
+        "contextual_recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because sentence 1 in the expected output is fully supported by node 1 and node 4 in retrieval context, accurately capturing all the required details!"
+        }
+      },
+      "first_failure": null
+    },
+    {
+      "id": "thanks",
+      "answer": "You're very welcome! I'm glad to hear that tracker has been working well for your team. Let me know if you have any questions or need help with anything!",
+      "calls": [],
+      "tools": {
+        "score": 1.0,
+        "unexpected": [],
+        "pass": true
+      },
+      "retrieval": null,
+      "judged": {
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response is completely relevant and spot-on with no irrelevant statements included. Great job!"
+        }
+      },
+      "first_failure": null
+    }
+  ],
+  "summary": {
+    "cases": 10,
+    "passed": 9,
+    "tool_pass": 10,
+    "hit_at_3": "7/7",
+    "recall_at_3": 0.929,
+    "mrr": 1.0,
+    "mean_faithfulness": 0.963
+  }
+}

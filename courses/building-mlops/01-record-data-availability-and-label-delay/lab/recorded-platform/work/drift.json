@@ -1,0 +1,92 @@
+{
+  "unchanged": {
+    "bins": [
+      "0",
+      "1\u20132",
+      "3\u20135",
+      "6\u20131000"
+    ],
+    "reference_rows": 48,
+    "current_rows": 48,
+    "reference_fraction": [
+      0.10416666666666667,
+      0.16666666666666666,
+      0.4583333333333333,
+      0.2708333333333333
+    ],
+    "current_fraction": [
+      0.10416666666666667,
+      0.16666666666666666,
+      0.4583333333333333,
+      0.2708333333333333
+    ],
+    "total_variation": 0.0,
+    "investigation_threshold": 0.2,
+    "investigate": false,
+    "retraining_authorized": false,
+    "quality_measured": false
+  },
+  "controlled_shift": {
+    "bins": [
+      "0",
+      "1\u20132",
+      "3\u20135",
+      "6\u20131000"
+    ],
+    "reference_rows": 48,
+    "current_rows": 48,
+    "reference_fraction": [
+      0.10416666666666667,
+      0.16666666666666666,
+      0.4583333333333333,
+      0.2708333333333333
+    ],
+    "current_fraction": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_variation": 0.8958333333333334,
+    "investigation_threshold": 0.2,
+    "investigate": true,
+    "retraining_authorized": false,
+    "quality_measured": false
+  },
+  "investigation": {
+    "decision": "investigate distribution change",
+    "drift": {
+      "bins": [
+        "0",
+        "1\u20132",
+        "3\u20135",
+        "6\u20131000"
+      ],
+      "reference_rows": 48,
+      "current_rows": 48,
+      "reference_fraction": [
+        0.10416666666666667,
+        0.16666666666666666,
+        0.4583333333333333,
+        0.2708333333333333
+      ],
+      "current_fraction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_variation": 0.8958333333333334,
+      "investigation_threshold": 0.2,
+      "investigate": true,
+      "retraining_authorized": false,
+      "quality_measured": false
+    },
+    "retrain": false
+  },
+  "invalid_input": {
+    "decision": "repair data before retraining",
+    "reason": "event count must be an integer between 0 and 1000",
+    "retrain": false
+  }
+}

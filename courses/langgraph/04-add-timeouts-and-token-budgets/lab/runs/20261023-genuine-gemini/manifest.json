@@ -1,0 +1,115 @@
+{
+  "execution_mode": "Genuine Gemini tool proposal followed by native LangGraph ToolNode execution over a local CI fixture",
+  "date": "2026-10-23",
+  "status": "OBSERVED_GENUINE_PROPOSAL_AND_NATIVE_LOCAL_TOOL_TIMEOUT_ONLY",
+  "model": "gemini-3.8-flash",
+  "task": "The local CI fixture says pull request #421 has failed job 815. Fetch the log for job 815 directly with fetch_job_log. Do not retry a tool, edit files, or contact a real CI service. This observation pauses after tools.",
+  "node_path": [
+    "agent",
+    "tools"
+  ],
+  "static_breakpoint_after": "tools",
+  "generation_requests": 1,
+  "token_count_requests": 1,
+  "followup_generation_requests": 0,
+  "accepted_tool_proposal": {
+    "name": "fetch_job_log",
+    "args": {
+      "job_id": 815
+    },
+    "tool_call_id": "call_97095"
+  },
+  "tool_timeout_seconds": 3.0,
+  "local_fixture_delay_seconds": 8.0,
+  "process_exit_code": 0,
+  "probe_elapsed_seconds": 6.4699207919766195,
+  "elapsed_scope": "Entire probe including provider call and local tool wait; not isolated provider latency",
+  "provider_usage": {
+    "input_tokens": 224,
+    "candidate_tokens": 20,
+    "thinking_tokens": 159,
+    "output_including_thinking_tokens": 179,
+    "total_tokens": 403
+  },
+  "preflight_count_tokens": 224,
+  "reviewed_limits": {
+    "lesson": "04",
+    "model": "gemini-3.8-flash",
+    "generation_http_attempts": 1,
+    "count_http_attempts": 1,
+    "total_http_attempts": 2,
+    "maximum_preflight_count": 4096,
+    "maximum_output_tokens_requested": 4096,
+    "thinking_level": "low",
+    "http_timeout_seconds": 45,
+    "graph_model_timeout_seconds": 60,
+    "retry_attempts": 0,
+    "redirects": false,
+    "provider_input_acceptance_limit_after_response": 4096,
+    "billable_input_cap_claimed": false,
+    "retained_model_reasoning_in_input": false
+  },
+  "operator_availability": "External approval-bound async operator retained privately, not bundled. Direct live_probe.py execution refuses before SDK or credential access. No normal graph.py spending limit is implied.",
+  "source_sha256": {
+    "graph.py": "f8a1bacefaeb67d4ec51d5709f2b13ce89f31f0c99f8de4c095c9a4f4e3182d0",
+    "ci.py": "4ba1b72316fa2eb5872251a76486ab02297a3110ebde78be5beffa4999c859b9",
+    "live_probe.py": "8927ab79827ce9b91172fc35ada4852523c24c7b1e517bee2f880a8823a898f7",
+    "requirements-lock.txt": "2a700aa8c9b9c67cec52e69f9fdc41998ca32deaf6d8f6dfd703e53a95672576"
+  },
+  "versions": {
+    "anyio": "4.15.1",
+    "google-genai": "2.32.0",
+    "httpcore": "1.0.9",
+    "httpx": "0.28.1",
+    "langchain-core": "1.6.12",
+    "langchain-google-genai": "4.4.2",
+    "langgraph": "1.2.16"
+  },
+  "scope_sha256": "950ceb6c3c11fcf66dbe812d10b0a1a1b4568e7622810ec15e80a7c3f2f04fe3",
+  "stdout_sha256": "bdd3b122b1e68f6da458f0e33cd605ff35bb7895db5378b38d23652eaaf04a35",
+  "events_sha256": "2d80e90fcf9f39ec73fed3d91f6efcadf3c1e9ca831bc2873e8ccdde54502054",
+  "images": [
+    {
+      "file": "images/completed-end-1440@2x.png",
+      "width_css": 1440,
+      "height_css": 1100,
+      "device_scale_factor": 2,
+      "width_pixels": 2880,
+      "height_pixels": 2200,
+      "sha256": "38a488ec3cfd92241cc09608f7266e2fd5a0c197e3bc4e7c77f505586c6bc5e1",
+      "state": "Original completed process scrollback; same process, no rerun"
+    },
+    {
+      "file": "images/completed-end-390@2x.png",
+      "width_css": 390,
+      "height_css": 1100,
+      "device_scale_factor": 2,
+      "width_pixels": 780,
+      "height_pixels": 2200,
+      "sha256": "304eb11a807511ef62084ddbd3c6a5f17e170ab6e98b4af548b8a48d71f6a24e",
+      "state": "Original completed process scrollback; same process, no rerun"
+    },
+    {
+      "file": "images/completed-end-320@2x.png",
+      "width_css": 320,
+      "height_css": 1100,
+      "device_scale_factor": 2,
+      "width_pixels": 640,
+      "height_pixels": 2200,
+      "sha256": "b5448d355714aaba566d5d46a12d14f84420c75557a3755835534c7003221b2f",
+      "state": "Original completed process scrollback; same process, no rerun"
+    }
+  ],
+  "original_capture_frames": 7,
+  "published_completed_frames": 3,
+  "accounting": "accounting.json",
+  "outcome_review": "outcome-review.json",
+  "provenance": "provenance.json",
+  "prior_incomplete_attempt": "../20261023-incomplete-preflight/manifest.json",
+  "limitations": [
+    "No follow-up model answer: the graph pauses after tools",
+    "No external CI lookup or job failure validation",
+    "No new genuine model-node-timeout or token-budget observation",
+    "A preflight token count is not a general billable-input cap; provider usage is not an invoice"
+  ]
+}

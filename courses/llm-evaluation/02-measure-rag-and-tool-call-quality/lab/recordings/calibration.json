@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "config-page-missing/0": {
+      "reason": "The score is 0.00 because, although node 2 in retrieval context partially covers the behavior of 'color = auto', the context completely omits setting 'color = never in config.toml to turn it off always', leaving sentence 1 unverified.",
+      "score": 0.0
+    },
+    "config-page-missing/1": {
+      "reason": "The score is 0.00 because, although node 2 in retrieval context supports the first part of sentence 1 regarding 'color = auto', the context fails to support the instruction to set 'color = never in config.toml' to disable it permanently, leaving the complete sentence unattributed.",
+      "score": 0.0
+    },
+    "config-page-missing/2": {
+      "reason": "The score is 0.00 because sentence 1 is not fully supported; while node 2 in retrieval context mentions that tracker turns color off when output is not a terminal with color = auto, the context lacks any mention of setting color = never in config.toml to turn it off always.",
+      "score": 0.0
+    },
+    "csv-removes-color-strict/0": {
+      "reason": "The score is 0.60 because the actual output makes unsupported claims regarding grep or color codes interfering with piped output and suggests that using the --format csv option eliminates color codes, neither of which are mentioned in the retrieval context.",
+      "score": 0.6
+    },
+    "csv-removes-color-strict/1": {
+      "reason": "The score is 0.33 because the actual output discusses grep and potential color code interference, and claims that running 'tracker list --format csv' eliminates color codes, neither of which is supported by the retrieval context.",
+      "score": 0.3333333333333333
+    },
+    "csv-removes-color-strict/2": {
+      "reason": "The score is 0.33 because the actual output makes unsupported claims that color codes might interfere with grep and that using tracker list --format csv eliminates color codes, neither of which is stated in the retrieval context.",
+      "score": 0.3333333333333333
+    },
+    "csv-removes-color/0": {
+      "reason": "The score is 1.00 because there are no contradictions detected, and the output aligns perfectly with the retrieval context.",
+      "score": 1.0
+    },
+    "csv-removes-color/1": {
+      "reason": "The score is 1.00 because there are no contradictions, and the output aligns perfectly with the retrieval context!",
+      "score": 1.0
+    },
+    "csv-removes-color/2": {
+      "reason": "The score is 1.00 because the output is completely aligned with the retrieval context, showing no contradictions whatsoever. Great job!",
+      "score": 1.0
+    },
+    "debug-page-missing/0": {
+      "reason": "The score is 0.00 because sentence 1 cannot be fully attributed to node 1 in retrieval context, which confirms that issue 218 is fixed in 2.4.1 but fails to mention redacting tokens or sending debug output to debug.log in the list folder.",
+      "score": 0.0
+    },
+    "debug-page-missing/1": {
+      "reason": "The score is 0.00 because sentence 1 in the expected output is not fully supported by node 1 in retrieval context, as the context fails to mention redacting tokens or directing debug output to debug.log in the list folder.",
+      "score": 0.0
+    },
+    "debug-page-missing/2": {
+      "reason": "The score is 0.00 because sentence 1 is not supported by the context; while node 1 in retrieval context mentions that version 2.4.1 fixed the issue, it does not state that it did so by redacting tokens or that debug output goes to debug.log in the list folder.",
+      "score": 0.0
+    },
+    "invented-storage-strict/0": {
+      "reason": "The score is 0.00 because the actual output incorrectly claims that Tracker uses a PostgreSQL database and pg_dump for backups, when it actually stores tasks in a SQLite file named tasks.db and backs up by copying that file.",
+      "score": 0.0
+    },
+    "invented-storage-strict/1": {
+      "reason": "The score is 0.00 because the actual output incorrectly claims Tracker uses a PostgreSQL database and pg_dump, whereas task lists are stored in an SQLite file named tasks.db and backed up by copying the file after closing running tracker commands.",
+      "score": 0.0
+    },
+    "invented-storage-strict/2": {
+      "reason": "The score is 0.00 because the actual output incorrectly claims that tracker uses a PostgreSQL database and pg_dump for backups, whereas the context specifies it uses an SQLite file named tasks.db and backups are performed by copying the tasks.db file.",
+      "score": 0.0
+    },
+    "invented-storage/0": {
+      "reason": "The score is 0.00 because the actual output incorrectly states that tracker tasks are stored in a PostgreSQL database and backed up using pg_dump, contradicting the context which specifies they are stored in an SQLite file named tasks.db and backed up by copying the file.",
+      "score": 0.0
+    },
+    "invented-storage/1": {
+      "reason": "The score is 0.50 because the actual output mistakenly claims that task lists are stored in a PostgreSQL database instead of an SQLite file named tasks.db.",
+      "score": 0.5
+    },
+    "invented-storage/2": {
+      "reason": "The score is 0.50 because the actual output incorrectly claims that task lists are stored in a PostgreSQL database, whereas the retrieval context specifies that each task list is stored in a SQLite file named tasks.db.",
+      "score": 0.5
+    }
+  },
+  "key": {
+    "cases": "judge-calibration@3",
+    "cases_sha": "6d1a6b56e5d1",
+    "judge": "gemini-3.8-flash",
+    "repeats": 3
+  }
+}

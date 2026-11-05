@@ -1,0 +1,404 @@
+{
+  "model": "gemini-3.8-flash",
+  "question": "How do I undo the last production deploy?",
+  "server": "adk api_server --port 63492 --session_service_uri sqlite:///sessions.db --allow_origins http://localhost:3000 . --host 127.0.0.1",
+  "apps": [
+    "docs_assistant"
+  ],
+  "created": {
+    "id": "s-run",
+    "appName": "docs_assistant",
+    "userId": "dev-1",
+    "state": {
+      "team": "payments"
+    },
+    "events": []
+  },
+  "run": {
+    "lines": [
+      "docs_assistant  final    call read_page({\"page\": \"rollback\"})",
+      "docs_assistant  final    result read_page",
+      "docs_assistant  final    'To undo the last production deploy, run:'"
+    ],
+    "answer": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` automatically rolls back to the previous release. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it.",
+    "events": [
+      {
+        "author": "docs_assistant",
+        "invocationId": "e-22abc20f-ad0b-4d57-803a-38a5e7c2bc29",
+        "content": {
+          "parts": [
+            {
+              "functionCall": {
+                "id": "call_683288",
+                "args": {
+                  "page": "rollback"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 16,
+          "promptTokenCount": 179,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 179
+            }
+          ],
+          "thoughtsTokenCount": 64,
+          "totalTokenCount": 259
+        }
+      },
+      {
+        "author": "docs_assistant",
+        "invocationId": "e-22abc20f-ad0b-4d57-803a-38a5e7c2bc29",
+        "content": {
+          "parts": [
+            {
+              "functionResponse": {
+                "id": "call_683288",
+                "name": "read_page",
+                "response": {
+                  "page": "rollback",
+                  "text": "# Roll back a release\n\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\n\n    docuctl rollback --env production --to r41\n\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\n\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\n\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\n"
+                }
+              }
+            }
+          ],
+          "role": "user"
+        }
+      },
+      {
+        "author": "docs_assistant",
+        "invocationId": "e-22abc20f-ad0b-4d57-803a-38a5e7c2bc29",
+        "content": {
+          "parts": [
+            {
+              "text": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` automatically rolls back to the previous release. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 67,
+          "promptTokenCount": 421,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 421
+            }
+          ],
+          "thoughtsTokenCount": 75,
+          "totalTokenCount": 563
+        }
+      }
+    ],
+    "model_turns": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "functionCall": {
+                "id": "call_683288",
+                "args": {
+                  "page": "rollback"
+                },
+                "name": "read_page"
+              }
+            }
+          ]
+        },
+        "partial": false
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To undo the last production deploy, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` automatically rolls back to the previous release. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it."
+            }
+          ]
+        },
+        "partial": false
+      }
+    ]
+  },
+  "sse": {
+    "lines": [
+      "docs_assistant  partial  call read_page({\"page\": \"rollback\"})",
+      "docs_assistant  partial  (no text)",
+      "docs_assistant  final    call read_page({\"page\": \"rollback\"})",
+      "docs_assistant  final    result read_page",
+      "docs_assistant  partial  'To roll back to the previous production '",
+      "docs_assistant  partial  'to` flag, `docuctl rollback` automatical'",
+      "docs_assistant  partial  ' if the release ran a migration, you mus'",
+      "docs_assistant  partial  (no text)",
+      "docs_assistant  final    'To roll back to the previous production '"
+    ],
+    "seconds": [
+      1.76,
+      1.83,
+      1.84,
+      1.84,
+      4.71,
+      4.91,
+      5.06,
+      5.07,
+      5.08
+    ],
+    "answer": "To roll back to the previous production release, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` automatically rolls back to the previous release. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it.",
+    "stored": 4,
+    "model_turns": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "functionCall": {
+                "id": "call_1432400",
+                "args": {
+                  "page": "rollback"
+                },
+                "name": "read_page"
+              }
+            }
+          ]
+        },
+        "partial": true
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        "partial": true
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "functionCall": {
+                "id": "call_1432400",
+                "args": {
+                  "page": "rollback"
+                },
+                "name": "read_page"
+              }
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        "partial": false
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To roll back to the previous production release, run:\n\n`docuctl rollback --env production`\n\nWithout the `--"
+            }
+          ]
+        },
+        "partial": true
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "to` flag, `docuctl rollback` automatically rolls back to the previous release. Note that database migrations are not rolled back;"
+            }
+          ]
+        },
+        "partial": true
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": " if the release ran a migration, you must write a new migration to reverse it."
+            }
+          ]
+        },
+        "partial": true
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        "partial": true
+      },
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To roll back to the previous production release, run:\n\n`docuctl rollback --env production`\n\nWithout the `--to` flag, `docuctl rollback` automatically rolls back to the previous release. Note that database migrations are not rolled back; if the release ran a migration, you must write a new migration to reverse it."
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        "partial": false
+      }
+    ]
+  },
+  "failures": {
+    "unknown_session": {
+      "status": 404,
+      "body": {
+        "detail": "Session not found: no-such-session"
+      }
+    },
+    "origin": {
+      "status": 403,
+      "body": "Forbidden: origin not allowed"
+    },
+    "allowed_origin": {
+      "status": 200,
+      "allow_origin": "http://localhost:3000"
+    },
+    "deprecated_path": {
+      "status": 200,
+      "state": {
+        "state": {
+          "team": "payments"
+        }
+      }
+    }
+  },
+  "cli_replay": {
+    "command": "adk run --in_memory --replay replay.json docs_assistant",
+    "stdout": [
+      "[user]: How do I roll back production to release r41?",
+      "[docs_assistant]: To roll back production to release r41, run:",
+      "`docuctl rollback --env production --to r41`",
+      "[user]: Does that also undo the database migration?",
+      "[docs_assistant]: No. Database migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it."
+    ],
+    "exit": 0
+  },
+  "cli_jsonl": {
+    "command": "adk run --in_memory --jsonl docs_assistant 'Which page explains tokens?'",
+    "records": [
+      {
+        "author": "docs_assistant",
+        "session_id": "2d3d3a6e-a7af-4303-9ae7-6b380f137717",
+        "node_path": "docs_assistant@1",
+        "id": "d776d691-2d74-47d4-be98-44cdd11c332f",
+        "modelVersion": "gemini-3.8-flash",
+        "content": {
+          "parts": [
+            {
+              "functionCall": {
+                "id": "call_2449579",
+                "args": {
+                  "page": "tokens"
+                },
+                "name": "read_page"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 16,
+          "promptTokenCount": 175,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 175
+            }
+          ],
+          "thoughtsTokenCount": 78,
+          "totalTokenCount": 269
+        },
+        "invocationId": "e-32c34dc4-251d-459e-a515-bd41bd060861",
+        "nodeInfo": {
+          "path": "docs_assistant@1"
+        },
+        "longRunningToolIds": [],
+        "timestamp": 1792979049.9273632
+      },
+      {
+        "author": "docs_assistant",
+        "session_id": "2d3d3a6e-a7af-4303-9ae7-6b380f137717",
+        "node_path": "docs_assistant@1",
+        "id": "ac47a70c-1902-4b55-91f3-67888ddb6c84",
+        "content": {
+          "parts": [
+            {
+              "functionResponse": {
+                "id": "call_2449579",
+                "name": "read_page",
+                "response": {
+                  "page": "tokens",
+                  "text": "# Authenticate docuctl in CI\n\nCI jobs authenticate with a deploy token, not a personal login. Create one with:\n\n    docuctl tokens create --name ci-docs-api --scope deploy:staging\n\nThe token is shown once. Store it in your CI secret store as `DOCUCTL_TOKEN`. Tokens expire after 90 days; `docuctl tokens list` shows each token's expiry.\n"
+                }
+              }
+            }
+          ],
+          "role": "user"
+        },
+        "invocationId": "e-32c34dc4-251d-459e-a515-bd41bd060861",
+        "nodeInfo": {
+          "path": "docs_assistant@1"
+        },
+        "timestamp": 1792979052.122337
+      },
+      {
+        "author": "docs_assistant",
+        "session_id": "2d3d3a6e-a7af-4303-9ae7-6b380f137717",
+        "node_path": "docs_assistant@1",
+        "id": "6c4281b1-519a-4dd5-8120-f3a8440ab15f",
+        "modelVersion": "gemini-3.8-flash",
+        "content": {
+          "parts": [
+            {
+              "text": "The `tokens` page explains tokens."
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "usageMetadata": {
+          "candidatesTokenCount": 8,
+          "promptTokenCount": 378,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 378
+            }
+          ],
+          "totalTokenCount": 386
+        },
+        "invocationId": "e-32c34dc4-251d-459e-a515-bd41bd060861",
+        "nodeInfo": {
+          "path": "docs_assistant@1"
+        },
+        "timestamp": 1792979052.12304
+      }
+    ]
+  }
+}

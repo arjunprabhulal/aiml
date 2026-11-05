@@ -1,0 +1,169 @@
+{
+  "steps": [
+    {
+      "day": 0,
+      "op": "remember",
+      "id": 1
+    },
+    {
+      "day": 0,
+      "op": "remember",
+      "id": 2
+    },
+    {
+      "day": 0,
+      "op": "remember",
+      "id": 3
+    },
+    {
+      "day": 0,
+      "op": "recall",
+      "query": "What food does Alice eat? Is she vegetarian?",
+      "recalled": [
+        {
+          "id": 1,
+          "level": "user",
+          "text": "Alice is vegetarian.",
+          "source": "trip-planning/turn-3",
+          "supersedes": null,
+          "expires_at": null,
+          "score": 2
+        },
+        {
+          "id": 3,
+          "level": "user",
+          "text": "Alice's passport number is P1234567.",
+          "source": "trip-planning/turn-6",
+          "supersedes": null,
+          "expires_at": null,
+          "score": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "op": "correct",
+      "corrected": 1,
+      "id": 4
+    },
+    {
+      "day": 2,
+      "op": "recall",
+      "query": "What food does Alice eat? Is she vegetarian?",
+      "recalled": [
+        {
+          "id": 4,
+          "level": "user",
+          "text": "Alice eats fish but no meat, so she is not vegetarian.",
+          "source": "trip-planning/turn-12",
+          "supersedes": 1,
+          "expires_at": null,
+          "score": 3
+        },
+        {
+          "id": 3,
+          "level": "user",
+          "text": "Alice's passport number is P1234567.",
+          "source": "trip-planning/turn-6",
+          "supersedes": null,
+          "expires_at": null,
+          "score": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "op": "history",
+      "versions": [
+        {
+          "id": 1,
+          "text": "Alice is vegetarian.",
+          "source": "trip-planning/turn-3",
+          "created_at": "2026-10-20T09:00:00+00:00",
+          "supersedes": null
+        },
+        {
+          "id": 4,
+          "text": "Alice eats fish but no meat, so she is not vegetarian.",
+          "source": "trip-planning/turn-12",
+          "created_at": "2026-10-22T09:03:00+00:00",
+          "supersedes": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "op": "recall",
+      "query": "What is the hotel booking code?",
+      "recalled": [
+        {
+          "id": 2,
+          "level": "task",
+          "text": "The Lisbon hotel booking code is 4F7Q.",
+          "source": "trip-planning/turn-5",
+          "supersedes": null,
+          "expires_at": "2026-10-27T09:01:00+00:00",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "op": "recall",
+      "query": "What is the hotel booking code?",
+      "recalled": []
+    },
+    {
+      "day": 8,
+      "op": "purge_expired",
+      "removed": 1
+    },
+    {
+      "day": 8,
+      "op": "forget",
+      "deleted_ids": [
+        3
+      ]
+    },
+    {
+      "day": 8,
+      "op": "recall",
+      "query": "What is Alice's passport number?",
+      "recalled": [
+        {
+          "id": 4,
+          "level": "user",
+          "text": "Alice eats fish but no meat, so she is not vegetarian.",
+          "source": "trip-planning/turn-12",
+          "supersedes": 1,
+          "expires_at": null,
+          "score": 1
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "op": "deletions",
+      "records": [
+        {
+          "memory_ids": [
+            2
+          ],
+          "reason": "expired",
+          "deleted_at": "2026-10-28T09:04:00+00:00"
+        },
+        {
+          "memory_ids": [
+            3
+          ],
+          "reason": "user request at trip-planning/turn-20",
+          "deleted_at": "2026-10-28T09:04:00+00:00"
+        }
+      ]
+    }
+  ],
+  "forgotten_text_in_file": {
+    "secure_delete_on": false,
+    "secure_delete_off": true
+  }
+}

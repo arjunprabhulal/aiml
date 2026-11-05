@@ -1,0 +1,27 @@
+{
+  "execution_mode": "actual local analysis of unchanged saved function-evaluation records; no application/model execution or training",
+  "commands": [
+    "python3 analyze_slices.py --save result.json",
+    "python3 -m unittest -v test_slices.py"
+  ],
+  "unchanged_inputs": {
+    "cases.json": "ai-system-evaluation/cases.json",
+    "saved-report.json": "ai-system-evaluation/result.json",
+    "vendor/task.py": "ai-system-evaluation/task.py",
+    "vendor/harness.py": "ai-system-evaluation/vendor/harness.py"
+  },
+  "sha256": {
+    "README.md": "912b21f5a430f09575533e247e05e203dfb39ca9eead7eabe30eb6160a8723a9",
+    "analyze_slices.py": "d2e7a3fada6f0870dc91316a08c265c8fffe1fbee0c53e4384c471b29a4affb5",
+    "cases.json": "e088ec1662e1ffaa2eab48164b228f562836577ffc9bfaa06adf10902d1f9087",
+    "cost-policy.json": "7091ae025b0cabea8cfc754ed8b9c8dc0117c654fcb701911c2112877fdb7398",
+    "input-manifest.json": "c50999ccac0553b3cc28c524693fd467da9368b2b506ba33b76b77c04d86b489",
+    "requirements-lock.txt": "b0e2fcecf3f9534b6355650f2f9e32f3cdad611dfb5d2df32fde469099044ddd",
+    "result.json": "64eebceb1c7199047721c5e08a347888ac734b8e0eb094d315c303fc73dfe401",
+    "run-output.txt": "58a929aab8d0b25bf7f03a6ea1a30f61bf58d17f2e03f29cb465599b72e0acbf",
+    "saved-report.json": "c4ca79d4f05c7c91e4fb49de0443227aaf4eac460fbd080b56538a6540cac49b",
+    "test_slices.py": "a4524822caaf543da13b4d0cd346bc74c13e435ae9844241d93d8b22e8cbc13b",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+    "vendor/task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+  }
+}

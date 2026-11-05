@@ -1,0 +1,15 @@
+{
+  "user": "alice",
+  "memories": [
+    {"day": 0, "task": "trip-planning", "level": "user", "attribute": "diet", "authority": "user", "text": "Alice is vegetarian.", "source": "trip-planning/turn-3"},
+    {"day": 0, "task": "trip-planning", "level": "user", "attribute": "seat", "authority": "user", "text": "Alice prefers aisle seats.", "source": "trip-planning/turn-6"},
+    {"day": 0, "task": "trip-planning", "level": "user", "attribute": "home-airport", "authority": "user", "text": "Alice flies from Lisbon.", "source": "trip-planning/turn-7"},
+    {"day": 0, "task": "trip-planning", "level": "user", "text": "Alice dislikes noisy hotels.", "source": "trip-planning/turn-8"},
+    {"day": 1, "task": "expenses", "level": "user", "attribute": "diet", "authority": "inferred", "text": "Alice eats meat.", "source": "expenses/receipt-summary-2"},
+    {"day": 5, "task": "trip-planning", "level": "user", "attribute": "seat", "authority": "user", "text": "Alice prefers window seats now.", "source": "trip-planning/turn-31"},
+    {"day": 6, "task": "conference-trip", "level": "user", "attribute": "home-airport", "authority": "user", "text": "alice flies from Lisbon", "source": "conference-trip/turn-2"},
+    {"day": 6, "task": "conference-trip", "level": "user", "text": "Alice does not mind noise in hotels.", "source": "conference-trip/turn-4"},
+    {"day": 7, "task": "porto-trip", "level": "task", "attribute": "diet", "authority": "user", "text": "This week Alice is eating vegan.", "source": "porto-trip/turn-2"}
+  ],
+  "views": [["alice", "porto-trip"], ["alice", "trip-planning"]]
+}

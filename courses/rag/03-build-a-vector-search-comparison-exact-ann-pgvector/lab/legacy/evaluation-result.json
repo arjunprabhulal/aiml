@@ -1,0 +1,309 @@
+{
+  "k": 5,
+  "searches": 48,
+  "pgvector_builds": 5,
+  "labeled_questions": 24,
+  "server": {
+    "postgresql": "17.4 (Homebrew)",
+    "pgvector": "0.8.7",
+    "client": "pg8000 1.31.5"
+  },
+  "rows": 347,
+  "vectors_round_trip_exact": true,
+  "sizes": {
+    "none": {
+      "table_bytes": 2048000,
+      "vector_index_bytes": 0
+    },
+    "ivfflat": {
+      "table_bytes": 2048000,
+      "vector_index_bytes": 2981888
+    },
+    "hnsw": {
+      "table_bytes": 2048000,
+      "vector_index_bytes": 2850816
+    }
+  },
+  "raw_vector_bytes": 1421312,
+  "planner_choice_without_forcing": {
+    "none": "Seq Scan",
+    "ivfflat": "Seq Scan",
+    "hnsw": "Seq Scan"
+  },
+  "plans": {
+    "pgvector, no index": "Seq Scan",
+    "pgvector IVFFlat, 16 lists, 1 probe": "Index Scan using passages_embedding",
+    "pgvector IVFFlat, 16 lists, 2 probes": "Index Scan using passages_embedding",
+    "pgvector IVFFlat, 16 lists, 4 probes": "Index Scan using passages_embedding",
+    "pgvector IVFFlat, 16 lists, 16 probes": "Index Scan using passages_embedding",
+    "pgvector HNSW, ef_search 10": "Index Scan using passages_embedding",
+    "pgvector HNSW, ef_search 20": "Index Scan using passages_embedding",
+    "pgvector HNSW, ef_search 40": "Index Scan using passages_embedding"
+  },
+  "filtered_plans": {
+    "Builds only": {
+      "pgvector, HNSW and B-tree indexes": "Bitmap Heap Scan using passages_kind",
+      "pgvector, HNSW only, ef_search 40": "Index Scan using passages_embedding",
+      "pgvector, HNSW only, iterative scan": "Index Scan using passages_embedding"
+    },
+    "Programming foundations topic": {
+      "pgvector, HNSW and B-tree indexes": "Bitmap Heap Scan using passages_topic",
+      "pgvector, HNSW only, ef_search 40": "Index Scan using passages_embedding",
+      "pgvector, HNSW only, iterative scan": "Index Scan using passages_embedding"
+    }
+  },
+  "methods": {
+    "Exact search (search.py)": {
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "same_order_as_exact": 48,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22
+    },
+    "Our IVF, 16 lists, 1 probe": {
+      "recall_at_1": 0.667,
+      "recall_at_5": 0.638,
+      "same_order_as_exact": 10,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 21,
+      "mean_vectors_scored": 30.9,
+      "recall_at_5_over_builds": [
+        0.604,
+        0.654
+      ]
+    },
+    "Our IVF, 16 lists, 2 probes": {
+      "recall_at_1": 0.854,
+      "recall_at_5": 0.862,
+      "same_order_as_exact": 28,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 21,
+      "mean_vectors_scored": 60.9,
+      "recall_at_5_over_builds": [
+        0.812,
+        0.862
+      ]
+    },
+    "Our IVF, 16 lists, 4 probes": {
+      "recall_at_1": 0.958,
+      "recall_at_5": 0.958,
+      "same_order_as_exact": 40,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 21,
+      "mean_vectors_scored": 116.2,
+      "recall_at_5_over_builds": [
+        0.925,
+        0.958
+      ]
+    },
+    "Our IVF, 16 lists, 16 probes": {
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "same_order_as_exact": 48,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "mean_vectors_scored": 347.0,
+      "recall_at_5_over_builds": [
+        1.0,
+        1.0
+      ]
+    },
+    "pgvector, no index": {
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "same_order_as_exact": 48,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "recall_at_5_over_builds": [
+        1.0,
+        1.0
+      ]
+    },
+    "pgvector IVFFlat, 16 lists, 1 probe": {
+      "recall_at_1": 0.667,
+      "recall_at_5": 0.671,
+      "same_order_as_exact": 11,
+      "mean_results": 4.96,
+      "searches_with_fewer_than_5": 2,
+      "questions_with_a_relevant_lesson": 20,
+      "recall_at_5_over_builds": [
+        0.608,
+        0.671
+      ]
+    },
+    "pgvector IVFFlat, 16 lists, 2 probes": {
+      "recall_at_1": 0.896,
+      "recall_at_5": 0.883,
+      "same_order_as_exact": 28,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 21,
+      "recall_at_5_over_builds": [
+        0.792,
+        0.883
+      ]
+    },
+    "pgvector IVFFlat, 16 lists, 4 probes": {
+      "recall_at_1": 0.958,
+      "recall_at_5": 0.975,
+      "same_order_as_exact": 44,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "recall_at_5_over_builds": [
+        0.933,
+        0.975
+      ]
+    },
+    "pgvector IVFFlat, 16 lists, 16 probes": {
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "same_order_as_exact": 48,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "recall_at_5_over_builds": [
+        1.0,
+        1.0
+      ]
+    },
+    "pgvector HNSW, ef_search 10": {
+      "recall_at_1": 0.938,
+      "recall_at_5": 0.963,
+      "same_order_as_exact": 43,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "recall_at_5_over_builds": [
+        0.958,
+        0.992
+      ]
+    },
+    "pgvector HNSW, ef_search 20": {
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "same_order_as_exact": 48,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "recall_at_5_over_builds": [
+        1.0,
+        1.0
+      ]
+    },
+    "pgvector HNSW, ef_search 40": {
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "same_order_as_exact": 48,
+      "mean_results": 5.0,
+      "searches_with_fewer_than_5": 0,
+      "questions_with_a_relevant_lesson": 22,
+      "recall_at_5_over_builds": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "filtered": {
+    "Builds only": {
+      "matching_passages": 111,
+      "Pre-filtered exact search": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "same_order_as_exact": 48,
+        "mean_results": 5.0,
+        "searches_with_fewer_than_5": 0,
+        "questions_with_a_relevant_lesson": 7
+      },
+      "pgvector, HNSW and B-tree indexes": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "same_order_as_exact": 48,
+        "mean_results": 5.0,
+        "searches_with_fewer_than_5": 0,
+        "questions_with_a_relevant_lesson": 7,
+        "recall_at_5_over_builds": [
+          1.0,
+          1.0
+        ]
+      },
+      "pgvector, HNSW only, ef_search 40": {
+        "recall_at_1": 0.979,
+        "recall_at_5": 0.971,
+        "same_order_as_exact": 45,
+        "mean_results": 4.88,
+        "searches_with_fewer_than_5": 2,
+        "questions_with_a_relevant_lesson": 7,
+        "recall_at_5_over_builds": [
+          0.971,
+          0.971
+        ]
+      },
+      "pgvector, HNSW only, iterative scan": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 0.996,
+        "same_order_as_exact": 47,
+        "mean_results": 5.0,
+        "searches_with_fewer_than_5": 0,
+        "questions_with_a_relevant_lesson": 7,
+        "recall_at_5_over_builds": [
+          0.996,
+          0.996
+        ]
+      }
+    },
+    "Programming foundations topic": {
+      "matching_passages": 28,
+      "Pre-filtered exact search": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "same_order_as_exact": 48,
+        "mean_results": 5.0,
+        "searches_with_fewer_than_5": 0,
+        "questions_with_a_relevant_lesson": 3
+      },
+      "pgvector, HNSW and B-tree indexes": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "same_order_as_exact": 48,
+        "mean_results": 5.0,
+        "searches_with_fewer_than_5": 0,
+        "questions_with_a_relevant_lesson": 3,
+        "recall_at_5_over_builds": [
+          1.0,
+          1.0
+        ]
+      },
+      "pgvector, HNSW only, ef_search 40": {
+        "recall_at_1": 0.333,
+        "recall_at_5": 0.171,
+        "same_order_as_exact": 4,
+        "mean_results": 0.85,
+        "searches_with_fewer_than_5": 44,
+        "questions_with_a_relevant_lesson": 3,
+        "recall_at_5_over_builds": [
+          0.171,
+          0.175
+        ]
+      },
+      "pgvector, HNSW only, iterative scan": {
+        "recall_at_1": 0.979,
+        "recall_at_5": 0.996,
+        "same_order_as_exact": 47,
+        "mean_results": 5.0,
+        "searches_with_fewer_than_5": 0,
+        "questions_with_a_relevant_lesson": 3,
+        "recall_at_5_over_builds": [
+          0.996,
+          1.0
+        ]
+      }
+    }
+  }
+}

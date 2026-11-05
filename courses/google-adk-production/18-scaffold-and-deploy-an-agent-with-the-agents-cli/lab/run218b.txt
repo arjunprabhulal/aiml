@@ -1,0 +1,16 @@
+Querying remote agent: https://us-central1-aiplatform.googleapis.com/v1/projects/913703049174/locations/us-central1/reasoningEngines/8806439701503279104 (mode: adk)
+[user]: And on staging?
+[docs_helper]: To roll staging back to `r41`, specify `--env staging`:
+
+```bash
+docuctl rollback --env staging --to r41
+```
+
+If you just want to roll back to the previous release on staging, omit `--to`:
+
+```bash
+docuctl rollback --env staging
+```
+
+Session: 2730795903932694528
+  Resume with: agents-cli run "<message>" --url "https://us-central1-aiplatform.googleapis.com/v1/projects/913703049174/locations/us-central1/reasoningEngines/8806439701503279104" --mode adk --session-id 2730795903932694528

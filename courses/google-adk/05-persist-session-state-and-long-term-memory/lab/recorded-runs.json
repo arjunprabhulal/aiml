@@ -1,0 +1,270 @@
+{
+ "model": "gemini-3.8-flash",
+ "steps": [
+  {
+   "run": 1,
+   "user": "dana",
+   "question": "I'm on docuctl 1.x. How do I roll back production to r41?",
+   "transcript": "call   set_docuctl_version {'version': '1.x'}\ncall   read_page {'page': 'rollback'}\nresult set_docuctl_version ['saved']\nresult read_page ['page', 'text']\nstate  {'user:docuctl_version': '1.x'}\nstate  {'last_answer': 'In docuctl 1.x, roll back using:\\n\\n```bash\\ndocuctl release revert r41\\n```\\n\\n(`docuctl rollback` was introduced in docuctl 2.0 to replace `docuctl release revert`). Note that database migrations are not rolled back automatically.'}\nanswer In docuctl 1.x, roll back using:\n\n```bash\ndocuctl release revert r41\n```\n\n(`docuctl rollback` was introduced in docuctl 2.0 to replace `docuctl release revert`). Note that database migrations are not rolled back automatically.",
+   "state": {
+    "last_answer": "In docuctl 1.x, roll back using:\n\n```bash\ndocuctl release revert r41\n```\n\n(`docuctl rollback` was introduced in docuctl 2.0 to replace `docuctl release revert`). Note that database migrations are not rolled back automatically.",
+    "user:docuctl_version": "1.x"
+   },
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1025722",
+        "args": {
+         "version": "1.x"
+        },
+        "name": "set_docuctl_version"
+       }
+      },
+      {
+       "function_call": {
+        "id": "call_1025723",
+        "args": {
+         "page": "rollback"
+        },
+        "name": "read_page"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "In docuctl 1.x, roll back using:\n\n```bash\ndocuctl release revert r41\n```\n\n(`docuctl rollback` was introduced in docuctl 2.0 to replace `docuctl release revert`). Note that database migrations are not rolled back automatically."
+      }
+     ],
+     "role": "model"
+    }
+   ]
+  },
+  {
+   "run": 1,
+   "user": "dana",
+   "question": "Which release did you tell me to revert production to earlier?",
+   "transcript": "call   load_memory {'query': 'revert production release'}\nresult load_memory ['result']\nstate  {'last_answer': 'Earlier, I told you to revert production to release **r41** using:\\n\\n```bash\\ndocuctl release revert r41\\n```'}\nanswer Earlier, I told you to revert production to release **r41** using:\n\n```bash\ndocuctl release revert r41\n```",
+   "state": {
+    "last_answer": "Earlier, I told you to revert production to release **r41** using:\n\n```bash\ndocuctl release revert r41\n```",
+    "user:docuctl_version": "1.x"
+   },
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1162993",
+        "args": {
+         "query": "revert production release"
+        },
+        "name": "load_memory"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "Earlier, I told you to revert production to release **r41** using:\n\n```bash\ndocuctl release revert r41\n```"
+      }
+     ],
+     "role": "model"
+    }
+   ]
+  },
+  {
+   "run": 2,
+   "user": "dana",
+   "question": "How do I roll back staging to the previous release?",
+   "transcript": "call   read_page {'page': 'rollback'}\nresult read_page ['page', 'text']\nstate  {'last_answer': 'In docuctl 1.x, use `docuctl release revert`:\\n\\n```bash\\ndocuctl release revert <release-id> --env staging\\n```\\n\\nFind the previous release ID using `docuctl releases --env staging`, then pass it to `docuctl release revert`. Note that database migrations are not rolled back automatically.'}\nanswer In docuctl 1.x, use `docuctl release revert`:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```\n\nFind the previous release ID using `docuctl releases --env staging`, then pass it to `docuctl release revert`. Note that database migrations are not rolled back automatically.",
+   "state": {
+    "last_answer": "In docuctl 1.x, use `docuctl release revert`:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```\n\nFind the previous release ID using `docuctl releases --env staging`, then pass it to `docuctl release revert`. Note that database migrations are not rolled back automatically.",
+    "user:docuctl_version": "1.x"
+   },
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1178233",
+        "args": {
+         "page": "rollback"
+        },
+        "name": "read_page"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "In docuctl 1.x, use `docuctl release revert`:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```\n\nFind the previous release ID using `docuctl releases --env staging`, then pass it to `docuctl release revert`. Note that database migrations are not rolled back automatically."
+      }
+     ],
+     "role": "model"
+    }
+   ]
+  },
+  {
+   "run": 2,
+   "user": "dana",
+   "question": "Which release did you tell me to revert production to earlier?",
+   "transcript": "call   load_memory {'query': 'revert production release'}\nresult load_memory ['result']\ncall   load_memory {'query': 'production'}\nresult load_memory ['result']\ncall   load_memory {'query': 'release'}\nresult load_memory ['result']\ncall   load_memory {'query': 'revert'}\nresult load_memory ['result']\ncall   load_memory {'query': ''}\nresult load_memory ['result']\nstate  {'last_answer': \"Earlier, we discussed rolling back **staging** rather than production. I didn't specify a release ID; instead, I recommended finding the previous release ID with:\\n\\n```bash\\ndocuctl releases --env staging\\n```\\n\\nand then reverting to it using:\\n\\n```bash\\ndocuctl release revert <release-id> --env staging\\n```\"}\nanswer Earlier, we discussed rolling back **staging** rather than production. I didn't specify a release ID; instead, I recommended finding the previous release ID with:\n\n```bash\ndocuctl releases --env staging\n```\n\nand then reverting to it using:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```",
+   "state": {
+    "last_answer": "Earlier, we discussed rolling back **staging** rather than production. I didn't specify a release ID; instead, I recommended finding the previous release ID with:\n\n```bash\ndocuctl releases --env staging\n```\n\nand then reverting to it using:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```",
+    "user:docuctl_version": "1.x"
+   },
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2827866",
+        "args": {
+         "query": "revert production release"
+        },
+        "name": "load_memory"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_2503893",
+        "args": {
+         "query": "production"
+        },
+        "name": "load_memory"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1967519",
+        "args": {
+         "query": "release"
+        },
+        "name": "load_memory"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_958900",
+        "args": {
+         "query": "revert"
+        },
+        "name": "load_memory"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1943039",
+        "args": {
+         "query": ""
+        },
+        "name": "load_memory"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "Earlier, we discussed rolling back **staging** rather than production. I didn't specify a release ID; instead, I recommended finding the previous release ID with:\n\n```bash\ndocuctl releases --env staging\n```\n\nand then reverting to it using:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```"
+      }
+     ],
+     "role": "model"
+    }
+   ]
+  },
+  {
+   "run": 2,
+   "user": "lee",
+   "question": "How do I roll back staging to the previous release?",
+   "transcript": "call   read_page {'page': 'rollback'}\nresult read_page ['page', 'text']\nstate  {'last_answer': 'Which version of docuctl are you using (1.x or 2.x)? \\n\\nThe rollback command depends on your version: docuctl 2.x uses `docuctl rollback`, while 1.x used `docuctl release revert`. Once you confirm your version, I can provide the exact command.'}\nanswer Which version of docuctl are you using (1.x or 2.x)? \n\nThe rollback command depends on your version: docuctl 2.x uses `docuctl rollback`, while 1.x used `docuctl release revert`. Once you confirm your version, I can provide the exact command.",
+   "state": {
+    "last_answer": "Which version of docuctl are you using (1.x or 2.x)? \n\nThe rollback command depends on your version: docuctl 2.x uses `docuctl rollback`, while 1.x used `docuctl release revert`. Once you confirm your version, I can provide the exact command."
+   },
+   "model_turns": [
+    {
+     "parts": [
+      {
+       "function_call": {
+        "id": "call_1325966",
+        "args": {
+         "page": "rollback"
+        },
+        "name": "read_page"
+       }
+      }
+     ],
+     "role": "model"
+    },
+    {
+     "parts": [
+      {
+       "text": "Which version of docuctl are you using (1.x or 2.x)? \n\nThe rollback command depends on your version: docuctl 2.x uses `docuctl rollback`, while 1.x used `docuctl release revert`. Once you confirm your version, I can provide the exact command."
+      }
+     ],
+     "role": "model"
+    }
+   ]
+  }
+ ],
+ "database": {
+  "rows": {
+   "adk_internal_metadata": 1,
+   "app_states": 1,
+   "events": 28,
+   "sessions": 5,
+   "user_states": 2
+  },
+  "user_states": [
+   [
+    "docs",
+    "dana",
+    "{\"docuctl_version\": \"1.x\"}"
+   ],
+   [
+    "docs",
+    "lee",
+    "{}"
+   ]
+  ]
+ },
+ "failures": {
+  "direct_mutation": {
+   "local": {
+    "user:docuctl_version": "2.x"
+   },
+   "stored": {}
+  },
+  "stale_session": "StaleSessionError: The session has been modified in storage since it was loaded. Please reload the session before appending more events.",
+  "missing_placeholder": "KeyError: \"Context variable not found: `user:docuctl_version` in agent 'docs_assistant'.\""
+ }
+}

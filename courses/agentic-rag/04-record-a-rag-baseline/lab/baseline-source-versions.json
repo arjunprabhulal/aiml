@@ -1,0 +1,107 @@
+{
+  "scope_packet_sha256": "01b6a829175288ba3165912aca10a45a54b50ddc02f86bf7ec0236d13a8190b6",
+  "scope_approved_by_root": true,
+  "required_next_step": "Root review of exact authored code/metrics/source parity/offline tests before any model call.",
+  "scope_packet_roadmap_reference_sha256": "708004143925df3a2be7bc8ccbb4feef356cf2b41c961e5f5f9ca776edc0e202",
+  "current_roadmap_reference_sha256": "78db312d2dd33bc5a524a8a0f221fc07da1e3ee12bd99b18f53ff02ad1ef7fc1",
+  "reference_refresh_reason": "The coordinator updated pilot status and the provisional planned lesson count to 35 after scope preparation. Only the current roadmap reference is refreshed; frozen dataset, corpus and held-lock bytes and semantics remain exact.",
+  "reuse": {
+    "src/agentic_rag/concepts.py": {
+      "origin": "Build a RAG Pipeline/src/agentic_rag/concepts.py",
+      "sha256": "6ed0eba26ab499d59294c1f0838fa5d8591da93cfecef71e74baeefb658c2850",
+      "unchanged": true
+    },
+    "src/agentic_rag/request_trace.py": {
+      "origin": "Build a RAG Pipeline/src/agentic_rag/request_trace.py",
+      "sha256": "f53481776b34813d1fc0151e207ed21edd4378119da2302e982d4c5ebcc5b0ae",
+      "unchanged": true
+    },
+    "src/agentic_rag/__init__.py": {
+      "origin": "Build a RAG Pipeline/src/agentic_rag/__init__.py",
+      "sha256": "33e3fb0ec92052d03b678bd67a77de17d78b8f3bb178ae37c2661051e504ae97",
+      "unchanged": true
+    },
+    "pyproject.toml": {
+      "origin": "Build a RAG Pipeline/pyproject.toml",
+      "sha256": "54a0efac39adbb0fdfbba1f8600f2d8cc51d27b959892427db8c6db6e863b6c1",
+      "unchanged": true
+    },
+    "requirements-lock.txt": {
+      "origin": "Build a RAG Pipeline/requirements-lock.txt",
+      "sha256": "9ee5dbc7310835f44255d833cb506ff8506543d672133dde0bc556105f9953aa",
+      "unchanged": true
+    },
+    "data/cases.json": {
+      "origin": "build-a-rag-eval-dataset/data/cases.json",
+      "sha256": "7908df08f84fc1673f3772870c7da5a62b94fce681516dce0708dddd5e6903f5",
+      "unchanged": true
+    },
+    "data/sources.json": {
+      "origin": "build-a-rag-eval-dataset/data/sources.json",
+      "sha256": "b1b2bb8452ce7177e6653258a91ef6961eec722eab56698453b7e38606d17a4b",
+      "unchanged": true
+    },
+    "data/corpus-manifest.json": {
+      "origin": "build-a-rag-eval-dataset/data/corpus-manifest.json",
+      "sha256": "924d66bc01161ee6aee09676afbadb5c56c62e9dd996c50083dab744fcc76a93",
+      "unchanged": true
+    },
+    "data/held-out.lock.json": {
+      "origin": "build-a-rag-eval-dataset/data/held-out.lock.json",
+      "sha256": "567169e5fdbb60468ac801831562ff49be09703dae80fe1f58021aa9beb91089",
+      "unchanged": true
+    },
+    "source-versions.json": {
+      "origin": "build-a-rag-eval-dataset/source-versions.json",
+      "sha256": "e783e70c4b8e4b577ebe8b827af0e65383b033f6e6d21d586faed051a24cacfc",
+      "unchanged": true
+    },
+    "rag_dataset.py": {
+      "origin": "build-a-rag-eval-dataset/rag_dataset.py",
+      "sha256": "f9814cde465fbfbdff06129279543ec92e56a83abadfc6b93f2131ed4af541bf",
+      "unchanged": true
+    },
+    "eval_task.py": {
+      "origin": "build-a-rag-eval-dataset/eval_task.py",
+      "sha256": "9ffe18bffb12da65ca21ba49611a15f23f13d8be6af054b68fc9c90647713530",
+      "unchanged": true
+    },
+    "pipeline_ids.py": {
+      "origin": "build-a-rag-eval-dataset/pipeline_ids.py",
+      "sha256": "497a7252fceb7c1ebb2f9fd6d19630472b0cf861fc4190065873e06f50813fd9",
+      "unchanged": true
+    },
+    "vendor/evals/harness.py": {
+      "origin": "build-a-rag-eval-dataset/vendor/evals/harness.py",
+      "sha256": "cc41a86aeb449476abbb983fae570daeef45aa970206aae7a1da20c2026b19a5",
+      "unchanged": true
+    },
+    "vendor/evals/leakcheck.py": {
+      "origin": "build-a-rag-eval-dataset/vendor/evals/leakcheck.py",
+      "sha256": "7b01ffb1dba8869b45317dc3b6a987af25a9edeb0cbd2d909c9eb8a55fe26ba6",
+      "unchanged": true
+    },
+    "test_dataset.py": {
+      "origin": "build-a-rag-eval-dataset/test_dataset.py",
+      "sha256": "d9fcda7a247e5d0b67e307492c0e6a0c215891b4a54d36f9843a0156cb6c9a4d",
+      "unchanged": true
+    },
+    "data/docs.json": {
+      "origin": "build-a-rag-eval-dataset/data/sources.json (same bytes; existing pipeline data path)",
+      "sha256": "b1b2bb8452ce7177e6653258a91ef6961eec722eab56698453b7e38606d17a4b",
+      "unchanged": true
+    },
+    "vendor/evals/retrieval_scores.py": {
+      "origin": "build-retrieval-generation-and-tool-execution-evaluation-reports/evaluate.py:retrieval_scores",
+      "function_sha256": "9a25451b1edb35214d2e43ce267fe537f0bac4423029a54c27ff20acc920c75d",
+      "function_unchanged": true,
+      "reason": "Reuse the deterministic helper without importing the DeepEval/Gemini judge module or adding dependencies."
+    },
+    "LICENSE": {
+      "origin": "Build a RAG Pipeline/LICENSE",
+      "sha256": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+      "unchanged": true
+    }
+  },
+  "inference_authorized_at_preparation": false
+}

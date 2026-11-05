@@ -1,0 +1,9 @@
+$ python adapt.py parity --work recorded-adaptations/work --cohort recorded/cohort.json --model recorded/candidate.json --out recorded-adaptations/parity.json
+{
+  "cutoff": 19440,
+  "value": 1,
+  "same_snapshot_parity": true,
+  "different_arrival_rule_value": 2,
+  "stale_status": "stale",
+  "unknown_user_status": "missing"
+}

@@ -1,0 +1,65 @@
+2026-10-20T15:12:40Z deploy r43 started env=staging commit=0be77c3 by=ci-docs-api
+2026-10-20T15:12:47Z resolve ship.toml
+2026-10-20T15:12:54Z resolve secrets (3 references)
+2026-10-20T15:13:01Z build: make build
+2026-10-20T15:13:08Z build: compiling src/api/routes.py
+2026-10-20T15:13:15Z build: compiling src/api/search.py
+2026-10-20T15:13:22Z build: compiling src/api/models.py
+2026-10-20T15:13:29Z build: compiling src/api/auth.py
+2026-10-20T15:13:36Z build: compiling src/index/build.py
+2026-10-20T15:13:43Z build: compiling src/index/schema.py
+2026-10-20T15:13:50Z build: tests passed (214 passed, 0 failed)
+2026-10-20T15:13:57Z build: image docs-api:r43 pushed (184 MB)
+2026-10-20T15:14:04Z pre_deploy: alembic upgrade head
+2026-10-20T15:14:11Z pre_deploy: INFO  [alembic.runtime.migration] Running upgrade 7b9c -> a02e, backfill pages.locale with 'en', then make it NOT NULL
+2026-10-20T15:14:18Z pre_deploy: exit 0
+2026-10-20T15:14:25Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:14:32Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:14:39Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:14:46Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:14:53Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:00Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:07Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:14Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:21Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:28Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:35Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:42Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:49Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:15:56Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:03Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:10Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:17Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:24Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:31Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:38Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:45Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:52Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:16:59Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:06Z replica 1: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:13Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:20Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:27Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:34Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:41Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:48Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:17:55Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:02Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:09Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:16Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:23Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:30Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:37Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:44Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:51Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:18:58Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:05Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:12Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:19Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:26Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:33Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:40Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:47Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:19:54Z replica 2: GET /healthz 503 (search index not loaded: SEARCH_INDEX_URL is empty)
+2026-10-20T15:20:01Z health: no replica healthy after 5m; stopping r43 replicas
+2026-10-20T15:20:08Z deploy r43 failed: health check failed; env staging keeps r41

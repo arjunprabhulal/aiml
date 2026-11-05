@@ -1,0 +1,17 @@
+[
+  {
+    "id": "unchanged",
+    "expression": "attempt <= max_attempts",
+    "reported_done": true
+  },
+  {
+    "id": "boundary-fix",
+    "expression": "attempt < max_attempts",
+    "reported_done": true
+  },
+  {
+    "id": "wrong-direction",
+    "expression": "attempt > max_attempts",
+    "reported_done": true
+  }
+]

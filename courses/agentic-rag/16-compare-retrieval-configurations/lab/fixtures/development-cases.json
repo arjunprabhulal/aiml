@@ -1,0 +1,90 @@
+[
+  {
+    "id": "utf8-write",
+    "split": "development",
+    "class": "answerable",
+    "input": "How do I explicitly select UTF-8 when saving text with pathlib?",
+    "expected": {
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "source_version": "3.12",
+          "source_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "chunk_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        }
+      ]
+    },
+    "fail_if": [],
+    "why": "The supplied write_text summary names the encoding option.",
+    "tags": {
+      "python_version": "3.12",
+      "intent_family": "path-write"
+    }
+  },
+  {
+    "id": "replace-file",
+    "split": "development",
+    "class": "answerable",
+    "input": "Will write_text replace the contents of an existing file?",
+    "expected": {
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "source_version": "3.12",
+          "source_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "chunk_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        }
+      ]
+    },
+    "fail_if": [],
+    "why": "The supplied summary explicitly states existing-file replacement.",
+    "tags": {
+      "python_version": "3.12",
+      "intent_family": "path-write"
+    }
+  },
+  {
+    "id": "json-result-type",
+    "split": "development",
+    "class": "answerable",
+    "input": "Does json.dumps produce text or a bytes object?",
+    "expected": {
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "json-text",
+          "chunk_id": "json-text:8a17e251a41ccb3b",
+          "source_version": "3.12",
+          "source_text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+          "chunk_text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+        }
+      ]
+    },
+    "fail_if": [],
+    "why": "The supplied JSON summary states the result type.",
+    "tags": {
+      "python_version": "3.12",
+      "intent_family": "json-return"
+    }
+  },
+  {
+    "id": "backup-schedule",
+    "split": "development",
+    "class": "unsupported",
+    "input": "How frequently does our cloud provider back up these files?",
+    "expected": {
+      "status": "not_in_docs",
+      "targets": []
+    },
+    "fail_if": [],
+    "why": "No service operations policy exists in this corpus.",
+    "tags": {
+      "python_version": "3.12",
+      "intent_family": "service-policy"
+    }
+  }
+]

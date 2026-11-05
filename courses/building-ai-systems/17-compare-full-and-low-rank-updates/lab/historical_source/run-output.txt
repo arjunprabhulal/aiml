@@ -1,0 +1,373 @@
+{
+  "base_sha256": "71330800b6de065580e9d7341399d451547f9a7e1eb4220ceba9ed00c4c50e6b",
+  "baseline": {
+    "correct": 2,
+    "mean_cross_entropy": 1.112192,
+    "predictions": [
+      {
+        "expected": "deployment",
+        "id": "heldout-1",
+        "predicted": "deployment"
+      },
+      {
+        "expected": "deployment",
+        "id": "heldout-2",
+        "predicted": "deployment"
+      },
+      {
+        "expected": "rollback",
+        "id": "heldout-3",
+        "predicted": "deployment"
+      },
+      {
+        "expected": "rollback",
+        "id": "heldout-4",
+        "predicted": "deployment"
+      },
+      {
+        "expected": "credentials",
+        "id": "heldout-5",
+        "predicted": "deployment"
+      },
+      {
+        "expected": "credentials",
+        "id": "heldout-6",
+        "predicted": "deployment"
+      }
+    ],
+    "total": 6
+  },
+  "epochs": 200,
+  "evaluation_feature_duplicates": 4,
+  "heldout_sha256": "266978b7272eebefcbf33e3f473d6e53b848f872eb1317e07737d65ae2ef2df0",
+  "learning_rate": 0.12,
+  "results": {
+    "full": {
+      "base_unchanged": true,
+      "heldout": {
+        "correct": 6,
+        "mean_cross_entropy": 0.061694,
+        "predictions": [
+          {
+            "expected": "deployment",
+            "id": "heldout-1",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "heldout-2",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "rollback",
+            "id": "heldout-3",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "heldout-4",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "credentials",
+            "id": "heldout-5",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "heldout-6",
+            "predicted": "credentials"
+          }
+        ],
+        "total": 6
+      },
+      "train": {
+        "correct": 12,
+        "mean_cross_entropy": 0.016239,
+        "predictions": [
+          {
+            "expected": "deployment",
+            "id": "train-1",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "train-2",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "train-3",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-4",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-5",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-6",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-7",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-8",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-9",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-10",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-11",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-12",
+            "predicted": "credentials"
+          }
+        ],
+        "total": 12
+      },
+      "trainable_parameters": 30
+    },
+    "lora_rank_1": {
+      "base_unchanged": true,
+      "heldout": {
+        "correct": 6,
+        "mean_cross_entropy": 0.115056,
+        "predictions": [
+          {
+            "expected": "deployment",
+            "id": "heldout-1",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "heldout-2",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "rollback",
+            "id": "heldout-3",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "heldout-4",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "credentials",
+            "id": "heldout-5",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "heldout-6",
+            "predicted": "credentials"
+          }
+        ],
+        "total": 6
+      },
+      "train": {
+        "correct": 12,
+        "mean_cross_entropy": 0.06405,
+        "predictions": [
+          {
+            "expected": "deployment",
+            "id": "train-1",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "train-2",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "train-3",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-4",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-5",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-6",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-7",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-8",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-9",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-10",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-11",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-12",
+            "predicted": "credentials"
+          }
+        ],
+        "total": 12
+      },
+      "trainable_parameters": 13
+    },
+    "lora_rank_2": {
+      "base_unchanged": true,
+      "heldout": {
+        "correct": 6,
+        "mean_cross_entropy": 0.018245,
+        "predictions": [
+          {
+            "expected": "deployment",
+            "id": "heldout-1",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "heldout-2",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "rollback",
+            "id": "heldout-3",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "heldout-4",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "credentials",
+            "id": "heldout-5",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "heldout-6",
+            "predicted": "credentials"
+          }
+        ],
+        "total": 6
+      },
+      "train": {
+        "correct": 12,
+        "mean_cross_entropy": 0.001077,
+        "predictions": [
+          {
+            "expected": "deployment",
+            "id": "train-1",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "train-2",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "deployment",
+            "id": "train-3",
+            "predicted": "deployment"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-4",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-5",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-6",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "rollback",
+            "id": "train-7",
+            "predicted": "rollback"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-8",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-9",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-10",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-11",
+            "predicted": "credentials"
+          },
+          {
+            "expected": "credentials",
+            "id": "train-12",
+            "predicted": "credentials"
+          }
+        ],
+        "total": 12
+      },
+      "trainable_parameters": 26
+    }
+  },
+  "seed": 31,
+  "task": "small bag-of-words intent classifier; not a pretrained LLM",
+  "train_sha256": "f7da4b0b5143f626465d1c7911908871c9f41bf20fa20cdff078bffa413aeb2a"
+}

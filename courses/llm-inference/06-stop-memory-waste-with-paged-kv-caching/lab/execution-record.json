@@ -1,0 +1,96 @@
+{
+  "execution_mode": "executed local algorithm or offline analysis; live model executions have separate raw records",
+  "commands": [
+    "python3 lab.py",
+    "python3 -m unittest -v test_lab.py"
+  ],
+  "exit_statuses": [
+    0,
+    0
+  ],
+  "environment": {
+    "python": "3.15.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "elapsed_wall_seconds": 0.077067,
+  "source_sha256": {
+    "test_lab.py": "62c9f2412481022f8c96db211d05444786ee352cb0a920e5d68cd35a931416e9",
+    "lab.py": "9301487b2faab38c68e1024eac500eaa65565f3159e98669e0bd0d7c471b6c2e"
+  },
+  "output_sha256": "bfe3f0ede5d8fdad24f1d00abb4f531bdcf4f9086bd430940ee6c61e4656da19",
+  "offline_guard_mutation_check": {
+    "method": "Remove one raise statement at a time in an isolated copy and rerun its unittest files; detection means nonzero exit or an eight-second mutant timeout. Live-model scripts are excluded.",
+    "mutations": [
+      {
+        "file": "lab.py",
+        "line": 22,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 30,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 32,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 36,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 48,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 92,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 94,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 108,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 118,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 126,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 128,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 131,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 143,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 145,
+        "detected": true
+      }
+    ]
+  }
+}

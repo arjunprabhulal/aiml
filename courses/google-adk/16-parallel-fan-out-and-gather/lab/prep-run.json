@@ -1,0 +1,345 @@
+{
+  "environment": {
+    "google-adk": "2.12.0",
+    "google-genai": "2.32.0",
+    "model": "gemini-3.8-flash"
+  },
+  "runs": [
+    {
+      "workflow": "graph",
+      "release": "release-3.5.0.md",
+      "events": [
+        {
+          "author": "release_prep",
+          "node_info": {
+            "path": "release_prep@1/load_release@1",
+            "output_for": [
+              "release_prep@1/load_release@1"
+            ]
+          },
+          "output": {
+            "version": "3.5.0",
+            "entries": [
+              "Build pages in parallel; set the worker count with `--jobs`. See /guide/parallel-builds/.",
+              "BREAKING: `docuctl build` no longer reads `docuctl.yaml`; rename it to `docuctl.toml`. See /reference/config/.",
+              "Fix the search index missing pages whose title contains a colon. See /reference/search/."
+            ],
+            "sitemap": "site-3.5.0/sitemap.txt"
+          },
+          "state": {
+            "version": "3.5.0"
+          }
+        },
+        {
+          "author": "release_prep",
+          "node_info": {
+            "path": "release_prep@1/check_links@1",
+            "output_for": [
+              "release_prep@1/check_links@1"
+            ]
+          },
+          "output": {
+            "missing": [
+              "/reference/search/"
+            ]
+          }
+        },
+        {
+          "author": "write_upgrade_steps",
+          "node_info": {
+            "path": "release_prep@1/write_upgrade_steps@1",
+            "output_for": [
+              "release_prep@1/write_upgrade_steps@1"
+            ]
+          },
+          "output": {
+            "steps": [
+              "Rename `docuctl.yaml` to `docuctl.toml` for `docuctl build`."
+            ]
+          },
+          "message": "{\n  \"steps\": [\n    \"Rename `docuctl.yaml` to `docuctl.toml` for `docuctl build`.\"\n  ]\n}"
+        },
+        {
+          "author": "write_highlights",
+          "node_info": {
+            "path": "release_prep@1/write_highlights@1",
+            "output_for": [
+              "release_prep@1/write_highlights@1"
+            ]
+          },
+          "output": {
+            "bullets": [
+              "Add parallel page building via the `--jobs` flag.",
+              "`docuctl build` now requires renaming `docuctl.yaml` to `docuctl.toml`.",
+              "Fix search indexing for pages with colons in their titles."
+            ]
+          },
+          "message": "{\"bullets\":[\"Add parallel page building via the `--jobs` flag.\",\"`docuctl build` now requires renaming `docuctl.yaml` to `docuctl.toml`.\",\"Fix search indexing for pages with colons in their titles.\"]}"
+        },
+        {
+          "author": "release_prep",
+          "node_info": {
+            "path": "release_prep@1/gather@1",
+            "output_for": [
+              "release_prep@1/gather@1"
+            ]
+          },
+          "output": {
+            "check_links": {
+              "missing": [
+                "/reference/search/"
+              ]
+            },
+            "write_highlights": {
+              "bullets": [
+                "Add parallel page building via the `--jobs` flag.",
+                "`docuctl build` now requires renaming `docuctl.yaml` to `docuctl.toml`.",
+                "Fix search indexing for pages with colons in their titles."
+              ]
+            },
+            "write_upgrade_steps": {
+              "steps": [
+                "Rename `docuctl.yaml` to `docuctl.toml` for `docuctl build`."
+              ]
+            }
+          }
+        },
+        {
+          "author": "release_prep",
+          "node_info": {
+            "path": "release_prep@1/assemble@1"
+          },
+          "message": "# docuctl 3.5.0 release notes\n\n- Add parallel page building via the `--jobs` flag.\n- `docuctl build` now requires renaming `docuctl.yaml` to `docuctl.toml`.\n- Fix search indexing for pages with colons in their titles.\n\n## Upgrade\n1. Rename `docuctl.yaml` to `docuctl.toml` for `docuctl build`.\n\nLink check: missing /reference/search/"
+        }
+      ],
+      "error": null,
+      "model_calls": [
+        {
+          "system": "831e56cc9481",
+          "request": "{\"version\": \"3.5.0\", \"entries\": [\"Build pages in parallel; set the worker count with `--jobs`. See /guide/parallel-builds/.\", \"BREAKING: `docuctl build` no longer reads `docuctl.yaml`; rename it to `docuctl.toml`. See /reference/config/.\", \"Fix the search index missing pages whose title contains a colon. See /reference/search/.\"], \"sitemap\": \"site-3.5.0/sitemap.txt\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\n  \"steps\": [\n    \"Rename `docuctl.yaml` to `docuctl.toml` for `docuctl build`.\"\n  ]\n}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 39,
+              "prompt_token_count": 140,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 140
+                }
+              ],
+              "total_token_count": 179
+            }
+          },
+          "latency_s": 1.68
+        },
+        {
+          "system": "dd65f9bcb56b",
+          "request": "{\"version\": \"3.5.0\", \"entries\": [\"Build pages in parallel; set the worker count with `--jobs`. See /guide/parallel-builds/.\", \"BREAKING: `docuctl build` no longer reads `docuctl.yaml`; rename it to `docuctl.toml`. See /reference/config/.\", \"Fix the search index missing pages whose title contains a colon. See /reference/search/.\"], \"sitemap\": \"site-3.5.0/sitemap.txt\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"bullets\":[\"Add parallel page building via the `--jobs` flag.\",\"`docuctl build` now requires renaming `docuctl.yaml` to `docuctl.toml`.\",\"Fix search indexing for pages with colons in their titles.\"]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 53,
+              "prompt_token_count": 127,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 127
+                }
+              ],
+              "total_token_count": 180
+            }
+          },
+          "latency_s": 2.05
+        }
+      ],
+      "run_seconds": 2.06
+    },
+    {
+      "workflow": "graph",
+      "release": "release-3.6.0.md",
+      "events": [],
+      "error": "FileNotFoundError: site-3.6.0/sitemap.txt not found: build the site first",
+      "model_calls": [],
+      "run_seconds": 0.03
+    },
+    {
+      "workflow": "partial",
+      "release": "release-3.6.0.md",
+      "events": [
+        {
+          "author": "release_prep_partial",
+          "node_info": {
+            "path": "release_prep_partial@1/load_release@1",
+            "output_for": [
+              "release_prep_partial@1/load_release@1"
+            ]
+          },
+          "output": {
+            "version": "3.6.0",
+            "entries": [
+              "Add `docuctl preview --port` to choose the preview server port. See /reference/cli/.",
+              "BREAKING: Remove the `--legacy-nav` flag. See /guide/navigation/."
+            ],
+            "sitemap": "site-3.6.0/sitemap.txt"
+          },
+          "state": {
+            "version": "3.6.0"
+          }
+        },
+        {
+          "author": "release_prep_partial",
+          "node_info": {
+            "path": "release_prep_partial@1/prepare@1/check_links@1"
+          }
+        },
+        {
+          "author": "write_highlights",
+          "node_info": {
+            "path": "release_prep_partial@1/prepare@1/write_highlights@1",
+            "output_for": [
+              "release_prep_partial@1/prepare@1/write_highlights@1"
+            ]
+          },
+          "output": {
+            "bullets": [
+              "Added the `--port` flag to `docuctl preview` to specify the preview server port.",
+              "Removed the `--legacy-nav` flag."
+            ]
+          },
+          "message": "{\"bullets\": [\"Added the `--port` flag to `docuctl preview` to specify the preview server port.\", \"Removed the `--legacy-nav` flag.\"]}"
+        },
+        {
+          "author": "write_upgrade_steps",
+          "node_info": {
+            "path": "release_prep_partial@1/prepare@1/write_upgrade_steps@1",
+            "output_for": [
+              "release_prep_partial@1/prepare@1/write_upgrade_steps@1"
+            ]
+          },
+          "output": {
+            "steps": [
+              "Remove the `--legacy-nav` flag. See /guide/navigation/."
+            ]
+          },
+          "message": "{\"steps\": [\"Remove the `--legacy-nav` flag. See /guide/navigation/.\"]}"
+        },
+        {
+          "author": "release_prep_partial",
+          "node_info": {
+            "path": "release_prep_partial@1/prepare@1"
+          },
+          "message": "release_prep_partial@1/prepare@1/check_links@1 failed: FileNotFoundError: site-3.6.0/sitemap.txt not found: build the site first"
+        },
+        {
+          "author": "release_prep_partial",
+          "node_info": {
+            "path": "release_prep_partial@1/prepare@1",
+            "output_for": [
+              "release_prep_partial@1/prepare@1"
+            ]
+          },
+          "output": {
+            "write_highlights": {
+              "bullets": [
+                "Added the `--port` flag to `docuctl preview` to specify the preview server port.",
+                "Removed the `--legacy-nav` flag."
+              ]
+            },
+            "write_upgrade_steps": {
+              "steps": [
+                "Remove the `--legacy-nav` flag. See /guide/navigation/."
+              ]
+            },
+            "check_links": null
+          }
+        },
+        {
+          "author": "release_prep_partial",
+          "node_info": {
+            "path": "release_prep_partial@1/assemble@1"
+          },
+          "message": "# docuctl 3.6.0 release notes\n\n- Added the `--port` flag to `docuctl preview` to specify the preview server port.\n- Removed the `--legacy-nav` flag.\n\n## Upgrade\n1. Remove the `--legacy-nav` flag. See /guide/navigation/.\n\nLink check: not run (see the error above)."
+        }
+      ],
+      "error": null,
+      "model_calls": [
+        {
+          "system": "dd65f9bcb56b",
+          "request": "{\"version\": \"3.6.0\", \"entries\": [\"Add `docuctl preview --port` to choose the preview server port. See /reference/cli/.\", \"BREAKING: Remove the `--legacy-nav` flag. See /guide/navigation/.\"], \"sitemap\": \"site-3.6.0/sitemap.txt\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"bullets\": [\"Added the `--port` flag to `docuctl preview` to specify the preview server port.\", \"Removed the `--legacy-nav` flag.\"]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 35,
+              "prompt_token_count": 90,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 90
+                }
+              ],
+              "total_token_count": 125
+            }
+          },
+          "latency_s": 1.75
+        },
+        {
+          "system": "831e56cc9481",
+          "request": "{\"version\": \"3.6.0\", \"entries\": [\"Add `docuctl preview --port` to choose the preview server port. See /reference/cli/.\", \"BREAKING: Remove the `--legacy-nav` flag. See /guide/navigation/.\"], \"sitemap\": \"site-3.6.0/sitemap.txt\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"steps\": [\"Remove the `--legacy-nav` flag. See /guide/navigation/.\"]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 21,
+              "prompt_token_count": 103,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 103
+                }
+              ],
+              "total_token_count": 124
+            }
+          },
+          "latency_s": 1.95
+        }
+      ],
+      "run_seconds": 2.01
+    }
+  ]
+}

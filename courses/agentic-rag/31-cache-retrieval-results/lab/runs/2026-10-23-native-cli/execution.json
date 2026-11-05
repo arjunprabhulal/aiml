@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/private/tmp/aiml-review-venv/bin/python",
+    "run.py",
+    "--output",
+    "runs/2026-10-23-native-cli/result.json"
+  ],
+  "working_directory": "/private/tmp/aiml-rag-module11-chat/public/examples/cache-retrieval-results",
+  "test_command": [
+    "/private/tmp/aiml-review-venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "python": "3.12.8",
+  "packages": {
+    "fastapi": "0.141.1",
+    "starlette": "1.9.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.1"
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "87e264b3ae2cf8998f67f80c8071e636daa7d58183e9db86a856ab7de57d0ca6",
+    "app.py": "e1fc72214985851a9d2f52c535c7bee672dcfba94dc7229cb1d393714ce1ae23",
+    "authorization.py": "604ac9e08aa5ed8bc7668e0ee0c815a85eb15fc6713d015ebfd7339c69473a1e",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "cache.py": "7e1bfb06a251669baca3106bfff0611e1d859864e496a6fcb6fc8cb1b27e805f",
+    "fixture_server.py": "cab141871f6eb34c6fa89298f319e6571aca9c8018431d2dbf3f4b74af44c6d1",
+    "fixtures/policy.json": "805c4befa2d8127fd2d2ecffa18a822480a47dbc88a5ec3c74601bcdf81ef6fd",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "http_support.py": "d776f976a4bb3d44334afb4930255c8d9474bcf5e49bda10444e657b3b36745d",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "local_http.py": "bdf5457c4f7fc697d23259dc27a210a0bbdf0c06d83a2aa45ca0ed6ed45df0d9",
+    "render_output.py": "727852bc52a58fbeccbdda8d1c038857ed40f46bcd6bef20c383db593768033d",
+    "requirements.lock": "c03cdf1e60393462ed82c8565aabfe77475c6072b689972af62cb0fe34fbe919",
+    "requirements.txt": "3886b4b89cb52fed466ad0fbd38de17165d184c15274e9abed42670bd99054bc",
+    "run.py": "cd4b80146e160321aa9676766311374a07abd3170011c32c6d06e2be1c4fc10b",
+    "test_cache.py": "85e0df88047ddfe81bd83c0b61c0fe774f25416d246ee44758965e5db636a115",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "result_sha256": "f85771ea41d55ef7b9c7fa1fe4acfbf8d3dc8b1fc68596af3a5e08dd166babb9",
+  "network": "loopback only; no provider/model/download"
+}

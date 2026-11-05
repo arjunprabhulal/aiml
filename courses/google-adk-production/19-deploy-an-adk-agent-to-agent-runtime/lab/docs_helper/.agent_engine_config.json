@@ -1,0 +1,16 @@
+{
+  "display_name": "docs-helper",
+  "description": "docuctl docs assistant",
+  "labels": {"aiml-lesson": "deploy-an-adk-agent-to-agent-runtime"},
+  "min_instances": 0,
+  "max_instances": 1,
+  "resource_limits": {"cpu": "1", "memory": "1Gi"},
+  "context_spec": {"memory_bank_config": {
+    "ttl_config": {"default_ttl": "86400s"},
+    "customization_configs": [{"memory_topics": [
+      {"managed_memory_topic": {"managed_topic_enum": "USER_PREFERENCES"}},
+      {"custom_memory_topic": {"label": "tool_versions",
+        "description": "Which version of a CLI, SDK or service the developer runs, for example 'runs docuctl 1.x'."}}
+    ]}]
+  }}
+}

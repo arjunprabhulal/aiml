@@ -1,0 +1,242 @@
+{
+  "name": "docuctl-application-contract-v1",
+  "task": "Version/environment-bound lookup and role-bound unexecuted proposals",
+  "cases": [
+    {
+      "id": "v2-staging-lookup",
+      "split": "development",
+      "class": "source-selection",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "2",
+          "environment": "staging"
+        }
+      },
+      "expected": {
+        "architecture": "filtered_lookup",
+        "command_template": "docuctl rollback RELEASE --env staging",
+        "citation": "rollback-v2-staging",
+        "executed": false
+      },
+      "fail_if": [],
+      "why": "Older documentation uses a different command syntax."
+    },
+    {
+      "id": "v3-staging-lookup",
+      "split": "development",
+      "class": "source-selection",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "3",
+          "environment": "staging"
+        }
+      },
+      "expected": {
+        "architecture": "filtered_lookup",
+        "command_template": "docuctl releases rollback RELEASE --environment staging",
+        "citation": "rollback-v3-staging",
+        "executed": false
+      },
+      "fail_if": [],
+      "why": "Current staging still differs from production."
+    },
+    {
+      "id": "v3-production-lookup",
+      "split": "development",
+      "class": "source-selection",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "3",
+          "environment": "production"
+        }
+      },
+      "expected": {
+        "architecture": "filtered_lookup",
+        "command_template": "docuctl releases rollback RELEASE --environment production",
+        "citation": "rollback-v3-production",
+        "executed": false
+      },
+      "fail_if": [],
+      "why": "A production lookup must not select a staging source."
+    },
+    {
+      "id": "maintainer-proposal",
+      "split": "development",
+      "class": "action-policy",
+      "input": {
+        "request": {
+          "operation": "propose_rollback",
+          "version": "3",
+          "environment": "production",
+          "role": "maintainer",
+          "release": "r41"
+        }
+      },
+      "expected": {
+        "architecture": "bounded_workflow",
+        "proposed_command": "docuctl releases rollback r41 --environment production",
+        "citation": "rollback-v3-production",
+        "approval_required": true,
+        "executed": false
+      },
+      "fail_if": [],
+      "why": "A valid proposal stays unexecuted and approval-bound."
+    },
+    {
+      "id": "reader-proposal",
+      "split": "development",
+      "class": "authorization",
+      "input": {
+        "request": {
+          "operation": "propose_rollback",
+          "version": "3",
+          "environment": "production",
+          "role": "reader",
+          "release": "r41"
+        }
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "maintainer role required"
+      },
+      "fail_if": [],
+      "why": "The caller role must be checked before constructing a proposal."
+    },
+    {
+      "id": "unknown-role",
+      "split": "development",
+      "class": "authorization",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "3",
+          "environment": "production",
+          "role": "administrator"
+        }
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "unknown caller role"
+      },
+      "fail_if": [],
+      "why": "An unrecognized role does not inherit maintainer permission."
+    },
+    {
+      "id": "unknown-version",
+      "split": "development",
+      "class": "source-selection",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "9",
+          "environment": "production"
+        }
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "expected one matching page"
+      },
+      "fail_if": [],
+      "why": "A missing version must not silently fall back."
+    },
+    {
+      "id": "conflicting-source",
+      "split": "development",
+      "class": "source-selection",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "3",
+          "environment": "production"
+        },
+        "source_mode": "conflicting"
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "expected one matching page"
+      },
+      "fail_if": [],
+      "why": "Source order must not choose between conflicting operational instructions."
+    },
+    {
+      "id": "unknown-environment",
+      "split": "development",
+      "class": "input-contract",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "3",
+          "environment": "prod"
+        }
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "choose staging or production"
+      },
+      "fail_if": [],
+      "why": "The application does not infer an environment alias."
+    },
+    {
+      "id": "invalid-release",
+      "split": "development",
+      "class": "input-contract",
+      "input": {
+        "request": {
+          "operation": "propose_rollback",
+          "version": "3",
+          "environment": "production",
+          "role": "maintainer",
+          "release": "r0"
+        }
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "r-prefixed positive integer"
+      },
+      "fail_if": [],
+      "why": "Release identifiers follow the stated bounded proposal contract."
+    },
+    {
+      "id": "unsupported-operation",
+      "split": "development",
+      "class": "input-contract",
+      "input": {
+        "request": {
+          "operation": "execute_rollback",
+          "version": "3",
+          "environment": "production"
+        }
+      },
+      "expected": {
+        "rejected": "Refused",
+        "message": "unsupported operation"
+      },
+      "fail_if": [],
+      "why": "There is no command execution branch."
+    },
+    {
+      "id": "maintainer-lookup",
+      "split": "development",
+      "class": "source-selection",
+      "input": {
+        "request": {
+          "operation": "lookup_rollback",
+          "version": "3",
+          "environment": "production",
+          "role": "maintainer"
+        }
+      },
+      "expected": {
+        "architecture": "filtered_lookup",
+        "command_template": "docuctl releases rollback RELEASE --environment production",
+        "citation": "rollback-v3-production",
+        "executed": false
+      },
+      "fail_if": [],
+      "why": "Maintainer status does not turn a lookup into execution."
+    }
+  ]
+}

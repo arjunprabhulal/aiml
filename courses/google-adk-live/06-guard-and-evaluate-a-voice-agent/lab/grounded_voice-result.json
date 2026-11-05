@@ -1,0 +1,613 @@
+{
+ "eval_set_result_id": "docs_voice_docs_voice_live_1792632316.864429",
+ "eval_set_result_name": "docs_voice_docs_voice_live_1792632316.864429",
+ "eval_set_id": "docs_voice_live",
+ "eval_case_results": [
+  {
+   "eval_set_file": "docs_voice_live",
+   "eval_set_id": "docs_voice_live",
+   "eval_id": "adk_name_and_mic_rate",
+   "final_eval_status": 1,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+     "threshold": 1.0,
+     "criterion": {
+      "threshold": 1.0,
+      "include_intermediate_responses_in_final": false,
+      "judge_model_options": {
+       "judge_model": "gemini-3.8-flash",
+       "num_samples": 1
+      },
+      "rubrics": [
+       {
+        "rubric_id": "names_adk",
+        "rubric_content": {
+         "text_property": "The agent says that ADK stands for Agent Development Kit."
+        }
+       },
+       {
+        "rubric_id": "mic_rate",
+        "rubric_content": {
+         "text_property": "The agent says that microphone audio uses a 16 kHz sample rate."
+        }
+       }
+      ]
+     },
+     "score": 1.0,
+     "eval_status": 1,
+     "details": {
+      "rubric_scores": [
+       {
+        "rubric_id": "names_adk",
+        "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+        "score": 1.0
+       },
+       {
+        "rubric_id": "mic_rate",
+        "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+        "score": 1.0
+       }
+      ]
+     }
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 0.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 82.5,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {}
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "fc6e28c8-8852-45a4-9ff2-8f4fa2ad7f3e",
+      "user_content": {
+       "parts": [
+        {
+         "text": " What is ADK stand for?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "**Defining \"ADK\"**\n\nI have successfully located the definition of \"ADK\". According to the documentation, \"ADK\" stands for \"Agent Development Kit,\" and it's Google's open-source framework for building agents. The initial query has been fully addressed, and I've synthesized a response ready for immediate presentation. The core information has been clearly extracted.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "grounded_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "**Defining \"ADK\"**\n\nI have successfully located the definition of \"ADK\". According to the documentation, \"ADK\" stands for \"Agent Development Kit,\" and it's Google's open-source framework for building agents. The initial query has been fully addressed, and I've synthesized a response ready for immediate presentation. The core information has been clearly extracted.\n\n\n",
+            "thought": true
+           }
+          ]
+         },
+         "model_version": "gemini-2.5-flash-native-audio-preview-12-2025"
+        },
+        {
+         "author": "grounded_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "ADK is the Agent Development Kit, Google's open-source framework for building agents."
+           }
+          ],
+          "role": "model"
+         }
+        },
+        {
+         "author": "grounded_voice"
+        }
+       ]
+      },
+      "creation_timestamp": 1792632290.0137541,
+      "app_details": {
+       "agent_details": {
+        "grounded_voice": {
+         "name": "grounded_voice",
+         "instructions": "You are a docs assistant on a voice call. Answer in one or two short sentences, only from these pages, and say so when they do not cover the question.\n\n# Live streaming in the docs assistant\n\nADK is the Agent Development Kit, Google's open-source framework for building agents.\nThe docs assistant answers spoken questions through ADK's bidirectional streaming:\n`Runner.run_live()` holds one open connection to the Gemini Live API while the user talks.\n\n- Microphone audio goes in as 16-bit PCM, 16 kHz, mono (`audio/pcm;rate=16000`).\n- The model answers with audio, 16-bit PCM at 24 kHz, and a text transcription.\n- A Live API connection closes after about 10 minutes; enable session resumption to continue.\n- An audio-only Live session is limited to 15 minutes, an audio and video session to 2 minutes.\n # Sessions in the docs assistant\n\nEach caller gets one ADK session, stored by the session service. A new `run_live()` call on the\nsame session replays its saved history to a new Live API session.\nCreate a fresh `LiveRequestQueue` for every `run_live()` call; a closed queue ends the next run at once.\nSession resumption reconnects with a cached handle, at most 5 failed attempts in a row.\n # Tools in the docs assistant\n\nADK runs a live agent's tool calls itself and sends each result back to the model.\nA tool that returns in under a second can block. A slow tool should be non-blocking or streaming,\nso the agent keeps talking while it runs. Call `stop_streaming` to cancel a streaming tool.\n\n\nYou are an agent. Your internal name is \"grounded_voice\".",
+         "tool_declarations": []
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "judge_model_options": {
+         "judge_model": "gemini-3.8-flash",
+         "num_samples": 1
+        },
+        "rubrics": [
+         {
+          "rubric_id": "names_adk",
+          "rubric_content": {
+           "text_property": "The agent says that ADK stands for Agent Development Kit."
+          }
+         },
+         {
+          "rubric_id": "mic_rate",
+          "rubric_content": {
+           "text_property": "The agent says that microphone audio uses a 16 kHz sample rate."
+          }
+         }
+        ]
+       },
+       "eval_status": 3,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 0.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 104.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {}
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    },
+    {
+     "actual_invocation": {
+      "invocation_id": "dfcd07b9-2ab5-4395-863b-8ab8e1d45cd5",
+      "user_content": {
+       "parts": [
+        {
+         "text": " What sample rates should microphone audio use?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "**Determining Sample Rate**\n\nI've zeroed in on the documentation's \"Live streaming\" section. It's crystal clear: microphone audio needs to be 16-bit PCM, 16 kHz, mono. The spec explicitly states `audio/pcm; rate=16000`, so the answer is definitely 16 kHz.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "grounded_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "**Determining Sample Rate**\n\nI've zeroed in on the documentation's \"Live streaming\" section. It's crystal clear: microphone audio needs to be 16-bit PCM, 16 kHz, mono. The spec explicitly states `audio/pcm; rate=16000`, so the answer is definitely 16 kHz.\n\n\n",
+            "thought": true
+           }
+          ]
+         },
+         "model_version": "gemini-2.5-flash-native-audio-preview-12-2025"
+        },
+        {
+         "author": "grounded_voice",
+         "content": {
+          "parts": [
+           {
+            "text": "Microphone audio should be 16 kHz PCM"
+           }
+          ],
+          "role": "model"
+         }
+        },
+        {
+         "author": "grounded_voice"
+        }
+       ]
+      },
+      "creation_timestamp": 1792632304.990637,
+      "app_details": {
+       "agent_details": {
+        "grounded_voice": {
+         "name": "grounded_voice",
+         "instructions": "You are a docs assistant on a voice call. Answer in one or two short sentences, only from these pages, and say so when they do not cover the question.\n\n# Live streaming in the docs assistant\n\nADK is the Agent Development Kit, Google's open-source framework for building agents.\nThe docs assistant answers spoken questions through ADK's bidirectional streaming:\n`Runner.run_live()` holds one open connection to the Gemini Live API while the user talks.\n\n- Microphone audio goes in as 16-bit PCM, 16 kHz, mono (`audio/pcm;rate=16000`).\n- The model answers with audio, 16-bit PCM at 24 kHz, and a text transcription.\n- A Live API connection closes after about 10 minutes; enable session resumption to continue.\n- An audio-only Live session is limited to 15 minutes, an audio and video session to 2 minutes.\n # Sessions in the docs assistant\n\nEach caller gets one ADK session, stored by the session service. A new `run_live()` call on the\nsame session replays its saved history to a new Live API session.\nCreate a fresh `LiveRequestQueue` for every `run_live()` call; a closed queue ends the next run at once.\nSession resumption reconnects with a cached handle, at most 5 failed attempts in a row.\n # Tools in the docs assistant\n\nADK runs a live agent's tool calls itself and sends each result back to the model.\nA tool that returns in under a second can block. A slow tool should be non-blocking or streaming,\nso the agent keeps talking while it runs. Call `stop_streaming` to cancel a streaming tool.\n\n\nYou are an agent. Your internal name is \"grounded_voice\".",
+         "tool_declarations": []
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "rubric_based_multi_turn_trajectory_quality_v1",
+       "threshold": 1.0,
+       "criterion": {
+        "threshold": 1.0,
+        "include_intermediate_responses_in_final": false,
+        "judge_model_options": {
+         "judge_model": "gemini-3.8-flash",
+         "num_samples": 1
+        },
+        "rubrics": [
+         {
+          "rubric_id": "names_adk",
+          "rubric_content": {
+           "text_property": "The agent says that ADK stands for Agent Development Kit."
+          }
+         },
+         {
+          "rubric_id": "mic_rate",
+          "rubric_content": {
+           "text_property": "The agent says that microphone audio uses a 16 kHz sample rate."
+          }
+         }
+        ]
+       },
+       "score": 1.0,
+       "eval_status": 1,
+       "details": {
+        "rubric_scores": [
+         {
+          "rubric_id": "names_adk",
+          "rationale": "In Agent Turn 1, the agent explicitly states: \"ADK is the Agent Development Kit, Google's open-source framework for building agents.\"",
+          "score": 1.0
+         },
+         {
+          "rubric_id": "mic_rate",
+          "rationale": "In Agent Turn 2, the agent states: \"Microphone audio should be 16 kHz PCM\", directly answering the question with the specified sample rate.",
+          "score": 1.0
+         }
+        ]
+       }
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 0.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 61.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {}
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-65c7eaad-da4f-43ac-a1f7-d842ce0c364e",
+   "session_details": {
+    "id": "adk-eval-session-65c7eaad-da4f-43ac-a1f7-d842ce0c364e",
+    "app_name": "docs_voice",
+    "user_id": "eval",
+    "state": {},
+    "events": [
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "input_transcription": {
+       "text": " What is ADK stand for?",
+       "finished": true
+      },
+      "invocation_id": "fc6e28c8-8852-45a4-9ff2-8f4fa2ad7f3e",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "d41f28b2-cb9d-48ab-ab41-e55a1ca731e3",
+      "timestamp": 1792632290.0137541
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "output_transcription": {
+       "text": "ADK is the Agent Development Kit, Google's open-source framework for building agents.",
+       "finished": true
+      },
+      "invocation_id": "fc6e28c8-8852-45a4-9ff2-8f4fa2ad7f3e",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "78cbbe9c-42f6-4d19-816d-bc41e4835e12",
+      "timestamp": 1792632290.0139751
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 132,
+       "candidates_tokens_details": [
+        {
+         "modality": "AUDIO",
+         "token_count": 132
+        }
+       ],
+       "prompt_token_count": 837,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 836
+        },
+        {
+         "modality": "AUDIO",
+         "token_count": 1
+        }
+       ],
+       "thoughts_token_count": 77,
+       "total_token_count": 969
+      },
+      "invocation_id": "fc6e28c8-8852-45a4-9ff2-8f4fa2ad7f3e",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "be2e775a-35f4-46ec-8684-fe32a1dc1117",
+      "timestamp": 1792632292.590998
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "**Defining \"ADK\"**\n\nI have successfully located the definition of \"ADK\". According to the documentation, \"ADK\" stands for \"Agent Development Kit,\" and it's Google's open-source framework for building agents. The initial query has been fully addressed, and I've synthesized a response ready for immediate presentation. The core information has been clearly extracted.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "partial": false,
+      "interrupted": false,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "invocation_id": "fc6e28c8-8852-45a4-9ff2-8f4fa2ad7f3e",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "50d9d06b-a5ec-4bcf-a736-1ff48e1644d5",
+      "timestamp": 1792632292.591122
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "turn_complete": true,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "invocation_id": "fc6e28c8-8852-45a4-9ff2-8f4fa2ad7f3e",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "78728077-79a3-4991-93a2-90d7a690bc04",
+      "timestamp": 1792632292.591216
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "input_transcription": {
+       "text": " What sample rates should microphone audio use?",
+       "finished": true
+      },
+      "invocation_id": "dfcd07b9-2ab5-4395-863b-8ab8e1d45cd5",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "896fe528-5736-4b28-b5d5-7ba49c372e3e",
+      "timestamp": 1792632304.990637
+     },
+     {
+      "partial": false,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "output_transcription": {
+       "text": "Microphone audio should be 16 kHz PCM",
+       "finished": true
+      },
+      "invocation_id": "dfcd07b9-2ab5-4395-863b-8ab8e1d45cd5",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "5dbdc74d-7be5-4e65-a995-3e485976e820",
+      "timestamp": 1792632304.99086
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 90,
+       "candidates_tokens_details": [
+        {
+         "modality": "AUDIO",
+         "token_count": 90
+        }
+       ],
+       "prompt_token_count": 1102,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 1091
+        },
+        {
+         "modality": "AUDIO",
+         "token_count": 11
+        }
+       ],
+       "thoughts_token_count": 83,
+       "total_token_count": 1192
+      },
+      "invocation_id": "dfcd07b9-2ab5-4395-863b-8ab8e1d45cd5",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "1f9b5765-a19b-4424-8401-a62653af0591",
+      "timestamp": 1792632307.5157561
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "**Determining Sample Rate**\n\nI've zeroed in on the documentation's \"Live streaming\" section. It's crystal clear: microphone audio needs to be 16-bit PCM, 16 kHz, mono. The spec explicitly states `audio/pcm; rate=16000`, so the answer is definitely 16 kHz.\n\n\n",
+         "thought": true
+        }
+       ],
+       "role": "model"
+      },
+      "partial": false,
+      "interrupted": false,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "invocation_id": "dfcd07b9-2ab5-4395-863b-8ab8e1d45cd5",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "dd383bf5-84d7-4ef6-b0be-93754aff2995",
+      "timestamp": 1792632307.515897
+     },
+     {
+      "model_version": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "turn_complete": true,
+      "custom_metadata": {
+       "__llm_request_key__": "d9ac2507-48b8-4c60-be45-c73f66c9fc1d"
+      },
+      "invocation_id": "dfcd07b9-2ab5-4395-863b-8ab8e1d45cd5",
+      "author": "grounded_voice",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "c9556837-6e57-4b29-9e0b-1e3476cda19e",
+      "timestamp": 1792632307.515948
+     }
+    ],
+    "last_update_time": 1792632307.515948
+   },
+   "user_id": "eval"
+  }
+ ],
+ "creation_timestamp": 1792632316.864429
+}

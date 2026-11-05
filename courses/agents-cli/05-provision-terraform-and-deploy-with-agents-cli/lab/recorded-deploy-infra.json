@@ -1,0 +1,31 @@
+{
+  "cli_version": "1.11.0",
+  "execution_mode": "actual-CLI-dry-run; no deployment or infrastructure apply",
+  "project": "vertex-ai-experminent",
+  "agent_runtime_dry_run": {
+    "exit_code": 0,
+    "output": "\n\ud83d\udd0e Validating the deployment (no resources are changed)...\n  \u2705 APIs enabled: aiplatform.googleapis.com\n  \u2705 Target engine: creates a new engine named 'docuctl-docs'\n  \u2705 IAM permissions: aiplatform.reasoningEngines.create, aiplatform.reasoningEngines.update, resourcemanager.projects.getIamPolicy, resourcemanager.projects.setIamPolicy granted\n  Would deploy to Agent Runtime in Gemini platform: project=vertex-ai-experminent, region=us-central1\n  cpu: 2\n  memory: 4Gi\n  min_instances: 1\n  max_instances: 6\n  container_concurrency: 8\n  (defaults apply on create; existing values preserved on update)\n",
+    "runtime_shape": {
+      "cpu": "2",
+      "memory": "4Gi",
+      "min_instances": 1,
+      "max_instances": 6,
+      "container_concurrency": 8
+    }
+  },
+  "cloud_run_dry_run": {
+    "exit_code": 0,
+    "would_run": "gcloud run deploy docuctl-docs --project vertex-ai-experminent --region us-central1 --source . --memory 4Gi --cpu 1 --min-instances 1 --max-instances 10 --concurrency 8 --no-allow-unauthenticated --no-cpu-throttling --update-env-vars 'GOOGLE_GENAI_USE_ENTERPRISE=***,GOOGLE_CLOUD_PROJECT=***,GOOGLE_CLOUD_LOCATION=***,AGENT_VERSION=***,ADK_CAPTURE_MESSAGE_CONTENT_IN_SPANS=***,APP_URL=***' --update-secrets 'DOCUCTL_TOKEN=***' --update-labels 'created-by=***'"
+  },
+  "recorded_at": "2026-10-26T02:22:09.229826+00:00",
+  "local_failure_checks": {
+    "gke_cpu_flag_rejected": {
+      "execution_mode": "local-validator",
+      "error": "--cpu is only supported for Agent Runtime and Cloud Run deployments (current target: gke).\n  On GKE, configure sizing via Terraform and the HorizontalPodAutoscaler under deployment/terraform/."
+    },
+    "terraform_after_imperative_deploy": {
+      "execution_mode": "local-validator",
+      "error": "Resource ownership conflict: imperative 'agents-cli deploy' created the service before 'terraform apply'. Running 'terraform apply' now fails with 409 Already Exists (or creates a duplicate Agent Runtime engine). Provision Terraform first or import the resource."
+    }
+  }
+}

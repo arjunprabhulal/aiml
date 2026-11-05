@@ -1,0 +1,49 @@
+server docuctl_docs: Ask docuctl questions in plain English.
+tool   docuctl_docs(request): Answer a question about docuctl, the team's deploy CLI, from its manual. Pass the full question; follow-up questions on the same connection keep the context.
+
+# connection 1
+> I'm on docuctl 1.x. How do I roll back production to r41?
+answer In docuctl 1.x, use:
+
+```bash
+docuctl release revert r41
+```
+
+(In docuctl 2.x, this was replaced by `docuctl rollback --env production --to r41`.)  (9.3s)
+> And how do I list the releases of production?
+answer In docuctl 1.x, use:
+
+```bash
+docuctl release list --env production
+```
+
+(In docuctl 2.x, this was replaced by `docuctl releases --env production`.)  (5.7s)
+
+# connection 2
+> And how do I list the releases of production?
+answer To list the releases for the production environment, run:
+
+```bash
+docuctl releases --env production
+```
+
+This lists the releases newest first, along with their status (`live`, `previous`, `degraded`, `failed`, or `pending`).  (3.2s)
+
+# no GOOGLE_API_KEY in the server env
+> I'm on docuctl 1.x. How do I roll back production to r41?
+error  Error executing tool docuctl_docs: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.  (0.0s)
+
+# release_bot through McpToolset, timeout=60
+> Staging deploy r42 failed in pre_deploy. Ask the docs whether rolling staging back undoes its migration.
+call   docs_docuctl_docs {"request": "Does rolling staging back undo its migration after failing in pre_deploy?"}
+result {"content": [{"type": "text", "text": "No. Running `docuctl rollback` does not undo database migrations. \n\n`docuctl rollback` only shifts traffic back to an earlier release without running any hooks. Even if `pre_deplo
+answer No, rolling back staging does not undo migrations. `docuctl rollback` only routes traffic back to a previous release without executing hooks; any migration changes that already ran remain applied. To undo a migration, you must author and deploy a new release containing a rollback/reversal migration.
+
+# release_bot through McpToolset, default timeout
+> Staging deploy r42 failed in pre_deploy. Ask the docs whether rolling staging back undoes its migration.
+call   docs_docuctl_docs {"request": "Does rolling staging back undo its migration after a pre_deploy failure?"}
+call   docs_docuctl_docs {"request": "Does rolling staging back undo its migration?"}
+result {"error": "MCP tool execution failed: Timed out while waiting for response to ClientRequest. Waited 5.0 seconds."}
+result {"content": [{"type": "text", "text": "No. `docuctl rollback` only points traffic back to an earlier release and does not run any hooks, so it never undoes a migration. \n\nTo undo a migration, write a new migration that
+answer No, rolling staging back does not undo its migration. `docuctl rollback` only redirects traffic to an earlier release without running any hooks. To reverse a migration, you must deploy a new migration that undoes the changes.
+

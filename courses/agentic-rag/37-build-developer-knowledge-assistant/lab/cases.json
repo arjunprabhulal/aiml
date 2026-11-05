@@ -1,0 +1,12 @@
+[
+ {"id":"staging-deploy","question":"How do I deploy a staging release?","status":"answered","source":"deploy-35","answer_contains":"--env staging"},
+ {"id":"rollback","question":"How do I roll back staging?","status":"answered","source":"rollback-35"},
+ {"id":"token-rotation","question":"How do I rotate an API token?","status":"answered","source":"tokens-35"},
+ {"id":"configuration","question":"Where is the configuration file?","status":"answered","source":"config-35"},
+ {"id":"old-deploy","question":"How do I deploy staging?","version":"3.4","status":"answered","source":"deploy-34","answer_contains":"--tag"},
+ {"id":"old-rollback","question":"How do I undo staging?","version":"3.4","status":"answered","source":"rollback-34"},
+ {"id":"unrelated","question":"Who won Wimbledon?","status":"abstain"},
+ {"id":"denied-operations","question":"How do I deploy production?","collection":"operations","role":"reader","status":"denied"},
+ {"id":"maintainer-production","question":"How do I deploy production?","collection":"operations","role":"maintainer","status":"answered","source":"production-35","answer_contains":"--approval"},
+ {"id":"empty-version","question":"How do I rotate an API token?","version":"3.4","collection":"operations","role":"maintainer","status":"abstain"}
+]

@@ -1,0 +1,150 @@
+{
+  "recorded_at": "2026-10-22T12:39:11.532117+00:00",
+  "model": "gemini-3.8-flash",
+  "sampling": "provider defaults",
+  "runs_per_question": 1,
+  "results": [
+    {
+      "question": "How do I roll back a service?",
+      "team": "platform",
+      "answer": {
+        "status": "answered",
+        "answer": "To roll back a service, choose the previous production digest and create a new deployment. Keep in mind that a rollback will not undo database migrations.",
+        "citations": [
+          {
+            "source_id": "e19470db-110d-50dd-9a6a-08d5200c99d6",
+            "quote": "To roll back a service, select the previous production digest and create a new deployment."
+          }
+        ]
+      },
+      "citation_error": null,
+      "retrieved": [
+        {
+          "source_id": "e19470db-110d-50dd-9a6a-08d5200c99d6",
+          "source": "platform/deploy",
+          "text": "To roll back a service, select the previous production digest and create a new deployment. Rollback does not undo database migrations. A migration that deletes a column must wait until the old application version no longer reads it."
+        },
+        {
+          "source_id": "db2a9278-ca49-5428-897a-f919003f5861",
+          "source": "platform/keys",
+          "text": "After all callers use the replacement key, revoke the old key and check that an old-key request receives HTTP 401. A new-key request must still succeed. A configuration rollout alone does not establish that the old credential was revoked."
+        },
+        {
+          "source_id": "d0a7a7ef-f382-57b6-8632-fe14ca760109",
+          "source": "platform/deploy",
+          "text": "A deployment promotes an immutable image digest from staging to production. Run the smoke check against staging before promotion. Keep the previous production digest in the deployment record. A tag can move; a digest identifies the image that was reviewed."
+        }
+      ],
+      "usage": {
+        "input_tokens": 378,
+        "output_tokens": 209,
+        "total_tokens": 587,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 104
+        }
+      },
+      "response_metadata": {
+        "finish_reason": "STOP",
+        "model_name": "gemini-3.8-flash",
+        "safety_ratings": [],
+        "model_provider": "google_genai"
+      }
+    },
+    {
+      "question": "Does deleting a documentation page delete its vectors?",
+      "team": "platform",
+      "answer": {
+        "status": "answered",
+        "answer": "No, removing a page from the website does not remove its stored vectors.",
+        "citations": [
+          {
+            "source_id": "5addc7f9-0c3e-5cbc-9e23-83ec776d0288",
+            "quote": "Removing a page from the website does not remove its stored vectors."
+          }
+        ]
+      },
+      "citation_error": null,
+      "retrieved": [
+        {
+          "source_id": "5addc7f9-0c3e-5cbc-9e23-83ec776d0288",
+          "source": "platform/search",
+          "text": "Delete every chunk ID belonging to the removed document from each active search generation. Removing a page from the website does not remove its stored vectors. Run the deletion check before accepting another search request."
+        },
+        {
+          "source_id": "62183498-de36-51bd-9e3b-60d807d24749",
+          "source": "platform/keys",
+          "text": "A documentation reader key can read published pages but cannot update the search index. The indexing job uses a separate credential. A metadata filter in a search request does not replace the service's authorization check."
+        },
+        {
+          "source_id": "66618c52-ee0f-58b4-8eef-7e335f5b2901",
+          "source": "platform/jobs",
+          "text": "Batch text within the embedding model's context limit. Character-based splitting is not a token limit. If the embedding service rejects an input, reduce the chunk size and rebuild the affected generation rather than silently truncating the document."
+        }
+      ],
+      "usage": {
+        "input_tokens": 363,
+        "output_tokens": 288,
+        "total_tokens": 651,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 182
+        }
+      },
+      "response_metadata": {
+        "finish_reason": "STOP",
+        "model_name": "gemini-3.8-flash",
+        "safety_ratings": [],
+        "model_provider": "google_genai"
+      }
+    },
+    {
+      "question": "Who approves production deployments on Fridays?",
+      "team": "platform",
+      "answer": {
+        "status": "not_in_sources",
+        "answer": "The provided sources do not contain information about who approves production deployments on Fridays.",
+        "citations": []
+      },
+      "citation_error": null,
+      "retrieved": [
+        {
+          "source_id": "d0a7a7ef-f382-57b6-8632-fe14ca760109",
+          "source": "platform/deploy",
+          "text": "A deployment promotes an immutable image digest from staging to production. Run the smoke check against staging before promotion. Keep the previous production digest in the deployment record. A tag can move; a digest identifies the image that was reviewed."
+        },
+        {
+          "source_id": "78a1c188-9119-5f99-a9f3-5de78ec0edec",
+          "source": "platform/keys",
+          "text": "Create a replacement key with the same required scope and store it in the secret manager. Deploy the replacement to callers before revoking the old key. Never place either key in search documents, logs or model prompts."
+        },
+        {
+          "source_id": "e19470db-110d-50dd-9a6a-08d5200c99d6",
+          "source": "platform/deploy",
+          "text": "To roll back a service, select the previous production digest and create a new deployment. Rollback does not undo database migrations. A migration that deletes a column must wait until the old application version no longer reads it."
+        }
+      ],
+      "usage": {
+        "input_tokens": 367,
+        "output_tokens": 230,
+        "total_tokens": 597,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 196
+        }
+      },
+      "response_metadata": {
+        "finish_reason": "STOP",
+        "model_name": "gemini-3.8-flash",
+        "safety_ratings": [],
+        "model_provider": "google_genai"
+      }
+    }
+  ]
+}

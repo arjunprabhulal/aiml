@@ -1,0 +1,79 @@
+{
+  "source_dataset": "tracker-dataset.json",
+  "group_seed": 7,
+  "near_duplicate_threshold": 0.6,
+  "copied_words": 8,
+  "scenarios": [
+    {
+      "scenario": "grouped split",
+      "dataset": "issue-triage",
+      "version": 1,
+      "cases": {
+        "development": 10,
+        "held_out": 4
+      },
+      "decision": "pass",
+      "findings": []
+    },
+    {
+      "scenario": "variant moved across split",
+      "dataset": "issue-triage",
+      "version": 1,
+      "cases": {
+        "development": 11,
+        "held_out": 4
+      },
+      "decision": "block",
+      "findings": [
+        {
+          "check": "duplicate input",
+          "severity": "block",
+          "development": "color-in-pipes-derived",
+          "held_out": "color-in-pipes"
+        },
+        {
+          "check": "source crosses split",
+          "severity": "block",
+          "case": "color-in-pipes-derived",
+          "source": "color-in-pipes"
+        }
+      ]
+    },
+    {
+      "scenario": "held-out label edited",
+      "dataset": "issue-triage",
+      "version": 1,
+      "cases": {
+        "development": 10,
+        "held_out": 4
+      },
+      "decision": "block",
+      "findings": [
+        {
+          "check": "frozen split changed",
+          "severity": "block",
+          "case": "color-in-pipes",
+          "reason": "edited"
+        }
+      ]
+    },
+    {
+      "scenario": "prompt contains held-out wording",
+      "dataset": "issue-triage",
+      "version": 1,
+      "cases": {
+        "development": 10,
+        "held_out": 4
+      },
+      "decision": "review",
+      "findings": [
+        {
+          "check": "held-out excerpt in prompt",
+          "severity": "review",
+          "case": "color-in-pipes",
+          "excerpt": "when i pipe tracker list into grep the"
+        }
+      ]
+    }
+  ]
+}

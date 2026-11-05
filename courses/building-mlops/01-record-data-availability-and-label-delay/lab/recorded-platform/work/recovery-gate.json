@@ -1,0 +1,68 @@
+{
+  "policy": {
+    "format": "return-release-policy-v1",
+    "purpose": "local analyst-preview exercise",
+    "threshold": 0.5,
+    "minimum_accuracy": 0.6,
+    "minimum_gain_over_majority": 2,
+    "required_validation_rows": 48,
+    "final_test_allowed": false
+  },
+  "policy_sha256": "bded044a6e0c9507403fbbee000cae4180107b1423444cea0a5d12bd46e9ace9",
+  "model_sha256": "576847afc0d4b064e9f3653f2d25b994b638ae12dcb53fcf02beae45a0799b43",
+  "cohort_sha256": "4e808d638866651009546e045fa211836690b0a4210e7bec816e4bc4165834be",
+  "checks": {
+    "row_count": true,
+    "minimum_accuracy": true,
+    "majority_gain": true,
+    "saved_threshold": true
+  },
+  "passed": true,
+  "validation": {
+    "split": "validation",
+    "rows": 48,
+    "correct": 29,
+    "accuracy": 0.6041666666666666,
+    "majority_correct": 27,
+    "model_sha256": "576847afc0d4b064e9f3653f2d25b994b638ae12dcb53fcf02beae45a0799b43",
+    "cohort_sha256": "4e808d638866651009546e045fa211836690b0a4210e7bec816e4bc4165834be",
+    "execution": "fresh local CPU fit; authored synthetic labels"
+  },
+  "cost_comparison": {
+    "split": "validation",
+    "rows": 48,
+    "costs": {
+      "false_positive": 1.0,
+      "false_negative": 3.0
+    },
+    "units": "illustrative decision-cost units, not measured money",
+    "candidates": [
+      {
+        "threshold": 0.3,
+        "correct": 28,
+        "false_positive": 18,
+        "false_negative": 2,
+        "total_cost": 24.0
+      },
+      {
+        "threshold": 0.5,
+        "correct": 29,
+        "false_positive": 8,
+        "false_negative": 11,
+        "total_cost": 41.0
+      },
+      {
+        "threshold": 0.7,
+        "correct": 27,
+        "false_positive": 5,
+        "false_negative": 16,
+        "total_cost": 53.0
+      }
+    ],
+    "selected_for_inspection": 0.3,
+    "model_threshold_unchanged": 0.5,
+    "final_test_used": false
+  },
+  "final_test_used": false,
+  "permission": "local rollout exercise only"
+}

@@ -1,0 +1,27 @@
+test_current_agent_and_docs_use_docuctl (test_assistant.CurrentDocuctlContract.test_current_agent_and_docs_use_docuctl) ... ok
+test_current_tool_saves_the_docuctl_user_key (test_assistant.CurrentDocuctlContract.test_current_tool_saves_the_docuctl_user_key) ... ok
+test_a_required_placeholder_without_a_value_raises (test_assistant.SessionsAndMemory.test_a_required_placeholder_without_a_value_raises) ... ok
+test_an_append_through_a_stale_session_is_rejected (test_assistant.SessionsAndMemory.test_an_append_through_a_stale_session_is_rejected) ... ok
+test_another_user_does_not_see_the_version (test_assistant.SessionsAndMemory.test_another_user_does_not_see_the_version) ... /private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+ok
+test_every_database_agent_turn_keeps_the_serialized_response_cap (test_assistant.SessionsAndMemory.test_every_database_agent_turn_keeps_the_serialized_response_cap) ... /private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/aiosqlite/core.py:102: ResourceWarning: <aiosqlite.core.Connection object at 0x1182621e0> was deleted before being closed. Please use 'async with' or '.close()' to close the connection properly.
+  warn(
+/private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/aiosqlite/core.py:102: ResourceWarning: <aiosqlite.core.Connection object at 0x11808ffe0> was deleted before being closed. Please use 'async with' or '.close()' to close the connection properly.
+  warn(
+ok
+test_in_memory_memory_is_empty_after_a_restart (test_assistant.SessionsAndMemory.test_in_memory_memory_is_empty_after_a_restart) ... ok
+test_memory_recalls_an_earlier_session_in_the_same_process (test_assistant.SessionsAndMemory.test_memory_recalls_an_earlier_session_in_the_same_process) ... /private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/aiosqlite/core.py:102: ResourceWarning: <aiosqlite.core.Connection object at 0x1183412e0> was deleted before being closed. Please use 'async with' or '.close()' to close the connection properly.
+  warn(
+ok
+test_user_state_survives_a_restart (test_assistant.SessionsAndMemory.test_user_state_survives_a_restart) ... ok
+test_writing_to_a_fetched_session_is_not_saved (test_assistant.SessionsAndMemory.test_writing_to_a_fetched_session_is_not_saved) ... /private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/aiosqlite/core.py:102: ResourceWarning: <aiosqlite.core.Connection object at 0x118262f60> was deleted before being closed. Please use 'async with' or '.close()' to close the connection properly.
+  warn(
+/private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/aiosqlite/core.py:102: ResourceWarning: <aiosqlite.core.Connection object at 0x1182b7d10> was deleted before being closed. Please use 'async with' or '.close()' to close the connection properly.
+  warn(
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.585s
+
+OK

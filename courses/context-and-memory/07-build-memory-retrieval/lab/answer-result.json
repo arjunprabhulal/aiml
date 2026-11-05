@@ -1,0 +1,203 @@
+{
+ "model": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "google/gemma-4-E2B-it",
+  "license": "Apache-2.0",
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14",
+  "quantization": "Q4_K_M",
+  "parameters": "4.6B total (E2B: about 2B effective)",
+  "options": {
+   "temperature": 1.0,
+   "top_k": 64,
+   "top_p": 0.95
+  },
+  "think": false,
+  "trials": 5,
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "system": "You help Alice with travel. Answer from the memories in the user message; say when something is missing.",
+ "questions": {
+  "per kind · Find a hotel in Porto like the one we booked last time.": "Find a hotel in Porto like the one we booked last time.",
+  "pooled · Find a hotel in Porto like the one we booked last time.": "Find a hotel in Porto like the one we booked last time.",
+  "per kind · What should Alice eat at the hotel restaurant? Is she vegetarian?": "What should Alice eat at the hotel restaurant? Is she vegetarian?",
+  "pooled · What should Alice eat at the hotel restaurant? Is she vegetarian?": "What should Alice eat at the hotel restaurant? Is she vegetarian?"
+ },
+ "answers": {
+  "per kind · Find a hotel in Porto like the one we booked last time.": [
+   {
+    "seed": 1,
+    "answer": "I see you are looking for a hotel in Porto similar to the one we booked last time.\n\nHere is what I recall from our previous interactions:\n\n*   **Preference:** Alice prefers a hotel near a river.\n*   **Past Booking:** We previously booked a Lisbon hotel near the river (in September 2026), although the first attempt was declined and the second worked. We also booked a Madrid hotel near the station, but Alice found that too noisy.\n\nTo find a suitable hotel in Porto, I will look for options near a river, keeping in mind the budget of **150 euros per night** and the trip dates of **3 to 6 November**.\n\nIs that correct?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 219,
+    "answer_tokens": 147
+   },
+   {
+    "seed": 2,
+    "answer": "I see that you are looking for a hotel in Porto similar to the one we booked last time, which was near a river.\n\nI have the following memories:\n*   **Budget:** 150 euros per night.\n*   **Trip Dates:** 3 to 6 November.\n*   **Alice's Preference:** Alice prefers a hotel near a river.\n*   **Past Booking (Lisbon):** We booked a Lisbon hotel near the river, but the first card was declined and the second one worked.\n*   **Past Booking (Madrid):** We booked a Madrid hotel near the station, but Alice said it was too noisy.\n\n**What is missing** is specific information about the Porto hotel you are referring to (e.g., the exact name, or the specific river area you liked in Lisbon) so I can find a suitable alternative for you.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 219,
+    "answer_tokens": 184
+   },
+   {
+    "seed": 3,
+    "answer": "I see you're looking for a hotel in Porto similar to the one you booked previously.\n\nI have the following memories related to your past travel planning:\n*   **Budget:** 150 euros per night.\n*   **Trip Dates:** 3 to 6 November.\n*   **Preference:** Alice prefers a hotel near a river.\n*   **Past Booking Experience:** You previously booked a Lisbon hotel near the river (which involved a card decline followed by a successful booking) and a Madrid hotel near the station, which Alice found too noisy.\n\n**What is missing** is the specific details of the hotel you booked in Lisbon so I can find a comparable one in Porto.\n\nCould you remind me of any specific features, neighborhood, or anything else about the Lisbon hotel you liked?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 219,
+    "answer_tokens": 167
+   },
+   {
+    "seed": 4,
+    "answer": "I see you're looking for a hotel in Porto similar to the one we booked last time.\n\nI have the following memories regarding your previous trips:\n\n*   **Trip to Lisbon:** We booked a hotel near the river, and the first booking attempt was declined, but the second one worked.\n*   **Trip to Madrid:** We booked a hotel near the station, but Alice mentioned it was too noisy.\n\nTo help me find a suitable hotel in Porto, could you remind me if you have any specific preferences for the location in Porto, or if you'd like to stick to the budget of 150 euros per night and the dates of 3 to 6 November?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 219,
+    "answer_tokens": 143
+   },
+   {
+    "seed": 5,
+    "answer": "I see you are looking for a hotel in Porto, similar to the one we booked previously.\n\nHere are the relevant memories:\n*   **Alice's preference:** Alice prefers a hotel near a river.\n*   **Past booking context:** We booked a Lisbon hotel near the river (which had a payment issue), and a Madrid hotel near the station (which Alice found too noisy).\n\nTo help me find a suitable hotel in Porto, could you please confirm:\n\n1.  Are you still looking for a hotel near a river?\n2.  Do you have a budget in mind for this trip? (We previously noted a budget of 150 euros per night, but I don't know if that applies to this search.)\n3.  What are the specific dates you are considering for this trip? (Our previously noted dates were 3 to 6 November.)",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 219,
+    "answer_tokens": 184
+   }
+  ],
+  "pooled · Find a hotel in Porto like the one we booked last time.": [
+   {
+    "seed": 1,
+    "answer": "I see you are looking for a hotel in Porto, similar to the one you booked last time.\n\nBased on your memories, you mentioned that **Alice prefers a hotel near a river** ([#2]).\n\nCould you confirm if you are looking for a hotel in Porto near a river?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 173,
+    "answer_tokens": 60
+   },
+   {
+    "seed": 2,
+    "answer": "I see that you are looking for a hotel in Porto, similar to the one you booked last time.\n\nI have the following memories regarding previous bookings:\n*   Booked a Lisbon hotel near the river.\n*   Booked a Madrid hotel near the station (which Alice said was too noisy).\n*   Alice prefers a hotel near a river.\n\nTo help you find a suitable hotel in Porto, could you remind me what specific details you liked or disliked about the Lisbon hotel booking, or what criteria you have for the Porto hotel?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 173,
+    "answer_tokens": 112
+   },
+   {
+    "seed": 3,
+    "answer": "I see you're looking for a hotel in Porto, similar to the one we booked last time.\n\nI have the following memories related to past bookings:\n*   **[#5 (2026-09-12)]** Booked the Lisbon hotel near the river; the first card was declined and the second worked.\n*   **[#4 (2026-08-03)]** Booked a Madrid hotel near the station; Alice later said it was too noisy.\n*   **[#2]** Alice prefers a hotel near a river.\n*   **[#10]** Waiting for Alice to confirm the hotel area.\n\nHowever, I do not have any specific details about the hotel booked previously that I can use as a direct reference, nor do I have any information about hotels in Porto.\n\nTo help you find a suitable hotel, could you please tell me more about what you are looking for",
+    "tool_calls": [],
+    "done_reason": "length",
+    "prompt_tokens": 173,
+    "answer_tokens": 200
+   },
+   {
+    "seed": 4,
+    "answer": "I see that you are looking for a hotel in Porto, similar to the one we booked last time.\n\nBased on our memories, you mentioned that **Alice prefers a hotel near a river** ([#2]). We also previously booked a hotel near the river in Lisbon ([#5]).\n\nHowever, I do not have any specific details about the hotel we booked last time, or any information about a hotel in Porto yet.\n\nCould you remind me of what you mean by \"the one we booked last time\"?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 173,
+    "answer_tokens": 105
+   },
+   {
+    "seed": 5,
+    "answer": "I see you are looking for a hotel in Porto, similar to the one we booked previously.\n\nHowever, I don't have any specific memories about a hotel booked in Porto. I do have memories about booking a hotel in **Lisbon near the river** and a hotel in **Madrid near the station**.\n\nCould you tell me more about what you liked about the hotel in Lisbon that you'd like to replicate in Porto?",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 173,
+    "answer_tokens": 89
+   }
+  ],
+  "per kind · What should Alice eat at the hotel restaurant? Is she vegetarian?": [
+   {
+    "seed": 1,
+    "answer": "Alice eats fish but no meat, so she is not vegetarian. I do not have information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 229,
+    "answer_tokens": 29
+   },
+   {
+    "seed": 2,
+    "answer": "Alice eats fish but no meat, so she is not vegetarian. I don't have information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 229,
+    "answer_tokens": 30
+   },
+   {
+    "seed": 3,
+    "answer": "Alice eats fish but no meat, so she is not vegetarian. I do not have specific information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 229,
+    "answer_tokens": 30
+   },
+   {
+    "seed": 4,
+    "answer": "Alice eats fish but no meat, so she is not vegetarian. I do not have information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 229,
+    "answer_tokens": 29
+   },
+   {
+    "seed": 5,
+    "answer": "Alice eats fish but no meat, so she is not vegetarian. I do not have any specific information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 229,
+    "answer_tokens": 31
+   }
+  ],
+  "pooled · What should Alice eat at the hotel restaurant? Is she vegetarian?": [
+   {
+    "seed": 1,
+    "answer": "Based on the memories:\n\n*   Alice eats fish but no meat, so she is not vegetarian.\n*   The memories do not specify what Alice should eat at the hotel restaurant.\n*   Alice is not vegetarian.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 156,
+    "answer_tokens": 47
+   },
+   {
+    "seed": 2,
+    "answer": "Alice eats fish but no meat, so she is not vegetarian.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 156,
+    "answer_tokens": 14
+   },
+   {
+    "seed": 3,
+    "answer": "Alice is not vegetarian because she eats fish but no meat.\n\nI don't have any information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 156,
+    "answer_tokens": 31
+   },
+   {
+    "seed": 4,
+    "answer": "Alice is not vegetarian because she eats fish but no meat.\n\nI don't have information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 156,
+    "answer_tokens": 30
+   },
+   {
+    "seed": 5,
+    "answer": "Alice is not vegetarian because she eats fish but no meat.\n\nI don't have any information about what Alice should eat at the hotel restaurant.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 156,
+    "answer_tokens": 31
+   }
+  ]
+ }
+}

@@ -1,0 +1,34 @@
+$ python adapt.py splits --work recorded-adaptations/work --cohort recorded/cohort.json --model recorded/candidate.json --out recorded-adaptations/splits.json
+{
+  "rows": {
+    "training": 144,
+    "validation": 48,
+    "test": 48,
+    "excluded": 0
+  },
+  "entities": {
+    "training": 24,
+    "validation": 24,
+    "test": 24
+  },
+  "train_validation_shared_entities": 24,
+  "train_test_shared_entities": 24,
+  "ranges": {
+    "training": {
+      "first": "2026-01-03T12:00:00Z",
+      "last": "2026-01-08T12:00:00Z"
+    },
+    "validation": {
+      "first": "2026-01-10T12:00:00Z",
+      "last": "2026-01-11T12:00:00Z"
+    },
+    "test": {
+      "first": "2026-01-13T12:00:00Z",
+      "last": "2026-01-14T12:00:00Z"
+    }
+  },
+  "target": "later observations for existing users",
+  "maximum_training_label_ready_at": "2026-01-09T14:00:00Z",
+  "earliest_validation_prediction": "2026-01-10T12:00:00Z",
+  "training_labels_ready_before_validation": true
+}

@@ -1,0 +1,227 @@
+{
+  "execution_mode": "fresh local model inference with real per-request cache; cooperative serial scheduler",
+  "environment": {
+    "python": "3.12.8",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "transformers": "5.20.2",
+    "device": "mps"
+  },
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "source_sha256": "ac43c09b35985deabb2597c34ca668b515700e4e66c74d36a3a9f8c19062eb8e",
+  "arrival_policy": "all jobs arrive before the scheduler starts; greedy output, explicit per-job caps",
+  "runs": [
+    {
+      "policy": "fifo",
+      "chunk_size": null,
+      "max_active": 2,
+      "elapsed_ms": 915.266,
+      "requests": [
+        {
+          "id": "interactive-a",
+          "prompt": "Explain cache invalidation in one sentence.",
+          "output_ids": [
+            8233,
+            8318,
+            367,
+            374,
+            279,
+            1882,
+            315,
+            53526
+          ],
+          "text": "Cache invalidation is the process of detecting",
+          "ttft_ms": 524.647,
+          "completion_ms": 716.541,
+          "max_gap_ms": 28.098
+        },
+        {
+          "id": "interactive-b",
+          "prompt": "Name one reason to bound a request queue.",
+          "output_ids": [
+            3966,
+            2874,
+            311,
+            6822,
+            264,
+            1681,
+            7177,
+            374
+          ],
+          "text": "One reason to bound a request queue is",
+          "ttft_ms": 751.65,
+          "completion_ms": 915.215,
+          "max_gap_ms": 23.591
+        },
+        {
+          "id": "long-document",
+          "prompt": "Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies.  Summarize the use of caching.",
+          "output_ids": [
+            785,
+            990,
+            315,
+            47430,
+            304,
+            279,
+            2266,
+            315,
+            2530,
+            3542,
+            374,
+            264,
+            14762,
+            1483,
+            311,
+            29436
+          ],
+          "text": "The use of caching in the context of source files is a technique used to optimize",
+          "ttft_ms": 80.761,
+          "completion_ms": 486.266,
+          "max_gap_ms": 28.159
+        }
+      ]
+    },
+    {
+      "policy": "interleave",
+      "chunk_size": null,
+      "max_active": 2,
+      "elapsed_ms": 877.493,
+      "requests": [
+        {
+          "id": "interactive-a",
+          "prompt": "Explain cache invalidation in one sentence.",
+          "output_ids": [
+            8233,
+            8318,
+            367,
+            374,
+            279,
+            1882,
+            315,
+            53526
+          ],
+          "text": "Cache invalidation is the process of detecting",
+          "ttft_ms": 110.452,
+          "completion_ms": 455.784,
+          "max_gap_ms": 50.999
+        },
+        {
+          "id": "interactive-b",
+          "prompt": "Name one reason to bound a request queue.",
+          "output_ids": [
+            3966,
+            2874,
+            311,
+            6822,
+            264,
+            1681,
+            7177,
+            374
+          ],
+          "text": "One reason to bound a request queue is",
+          "ttft_ms": 518.653,
+          "completion_ms": 877.447,
+          "max_gap_ms": 53.011
+        },
+        {
+          "id": "long-document",
+          "prompt": "Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies.  Summarize the use of caching.",
+          "output_ids": [
+            785,
+            990,
+            315,
+            47430,
+            304,
+            279,
+            2266,
+            315,
+            2530,
+            3542,
+            374,
+            264,
+            14762,
+            1483,
+            311,
+            29436
+          ],
+          "text": "The use of caching in the context of source files is a technique used to optimize",
+          "ttft_ms": 74.636,
+          "completion_ms": 851.534,
+          "max_gap_ms": 61.618
+        }
+      ]
+    },
+    {
+      "policy": "interleave",
+      "chunk_size": 64,
+      "max_active": 2,
+      "elapsed_ms": 969.435,
+      "requests": [
+        {
+          "id": "interactive-a",
+          "prompt": "Explain cache invalidation in one sentence.",
+          "output_ids": [
+            8233,
+            8318,
+            367,
+            374,
+            279,
+            1882,
+            315,
+            53526
+          ],
+          "text": "Cache invalidation is the process of detecting",
+          "ttft_ms": 80.473,
+          "completion_ms": 479.822,
+          "max_gap_ms": 91.812
+        },
+        {
+          "id": "interactive-b",
+          "prompt": "Name one reason to bound a request queue.",
+          "output_ids": [
+            3966,
+            2874,
+            311,
+            6822,
+            264,
+            1681,
+            7177,
+            374
+          ],
+          "text": "One reason to bound a request queue is",
+          "ttft_ms": 539.852,
+          "completion_ms": 891.735,
+          "max_gap_ms": 51.422
+        },
+        {
+          "id": "long-document",
+          "prompt": "Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies. Source files define functions and their dependencies.  Summarize the use of caching.",
+          "output_ids": [
+            785,
+            990,
+            315,
+            47430,
+            304,
+            279,
+            2266,
+            315,
+            2530,
+            3542,
+            374,
+            264,
+            14762,
+            1483,
+            311,
+            29436
+          ],
+          "text": "The use of caching in the context of source files is a technique used to optimize",
+          "ttft_ms": 279.815,
+          "completion_ms": 969.385,
+          "max_gap_ms": 60.107
+        }
+      ]
+    }
+  ],
+  "limits": "One development run per policy; serial model forwards, not a production continuous-batching kernel or a throughput benchmark."
+}

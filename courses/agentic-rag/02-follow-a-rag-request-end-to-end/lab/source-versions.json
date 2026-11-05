@@ -1,0 +1,91 @@
+{
+  "checked_on": "2026-10-22",
+  "runtime_minimum": "3.12",
+  "minimum_reason": "Locked NumPy2.5.4 requires Python>=3.12; installed metadata checked.",
+  "reuse": {
+    "src/agentic_rag/concepts.py": {
+      "unchanged_from": "how-rag-works/src/agentic_rag/concepts.py",
+      "sha256": "6ed0eba26ab499d59294c1f0838fa5d8591da93cfecef71e74baeefb658c2850"
+    },
+    "data/docs.json": {
+      "unchanged_from": "how-rag-works/data/docs.json",
+      "sha256": "25a1af754a299d0a1bc639fd93995c506923bb0fc04ca4b7ce5bec1d9ffba554"
+    },
+    "data/source-manifest.json": {
+      "unchanged_from": "how-rag-works/data/source-manifest.json",
+      "sha256": "1a8b716fd5474006649df05fa8380c2c3808d53681b63bf28a0136bef088f629"
+    },
+    "requirements-lock.txt": {
+      "unchanged_from": "how-rag-works/requirements-lock.txt",
+      "sha256": "9ee5dbc7310835f44255d833cb506ff8506543d672133dde0bc556105f9953aa"
+    },
+    "pyproject.toml": {
+      "unchanged_from": "how-rag-works/pyproject.toml",
+      "sha256": "54a0efac39adbb0fdfbba1f8600f2d8cc51d27b959892427db8c6db6e863b6c1"
+    },
+    "runs/2026-10-22-concept/recorded-run.json": {
+      "unchanged_from": "how-rag-works/runs/2026-10-22-concept/recorded-run.json",
+      "sha256": "ee99ceedc9a09b50e39ed9eef8184a437b29fca0b6755d4edd914c8186f09e9f"
+    },
+    "LICENSE": {
+      "unchanged_from": "how-rag-works/LICENSE",
+      "sha256": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83"
+    }
+  },
+  "official_docs": [
+    "https://docs.langchain.com/oss/python/integrations/vectorstores/in_memory",
+    "https://docs.langchain.com/oss/python/langchain/retrieval",
+    "https://pypi.org/project/langchain-core/",
+    "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B",
+    "https://huggingface.co/google/gemma-4-E2B-it"
+  ],
+  "scope": "New pipeline operations run locally now. Original recorded embedding vectors and Gemma replies replay without fresh inference; application-level messages are not a provider transport capture.",
+  "installed_packages": {
+    "langchain-core": {
+      "version": "1.7.0",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "license": "MIT"
+    },
+    "langchain-text-splitters": {
+      "version": "1.1.3",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "license": "MIT"
+    },
+    "pydantic": {
+      "version": "2.14.1",
+      "requires_python": ">=3.10",
+      "license": "MIT"
+    },
+    "numpy": {
+      "version": "2.5.4",
+      "requires_python": ">=3.12",
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+    }
+  },
+  "official_pypi_checked": {
+    "langchain-core": {
+      "version": "1.7.0",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "source": "https://pypi.org/pypi/langchain-core/json"
+    },
+    "langchain-text-splitters": {
+      "version": "1.1.3",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "source": "https://pypi.org/pypi/langchain-text-splitters/json"
+    },
+    "pydantic": {
+      "version": "2.14.1",
+      "requires_python": ">=3.10",
+      "source": "https://pypi.org/pypi/pydantic/json"
+    },
+    "numpy": {
+      "version": "2.5.4",
+      "requires_python": ">=3.12",
+      "source": "https://pypi.org/pypi/numpy/json"
+    }
+  },
+  "installed_api_signatures": {
+    "InMemoryVectorStore.similarity_search_with_score": "(self, query: 'str', k: 'int' = 4, **kwargs: 'Any') -> 'list[tuple[Document, float]]'",
+    "RecursiveCharacterTextSplitter": "(separators: 'list[str] | None' = None, keep_separator: \"bool | Literal['start', 'end']\" = True, is_separator_regex: 'bool' = False, **kwargs: 'Any') -> 'None'"
+  }
+}

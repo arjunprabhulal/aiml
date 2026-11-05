@@ -1,0 +1,46 @@
+[
+  {
+    "id": "older-staging-lookup",
+    "request": {
+      "operation": "lookup_rollback",
+      "version": "2",
+      "environment": "staging"
+    }
+  },
+  {
+    "id": "current-production-lookup",
+    "request": {
+      "operation": "lookup_rollback",
+      "version": "3",
+      "environment": "production"
+    }
+  },
+  {
+    "id": "maintainer-proposal",
+    "request": {
+      "operation": "propose_rollback",
+      "version": "3",
+      "environment": "production",
+      "role": "maintainer",
+      "release": "r41"
+    }
+  },
+  {
+    "id": "reader-action-refused",
+    "request": {
+      "operation": "propose_rollback",
+      "version": "3",
+      "environment": "production",
+      "role": "reader",
+      "release": "r41"
+    }
+  },
+  {
+    "id": "unknown-version",
+    "request": {
+      "operation": "lookup_rollback",
+      "version": "9",
+      "environment": "staging"
+    }
+  }
+]

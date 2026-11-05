@@ -1,0 +1,7 @@
+turn 1: search
+turn 2: read
+turn 3: final
+answer: docuctl rollback --env staging --release LAST_GOOD
+source: rollback-v2
+stop: final | independent outcome: True
+policy: scripted

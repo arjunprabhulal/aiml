@@ -1,0 +1,253 @@
+{
+  "Mcp-Name search_docs, body publish_page": {
+    "body": {
+      "error": "insufficient_scope",
+      "error_description": "This tool needs docs:write"
+    },
+    "status": 403,
+    "www_authenticate": "Bearer error=\"insufficient_scope\", scope=\"docs:write\", resource_metadata=\"http://{service}/.well-known/oauth-protected-resource/mcp\", error_description=\"This tool needs docs:write\""
+  },
+  "authorization server metadata": {
+    "body": {
+      "authorization_endpoint": "http://{issuer}/authorize",
+      "grant_types_supported": [
+        "client_credentials"
+      ],
+      "issuer": "http://{issuer}",
+      "jwks_uri": "http://{issuer}/jwks.json",
+      "response_types_supported": [],
+      "scopes_supported": [
+        "docs:read",
+        "docs:write"
+      ],
+      "token_endpoint": "http://{issuer}/token",
+      "token_endpoint_auth_methods_supported": [
+        "client_secret_post"
+      ]
+    },
+    "status": 200,
+    "www_authenticate": null
+  },
+  "body over 1 MB": {
+    "body": {
+      "error": "request body too large"
+    },
+    "status": 413,
+    "www_authenticate": null
+  },
+  "body that is not JSON": {
+    "body": {
+      "error": {
+        "code": -32700,
+        "message": "Parse error"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+    },
+    "status": 400,
+    "www_authenticate": null
+  },
+  "body with a repeated key": {
+    "body": {
+      "error": {
+        "code": -32700,
+        "message": "Parse error"
+      },
+      "id": null,
+      "jsonrpc": "2.0"
+    },
+    "status": 400,
+    "www_authenticate": null
+  },
+  "expired token": {
+    "body": {
+      "error": "invalid_token",
+      "error_description": "Authentication required"
+    },
+    "status": 401,
+    "www_authenticate": "Bearer error=\"invalid_token\", error_description=\"Authentication required\", resource_metadata=\"http://{service}/.well-known/oauth-protected-resource/mcp\", scope=\"docs:read\""
+  },
+  "foreign Origin header": {
+    "body": "Invalid Origin header",
+    "status": 403,
+    "www_authenticate": null
+  },
+  "no token": {
+    "body": {
+      "error": "invalid_token",
+      "error_description": "Authentication required"
+    },
+    "status": 401,
+    "www_authenticate": "Bearer error=\"invalid_token\", error_description=\"Authentication required\", resource_metadata=\"http://{service}/.well-known/oauth-protected-resource/mcp\", scope=\"docs:read\""
+  },
+  "protected resource metadata": {
+    "body": {
+      "authorization_servers": [
+        "http://{issuer}"
+      ],
+      "bearer_methods_supported": [
+        "header"
+      ],
+      "resource": "http://{service}/mcp",
+      "scopes_supported": [
+        "docs:read"
+      ]
+    },
+    "status": 200,
+    "www_authenticate": null
+  },
+  "reader calls publish_page": {
+    "body": {
+      "error": "insufficient_scope",
+      "error_description": "This tool needs docs:write"
+    },
+    "status": 403,
+    "www_authenticate": "Bearer error=\"insufficient_scope\", scope=\"docs:write\", resource_metadata=\"http://{service}/.well-known/oauth-protected-resource/mcp\", error_description=\"This tool needs docs:write\""
+  },
+  "reader searches": {
+    "body": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"slug\": \"quickstart\",\n  \"text\": \"Start a worker with taskq worker emails.\",\n  \"caller\": \"docs-reader\"\n}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "resultType": "complete",
+        "structuredContent": {
+          "result": [
+            {
+              "caller": "docs-reader",
+              "slug": "quickstart",
+              "text": "Start a worker with taskq worker emails."
+            }
+          ]
+        }
+      }
+    },
+    "status": 200,
+    "www_authenticate": null
+  },
+  "reader token claims": {
+    "aud": "http://{service}/mcp",
+    "iss": "http://{issuer}",
+    "scope": "docs:read",
+    "sub": "docs-reader"
+  },
+  "sdk client pinned to another issuer": {
+    "client": "docs-editor",
+    "granted_scope": null,
+    "http": [
+      "POST http://{service}/mcp (server/discover) -> 401",
+      "GET http://{service}/.well-known/oauth-protected-resource/mcp -> 200",
+      "GET http://{issuer}/.well-known/oauth-authorization-server -> 200"
+    ],
+    "outcomes": [
+      {
+        "detail": "OAuthFlowError: Authorization server metadata issuer mismatch: http://{issuer} != http://{other}",
+        "outcome": "authorization_failed"
+      }
+    ]
+  },
+  "sdk clients": {
+    "docs-editor": {
+      "client": "docs-editor",
+      "granted_scope": "docs:read docs:write",
+      "http": [
+        "POST http://{service}/mcp (server/discover) -> 401",
+        "GET http://{service}/.well-known/oauth-protected-resource/mcp -> 200",
+        "GET http://{issuer}/.well-known/oauth-authorization-server -> 200",
+        "POST http://{issuer}/token -> 200",
+        "POST http://{service}/mcp (server/discover) -> 200",
+        "POST http://{service}/mcp (tools/call) -> 200",
+        "POST http://{service}/mcp (tools/list) -> 200",
+        "POST http://{service}/mcp (tools/call) -> 403",
+        "POST http://{issuer}/token -> 200",
+        "POST http://{service}/mcp (tools/call) -> 200",
+        "POST http://{service}/mcp (tools/call) -> 200"
+      ],
+      "outcomes": [
+        {
+          "outcome": "result",
+          "tool": "search_docs"
+        },
+        {
+          "outcome": "result",
+          "tool": "publish_page"
+        },
+        {
+          "outcome": "result",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "docs-reader": {
+      "client": "docs-reader",
+      "granted_scope": "docs:read",
+      "http": [
+        "POST http://{service}/mcp (server/discover) -> 401",
+        "GET http://{service}/.well-known/oauth-protected-resource/mcp -> 200",
+        "GET http://{issuer}/.well-known/oauth-authorization-server -> 200",
+        "POST http://{issuer}/token -> 200",
+        "POST http://{service}/mcp (server/discover) -> 200",
+        "POST http://{service}/mcp (tools/call) -> 200",
+        "POST http://{service}/mcp (tools/list) -> 200",
+        "POST http://{service}/mcp (tools/call) -> 403",
+        "POST http://{issuer}/token -> 400"
+      ],
+      "outcomes": [
+        {
+          "outcome": "result",
+          "tool": "search_docs"
+        },
+        {
+          "detail": "OAuthTokenError: Token exchange failed (400): {\"error\":\"invalid_scope\",\"error_description\":\"a requested scope is not allowed for this client\"}",
+          "outcome": "authorization_failed"
+        }
+      ]
+    }
+  },
+  "token for a resource the client was not given": {
+    "body": {
+      "error": "invalid_target",
+      "error_description": "the resource is missing or not allowed for this client"
+    },
+    "status": 400,
+    "www_authenticate": null
+  },
+  "token in the query string": {
+    "body": {
+      "error": "invalid_token",
+      "error_description": "Authentication required"
+    },
+    "status": 401,
+    "www_authenticate": "Bearer error=\"invalid_token\", error_description=\"Authentication required\", resource_metadata=\"http://{service}/.well-known/oauth-protected-resource/mcp\", scope=\"docs:read\""
+  },
+  "token issued for another server": {
+    "body": {
+      "error": "invalid_token",
+      "error_description": "Authentication required"
+    },
+    "status": 401,
+    "www_authenticate": "Bearer error=\"invalid_token\", error_description=\"Authentication required\", resource_metadata=\"http://{service}/.well-known/oauth-protected-resource/mcp\", scope=\"docs:read\""
+  },
+  "token with a scope the client lacks": {
+    "body": {
+      "error": "invalid_scope",
+      "error_description": "a requested scope is not allowed for this client"
+    },
+    "status": 400,
+    "www_authenticate": null
+  },
+  "token without resource": {
+    "body": {
+      "error": "invalid_target",
+      "error_description": "the resource is missing or not allowed for this client"
+    },
+    "status": 400,
+    "www_authenticate": null
+  }
+}

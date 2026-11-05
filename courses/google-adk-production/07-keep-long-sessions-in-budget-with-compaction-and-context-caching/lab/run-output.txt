@@ -1,0 +1,49 @@
+# budgeted: cache=True compaction=True
+> 1. Deploy r42 to staging failed. What went wrong, according to its log?
+call   read_deploy_log({'release': 'r42'})
+model  prompt=4603 cached=0 cache=fingerprint only
+model  prompt=5362 cached=4502 cache=active
+answer The deploy failed during the `pre_deploy` hook while running `alembic upgrade head`. 
+> 2. If I roll staging back, does that undo the migration r42 started?
+model  prompt=5477 cached=4502 cache=active
+answer No. `docuctl rollback` does not run any hooks, so it will not undo database migrations. 
+> 3. We fixed the migration and deployed r43, which failed differently. What happened?
+call   read_deploy_log({'release': 'r43'})
+model  prompt=5520 cached=0 cache=fingerprint only
+model  prompt=8392 cached=4771 cache=active
+answer The migration succeeded, but the deploy failed its health check:
+> 4. How long are staging logs kept?
+model  prompt=8510 cached=4771 cache=active
+answer Logs are kept for 14 days in staging (and 30 days in production). After that, older lines are deleted.
+> 5. Which of the two failed deploys, r42 or r43, ran its migration to the end?
+model  prompt=6434 cached=0 cache=fingerprint only
+answer Release **r43** ran its migration to the end. In r43, `alembic upgrade head` completed successfully (`Running upgrade ... -> a01d_locale_not_null ... 
+> 6. What is the command to read the full pre_deploy output of r42?
+model  prompt=6528 cached=5134 cache=active
+answer To read the full `pre_deploy` hook output for release `r42`, run:
+compaction of turns [1, 2]: 1160 characters
+compaction of turns [2, 3, 4]: 1210 characters
+
+# plain: cache=False compaction=False
+> 1. Deploy r42 to staging failed. What went wrong, according to its log?
+call   read_deploy_log({'release': 'r42'})
+model  prompt=4603 cached=2565 cache=None
+model  prompt=5362 cached=3334 cache=None
+answer Deploy r42 failed during the `pre_deploy` hook while running `alembic upgrade head`. 
+> 2. If I roll staging back, does that undo the migration r42 started?
+model  prompt=5494 cached=0 cache=None
+answer No. `docuctl rollback` does not run any hooks, so it does not undo database migrations. 
+> 3. We fixed the migration and deployed r43, which failed differently. What happened?
+call   read_deploy_log({'release': 'r43'})
+model  prompt=5593 cached=0 cache=None
+model  prompt=8465 cached=0 cache=None
+answer Release r43 passed the migration but failed its health checks. 
+> 4. How long are staging logs kept?
+model  prompt=8556 cached=0 cache=None
+answer Logs are kept for 14 days in staging (and 30 days in production). Older lines are deleted, so you must export them to your own store if you need them 
+> 5. Which of the two failed deploys, r42 or r43, ran its migration to the end?
+model  prompt=8620 cached=0 cache=None
+answer Release **r43** ran its migration to the end. Its `pre_deploy` hook (`alembic upgrade head`) finished migration `a02e` successfully with `exit 0` befo
+> 6. What is the command to read the full pre_deploy output of r42?
+model  prompt=8708 cached=0 cache=None
+answer The command is:

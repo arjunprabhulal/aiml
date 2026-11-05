@@ -1,0 +1,46 @@
+{
+  "execution_mode": "actual-loopback-fastapi-http-offline-scripted-retrieval",
+  "model_called": false,
+  "command": [
+    "run.py",
+    "--output",
+    "runs/2026-10-23-http/result.json"
+  ],
+  "exit_status": 0,
+  "test_command": "python3 -m unittest discover -v",
+  "test_exit_status": 0,
+  "environment": {
+    "python": "3.12.8",
+    "sqlite": "3.45.3",
+    "packages": {
+      "fastapi": "0.141.1",
+      "starlette": "1.9.0",
+      "uvicorn": "0.54.0",
+      "httpx": "0.28.1",
+      "pydantic": "2.14.1"
+    }
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "b8f8b12b4e176aa1eb2400cba5c1a0a95d528831bdecf47b3fc808cba96ba3b4",
+    "api.py": "919d29a07bb03787b4ab9eef86ee1a2b8fbc7704046c2a1bfd68bc266e57ed2a",
+    "app.py": "82159308da477305fbffc8c51470835de3702611b9117910e08161e50cd0c4bd",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "fault_fixture.py": "9a869defb58e16a6cb3914ebc9a08e040a63ab33ecc8c6ba55a3f5531cd65d93",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "limits.py": "bd7acae9935c04642d8fd5d1563d3bcf8ca135b46ae2ff5ecd106063c9c0c60f",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "loopback.py": "f9eaf16f2e32984de43b95cc37de814e82eb41dbeaa5503527dae515d81d1a8f",
+    "refine.py": "fce4b5bd581fbfc4aaf6039bb486c8f477c3a5f80e95fc5c58473739a75e7235",
+    "render_output.py": "93f302ab2a12ff8aafe1995fe70a3c1706f7183ad3f7beb6282afc0684e402ef",
+    "requirements.lock": "c03cdf1e60393462ed82c8565aabfe77475c6072b689972af62cb0fe34fbe919",
+    "requirements.txt": "3886b4b89cb52fed466ad0fbd38de17165d184c15274e9abed42670bd99054bc",
+    "run.py": "65af4aae258bc1e35234575e11c7c5c6151b24e3d9bb0616ae1c7e4c826e529d",
+    "serve.py": "6ca8338f3cd407a354c714385e318e34749c8d2c844623af3cd7217fb4667b3e",
+    "service.py": "c8dfe0a848faaeb92844603a1cb6d1b387586a4c98618d07d6740e132e306173",
+    "test_api.py": "0ac5540d8d38efa145ae273a66c0deacc05c73ab72c859dbf256361156d2379e",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  }
+}

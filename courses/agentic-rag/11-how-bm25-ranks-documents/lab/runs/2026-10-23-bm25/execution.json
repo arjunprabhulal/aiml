@@ -1,0 +1,26 @@
+{
+  "execution_mode": "offline-native-sqlite-fts5",
+  "command": [
+    "run.py",
+    "--output",
+    "runs/2026-10-23-bm25/result.json"
+  ],
+  "exit_status": 0,
+  "test_command": "python3 -m unittest discover -v",
+  "test_exit_status": 0,
+  "environment": {
+    "python": "3.15.0",
+    "sqlite": "3.53.4"
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "0bb9362fc9765a9279501b71549882a015655ada558d766e1681d964c5a7d4d9",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "render_output.py": "4de848f50116599f20fc85f1e2449dff6c3e8bdc775a354dae9d19f6e517cc88",
+    "run.py": "a44fb17467fb8469c704ad0dd951ed39f7b209e4af5c534f23d888b1e7c10389",
+    "test_bm25.py": "42f3d1b225c4fb82b2236ceca65478b1b4faf3a0176a57ab18008446b921c93d",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  }
+}

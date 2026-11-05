@@ -1,0 +1,63 @@
+{
+  "classification": "actual_native_feature_CLI_original_PTY_capture",
+  "lesson": "serve-the-rag-application-with-fastapi",
+  "argv": [
+    "/tmp/aiml-review-venv/bin/python",
+    "-u",
+    "run.py",
+    "--output",
+    "runs/2026-10-23-native-cli/result.json"
+  ],
+  "source_before_sha256": {
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "service.py": "c8dfe0a848faaeb92844603a1cb6d1b387586a4c98618d07d6740e132e306173",
+    "run.py": "65af4aae258bc1e35234575e11c7c5c6151b24e3d9bb0616ae1c7e4c826e529d",
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "requirements.txt": "3886b4b89cb52fed466ad0fbd38de17165d184c15274e9abed42670bd99054bc",
+    "limits.py": "bd7acae9935c04642d8fd5d1563d3bcf8ca135b46ae2ff5ecd106063c9c0c60f",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "refine.py": "fce4b5bd581fbfc4aaf6039bb486c8f477c3a5f80e95fc5c58473739a75e7235",
+    "serve.py": "6ca8338f3cd407a354c714385e318e34749c8d2c844623af3cd7217fb4667b3e",
+    "loopback.py": "f9eaf16f2e32984de43b95cc37de814e82eb41dbeaa5503527dae515d81d1a8f",
+    "README.md": "b8f8b12b4e176aa1eb2400cba5c1a0a95d528831bdecf47b3fc808cba96ba3b4",
+    "api.py": "919d29a07bb03787b4ab9eef86ee1a2b8fbc7704046c2a1bfd68bc266e57ed2a",
+    "app.py": "82159308da477305fbffc8c51470835de3702611b9117910e08161e50cd0c4bd",
+    "fault_fixture.py": "9a869defb58e16a6cb3914ebc9a08e040a63ab33ecc8c6ba55a3f5531cd65d93",
+    "test_api.py": "0ac5540d8d38efa145ae273a66c0deacc05c73ab72c859dbf256361156d2379e",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66",
+    "render_output.py": "93f302ab2a12ff8aafe1995fe70a3c1706f7183ad3f7beb6282afc0684e402ef",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "requirements.lock": "c03cdf1e60393462ed82c8565aabfe77475c6072b689972af62cb0fe34fbe919",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19"
+  },
+  "original_terminal": {
+    "image": "terminal.png",
+    "sha256": "732ce02e3c6a00ddb835de6123a3e49161eb1b7b53e89de15ef08e4b15247f34",
+    "width": 3840,
+    "height": 2200,
+    "CSS_width": 1920,
+    "CSS_height": 1100,
+    "DPR": 2,
+    "raw_output": "terminal.txt",
+    "output_sha256": "28636994b0b5bbb70e7dbe490c460f4dd6c906ed41aeb0b09272875043303b76",
+    "session": "session.json",
+    "session_sha256": "5e74641c0bacf0647697c2cbf1efe507b49adf1e1f80cd18416a562750c44749"
+  },
+  "method": "Original process output streamed from PTY directly into installed xterm, captured in same resident terminal; no log read/replay.",
+  "executed_source_files_unchanged": true,
+  "captured_while_original_terminal_resident": true,
+  "saved_stdout_replayed": false,
+  "new_model_provider_requests": 0,
+  "packages_downloaded": 0,
+  "connection_policy": "Minimal environment; Python socket guard permits literal loopback/Unix IPC only; audited fixed Node tests use no network. This is not an OS network sandbox.",
+  "external_python_connection_attempts": 0,
+  "capture_tool_sha256": {
+    "/tmp/rag-module10-native-cli/terminal_server.py": "59afab3b7dec55287006ef187e0a0a97436c17587c9b5e1a7ddaf5930e687672",
+    "/tmp/rag-module10-native-cli/capture.py": "7bf2204a018f25ea58cc3f05a853d7f7918f24ba60e24f2c91b434bdce1efb78",
+    "/tmp/rag-module10-native-cli/terminal.html": "9ebd1d976cf37081ba71e9c4fee55266833fea733d587fe667d259813623e671",
+    "/tmp/rag-module10-native-cli/guard/sitecustomize.py": "6938fa24e6841aecba121324902c302cf9f0bf75bccdc1aa08935827ed6081a9"
+  },
+  "historical_documentation": "previous-readme.md preserves exact README bytes bound by the older archived execution records; this CLI attachment changes only README documentation, not executed code.",
+  "actual_result_sha256": "496c54388836508c70597c6e31d7070fc02248885c8ea2359b9fed94f3c3a766"
+}

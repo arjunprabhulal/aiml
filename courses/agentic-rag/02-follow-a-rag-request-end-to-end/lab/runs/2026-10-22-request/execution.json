@@ -1,0 +1,43 @@
+{
+  "executed_on": "2026-10-22T22:32:09.992693+00:00",
+  "mode": "actual local retrieval and exact-request replay; no inference or network",
+  "commands": [
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "trace_run.py"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-request/public/examples/follow-a-rag-request-end-to-end",
+      "exit_code": 0,
+      "stdout": "actual local retrieval and request trace; saved model replies replayed, no fresh inference\nQuestion: How do I save UTF-8 text with pathlib?\nStatus: answered\nEvents: request_accepted -> retrieval_completed -> context_selected -> model_request_ready -> model_reply_returned -> reply_checked -> source_links_resolved -> request_completed\nSources: https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text\nQuestion: How many days does this service keep backups?\nStatus: not_in_docs\nEvents: request_accepted -> retrieval_completed -> context_selected -> model_request_ready -> model_reply_returned -> reply_checked -> source_links_resolved -> request_completed\nSources: (none)\nEmpty context: model_skipped\nChanged replay prompt: ReplayRequestMismatch\nSource outside selected context: ValueError\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-request/public/examples/follow-a-rag-request-end-to-end",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_bad_reply_shape_stops_before_link_resolution (test_request_trace.RequestTraceTests.test_bad_reply_shape_stops_before_link_resolution) ... ok\ntest_blank_question_stops_before_search_or_model (test_request_trace.RequestTraceTests.test_blank_question_stops_before_search_or_model) ... ok\ntest_changed_context_cannot_receive_a_saved_reply (test_request_trace.RequestTraceTests.test_changed_context_cannot_receive_a_saved_reply) ... ok\ntest_changed_context_order_is_a_different_replay_request (test_request_trace.RequestTraceTests.test_changed_context_order_is_a_different_replay_request) ... ok\ntest_changed_policy_cannot_receive_a_saved_reply (test_request_trace.RequestTraceTests.test_changed_policy_cannot_receive_a_saved_reply) ... ok\ntest_changed_question_cannot_receive_a_saved_reply (test_request_trace.RequestTraceTests.test_changed_question_cannot_receive_a_saved_reply) ... ok\ntest_corpus_or_record_change_changes_the_identity_or_refuses_loading (test_request_trace.RequestTraceTests.test_corpus_or_record_change_changes_the_identity_or_refuses_loading) ... ok\ntest_duplicate_saved_request_is_refused (test_request_trace.RequestTraceTests.test_duplicate_saved_request_is_refused) ... ok\ntest_each_replayed_result_matches_the_preserved_original_run (test_request_trace.RequestTraceTests.test_each_replayed_result_matches_the_preserved_original_run) ... ok\ntest_emitted_order_and_request_match_the_operations_that_ran (test_request_trace.RequestTraceTests.test_emitted_order_and_request_match_the_operations_that_ran) ... ok\ntest_link_membership_does_not_check_answer_truth (test_request_trace.RequestTraceTests.test_link_membership_does_not_check_answer_truth) ... ok\ntest_mismatched_replay_emits_refusal_without_returned_reply (test_request_trace.RequestTraceTests.test_mismatched_replay_emits_refusal_without_returned_reply) ... ok\ntest_missing_reply_binding_is_refused (test_request_trace.RequestTraceTests.test_missing_reply_binding_is_refused) ... ok\ntest_not_in_docs_cannot_attach_a_retrieved_but_unrelated_source (test_request_trace.RequestTraceTests.test_not_in_docs_cannot_attach_a_retrieved_but_unrelated_source) ... ok\ntest_real_empty_index_skips_the_model_and_has_a_distinct_identity (test_request_trace.RequestTraceTests.test_real_empty_index_skips_the_model_and_has_a_distinct_identity) ... ok\ntest_real_ranked_candidates_match_the_actual_index_scores (test_request_trace.RequestTraceTests.test_real_ranked_candidates_match_the_actual_index_scores) ... ok\ntest_replay_is_bound_to_question_not_iteration_order (test_request_trace.RequestTraceTests.test_replay_is_bound_to_question_not_iteration_order) ... ok\ntest_request_key_varies_by_question_and_logical_index (test_request_trace.RequestTraceTests.test_request_key_varies_by_question_and_logical_index) ... ok\ntest_saved_binding_is_not_changed_by_the_callers_objects (test_request_trace.RequestTraceTests.test_saved_binding_is_not_changed_by_the_callers_objects) ... ok\ntest_saved_question_must_match_saved_prompt (test_request_trace.RequestTraceTests.test_saved_question_must_match_saved_prompt) ... ok\ntest_source_outside_selected_context_is_rejected_even_when_in_corpus (test_request_trace.RequestTraceTests.test_source_outside_selected_context_is_rejected_even_when_in_corpus) ... ok\ntest_unrecorded_question_is_refused_without_fabricating_an_embedding (test_request_trace.RequestTraceTests.test_unrecorded_question_is_refused_without_fabricating_an_embedding) ... ok\ntest_unsupported_question_still_retrieves_but_returns_no_links (test_request_trace.RequestTraceTests.test_unsupported_question_still_retrieves_but_returns_no_links) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "render_output.py",
+        "--html",
+        "/tmp/rag-request-runtime/report.html"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-request/public/examples/follow-a-rag-request-end-to-end",
+      "exit_code": 0,
+      "stdout": "actual local retrieval and request trace; saved model replies replayed, no fresh inference\nQuestion: How do I save UTF-8 text with pathlib?\nStatus: answered\nEvents: request_accepted -> retrieval_completed -> context_selected -> model_request_ready -> model_reply_returned -> reply_checked -> source_links_resolved -> request_completed\nSources: https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text\nQuestion: How many days does this service keep backups?\nStatus: not_in_docs\nEvents: request_accepted -> retrieval_completed -> context_selected -> model_request_ready -> model_reply_returned -> reply_checked -> source_links_resolved -> request_completed\nSources: (none)\nEmpty context: model_skipped\nChanged replay prompt: ReplayRequestMismatch\nSource outside selected context: ValueError\n/tmp/rag-request-runtime/report.html\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "experiment": "gpu-memory-sizing-weights-and-kv-cache",
+  "workload": {
+    "seq_len": 32768,
+    "concurrent_users": 100
+  },
+  "configurations": {
+    "mha_bf16_64kv": {
+      "config_name": "llama70b-mha-bf16",
+      "seq_len": 32768,
+      "batch_size": 100,
+      "weights_gb": 140.0,
+      "kv_bytes_per_token": 2621440,
+      "kv_kib_per_token": 2560.0,
+      "kv_mib_per_token": 2.5,
+      "kv_cache_gib": 8000.0,
+      "kv_cache_gb": 8589.93,
+      "activation_and_cuda_gb": 19.47,
+      "total_required_gb": 8749.4,
+      "min_h100_80gb_gpus": 110,
+      "min_h200_141gb_gpus": 63,
+      "fits_single_8x_h100_node": false
+    },
+    "gqa_bf16_8kv": {
+      "config_name": "llama70b-gqa-bf16",
+      "seq_len": 32768,
+      "batch_size": 100,
+      "weights_gb": 140.0,
+      "kv_bytes_per_token": 327680,
+      "kv_kib_per_token": 320.0,
+      "kv_mib_per_token": 0.3125,
+      "kv_cache_gib": 1000.0,
+      "kv_cache_gb": 1073.74,
+      "activation_and_cuda_gb": 19.47,
+      "total_required_gb": 1233.21,
+      "min_h100_80gb_gpus": 16,
+      "min_h200_141gb_gpus": 9,
+      "fits_single_8x_h100_node": false
+    },
+    "gqa_fp8_8kv": {
+      "config_name": "llama70b-gqa-fp8",
+      "seq_len": 32768,
+      "batch_size": 100,
+      "weights_gb": 70.0,
+      "kv_bytes_per_token": 163840,
+      "kv_kib_per_token": 160.0,
+      "kv_mib_per_token": 0.1562,
+      "kv_cache_gib": 500.0,
+      "kv_cache_gb": 536.87,
+      "activation_and_cuda_gb": 19.47,
+      "total_required_gb": 626.34,
+      "min_h100_80gb_gpus": 8,
+      "min_h200_141gb_gpus": 5,
+      "fits_single_8x_h100_node": true
+    }
+  },
+  "reduction_factors": {
+    "gqa_vs_mha_kv_ratio": 8.0,
+    "gqa_fp8_vs_mha_bf16_kv_ratio": 16.0
+  }
+}

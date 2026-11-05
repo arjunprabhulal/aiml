@@ -1,0 +1,149 @@
+{
+  "mode": "Local scripted policies, lexical search, SQLite and restricted subprocess checks; no model execution",
+  "python": "3.15.0",
+  "runs": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "task_baseline.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "task_baseline-output.txt",
+      "stdout_sha256": "676060fe3d5bb36dbdb26cc1c8c1aad77e1c257b417cbd30b35dd2a9f3e8b160",
+      "stderr": "",
+      "elapsed_seconds": 0.031774
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "tool_loop.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "tool_loop-output.txt",
+      "stdout_sha256": "2b2a6191962d25426393cca70005bf9c992314f298dc999c4a0d688aa3443300",
+      "stderr": "",
+      "elapsed_seconds": 0.035111
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "delegation.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "delegation-output.txt",
+      "stdout_sha256": "c83ca5c7fa6fb3496f856fb9d74d93072f7d383e7735b9df7259ab2c5a531d6e",
+      "stderr": "",
+      "elapsed_seconds": 0.051426
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "curate_traces.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "curate_traces-output.txt",
+      "stdout_sha256": "a9cf41e13e86d7c0b716a6a36e032f26d6423103e0ddca5149d2a49621249eda",
+      "stderr": "",
+      "elapsed_seconds": 0.037192
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "optimize_retrieval.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "optimize_retrieval-output.txt",
+      "stdout_sha256": "4f898c722a6649c9e7c5edc422f5f7576263b07e259f7a53e7655d84b0392cb7",
+      "stderr": "",
+      "elapsed_seconds": 0.032383
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "judge_trials.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "judge_trials-output.txt",
+      "stdout_sha256": "3cf3464c2afc612d286f100841e06363e21e4538baf9a7a932d2193aca411365",
+      "stderr": "",
+      "elapsed_seconds": 0.027559
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "terminal_harness.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "terminal_harness-output.txt",
+      "stdout_sha256": "88127610fc6cd24265f5276d676f407240b71ec88406ef41d3eb6d53369b3e10",
+      "stderr": "",
+      "elapsed_seconds": 0.102037
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "memory_lifecycle.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "memory_lifecycle-output.txt",
+      "stdout_sha256": "92c90f246aa4bd632e19e753b6e2f948cf543e8b70cbd0d1b79d7f433f93fe2f",
+      "stderr": "",
+      "elapsed_seconds": 0.033636
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "benchmark.py"
+      ],
+      "exit_status": 0,
+      "stdout_file": "benchmark-output.txt",
+      "stdout_sha256": "56a406847c8f4ca1e5089b9c3dc5f54434d3ba776ce062fcdda5de655b67f361",
+      "stderr": "",
+      "elapsed_seconds": 0.115082
+    }
+  ],
+  "files": {
+    ".gitignore": "d9391e48a813f4102b067ca24043beb333c35114e2d815b7deb951523b63766f",
+    "README.md": "a7f66385c646fa29bad9d748e23cd465d413400f2d7203f70fefaeb40618ee58",
+    "benchmark-candidates.json": "f5c707447fbba828e823fd1428130a1260f8796f5f3479b2dfc9c9c8c0aaab1e",
+    "benchmark-output.txt": "56a406847c8f4ca1e5089b9c3dc5f54434d3ba776ce062fcdda5de655b67f361",
+    "benchmark.py": "8b41665aab03b73d425b293d2a10246697e0753d3676dc15c039daf3de36beba",
+    "cases.json": "9f6af3a315860d27a69d0a31ae9e6e4866fa5aa850541d1af736409f64bbf079",
+    "core.py": "2e20cda3c734f9f2feff20d675c69b036cccc42d732f8d043549b4e637d59a8a",
+    "curate_traces-output.txt": "a9cf41e13e86d7c0b716a6a36e032f26d6423103e0ddca5149d2a49621249eda",
+    "curate_traces.py": "fd9d2fcaaa3223931be66865293d1b34f6df31a94032d3323b9a5cc23ff0f6d9",
+    "delegation-jobs.json": "3f5c2a22e7ba21faccceffb926b0625fb1ef86d390d1b013a40b9149b617e4d1",
+    "delegation-output.txt": "c83ca5c7fa6fb3496f856fb9d74d93072f7d383e7735b9df7259ab2c5a531d6e",
+    "delegation.py": "d5aad7cb1e3b3f8282efac0167951ba125059e818a143c422c50f0324ce5ddd5",
+    "documents.json": "079409921349fe55935fc340237b2433a852198799b6917a47d0ce089c3039c8",
+    "glossary.json": "12c84646e1d0551f7aa1ce78701a7fd3db8f940e9a6938b06847cc5bae147537",
+    "judge-cases.json": "6bb30df8dc8d500b1f5546dabafa6714ac670d2bd36426b66442aa51a173820a",
+    "judge_trials-output.txt": "3cf3464c2afc612d286f100841e06363e21e4538baf9a7a932d2193aca411365",
+    "judge_trials.py": "9861c47c3e5397dcd5a04f54a3b66ee605c13b2635921802cf7cbed5b154a658",
+    "memory-scenario.json": "20256faf0eb4087088a83665b111e75c85b99fd7aebd59fd4339451d19bef640",
+    "memory_lifecycle-output.txt": "92c90f246aa4bd632e19e753b6e2f948cf543e8b70cbd0d1b79d7f433f93fe2f",
+    "memory_lifecycle.py": "c762982fc6d7948151f803a493fd10b80ed1fa1c5a444038959d35d7f541399f",
+    "optimize_retrieval-output.txt": "4f898c722a6649c9e7c5edc422f5f7576263b07e259f7a53e7655d84b0392cb7",
+    "optimize_retrieval.py": "ee84053bc8cbb380385a129fc2440a41b8d07a5d1a5e7746c1f295c0b6b7cd15",
+    "provider.py": "0d23d83248e67460e1adb19c5613a95317d416cd565bea97fd63b7f225c6980b",
+    "repair-task.json": "5489634acf7f887568f81fc41b6c85bcd4fdca8a0eb900090405e69b0041cb0d",
+    "requirements-lock.txt": "0d5a90cf6748a61cd30ff0aeaa5cc169020251e82376bd112600f89ef4b5c24e",
+    "splits.json": "431cc991cb298d319433affd18abea7d807ec0957d1604900fcc93f84f5f518a",
+    "task_baseline-output.txt": "676060fe3d5bb36dbdb26cc1c8c1aad77e1c257b417cbd30b35dd2a9f3e8b160",
+    "task_baseline.py": "236a1aa14aa62ccdff626d509ebd3395bf5989c7e8f8c0b1c31dd8b92da0943a",
+    "terminal_harness-output.txt": "88127610fc6cd24265f5276d676f407240b71ec88406ef41d3eb6d53369b3e10",
+    "terminal_harness.py": "912f072e5c139c0c7737d942f9abe7e08e8ffafb6daafeeaba0deb8d407e7219",
+    "test_baseline.py": "93e61fcc9d5356bbae57a5f2b5d653e1f23388e696b4dcccebc187ee98e392ac",
+    "test_benchmark.py": "5e4cde423f138e6f4d82915ba3c4255a4078c046e414a67561959af09fda302e",
+    "test_curation.py": "95c1b3e1a663f025640dc56318ebe8f6660f45f2ae428c956a652ce7a7d60304",
+    "test_delegation.py": "41fbb11d307bee169f436bbc86dfc209047995822fb04df6ec02801e87cd5353",
+    "test_harness.py": "b1d939d1d5b11b2732e56f8362d1e69fffcf81a740b5b936e2aaca2b04c34dd5",
+    "test_judge.py": "5fe3cee843d2a8bc6390c861d6be048739df7d586e17c6d01d6734124aae5948",
+    "test_loop.py": "64c2b804518c8f27a62d2dc169f51c4da052a1f84eb60ccd74157895fa0f4653",
+    "test_memory.py": "b5436732b1787122549ca05f46a2cc63cf6b796a4591e7dc920d2a835dad2078",
+    "test_optimization.py": "9d44725ce4fdddf78cef151c25a8899c80803fa6986bbf1ddc373e07a12e3193",
+    "tool_loop-output.txt": "2b2a6191962d25426393cca70005bf9c992314f298dc999c4a0d688aa3443300",
+    "tool_loop.py": "d9570d290bdd387885cb2a4767eb28151ac495d9ebd6d841b9d351bd1df7fdde"
+  },
+  "written_at_utc": "2026-10-24T05:22:48.869132+00:00"
+}

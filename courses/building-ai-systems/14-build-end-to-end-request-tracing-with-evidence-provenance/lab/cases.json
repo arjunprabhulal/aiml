@@ -1,0 +1,114 @@
+{
+  "name": "grounded-support",
+  "task": "Answer one customer question from the shop's support documents, cite the passage used, and reject blank text.",
+  "cases": [
+    {
+      "id": "refund-window",
+      "split": "development",
+      "class": "policy window",
+      "input": "How long do I have to ask for a refund?",
+      "expected": {
+        "fact": "30 days|thirty days",
+        "source": "refund-policy"
+      },
+      "fail_if": [],
+      "why": "The refund policy changed from 14 to 30 days."
+    },
+    {
+      "id": "standard-delivery",
+      "split": "development",
+      "class": "delivery",
+      "input": "How long does standard delivery take?",
+      "expected": {
+        "fact": "3 to 5|three to five|3-5",
+        "source": "delivery-times"
+      },
+      "fail_if": [],
+      "why": "A direct question about one document."
+    },
+    {
+      "id": "change-address",
+      "split": "development",
+      "class": "order change",
+      "input": "Can I change the delivery address after I order?",
+      "expected": {
+        "fact": "until (the order|it) ships|before (the order|it) ships",
+        "source": "address-change"
+      },
+      "fail_if": [],
+      "why": "The answer is yes, until the order ships."
+    },
+    {
+      "id": "unwanted-parcel",
+      "split": "development",
+      "class": "returns",
+      "input": "What should I do with a parcel I no longer want?",
+      "expected": {
+        "fact": "return label|post office",
+        "source": "returns"
+      },
+      "fail_if": [],
+      "why": "The question shares few words with the returns document."
+    },
+    {
+      "id": "blank-question",
+      "split": "development",
+      "class": "invalid input",
+      "input": "   ",
+      "expected": {
+        "rejected": "ValueError",
+        "message": "blank"
+      },
+      "fail_if": [],
+      "why": "Blank text must be rejected, not sent to the model."
+    },
+    {
+      "id": "dropped-laptop",
+      "split": "held_out",
+      "class": "warranty",
+      "input": "Does the warranty cover a laptop I dropped?",
+      "expected": {
+        "fact": "accidental damage",
+        "source": "warranty"
+      },
+      "fail_if": [],
+      "why": "Dropping is accidental damage, which the warranty excludes."
+    },
+    {
+      "id": "password-changed",
+      "split": "held_out",
+      "class": "account security",
+      "input": "Someone changed my password. What should I do?",
+      "expected": {
+        "fact": "reset",
+        "source": "account-security"
+      },
+      "fail_if": [],
+      "why": "The customer must reset the password and contact support."
+    },
+    {
+      "id": "arrival-date",
+      "split": "held_out",
+      "class": "delivery",
+      "input": "Where can I see when my order will arrive?",
+      "expected": {
+        "fact": "tracking link",
+        "source": "order-tracking"
+      },
+      "fail_if": [],
+      "why": "The tracking link answers the question."
+    },
+    {
+      "id": "express-speed",
+      "split": "held_out",
+      "class": "delivery",
+      "input": "How much faster is express delivery?",
+      "expected": {
+        "fact": "1 working day|one working day",
+        "source": "delivery-times"
+      },
+      "fail_if": [],
+      "why": "Express takes one working day against three to five."
+    }
+  ]
+}

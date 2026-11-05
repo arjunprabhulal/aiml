@@ -1,0 +1,1039 @@
+{
+  "eval_case_results": [
+    {
+      "eval_case_index": 0,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "command_flag_accuracy": {
+              "metric_name": "command_flag_accuracy",
+              "score": 1.0,
+              "explanation": "has_v2_cmd=True, used_removed=False",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            },
+            "agent_turn_count": {
+              "metric_name": "agent_turn_count",
+              "score": 1.0,
+              "explanation": null,
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 1,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "command_flag_accuracy": {
+              "metric_name": "command_flag_accuracy",
+              "score": 1.0,
+              "explanation": "has_v2_cmd=True, used_removed=False",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            },
+            "agent_turn_count": {
+              "metric_name": "agent_turn_count",
+              "score": 1.0,
+              "explanation": null,
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 2,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "command_flag_accuracy": {
+              "metric_name": "command_flag_accuracy",
+              "score": 1.0,
+              "explanation": "has_v2_cmd=True, used_removed=False",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            },
+            "agent_turn_count": {
+              "metric_name": "agent_turn_count",
+              "score": 1.0,
+              "explanation": null,
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary_metrics": [
+    {
+      "metric_name": "command_flag_accuracy",
+      "num_cases_total": 3,
+      "num_cases_valid": 3,
+      "num_cases_error": 0,
+      "mean_score": 1.0,
+      "stdev_score": 0.0,
+      "pass_rate": null
+    },
+    {
+      "metric_name": "agent_turn_count",
+      "num_cases_total": 3,
+      "num_cases_valid": 3,
+      "num_cases_error": 0,
+      "mean_score": 1.0,
+      "stdev_score": 0.0,
+      "pass_rate": null
+    }
+  ],
+  "win_rates": null,
+  "evaluation_dataset": [
+    {
+      "bigquery_source": null,
+      "gcs_source": null,
+      "eval_cases": [
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "I use docuctl 2.x. How do I roll production back to r41?",
+                "thought": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null,
+                "media_processing": null,
+                "speech_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "In docuctl 2.x, run:\n\n```bash\ndocuctl rollback --env production --to r41\n```\n\nThis points production traffic back to release `r41` without rebuilding. Note that database migrations are not automatically rolled back.",
+                    "thought": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null,
+                    "media_processing": null,
+                    "speech_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": {
+            "response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Run `docuctl rollback --env production --to r41`. Note that `docuctl release revert` was removed in 2.0 and database migrations are not rolled back automatically.",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            }
+          },
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "rollback_prod_r41",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "docuctl_docs": {
+                "agent_id": "docuctl_docs",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You answer questions from developers about docuctl, the team's deploy CLI.\nRead the relevant page with read_page before you answer. Answers depend on the developer's\ndocuctl major version (1.x or 2.x). State the exact command and keep the answer under 80 words.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Read one page of the docuctl documentation: config, deploy, rollback or tokens.",
+                        "name": "read_page",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "page": {
+                              "title": "Page",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "page"
+                          ],
+                          "title": "read_pageParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_1735944",
+                            "args": {
+                              "page": "rollback"
+                            },
+                            "name": "read_page",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:39.228513Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_1735944",
+                            "name": "read_page",
+                            "response": {
+                              "page": "rollback",
+                              "text": "# Roll back a release\n\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\n\n    docuctl rollback --env production --to r41\n\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\n\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\n\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\n"
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-26T02:20:41.181519Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "In docuctl 2.x, run:\n\n```bash\ndocuctl rollback --env production --to r41\n```\n\nThis points production traffic back to release `r41` without rebuilding. Note that database migrations are not automatically rolled back.",
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:41.182725Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "How do I create a deploy token for staging CI and check when tokens expire?",
+                "thought": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null,
+                "media_processing": null,
+                "speech_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "To create a deploy token for staging CI, run:\n\n```bash\ndocuctl tokens create --name ci-docs-api --scope deploy:staging\n```\n*(Replace `ci-docs-api` with your token name. Store the generated token in CI secrets as `DOCUCTL_TOKEN`.)*\n\nTo check when tokens expire, run:\n\n```bash\ndocuctl tokens list\n```\nTokens expire after 90 days, and this command displays each token's expiration date.",
+                    "thought": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null,
+                    "media_processing": null,
+                    "speech_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": {
+            "response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Run `docuctl tokens create --name ci-docs-api --scope deploy:staging` and store it as `DOCUCTL_TOKEN`. Tokens expire after 90 days; check expiry with `docuctl tokens list`.",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            }
+          },
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "create_ci_token",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "docuctl_docs": {
+                "agent_id": "docuctl_docs",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You answer questions from developers about docuctl, the team's deploy CLI.\nRead the relevant page with read_page before you answer. Answers depend on the developer's\ndocuctl major version (1.x or 2.x). State the exact command and keep the answer under 80 words.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Read one page of the docuctl documentation: config, deploy, rollback or tokens.",
+                        "name": "read_page",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "page": {
+                              "title": "Page",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "page"
+                          ],
+                          "title": "read_pageParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_1275923",
+                            "args": {
+                              "page": "tokens"
+                            },
+                            "name": "read_page",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:39.280425Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_1275923",
+                            "name": "read_page",
+                            "response": {
+                              "page": "tokens",
+                              "text": "# Authenticate docuctl in CI\n\nCI jobs authenticate with a deploy token, not a personal login. Create one with:\n\n    docuctl tokens create --name ci-docs-api --scope deploy:staging\n\nThe token is shown once. Store it in your CI secret store as `DOCUCTL_TOKEN`. Tokens expire after 90 days; `docuctl tokens list` shows each token's expiry.\n"
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-26T02:20:41.357897Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_1590766",
+                            "args": {
+                              "page": "config"
+                            },
+                            "name": "read_page",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:41.358732Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_1590766",
+                            "name": "read_page",
+                            "response": {
+                              "page": "config",
+                              "text": "# Configure docuctl\n\ndocuctl reads `ship.toml` in the repository root. The `[service]` table names the service and its build command:\n\n    [service]\n    name = \"docs-api\"\n    build = \"make build\"\n\nEnvironment variables for the service go in `[env.<environment>]` tables. Never put credentials in `ship.toml`; reference a secret with `secret://<name>` instead.\n"
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-26T02:20:46.351407Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "To create a deploy token for staging CI, run:\n\n```bash\ndocuctl tokens create --name ci-docs-api --scope deploy:staging\n```\n*(Replace `ci-docs-api` with your token name. Store the generated token in CI secrets as `DOCUCTL_TOKEN`.)*\n\nTo check when tokens expire, run:\n\n```bash\ndocuctl tokens list\n```\nTokens expire after 90 days, and this command displays each token's expiration date.",
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:46.352239Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        },
+        {
+          "prompt": null,
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "Run `docuctl rollback --env staging --to r41`.",
+                    "thought": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null,
+                    "media_processing": null,
+                    "speech_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": {
+            "response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Run `docuctl rollback --env staging --to r41`.",
+                  "thought": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null,
+                  "media_processing": null,
+                  "speech_metadata": null
+                }
+              ],
+              "role": "model"
+            }
+          },
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "continued_staging_rollback",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "docuctl_docs": {
+                "agent_id": "docuctl_docs",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You answer questions from developers about docuctl, the team's deploy CLI.\nRead the relevant page with read_page before you answer. Answers depend on the developer's\ndocuctl major version (1.x or 2.x). State the exact command and keep the answer under 80 words.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Read one page of the docuctl documentation: config, deploy, rollback or tokens.",
+                        "name": "read_page",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "page": {
+                              "title": "Page",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "page"
+                          ],
+                          "title": "read_pageParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": null,
+                "events": [
+                  {
+                    "author": "user",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "I use docuctl 2.x. How do I roll production back to r41?",
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "Run `docuctl rollback --env production --to r41`.",
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "user",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "And on staging?",
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_1488140",
+                            "args": {
+                              "page": "rollback"
+                            },
+                            "name": "read_page",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:43.587043Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_1488140",
+                            "name": "read_page",
+                            "response": {
+                              "page": "rollback",
+                              "text": "# Roll back a release\n\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\n\n    docuctl rollback --env production --to r41\n\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\n\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\n\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\n"
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-26T02:20:44.840404Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "docuctl_docs",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "Run `docuctl rollback --env staging --to r41`.",
+                          "thought": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-26T02:20:44.841160Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        }
+      ],
+      "eval_dataset_df": null,
+      "candidate_name": null
+    }
+  ],
+  "metadata": {
+    "candidate_names": [
+      "candidate_1"
+    ],
+    "dataset_name": null,
+    "dataset_id": null,
+    "creation_timestamp": "2026-10-26T02:21:13.764171Z",
+    "dataset": [
+      {
+        "prompt_display_text": "I use docuctl 2.x. How do I roll production back to r41?",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"I use docuctl 2.x. How do I roll production back to r41?\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "Run `docuctl rollback --env production --to r41`. Note that `docuctl release revert` was removed in 2.0 and database migrations are not rolled back automatically.",
+        "reference_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Run `docuctl rollback --env production --to r41`. Note that `docuctl release revert` was removed in 2.0 and database migrations are not rolled back automatically.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "response_display_text": "In docuctl 2.x, run:\n\n```bash\ndocuctl rollback --env production --to r41\n```\n\nThis points production traffic back to release `r41` without rebuilding. Note that database migrations are not automatically rolled back.",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"In docuctl 2.x, run:\\n\\n```bash\\ndocuctl rollback --env production --to r41\\n```\\n\\nThis points production traffic back to release `r41` without rebuilding. Note that database migrations are not automatically rolled back.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"docuctl_docs\": {\"agent_id\": \"docuctl_docs\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You answer questions from developers about docuctl, the team's deploy CLI.\\nRead the relevant page with read_page before you answer. Answers depend on the developer's\\ndocuctl major version (1.x or 2.x). State the exact command and keep the answer under 80 words.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Read one page of the docuctl documentation: config, deploy, rollback or tokens.\", \"name\": \"read_page\", \"parameters_json_schema\": {\"properties\": {\"page\": {\"title\": \"Page\", \"type\": \"string\"}}, \"required\": [\"page\"], \"title\": \"read_pageParams\", \"type\": \"object\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_1735944\", \"args\": {\"page\": \"rollback\"}, \"name\": \"read_page\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:39.228513Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_1735944\", \"name\": \"read_page\", \"response\": {\"page\": \"rollback\", \"text\": \"# Roll back a release\\n\\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\\n\\n    docuctl rollback --env production --to r41\\n\\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\\n\\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\\n\\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\\n\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-26T02:20:41.181519Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"text\": \"In docuctl 2.x, run:\\n\\n```bash\\ndocuctl rollback --env production --to r41\\n```\\n\\nThis points production traffic back to release `r41` without rebuilding. Note that database migrations are not automatically rolled back.\"}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:41.182725Z\"}]}]}"
+      },
+      {
+        "prompt_display_text": "How do I create a deploy token for staging CI and check when tokens expire?",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"How do I create a deploy token for staging CI and check when tokens expire?\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "Run `docuctl tokens create --name ci-docs-api --scope deploy:staging` and store it as `DOCUCTL_TOKEN`. Tokens expire after 90 days; check expiry with `docuctl tokens list`.",
+        "reference_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Run `docuctl tokens create --name ci-docs-api --scope deploy:staging` and store it as `DOCUCTL_TOKEN`. Tokens expire after 90 days; check expiry with `docuctl tokens list`.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "response_display_text": "To create a deploy token for staging CI, run:\n\n```bash\ndocuctl tokens create --name ci-docs-api --scope deploy:staging\n```\n*(Replace `ci-docs-api` with your token name. Store the generated token in CI secrets as `DOCUCTL_TOKEN`.)*\n\nTo check when tokens expire, run:\n\n```bash\ndocuctl tokens list\n```\nTokens expire after 90 days, and this command displays each token's expiration date.",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"To create a deploy token for staging CI, run:\\n\\n```bash\\ndocuctl tokens create --name ci-docs-api --scope deploy:staging\\n```\\n*(Replace `ci-docs-api` with your token name. Store the generated token in CI secrets as `DOCUCTL_TOKEN`.)*\\n\\nTo check when tokens expire, run:\\n\\n```bash\\ndocuctl tokens list\\n```\\nTokens expire after 90 days, and this command displays each token's expiration date.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"docuctl_docs\": {\"agent_id\": \"docuctl_docs\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You answer questions from developers about docuctl, the team's deploy CLI.\\nRead the relevant page with read_page before you answer. Answers depend on the developer's\\ndocuctl major version (1.x or 2.x). State the exact command and keep the answer under 80 words.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Read one page of the docuctl documentation: config, deploy, rollback or tokens.\", \"name\": \"read_page\", \"parameters_json_schema\": {\"properties\": {\"page\": {\"title\": \"Page\", \"type\": \"string\"}}, \"required\": [\"page\"], \"title\": \"read_pageParams\", \"type\": \"object\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_1275923\", \"args\": {\"page\": \"tokens\"}, \"name\": \"read_page\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:39.280425Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_1275923\", \"name\": \"read_page\", \"response\": {\"page\": \"tokens\", \"text\": \"# Authenticate docuctl in CI\\n\\nCI jobs authenticate with a deploy token, not a personal login. Create one with:\\n\\n    docuctl tokens create --name ci-docs-api --scope deploy:staging\\n\\nThe token is shown once. Store it in your CI secret store as `DOCUCTL_TOKEN`. Tokens expire after 90 days; `docuctl tokens list` shows each token's expiry.\\n\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-26T02:20:41.357897Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_1590766\", \"args\": {\"page\": \"config\"}, \"name\": \"read_page\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:41.358732Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_1590766\", \"name\": \"read_page\", \"response\": {\"page\": \"config\", \"text\": \"# Configure docuctl\\n\\ndocuctl reads `ship.toml` in the repository root. The `[service]` table names the service and its build command:\\n\\n    [service]\\n    name = \\\"docs-api\\\"\\n    build = \\\"make build\\\"\\n\\nEnvironment variables for the service go in `[env.<environment>]` tables. Never put credentials in `ship.toml`; reference a secret with `secret://<name>` instead.\\n\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-26T02:20:46.351407Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"text\": \"To create a deploy token for staging CI, run:\\n\\n```bash\\ndocuctl tokens create --name ci-docs-api --scope deploy:staging\\n```\\n*(Replace `ci-docs-api` with your token name. Store the generated token in CI secrets as `DOCUCTL_TOKEN`.)*\\n\\nTo check when tokens expire, run:\\n\\n```bash\\ndocuctl tokens list\\n```\\nTokens expire after 90 days, and this command displays each token's expiration date.\"}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:46.352239Z\"}]}]}"
+      },
+      {
+        "prompt_display_text": "",
+        "prompt_raw_json": "",
+        "reference": "Run `docuctl rollback --env staging --to r41`.",
+        "reference_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Run `docuctl rollback --env staging --to r41`.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "response_display_text": "Run `docuctl rollback --env staging --to r41`.",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Run `docuctl rollback --env staging --to r41`.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"docuctl_docs\": {\"agent_id\": \"docuctl_docs\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You answer questions from developers about docuctl, the team's deploy CLI.\\nRead the relevant page with read_page before you answer. Answers depend on the developer's\\ndocuctl major version (1.x or 2.x). State the exact command and keep the answer under 80 words.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Read one page of the docuctl documentation: config, deploy, rollback or tokens.\", \"name\": \"read_page\", \"parameters_json_schema\": {\"properties\": {\"page\": {\"title\": \"Page\", \"type\": \"string\"}}, \"required\": [\"page\"], \"title\": \"read_pageParams\", \"type\": \"object\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"events\": [{\"author\": \"user\", \"content\": {\"parts\": [{\"text\": \"I use docuctl 2.x. How do I roll production back to r41?\"}], \"role\": \"user\"}}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"text\": \"Run `docuctl rollback --env production --to r41`.\"}], \"role\": \"model\"}}, {\"author\": \"user\", \"content\": {\"parts\": [{\"text\": \"And on staging?\"}], \"role\": \"user\"}}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_1488140\", \"args\": {\"page\": \"rollback\"}, \"name\": \"read_page\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:43.587043Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_1488140\", \"name\": \"read_page\", \"response\": {\"page\": \"rollback\", \"text\": \"# Roll back a release\\n\\n`docuctl rollback` moves an environment back to an earlier release. It does not rebuild anything; it points traffic at the release you name.\\n\\n    docuctl rollback --env production --to r41\\n\\nWithout `--to`, docuctl rolls back to the previous release. A rollback is itself recorded as a new release, so `docuctl releases` shows it.\\n\\nDatabase migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.\\n\\ndocuctl 1.x used `docuctl release revert <release>`. That command was removed in docuctl 2.0.\\n\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-26T02:20:44.840404Z\"}, {\"author\": \"docuctl_docs\", \"content\": {\"parts\": [{\"text\": \"Run `docuctl rollback --env staging --to r41`.\"}], \"role\": \"model\"}, \"event_time\": \"2026-10-26T02:20:44.841160Z\"}]}]}"
+      }
+    ]
+  },
+  "agent_info": null
+}

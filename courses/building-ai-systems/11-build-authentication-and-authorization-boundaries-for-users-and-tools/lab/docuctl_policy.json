@@ -1,0 +1,80 @@
+{
+  "about": "Teaching data for this build: users, roles, tools and orders. All names are synthetic.",
+  "users": {
+    "ana": {
+      "tenant": "docuctl",
+      "role": "maintainer"
+    },
+    "ben": {
+      "tenant": "docuctl",
+      "role": "viewer"
+    }
+  },
+  "roles": {
+    "viewer": [
+      "docs:read"
+    ],
+    "maintainer": [
+      "docs:read",
+      "docs:publish"
+    ]
+  },
+  "tools": {
+    "read_page": {
+      "service": "docs-service",
+      "scope": "docs:read",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "page_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "page_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "publish_page": {
+      "service": "publish-service",
+      "scope": "docs:publish",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "page_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "correction",
+              "release"
+            ]
+          }
+        },
+        "required": [
+          "page_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "agent": "docuctl-docs",
+  "delegated_token_seconds": 60,
+  "pages": {
+    "deploy-35": {
+      "tenant": "docuctl",
+      "status": "draft"
+    },
+    "rollback-35": {
+      "tenant": "docuctl",
+      "status": "reviewed"
+    },
+    "private-page": {
+      "tenant": "another-team",
+      "status": "draft"
+    }
+  }
+}

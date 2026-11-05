@@ -1,0 +1,14 @@
+test_compaction_runs_after_every_second_turn (test_assistant.Compaction.test_compaction_runs_after_every_second_turn) ... ok
+test_compaction_shrinks_the_request_history (test_assistant.Compaction.test_compaction_shrinks_the_request_history) ... ok
+test_raw_events_stay_in_the_session (test_assistant.Compaction.test_raw_events_stay_in_the_session) ... ok
+test_the_summary_replaces_old_tool_results (test_assistant.Compaction.test_the_summary_replaces_old_tool_results) ... ok
+test_a_half_sliding_window_is_rejected (test_assistant.Configuration.test_a_half_sliding_window_is_rejected) ... ok
+test_an_unknown_app_field_is_rejected (test_assistant.Configuration.test_an_unknown_app_field_is_rejected) ... ok
+test_the_manual_is_the_static_system_instruction (test_assistant.Configuration.test_the_manual_is_the_static_system_instruction) ... ok
+test_a_short_prefix_never_gets_a_cache (test_assistant.RecordedCacheUse.test_a_short_prefix_never_gets_a_cache) ... ok
+test_the_first_call_after_each_compaction_misses_the_cache (test_assistant.RecordedCacheUse.test_the_first_call_after_each_compaction_misses_the_cache) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.263s
+
+OK

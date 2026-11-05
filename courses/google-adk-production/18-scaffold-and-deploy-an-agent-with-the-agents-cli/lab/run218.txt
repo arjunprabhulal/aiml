@@ -1,0 +1,12 @@
+Querying remote agent: https://us-central1-aiplatform.googleapis.com/v1/projects/913703049174/locations/us-central1/reasoningEngines/8806439701503279104 (mode: adk)
+[user]: I run docuctl 2.x. How do I roll production back to r41?
+[docs_helper]: In docuctl 2.x, run:
+
+```bash
+docuctl rollback --env production --to r41
+```
+
+This points traffic to `r41` without rebuilding and records the rollback as a new release. Note that database migrations are not automatically rolled back.
+
+Session: 2730795903932694528
+  Resume with: agents-cli run "<message>" --url "https://us-central1-aiplatform.googleapis.com/v1/projects/913703049174/locations/us-central1/reasoningEngines/8806439701503279104" --mode adk --session-id 2730795903932694528

@@ -1,0 +1,64 @@
+# MCP Toolbox 0.21 configuration: one PostgreSQL source, parameterized SQL tools, two toolsets.
+sources:
+  docs-db:
+    kind: postgres
+    host: 127.0.0.1
+    port: ${PG_PORT}
+    database: docs_analytics
+    user: toolbox_reader
+    password: ${PG_PASSWORD}
+
+tools:
+  find-pages:
+    kind: postgres-sql
+    source: docs-db
+    description: Find documentation pages of a team whose title contains the given text. Returns slug, title and last update date.
+    parameters:
+      - name: team
+        type: string
+        description: The team that owns the pages.
+      - name: title_contains
+        type: string
+        description: Text to look for in the page title, such as "rollback".
+    statement: |
+      SELECT slug, title, updated_on FROM pages
+      WHERE team = $1 AND title ILIKE '%' || $2 || '%'
+      ORDER BY slug LIMIT 20;
+
+  page-feedback:
+    kind: postgres-sql
+    source: docs-db
+    description: Count helpful and unhelpful votes per page of a team since a date, with the written comments, worst pages first.
+    parameters:
+      - name: team
+        type: string
+        description: The team that owns the pages.
+      - name: since
+        type: string
+        description: The first day to count, as YYYY-MM-DD.
+      - name: limit
+        type: integer
+        description: How many pages to return, at most 10.
+    statement: |
+      SELECT p.slug, count(*) FILTER (WHERE NOT f.helpful) AS unhelpful, count(*) FILTER (WHERE f.helpful) AS helpful,
+             array_remove(array_agg(f.comment ORDER BY f.created_on), NULL) AS comments
+      FROM pages p JOIN feedback f ON f.page_slug = p.slug
+      WHERE p.team = $1 AND f.created_on >= $2::date
+      GROUP BY p.slug ORDER BY unhelpful DESC, p.slug LIMIT LEAST($3, 10);
+
+  delete-feedback:
+    kind: postgres-sql
+    source: docs-db
+    description: Delete all feedback for a page.
+    parameters:
+      - name: page_slug
+        type: string
+        description: The page whose feedback to delete.
+    statement: DELETE FROM feedback WHERE page_slug = $1;
+
+toolsets:
+  docs-reader:
+    - find-pages
+    - page-feedback
+  docs-admin:
+    - delete-feedback

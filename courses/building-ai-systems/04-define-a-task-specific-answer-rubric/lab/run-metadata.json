@@ -1,0 +1,29 @@
+{
+  "execution": "local decision rule and unchanged eval runner; authored answer/judgement fixtures; no model or human study",
+  "commands": [
+    "python evaluate_rubric.py --save result.json",
+    "python -m unittest -v test_rubric.py"
+  ],
+  "harness_unchanged_from": "ai-system-evaluation/vendor/harness.py",
+  "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+  "sha256": {
+    "README.md": "7b32c9d2cb3e51b32b66ee7bf3474a0104b2023d99eccb4f0303c0fbe40b9119",
+    "annotations.json": "12f29c4c569193e1f7d1caa5ea04638f9061f8dd4705a28b26eb2bde370085cb",
+    "cases.json": "b9eabe707498edfd0444bab82630985fbb7c607162a80e82e88465da01ea4370",
+    "evaluate_rubric.py": "5c2b061ed3c69375bd56ff28a7ca52e13b8a2d6bd7aa0c1ed37c32f916d019ea",
+    "requirements-lock.txt": "f933dc4baa1d1a82b6d385a210101b198184e5ad112b322df1290cbeff839a2d",
+    "result.json": "917f270efd5451fec0bb51c84e43e5101a63f38b426f158ee4f605e866b32dc0",
+    "rubric.json": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+    "rubric.py": "f3bfaa643012b892833cf9ed867184cd9cadf3cbdee8b267a0a1f2a7c1d894e5",
+    "run-output.txt": "a9ddb0ac306cca589856df9dfa8151d1b91d4e2564650ffd0e1affacb2b5fc43",
+    "source.txt": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+    "task.py": "1eb82686e7fef1258e7eea0a9145caf69a0a01923e6f58ffbd8ed3c5a014ed85",
+    "test_rubric.py": "ef9cb42e57bbe9bd0afc37e9657059c5b51b13a13f9317ae697ead7c761896a1",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54"
+  },
+  "documentation_revision": {
+    "file": "README.md",
+    "previous_sha256": "0076e2b74cb587802c5b3115b01abf8d2fe4d180c0b85c54b5d2068684758813",
+    "change": "Clarify that answer spans are optional; execution source, judgements and recorded results unchanged."
+  }
+}

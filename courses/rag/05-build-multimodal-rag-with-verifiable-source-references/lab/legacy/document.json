@@ -1,0 +1,3127 @@
+{
+ "model": {
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14"
+ },
+ "prompts": {
+  "line": "Transcribe the text in this image exactly as written. Output only the text, with no commentary and no Markdown.",
+  "table": "Transcribe the table in this image exactly as written. Put each row on its own line and separate cells with two spaces. Output only the text, with no commentary and no Markdown."
+ },
+ "crop_margin": 8,
+ "pages": [
+  {
+   "doc": "embedjob",
+   "page": 1,
+   "image": "pages/embedjob-p1.png",
+   "sha256": "fce7eb8c13754812797cc0edaf98a575584a7a1cde22f38bfbd2a464edd1aa67",
+   "width": 850,
+   "height": 1100,
+   "blocks": [
+    {
+     "id": "embedjob-p1-b01",
+     "order": 1,
+     "kind": "header",
+     "bbox": [
+      60,
+      24,
+      478,
+      42
+     ],
+     "text": "Embedding job checklist - version 2",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b01-l01",
+       "bbox": [
+        60,
+        24,
+        478,
+        42
+       ],
+       "crop_sha256": "17ce66eb5984568a20be8008ae175b5a49aeb32896bdc92fbc253bc2325f7e13",
+       "text": "Embedding job checklist - version 2",
+       "review": [],
+       "model": {
+        "prompt_tokens": 80,
+        "output_tokens": 8,
+        "total_ms": 8381
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b02",
+     "order": 2,
+     "kind": "heading",
+     "bbox": [
+      60,
+      96,
+      435,
+      123
+     ],
+     "text": "A. Prepare the corpus",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b02-l01",
+       "bbox": [
+        60,
+        96,
+        435,
+        123
+       ],
+       "crop_sha256": "743b4a84e8f2c93a29da26b546b5e3f1471a8b8bf1593448eab72f5e90afb960",
+       "text": "A. Prepare the corpus",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 12366
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b03",
+     "order": 3,
+     "kind": "text",
+     "bbox": [
+      60,
+      155,
+      790,
+      197
+     ],
+     "text": "Export the lesson sections to corpus.json. Each passage needs\nan ID, the lesson slug and plain text with no page markup.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b03-l01",
+       "bbox": [
+        60,
+        155,
+        790,
+        173
+       ],
+       "crop_sha256": "93ce679eaf9fa319fa03f555ae6b7d26ed67a19283add05c5ba19dda2ab3b6b5",
+       "text": "Export the lesson sections to corpus.json. Each passage needs",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 13,
+        "total_ms": 12147
+       }
+      },
+      {
+       "id": "embedjob-p1-b03-l02",
+       "bbox": [
+        60,
+        179,
+        790,
+        197
+       ],
+       "crop_sha256": "b459b4f346ba9783d8533f41d4a52f09ae2c2483f1542447ac6db355395336a8",
+       "text": "an ID, the lesson slug and plain text with no page markup.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 15,
+        "total_ms": 10955
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b04",
+     "order": 4,
+     "kind": "heading",
+     "bbox": [
+      60,
+      229,
+      309,
+      250
+     ],
+     "text": "Check the text",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b04-l01",
+       "bbox": [
+        60,
+        229,
+        309,
+        250
+       ],
+       "crop_sha256": "6193cdcee618e2af0728a5176b06e27c23ce780cbdb54e5415ec41f0593d78d6",
+       "text": "Check the text",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 4,
+        "total_ms": 10094
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b05",
+     "order": 5,
+     "kind": "text",
+     "bbox": [
+      60,
+      280,
+      390,
+      370
+     ],
+     "text": "Remove component tags and\ncode imports. Keep headings,\nbecause they help a reader\njudge a match.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b05-l01",
+       "bbox": [
+        60,
+        280,
+        390,
+        298
+       ],
+       "crop_sha256": "03a412165b6e1897e80160956a8280ede375d224f7f39912c6d6cc519c7f53a5",
+       "text": "Remove component tags and",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 9649
+       }
+      },
+      {
+       "id": "embedjob-p1-b05-l02",
+       "bbox": [
+        60,
+        304,
+        390,
+        322
+       ],
+       "crop_sha256": "7ab9247cf67512079e9bbb712a50d0969b83a0e9f6dc4bb5d2b609607933441b",
+       "text": "code imports. Keep headings,",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 7,
+        "total_ms": 8988
+       }
+      },
+      {
+       "id": "embedjob-p1-b05-l03",
+       "bbox": [
+        60,
+        328,
+        390,
+        346
+       ],
+       "crop_sha256": "b3a9346ea6010ddfd92d7add569f726f86ae22aeff15435c23b8e61a4abadfb2",
+       "text": "because they help a reader",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 9881
+       }
+      },
+      {
+       "id": "embedjob-p1-b05-l04",
+       "bbox": [
+        60,
+        352,
+        390,
+        370
+       ],
+       "crop_sha256": "90bfd1bdc23648369c75a984bb8b569dbbb5a855127a2d5c10f527f9b97f7c72",
+       "text": "judge a match.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 9011
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b06",
+     "order": 6,
+     "kind": "text",
+     "bbox": [
+      60,
+      394,
+      366,
+      436
+     ],
+     "text": "Reject a passage with no\nwords left after cleaning.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b06-l01",
+       "bbox": [
+        60,
+        394,
+        366,
+        412
+       ],
+       "crop_sha256": "22dbd64f541635f2532d94c433bdd7c7432bd62a44972752830d80b026a35d57",
+       "text": "Reject a passage with no",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 9037
+       }
+      },
+      {
+       "id": "embedjob-p1-b06-l02",
+       "bbox": [
+        60,
+        418,
+        366,
+        436
+       ],
+       "crop_sha256": "aa2ae1ff9c25f3f8211d4bb927a241cec1fcc2cb426ddb4bc9687005ff9e02f8",
+       "text": "words left after cleaning.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 9327
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b07",
+     "order": 7,
+     "kind": "heading",
+     "bbox": [
+      445,
+      229,
+      676,
+      250
+     ],
+     "text": "Record hashes",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b07-l01",
+       "bbox": [
+        445,
+        229,
+        676,
+        250
+       ],
+       "crop_sha256": "9902cece8dcce9d0fe32b1e50076829c40fb7281b60f0c8b11d91d3f46155602",
+       "text": "Record hashes",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 3,
+        "total_ms": 10710
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b08",
+     "order": 8,
+     "kind": "text",
+     "bbox": [
+      445,
+      280,
+      767,
+      390
+     ],
+     "text": "Write the SHA-256 of\ncorpus.json next to the\nvectors. A changed hash\nmeans the vectors are stale\nand must be rebuilt.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b08-l01",
+       "bbox": [
+        445,
+        280,
+        767,
+        294
+       ],
+       "crop_sha256": "2719e818516992ef4718dfa67603e715bcc4857fbf9fe50040f487ea498e1020",
+       "text": "Write the SHA-256 of",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 9,
+        "total_ms": 23832
+       }
+      },
+      {
+       "id": "embedjob-p1-b08-l02",
+       "bbox": [
+        445,
+        304,
+        767,
+        322
+       ],
+       "crop_sha256": "fb2cee4ddf04b8a9426c582218ec29ac536bc749309088a57a1631d9a76e4d45",
+       "text": "corpus.json next to the",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 7,
+        "total_ms": 11010
+       }
+      },
+      {
+       "id": "embedjob-p1-b08-l03",
+       "bbox": [
+        445,
+        328,
+        767,
+        346
+       ],
+       "crop_sha256": "0673bce79c340fcdc9d166ca023bfb85841bbbc96d1e4244dffd6930edbdfbd8",
+       "text": "vectors. A changed hash",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 10227
+       }
+      },
+      {
+       "id": "embedjob-p1-b08-l04",
+       "bbox": [
+        445,
+        352,
+        767,
+        366
+       ],
+       "crop_sha256": "adc60fe4866bc45884c62d9afeb11e61d25c9fac57ff4b049c4b55288d2a5150",
+       "text": "means the vectors are stale",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 6,
+        "total_ms": 10155
+       }
+      },
+      {
+       "id": "embedjob-p1-b08-l05",
+       "bbox": [
+        445,
+        376,
+        767,
+        390
+       ],
+       "crop_sha256": "1bb91f11ded4e13931dd42452201ddd6cf414b637852934ed3e92559f5376f22",
+       "text": "and must be rebuilt.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 6,
+        "total_ms": 27231
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b09",
+     "order": 9,
+     "kind": "table",
+     "bbox": [
+      60,
+      468,
+      792,
+      622
+     ],
+     "text": "Field  Type  Example\nid  string  f6-2-s03\nlesson  string  keyword-ranking\ntokens  integer  187",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b09-l01",
+       "bbox": [
+        60,
+        468,
+        792,
+        622
+       ],
+       "crop_sha256": "6b95b15e7c4b0518d0afb06c5188a975464f976b9b300b78d1872f97b8716883",
+       "text": "Field  Type  Example\nid  string  f6-2-s03\nlesson  string  keyword-ranking\ntokens  integer  187",
+       "review": [],
+       "model": {
+        "prompt_tokens": 112,
+        "output_tokens": 35,
+        "total_ms": 11684
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b10",
+     "order": 10,
+     "kind": "text",
+     "bbox": [
+      60,
+      654,
+      762,
+      720
+     ],
+     "text": "Table A. Passage fields. Token counts come from the server,\nso they change when the model changes. Store them with the\nmodel digest and do",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b10-l01",
+       "bbox": [
+        60,
+        654,
+        762,
+        672
+       ],
+       "crop_sha256": "ef4d5d3f800f6283f5e25ab77e6d0803a1d803113ea36902250288572133656d",
+       "text": "Table A. Passage fields. Token counts come from the server,",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 14,
+        "total_ms": 11804
+       }
+      },
+      {
+       "id": "embedjob-p1-b10-l02",
+       "bbox": [
+        60,
+        678,
+        762,
+        696
+       ],
+       "crop_sha256": "f2c473db37c960533ba0f9cbc7adf81b72769492927f8433672f15b8909afd8d",
+       "text": "so they change when the model changes. Store them with the",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 13,
+        "total_ms": 23617
+       }
+      },
+      {
+       "id": "embedjob-p1-b10-l03",
+       "bbox": [
+        60,
+        702,
+        762,
+        720
+       ],
+       "crop_sha256": "3d2b9a1198dca2df60ef388a6a2e3bd9cf011f2cda5259849ab6c0a86ebe3192",
+       "text": "model digest and do",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 5,
+        "total_ms": 10497
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p1-b11",
+     "order": 11,
+     "kind": "footer",
+     "bbox": [
+      60,
+      1058,
+      466,
+      1076
+     ],
+     "text": "Embedding checklist v2 Page 1 of 2",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p1-b11-l01",
+       "bbox": [
+        60,
+        1058,
+        466,
+        1076
+       ],
+       "crop_sha256": "122b58445ac291059abee346f5aeeb8895c6511992913910f95b9200ea5ab1f1",
+       "text": "Embedding checklist v2 Page 1 of 2",
+       "review": [],
+       "model": {
+        "prompt_tokens": 80,
+        "output_tokens": 11,
+        "total_ms": 10864
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "doc": "embedjob",
+   "page": 2,
+   "image": "pages/embedjob-p2.png",
+   "sha256": "801ea178684d7235f6013e1a17fc6e4b5bbd18efda2d23263ff0717b75063ca4",
+   "width": 850,
+   "height": 1100,
+   "blocks": [
+    {
+     "id": "embedjob-p2-b01",
+     "order": 1,
+     "kind": "header",
+     "bbox": [
+      60,
+      24,
+      478,
+      42
+     ],
+     "text": "Embedding job checklist - version 2",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b01-l01",
+       "bbox": [
+        60,
+        24,
+        478,
+        42
+       ],
+       "crop_sha256": "17ce66eb5984568a20be8008ae175b5a49aeb32896bdc92fbc253bc2325f7e13",
+       "text": "Embedding job checklist - version 2",
+       "review": [],
+       "model": {
+        "prompt_tokens": 80,
+        "output_tokens": 8,
+        "total_ms": 8381
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b02",
+     "order": 2,
+     "kind": "text",
+     "bbox": [
+      60,
+      96,
+      594,
+      114
+     ],
+     "text": "not compare counts from two different builds.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b02-l01",
+       "bbox": [
+        60,
+        96,
+        594,
+        114
+       ],
+       "crop_sha256": "dd5ade10c27eb2c9ddcbc0ef0fc69f4827b1b6c6bf33bd73279855a0c66e5729",
+       "text": "not compare counts from two different builds.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 86,
+        "output_tokens": 9,
+        "total_ms": 11477
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b03",
+     "order": 3,
+     "kind": "heading",
+     "bbox": [
+      60,
+      146,
+      309,
+      173
+     ],
+     "text": "B. Run the job",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b03-l01",
+       "bbox": [
+        60,
+        146,
+        309,
+        173
+       ],
+       "crop_sha256": "f63bf638cc4e05d2d501c71d80a4b424059aa1cf78a6bfb847ad96bd8ddb2314",
+       "text": "B. Run the job",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 6,
+        "total_ms": 12540
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b04",
+     "order": 4,
+     "kind": "heading",
+     "bbox": [
+      63,
+      205,
+      165,
+      232
+     ],
+     "text": "Inputs",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b04-l01",
+       "bbox": [
+        63,
+        205,
+        165,
+        232
+       ],
+       "crop_sha256": "3f9a62530bca7df40f01ada70bee1af9b2170faaf834e1f96c795042495ee94a",
+       "text": "Inputs",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 2,
+        "total_ms": 14905
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b05",
+     "order": 5,
+     "kind": "text",
+     "bbox": [
+      60,
+      256,
+      274,
+      322
+     ],
+     "text": "corpus.json and\nthe model manifest\nwith its digest.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b05-l01",
+       "bbox": [
+        60,
+        256,
+        274,
+        274
+       ],
+       "crop_sha256": "bf25f820017319a3922890898d4e13cc595b30c1c58f3512cbe0921a509513cf",
+       "text": "corpus.json and",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 5,
+        "total_ms": 11648
+       }
+      },
+      {
+       "id": "embedjob-p2-b05-l02",
+       "bbox": [
+        60,
+        280,
+        274,
+        294
+       ],
+       "crop_sha256": "b3469c42749a4bfa313f88c389b02de8cdd97f32677df69937194f01c570959a",
+       "text": "the model manifest",
+       "review": [],
+       "model": {
+        "prompt_tokens": 88,
+        "output_tokens": 4,
+        "total_ms": 7183
+       }
+      },
+      {
+       "id": "embedjob-p2-b05-l03",
+       "bbox": [
+        60,
+        304,
+        274,
+        322
+       ],
+       "crop_sha256": "f379e2e85154e0795d024efe3ad1f16e024ae0bac2ba8d3400811146fa769eac",
+       "text": "with its digest.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 5,
+        "total_ms": 7073
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b06",
+     "order": 6,
+     "kind": "heading",
+     "bbox": [
+      316,
+      205,
+      439,
+      232
+     ],
+     "text": "Outputs",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b06-l01",
+       "bbox": [
+        316,
+        205,
+        439,
+        232
+       ],
+       "crop_sha256": "b57be28f913ce1f1f2dcf27504270a2d47622034a223ef1be2046da895231959",
+       "text": "Outputs",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 2,
+        "total_ms": 5972
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b07",
+     "order": 7,
+     "kind": "text",
+     "bbox": [
+      316,
+      256,
+      506,
+      346
+     ],
+     "text": "vectors.f32 and\nindex.json,\nwritten to a new\ndirectory.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b07-l01",
+       "bbox": [
+        316,
+        256,
+        506,
+        270
+       ],
+       "crop_sha256": "99e5cc9e95dd2831e78abaced5d8f578ab0c4e1b624a2fce30c74705983b617d",
+       "text": "vectors.f32 and",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 7,
+        "total_ms": 6024
+       }
+      },
+      {
+       "id": "embedjob-p2-b07-l02",
+       "bbox": [
+        316,
+        280,
+        506,
+        298
+       ],
+       "crop_sha256": "71dd5411c4b66b6f3fb1ef48f11f2146f45296dfae1cad7c0b896be56093cda6",
+       "text": "index.json,",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 5,
+        "total_ms": 6262
+       }
+      },
+      {
+       "id": "embedjob-p2-b07-l03",
+       "bbox": [
+        316,
+        304,
+        506,
+        318
+       ],
+       "crop_sha256": "492d5d6b282fed837541a53cbbc521fe6495983a7a818241be7c73c09566335e",
+       "text": "written to a new",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 5,
+        "total_ms": 566
+       }
+      },
+      {
+       "id": "embedjob-p2-b07-l04",
+       "bbox": [
+        316,
+        328,
+        506,
+        346
+       ],
+       "crop_sha256": "1908a1bec2c86386188917bc64c6d8ea2718c17a2a5b68b9351bad47c1dcd47a",
+       "text": "directory.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 3,
+        "total_ms": 655
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b08",
+     "order": 8,
+     "kind": "heading",
+     "bbox": [
+      572,
+      205,
+      677,
+      226
+     ],
+     "text": "Checks",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b08-l01",
+       "bbox": [
+        572,
+        205,
+        677,
+        226
+       ],
+       "crop_sha256": "92c773926796857870e370523cf3b06209dc92dde2f7775ab40dcae983d7797c",
+       "text": "Checks",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 2,
+        "total_ms": 682
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b09",
+     "order": 9,
+     "kind": "text",
+     "bbox": [
+      572,
+      256,
+      762,
+      322
+     ],
+     "text": "Every vector has\n1024 numbers and\nlength 1.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b09-l01",
+       "bbox": [
+        572,
+        256,
+        762,
+        274
+       ],
+       "crop_sha256": "757e33102b3f8de472db847d664018ac6bb34d57914d593b43fab4c0a92b273e",
+       "text": "Every vector has",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 4,
+        "total_ms": 533
+       }
+      },
+      {
+       "id": "embedjob-p2-b09-l02",
+       "bbox": [
+        572,
+        280,
+        762,
+        294
+       ],
+       "crop_sha256": "1bb51a2cf9447de933ebb5f83a4ef2b8568923398fbdfd46449fe8725dfeccbf",
+       "text": "1024 numbers and",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 7,
+        "total_ms": 608
+       }
+      },
+      {
+       "id": "embedjob-p2-b09-l03",
+       "bbox": [
+        572,
+        304,
+        762,
+        322
+       ],
+       "crop_sha256": "4d92d9deb5675e40baaaec81876b6829168806d28dfa56e8149eb0b4caaf07ce",
+       "text": "length 1.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 82,
+        "output_tokens": 5,
+        "total_ms": 678
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b10",
+     "order": 10,
+     "kind": "text",
+     "bbox": [
+      60,
+      378,
+      790,
+      444
+     ],
+     "text": "Switch the search service to the new directory only after the\nlabeled questions score at least as well as before. Keep the\nold directory for rollback.",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b10-l01",
+       "bbox": [
+        60,
+        378,
+        790,
+        396
+       ],
+       "crop_sha256": "99fa5687533914a060dec84db7af80c9fd3764e02e067436fca0b167ed05bfa1",
+       "text": "Switch the search service to the new directory only after the",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 12,
+        "total_ms": 674
+       }
+      },
+      {
+       "id": "embedjob-p2-b10-l02",
+       "bbox": [
+        60,
+        402,
+        790,
+        420
+       ],
+       "crop_sha256": "8fecf82822f2a6134a0899b11c792aedd01130c4a941a0127255c15950a33e56",
+       "text": "labeled questions score at least as well as before. Keep the",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 13,
+        "total_ms": 611
+       }
+      },
+      {
+       "id": "embedjob-p2-b10-l03",
+       "bbox": [
+        60,
+        426,
+        790,
+        444
+       ],
+       "crop_sha256": "a8f8d7300d9e6a2327958c0810928b2402a80ab5ff580fad85b936fc5160d37a",
+       "text": "old directory for rollback.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 573
+       }
+      }
+     ]
+    },
+    {
+     "id": "embedjob-p2-b11",
+     "order": 11,
+     "kind": "footer",
+     "bbox": [
+      60,
+      1058,
+      466,
+      1076
+     ],
+     "text": "Embedding checklist v2 Page 2 of 2",
+     "review": [],
+     "lines": [
+      {
+       "id": "embedjob-p2-b11-l01",
+       "bbox": [
+        60,
+        1058,
+        466,
+        1076
+       ],
+       "crop_sha256": "b4e2dcae41972a53252abedffc836b814fdb67ab3b81d23f74277f4ea0ecca66",
+       "text": "Embedding checklist v2 Page 2 of 2",
+       "review": [],
+       "model": {
+        "prompt_tokens": 80,
+        "output_tokens": 11,
+        "total_ms": 622
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "doc": "runbook",
+   "page": 1,
+   "image": "pages/runbook-p1.png",
+   "sha256": "526c358b548cea2dd164a97c7fabaa89857801c1e7b357610b97c6bc70baf242",
+   "width": 850,
+   "height": 1100,
+   "blocks": [
+    {
+     "id": "runbook-p1-b01",
+     "order": 1,
+     "kind": "header",
+     "bbox": [
+      60,
+      24,
+      574,
+      38
+     ],
+     "text": "Local inference server runbook - revision 3",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b01-l01",
+       "bbox": [
+        60,
+        24,
+        574,
+        38
+       ],
+       "crop_sha256": "1be8edbd45468543cd909ef11d53efd7ef880769bad47d2b2e602751a5fb0309",
+       "text": "Local inference server runbook - revision 3",
+       "review": [],
+       "model": {
+        "prompt_tokens": 88,
+        "output_tokens": 10,
+        "total_ms": 558
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b02",
+     "order": 2,
+     "kind": "heading",
+     "bbox": [
+      63,
+      96,
+      399,
+      117
+     ],
+     "text": "1. Start the server",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b02-l01",
+       "bbox": [
+        63,
+        96,
+        399,
+        117
+       ],
+       "crop_sha256": "fbefc9dc9127fe36e468842f88828722cb5f7d5487a5f2c66ec2ebfa5e17c8f2",
+       "text": "1. Start the server",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 531
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b03",
+     "order": 3,
+     "kind": "text",
+     "bbox": [
+      60,
+      155,
+      790,
+      217
+     ],
+     "text": "The server runs one model at a time on port 11434. It listens\nonly on the loopback address, so other machines cannot reach\nit.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b03-l01",
+       "bbox": [
+        60,
+        155,
+        790,
+        173
+       ],
+       "crop_sha256": "607c518481afbef98df198af3975c7d6c7c86cfe35e068a41987d4903e8e6ae2",
+       "text": "The server runs one model at a time on port 11434. It listens",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 20,
+        "total_ms": 635
+       }
+      },
+      {
+       "id": "runbook-p1-b03-l02",
+       "bbox": [
+        60,
+        179,
+        790,
+        197
+       ],
+       "crop_sha256": "991563fd47aedb44399acd5eed7307d023d20a4a7ca8b119a2eac60b514bf636",
+       "text": "only on the loopback address, so other machines cannot reach",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 13,
+        "total_ms": 558
+       }
+      },
+      {
+       "id": "runbook-p1-b03-l03",
+       "bbox": [
+        60,
+        203,
+        790,
+        217
+       ],
+       "crop_sha256": "9dd0a58afbe212e2ca43d31f36b900a740c62625989566981a0044320a617efb",
+       "text": "it.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 98,
+        "output_tokens": 3,
+        "total_ms": 489
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b04",
+     "order": 4,
+     "kind": "heading",
+     "bbox": [
+      60,
+      253,
+      345,
+      280
+     ],
+     "text": "Before you start",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b04-l01",
+       "bbox": [
+        60,
+        253,
+        345,
+        280
+       ],
+       "crop_sha256": "22fe01dc5857af0b23d0e00b55fb79d71d18378ff814f32cc55364f0ba2eb34f",
+       "text": "Before you start",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 4,
+        "total_ms": 482
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b05",
+     "order": 5,
+     "kind": "text",
+     "bbox": [
+      60,
+      304,
+      394,
+      438
+     ],
+     "text": "Check that the model file is\npresent and that its digest\nmatches the value in the\nrelease record. A different\ndigest means a different\nbuild.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b05-l01",
+       "bbox": [
+        60,
+        304,
+        394,
+        318
+       ],
+       "crop_sha256": "33a928245d5272c88bd62beb4e905259b3106bd0efd655e4ba43800fbee4ec8c",
+       "text": "Check that the model file is",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 7,
+        "total_ms": 509
+       }
+      },
+      {
+       "id": "runbook-p1-b05-l02",
+       "bbox": [
+        60,
+        328,
+        394,
+        346
+       ],
+       "crop_sha256": "28d4627909a5807294f64d2951ad18b2d8ce0bd1045675c0da20a4a7f55e4426",
+       "text": "present and that its digest",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 552
+       }
+      },
+      {
+       "id": "runbook-p1-b05-l03",
+       "bbox": [
+        60,
+        352,
+        394,
+        366
+       ],
+       "crop_sha256": "2d219e6d86418742d192422c506ecacaad31d353ee6dbea136905cb0e4d0eb7a",
+       "text": "matches the value in the",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 6,
+        "total_ms": 502
+       }
+      },
+      {
+       "id": "runbook-p1-b05-l04",
+       "bbox": [
+        60,
+        376,
+        394,
+        390
+       ],
+       "crop_sha256": "072a64409b877de3ffa2aec50b44cde1119154cdd3b521783f0bbaff53b0419f",
+       "text": "release record. A different",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 6,
+        "total_ms": 511
+       }
+      },
+      {
+       "id": "runbook-p1-b05-l05",
+       "bbox": [
+        60,
+        400,
+        394,
+        418
+       ],
+       "crop_sha256": "19cad0f26fc65d0a5a980fbf1e5a49457174ddf7b9035416ffea39fc667695e3",
+       "text": "digest means a different",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 521
+       }
+      },
+      {
+       "id": "runbook-p1-b05-l06",
+       "bbox": [
+        60,
+        424,
+        394,
+        438
+       ],
+       "crop_sha256": "1f4f6b7383a36d78458c06f47c289494d967a3a53d16736931c640844862d6a3",
+       "text": "build.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 3,
+        "total_ms": 488
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b06",
+     "order": 6,
+     "kind": "text",
+     "bbox": [
+      60,
+      466,
+      394,
+      528
+     ],
+     "text": "Free at least 6 GB of memory\nbefore loading the vision\nmodel.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b06-l01",
+       "bbox": [
+        60,
+        466,
+        394,
+        484
+       ],
+       "crop_sha256": "ba934c6f3ef3d0347b9b4456c5044b462869b2a074f5cfb7a547c94130eb468d",
+       "text": "Free at least 6 GB of memory",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 9,
+        "total_ms": 517
+       }
+      },
+      {
+       "id": "runbook-p1-b06-l02",
+       "bbox": [
+        60,
+        490,
+        394,
+        508
+       ],
+       "crop_sha256": "af404fcaf92fe21f60288e08a204d0397476e2a380935fe0e044b366901a919e",
+       "text": "before loading the vision",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 484
+       }
+      },
+      {
+       "id": "runbook-p1-b06-l03",
+       "bbox": [
+        60,
+        514,
+        394,
+        528
+       ],
+       "crop_sha256": "f78501ff1a617fbbceb71ec6a2c8ccd8dff064cef08377d3bd2f2aa03a9609a2",
+       "text": "model.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 3,
+        "total_ms": 478
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b07",
+     "order": 7,
+     "kind": "heading",
+     "bbox": [
+      445,
+      253,
+      676,
+      274
+     ],
+     "text": "Start command",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b07-l01",
+       "bbox": [
+        445,
+        253,
+        676,
+        274
+       ],
+       "crop_sha256": "68e6e670169e9a8ed83f4fb570b790b550fbfeba08abbc4678472a9452d8e630",
+       "text": "Start command",
+       "review": [],
+       "model": {
+        "prompt_tokens": 85,
+        "output_tokens": 3,
+        "total_ms": 487
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b08",
+     "order": 8,
+     "kind": "text",
+     "bbox": [
+      445,
+      304,
+      779,
+      418
+     ],
+     "text": "Run the start script from\nthe service account, not\nfrom a personal shell. The\nscript writes its process ID\nto run/server.pid.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b08-l01",
+       "bbox": [
+        445,
+        304,
+        779,
+        322
+       ],
+       "crop_sha256": "8c7b58ba8dc4d13d2cf3d5b17bf3e3df4f86207249fcb2f7f313002d667664a5",
+       "text": "Run the start script from",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 518
+       }
+      },
+      {
+       "id": "runbook-p1-b08-l02",
+       "bbox": [
+        445,
+        328,
+        779,
+        346
+       ],
+       "crop_sha256": "5753dad8b1cb315b3c4bf06a84613e64363fd6b17dd3b8fbd9e8576ce196b79f",
+       "text": "the service account, not",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 536
+       }
+      },
+      {
+       "id": "runbook-p1-b08-l03",
+       "bbox": [
+        445,
+        352,
+        779,
+        370
+       ],
+       "crop_sha256": "d3176755f971bd65aa6742c7f21da44dc1f45f51cc03f058be2f1fdf4c6ebec2",
+       "text": "from a personal shell. The",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 7,
+        "total_ms": 532
+       }
+      },
+      {
+       "id": "runbook-p1-b08-l04",
+       "bbox": [
+        445,
+        376,
+        779,
+        394
+       ],
+       "crop_sha256": "109589557f0f2a4072b4ead032579ed7c830167b811d59d8294ba3ace6aa912d",
+       "text": "script writes its process ID",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 526
+       }
+      },
+      {
+       "id": "runbook-p1-b08-l05",
+       "bbox": [
+        445,
+        400,
+        779,
+        418
+       ],
+       "crop_sha256": "0b17367dc87150d546f09e8da799156f41775c0ac31065ab9af544fbfb1c8c66",
+       "text": "to run/server.pid.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 8,
+        "total_ms": 593
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b09",
+     "order": 9,
+     "kind": "text",
+     "bbox": [
+      445,
+      442,
+      755,
+      508
+     ],
+     "text": "Wait for the line ready on\n11434 in the log before\nsending requests.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b09-l01",
+       "bbox": [
+        445,
+        442,
+        755,
+        460
+       ],
+       "crop_sha256": "ee60ac74327082dd4b285bdeac4f17e6a5205a306fbd6d4f9c24f6c6ca763578",
+       "text": "Wait for the line ready on",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 7,
+        "total_ms": 540
+       }
+      },
+      {
+       "id": "runbook-p1-b09-l02",
+       "bbox": [
+        445,
+        466,
+        755,
+        484
+       ],
+       "crop_sha256": "da7c465fe08e5df5361d2e217cdb918f347a2bbc691fc24acec4c9bb21f3965f",
+       "text": "11434 in the log before",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 10,
+        "total_ms": 574
+       }
+      },
+      {
+       "id": "runbook-p1-b09-l03",
+       "bbox": [
+        445,
+        490,
+        755,
+        508
+       ],
+       "crop_sha256": "8614c094fb32315e16a6fa84295e74168a4f07bbaa38933d92df9f4c41a5c8b1",
+       "text": "sending requests.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 4,
+        "total_ms": 497
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b10",
+     "order": 10,
+     "kind": "text",
+     "bbox": [
+      60,
+      564,
+      754,
+      630
+     ],
+     "text": "If the log shows address already in use, another server is\nstill running. Stop it with the stop script; do not delete\nthe PID file by hand.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b10-l01",
+       "bbox": [
+        60,
+        564,
+        754,
+        582
+       ],
+       "crop_sha256": "b2e086eaf54aada87e1c4dae545744276bfcab1bf277830a645cfc76d3dbd138",
+       "text": "If the log shows address already in use, another server is",
+       "review": [],
+       "model": {
+        "prompt_tokens": 92,
+        "output_tokens": 13,
+        "total_ms": 555
+       }
+      },
+      {
+       "id": "runbook-p1-b10-l02",
+       "bbox": [
+        60,
+        588,
+        754,
+        606
+       ],
+       "crop_sha256": "717ec09e2e9b12568b8c447d755d917ac6ac69f43b7966cd96ab9f46e1ab12bc",
+       "text": "still running. Stop it with the stop script; do not delete",
+       "review": [],
+       "model": {
+        "prompt_tokens": 92,
+        "output_tokens": 14,
+        "total_ms": 589
+       }
+      },
+      {
+       "id": "runbook-p1-b10-l03",
+       "bbox": [
+        60,
+        612,
+        754,
+        630
+       ],
+       "crop_sha256": "37ad4715486eb50fe15fcda6020a1328ce13d0e827c115df7a2f2635c821684a",
+       "text": "the PID file by hand.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 92,
+        "output_tokens": 7,
+        "total_ms": 559
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p1-b11",
+     "order": 11,
+     "kind": "footer",
+     "bbox": [
+      60,
+      1058,
+      358,
+      1076
+     ],
+     "text": "Runbook rev 3 Page 1 of 3",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p1-b11-l01",
+       "bbox": [
+        60,
+        1058,
+        358,
+        1076
+       ],
+       "crop_sha256": "3becd189fd75908e30c10728e2c1c2b6f6ab998173bef7d3a2f195789dec978f",
+       "text": "Runbook rev 3 Page 1 of 3",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 12,
+        "total_ms": 560
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "doc": "runbook",
+   "page": 2,
+   "image": "pages/runbook-p2.png",
+   "sha256": "2192cc9662215438f9e075b74ef20e7283bba4e0d9afa361a6d97a87962adf7e",
+   "width": 850,
+   "height": 1100,
+   "blocks": [
+    {
+     "id": "runbook-p2-b01",
+     "order": 1,
+     "kind": "header",
+     "bbox": [
+      60,
+      24,
+      574,
+      38
+     ],
+     "text": "Local inference server runbook - revision 3",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b01-l01",
+       "bbox": [
+        60,
+        24,
+        574,
+        38
+       ],
+       "crop_sha256": "1be8edbd45468543cd909ef11d53efd7ef880769bad47d2b2e602751a5fb0309",
+       "text": "Local inference server runbook - revision 3",
+       "review": [],
+       "model": {
+        "prompt_tokens": 88,
+        "output_tokens": 10,
+        "total_ms": 558
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b02",
+     "order": 2,
+     "kind": "heading",
+     "bbox": [
+      60,
+      96,
+      345,
+      117
+     ],
+     "text": "2. Health checks",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b02-l01",
+       "bbox": [
+        60,
+        96,
+        345,
+        117
+       ],
+       "crop_sha256": "c5ae1c8a84f489e183c8d4240ac5d6df14980fb39d462cafa1ae00ed3f21f00d",
+       "text": "2. Health checks",
+       "review": [],
+       "model": {
+        "prompt_tokens": 91,
+        "output_tokens": 5,
+        "total_ms": 495
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b03",
+     "order": 3,
+     "kind": "text",
+     "bbox": [
+      60,
+      155,
+      730,
+      197
+     ],
+     "text": "Run these checks after every restart. Each one must pass\nbefore the server takes traffic again.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b03-l01",
+       "bbox": [
+        60,
+        155,
+        730,
+        173
+       ],
+       "crop_sha256": "db52a0c51129588daf34ba63f4048dcc5244cfdde8efeff6249750698b792ee2",
+       "text": "Run these checks after every restart. Each one must pass",
+       "review": [],
+       "model": {
+        "prompt_tokens": 92,
+        "output_tokens": 12,
+        "total_ms": 568
+       }
+      },
+      {
+       "id": "runbook-p2-b03-l02",
+       "bbox": [
+        60,
+        179,
+        730,
+        197
+       ],
+       "crop_sha256": "386e4bb9b7d032fe40a8f5397f62b776939daab7a133bf0567544cfc0649abbe",
+       "text": "before the server takes traffic again.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 92,
+        "output_tokens": 8,
+        "total_ms": 566
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b04",
+     "order": 4,
+     "kind": "table",
+     "bbox": [
+      60,
+      229,
+      792,
+      421
+     ],
+     "text": "Check  Command  Pass when\nVersion  GET /api/version  returns 0.32.14\nModels  GET /api/tags  lists gemma4:e2b\nDigest  compare digest  matches record\nSmoke  one short chat  answer not empty",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b04-l01",
+       "bbox": [
+        60,
+        229,
+        792,
+        421
+       ],
+       "crop_sha256": "af8a885f3739694dfb6115e0a6e56f73707376f455b0a3977e08764b83849c07",
+       "text": "Check  Command  Pass when\nVersion  GET /api/version  returns 0.32.14\nModels  GET /api/tags  lists gemma4:e2b\nDigest  compare digest  matches record\nSmoke  one short chat  answer not empty",
+       "review": [],
+       "model": {
+        "prompt_tokens": 112,
+        "output_tokens": 60,
+        "total_ms": 1068
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b05",
+     "order": 5,
+     "kind": "text",
+     "bbox": [
+      60,
+      453,
+      766,
+      515
+     ],
+     "text": "Table 2. Restart checks. A passing smoke request shows that\nthe model answers; it does not show that the answer is\ncorrect.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b05-l01",
+       "bbox": [
+        60,
+        453,
+        766,
+        471
+       ],
+       "crop_sha256": "c819f07dbc607f3c2e522835b9dde666f62f6749bb7ef4a2962b9b39dfb8c97e",
+       "text": "Table 2. Restart checks. A passing smoke request shows that",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 14,
+        "total_ms": 623
+       }
+      },
+      {
+       "id": "runbook-p2-b05-l02",
+       "bbox": [
+        60,
+        477,
+        766,
+        493
+       ],
+       "crop_sha256": "b91a608907ed68c795878aa263fb37e1c400b8ac970403215297fb693a5c6f65",
+       "text": "the model answers; it does not show that the answer is",
+       "review": [],
+       "model": {
+        "prompt_tokens": 96,
+        "output_tokens": 13,
+        "total_ms": 593
+       }
+      },
+      {
+       "id": "runbook-p2-b05-l03",
+       "bbox": [
+        60,
+        501,
+        766,
+        515
+       ],
+       "crop_sha256": "45280bd6558c49dadfe47764c9e57e0fb8f8c1674210f58616442f72d5283ca9",
+       "text": "correct.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 98,
+        "output_tokens": 3,
+        "total_ms": 496
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b06",
+     "order": 6,
+     "kind": "heading",
+     "bbox": [
+      60,
+      551,
+      381,
+      572
+     ],
+     "text": "When a check fails",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b06-l01",
+       "bbox": [
+        60,
+        551,
+        381,
+        572
+       ],
+       "crop_sha256": "36cafdeede4c74cf1fd6a622e404024acc13448f320a7b7d012206299131d73b",
+       "text": "When a check fails",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 5,
+        "total_ms": 492
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b07",
+     "order": 7,
+     "kind": "text",
+     "bbox": [
+      60,
+      610,
+      790,
+      676
+     ],
+     "text": "Stop at the first failed check. Record its name, the time and\nthe full error text in the incident log then roll back to\nthe previous release.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b07-l01",
+       "bbox": [
+        60,
+        610,
+        790,
+        628
+       ],
+       "crop_sha256": "15ad416f733f439dc06a608f24cbf9bcd1984c125ebab5fd7337199723bf0221",
+       "text": "Stop at the first failed check. Record its name, the time and",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 15,
+        "total_ms": 609
+       }
+      },
+      {
+       "id": "runbook-p2-b07-l02",
+       "bbox": [
+        60,
+        634,
+        790,
+        652
+       ],
+       "crop_sha256": "452fc86486659ae59dd7eb84afe82c8f822f7932e85fe5234e54b03e2a88dd09",
+       "text": "the full error text in the incident log then roll back to",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 13,
+        "total_ms": 558
+       }
+      },
+      {
+       "id": "runbook-p2-b07-l03",
+       "bbox": [
+        60,
+        658,
+        790,
+        676
+       ],
+       "crop_sha256": "5fbaef9ab06b5d30fc41e6ba660092ed7b302891fbe9131984218f3b204c572e",
+       "text": "the previous release.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 5,
+        "total_ms": 526
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p2-b08",
+     "order": 8,
+     "kind": "footer",
+     "bbox": [
+      60,
+      1058,
+      358,
+      1076
+     ],
+     "text": "Runbook rev 3 Page 2 of 3",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p2-b08-l01",
+       "bbox": [
+        60,
+        1058,
+        358,
+        1076
+       ],
+       "crop_sha256": "6edf7eb76745713501b8c153cb5603700b0b8e7ac698ecf50a13ed73c4f557bd",
+       "text": "Runbook rev 3 Page 2 of 3",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 12,
+        "total_ms": 558
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "doc": "runbook",
+   "page": 3,
+   "image": "pages/runbook-p3.png",
+   "sha256": "ce1ce5273e15c11139b585bfb227904f06348da8efff9b30d6d2603ab00d53de",
+   "width": 850,
+   "height": 1100,
+   "blocks": [
+    {
+     "id": "runbook-p3-b01",
+     "order": 1,
+     "kind": "header",
+     "bbox": [
+      60,
+      24,
+      574,
+      38
+     ],
+     "text": "Local inference server runbook - revision 3",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b01-l01",
+       "bbox": [
+        60,
+        24,
+        574,
+        38
+       ],
+       "crop_sha256": "1be8edbd45468543cd909ef11d53efd7ef880769bad47d2b2e602751a5fb0309",
+       "text": "Local inference server runbook - revision 3",
+       "review": [],
+       "model": {
+        "prompt_tokens": 88,
+        "output_tokens": 10,
+        "total_ms": 558
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b02",
+     "order": 2,
+     "kind": "heading",
+     "bbox": [
+      60,
+      96,
+      453,
+      117
+     ],
+     "text": "3. Roll back a release",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b02-l01",
+       "bbox": [
+        60,
+        96,
+        453,
+        117
+       ],
+       "crop_sha256": "68a7879031755a15502979096e2a17e5d93687a80da52434185c40e3fc0c56d8",
+       "text": "3. Roll back a release",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 7,
+        "total_ms": 520
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b03",
+     "order": 3,
+     "kind": "heading",
+     "bbox": [
+      60,
+      155,
+      363,
+      182
+     ],
+     "text": "Keep two releases",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b03-l01",
+       "bbox": [
+        60,
+        155,
+        363,
+        182
+       ],
+       "crop_sha256": "141066578d910578213d308cc0ad2d356b4a7079835eb37fab9a443840965d47",
+       "text": "Keep two releases",
+       "review": [],
+       "model": {
+        "prompt_tokens": 88,
+        "output_tokens": 4,
+        "total_ms": 488
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b04",
+     "order": 4,
+     "kind": "text",
+     "bbox": [
+      60,
+      206,
+      394,
+      340
+     ],
+     "text": "Each release directory holds\nthe model digest, the server\nversion and the prompt\nfiles. Keep the current and\nthe previous release on\ndisk.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b04-l01",
+       "bbox": [
+        60,
+        206,
+        394,
+        224
+       ],
+       "crop_sha256": "653ce899d36d4e2708a613911f766d69af10d921178868debb2e48ddce4aac91",
+       "text": "Each release directory holds",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 487
+       }
+      },
+      {
+       "id": "runbook-p3-b04-l02",
+       "bbox": [
+        60,
+        230,
+        394,
+        248
+       ],
+       "crop_sha256": "8ebe5f71d82499a1d06048545d548f656291a2485d3ce216f2b51f1bb0d2b25c",
+       "text": "the model digest, the server",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 7,
+        "total_ms": 518
+       }
+      },
+      {
+       "id": "runbook-p3-b04-l03",
+       "bbox": [
+        60,
+        254,
+        394,
+        272
+       ],
+       "crop_sha256": "536be96597253883149ab042052b1357a25804336ce0d5977e240ba7552ee9cf",
+       "text": "version and the prompt",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 493
+       }
+      },
+      {
+       "id": "runbook-p3-b04-l04",
+       "bbox": [
+        60,
+        278,
+        394,
+        296
+       ],
+       "crop_sha256": "a5ef76fb92a84c03eee860a93b35e19c35cd371e7dbc08fdcaf8306333c96781",
+       "text": "files. Keep the current and",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 7,
+        "total_ms": 519
+       }
+      },
+      {
+       "id": "runbook-p3-b04-l05",
+       "bbox": [
+        60,
+        302,
+        394,
+        320
+       ],
+       "crop_sha256": "8c2fa370d2a76b9e9b8473d4225a6846f6fc0c4738602577117c5512a887054a",
+       "text": "the previous release on",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 5,
+        "total_ms": 491
+       }
+      },
+      {
+       "id": "runbook-p3-b04-l06",
+       "bbox": [
+        60,
+        326,
+        394,
+        340
+       ],
+       "crop_sha256": "8155017588c13fceef8253908cf474ea4fa95cbf63a84ab797f4385c73ec2a25",
+       "text": "disk.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 78,
+        "output_tokens": 3,
+        "total_ms": 478
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b05",
+     "order": 5,
+     "kind": "heading",
+     "bbox": [
+      445,
+      155,
+      637,
+      176
+     ],
+     "text": "Switch back",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b05-l01",
+       "bbox": [
+        445,
+        155,
+        637,
+        176
+       ],
+       "crop_sha256": "6d8dce59186670befdefe42c1353134c3bf24de11bb2699fcc94d70a29deb013",
+       "text": "Switch back",
+       "review": [],
+       "model": {
+        "prompt_tokens": 79,
+        "output_tokens": 3,
+        "total_ms": 480
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b06",
+     "order": 6,
+     "kind": "text",
+     "bbox": [
+      445,
+      206,
+      755,
+      296
+     ],
+     "text": "Point the current link at\nthe previous release,\nrestart the server and run\nevery health check again.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b06-l01",
+       "bbox": [
+        445,
+        206,
+        755,
+        220
+       ],
+       "crop_sha256": "4b2b10f09e29d6be4b88376b652ea166c216a07b1395a7af9f9910194c0076fe",
+       "text": "Point the current link at",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 519
+       }
+      },
+      {
+       "id": "runbook-p3-b06-l02",
+       "bbox": [
+        445,
+        230,
+        755,
+        248
+       ],
+       "crop_sha256": "b136bc645aac4bb1555c6d2a6ef815f11db830c699c08dc88421041918914b25",
+       "text": "the previous release,",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 5,
+        "total_ms": 496
+       }
+      },
+      {
+       "id": "runbook-p3-b06-l03",
+       "bbox": [
+        445,
+        254,
+        755,
+        268
+       ],
+       "crop_sha256": "974e50342eda0a06d5bd84e14bb8538bdc3d71d86b6bf640e1cd5fb2722d0370",
+       "text": "restart the server and run",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 6,
+        "total_ms": 524
+       }
+      },
+      {
+       "id": "runbook-p3-b06-l04",
+       "bbox": [
+        445,
+        278,
+        755,
+        296
+       ],
+       "crop_sha256": "1811224606b3430f20e4933c9b08fc4b71587aaa157c452aa2003499bed147c5",
+       "text": "every health check again.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 6,
+        "total_ms": 523
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b07",
+     "order": 7,
+     "kind": "text",
+     "bbox": [
+      445,
+      320,
+      755,
+      362
+     ],
+     "text": "Do not edit files inside a\nrelease directory.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b07-l01",
+       "bbox": [
+        445,
+        320,
+        755,
+        334
+       ],
+       "crop_sha256": "f1c0e2457781d70af52e3c2e64fec9460570bd9df8016b3fb0fdae47ff6f6442",
+       "text": "Do not edit files inside a",
+       "review": [],
+       "model": {
+        "prompt_tokens": 76,
+        "output_tokens": 7,
+        "total_ms": 518
+       }
+      },
+      {
+       "id": "runbook-p3-b07-l02",
+       "bbox": [
+        445,
+        344,
+        755,
+        362
+       ],
+       "crop_sha256": "b44c1eff97fd5d080ab6d70b5e24bd2f8f16e5c18692f9760f90cf199f45066f",
+       "text": "release directory.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 4,
+        "total_ms": 503
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b08",
+     "order": 8,
+     "kind": "text",
+     "bbox": [
+      60,
+      394,
+      790,
+      460
+     ],
+     "text": "A rollback is complete only when all four restart checks pass\non the previous release. Write the release ID and the time in\nthe incident log.",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b08-l01",
+       "bbox": [
+        60,
+        394,
+        790,
+        412
+       ],
+       "crop_sha256": "2b4c394b7530c14055f40da39cd77de53cb484b6bdce3b292d555fcc2549026c",
+       "text": "A rollback is complete only when all four restart checks pass",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 12,
+        "total_ms": 559
+       }
+      },
+      {
+       "id": "runbook-p3-b08-l02",
+       "bbox": [
+        60,
+        418,
+        790,
+        436
+       ],
+       "crop_sha256": "51db4ebd6137bc03d0cf289d4f55339012610e04c5d25ef4242ad456593e63f0",
+       "text": "on the previous release. Write the release ID and the time in",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 14,
+        "total_ms": 587
+       }
+      },
+      {
+       "id": "runbook-p3-b08-l03",
+       "bbox": [
+        60,
+        442,
+        790,
+        460
+       ],
+       "crop_sha256": "929188408e6a1a2a06fa22b34f2b28830ec16c86b85a3c06d5443e48ea2ce2d2",
+       "text": "the incident log.",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 5,
+        "total_ms": 497
+       }
+      }
+     ]
+    },
+    {
+     "id": "runbook-p3-b09",
+     "order": 9,
+     "kind": "footer",
+     "bbox": [
+      60,
+      1058,
+      358,
+      1076
+     ],
+     "text": "Runbook rev 3 Page 3 of 3",
+     "review": [],
+     "lines": [
+      {
+       "id": "runbook-p3-b09-l01",
+       "bbox": [
+        60,
+        1058,
+        358,
+        1076
+       ],
+       "crop_sha256": "6fb2133c5396360bfff07e1a032e4fde80c016cf6a6234c390cf211a7037994e",
+       "text": "Runbook rev 3 Page 3 of 3",
+       "review": [],
+       "model": {
+        "prompt_tokens": 94,
+        "output_tokens": 12,
+        "total_ms": 594
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "chunks": [
+  {
+   "id": "embedjob-c01",
+   "doc": "embedjob",
+   "heading": "A. Prepare the corpus",
+   "blocks": [
+    {
+     "id": "embedjob-p1-b02",
+     "page": 1,
+     "bbox": [
+      60,
+      96,
+      435,
+      123
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p1-b03",
+     "page": 1,
+     "bbox": [
+      60,
+      155,
+      790,
+      197
+     ],
+     "review": []
+    }
+   ],
+   "text": "A. Prepare the corpus\n\nExport the lesson sections to corpus.json. Each passage needs\nan ID, the lesson slug and plain text with no page markup."
+  },
+  {
+   "id": "embedjob-c02",
+   "doc": "embedjob",
+   "heading": "Check the text",
+   "blocks": [
+    {
+     "id": "embedjob-p1-b04",
+     "page": 1,
+     "bbox": [
+      60,
+      229,
+      309,
+      250
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p1-b05",
+     "page": 1,
+     "bbox": [
+      60,
+      280,
+      390,
+      370
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p1-b06",
+     "page": 1,
+     "bbox": [
+      60,
+      394,
+      366,
+      436
+     ],
+     "review": []
+    }
+   ],
+   "text": "Check the text\n\nRemove component tags and\ncode imports. Keep headings,\nbecause they help a reader\njudge a match.\n\nReject a passage with no\nwords left after cleaning."
+  },
+  {
+   "id": "embedjob-c03",
+   "doc": "embedjob",
+   "heading": "Record hashes",
+   "blocks": [
+    {
+     "id": "embedjob-p1-b07",
+     "page": 1,
+     "bbox": [
+      445,
+      229,
+      676,
+      250
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p1-b08",
+     "page": 1,
+     "bbox": [
+      445,
+      280,
+      767,
+      390
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p1-b09",
+     "page": 1,
+     "bbox": [
+      60,
+      468,
+      792,
+      622
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p1-b10",
+     "page": 1,
+     "bbox": [
+      60,
+      654,
+      762,
+      720
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p2-b02",
+     "page": 2,
+     "bbox": [
+      60,
+      96,
+      594,
+      114
+     ],
+     "review": []
+    }
+   ],
+   "text": "Record hashes\n\nWrite the SHA-256 of\ncorpus.json next to the\nvectors. A changed hash\nmeans the vectors are stale\nand must be rebuilt.\n\nField  Type  Example\nid  string  f6-2-s03\nlesson  string  keyword-ranking\ntokens  integer  187\n\nTable A. Passage fields. Token counts come from the server,\nso they change when the model changes. Store them with the\nmodel digest and do\n\nnot compare counts from two different builds."
+  },
+  {
+   "id": "embedjob-c04",
+   "doc": "embedjob",
+   "heading": "B. Run the job",
+   "blocks": [
+    {
+     "id": "embedjob-p2-b03",
+     "page": 2,
+     "bbox": [
+      60,
+      146,
+      309,
+      173
+     ],
+     "review": []
+    }
+   ],
+   "text": "B. Run the job"
+  },
+  {
+   "id": "embedjob-c05",
+   "doc": "embedjob",
+   "heading": "Inputs",
+   "blocks": [
+    {
+     "id": "embedjob-p2-b04",
+     "page": 2,
+     "bbox": [
+      63,
+      205,
+      165,
+      232
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p2-b05",
+     "page": 2,
+     "bbox": [
+      60,
+      256,
+      274,
+      322
+     ],
+     "review": []
+    }
+   ],
+   "text": "Inputs\n\ncorpus.json and\nthe model manifest\nwith its digest."
+  },
+  {
+   "id": "embedjob-c06",
+   "doc": "embedjob",
+   "heading": "Outputs",
+   "blocks": [
+    {
+     "id": "embedjob-p2-b06",
+     "page": 2,
+     "bbox": [
+      316,
+      205,
+      439,
+      232
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p2-b07",
+     "page": 2,
+     "bbox": [
+      316,
+      256,
+      506,
+      346
+     ],
+     "review": []
+    }
+   ],
+   "text": "Outputs\n\nvectors.f32 and\nindex.json,\nwritten to a new\ndirectory."
+  },
+  {
+   "id": "embedjob-c07",
+   "doc": "embedjob",
+   "heading": "Checks",
+   "blocks": [
+    {
+     "id": "embedjob-p2-b08",
+     "page": 2,
+     "bbox": [
+      572,
+      205,
+      677,
+      226
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p2-b09",
+     "page": 2,
+     "bbox": [
+      572,
+      256,
+      762,
+      322
+     ],
+     "review": []
+    },
+    {
+     "id": "embedjob-p2-b10",
+     "page": 2,
+     "bbox": [
+      60,
+      378,
+      790,
+      444
+     ],
+     "review": []
+    }
+   ],
+   "text": "Checks\n\nEvery vector has\n1024 numbers and\nlength 1.\n\nSwitch the search service to the new directory only after the\nlabeled questions score at least as well as before. Keep the\nold directory for rollback."
+  },
+  {
+   "id": "runbook-c01",
+   "doc": "runbook",
+   "heading": "1. Start the server",
+   "blocks": [
+    {
+     "id": "runbook-p1-b02",
+     "page": 1,
+     "bbox": [
+      63,
+      96,
+      399,
+      117
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p1-b03",
+     "page": 1,
+     "bbox": [
+      60,
+      155,
+      790,
+      217
+     ],
+     "review": []
+    }
+   ],
+   "text": "1. Start the server\n\nThe server runs one model at a time on port 11434. It listens\nonly on the loopback address, so other machines cannot reach\nit."
+  },
+  {
+   "id": "runbook-c02",
+   "doc": "runbook",
+   "heading": "Before you start",
+   "blocks": [
+    {
+     "id": "runbook-p1-b04",
+     "page": 1,
+     "bbox": [
+      60,
+      253,
+      345,
+      280
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p1-b05",
+     "page": 1,
+     "bbox": [
+      60,
+      304,
+      394,
+      438
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p1-b06",
+     "page": 1,
+     "bbox": [
+      60,
+      466,
+      394,
+      528
+     ],
+     "review": []
+    }
+   ],
+   "text": "Before you start\n\nCheck that the model file is\npresent and that its digest\nmatches the value in the\nrelease record. A different\ndigest means a different\nbuild.\n\nFree at least 6 GB of memory\nbefore loading the vision\nmodel."
+  },
+  {
+   "id": "runbook-c03",
+   "doc": "runbook",
+   "heading": "Start command",
+   "blocks": [
+    {
+     "id": "runbook-p1-b07",
+     "page": 1,
+     "bbox": [
+      445,
+      253,
+      676,
+      274
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p1-b08",
+     "page": 1,
+     "bbox": [
+      445,
+      304,
+      779,
+      418
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p1-b09",
+     "page": 1,
+     "bbox": [
+      445,
+      442,
+      755,
+      508
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p1-b10",
+     "page": 1,
+     "bbox": [
+      60,
+      564,
+      754,
+      630
+     ],
+     "review": []
+    }
+   ],
+   "text": "Start command\n\nRun the start script from\nthe service account, not\nfrom a personal shell. The\nscript writes its process ID\nto run/server.pid.\n\nWait for the line ready on\n11434 in the log before\nsending requests.\n\nIf the log shows address already in use, another server is\nstill running. Stop it with the stop script; do not delete\nthe PID file by hand."
+  },
+  {
+   "id": "runbook-c04",
+   "doc": "runbook",
+   "heading": "2. Health checks",
+   "blocks": [
+    {
+     "id": "runbook-p2-b02",
+     "page": 2,
+     "bbox": [
+      60,
+      96,
+      345,
+      117
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p2-b03",
+     "page": 2,
+     "bbox": [
+      60,
+      155,
+      730,
+      197
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p2-b04",
+     "page": 2,
+     "bbox": [
+      60,
+      229,
+      792,
+      421
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p2-b05",
+     "page": 2,
+     "bbox": [
+      60,
+      453,
+      766,
+      515
+     ],
+     "review": []
+    }
+   ],
+   "text": "2. Health checks\n\nRun these checks after every restart. Each one must pass\nbefore the server takes traffic again.\n\nCheck  Command  Pass when\nVersion  GET /api/version  returns 0.32.14\nModels  GET /api/tags  lists gemma4:e2b\nDigest  compare digest  matches record\nSmoke  one short chat  answer not empty\n\nTable 2. Restart checks. A passing smoke request shows that\nthe model answers; it does not show that the answer is\ncorrect."
+  },
+  {
+   "id": "runbook-c05",
+   "doc": "runbook",
+   "heading": "When a check fails",
+   "blocks": [
+    {
+     "id": "runbook-p2-b06",
+     "page": 2,
+     "bbox": [
+      60,
+      551,
+      381,
+      572
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p2-b07",
+     "page": 2,
+     "bbox": [
+      60,
+      610,
+      790,
+      676
+     ],
+     "review": []
+    }
+   ],
+   "text": "When a check fails\n\nStop at the first failed check. Record its name, the time and\nthe full error text in the incident log then roll back to\nthe previous release."
+  },
+  {
+   "id": "runbook-c06",
+   "doc": "runbook",
+   "heading": "3. Roll back a release",
+   "blocks": [
+    {
+     "id": "runbook-p3-b02",
+     "page": 3,
+     "bbox": [
+      60,
+      96,
+      453,
+      117
+     ],
+     "review": []
+    }
+   ],
+   "text": "3. Roll back a release"
+  },
+  {
+   "id": "runbook-c07",
+   "doc": "runbook",
+   "heading": "Keep two releases",
+   "blocks": [
+    {
+     "id": "runbook-p3-b03",
+     "page": 3,
+     "bbox": [
+      60,
+      155,
+      363,
+      182
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p3-b04",
+     "page": 3,
+     "bbox": [
+      60,
+      206,
+      394,
+      340
+     ],
+     "review": []
+    }
+   ],
+   "text": "Keep two releases\n\nEach release directory holds\nthe model digest, the server\nversion and the prompt\nfiles. Keep the current and\nthe previous release on\ndisk."
+  },
+  {
+   "id": "runbook-c08",
+   "doc": "runbook",
+   "heading": "Switch back",
+   "blocks": [
+    {
+     "id": "runbook-p3-b05",
+     "page": 3,
+     "bbox": [
+      445,
+      155,
+      637,
+      176
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p3-b06",
+     "page": 3,
+     "bbox": [
+      445,
+      206,
+      755,
+      296
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p3-b07",
+     "page": 3,
+     "bbox": [
+      445,
+      320,
+      755,
+      362
+     ],
+     "review": []
+    },
+    {
+     "id": "runbook-p3-b08",
+     "page": 3,
+     "bbox": [
+      60,
+      394,
+      790,
+      460
+     ],
+     "review": []
+    }
+   ],
+   "text": "Switch back\n\nPoint the current link at\nthe previous release,\nrestart the server and run\nevery health check again.\n\nDo not edit files inside a\nrelease directory.\n\nA rollback is complete only when all four restart checks pass\non the previous release. Write the release ID and the time in\nthe incident log."
+  }
+ ]
+}

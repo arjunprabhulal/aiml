@@ -1,0 +1,77 @@
+{
+  "mode": "actual local CPU quantization, packing and dequantized inference on an existing trained checkpoint",
+  "input_text": "mia has a red hat.",
+  "input_ids": [
+    58,
+    36,
+    33,
+    89,
+    79,
+    4
+  ],
+  "full_precision_payload_bytes": 59520,
+  "results": [
+    {
+      "bits": 8,
+      "selected_matrices": [
+        "Wq",
+        "Wk",
+        "Wv",
+        "Wo",
+        "W1",
+        "W2",
+        "W_out"
+      ],
+      "numeric_model_payload_bytes": 28544,
+      "packed_matrix_bytes": 5888,
+      "unquantized_parameter_bytes": 22656,
+      "serialized_quantized_artifacts_bytes": 13296,
+      "max_logit_error": 0.09433748097707007,
+      "changed_argmax_positions": 0,
+      "positions": 6
+    },
+    {
+      "bits": 4,
+      "selected_matrices": [
+        "Wq",
+        "Wk",
+        "Wv",
+        "Wo",
+        "W1",
+        "W2",
+        "W_out"
+      ],
+      "numeric_model_payload_bytes": 26240,
+      "packed_matrix_bytes": 3584,
+      "unquantized_parameter_bytes": 22656,
+      "serialized_quantized_artifacts_bytes": 8462,
+      "max_logit_error": 1.3838154876852728,
+      "changed_argmax_positions": 1,
+      "positions": 6
+    }
+  ],
+  "scope": "Selected linear matrices only; scales remain float64. No integer kernel, AWQ, GPU speed or quality benchmark.",
+  "refusal": "finite matrix and 4 or 8 bits required",
+  "command": [
+    "python",
+    "run.py",
+    "quantization",
+    "--record"
+  ],
+  "exit_status": 0,
+  "environment": {
+    "python": "3.12.8",
+    "torch": "2.14.1",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "sources": {
+    "experiment.py": "1306ee38f04deea2060cdbf6fa7449da38279f9fe7be2eec8893d3a2afe8a9eb",
+    "decoder.py": "5706ca21af551b17ee54ca00f5a6011981b327e03b1e880b6712c06dd7d1c39a",
+    "vendor/model.py": "0d3d469afd5f35ef19b04e0b0587143c39f8fbca37d6154e6435c4ed4e8b80fc",
+    "run.py": "aaac2de2d29a3e5f70f654839dc454cd8ef0ac97fa14e870d245d28ab65d3022",
+    "test_experiment.py": "f9c08f86d6ce9f9a5d78dd6acf572f81431711992e709ac6106c17b90f76d04d",
+    "params.json": "26510c85e6e6bf6e9b1dd8766f20a062ce6da35eff4d50984f1b2aead774c1d5",
+    "tokenizer.json": "7478ffcb69ca5383828956b1d6db10f2ca6bc925abab7122e8da6f5d05e61657",
+    "bpe.py": "f2986e70b69224d9bae7694b085275d01d8cf0103b7f05399e8c9840a1679143"
+  }
+}

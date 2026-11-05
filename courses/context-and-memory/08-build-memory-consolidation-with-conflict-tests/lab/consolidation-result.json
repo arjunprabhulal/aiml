@@ -1,0 +1,215 @@
+{
+  "before": {
+    "alice/porto-trip": [
+      {
+        "id": 2,
+        "attribute": "seat",
+        "level": "user",
+        "text": "Alice prefers aisle seats."
+      },
+      {
+        "id": 3,
+        "attribute": "home-airport",
+        "level": "user",
+        "text": "Alice flies from Lisbon."
+      },
+      {
+        "id": 4,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice dislikes noisy hotels."
+      },
+      {
+        "id": 6,
+        "attribute": "seat",
+        "level": "user",
+        "text": "Alice prefers window seats now."
+      },
+      {
+        "id": 7,
+        "attribute": "home-airport",
+        "level": "user",
+        "text": "alice flies from Lisbon"
+      },
+      {
+        "id": 8,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice does not mind noise in hotels."
+      },
+      {
+        "id": 9,
+        "attribute": "diet",
+        "level": "task",
+        "text": "This week Alice is eating vegan."
+      }
+    ],
+    "alice/trip-planning": [
+      {
+        "id": 1,
+        "attribute": "diet",
+        "level": "user",
+        "text": "Alice is vegetarian."
+      },
+      {
+        "id": 2,
+        "attribute": "seat",
+        "level": "user",
+        "text": "Alice prefers aisle seats."
+      },
+      {
+        "id": 3,
+        "attribute": "home-airport",
+        "level": "user",
+        "text": "Alice flies from Lisbon."
+      },
+      {
+        "id": 4,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice dislikes noisy hotels."
+      },
+      {
+        "id": 5,
+        "attribute": "diet",
+        "level": "user",
+        "text": "Alice eats meat."
+      },
+      {
+        "id": 6,
+        "attribute": "seat",
+        "level": "user",
+        "text": "Alice prefers window seats now."
+      },
+      {
+        "id": 7,
+        "attribute": "home-airport",
+        "level": "user",
+        "text": "alice flies from Lisbon"
+      },
+      {
+        "id": 8,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice does not mind noise in hotels."
+      }
+    ]
+  },
+  "report": {
+    "resolved": [
+      {
+        "kept": 6,
+        "retired": 2,
+        "rule": "newer statement"
+      },
+      {
+        "kept": 1,
+        "retired": 5,
+        "rule": "user statement over inference"
+      },
+      {
+        "kept": 3,
+        "retired": 7,
+        "rule": "duplicate"
+      }
+    ],
+    "facts_without_attribute": [
+      4,
+      8
+    ]
+  },
+  "second_run": {
+    "resolved": [],
+    "facts_without_attribute": [
+      4,
+      8
+    ]
+  },
+  "after": {
+    "alice/porto-trip": [
+      {
+        "id": 3,
+        "attribute": "home-airport",
+        "level": "user",
+        "text": "Alice flies from Lisbon."
+      },
+      {
+        "id": 4,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice dislikes noisy hotels."
+      },
+      {
+        "id": 6,
+        "attribute": "seat",
+        "level": "user",
+        "text": "Alice prefers window seats now."
+      },
+      {
+        "id": 8,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice does not mind noise in hotels."
+      },
+      {
+        "id": 9,
+        "attribute": "diet",
+        "level": "task",
+        "text": "This week Alice is eating vegan."
+      }
+    ],
+    "alice/trip-planning": [
+      {
+        "id": 1,
+        "attribute": "diet",
+        "level": "user",
+        "text": "Alice is vegetarian."
+      },
+      {
+        "id": 3,
+        "attribute": "home-airport",
+        "level": "user",
+        "text": "Alice flies from Lisbon."
+      },
+      {
+        "id": 4,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice dislikes noisy hotels."
+      },
+      {
+        "id": 6,
+        "attribute": "seat",
+        "level": "user",
+        "text": "Alice prefers window seats now."
+      },
+      {
+        "id": 8,
+        "attribute": null,
+        "level": "user",
+        "text": "Alice does not mind noise in hotels."
+      }
+    ]
+  },
+  "resolutions": [
+    {
+      "kept": 6,
+      "retired": 2,
+      "rule": "newer statement",
+      "resolved_at": "2026-10-27T09:09:00+00:00"
+    },
+    {
+      "kept": 1,
+      "retired": 5,
+      "rule": "user statement over inference",
+      "resolved_at": "2026-10-27T09:09:00+00:00"
+    },
+    {
+      "kept": 3,
+      "retired": 7,
+      "rule": "duplicate",
+      "resolved_at": "2026-10-27T09:09:00+00:00"
+    }
+  ],
+  "memories_still_stored": 9
+}

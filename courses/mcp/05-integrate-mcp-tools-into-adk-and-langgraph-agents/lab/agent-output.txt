@@ -1,0 +1,34 @@
+$ python agent_adk.py --tools
+tool   add_task ['title'] ['title', 'priority']
+tool   complete_task ['task_id'] ['task_id']
+tool   list_tasks [] ['status']
+
+$ python agent_langgraph.py --tools
+tool   list_tasks [] ['status']
+tool   add_task ['title'] ['title', 'priority']
+tool   complete_task ['task_id'] ['task_id']
+
+$ python agent_adk.py "Close the docs task."
+call   list_tasks {}
+result ok {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}
+call   complete_task {'task_id': 'T-3'}
+result ok {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}
+answer Task 'Update the API docs' (T-3) has been successfully closed.
+
+$ python agent_adk.py "Mark task T-9 as done."
+call   complete_task {'task_id': 'T-9'}
+result error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.
+answer I could not find a task with the ID T-9. Please use the `list_tasks` tool to see the current list of available task IDs.
+
+$ python agent_langgraph.py "Close the docs task."
+call   list_tasks {}
+result success {'tasks': [{'id': 'T-1', 'title': 'Write the release notes', 'priority': 'normal', 'status': 'open'}, {'id': 'T-2', 'title': 'Fix the login redirect bug', 'priority': 'high', 'status': 'done'}, {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'open'}], 'count': 3}
+call   complete_task {'task_id': 'T-3'}
+result success {'id': 'T-3', 'title': 'Update the API docs', 'priority': 'low', 'status': 'done'}
+answer Task "Update the API docs" (T-3) has been closed.
+
+$ python agent_langgraph.py "Mark task T-9 as done."
+call   complete_task {'task_id': 'T-9'}
+result error Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.
+answer I was unable to mark task T-9 as done because no task with that ID was found. Please list the tasks to see the valid IDs.
+

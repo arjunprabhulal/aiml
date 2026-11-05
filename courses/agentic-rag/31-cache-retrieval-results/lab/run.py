@@ -1,0 +1,49 @@
+"""Execute real local cache requests and record their actual JSON replies."""
+import argparse
+import hashlib
+import importlib.metadata
+import json
+from pathlib import Path
+import platform
+import subprocess
+import sys
+from local_http import server
+
+ROOT=Path(__file__).resolve().parent
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args();out=args.output.resolve();out.parent.mkdir(parents=True,exist_ok=True)
+    observations=[]
+    def request(client,name,path,payload,token='demo-editor'):
+        response=client.post(path,json=payload,headers={'Authorization':'Bearer '+token} if token else {})
+        row={'name':name,'method':'POST','path':path,'status_code':response.status_code,'body':response.json()};observations.append(row);return response
+    with server(ROOT,out.parent/'normal-server') as client:
+        query={'query':'json','collection':'serialization'}
+        first=request(client,'first_miss','/retrieve',query,'demo-reader')
+        second=request(client,'normalized_hit','/retrieve',{**query,'query':'JSON','version':'3.12','k':2},'demo-reader')
+        request(client,'other_principal_miss','/retrieve',query,'demo-editor')
+        request(client,'unknown_identity','/retrieve',query,'unknown')
+        request(client,'collection_denied','/retrieve',{'query':'file','collection':'files'},'demo-reader')
+        request(client,'empty_bypass_first','/retrieve',{**query,'query':'zzzz'},'demo-reader')
+        request(client,'empty_bypass_again','/retrieve',{**query,'query':'zzzz'},'demo-reader')
+        import time
+        time.sleep(1.05)  # Actual monotonic TTL expiry, not a fake clock.
+        expired=request(client,'real_ttl_expired_miss','/retrieve',query,'demo-reader')
+        assert first.json()['cache']=='miss' and second.json()['cache']=='hit' and expired.json()['cache']=='miss'
+    with server(ROOT,out.parent/'failure-server','fixture_server:app') as client:
+        request(client,'tool_failure_first','/retrieve',query,'demo-reader')
+        request(client,'tool_failure_again','/retrieve',query,'demo-reader')
+    assert [r['status_code'] for r in observations]==[200,200,200,401,403,200,200,200,503,503]
+    result={'schema_version':1,'mode':'actual-loopback-http-materialized-result-cache','model_called':False,'observations':observations}
+    out.write_text(json.dumps(result,indent=2)+'\n')
+    record(out,['run.py','--output',str(args.output)],observations)
+
+def record(out,command,observations):
+    tests=subprocess.run([sys.executable,'-m','unittest','discover','-v'],cwd=ROOT,text=True,capture_output=True)
+    (out.parent/'tests.txt').write_text(tests.stdout+tests.stderr)
+    lines=[f"{r['name']}: HTTP {r['status_code']}"+(f" cache={r['body']['cache']}" if 'cache' in r['body'] else '') for r in observations];stdout='\n'.join(lines)+'\n';print(stdout,end='');(out.parent/'stdout.txt').write_text(stdout);(out.parent/'stderr.txt').write_text('')
+    files={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(ROOT.rglob('*')) if p.is_file() and 'runs' not in p.relative_to(ROOT).parts and '__pycache__' not in p.parts}
+    execution={'command':[sys.executable,*sys.argv],'working_directory':str(Path.cwd()),'test_command':[sys.executable,'-m','unittest','discover','-v'],'test_exit_code':tests.returncode,'python':platform.python_version(),'packages':{n:importlib.metadata.version(n) for n in ['fastapi','starlette','uvicorn','httpx','pydantic']},'source_sha256':files,'result_sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'network':'loopback only; no provider/model/download'}
+    (out.parent/'execution.json').write_text(json.dumps(execution,indent=2)+'\n')
+    if tests.returncode:raise SystemExit(tests.returncode)
+if __name__=='__main__':main()

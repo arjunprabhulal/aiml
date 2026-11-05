@@ -1,0 +1,313 @@
+{
+ "model": "gemini-3.8-flash",
+ "runs": [
+  {
+   "question": "Which open pull request has failing CI, and why?",
+   "recursion_limit": 12,
+   "state": [
+    "human",
+    "ai: calls list_open_prs",
+    "tool: list_open_prs",
+    "ai: calls get_ci_status, get_ci_status, get_ci_status",
+    "tool: get_ci_status",
+    "tool: get_ci_status",
+    "tool: get_ci_status",
+    "ai"
+   ],
+   "path": [
+    "agent",
+    "tools",
+    "agent",
+    "tools",
+    "tools",
+    "tools",
+    "agent"
+   ],
+   "steps": [
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "list_open_prs",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "list_open_prs",
+     "status": "success",
+     "content": "[{\"number\": 412, \"title\": \"Retry webhook delivery on 503\", \"author\": \"mlee\"}, {\"number\": 415, \"title\": \"Raise the default HTTP timeout to 30s\", \"author\": \"dkim\"}, {\"number\": 418, \"title\": \"Remove the unused legacy CSV export\", \"author\": \"apatel\"}]"
+    },
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 412
+       }
+      },
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 415
+       }
+      },
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 418
+       }
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "passed"
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "failed: tests/test_client.py::test_default_timeout expected 10, got 30"
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "passed"
+    },
+    {
+     "node": "agent",
+     "answer": "Pull request #415 has failing CI. It failed on `tests/test_client.py::test_default_timeout` because the test expected 10 but received 30 after the default HTTP timeout was raised."
+    }
+   ],
+   "answer": "Pull request #415 has failing CI. It failed on `tests/test_client.py::test_default_timeout` because the test expected 10 but received 30 after the default HTTP timeout was raised.",
+   "error": null
+  },
+  {
+   "question": "What does pull request 418 change, and did its CI pass?",
+   "recursion_limit": 12,
+   "state": [
+    "human",
+    "ai: calls get_diff, get_ci_status",
+    "tool: get_diff",
+    "tool: get_ci_status",
+    "ai"
+   ],
+   "path": [
+    "agent",
+    "tools",
+    "tools",
+    "agent"
+   ],
+   "steps": [
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "get_diff",
+       "args": {
+        "number": 418
+       }
+      },
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 418
+       }
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "get_diff",
+     "status": "success",
+     "content": "export/csv_legacy.py: deleted (212 lines)\nexport/__init__.py: drop csv_legacy import"
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "passed"
+    },
+    {
+     "node": "agent",
+     "answer": "Pull request 418 deletes `export/csv_legacy.py` and removes the `csv_legacy` import from `export/__init__.py`. Its CI checks passed."
+    }
+   ],
+   "answer": "Pull request 418 deletes `export/csv_legacy.py` and removes the `csv_legacy` import from `export/__init__.py`. Its CI checks passed.",
+   "error": null
+  },
+  {
+   "question": "Is CI green on pull request 999?",
+   "recursion_limit": 12,
+   "state": [
+    "human",
+    "ai: calls get_ci_status",
+    "tool: get_ci_status",
+    "ai: calls list_open_prs",
+    "tool: list_open_prs",
+    "ai"
+   ],
+   "path": [
+    "agent",
+    "tools",
+    "agent",
+    "tools",
+    "agent"
+   ],
+   "steps": [
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 999
+       }
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "error",
+     "content": "Error: UnknownPullRequest('There is no open pull request #999.')\n Please fix your mistakes."
+    },
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "list_open_prs",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "list_open_prs",
+     "status": "success",
+     "content": "[{\"number\": 412, \"title\": \"Retry webhook delivery on 503\", \"author\": \"mlee\"}, {\"number\": 415, \"title\": \"Raise the default HTTP timeout to 30s\", \"author\": \"dkim\"}, {\"number\": 418, \"title\": \"Remove the unused legacy CSV export\", \"author\": \"apatel\"}]"
+    },
+    {
+     "node": "agent",
+     "answer": "Pull request #999 does not exist. The currently open pull requests in the queue are #412, #415, and #418."
+    }
+   ],
+   "answer": "Pull request #999 does not exist. The currently open pull requests in the queue are #412, #415, and #418.",
+   "error": null
+  },
+  {
+   "question": "Is CI green on pull request 999?",
+   "recursion_limit": 12,
+   "state": [
+    "human",
+    "ai: calls get_ci_status"
+   ],
+   "path": [
+    "agent"
+   ],
+   "steps": [
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 999
+       }
+      }
+     ]
+    }
+   ],
+   "answer": null,
+   "error": "UnknownPullRequest: There is no open pull request #999.",
+   "catch_unknown_pr": false
+  },
+  {
+   "question": "Which open pull request has failing CI, and why?",
+   "recursion_limit": 4,
+   "state": [
+    "human",
+    "ai: calls list_open_prs",
+    "tool: list_open_prs",
+    "ai: calls get_ci_status, get_ci_status, get_ci_status",
+    "tool: get_ci_status",
+    "tool: get_ci_status",
+    "tool: get_ci_status"
+   ],
+   "path": [
+    "agent",
+    "tools",
+    "agent",
+    "tools",
+    "tools",
+    "tools"
+   ],
+   "steps": [
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "list_open_prs",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "list_open_prs",
+     "status": "success",
+     "content": "[{\"number\": 412, \"title\": \"Retry webhook delivery on 503\", \"author\": \"mlee\"}, {\"number\": 415, \"title\": \"Raise the default HTTP timeout to 30s\", \"author\": \"dkim\"}, {\"number\": 418, \"title\": \"Remove the unused legacy CSV export\", \"author\": \"apatel\"}]"
+    },
+    {
+     "node": "agent",
+     "tool_calls": [
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 412
+       }
+      },
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 415
+       }
+      },
+      {
+       "name": "get_ci_status",
+       "args": {
+        "number": 418
+       }
+      }
+     ]
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "passed"
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "failed: tests/test_client.py::test_default_timeout expected 10, got 30"
+    },
+    {
+     "node": "tools",
+     "tool": "get_ci_status",
+     "status": "success",
+     "content": "passed"
+    }
+   ],
+   "answer": null,
+   "error": "GraphRecursionError: Recursion limit of 4 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+  }
+ ]
+}

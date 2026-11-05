@@ -1,0 +1,82 @@
+{
+  "execution_mode": "live Gemini API calls from the lab recorder; local tools and services as implemented",
+  "scope": "Guarded provider attempts captured for this lab. The inventory includes retries and earlier attempts; it is not a one-to-one mapping of requests to the selected output. Offline replay tests exercise the selected recorded turns.",
+  "model": "gemini-3.8-flash",
+  "output_files_sha256": {
+    "recorded-runs.json": "3c59e3f87738dbdeb05b4d3e3125451be4d930aec12616315691ad27e9978e12",
+    "run-output.txt": "9d5eb581fe57184feedc29dd7461cae197edee9b343650a6578d2b09a83b0d3b"
+  },
+  "provider_attempts": [
+    {
+      "attempt": 47,
+      "started_epoch": 1792978823.475571,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "288664404e840facb6c3167ea088995ceadcd67a693528eefa61adf8be512682",
+      "private_request_receipt_sha256": "fe74f6c1708c07bd7ae7d7c7988e880aec3631125a5980cd0f4c0f6e3efc88f2",
+      "private_response_sha256": "fabf933cf75609f00a313ccfdbb47b66210962f56bea318c257f4c2412385913",
+      "http_status": 200,
+      "max_output_tokens": 8192,
+      "prompt_tokens": 264,
+      "output_and_thinking_tokens": 33,
+      "finished_epoch": 1792978824.9020329,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 48,
+      "started_epoch": 1792978833.702205,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "18c451a99471073a223713998af871cafec69ed520b5f5c3e58a060337d37b90",
+      "private_request_receipt_sha256": "992ca07cf6e8d49c7bf1106c1f94f656fa4f8067ee0da7f4d92e15877fdfb5f7",
+      "private_response_sha256": "a64a4a74066962786200b855b5f0eb37d62e337dad2c0220b5bccf049a5cf643",
+      "http_status": 200,
+      "max_output_tokens": 8192,
+      "prompt_tokens": 407,
+      "output_and_thinking_tokens": 58,
+      "finished_epoch": 1792978836.0892549,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 49,
+      "started_epoch": 1792978837.093086,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "288664404e840facb6c3167ea088995ceadcd67a693528eefa61adf8be512682",
+      "private_request_receipt_sha256": "1574466590c3466f81e7a98c2af24ab84b233e637dfc7c7ca08387ea8bf9d537",
+      "private_response_sha256": "4082b79d4bd149fdf39bc97843ff41f39c33f4915fb7f3f23dcf2df64c6dfa7b",
+      "http_status": 200,
+      "max_output_tokens": 8192,
+      "prompt_tokens": 264,
+      "output_and_thinking_tokens": 33,
+      "finished_epoch": 1792978838.812264,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 50,
+      "started_epoch": 1792978843.823562,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "d778b3c3b8f67c6a6483720a86d90c729825e56cfdf1543695f849d3e9b488b8",
+      "private_request_receipt_sha256": "7d5cda025b12236bd1d358af283df33451807804db04ef5cf0b7f1361a57e155",
+      "private_response_sha256": "044d221f5a75f0d184042f7534a53839e8478bf86c292fbd3f91158c286acfc4",
+      "http_status": 200,
+      "max_output_tokens": 8192,
+      "prompt_tokens": 338,
+      "output_and_thinking_tokens": 27,
+      "finished_epoch": 1792978845.239072,
+      "stream_exhausted": null
+    },
+    {
+      "attempt": 51,
+      "started_epoch": 1792978848.0565388,
+      "endpoint": "/v1beta/models/gemini-3.8-flash:generateContent",
+      "request_sha256": "26aaf488887c4949e730928ee7216c2c9567f509b7120acb92a139e1558a38f5",
+      "private_request_receipt_sha256": "be949d2fe646263303e884f2e0e12010a78c8edbb5ab6065ea6c5f66f599596e",
+      "private_response_sha256": "923738764bb8d422c91b957ce37c321069f989e42a56f163f217ca7dcd5632da",
+      "http_status": 200,
+      "max_output_tokens": 8192,
+      "prompt_tokens": 455,
+      "output_and_thinking_tokens": 46,
+      "finished_epoch": 1792978849.735181,
+      "stream_exhausted": null
+    }
+  ],
+  "privacy": "Raw provider receipts remain private. Only their SHA256 digests and bounded request metadata are published. Opaque model signatures and SQLite binaries are not distributed."
+}

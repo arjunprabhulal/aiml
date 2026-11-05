@@ -1,0 +1,43 @@
+{
+  "format": "return-bundle-v1",
+  "project": "user-return-24h-v1",
+  "feature": {
+    "name": "recent_event_count",
+    "version": 1,
+    "entity": "existing_user",
+    "window_seconds": 86400,
+    "event_cutoff": "strictly_before_prediction",
+    "arrival_cutoff": "strictly_before_prediction",
+    "aggregation": "count",
+    "feature_order": [
+      "recent_event_count"
+    ],
+    "count_range": [
+      0,
+      1000
+    ]
+  },
+  "run_id": "b7646e8c530343c984370ecd69d8fc1d",
+  "model_sha256": "576847afc0d4b064e9f3653f2d25b994b638ae12dcb53fcf02beae45a0799b43",
+  "policy_sha256": "bded044a6e0c9507403fbbee000cae4180107b1423444cea0a5d12bd46e9ace9",
+  "serving_code_sha256": "3ee796be03c6ba7a3f978b1e7b0089d856697733578fc528e8cf1ba183206b75",
+  "release_code_sha256": "aace04ddb0d15278682df7f2667e1559d415455e7624047a8be8c7d23136bb86",
+  "files": {
+    "MLmodel": "3410b2d308c6e70ac9a138a29e902b129716804d61a30cd1ca918dea426207cb",
+    "candidate.json": "576847afc0d4b064e9f3653f2d25b994b638ae12dcb53fcf02beae45a0799b43",
+    "cohort.json": "4e808d638866651009546e045fa211836690b0a4210e7bec816e4bc4165834be",
+    "gate.json": "2cd50463b7ff237ec73bae8983ea05963ee8facb781f593ab614f7248f3fc83f",
+    "validation.json": "33fe310d9a3fb8b0ebb323568c83e29b6bbf2f6a3cf57389c5df9c567e9606ce",
+    "contract.json": "ee2a1d8b4f23f2019551b2a11fed36bdb1620ede74bd7a1f5f4d3c2b68ab0034",
+    "source/history_reuse.py": "83349b3fc9877350fd3b5047d9d3f08f47b9e80de0326914e1ec8eeba8175f07",
+    "source/join.sql": "4add0ce2bcad1981f8ae708899b4b8a878651114452bd133b6d456590ab5bbc2",
+    "source/workflow.py": "294a9ec66f614d6fc356bb0fdece2b0c2dd6d7f8f5e37e78c249fe1902e63be1",
+    "source/foundations.py": "b939bb9a6726363efa052eaae84667fe84b71c871a5eeedc4cd674c4e3e3f2ab",
+    "source/quarantine_reuse.py": "7be58f6b43aa9785947ba3a68be3791241a3ea628be9de32796a2ed30b507edd",
+    "source/vendor/partitions.py": "0fb0abe0fded003ec910d26beb16a3673b912448fc21937316d2cecf0297e712",
+    "source/vendor/baseline.py": "41b40a9ac8cc6b5b53b45f7b2f696f0fe9488b7fd583da1f20be53b293af97a9",
+    "source/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/vendor/availability.py": "3039969944686e05ee6d2fc9990807d9f576f653403681671e8d656f717a3efb",
+    "source/vendor/feature_math.py": "477c12bf3d2cea0f8493e3ecb26af6a14092e4359dfecb01ba32100522e889fd"
+  }
+}

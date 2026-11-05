@@ -1,0 +1,141 @@
+{
+  "execution": "actual local Python/SQLite; cost comparison uses saved local model predictions; no remote API calls",
+  "python": "3.12.8",
+  "commands": [
+    {
+      "topic": "splits",
+      "argv": [
+        "python",
+        "adapt.py",
+        "splits",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/splits.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "topic": "availability",
+      "argv": [
+        "python",
+        "adapt.py",
+        "availability",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/availability.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "topic": "costs",
+      "argv": [
+        "python",
+        "adapt.py",
+        "costs",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/costs.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "topic": "validation",
+      "argv": [
+        "python",
+        "adapt.py",
+        "validation",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/validation.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "topic": "history",
+      "argv": [
+        "python",
+        "adapt.py",
+        "history",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/history.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "topic": "parity",
+      "argv": [
+        "python",
+        "adapt.py",
+        "parity",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/parity.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "topic": "versioning",
+      "argv": [
+        "python",
+        "adapt.py",
+        "versioning",
+        "--work",
+        "recorded-adaptations/work",
+        "--cohort",
+        "recorded/cohort.json",
+        "--model",
+        "recorded/candidate.json",
+        "--out",
+        "recorded-adaptations/versioning.json"
+      ],
+      "returncode": 0
+    }
+  ],
+  "files_sha256": {
+    "adapt.py": "ff585e04ef2dac898201fe891ebc20c5ad260a37f9ed16fc46528799092071c0",
+    "foundations.py": "b939bb9a6726363efa052eaae84667fe84b71c871a5eeedc4cd674c4e3e3f2ab",
+    "workflow.py": "294a9ec66f614d6fc356bb0fdece2b0c2dd6d7f8f5e37e78c249fe1902e63be1",
+    "quarantine_reuse.py": "7be58f6b43aa9785947ba3a68be3791241a3ea628be9de32796a2ed30b507edd",
+    "history_reuse.py": "83349b3fc9877350fd3b5047d9d3f08f47b9e80de0326914e1ec8eeba8175f07",
+    "join.sql": "4add0ce2bcad1981f8ae708899b4b8a878651114452bd133b6d456590ab5bbc2",
+    "scenario.json": "5d009da4b520ee466b7919ab6d3bd5507c5d6c0e56be4d64302bb1ee9c347619",
+    "vendor/partitions.py": "0fb0abe0fded003ec910d26beb16a3673b912448fc21937316d2cecf0297e712",
+    "vendor/feature_math.py": "477c12bf3d2cea0f8493e3ecb26af6a14092e4359dfecb01ba32100522e889fd",
+    "vendor/availability.py": "3039969944686e05ee6d2fc9990807d9f576f653403681671e8d656f717a3efb",
+    "vendor/baseline.py": "41b40a9ac8cc6b5b53b45f7b2f696f0fe9488b7fd583da1f20be53b293af97a9"
+  },
+  "model_sha256": "6ec6c622ac475213b6b13723e5cb8cdeb14d5bdccd93ca2ee42ba0d684917ab7",
+  "cohort_sha256": "bacaa0053ffd5fd844af307b5ee5370515a4f99dea02a2fa7b76e7122c2ccf6b",
+  "previous_capture": "recorded-adaptations-initial/; earlier code and outputs preserved"
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "provenance": "Exact original summaries reused from record-a-rag-baseline/data/sources.json; existing fact_status preserved, no new documentation verification claimed.",
+  "sources": [
+    {
+      "source_id": "path-write",
+      "path": "docs/path-write.md",
+      "title": "path-write",
+      "sha256": "fc153a13320bf10c3bd95073064be8ca79fc49d1baf94020aab6e1f9098bcb03",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "fact_status": "deliberate local teaching revision; not an upstream documentation update"
+    },
+    {
+      "source_id": "path-read",
+      "path": "docs/path-read.md",
+      "title": "path-read",
+      "sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "original summary; primary docs checked"
+    },
+    {
+      "source_id": "json-text",
+      "path": "docs/json-text.md",
+      "title": "json-text",
+      "sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+      "fact_status": "original summary; primary docs checked"
+    },
+    {
+      "source_id": "path-read-3-13",
+      "path": "docs/path-read-3-13.md",
+      "title": "path-read-3-13",
+      "sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+      "version": "3.13",
+      "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+      "fact_status": "documented only; Python 3.13 not executed"
+    }
+  ]
+}

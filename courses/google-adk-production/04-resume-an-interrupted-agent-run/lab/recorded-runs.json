@@ -1,0 +1,218 @@
+{
+  "model": "gemini-3.8-flash",
+  "report": "The tokens page says deploy tokens never expire. File a docs issue.",
+  "runs": {
+    "crash": {
+      "command": "python triage.py start --crash-after-write 'The tokens page says deploy tokens never expire. File a docs issue.'",
+      "stdout": [
+        "session SESSION",
+        "invocation e-04d3625f-aacf-4420-add6-fa25079c3835",
+        "docs_triage  call read_page",
+        "docs_triage  result read_page {\"page\": \"tokens\", \"text\": \"# Authenticate docuctl in CI\\n\\n",
+        "docs_triage  call file_issue"
+      ],
+      "stderr": [],
+      "exit": 137,
+      "tracker": [
+        {
+          "number": 1,
+          "key": "call_815839"
+        }
+      ]
+    },
+    "resume": {
+      "command": "python triage.py resume SESSION e-04d3625f-aacf-4420-add6-fa25079c3835",
+      "stdout": [
+        "invocation e-04d3625f-aacf-4420-add6-fa25079c3835",
+        "docs_triage  result file_issue {\"issue\": 1, \"duplicate_request\": true}",
+        "docs_triage  'The issue has been filed as issue number 1.'",
+        "docs_triage  end_of_agent"
+      ],
+      "stderr": [
+        "Dropping function calls with no matching function response: ['call_815839']"
+      ],
+      "exit": 0,
+      "tracker": [
+        {
+          "number": 1,
+          "key": "call_815839"
+        }
+      ]
+    },
+    "resume_again": {
+      "command": "python triage.py resume SESSION e-04d3625f-aacf-4420-add6-fa25079c3835",
+      "stdout": [],
+      "stderr": [
+        "invocation e-04d3625f-aacf-4420-add6-fa25079c3835 already finished"
+      ],
+      "exit": 1,
+      "tracker": [
+        {
+          "number": 1,
+          "key": "call_815839"
+        }
+      ]
+    },
+    "unknown_invocation": {
+      "command": "python triage.py resume SESSION e-0000",
+      "stdout": [],
+      "stderr": [
+        "invocation e-0000 is not in session SESSION"
+      ],
+      "exit": 1,
+      "tracker": [
+        {
+          "number": 1,
+          "key": "call_815839"
+        }
+      ]
+    },
+    "crash_no_key": {
+      "command": "python triage.py start --crash-after-write --no-idempotency-key 'The tokens page says deploy tokens never expire. File a docs issue.'",
+      "stdout": [
+        "session SESSION2",
+        "invocation e-26ff678f-7eea-43c0-86b4-fd9c4aeec019",
+        "docs_triage  call read_page",
+        "docs_triage  result read_page {\"page\": \"tokens\", \"text\": \"# Authenticate docuctl in CI\\n\\n",
+        "docs_triage  call file_issue"
+      ],
+      "stderr": [],
+      "exit": 137,
+      "tracker": [
+        {
+          "number": 1,
+          "key": null
+        }
+      ]
+    },
+    "resume_no_key": {
+      "command": "python triage.py resume --no-idempotency-key SESSION2 e-26ff678f-7eea-43c0-86b4-fd9c4aeec019",
+      "stdout": [
+        "invocation e-26ff678f-7eea-43c0-86b4-fd9c4aeec019",
+        "docs_triage  result file_issue {\"issue\": 2}",
+        "docs_triage  'I have filed the issue as issue number 2.'",
+        "docs_triage  end_of_agent"
+      ],
+      "stderr": [
+        "Dropping function calls with no matching function response: ['call_1560262']"
+      ],
+      "exit": 0,
+      "tracker": [
+        {
+          "number": 1,
+          "key": null
+        },
+        {
+          "number": 2,
+          "key": null
+        }
+      ]
+    }
+  },
+  "happy": {
+    "session": "SESSION",
+    "invocation": "e-04d3625f-aacf-4420-add6-fa25079c3835",
+    "model_turns": [
+      {
+        "invocation": "e-04d3625f-aacf-4420-add6-fa25079c3835",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1716983",
+                "args": {
+                  "page": "tokens"
+                },
+                "name": "read_page"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "invocation": "e-04d3625f-aacf-4420-add6-fa25079c3835",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_815839",
+                "args": {
+                  "title": "Verify documentation on token expiry on tokens page",
+                  "body": "The user reported that the tokens page says deploy tokens never expire. However, the tokens page states: \"Tokens expire after 90 days; `docuctl tokens list` shows each token's expiry.\""
+                },
+                "name": "file_issue"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "invocation": "e-04d3625f-aacf-4420-add6-fa25079c3835",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The issue has been filed as issue number 1."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "unguarded_resume": [
+    "docs_triage  'Issue 1 has already been filed for the tokens page expiry re'",
+    "docs_triage  end_of_agent"
+  ],
+  "no_key": {
+    "model_turns": [
+      {
+        "invocation": "e-26ff678f-7eea-43c0-86b4-fd9c4aeec019",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1312305",
+                "args": {
+                  "page": "tokens"
+                },
+                "name": "read_page"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "invocation": "e-26ff678f-7eea-43c0-86b4-fd9c4aeec019",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "function_call": {
+                "id": "call_1560262",
+                "args": {
+                  "title": "Clarify token expiration behavior on tokens page",
+                  "body": "The user reported that the tokens page says deploy tokens never expire, but the page states: \"Tokens expire after 90 days; `docuctl tokens list` shows each token's expiry.\" Verify if tokens do expire or clarify deploy token expiration behavior."
+                },
+                "name": "file_issue"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "invocation": "e-26ff678f-7eea-43c0-86b4-fd9c4aeec019",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I have filed the issue as issue number 2."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

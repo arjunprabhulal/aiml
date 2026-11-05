@@ -1,0 +1,11 @@
+test_access_count_includes_repeated_kv_reads (test_lab.FlashAttentionTest.test_access_count_includes_repeated_kv_reads) ... ok
+test_forgetting_output_rescaling_across_tiles_corrupts_attention (test_lab.FlashAttentionTest.test_forgetting_output_rescaling_across_tiles_corrupts_attention)
+Omitting the exp(prev_max - new_max) rescaling on output_acc produces wrong attention outputs. ... ok
+test_naive_softmax_overflows_without_max_shift (test_lab.FlashAttentionTest.test_naive_softmax_overflows_without_max_shift)
+Large attention logits overflow exp() when subtract_max=False, whereas online max shift stays finite. ... ok
+test_tiled_flash_attention_matches_standard_attention_across_tile_sizes (test_lab.FlashAttentionTest.test_tiled_flash_attention_matches_standard_attention_across_tile_sizes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.015s
+
+OK

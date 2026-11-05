@@ -1,0 +1,215 @@
+{
+  "mode": "actual local CPU batched token decoding under authored logical arrival ticks",
+  "fixed": {
+    "policy": "fixed batch until all finish",
+    "capacity": 2,
+    "logical_ticks": 6,
+    "batch_forward_calls": 6,
+    "jobs": [
+      {
+        "id": "a",
+        "arrival": 0,
+        "prompt": [
+          58,
+          36
+        ],
+        "tokens": 2,
+        "generated": [
+          33,
+          89
+        ],
+        "admitted": 0,
+        "finished": 2
+      },
+      {
+        "id": "b",
+        "arrival": 0,
+        "prompt": [
+          61,
+          36
+        ],
+        "tokens": 5,
+        "generated": [
+          33,
+          89,
+          79,
+          4,
+          67
+        ],
+        "admitted": 0,
+        "finished": 5
+      },
+      {
+        "id": "c",
+        "arrival": 0,
+        "prompt": [
+          6,
+          39,
+          36
+        ],
+        "tokens": 1,
+        "generated": [
+          33
+        ],
+        "admitted": 5,
+        "finished": 6
+      }
+    ],
+    "trace": [
+      {
+        "tick": 0,
+        "active": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "tick": 1,
+        "active": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "tick": 2,
+        "active": [
+          "b"
+        ]
+      },
+      {
+        "tick": 3,
+        "active": [
+          "b"
+        ]
+      },
+      {
+        "tick": 4,
+        "active": [
+          "b"
+        ]
+      },
+      {
+        "tick": 5,
+        "active": [
+          "c"
+        ]
+      }
+    ]
+  },
+  "continuous": {
+    "policy": "continuous admission",
+    "capacity": 2,
+    "logical_ticks": 5,
+    "batch_forward_calls": 5,
+    "jobs": [
+      {
+        "id": "a",
+        "arrival": 0,
+        "prompt": [
+          58,
+          36
+        ],
+        "tokens": 2,
+        "generated": [
+          33,
+          89
+        ],
+        "admitted": 0,
+        "finished": 2
+      },
+      {
+        "id": "b",
+        "arrival": 0,
+        "prompt": [
+          61,
+          36
+        ],
+        "tokens": 5,
+        "generated": [
+          33,
+          89,
+          79,
+          4,
+          67
+        ],
+        "admitted": 0,
+        "finished": 5
+      },
+      {
+        "id": "c",
+        "arrival": 0,
+        "prompt": [
+          6,
+          39,
+          36
+        ],
+        "tokens": 1,
+        "generated": [
+          33
+        ],
+        "admitted": 2,
+        "finished": 3
+      }
+    ],
+    "trace": [
+      {
+        "tick": 0,
+        "active": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "tick": 1,
+        "active": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "tick": 2,
+        "active": [
+          "b",
+          "c"
+        ]
+      },
+      {
+        "tick": 3,
+        "active": [
+          "b"
+        ]
+      },
+      {
+        "tick": 4,
+        "active": [
+          "b"
+        ]
+      }
+    ]
+  },
+  "outputs_equal": true,
+  "scope": "Logical ticks are not wall-clock latency or throughput. Full-prefix recomputation; no paged KV cache or vLLM claim.",
+  "refusal": "positive capacity required",
+  "command": [
+    "python",
+    "run.py",
+    "batching",
+    "--record"
+  ],
+  "exit_status": 0,
+  "environment": {
+    "python": "3.12.8",
+    "torch": "2.14.1",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "sources": {
+    "experiment.py": "1306ee38f04deea2060cdbf6fa7449da38279f9fe7be2eec8893d3a2afe8a9eb",
+    "decoder.py": "5706ca21af551b17ee54ca00f5a6011981b327e03b1e880b6712c06dd7d1c39a",
+    "vendor/model.py": "0d3d469afd5f35ef19b04e0b0587143c39f8fbca37d6154e6435c4ed4e8b80fc",
+    "run.py": "aaac2de2d29a3e5f70f654839dc454cd8ef0ac97fa14e870d245d28ab65d3022",
+    "test_experiment.py": "f9c08f86d6ce9f9a5d78dd6acf572f81431711992e709ac6106c17b90f76d04d",
+    "params.json": "26510c85e6e6bf6e9b1dd8766f20a062ce6da35eff4d50984f1b2aead774c1d5",
+    "tokenizer.json": "7478ffcb69ca5383828956b1d6db10f2ca6bc925abab7122e8da6f5d05e61657",
+    "bpe.py": "f2986e70b69224d9bae7694b085275d01d8cf0103b7f05399e8c9840a1679143"
+  }
+}

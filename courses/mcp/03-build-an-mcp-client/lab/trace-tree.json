@@ -1,0 +1,239 @@
+{
+  "roots": [
+    {
+      "attributes": {
+        "mcp.method.name": "server/discover"
+      },
+      "children": [
+        {
+          "attributes": {
+            "mcp.method.name": "server/discover",
+            "mcp.protocol.version": "2026-07-28"
+          },
+          "children": [],
+          "kind": "SERVER",
+          "name": "server/discover",
+          "status": "UNSET"
+        }
+      ],
+      "kind": "CLIENT",
+      "name": "MCP send server/discover",
+      "status": "UNSET"
+    },
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {
+            "mcp.method.name": "tools/list"
+          },
+          "children": [
+            {
+              "attributes": {
+                "mcp.method.name": "tools/list",
+                "mcp.protocol.version": "2026-07-28"
+              },
+              "children": [],
+              "kind": "SERVER",
+              "name": "tools/list",
+              "status": "UNSET"
+            }
+          ],
+          "kind": "CLIENT",
+          "name": "MCP send tools/list",
+          "status": "UNSET"
+        },
+        {
+          "attributes": {
+            "app.outcome": "result"
+          },
+          "children": [
+            {
+              "attributes": {
+                "mcp.method.name": "tools/call"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "gen_ai.operation.name": "execute_tool",
+                    "gen_ai.tool.name": "search_docs",
+                    "mcp.method.name": "tools/call",
+                    "mcp.protocol.version": "2026-07-28"
+                  },
+                  "children": [
+                    {
+                      "attributes": {
+                        "docs.hits": 1
+                      },
+                      "children": [],
+                      "kind": "INTERNAL",
+                      "name": "docs.search",
+                      "status": "UNSET"
+                    }
+                  ],
+                  "kind": "SERVER",
+                  "name": "tools/call search_docs",
+                  "status": "UNSET"
+                }
+              ],
+              "kind": "CLIENT",
+              "name": "MCP send tools/call search_docs",
+              "status": "UNSET"
+            }
+          ],
+          "kind": "INTERNAL",
+          "name": "app call search_docs",
+          "status": "UNSET"
+        },
+        {
+          "attributes": {
+            "app.outcome": "refused_locally"
+          },
+          "children": [],
+          "kind": "INTERNAL",
+          "name": "app call search_docs",
+          "status": "UNSET"
+        },
+        {
+          "attributes": {
+            "app.outcome": "tool_error"
+          },
+          "children": [
+            {
+              "attributes": {
+                "mcp.method.name": "tools/call"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "error.type": "tool_error",
+                    "gen_ai.operation.name": "execute_tool",
+                    "gen_ai.tool.name": "search_docs",
+                    "mcp.method.name": "tools/call",
+                    "mcp.protocol.version": "2026-07-28"
+                  },
+                  "children": [
+                    {
+                      "attributes": {},
+                      "children": [],
+                      "kind": "INTERNAL",
+                      "name": "docs.search",
+                      "status": "ERROR"
+                    }
+                  ],
+                  "kind": "SERVER",
+                  "name": "tools/call search_docs",
+                  "status": "ERROR"
+                }
+              ],
+              "kind": "CLIENT",
+              "name": "MCP send tools/call search_docs",
+              "status": "UNSET"
+            }
+          ],
+          "kind": "INTERNAL",
+          "name": "app call search_docs",
+          "status": "UNSET"
+        },
+        {
+          "attributes": {
+            "app.outcome": "timeout"
+          },
+          "children": [
+            {
+              "attributes": {
+                "mcp.method.name": "tools/call"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "gen_ai.operation.name": "execute_tool",
+                    "gen_ai.tool.name": "rebuild_index",
+                    "mcp.method.name": "tools/call",
+                    "mcp.protocol.version": "2026-07-28"
+                  },
+                  "children": [],
+                  "kind": "SERVER",
+                  "name": "tools/call rebuild_index",
+                  "status": "UNSET"
+                }
+              ],
+              "kind": "CLIENT",
+              "name": "MCP send tools/call rebuild_index",
+              "status": "ERROR"
+            }
+          ],
+          "kind": "INTERNAL",
+          "name": "app call rebuild_index",
+          "status": "UNSET"
+        },
+        {
+          "attributes": {
+            "app.outcome": "result"
+          },
+          "children": [
+            {
+              "attributes": {
+                "mcp.method.name": "tools/call"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "gen_ai.operation.name": "execute_tool",
+                    "gen_ai.tool.name": "search_docs",
+                    "mcp.method.name": "tools/call",
+                    "mcp.protocol.version": "2026-07-28"
+                  },
+                  "children": [
+                    {
+                      "attributes": {
+                        "docs.hits": 1
+                      },
+                      "children": [],
+                      "kind": "INTERNAL",
+                      "name": "docs.search",
+                      "status": "UNSET"
+                    }
+                  ],
+                  "kind": "SERVER",
+                  "name": "tools/call search_docs",
+                  "status": "UNSET"
+                }
+              ],
+              "kind": "CLIENT",
+              "name": "MCP send tools/call search_docs",
+              "status": "UNSET"
+            }
+          ],
+          "kind": "INTERNAL",
+          "name": "app call search_docs",
+          "status": "UNSET"
+        },
+        {
+          "attributes": {
+            "app.outcome": "refused_locally"
+          },
+          "children": [],
+          "kind": "INTERNAL",
+          "name": "app call delete_page",
+          "status": "UNSET"
+        }
+      ],
+      "kind": "INTERNAL",
+      "name": "answer docs question",
+      "status": "UNSET"
+    },
+    {
+      "attributes": {
+        "mcp.method.name": "notifications/cancelled",
+        "mcp.protocol.version": "2026-07-28"
+      },
+      "children": [],
+      "kind": "SERVER",
+      "name": "notifications/cancelled",
+      "status": "UNSET"
+    }
+  ],
+  "spans": 23,
+  "traces": 3
+}

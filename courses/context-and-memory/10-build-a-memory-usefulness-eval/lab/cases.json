@@ -1,0 +1,508 @@
+{
+  "conversations": [
+    {
+      "user": "alice",
+      "events": [
+        {
+          "turn": 3,
+          "text": "I am vegetarian.",
+          "op": "remember",
+          "attribute": "diet"
+        },
+        {
+          "turn": 5,
+          "text": "The budget is 150 euros per night.",
+          "op": "remember",
+          "attribute": "budget"
+        },
+        {
+          "turn": 8,
+          "text": "We are going to Porto.",
+          "op": "remember",
+          "attribute": "city"
+        },
+        {
+          "turn": 12,
+          "text": "My passport number is P1234567.",
+          "op": "remember",
+          "attribute": "passport"
+        },
+        {
+          "turn": 15,
+          "text": "We travel from 3 to 6 November.",
+          "op": "remember",
+          "attribute": "dates"
+        },
+        {
+          "turn": 18,
+          "text": "I want a hotel near the river.",
+          "op": "remember",
+          "attribute": "hotel-area"
+        },
+        {
+          "turn": 22,
+          "text": "Raise the budget to 180 euros per night.",
+          "op": "correct",
+          "attribute": "budget"
+        },
+        {
+          "turn": 31,
+          "text": "I eat fish now, but still no meat.",
+          "op": "correct",
+          "attribute": "diet"
+        },
+        {
+          "turn": 35,
+          "text": "Please forget my passport number.",
+          "op": "forget",
+          "attribute": "passport"
+        },
+        {
+          "turn": 40,
+          "text": "Move the trip to 10 to 13 November.",
+          "op": "correct",
+          "attribute": "dates"
+        },
+        {
+          "turn": 44,
+          "text": "Bob will join us on the second day.",
+          "op": "remember",
+          "attribute": "attendee"
+        }
+      ],
+      "questions": [
+        {
+          "question": "What should I eat for dinner?",
+          "required": [
+            "fish now"
+          ],
+          "stale": [
+            "I am vegetarian."
+          ],
+          "forgotten": []
+        },
+        {
+          "question": "What is the budget per night for the hotel?",
+          "required": [
+            "180 euros per night"
+          ],
+          "stale": [
+            "150 euros per night"
+          ],
+          "forgotten": []
+        },
+        {
+          "question": "When do we travel to Porto?",
+          "required": [
+            "10 to 13 November",
+            "going to Porto"
+          ],
+          "stale": [
+            "3 to 6 November"
+          ],
+          "forgotten": []
+        },
+        {
+          "question": "Can you fill in my passport number on the form?",
+          "required": [],
+          "stale": [],
+          "forgotten": [
+            "P1234567"
+          ]
+        }
+      ]
+    },
+    {
+      "user": "bob",
+      "events": [
+        {
+          "turn": 2,
+          "text": "My laptop runs Linux.",
+          "op": "remember",
+          "attribute": "laptop-os"
+        },
+        {
+          "turn": 4,
+          "text": "I need a standing desk.",
+          "op": "remember",
+          "attribute": "desk"
+        },
+        {
+          "turn": 7,
+          "text": "My home address is 12 Rua Nova.",
+          "op": "remember",
+          "attribute": "address"
+        },
+        {
+          "turn": 11,
+          "text": "I switched to macOS last week.",
+          "op": "correct",
+          "attribute": "laptop-os"
+        },
+        {
+          "turn": 14,
+          "text": "I start work at 8 in the morning.",
+          "op": "remember",
+          "attribute": "schedule"
+        },
+        {
+          "turn": 19,
+          "text": "Please delete my home address.",
+          "op": "forget",
+          "attribute": "address"
+        },
+        {
+          "turn": 23,
+          "text": "My manager is Priya.",
+          "op": "remember",
+          "attribute": "manager"
+        }
+      ],
+      "questions": [
+        {
+          "question": "Which operating system should the laptop setup guide cover?",
+          "required": [
+            "macOS"
+          ],
+          "stale": [
+            "runs Linux"
+          ],
+          "forgotten": []
+        },
+        {
+          "question": "Who approves my desk order?",
+          "required": [
+            "manager is Priya",
+            "standing desk"
+          ],
+          "stale": [],
+          "forgotten": []
+        },
+        {
+          "question": "Where should the welcome package be sent?",
+          "required": [],
+          "stale": [],
+          "forgotten": [
+            "12 Rua Nova"
+          ]
+        }
+      ]
+    },
+    {
+      "user": "chen",
+      "events": [
+        {
+          "turn": 1,
+          "text": "I prefer answers in short bullet points.",
+          "op": "remember",
+          "attribute": "answer-style"
+        },
+        {
+          "turn": 6,
+          "text": "My team uses PostgreSQL for the billing service.",
+          "op": "remember",
+          "attribute": "database"
+        },
+        {
+          "turn": 9,
+          "text": "The on-call rotation changes every Monday.",
+          "op": "remember",
+          "attribute": "rotation"
+        },
+        {
+          "turn": 13,
+          "text": "We moved billing to MySQL, not PostgreSQL.",
+          "op": "correct",
+          "attribute": "database"
+        },
+        {
+          "turn": 17,
+          "text": "I am allergic to peanuts.",
+          "op": "remember",
+          "attribute": "allergy"
+        }
+      ],
+      "questions": [
+        {
+          "question": "Which database does the billing service use?",
+          "required": [
+            "moved billing to MySQL"
+          ],
+          "stale": [
+            "uses PostgreSQL for the billing"
+          ],
+          "forgotten": []
+        },
+        {
+          "question": "Order snacks for the team meeting.",
+          "required": [
+            "allergic to peanuts"
+          ],
+          "stale": [],
+          "forgotten": []
+        },
+        {
+          "question": "When does on-call change?",
+          "required": [
+            "changes every Monday"
+          ],
+          "stale": [],
+          "forgotten": []
+        }
+      ]
+    }
+  ],
+  "long_replay": {
+    "user": "dana",
+    "events": [
+      {
+        "turn": 1,
+        "text": "The budget is 100 euros.",
+        "op": "remember",
+        "attribute": "budget"
+      },
+      {
+        "turn": 5,
+        "text": "Note 1: a detail the user mentioned at turn 5.",
+        "op": "remember",
+        "attribute": "note-1"
+      },
+      {
+        "turn": 10,
+        "text": "Note 2: a detail the user mentioned at turn 10.",
+        "op": "remember",
+        "attribute": "note-2"
+      },
+      {
+        "turn": 15,
+        "text": "Note 3: a detail the user mentioned at turn 15.",
+        "op": "remember",
+        "attribute": "note-3"
+      },
+      {
+        "turn": 20,
+        "text": "Change the budget to 120 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 25,
+        "text": "Note 5: a detail the user mentioned at turn 25.",
+        "op": "remember",
+        "attribute": "note-5"
+      },
+      {
+        "turn": 30,
+        "text": "Note 6: a detail the user mentioned at turn 30.",
+        "op": "remember",
+        "attribute": "note-6"
+      },
+      {
+        "turn": 35,
+        "text": "Note 7: a detail the user mentioned at turn 35.",
+        "op": "remember",
+        "attribute": "note-7"
+      },
+      {
+        "turn": 40,
+        "text": "Change the budget to 140 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 45,
+        "text": "Note 9: a detail the user mentioned at turn 45.",
+        "op": "remember",
+        "attribute": "note-9"
+      },
+      {
+        "turn": 50,
+        "text": "Please forget note 1.",
+        "op": "forget",
+        "attribute": "note-1"
+      },
+      {
+        "turn": 55,
+        "text": "Note 11: a detail the user mentioned at turn 55.",
+        "op": "remember",
+        "attribute": "note-11"
+      },
+      {
+        "turn": 60,
+        "text": "Change the budget to 160 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 65,
+        "text": "Note 13: a detail the user mentioned at turn 65.",
+        "op": "remember",
+        "attribute": "note-13"
+      },
+      {
+        "turn": 70,
+        "text": "Note 14: a detail the user mentioned at turn 70.",
+        "op": "remember",
+        "attribute": "note-14"
+      },
+      {
+        "turn": 75,
+        "text": "Note 15: a detail the user mentioned at turn 75.",
+        "op": "remember",
+        "attribute": "note-15"
+      },
+      {
+        "turn": 80,
+        "text": "Change the budget to 180 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 85,
+        "text": "Note 17: a detail the user mentioned at turn 85.",
+        "op": "remember",
+        "attribute": "note-17"
+      },
+      {
+        "turn": 90,
+        "text": "Note 18: a detail the user mentioned at turn 90.",
+        "op": "remember",
+        "attribute": "note-18"
+      },
+      {
+        "turn": 95,
+        "text": "Note 19: a detail the user mentioned at turn 95.",
+        "op": "remember",
+        "attribute": "note-19"
+      },
+      {
+        "turn": 100,
+        "text": "Please forget note 11.",
+        "op": "forget",
+        "attribute": "note-11"
+      },
+      {
+        "turn": 105,
+        "text": "Note 21: a detail the user mentioned at turn 105.",
+        "op": "remember",
+        "attribute": "note-21"
+      },
+      {
+        "turn": 110,
+        "text": "Note 22: a detail the user mentioned at turn 110.",
+        "op": "remember",
+        "attribute": "note-22"
+      },
+      {
+        "turn": 115,
+        "text": "Note 23: a detail the user mentioned at turn 115.",
+        "op": "remember",
+        "attribute": "note-23"
+      },
+      {
+        "turn": 120,
+        "text": "Change the budget to 220 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 125,
+        "text": "Note 25: a detail the user mentioned at turn 125.",
+        "op": "remember",
+        "attribute": "note-25"
+      },
+      {
+        "turn": 130,
+        "text": "Note 26: a detail the user mentioned at turn 130.",
+        "op": "remember",
+        "attribute": "note-26"
+      },
+      {
+        "turn": 135,
+        "text": "Note 27: a detail the user mentioned at turn 135.",
+        "op": "remember",
+        "attribute": "note-27"
+      },
+      {
+        "turn": 140,
+        "text": "Change the budget to 240 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 145,
+        "text": "Note 29: a detail the user mentioned at turn 145.",
+        "op": "remember",
+        "attribute": "note-29"
+      },
+      {
+        "turn": 150,
+        "text": "Please forget note 21.",
+        "op": "forget",
+        "attribute": "note-21"
+      },
+      {
+        "turn": 155,
+        "text": "Note 31: a detail the user mentioned at turn 155.",
+        "op": "remember",
+        "attribute": "note-31"
+      },
+      {
+        "turn": 160,
+        "text": "Change the budget to 260 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 165,
+        "text": "Note 33: a detail the user mentioned at turn 165.",
+        "op": "remember",
+        "attribute": "note-33"
+      },
+      {
+        "turn": 170,
+        "text": "Note 34: a detail the user mentioned at turn 170.",
+        "op": "remember",
+        "attribute": "note-34"
+      },
+      {
+        "turn": 175,
+        "text": "Note 35: a detail the user mentioned at turn 175.",
+        "op": "remember",
+        "attribute": "note-35"
+      },
+      {
+        "turn": 180,
+        "text": "Change the budget to 280 euros.",
+        "op": "correct",
+        "attribute": "budget"
+      },
+      {
+        "turn": 185,
+        "text": "Note 37: a detail the user mentioned at turn 185.",
+        "op": "remember",
+        "attribute": "note-37"
+      },
+      {
+        "turn": 190,
+        "text": "Note 38: a detail the user mentioned at turn 190.",
+        "op": "remember",
+        "attribute": "note-38"
+      },
+      {
+        "turn": 195,
+        "text": "Note 39: a detail the user mentioned at turn 195.",
+        "op": "remember",
+        "attribute": "note-39"
+      },
+      {
+        "turn": 200,
+        "text": "Please forget note 31.",
+        "op": "forget",
+        "attribute": "note-31"
+      }
+    ],
+    "sample_every": 20
+  },
+  "facts_quota": 120
+}

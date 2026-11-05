@@ -1,0 +1,15 @@
+== docs 1.0.0 offers tools, resources, prompts
+  tools/list                 result           ["rebuild_index", "search_docs"]
+  tools/list                 result           ["rebuild_index", "search_docs"]
+  tools/call search_docs     result           {"result": [{"slug": "quickstart", "text": "Start a worker with 
+  tools/call search_docs     refused_locally  "arguments do not match inputSchema: 42 is not of type 'string'"
+  tools/call search_docs     tool_error       "Error executing tool search_docs: The query is empty."
+  tools/call rebuild_index   timeout          "Request 'tools/call' timed out"
+  tools/call search_docs     result           {"result": [{"slug": "retries", "text": "A failed job is retried
+  tools/call delete_page     refused_locally  "tool is not in the server's tools/list"
+== broken-docs 1.0.0 offers tools
+  tools/list                 result           ["search_docs"]
+  tools/call search_docs     invalid_output   "'text' is a required property"
+trace: 23 spans in 3 trace(s)
+wrote execution-log.json
+wrote trace-tree.json

@@ -1,0 +1,178 @@
+{
+  "model": "gemini-3.8-flash",
+  "server_delay_seconds": 1.0,
+  "question": "Check that the rollback, migrations, hooks, approvals and canary pages are reachable.",
+  "live": {
+    "calls": [
+      {
+        "name": "fetch_page",
+        "args": {
+          "page": "rollback"
+        }
+      },
+      {
+        "name": "fetch_page",
+        "args": {
+          "page": "migrations"
+        }
+      },
+      {
+        "name": "fetch_page",
+        "args": {
+          "page": "hooks"
+        }
+      },
+      {
+        "name": "fetch_page",
+        "args": {
+          "page": "approvals"
+        }
+      },
+      {
+        "name": "fetch_page",
+        "args": {
+          "page": "canary"
+        }
+      }
+    ],
+    "calls_per_model_turn": [
+      5,
+      0
+    ],
+    "results": [
+      {
+        "page": "rollback",
+        "ok": true,
+        "title": "Roll back a release",
+        "words": 92
+      },
+      {
+        "page": "migrations",
+        "ok": true,
+        "title": "Database migrations",
+        "words": 244
+      },
+      {
+        "page": "hooks",
+        "ok": true,
+        "title": "Deploy hooks",
+        "words": 227
+      },
+      {
+        "page": "approvals",
+        "ok": true,
+        "title": "Approvals",
+        "words": 209
+      },
+      {
+        "page": "canary",
+        "ok": false,
+        "status": 404
+      }
+    ],
+    "server": {
+      "requests": 5,
+      "span_seconds": 1.0,
+      "max_in_flight": 5
+    },
+    "model_turns": [
+      {
+        "parts": [
+          {
+            "function_call": {
+              "id": "call_1678171",
+              "args": {
+                "page": "rollback"
+              },
+              "name": "fetch_page"
+            }
+          },
+          {
+            "function_call": {
+              "id": "call_1678172",
+              "args": {
+                "page": "migrations"
+              },
+              "name": "fetch_page"
+            }
+          },
+          {
+            "function_call": {
+              "id": "call_1678173",
+              "args": {
+                "page": "hooks"
+              },
+              "name": "fetch_page"
+            }
+          },
+          {
+            "function_call": {
+              "id": "call_1678174",
+              "args": {
+                "page": "approvals"
+              },
+              "name": "fetch_page"
+            }
+          },
+          {
+            "function_call": {
+              "id": "call_1678175",
+              "args": {
+                "page": "canary"
+              },
+              "name": "fetch_page"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      {
+        "parts": [
+          {
+            "text": "Here is the status of the requested pages:\n\n- **Rollback**: Reachable (\"Roll back a release\")\n- **Migrations**: Reachable (\"Database migrations\")\n- **Hooks**: Reachable (\"Deploy hooks\")\n- **Approvals**: Reachable (\"Approvals\")\n- **Canary**: Not reachable (No title / 404)"
+          }
+        ],
+        "role": "model"
+      }
+    ],
+    "answer": "Here is the status of the requested pages:\n\n- **Rollback**: Reachable (\"Roll back a release\")\n- **Migrations**: Reachable (\"Database migrations\")\n- **Hooks**: Reachable (\"Deploy hooks\")\n- **Approvals**: Reachable (\"Approvals\")\n- **Canary**: Not reachable (No title / 404)"
+  },
+  "matrix": [
+    {
+      "variant": "async tool",
+      "tool": "fetch_page",
+      "thread_pool": false,
+      "wall_seconds": 1.06,
+      "requests": 5,
+      "span_seconds": 1.0,
+      "max_in_flight": 5
+    },
+    {
+      "variant": "sync tool",
+      "tool": "fetch_page_blocking",
+      "thread_pool": false,
+      "wall_seconds": 5.07,
+      "requests": 5,
+      "span_seconds": 5.05,
+      "max_in_flight": 1
+    },
+    {
+      "variant": "sync tool + thread pool",
+      "tool": "fetch_page_blocking",
+      "thread_pool": true,
+      "wall_seconds": 2.13,
+      "requests": 5,
+      "span_seconds": 2.01,
+      "max_in_flight": 4
+    },
+    {
+      "variant": "async def that blocks + thread pool",
+      "tool": "fetch_page_async_but_blocking",
+      "thread_pool": true,
+      "wall_seconds": 5.07,
+      "requests": 5,
+      "span_seconds": 5.05,
+      "max_in_flight": 1
+    }
+  ]
+}

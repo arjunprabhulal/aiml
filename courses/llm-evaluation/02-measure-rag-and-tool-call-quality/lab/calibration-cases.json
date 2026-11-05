@@ -1,0 +1,78 @@
+{
+  "name": "judge-calibration",
+  "version": 3,
+  "cases": [
+    {
+      "id": "invented-storage",
+      "metric": "faithfulness",
+      "defect": "the answer invents a storage engine and a backup command",
+      "question": "Where does tracker keep its data, and what should I back up?",
+      "answer": "tracker stores tasks in a PostgreSQL database; back it up every night with pg_dump.",
+      "reference": "Tasks live in tasks.db inside the list folder, ~/.tracker by default; back up that file.",
+      "context": [
+        "Each task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it."
+      ]
+    },
+    {
+      "id": "csv-removes-color",
+      "metric": "faithfulness",
+      "defect": "a gemma4:e2b answer from an earlier run: claims --format csv removes color codes, which no retrieved page says",
+      "question": "My grep fails because tracker list prints color codes into the pipe. How do I stop that?",
+      "answer": "The `tracker list` command prints a table, and color is applied based on the color setting. If you are piping the output, the color codes might be interfering with your `grep`. You can use `tracker list --format csv` to get comma-separated output, which should eliminate the color codes.",
+      "reference": "With color = auto, tracker turns color off when output is not a terminal; set color = never in config.toml to turn it off always.",
+      "context": [
+        "`tracker import FILE.csv` reads columns title, due and tags. Rows without a title are skipped and counted in the summary line. Use `--dry-run` to see the summary without writing tasks.",
+        "`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.",
+        "Run `tracker init --dir ~/tasks` to create a task list. The `--dir` option sets where the list lives; without it, tracker uses ~/.tracker. The command fails if the folder already contains a task list."
+      ]
+    },
+    {
+      "id": "config-page-missing",
+      "metric": "contextual_recall",
+      "defect": "a gemma4:e2b trace from an earlier run: the config page that says color = never was not retrieved",
+      "question": "My grep fails because tracker list prints color codes into the pipe. How do I stop that?",
+      "answer": "The `tracker list` command prints a table, and color is applied based on the color setting. If you are piping the output, the color codes might be interfering with your `grep`. You can use `tracker list --format csv` to get comma-separated output, which should eliminate the color codes.",
+      "reference": "With color = auto, tracker turns color off when output is not a terminal; set color = never in config.toml to turn it off always.",
+      "context": [
+        "`tracker import FILE.csv` reads columns title, due and tags. Rows without a title are skipped and counted in the summary line. Use `--dry-run` to see the summary without writing tasks.",
+        "`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.",
+        "Run `tracker init --dir ~/tasks` to create a task list. The `--dir` option sets where the list lives; without it, tracker uses ~/.tracker. The command fails if the folder already contains a task list."
+      ]
+    },
+    {
+      "id": "debug-page-missing",
+      "metric": "contextual_recall",
+      "defect": "a gemma4:e2b trace from an earlier run: only issue 218 was looked up; nothing says where debug output goes",
+      "question": "Issue 218 says --debug leaks my API token. Which version fixes it, and where does debug output go?",
+      "answer": "The issue with `--debug` leaking the API token is fixed in version 2.4.1. The documentation does not specify where debug output goes.",
+      "reference": "2.4.1 fixes it by redacting tokens; debug output goes to debug.log in the list folder.",
+      "context": [
+        "{\"number\": 218, \"title\": \"`--debug` prints the API token in plain text\", \"state\": \"closed\", \"fixed_in\": \"2.4.1\"}"
+      ]
+    },
+    {
+      "id": "invented-storage-strict",
+      "metric": "faithfulness_strict",
+      "defect": "the answer invents a storage engine and a backup command",
+      "question": "Where does tracker keep its data, and what should I back up?",
+      "answer": "tracker stores tasks in a PostgreSQL database; back it up every night with pg_dump.",
+      "reference": "Tasks live in tasks.db inside the list folder, ~/.tracker by default; back up that file.",
+      "context": [
+        "Each task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it."
+      ]
+    },
+    {
+      "id": "csv-removes-color-strict",
+      "metric": "faithfulness_strict",
+      "defect": "a gemma4:e2b answer from an earlier run: claims --format csv removes color codes, which no retrieved page says",
+      "question": "My grep fails because tracker list prints color codes into the pipe. How do I stop that?",
+      "answer": "The `tracker list` command prints a table, and color is applied based on the color setting. If you are piping the output, the color codes might be interfering with your `grep`. You can use `tracker list --format csv` to get comma-separated output, which should eliminate the color codes.",
+      "reference": "With color = auto, tracker turns color off when output is not a terminal; set color = never in config.toml to turn it off always.",
+      "context": [
+        "`tracker import FILE.csv` reads columns title, due and tags. Rows without a title are skipped and counted in the summary line. Use `--dry-run` to see the summary without writing tasks.",
+        "`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.",
+        "Run `tracker init --dir ~/tasks` to create a task list. The `--dir` option sets where the list lives; without it, tracker uses ~/.tracker. The command fails if the folder already contains a task list."
+      ]
+    }
+  ]
+}

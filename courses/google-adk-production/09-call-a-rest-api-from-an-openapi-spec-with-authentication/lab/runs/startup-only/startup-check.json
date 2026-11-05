@@ -1,0 +1,34 @@
+{
+  "lab": "adk-openapi-auth",
+  "native_package": "release_assistant",
+  "actual_loaded_type": "App:release_assistant",
+  "cli_exit_without_question": 0,
+  "states": [
+    {
+      "mode": "api_server",
+      "app_discovered": "release_assistant",
+      "empty_session_events": 0,
+      "generated_answer_verified": false
+    },
+    {
+      "mode": "web",
+      "app_discovered": "release_assistant",
+      "empty_session_events": 0,
+      "generated_answer_verified": false
+    }
+  ],
+  "local_service_started": true,
+  "model_requests_sent": 0,
+  "non_loopback_network_denied": true,
+  "provider_credentials_removed": true,
+  "source_env_not_loaded": true,
+  "check_date": "2026-10-22",
+  "sdk": "google-adk 2.12.0",
+  "mode": "local native startup and empty-session checks only; no inference",
+  "notes": [
+    "CLI was opened and sent exit, not a model question.",
+    "Web and API server each created an empty session.",
+    "AgentLoader separately constructed the actual agent/App.",
+    "The local service was started for OpenAPI and parallel tools."
+  ]
+}

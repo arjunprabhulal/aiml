@@ -1,0 +1,770 @@
+{
+ "v1: source is required": {
+  "results": [
+   {
+    "case": "rollback-command",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you should use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "rollback-command",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you would use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "rollback-command",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you would use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 1,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 2,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 3,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 1,
+    "passed": false,
+    "problems": [
+     "cited config.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "config.md",
+     "command": "docuctl deploy --env staging"
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 2,
+    "passed": false,
+    "problems": [
+     "cited config.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 3,
+    "passed": false,
+    "problems": [
+     "cited deploy.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy a service to Kubernetes with docuctl.",
+     "source": "deploy.md",
+     "command": null
+    }
+   }
+  ],
+  "passed": {
+   "rollback-command": 3,
+   "migrations": 3,
+   "revert-replaced": 0,
+   "token-expiry": 3,
+   "config-file": 3,
+   "prod-approval": 3,
+   "not-in-docs": 0
+  }
+ },
+ "v2: source may be null": {
+  "results": [
+   {
+    "case": "rollback-command",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you should use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "rollback-command",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you would use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "rollback-command",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you would use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 1,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 2,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 3,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 1,
+    "passed": false,
+    "problems": [
+     "cited config.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "config.md",
+     "command": "docuctl deploy --env staging"
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 2,
+    "passed": false,
+    "problems": [
+     "cited config.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 3,
+    "passed": false,
+    "problems": [
+     "cited deploy.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy a service to Kubernetes with docuctl.",
+     "source": "deploy.md",
+     "command": null
+    }
+   }
+  ],
+  "passed": {
+   "rollback-command": 3,
+   "migrations": 3,
+   "revert-replaced": 0,
+   "token-expiry": 3,
+   "config-file": 3,
+   "prod-approval": 3,
+   "not-in-docs": 0
+  }
+ },
+ "v3: source may be null, prompt says when": {
+  "results": [
+   {
+    "case": "rollback-command",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "`docuctl rollback --env production --to r41`",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "rollback-command",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, use the command: `docuctl rollback --env production --to r41`",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "rollback-command",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "To roll back production to release r41, you would use the command: `docuctl rollback --env production --to r41`.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back. If the release you leave ran a migration, write a new migration that reverses it.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "migrations",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Database migrations are not rolled back.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 1,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 2,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "revert-replaced",
+    "seed": 3,
+    "passed": false,
+    "problems": [
+     "missing 'docuctl rollback'"
+    ],
+    "answer": {
+     "answer": "The command `docuctl release revert <release>` was removed in docuctl 2.0.",
+     "source": "rollback.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "token-expiry",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Tokens expire after 90 days",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "config-file",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "docuctl reads `ship.toml` in the repository root.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 1,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 2,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "prod-approval",
+    "seed": 3,
+    "passed": true,
+    "problems": [],
+    "answer": {
+     "answer": "Production deploys need an approval: `docuctl deploy --env production` waits until a second engineer runs `docuctl approve <release>`.",
+     "source": "deploy.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 1,
+    "passed": false,
+    "problems": [
+     "cited tokens.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "tokens.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 2,
+    "passed": false,
+    "problems": [
+     "cited config.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "config.md",
+     "command": null
+    }
+   },
+   {
+    "case": "not-in-docs",
+    "seed": 3,
+    "passed": false,
+    "problems": [
+     "cited config.md, expected None"
+    ],
+    "answer": {
+     "answer": "The provided documentation does not contain information on how to deploy to Kubernetes with docuctl.",
+     "source": "config.md",
+     "command": null
+    }
+   }
+  ],
+  "passed": {
+   "rollback-command": 3,
+   "migrations": 3,
+   "revert-replaced": 0,
+   "token-expiry": 3,
+   "config-file": 3,
+   "prod-approval": 3,
+   "not-in-docs": 0
+  }
+ }
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "name": "list_tasks",
+    "description": "List the project's tasks. Pass status to return only open or only done tasks.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "anyOf": [
+            {
+              "enum": [
+                "open",
+                "done"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Status"
+        }
+      },
+      "title": "list_tasksArguments"
+    },
+    "outputSchema": {
+      "$defs": {
+        "Task": {
+          "description": "One task in the tracker.",
+          "properties": {
+            "id": {
+              "description": "Task ID such as T-1.",
+              "title": "Id",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "priority": {
+              "enum": [
+                "low",
+                "normal",
+                "high"
+              ],
+              "title": "Priority",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "open",
+                "done"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "priority",
+            "status"
+          ],
+          "title": "Task",
+          "type": "object"
+        }
+      },
+      "description": "The tasks that match a filter.",
+      "properties": {
+        "tasks": {
+          "items": {
+            "$ref": "#/$defs/Task"
+          },
+          "title": "Tasks",
+          "type": "array"
+        },
+        "count": {
+          "title": "Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "tasks",
+        "count"
+      ],
+      "title": "TaskList",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "add_task",
+    "description": "Add an open task and return it with its new ID.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "maxLength": 80,
+          "minLength": 3,
+          "title": "Title",
+          "type": "string"
+        },
+        "priority": {
+          "default": "normal",
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ],
+          "title": "Priority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "add_taskArguments"
+    },
+    "outputSchema": {
+      "description": "One task in the tracker.",
+      "properties": {
+        "id": {
+          "description": "Task ID such as T-1.",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "done"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "priority",
+        "status"
+      ],
+      "title": "Task",
+      "type": "object"
+    }
+  },
+  {
+    "name": "complete_task",
+    "description": "Mark one task as done and return it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "description": "A task ID such as T-1, as returned by list_tasks.",
+          "pattern": "^T-\\d+$",
+          "title": "Task Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "title": "complete_taskArguments"
+    },
+    "outputSchema": {
+      "description": "One task in the tracker.",
+      "properties": {
+        "id": {
+          "description": "Task ID such as T-1.",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "done"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "priority",
+        "status"
+      ],
+      "title": "Task",
+      "type": "object"
+    },
+    "annotations": {
+      "idempotentHint": true
+    }
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "command": [
+    "python",
+    "run.py",
+    "--output",
+    "runs/2026-10-23-concurrency/result.json"
+  ],
+  "execution_mode": "actual-offline-loopback-http",
+  "model_called": false,
+  "returncode": 0,
+  "test_returncode": 0,
+  "python": "3.12.8",
+  "dependencies": {
+    "fastapi": "0.141.1",
+    "starlette": "1.9.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.1"
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "20a320df274786357c88cc4b31e4b8e78cab47bd1866c07409030573a7621e70",
+    "app.py": "71f6ad2682cb4f9568875d489430a17ea7ce395f5d6958eaffa30ff29bf7e2a7",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "delay_fixture.py": "53dc83e2a2e1b9f642e1c84e1d85027daac4d2002c7df32473237cd49297a11b",
+    "fault_fixture.py": "bb915387db4b613e6a1901dfb18b51b5a0aa7dda661af9fa92f5de1e49614deb",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "gate.py": "f875bb612e3eaafa0664026a0998f20aae12d7846b423c557761abb622caac6b",
+    "http_contract.py": "82159308da477305fbffc8c51470835de3702611b9117910e08161e50cd0c4bd",
+    "limits.py": "bd7acae9935c04642d8fd5d1563d3bcf8ca135b46ae2ff5ecd106063c9c0c60f",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "loopback.py": "f9eaf16f2e32984de43b95cc37de814e82eb41dbeaa5503527dae515d81d1a8f",
+    "refine.py": "fce4b5bd581fbfc4aaf6039bb486c8f477c3a5f80e95fc5c58473739a75e7235",
+    "requirements.lock": "c03cdf1e60393462ed82c8565aabfe77475c6072b689972af62cb0fe34fbe919",
+    "requirements.txt": "3886b4b89cb52fed466ad0fbd38de17165d184c15274e9abed42670bd99054bc",
+    "run.py": "9d68e877e9632042ab3e097c2d0b868b2b96dad2643dd48a4cbd077d82a99916",
+    "serve.py": "6ca8338f3cd407a354c714385e318e34749c8d2c844623af3cd7217fb4667b3e",
+    "service.py": "c8dfe0a848faaeb92844603a1cb6d1b387586a4c98618d07d6740e132e306173",
+    "success_fixture.py": "103b3af3cbcf5b1838b5094bc4418673e1079daeb05ea88393579d58d2e82263",
+    "test_gate.py": "0f6c3e10836a4951f8dfa6aba072b8e88ac1d7c58b9bf7d9d3bf24e394756744",
+    "test_http.py": "b5a0858642e0c6be0ce947db04dee1298c126ee3c1438bad24f557f59c07e97f",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "m10_source_parity": {
+    "service.py": true,
+    "tools.py": true,
+    "refine.py": true,
+    "limits.py": true,
+    "bm25.py": true,
+    "version_documents.py": true,
+    "load_documents.py": true,
+    "loopback.py": true,
+    "serve.py": true,
+    "requirements.txt": true,
+    "requirements.lock": true,
+    "LICENSE": true,
+    "http_contract.py == app.py": true,
+    "fixtures": true
+  },
+  "result_sha256": "1b6d9d2025902c3de0793a63f36cd8939ee5c4da0331b7843d9b3a71dbd56651",
+  "mutations": [
+    {
+      "lab": "limit-concurrent-rag-requests",
+      "mutation": "overflow_guard_disabled",
+      "test": "test_gate.GateTests.test_overflow_before_invocation",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_overflow_before_invocation (test_gate.GateTests.test_overflow_before_invocation) ... FAIL\n\n======================================================================\nFAIL: test_overflow_before_invocation (test_gate.GateTests.test_overflow_before_invocation)\n----------------------------------------------------------------------\ngate.Refused: wait_timeout\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m11-mutation-xwfqsb3o/lab/test_gate.py\", line 7, in test_overflow_before_invocation\n    with self.assertRaisesRegex(Refused,'queue_full'):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"queue_full\" does not match \"wait_timeout\"\n\n----------------------------------------------------------------------\nRan 1 test in 0.154s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "lab": "limit-concurrent-rag-requests",
+      "mutation": "lease_not_released",
+      "test": "test_gate.GateTests.test_worker_exception_releases_lease",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_worker_exception_releases_lease (test_gate.GateTests.test_worker_exception_releases_lease) ... FAIL\n\n======================================================================\nFAIL: test_worker_exception_releases_lease (test_gate.GateTests.test_worker_exception_releases_lease)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m11-mutation-mcpav6uv/lab/test_gate.py\", line 42, in test_worker_exception_releases_lease\n    self.assertEqual(g.active,0)\nAssertionError: 1 != 0\n\n----------------------------------------------------------------------\nRan 1 test in 0.003s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "lab": "limit-concurrent-rag-requests",
+      "mutation": "deadline_not_refused",
+      "test": "test_gate.GateTests.test_wait_deadline_removes_waiter",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_wait_deadline_removes_waiter (test_gate.GateTests.test_wait_deadline_removes_waiter) ... FAIL\n\n======================================================================\nFAIL: test_wait_deadline_removes_waiter (test_gate.GateTests.test_wait_deadline_removes_waiter)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m11-mutation-voc3qxsp/lab/test_gate.py\", line 13, in test_wait_deadline_removes_waiter\n    with self.assertRaisesRegex(Refused,'wait_timeout'):await g.acquire()\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Refused not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.014s\n\nFAILED (failures=1)\n"
+    }
+  ]
+}

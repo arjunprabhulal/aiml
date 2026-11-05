@@ -1,0 +1,433 @@
+{
+  "model": "gemini-3.8-flash",
+  "operations": {
+    "/envs/{env}/releases": {
+      "get": "listReleases"
+    },
+    "/releases/{release}": {
+      "get": "getRelease"
+    },
+    "/envs/{env}/rollback": {
+      "post": "rollbackEnvironment"
+    }
+  },
+  "security_schemes": {
+    "APIKeyHeader": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-Ship-Key"
+    }
+  },
+  "run": {
+    "tools": [
+      "list_releases",
+      "get_release"
+    ],
+    "declarations": [
+      {
+        "description": "List the releases of one environment, newest first. Filter by status, such as failed.",
+        "name": "list_releases",
+        "parameters_json_schema": {
+          "properties": {
+            "env": {
+              "type": "string",
+              "enum": [
+                "staging",
+                "production"
+              ],
+              "title": "Env",
+              "description": ""
+            },
+            "status": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status",
+              "description": ""
+            }
+          },
+          "required": [
+            "env"
+          ],
+          "title": "listReleases_Arguments",
+          "type": "object"
+        }
+      },
+      {
+        "description": "Show one release: its status, commit and failure reason.",
+        "name": "get_release",
+        "parameters_json_schema": {
+          "properties": {
+            "release": {
+              "type": "string",
+              "title": "Release",
+              "description": ""
+            }
+          },
+          "required": [
+            "release"
+          ],
+          "title": "getRelease_Arguments",
+          "type": "object"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "question": "Which staging releases failed, and why?",
+        "calls": [
+          {
+            "name": "list_releases",
+            "args": {
+              "env": "staging",
+              "status": "failed"
+            }
+          }
+        ],
+        "results": [
+          {
+            "result": [
+              {
+                "release": "r43",
+                "status": "failed",
+                "commit": "0be77c3",
+                "reason": "health check failed"
+              },
+              {
+                "release": "r42",
+                "status": "failed",
+                "commit": "d41e9a7",
+                "reason": "pre_deploy exited 1"
+              }
+            ]
+          }
+        ],
+        "http": [
+          {
+            "method": "GET",
+            "path": "/envs/staging/releases",
+            "request_id": "e-7396d4b2-d919-45f8-9187-50c228a126c1",
+            "key_sent": true
+          }
+        ],
+        "model_turns": [
+          {
+            "parts": [
+              {
+                "function_call": {
+                  "id": "call_1655484",
+                  "args": {
+                    "env": "staging",
+                    "status": "failed"
+                  },
+                  "name": "list_releases"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "text": "The following staging releases failed:\n\n* **r43**: Health check failed (commit `0be77c3`)\n* **r42**: pre_deploy exited 1 (commit `d41e9a7`)"
+              }
+            ],
+            "role": "model"
+          }
+        ],
+        "answer": "The following staging releases failed:\n\n* **r43**: Health check failed (commit `0be77c3`)\n* **r42**: pre_deploy exited 1 (commit `d41e9a7`)",
+        "error": null
+      },
+      {
+        "question": "What is live in production right now?",
+        "calls": [
+          {
+            "name": "list_releases",
+            "args": {
+              "env": "production"
+            }
+          }
+        ],
+        "results": [
+          {
+            "result": [
+              {
+                "release": "r40",
+                "status": "live",
+                "commit": "5e2a913",
+                "reason": null
+              },
+              {
+                "release": "r39",
+                "status": "previous",
+                "commit": "77d0c41",
+                "reason": null
+              }
+            ]
+          }
+        ],
+        "http": [
+          {
+            "method": "GET",
+            "path": "/envs/production/releases",
+            "request_id": "e-62230bdc-523e-460d-9500-ed599aa36e3a",
+            "key_sent": true
+          }
+        ],
+        "model_turns": [
+          {
+            "parts": [
+              {
+                "function_call": {
+                  "id": "call_2390064",
+                  "args": {
+                    "env": "production"
+                  },
+                  "name": "list_releases"
+                }
+              }
+            ],
+            "role": "model"
+          },
+          {
+            "parts": [
+              {
+                "text": "Release **r40** (commit `5e2a913`) is currently live in production."
+              }
+            ],
+            "role": "model"
+          }
+        ],
+        "answer": "Release **r40** (commit `5e2a913`) is currently live in production.",
+        "error": null
+      },
+      {
+        "question": "Roll production back to r39.",
+        "calls": [],
+        "results": [],
+        "http": [],
+        "model_turns": [
+          {
+            "parts": [
+              {
+                "text": "I cannot change an environment directly. To roll back production to r39, run:\n\n```bash\ndocuctl rollback --env production --to r39\n```"
+              }
+            ],
+            "role": "model"
+          }
+        ],
+        "answer": "I cannot change an environment directly. To roll back production to r39, run:\n\n```bash\ndocuctl rollback --env production --to r39\n```",
+        "error": null
+      }
+    ]
+  },
+  "failures": {
+    "wrong_key": {
+      "tools": [
+        "list_releases",
+        "get_release"
+      ],
+      "declarations": [
+        {
+          "description": "List the releases of one environment, newest first. Filter by status, such as failed.",
+          "name": "list_releases",
+          "parameters_json_schema": {
+            "properties": {
+              "env": {
+                "type": "string",
+                "enum": [
+                  "staging",
+                  "production"
+                ],
+                "title": "Env",
+                "description": ""
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Status",
+                "description": ""
+              }
+            },
+            "required": [
+              "env"
+            ],
+            "title": "listReleases_Arguments",
+            "type": "object"
+          }
+        },
+        {
+          "description": "Show one release: its status, commit and failure reason.",
+          "name": "get_release",
+          "parameters_json_schema": {
+            "properties": {
+              "release": {
+                "type": "string",
+                "title": "Release",
+                "description": ""
+              }
+            },
+            "required": [
+              "release"
+            ],
+            "title": "getRelease_Arguments",
+            "type": "object"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "question": "Which staging releases failed, and why?",
+          "calls": [
+            {
+              "name": "list_releases",
+              "args": {
+                "env": "staging",
+                "status": "failed"
+              }
+            }
+          ],
+          "results": [
+            {
+              "error": "Tool list_releases execution failed. Analyze this execution error and your inputs. Retry with adjustments if applicable. But make sure don't retry more than 3 times. Execution Error: Status Code: 401, {\"detail\":\"missing or invalid X-Ship-Key\"}"
+            }
+          ],
+          "http": [
+            {
+              "method": "GET",
+              "path": "/envs/staging/releases",
+              "request_id": "e-2555441e-d376-48e7-95c1-15d09ffa8132",
+              "key_sent": true
+            }
+          ],
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "function_call": {
+                    "id": "call_2578448",
+                    "args": {
+                      "env": "staging",
+                      "status": "failed"
+                    },
+                    "name": "list_releases"
+                  }
+                }
+              ],
+              "role": "model"
+            },
+            {
+              "parts": [
+                {
+                  "text": "I cannot retrieve the failed staging releases because the request failed with an authentication error (401: missing or invalid `X-Ship-Key`). Please verify that the appropriate API key is configured."
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "answer": "I cannot retrieve the failed staging releases because the request failed with an authentication error (401: missing or invalid `X-Ship-Key`). Please verify that the appropriate API key is configured.",
+          "error": null
+        }
+      ]
+    },
+    "camel_case_filter": [],
+    "no_servers": {
+      "tools": [
+        "list_releases",
+        "get_release"
+      ],
+      "declarations": [
+        {
+          "description": "List the releases of one environment, newest first. Filter by status, such as failed.",
+          "name": "list_releases",
+          "parameters_json_schema": {
+            "properties": {
+              "env": {
+                "type": "string",
+                "enum": [
+                  "staging",
+                  "production"
+                ],
+                "title": "Env",
+                "description": ""
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Status",
+                "description": ""
+              }
+            },
+            "required": [
+              "env"
+            ],
+            "title": "listReleases_Arguments",
+            "type": "object"
+          }
+        },
+        {
+          "description": "Show one release: its status, commit and failure reason.",
+          "name": "get_release",
+          "parameters_json_schema": {
+            "properties": {
+              "release": {
+                "type": "string",
+                "title": "Release",
+                "description": ""
+              }
+            },
+            "required": [
+              "release"
+            ],
+            "title": "getRelease_Arguments",
+            "type": "object"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "question": "Which staging releases failed, and why?",
+          "calls": [],
+          "results": [],
+          "http": [],
+          "model_turns": [
+            {
+              "parts": [
+                {
+                  "function_call": {
+                    "id": "call_1655554",
+                    "args": {
+                      "status": "failed",
+                      "env": "staging"
+                    },
+                    "name": "list_releases"
+                  }
+                }
+              ],
+              "role": "model"
+            }
+          ],
+          "answer": "",
+          "error": "UnsupportedProtocol: Request URL is missing an 'http://' or 'https://' protocol."
+        }
+      ]
+    }
+  }
+}

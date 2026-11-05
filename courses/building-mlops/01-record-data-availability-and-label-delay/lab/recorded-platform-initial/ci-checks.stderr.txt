@@ -1,0 +1,141 @@
+2026/10/25 08:10:51 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+2026/10/25 08:10:51 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/25 08:10:51 INFO mlflow.store.db.utils: Updating database tables
+2026/10/25 08:10:52 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/25 08:10:52 INFO mlflow.store.db.utils: Updating database tables
+2026/10/25 08:10:52 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/25 08:10:52 INFO mlflow.store.db.utils: Updating database tables
+08:10:53.870 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8252
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+08:10:55.502 | INFO    | Flow run 'tangible-sambar' - Beginning flow run 'tangible-sambar' for flow 'user-return-training'
+08:10:55.529 | INFO    | Task run 'validate_events-f54' - Finished in state Completed()
+08:10:55.648 | INFO    | Task run 'materialize_cohort-099' - Finished in state Completed()
+2026/10/25 08:10:55 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/25 08:10:55 INFO mlflow.store.db.utils: Updating database tables
+08:10:56.198 | INFO    | Task run 'write_receipt-cec' - Task run failed with exception: OSError('controlled transient receipt-write failure') - Retry 1/1 will start immediately
+08:10:56.200 | INFO    | Task run 'write_receipt-cec' - Finished in state Completed()
+08:10:56.525 | INFO    | Flow run 'tangible-sambar' - Finished in state Completed()
+/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+08:10:56.628 | INFO    | Flow run 'inescapable-camel' - Beginning flow run 'inescapable-camel' for flow 'user-return-training'
+08:10:56.638 | ERROR   | Task run 'validate_events-0f3' - Task run failed with exception: ValueError('invalid batch blocks training')
+Traceback (most recent call last):
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1030, in run_context
+    yield self
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1699, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1047, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/arjunprabhulal/.codex/worktrees/mlops-six-stage-local/aiml/public/examples/mlops-return-workflow/pipeline.py", line 34, in validate_events
+    if report['status']!='ready':raise ValueError('invalid batch blocks training')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid batch blocks training
+08:10:56.641 | ERROR   | Task run 'validate_events-0f3' - Finished in state Failed('Task run encountered an exception ValueError: invalid batch blocks training')
+08:10:57.639 | ERROR   | Flow run 'inescapable-camel' - Encountered exception during execution: ValueError('invalid batch blocks training')
+Traceback (most recent call last):
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 1330, in run_context
+    yield self
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 2111, in run_flow_sync
+    engine.call_flow_fn()
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 1350, in call_flow_fn
+    result = call_with_parameters(self.flow.fn, self.parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/arjunprabhulal/.codex/worktrees/mlops-six-stage-local/aiml/public/examples/mlops-return-workflow/pipeline.py", line 79, in train_flow
+    accepted=validate_events(str(source),str(folder))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/tasks.py", line 1240, in __call__
+    return run_task(
+           ^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1932, in run_task
+    return run_task_sync(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1702, in run_task_sync
+    return engine.state if return_type == "state" else engine.result()
+                                                       ^^^^^^^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 622, in result
+    raise self._raised
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1030, in run_context
+    yield self
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1699, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1047, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/aiml-mlops-platform-venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/arjunprabhulal/.codex/worktrees/mlops-six-stage-local/aiml/public/examples/mlops-return-workflow/pipeline.py", line 34, in validate_events
+    if report['status']!='ready':raise ValueError('invalid batch blocks training')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid batch blocks training
+08:10:57.656 | INFO    | Flow run 'inescapable-camel' - Finished in state Failed('Flow run encountered an exception: ValueError: invalid batch blocks training')
+2026/10/25 08:10:57 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/25 08:10:57 INFO mlflow.store.db.utils: Updating database tables
+test_bad_feature_counts_are_refused (test_workflow.WorkflowTests.test_bad_feature_counts_are_refused) ... ok
+test_changed_cohort_refuses_model_evaluation (test_workflow.WorkflowTests.test_changed_cohort_refuses_model_evaluation) ... ok
+test_duplicate_observation_is_refused (test_workflow.WorkflowTests.test_duplicate_observation_is_refused) ... ok
+test_evaluation_uses_declared_validation_rows (test_workflow.WorkflowTests.test_evaluation_uses_declared_validation_rows) ... ok
+test_existing_artifact_is_not_overwritten (test_workflow.WorkflowTests.test_existing_artifact_is_not_overwritten) ... ok
+test_fit_and_scaler_receive_training_only (test_workflow.WorkflowTests.test_fit_and_scaler_receive_training_only) ... ok
+test_forged_split_is_refused (test_workflow.WorkflowTests.test_forged_split_is_refused) ... ok
+test_label_readiness_is_enforced_by_reused_assembler (test_workflow.WorkflowTests.test_label_readiness_is_enforced_by_reused_assembler) ... ok
+test_late_events_never_enter_features (test_workflow.WorkflowTests.test_late_events_never_enter_features) ... ok
+test_malformed_model_is_refused (test_workflow.WorkflowTests.test_malformed_model_is_refused) ... ok
+test_model_reload_matches_in_memory_prediction (test_workflow.WorkflowTests.test_model_reload_matches_in_memory_prediction) ... ok
+test_new_process_prediction_matches (test_workflow.WorkflowTests.test_new_process_prediction_matches) ... ok
+test_non_binary_and_boolean_labels_are_refused (test_workflow.WorkflowTests.test_non_binary_and_boolean_labels_are_refused) ... ok
+test_zero_scaler_is_refused (test_workflow.WorkflowTests.test_zero_scaler_is_refused) ... ok
+test_arrival_and_label_readiness_have_separate_effects (test_foundations.FoundationTests.test_arrival_and_label_readiness_have_separate_effects) ... ok
+test_clean_validation_keeps_every_original_event (test_foundations.FoundationTests.test_clean_validation_keeps_every_original_event) ... ok
+test_costs_refuse_different_cohort (test_foundations.FoundationTests.test_costs_refuse_different_cohort) ... ok
+test_costs_use_validation_and_do_not_change_model (test_foundations.FoundationTests.test_costs_use_validation_and_do_not_change_model) ... ok
+test_current_online_projection_cannot_answer_past_time (test_foundations.FoundationTests.test_current_online_projection_cannot_answer_past_time) ... ok
+test_duplicate_identity_quarantines_both_occurrences (test_foundations.FoundationTests.test_duplicate_identity_quarantines_both_occurrences) ... ok
+test_existing_history_is_never_overwritten (test_foundations.FoundationTests.test_existing_history_is_never_overwritten) ... ok
+test_failed_binding_rolls_back_all_new_components (test_foundations.FoundationTests.test_failed_binding_rolls_back_all_new_components) ... ok
+test_historical_prediction_survives_later_correction (test_foundations.FoundationTests.test_historical_prediction_survives_later_correction) ... ok
+test_history_reconstructs_all_manual_features (test_foundations.FoundationTests.test_history_reconstructs_all_manual_features) ... ok
+test_invalid_costs_are_refused (test_foundations.FoundationTests.test_invalid_costs_are_refused) ... ok
+test_malformed_source_event_reaches_quarantine (test_foundations.FoundationTests.test_malformed_source_event_reaches_quarantine) ... ok
+test_quarantine_blocks_partial_training (test_foundations.FoundationTests.test_quarantine_blocks_partial_training) ... ok
+test_same_snapshot_parity_and_staleness (test_foundations.FoundationTests.test_same_snapshot_parity_and_staleness) ... ok
+test_same_version_cannot_change_meaning (test_foundations.FoundationTests.test_same_version_cannot_change_meaning) ... ok
+test_snapshot_copies_actual_training_sources (test_foundations.FoundationTests.test_snapshot_copies_actual_training_sources) ... ok
+test_time_windows_match_manual_cohort_and_labels_are_ready (test_foundations.FoundationTests.test_time_windows_match_manual_cohort_and_labels_are_ready) ... ok
+test_completed_run_stores_reloadable_model_and_separate_report (test_tracking.TrackingTests.test_completed_run_stores_reloadable_model_and_separate_report) ... ok
+test_copied_source_is_checked_before_execution (test_tracking.TrackingTests.test_copied_source_is_checked_before_execution) ... ok
+test_failure_is_failed_run_without_model (test_tracking.TrackingTests.test_failure_is_failed_run_without_model) ... ok
+test_batch_uses_same_predictor_and_rejects_duplicate_ids (test_platform.PlatformTests.test_batch_uses_same_predictor_and_rejects_duplicate_ids) ... ok
+test_bundle_tampering_and_incompatible_application_are_refused (test_platform.PlatformTests.test_bundle_tampering_and_incompatible_application_are_refused) ... ok
+test_completed_cohort_tampering_is_refused (test_platform.PlatformTests.test_completed_cohort_tampering_is_refused) ... ok
+test_completed_retry_does_not_repeat_training (test_platform.PlatformTests.test_completed_retry_does_not_repeat_training) ... ok
+test_concurrent_invocation_cannot_enter_locked_attempt (test_platform.PlatformTests.test_concurrent_invocation_cannot_enter_locked_attempt) ... ok
+test_drift_is_distribution_only_and_invalid_data_is_repair (test_platform.PlatformTests.test_drift_is_distribution_only_and_invalid_data_is_repair) ... ok
+test_gate_recomputes_validation_and_retains_failed_candidate (test_platform.PlatformTests.test_gate_recomputes_validation_and_retains_failed_candidate) ... ok
+test_http_null_booleans_nonfinite_duplicate_fields_and_parity (test_platform.PlatformTests.test_http_null_booleans_nonfinite_duplicate_fields_and_parity) ... ok
+test_incompatible_rollback_target_does_not_change_head (test_platform.PlatformTests.test_incompatible_rollback_target_does_not_change_head) ... ok
+test_incomplete_attempt_is_retained (test_platform.PlatformTests.test_incomplete_attempt_is_retained) ... ok
+test_invalid_event_batch_cannot_train (test_platform.PlatformTests.test_invalid_event_batch_cannot_train) ... ok
+test_label_reporting_delay_is_enforced (test_platform.PlatformTests.test_label_reporting_delay_is_enforced) ... ok
+test_labels_are_pending_before_ready_and_finalized_later (test_platform.PlatformTests.test_labels_are_pending_before_ready_and_finalized_later) ... ok
+test_metrics_separate_invalid_inputs_from_quality (test_platform.PlatformTests.test_metrics_separate_invalid_inputs_from_quality) ... ok
+test_policy_rejects_nonfinite_or_final_test_permission (test_platform.PlatformTests.test_policy_rejects_nonfinite_or_final_test_permission) ... ok
+test_registry_roundtrip_and_alias_does_not_select_failed_gate (test_platform.PlatformTests.test_registry_roundtrip_and_alias_does_not_select_failed_gate) ... ok
+test_saved_source_change_prevents_reuse (test_platform.PlatformTests.test_saved_source_change_prevents_reuse) ... ok
+test_staging_is_atomic_and_rollback_retains_history (test_platform.PlatformTests.test_staging_is_atomic_and_rollback_retains_history) ... ok
+test_supplied_cohort_must_match_selected_source (test_platform.PlatformTests.test_supplied_cohort_must_match_selected_source) ... ok
+test_unknown_outcome_is_not_label_zero (test_platform.PlatformTests.test_unknown_outcome_is_not_label_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 54 tests in 8.091s
+
+OK
+
+08:10:58.283 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8252

@@ -1,0 +1,12 @@
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+test_contiguous_allocator_ooms_on_reserved_slack (test_lab.PagedKvCachingTest.test_contiguous_allocator_ooms_on_reserved_slack)
+Contiguous allocation rejects a 9th 64-token request even though 87.5% of the pool is unused. ... ok
+test_freeing_forked_sequence_preserves_shared_prefix_until_last_reference (test_lab.PagedKvCachingTest.test_freeing_forked_sequence_preserves_shared_prefix_until_last_reference) ... ok
+test_mutating_shared_block_without_cow_corrupts_sibling (test_lab.PagedKvCachingTest.test_mutating_shared_block_without_cow_corrupts_sibling)
+Appending to a shared tail block with enforce_cow=False overwrites/pollutes the sibling sequence. ... ok
+test_paged_allocator_eliminates_reserved_slack_and_admits_4x_more_requests (test_lab.PagedKvCachingTest.test_paged_allocator_eliminates_reserved_slack_and_admits_4x_more_requests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

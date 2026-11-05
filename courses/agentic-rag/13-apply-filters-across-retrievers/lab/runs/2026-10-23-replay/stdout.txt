@@ -1,0 +1,153 @@
+{
+  "execution_mode": "offline-recorded-vector-and-fts5-replay",
+  "model_called": false,
+  "steps": [
+    {
+      "policy": {
+        "version": {
+          "$eq": "3.12"
+        }
+      },
+      "candidate_chunk_ids": [
+        "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c"
+      ],
+      "vector_query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "vector_results": [
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "score": 0.637539995393079
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "score": 0.5762678845903342
+        }
+      ],
+      "lexical_query": "encoding",
+      "lexical_results": [
+        {
+          "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+          "source_id": "path-read",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+          "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+          "native_score": -1.4220532319391636e-06
+        },
+        {
+          "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+          "source_id": "path-write",
+          "version": "3.12",
+          "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+          "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+          "native_score": -1.3203883495145633e-06
+        }
+      ]
+    },
+    {
+      "policy": {
+        "version": {
+          "$eq": "3.13"
+        }
+      },
+      "candidate_chunk_ids": [
+        "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35"
+      ],
+      "vector_query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "vector_results": [
+        {
+          "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+          "source_id": "path-read-3-13",
+          "version": "3.13",
+          "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+          "score": 0.6510841890363557
+        }
+      ],
+      "lexical_query": "encoding",
+      "lexical_results": [
+        {
+          "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+          "source_id": "path-read-3-13",
+          "version": "3.13",
+          "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+          "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+          "native_score": -1.0374479889042996e-06
+        }
+      ]
+    },
+    {
+      "policy": {
+        "version": {
+          "$eq": "9.99"
+        }
+      },
+      "candidate_chunk_ids": [],
+      "vector_query": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "vector_results": [],
+      "lexical_query": "encoding",
+      "lexical_results": []
+    }
+  ],
+  "prefilter_comparison": {
+    "vector_query": "Will write_text replace the contents of an existing file?",
+    "lexical_query": "encoding",
+    "policy": {
+      "version": {
+        "$eq": "3.13"
+      }
+    },
+    "vector_unfiltered_top1": [
+      {
+        "chunk_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+        "source_id": "path-write",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+        "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+        "score": 0.6357498076122466
+      }
+    ],
+    "vector_postfilter_top1": [],
+    "vector_prefilter_top1": [
+      {
+        "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+        "source_id": "path-read-3-13",
+        "version": "3.13",
+        "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+        "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+        "score": 0.5565245149667724
+      }
+    ],
+    "lexical_unfiltered_top1": [
+      {
+        "chunk_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "source_id": "path-read",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+        "native_score": -1.4220532319391636e-06
+      }
+    ],
+    "lexical_postfilter_top1": [],
+    "lexical_prefilter_top1": [
+      {
+        "chunk_id": "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+        "source_id": "path-read-3-13",
+        "version": "3.13",
+        "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+        "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+        "native_score": -1.0374479889042996e-06
+      }
+    ]
+  },
+  "invalid_operator_refusal": "unsupported_filter_operator",
+  "policy": "None or empty object means all versions; only version $eq with a numeric major.minor string is supported. Unknown versions return no candidates."
+}

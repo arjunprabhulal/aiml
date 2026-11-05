@@ -1,0 +1,25 @@
+# Optional repository workflow. The equivalent local command is executed here;
+# this hosted workflow has not been dispatched by the lesson.
+name: user-return-checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  offline-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-platform.txt
+      - run: python ci.py --out ci-result.json
+        env:
+          MLFLOW_DISABLE_TELEMETRY: 'true'
+          PREFECT_SERVER_ANALYTICS_ENABLED: 'false'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: local-test-result
+          path: ci-result.json

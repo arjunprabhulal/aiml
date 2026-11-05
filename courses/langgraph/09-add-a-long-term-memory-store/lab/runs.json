@@ -1,0 +1,357 @@
+{
+ "model": "gemini-3.8-flash",
+ "runs": [
+  {
+   "key_by_topic": true,
+   "threads": [
+    {
+     "thread": "t1",
+     "repo": "acme/api",
+     "message": "Remember for this repository: the maximum line length is 88 characters.",
+     "tool_calls": [
+      {
+       "name": "remember_convention",
+       "args": {
+        "quote": "the maximum line length is 88 characters.",
+        "topic": "line_length"
+       }
+      }
+     ],
+     "tool_results": [
+      "Saved the line_length rule for acme/api."
+     ],
+     "answer": "I have saved the convention that the maximum line length is 88 characters for this repository.",
+     "store_after": [
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "line_length",
+       "value": {
+        "topic": "line_length",
+        "rule": "the maximum line length is 88 characters.",
+        "thread": "t1"
+       }
+      }
+     ]
+    },
+    {
+     "thread": "t2",
+     "repo": "acme/api",
+     "message": "We changed the rule. The maximum line length is now 100 characters; remember that.",
+     "tool_calls": [
+      {
+       "name": "remember_convention",
+       "args": {
+        "quote": "The maximum line length is now 100 characters",
+        "topic": "line_length"
+       }
+      }
+     ],
+     "tool_results": [
+      "Saved the line_length rule for acme/api."
+     ],
+     "answer": "I have updated the convention to set the maximum line length to 100 characters.",
+     "store_after": [
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "line_length",
+       "value": {
+        "topic": "line_length",
+        "rule": "The maximum line length is now 100 characters",
+        "thread": "t2"
+       }
+      }
+     ]
+    },
+    {
+     "thread": "t3",
+     "repo": "acme/api",
+     "message": "Review pull request 501. Does it follow our line-length rule?",
+     "tool_calls": [
+      {
+       "name": "get_diff",
+       "args": {
+        "number": 501
+       }
+      }
+     ],
+     "tool_results": [
+      "api/projects.py: add limit and cursor query parameters; longest changed line is 96 characters\ntests/test_projects.py: add test_second_page"
+     ],
+     "answer": "Yes, pull request 501 follows the line-length rule, as the longest changed line is 96 characters, which is within the 100-character limit.",
+     "store_after": [
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "line_length",
+       "value": {
+        "topic": "line_length",
+        "rule": "The maximum line length is now 100 characters",
+        "thread": "t2"
+       }
+      }
+     ]
+    },
+    {
+     "thread": "t4",
+     "repo": "acme/web",
+     "message": "Review pull request 502. Does it follow our line-length rule?",
+     "tool_calls": [
+      {
+       "name": "get_diff",
+       "args": {
+        "number": 502
+       }
+      }
+     ],
+     "tool_results": [
+      "web/sidebar.tsx: render the project count badge; longest changed line is 96 characters"
+     ],
+     "answer": "There are no saved line-length conventions for acme/web to evaluate pull request 502 against. For reference, the longest changed line in the pull request is 96 characters.",
+     "store_after": []
+    }
+   ],
+   "thread_messages": {
+    "t1": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ],
+    "t2": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ],
+    "t3": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ],
+    "t4": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ]
+   },
+   "prefix_search": [
+    {
+     "namespace": [
+      "conventions",
+      "acme/api"
+     ],
+     "key": "line_length",
+     "value": {
+      "topic": "line_length",
+      "rule": "The maximum line length is now 100 characters",
+      "thread": "t2"
+     }
+    }
+   ]
+  },
+  {
+   "key_by_topic": false,
+   "threads": [
+    {
+     "thread": "t1",
+     "repo": "acme/api",
+     "message": "Remember for this repository: the maximum line length is 88 characters.",
+     "tool_calls": [
+      {
+       "name": "remember_convention",
+       "args": {
+        "quote": "the maximum line length is 88 characters.",
+        "topic": "line_length"
+       }
+      }
+     ],
+     "tool_results": [
+      "Saved the line_length rule for acme/api."
+     ],
+     "answer": "I have saved the convention that the maximum line length is 88 characters for this repository.",
+     "store_after": [
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "<uuid4>",
+       "value": {
+        "topic": "line_length",
+        "rule": "the maximum line length is 88 characters.",
+        "thread": "t1"
+       }
+      }
+     ]
+    },
+    {
+     "thread": "t2",
+     "repo": "acme/api",
+     "message": "We changed the rule. The maximum line length is now 100 characters; remember that.",
+     "tool_calls": [
+      {
+       "name": "remember_convention",
+       "args": {
+        "topic": "line_length",
+        "quote": "The maximum line length is now 100 characters"
+       }
+      }
+     ],
+     "tool_results": [
+      "Saved the line_length rule for acme/api."
+     ],
+     "answer": "I have saved the new line length rule of 100 characters for this repository.",
+     "store_after": [
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "<uuid4>",
+       "value": {
+        "topic": "line_length",
+        "rule": "the maximum line length is 88 characters.",
+        "thread": "t1"
+       }
+      },
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "<uuid4>",
+       "value": {
+        "topic": "line_length",
+        "rule": "The maximum line length is now 100 characters",
+        "thread": "t2"
+       }
+      }
+     ]
+    },
+    {
+     "thread": "t3",
+     "repo": "acme/api",
+     "message": "Review pull request 501. Does it follow our line-length rule?",
+     "tool_calls": [
+      {
+       "name": "get_diff",
+       "args": {
+        "number": 501
+       }
+      }
+     ],
+     "tool_results": [
+      "api/projects.py: add limit and cursor query parameters; longest changed line is 96 characters\ntests/test_projects.py: add test_second_page"
+     ],
+     "answer": "Yes, pull request 501 follows the line-length rule because the longest changed line is 96 characters, which is within the 100-character maximum.",
+     "store_after": [
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "<uuid4>",
+       "value": {
+        "topic": "line_length",
+        "rule": "the maximum line length is 88 characters.",
+        "thread": "t1"
+       }
+      },
+      {
+       "namespace": [
+        "conventions",
+        "acme/api"
+       ],
+       "key": "<uuid4>",
+       "value": {
+        "topic": "line_length",
+        "rule": "The maximum line length is now 100 characters",
+        "thread": "t2"
+       }
+      }
+     ]
+    },
+    {
+     "thread": "t4",
+     "repo": "acme/web",
+     "message": "Review pull request 502. Does it follow our line-length rule?",
+     "tool_calls": [
+      {
+       "name": "get_diff",
+       "args": {
+        "number": 502
+       }
+      }
+     ],
+     "tool_results": [
+      "web/sidebar.tsx: render the project count badge; longest changed line is 96 characters"
+     ],
+     "answer": "There are no saved conventions regarding line length for acme/web to evaluate pull request 502 against. The longest changed line in the PR is 96 characters.",
+     "store_after": []
+    }
+   ],
+   "thread_messages": {
+    "t1": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ],
+    "t2": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ],
+    "t3": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ],
+    "t4": [
+     "human",
+     "ai",
+     "tool",
+     "ai"
+    ]
+   },
+   "prefix_search": [
+    {
+     "namespace": [
+      "conventions",
+      "acme/api"
+     ],
+     "key": "<uuid4>",
+     "value": {
+      "topic": "line_length",
+      "rule": "the maximum line length is 88 characters.",
+      "thread": "t1"
+     }
+    },
+    {
+     "namespace": [
+      "conventions",
+      "acme/api"
+     ],
+     "key": "<uuid4>",
+     "value": {
+      "topic": "line_length",
+      "rule": "The maximum line length is now 100 characters",
+      "thread": "t2"
+     }
+    }
+   ]
+  }
+ ]
+}

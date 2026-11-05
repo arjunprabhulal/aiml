@@ -1,0 +1,32 @@
+# 1. Connection check: the methods this deployment serves
+get_session, list_sessions, create_session, delete_session, async_get_session, async_list_sessions, async_create_session, async_delete_session, async_add_session_to_memory, async_search_memory, async_save_artifact, async_load_artifact, async_list_artifact_keys, async_delete_artifact, async_list_versions, async_list_artifact_versions, async_get_artifact_version, stream_query, async_stream_query, streaming_agent_run_with_events
+
+# 2. Conversation 1, in a new session
+# 2 s
+session 5114326006718529536
+> I run docuctl 1.x. How do I undo release r42 in production?
+# 6 s
+call   read_page {"page":"rollback"}
+result read_page
+answer In docuctl 1.x, use the `release revert` command:
+
+```bash
+docuctl release revert r42
+```
+
+Note that this rolls back to the previous state without rebuilding, but database migrations are not automatically reverted—if r42 ran migrations, you must write a new migration to reverse them.
+
+# 3. Add the finished session to Memory Bank
+{"output":null}
+memories after about 10 s: ["I run docuctl 1.x."]
+
+# 4. Conversation 2, in another new session
+> How do I undo the last production release?
+# 6 s
+call   load_memory {"query":"docuctl version"}
+call   read_page {"page":"rollback"}
+result load_memory
+result read_page
+answer Since you are using docuctl 1.x, use `docuctl release revert <release>` to undo a release and point traffic back to an earlier release ID. 
+
+Note that database migrations are not automatically rolled back; any migrations must be reversed with a new migration.

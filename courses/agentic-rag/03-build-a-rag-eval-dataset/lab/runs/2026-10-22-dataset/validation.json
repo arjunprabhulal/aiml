@@ -1,0 +1,229 @@
+{
+  "mode": "actual local dataset validation; no retrieval, generation or quality benchmark",
+  "dataset_sha256": "1603dde3e9e4d3fbafb14126e5c002584c6f945c29968488b01406618a6035b9",
+  "counts": {
+    "cases": 8,
+    "sources": 4,
+    "passages": 4,
+    "by_split": {
+      "development": 4,
+      "held_out": 4
+    },
+    "by_class": {
+      "answerable": 3,
+      "unsupported": 3,
+      "version_specific": 2
+    }
+  },
+  "split_findings": [],
+  "validation": "question/target relationships and split lock accepted; semantic relevance still needs review",
+  "corpus": {
+    "name": "python-api-summaries-2026-10-22",
+    "sources_sha256": "acd2e77291bdfae40dcc8aacbaec250e507375ca8e55511c31eaa630d3b531cb",
+    "splitter": {
+      "name": "RecursiveCharacterTextSplitter",
+      "chunk_size": 280,
+      "chunk_overlap": 40
+    },
+    "sources": [
+      {
+        "id": "path-write",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+        "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+        "license": "Original summary MIT; linked Python documentation PSF",
+        "verification": "primary_docs_and_local312_fact_check"
+      },
+      {
+        "id": "path-read",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+        "license": "Original summary MIT; linked Python documentation PSF",
+        "verification": "primary_docs_and_local312_fact_check"
+      },
+      {
+        "id": "json-text",
+        "version": "3.12",
+        "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+        "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+        "license": "Original summary MIT; linked Python documentation PSF",
+        "verification": "primary_docs_and_local312_fact_check"
+      },
+      {
+        "id": "path-read-3-13",
+        "version": "3.13",
+        "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+        "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+        "license": "Original summary MIT; linked Python documentation PSF",
+        "verification": "documented_only"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "utf8-write",
+      "split": "development",
+      "class": "answerable",
+      "question": "How do I explicitly select UTF-8 when saving text with pathlib?",
+      "python_version": "3.12",
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "source_version": "3.12",
+          "source_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "chunk_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        }
+      ],
+      "reason": "The supplied write_text summary names the encoding option."
+    },
+    {
+      "id": "replace-file",
+      "split": "development",
+      "class": "answerable",
+      "question": "Will write_text replace the contents of an existing file?",
+      "python_version": "3.12",
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "path-write",
+          "chunk_id": "path-write:b71a2d18a53d86bf",
+          "source_version": "3.12",
+          "source_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+          "chunk_text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+        }
+      ],
+      "reason": "The supplied summary explicitly states existing-file replacement."
+    },
+    {
+      "id": "json-result-type",
+      "split": "development",
+      "class": "answerable",
+      "question": "Does json.dumps produce text or a bytes object?",
+      "python_version": "3.12",
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "json-text",
+          "chunk_id": "json-text:8a17e251a41ccb3b",
+          "source_version": "3.12",
+          "source_text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+          "chunk_text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+        }
+      ],
+      "reason": "The supplied JSON summary states the result type."
+    },
+    {
+      "id": "backup-schedule",
+      "split": "development",
+      "class": "unsupported",
+      "question": "How frequently does our cloud provider back up these files?",
+      "python_version": "3.12",
+      "status": "not_in_docs",
+      "targets": [],
+      "reason": "No service operations policy exists in this corpus."
+    },
+    {
+      "id": "read-newline-312",
+      "split": "held_out",
+      "class": "version_specific",
+      "question": "Can Path.read_text take a newline argument in Python 3.12?",
+      "python_version": "3.12",
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "path-read",
+          "chunk_id": "path-read:1f1129b8d1011a82",
+          "source_version": "3.12",
+          "source_text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+          "chunk_text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0"
+        }
+      ],
+      "reason": "The 3.12 signature has no newline; actual 3.12 check can verify rejection."
+    },
+    {
+      "id": "read-newline-313",
+      "split": "held_out",
+      "class": "version_specific",
+      "question": "In Python 3.13, is newline an accepted Path.read_text parameter?",
+      "python_version": "3.13",
+      "status": "answered",
+      "targets": [
+        {
+          "source_id": "path-read-3-13",
+          "chunk_id": "path-read-3-13:3f86296ba6f04cc2",
+          "source_version": "3.13",
+          "source_text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+          "chunk_text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+        }
+      ],
+      "reason": "Official 3.13 documentation states the added parameter; documented-only here."
+    },
+    {
+      "id": "json-throughput",
+      "split": "held_out",
+      "class": "unsupported",
+      "question": "How many objects per second can this deployment serialize?",
+      "python_version": "3.12",
+      "status": "not_in_docs",
+      "targets": [],
+      "reason": "API summaries contain no deployment throughput measurements."
+    },
+    {
+      "id": "create-parents",
+      "split": "held_out",
+      "class": "unsupported",
+      "question": "Does writing text also create missing parent directories?",
+      "python_version": "3.12",
+      "status": "not_in_docs",
+      "targets": [],
+      "reason": "The bounded corpus does not state parent-directory behavior; unsupported means absent here, not unknowable."
+    }
+  ],
+  "controlled_failures": [
+    {
+      "case": "Wrong documentation version",
+      "error_type": "TargetError",
+      "message": "utf8-write: source version does not match the question version."
+    },
+    {
+      "case": "Stale target hash",
+      "error_type": "TargetError",
+      "message": "utf8-write: target text hash is stale."
+    },
+    {
+      "case": "Answerable question without a passage",
+      "error_type": "TargetError",
+      "message": "utf8-write: an answerable question needs a relevant passage target."
+    },
+    {
+      "case": "Edited held-out question",
+      "error_type": "SplitBoundaryError",
+      "message": "Split review required: [{\"case\":\"read-newline-312\",\"check\":\"lock\",\"reason\":\"edited\",\"severity\":\"block\"}]"
+    },
+    {
+      "case": "Lock from another dataset",
+      "error_type": "SplitBoundaryError",
+      "message": "Lock belongs to a different dataset."
+    }
+  ],
+  "held_out_scope": "Public teaching fixtures authored/frozen before future tuning; not an unseen external benchmark.",
+  "environment": {
+    "python": "3.12.8",
+    "packages": {
+      "langchain-core": "1.7.0",
+      "langchain-text-splitters": "1.1.3",
+      "numpy": "2.5.4"
+    }
+  },
+  "implementation_sha256": {
+    "rag_dataset.py": "f9814cde465fbfbdff06129279543ec92e56a83abadfc6b93f2131ed4af541bf",
+    "eval_task.py": "9ffe18bffb12da65ca21ba49611a15f23f13d8be6af054b68fc9c90647713530",
+    "pipeline_ids.py": "497a7252fceb7c1ebb2f9fd6d19630472b0cf861fc4190065873e06f50813fd9",
+    "build_dataset.py": "a266e0a31d7da8d1e4c8be38048ef88b21068146fb94f87ddd4f09e16c14c5d9",
+    "vendor/evals/harness.py": "cc41a86aeb449476abbb983fae570daeef45aa970206aae7a1da20c2026b19a5",
+    "vendor/evals/leakcheck.py": "7b01ffb1dba8869b45317dc3b6a987af25a9edeb0cbd2d909c9eb8a55fe26ba6"
+  }
+}

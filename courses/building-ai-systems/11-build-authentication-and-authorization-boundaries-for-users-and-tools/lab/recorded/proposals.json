@@ -1,0 +1,101 @@
+{
+  "model": {
+    "checked_on": "2026-10-20",
+    "publisher_model": "google/gemma-4-E2B-it",
+    "license": "Apache-2.0",
+    "ollama_tag": "gemma4:e2b",
+    "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+    "ollama_version": "0.32.14",
+    "options": {
+      "temperature": 1.0,
+      "top_k": 64,
+      "top_p": 0.95,
+      "num_ctx": 2048,
+      "num_predict": 200
+    },
+    "think": false,
+    "seed": 1
+  },
+  "calls": {
+    "24325c5324047070948583a220b028f4fa484805b8aee98669800eb7c3b2f0c3": {
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "issue_refund",
+          "arguments": {
+            "order_id": "n-1002",
+            "reason": "damaged"
+          }
+        }
+      ],
+      "done_reason": "stop",
+      "prompt_eval_count": 201,
+      "eval_count": 28
+    },
+    "3103de17b007ad6a0a056a729d5ccc87855e134ee58e27607c75b0d188e212c9": {
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "lookup_order",
+          "arguments": {
+            "order_id": "n-1001"
+          }
+        }
+      ],
+      "done_reason": "stop",
+      "prompt_eval_count": 200,
+      "eval_count": 22
+    },
+    "60c561492bfd3e9e7333be013198ea1b8fab18c8e152cb48f519b5f2bf5fd0b6": {
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "lookup_order",
+          "arguments": {
+            "order_id": "n-1001"
+          }
+        }
+      ],
+      "done_reason": "stop",
+      "prompt_eval_count": 200,
+      "eval_count": 22
+    },
+    "d1d8b22f126235d9c262446747c9e3c4a86cbf12ace30e5769470af5b61b7523": {
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "issue_refund",
+          "arguments": {
+            "order_id": "s-2001",
+            "reason": "damaged"
+          }
+        },
+        {
+          "name": "issue_refund",
+          "arguments": {
+            "order_id": "n-1002",
+            "reason": "damaged"
+          }
+        }
+      ],
+      "done_reason": "stop",
+      "prompt_eval_count": 219,
+      "eval_count": 55
+    },
+    "f06afe36a5b595ae6d5a733d10a6396a707d6884185ee779f75c6aba18d29d50": {
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "issue_refund",
+          "arguments": {
+            "order_id": "s-2001",
+            "reason": "damaged"
+          }
+        }
+      ],
+      "done_reason": "stop",
+      "prompt_eval_count": 201,
+      "eval_count": 28
+    }
+  }
+}

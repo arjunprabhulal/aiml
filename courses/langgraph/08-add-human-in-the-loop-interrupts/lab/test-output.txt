@@ -1,0 +1,12 @@
+test_graph.py::test_a_comment_pauses_before_it_is_posted PASSED          [  9%]
+test_graph.py::test_read_only_tools_run_without_a_pause PASSED           [ 18%]
+test_graph.py::test_approve_posts_the_proposed_comment PASSED            [ 27%]
+test_graph.py::test_edit_posts_the_reviewers_text_and_replaces_the_proposal PASSED [ 36%]
+test_graph.py::test_reject_posts_nothing_and_the_reply_comes_from_the_decision PASSED [ 45%]
+test_graph.py::test_misspelled_decision_is_refused_and_the_thread_still_waits PASSED [ 54%]
+test_graph.py::test_a_thread_without_a_pending_review_is_refused PASSED  [ 63%]
+test_graph.py::test_resume_needs_a_checkpointer PASSED                   [ 72%]
+test_graph.py::test_the_review_node_runs_again_from_the_top_on_resume PASSED [ 81%]
+test_graph.py::test_running_the_same_approved_call_twice_posts_once PASSED [ 90%]
+test_graph.py::test_a_replay_after_a_restart_posts_nothing PASSED        [100%]Running teardown with pytest sessionfinish...
+============================== 11 passed in 1.35s ==============================

@@ -1,0 +1,18 @@
+{
+  "verdict": "APPROVED_ONE_BOUNDED_FRESH_LOCAL_BASELINE_AFTER_SOURCE_REVIEW",
+  "source_bundle": "f1d5776e582b503c87e8842f9c650e5c175a4106931069ef7bc9813849aa8e6c",
+  "independent_review": "/tmp/rag-baseline-independent-preflight-review.json",
+  "root_read_files": [
+    "baseline.py",
+    "baseline_lib.py",
+    "baseline_task.py",
+    "local_models.py",
+    "frozen-rubric.json"
+  ],
+  "scope": "Frozen eight-case four-source dataset,4development/4public-held,onefixedpipeline,one trial,existinglocalQwen/Gemma digests only. At most1docbatch+8queryembed+8generation and3metadata requests. No paidcalls,pulls,hiddenrepair,retryorjudge. Preserveallfailedrawresponses.",
+  "manual_review_boundary": "Keep human-review template unreviewed until actual owner review; assistant semantic assessment separately labelled. Contract summary is not faithfulness/quality.",
+  "preserve_frozen_sources": true,
+  "new_artifacts_only_in_new_exclusive_dated_run": true,
+  "one_recording_no_resume": true,
+  "owner_scope_basis": "Existing direct authorisation to continue local executed RAG work and parallelise; no new resource download or hosted spend."
+}

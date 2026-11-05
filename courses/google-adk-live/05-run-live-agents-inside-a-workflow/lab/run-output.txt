@@ -1,0 +1,3 @@
+[two live nodes] {"intake": "Hello! I can help with that. Which page in the docs are you referring to?", "answer": "If you reuse a closed `LiveRequestQueue`, the next `run_live()` call will end immediately. You should create a fresh queue for every new `run_live()` call. Can I help with anything else? [partial]"}
+[answer node left as single_turn] {} error=ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'models/gemini-3.1-flash-live-preview only supports real-time bidirectional streaming via WebSocket (bidiGenerateContent). Please use the Gemini Live API (bidiGenerateContent via WebS
+[LoopAgent under run_live] {} error=NotImplementedError: This is not supported yet for LoopAgent.

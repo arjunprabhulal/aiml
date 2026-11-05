@@ -1,0 +1,649 @@
+{
+  "execution_mode": "offline-derived-ndjson-frame-replay",
+  "model_called": false,
+  "original_recording_sha256": "193d4c3c91e66432d3717bf85dced0034b572e804cd50efc246042b574baeaa0",
+  "provenance": "Original complete model messages reframed locally; no provider delta boundaries, token timings or fresh inference recorded.",
+  "development_cases": [
+    {
+      "case_id": "utf8-write",
+      "request_sha256": "a991e9ebf13290c7725aab2642c1b7468253bdca7835f40593635c94f90fdcc5",
+      "selected_source_ids": [
+        "path-read-3-13",
+        "path-read"
+      ],
+      "original_complete_content_preserved": true,
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "accepted_answer": {
+          "status": "not_in_docs",
+          "answer": "The provided documentation does not contain information on how to explicitly select UTF-8 when saving text with pathlib.",
+          "source_ids": []
+        },
+        "citations": [],
+        "provisional_content": "{\"status\": \"not_in_docs\", \"answer\": \"The provided documentation does not contain information on how to explicitly select UTF-8 when saving text with pathlib.\", \"source_ids\": []}",
+        "local_terminal": "done",
+        "stats": {
+          "bytes_received": 2154,
+          "transport_fragments": 450,
+          "application_frames": 15
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 65
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 6,
+            "characters_received": 78
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 7,
+            "characters_received": 91
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 8,
+            "characters_received": 104
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 9,
+            "characters_received": 117
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 10,
+            "characters_received": 130
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 11,
+            "characters_received": 143
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 12,
+            "characters_received": 156
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 13,
+            "characters_received": 169
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 14,
+            "characters_received": 177
+          },
+          {
+            "kind": "local_terminal",
+            "status": "done",
+            "sequence": 15
+          },
+          {
+            "kind": "validated_answer",
+            "status": "not_in_docs",
+            "source_ids": [],
+            "answer": {
+              "status": "not_in_docs",
+              "answer": "The provided documentation does not contain information on how to explicitly select UTF-8 when saving text with pathlib.",
+              "source_ids": []
+            },
+            "citations": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "replace-file",
+      "request_sha256": "776dcc0c6157a6970d2ad2964cecd429173d1a3758ca7b596f6c7ace2d21ef8c",
+      "selected_source_ids": [
+        "path-write",
+        "path-read-3-13"
+      ],
+      "original_complete_content_preserved": true,
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "accepted_answer": {
+          "status": "answered",
+          "answer": "Yes, an existing file is overwritten.",
+          "source_ids": [
+            "path-write"
+          ]
+        },
+        "citations": [
+          {
+            "source_id": "path-write",
+            "chunk_id": "path-write:b71a2d18a53d86bf",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "provisional_content": "{\n\"status\": \"answered\",\n\"answer\": \"Yes, an existing file is overwritten.\",\n\"source_ids\": [\n\"path-write\"\n]\n}",
+        "local_terminal": "done",
+        "stats": {
+          "bytes_received": 1427,
+          "transport_fragments": 299,
+          "application_frames": 10
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 65
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 6,
+            "characters_received": 78
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 7,
+            "characters_received": 91
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 8,
+            "characters_received": 104
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 9,
+            "characters_received": 107
+          },
+          {
+            "kind": "local_terminal",
+            "status": "done",
+            "sequence": 10
+          },
+          {
+            "kind": "validated_answer",
+            "status": "answered",
+            "source_ids": [
+              "path-write"
+            ],
+            "answer": {
+              "status": "answered",
+              "answer": "Yes, an existing file is overwritten.",
+              "source_ids": [
+                "path-write"
+              ]
+            },
+            "citations": [
+              {
+                "source_id": "path-write",
+                "chunk_id": "path-write:b71a2d18a53d86bf",
+                "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "json-result-type",
+      "request_sha256": "31fbf2a45170afd7ffb623b6281debc1817969075c5d5bf49233d2432cf7714d",
+      "selected_source_ids": [
+        "json-text",
+        "path-read-3-13"
+      ],
+      "original_complete_content_preserved": true,
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "accepted_answer": {
+          "status": "answered",
+          "answer": "json.dumps(obj, ensure_ascii=True) returns a JSON string.",
+          "source_ids": [
+            "json-text"
+          ]
+        },
+        "citations": [
+          {
+            "source_id": "json-text",
+            "chunk_id": "json-text:8a17e251a41ccb3b",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+          }
+        ],
+        "provisional_content": "{\"status\": \"answered\", \"answer\": \"json.dumps(obj, ensure_ascii=True) returns a JSON string.\", \"source_ids\": [\"json-text\"]}",
+        "local_terminal": "done",
+        "stats": {
+          "bytes_received": 1569,
+          "transport_fragments": 328,
+          "application_frames": 11
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 65
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 6,
+            "characters_received": 78
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 7,
+            "characters_received": 91
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 8,
+            "characters_received": 104
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 9,
+            "characters_received": 117
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 10,
+            "characters_received": 122
+          },
+          {
+            "kind": "local_terminal",
+            "status": "done",
+            "sequence": 11
+          },
+          {
+            "kind": "validated_answer",
+            "status": "answered",
+            "source_ids": [
+              "json-text"
+            ],
+            "answer": {
+              "status": "answered",
+              "answer": "json.dumps(obj, ensure_ascii=True) returns a JSON string.",
+              "source_ids": [
+                "json-text"
+              ]
+            },
+            "citations": [
+              {
+                "source_id": "json-text",
+                "chunk_id": "json-text:8a17e251a41ccb3b",
+                "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "backup-schedule",
+      "request_sha256": "e13d0483ca5a2b4ec06bea07518a126300443ef3a11ab56d83b3ecccc8aef544",
+      "selected_source_ids": [
+        "path-read",
+        "path-read-3-13"
+      ],
+      "original_complete_content_preserved": true,
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "accepted_answer": {
+          "status": "not_in_docs",
+          "answer": "The provided documentation does not contain information regarding how frequently the cloud provider backs up files.",
+          "source_ids": []
+        },
+        "citations": [],
+        "provisional_content": "{\"status\": \"not_in_docs\", \"answer\": \"The provided documentation does not contain information regarding how frequently the cloud provider backs up files.\", \"source_ids\": []}",
+        "local_terminal": "done",
+        "stats": {
+          "bytes_received": 2149,
+          "transport_fragments": 449,
+          "application_frames": 15
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 65
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 6,
+            "characters_received": 78
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 7,
+            "characters_received": 91
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 8,
+            "characters_received": 104
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 9,
+            "characters_received": 117
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 10,
+            "characters_received": 130
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 11,
+            "characters_received": 143
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 12,
+            "characters_received": 156
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 13,
+            "characters_received": 169
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 14,
+            "characters_received": 172
+          },
+          {
+            "kind": "local_terminal",
+            "status": "done",
+            "sequence": 15
+          },
+          {
+            "kind": "validated_answer",
+            "status": "not_in_docs",
+            "source_ids": [],
+            "answer": {
+              "status": "not_in_docs",
+              "answer": "The provided documentation does not contain information regarding how frequently the cloud provider backs up files.",
+              "source_ids": []
+            },
+            "citations": []
+          }
+        ]
+      }
+    }
+  ],
+  "controlled_failures": [
+    {
+      "scenario": "controlled_local_cancel",
+      "result": {
+        "status": "cancelled",
+        "reason": "controlled_local_cancel",
+        "accepted_answer": null,
+        "citations": [],
+        "provisional_content": "{\n\"status\": \"answered\",\n\"answer\": \"Yes, an existing f",
+        "local_terminal": "cancel",
+        "stats": {
+          "bytes_received": 872,
+          "transport_fragments": 183,
+          "application_frames": 6
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 53
+          },
+          {
+            "kind": "local_terminal",
+            "status": "cancel",
+            "sequence": 6
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "controlled_local_error",
+      "result": {
+        "status": "error",
+        "reason": "controlled_local_error",
+        "accepted_answer": null,
+        "citations": [],
+        "provisional_content": "{\n\"status\": \"answered\",\n\"answer\": \"Yes, an existing f",
+        "local_terminal": "error",
+        "stats": {
+          "bytes_received": 870,
+          "transport_fragments": 183,
+          "application_frames": 6
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 53
+          },
+          {
+            "kind": "local_terminal",
+            "status": "error",
+            "sequence": 6
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "controlled_transport_eof_before_terminal",
+      "result": {
+        "status": "incomplete",
+        "reason": "missing_terminal",
+        "accepted_answer": null,
+        "citations": [],
+        "provisional_content": "{\n\"status\": \"answered\",\n\"answer\": \"Yes, an existing file is overwritten.\",\n\"source_ids\": [\n\"path-write\"\n]\n}",
+        "local_terminal": null,
+        "stats": {
+          "bytes_received": 1313,
+          "transport_fragments": 275,
+          "application_frames": 9
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 3,
+            "characters_received": 39
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 4,
+            "characters_received": 52
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 5,
+            "characters_received": 65
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 6,
+            "characters_received": 78
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 7,
+            "characters_received": 91
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 8,
+            "characters_received": 104
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 9,
+            "characters_received": 107
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "controlled_local_transport_io_error",
+      "result": {
+        "status": "error",
+        "reason": "transport_io_error",
+        "accepted_answer": null,
+        "citations": [],
+        "provisional_content": "{\n\"status\": \"answered\",\n\"a",
+        "local_terminal": null,
+        "stats": {
+          "bytes_received": 297,
+          "transport_fragments": 1,
+          "application_frames": 2
+        },
+        "events": [
+          {
+            "kind": "provisional_content",
+            "sequence": 1,
+            "characters_received": 13
+          },
+          {
+            "kind": "provisional_content",
+            "sequence": 2,
+            "characters_received": 26
+          },
+          {
+            "kind": "transport_error",
+            "reason": "transport_io_error"
+          }
+        ]
+      }
+    }
+  ],
+  "interpretation": "Schema and known-context citation validation are protocol checks, not factual answer or citation-support review."
+}

@@ -1,0 +1,64 @@
+{
+  "execution_mode": "actual-mcp-sdk-stdio-client-server",
+  "model_called": false,
+  "command": "python run.py --output runs/2026-10-23-mcp/result.json",
+  "exit_code": 0,
+  "environment": {
+    "python": "3.12.8",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "packages": {
+      "mcp": "2.3.0",
+      "mcp-types": "2.3.0",
+      "pydantic": "2.14.1",
+      "anyio": "4.15.1"
+    }
+  },
+  "network_guard": "outbound socket connections denied in actual client and all child servers",
+  "source_parity_m9": {
+    "tools.py": {
+      "copied_sha256": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+      "original_sha256": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205"
+    },
+    "bm25.py": {
+      "copied_sha256": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+      "original_sha256": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb"
+    },
+    "version_documents.py": {
+      "copied_sha256": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66",
+      "original_sha256": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+    },
+    "load_documents.py": {
+      "copied_sha256": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+      "original_sha256": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431"
+    },
+    "fixtures/snapshot.json": {
+      "copied_sha256": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+      "original_sha256": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19"
+    }
+  },
+  "sdk_source_sha256": {
+    "mcp/client/session.py": "17895bd7fc0b98fd78f1ec48be89a3f27dca483f587cb32a4298ad9a6ba347eb",
+    "mcp/client/stdio.py": "c4a9de7119f35366037dbf8d51ab5cb6438e15e120730f65f32cdacdeea9328a",
+    "mcp/server/mcpserver/server.py": "fa61ae394dc4809c683f2878c3fc172da43c1387a3408835f89137ea34d57d4d",
+    "mcp/server/mcpserver/tools/base.py": "df4074d47d76ff65cad4df903fa2543cb95ca1dd27f3501b9c2a4c0e55045a99",
+    "mcp/server/mcpserver/utilities/func_metadata.py": "83c857d42880f520f9ee34b2e180c3838e296b1240fb413c6212a087fbcbef54"
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "528fa954a1e072450d0b667764982e936b1154b068d7c6e813042d79d69c9822",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "client.py": "831a56a4829895658d0dc5dbf981f71c18dc2d4b23dedd5484118e371848ef0e",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "render_output.py": "b8449b61d93ce8ee0267f136e6b525ad5685e2de4c424c4d33ecd691b251775c",
+    "requirements.lock": "fe25f9302799ea7689fa0215831cde9ea79e38f30906c92ecc6c776dacf3817e",
+    "requirements.txt": "b463e72eb9dec4f29234a9bdfb685185129f9af552caeccccb7eecbaeca626ef",
+    "run.py": "c214805e443901d51ddef302563ed0290b04abfd632df464fc12c7e47993450f",
+    "schemas.py": "d77adbd8e7147843c7780b3aad03995013870e08e3eba635aa28ffe2341cccd2",
+    "server.py": "3e4be24ea87c97dfbef64884fc365aadf11e792260e35f5dd81ffd11e18b9d95",
+    "test_mcp.py": "269e4572f63716665774d1f67103064473d89c52b152d97832693cdb93d8667c",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  }
+}

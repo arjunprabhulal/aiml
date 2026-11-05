@@ -1,0 +1,11 @@
+{
+  "answer": "To roll back production to release r41, you would use the command: `docuctl rollback --env production --to r41`.",
+  "source": "rollback.md",
+  "command": null
+}
+
+no schema in the request -> 1 validation error(s): json_invalid: Invalid JSON: expected value at line 1 column 1
+   input started: 'To roll back production to release r41, you would use the co'
+
+num_predict=20 -> 1 validation error(s): json_invalid: Invalid JSON: EOF while parsing a string at line 2 column 66
+   input started: '{\n  "answer": "To roll back production to release r41, you w'

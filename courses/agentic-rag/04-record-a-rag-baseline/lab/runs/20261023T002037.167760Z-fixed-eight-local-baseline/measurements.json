@@ -1,0 +1,402 @@
+{
+  "rows": [
+    {
+      "case_id": "utf8-write",
+      "split": "development",
+      "class": "answerable",
+      "retrieved_chunk_ids": [
+        "path-read-3-13:3f86296ba6f04cc2",
+        "path-read:1f1129b8d1011a82"
+      ],
+      "annotated_target_chunk_ids": [
+        "path-write:b71a2d18a53d86bf"
+      ],
+      "retrieval": {
+        "hit": false,
+        "recall": 0.0,
+        "reciprocal_rank": 0.0
+      },
+      "reply_status": "not_in_docs",
+      "expected_status": "answered",
+      "status_matches_annotation": false,
+      "target_source_alignment": false,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 516,
+        "output_tokens": 44,
+        "total_tokens": 560
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:20:49.666594Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 9543054541,
+        "load_duration": 5137902583,
+        "prompt_eval_count": 516,
+        "prompt_eval_duration": 274067000,
+        "eval_count": 44,
+        "eval_duration": 550648000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 9.652761,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "replace-file",
+      "split": "development",
+      "class": "answerable",
+      "retrieved_chunk_ids": [
+        "path-write:b71a2d18a53d86bf",
+        "path-read-3-13:3f86296ba6f04cc2"
+      ],
+      "annotated_target_chunk_ids": [
+        "path-write:b71a2d18a53d86bf"
+      ],
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "reply_status": "answered",
+      "expected_status": "answered",
+      "status_matches_annotation": true,
+      "target_source_alignment": true,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 497,
+        "output_tokens": 39,
+        "total_tokens": 536
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:20:54.058697Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 4290718334,
+        "load_duration": 239142584,
+        "prompt_eval_count": 497,
+        "prompt_eval_duration": 256473000,
+        "eval_count": 39,
+        "eval_duration": 563510000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.3891,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "json-result-type",
+      "split": "development",
+      "class": "answerable",
+      "retrieved_chunk_ids": [
+        "json-text:8a17e251a41ccb3b",
+        "path-read-3-13:3f86296ba6f04cc2"
+      ],
+      "annotated_target_chunk_ids": [
+        "json-text:8a17e251a41ccb3b"
+      ],
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "reply_status": "answered",
+      "expected_status": "answered",
+      "status_matches_annotation": true,
+      "target_source_alignment": true,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 475,
+        "output_tokens": 38,
+        "total_tokens": 513
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:20:58.072658Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 3911592167,
+        "load_duration": 233797250,
+        "prompt_eval_count": 475,
+        "prompt_eval_duration": 230309000,
+        "eval_count": 38,
+        "eval_duration": 459409000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.017886,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "backup-schedule",
+      "split": "development",
+      "class": "unsupported",
+      "retrieved_chunk_ids": [
+        "path-read:1f1129b8d1011a82",
+        "path-read-3-13:3f86296ba6f04cc2"
+      ],
+      "annotated_target_chunk_ids": [],
+      "retrieval": null,
+      "reply_status": "not_in_docs",
+      "expected_status": "not_in_docs",
+      "status_matches_annotation": true,
+      "target_source_alignment": null,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 491,
+        "output_tokens": 40,
+        "total_tokens": 531
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:21:02.558949Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 4378516958,
+        "load_duration": 232006750,
+        "prompt_eval_count": 491,
+        "prompt_eval_duration": 262749000,
+        "eval_count": 40,
+        "eval_duration": 544441000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.482251,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "read-newline-312",
+      "split": "held_out",
+      "class": "version_specific",
+      "retrieved_chunk_ids": [
+        "path-read-3-13:3f86296ba6f04cc2",
+        "path-read:1f1129b8d1011a82"
+      ],
+      "annotated_target_chunk_ids": [
+        "path-read:1f1129b8d1011a82"
+      ],
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 0.5
+      },
+      "reply_status": "not_in_docs",
+      "expected_status": "answered",
+      "status_matches_annotation": false,
+      "target_source_alignment": false,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 554,
+        "output_tokens": 59,
+        "total_tokens": 613
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:21:07.362949Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 4699982625,
+        "load_duration": 232594166,
+        "prompt_eval_count": 554,
+        "prompt_eval_duration": 63858000,
+        "eval_count": 59,
+        "eval_duration": 734530000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.811534,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "read-newline-313",
+      "split": "held_out",
+      "class": "version_specific",
+      "retrieved_chunk_ids": [
+        "path-read-3-13:3f86296ba6f04cc2",
+        "path-read:1f1129b8d1011a82"
+      ],
+      "annotated_target_chunk_ids": [
+        "path-read-3-13:3f86296ba6f04cc2"
+      ],
+      "retrieval": {
+        "hit": true,
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "reply_status": "answered",
+      "expected_status": "answered",
+      "status_matches_annotation": true,
+      "target_source_alignment": true,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 553,
+        "output_tokens": 60,
+        "total_tokens": 613
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:21:12.180981Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 4704866083,
+        "load_duration": 229715583,
+        "prompt_eval_count": 553,
+        "prompt_eval_duration": 61671000,
+        "eval_count": 60,
+        "eval_duration": 693529000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.817051,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "json-throughput",
+      "split": "held_out",
+      "class": "unsupported",
+      "retrieved_chunk_ids": [
+        "json-text:8a17e251a41ccb3b",
+        "path-read-3-13:3f86296ba6f04cc2"
+      ],
+      "annotated_target_chunk_ids": [],
+      "retrieval": null,
+      "reply_status": "not_in_docs",
+      "expected_status": "not_in_docs",
+      "status_matches_annotation": true,
+      "target_source_alignment": null,
+      "error": null,
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 500,
+        "output_tokens": 41,
+        "total_tokens": 541
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:21:16.731681Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 4443664000,
+        "load_duration": 229657958,
+        "prompt_eval_count": 500,
+        "prompt_eval_duration": 257488999,
+        "eval_count": 41,
+        "eval_duration": 518532000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.551986,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    },
+    {
+      "case_id": "create-parents",
+      "split": "held_out",
+      "class": "unsupported",
+      "retrieved_chunk_ids": [
+        "path-read-3-13:3f86296ba6f04cc2",
+        "path-write:b71a2d18a53d86bf"
+      ],
+      "annotated_target_chunk_ids": [],
+      "retrieval": null,
+      "reply_status": null,
+      "expected_status": "not_in_docs",
+      "status_matches_annotation": null,
+      "target_source_alignment": null,
+      "error": {
+        "types": [
+          "ValueError",
+          "Exception"
+        ],
+        "message": "Structured reply could not be parsed; raw reply retained, no repair"
+      },
+      "automatic_contracts_are_not_faithfulness": true,
+      "human_semantic_verdict": "unreviewed",
+      "human_review_required": true,
+      "usage_metadata": {
+        "input_tokens": 227,
+        "output_tokens": 400,
+        "total_tokens": 627
+      },
+      "response_metadata": {
+        "model": "gemma4:e2b",
+        "created_at": "2026-10-23T00:21:21.724875Z",
+        "done": true,
+        "done_reason": "length",
+        "total_duration": 4881118750,
+        "load_duration": 228535416,
+        "prompt_eval_count": 227,
+        "prompt_eval_duration": 194719000,
+        "eval_count": 400,
+        "eval_duration": 4415164000,
+        "logprobs": null,
+        "model_name": "gemma4:e2b",
+        "model_provider": "ollama"
+      },
+      "latency_seconds": 4.987931,
+      "latency_scope": "one whole query including fresh query embedding when the fresh adapter is used; one-off document embedding/index build separate"
+    }
+  ],
+  "by_split": {
+    "development": {
+      "cases": 4,
+      "supported": 3,
+      "unsupported": 1,
+      "retrieval_measurements": 3,
+      "retrieval_unmeasured_errors": 0,
+      "target_hits_at_2": 2,
+      "mean_target_reciprocal_rank_at_2": 0.6666666666666666,
+      "status_matches": 3,
+      "false_answer_on_unsupported": 0,
+      "false_abstention_on_supported": 1,
+      "missing_or_error_outputs": 0,
+      "human_semantics_reviewed": 0,
+      "scope": "One trial per public teaching case, not a general accuracy estimate."
+    },
+    "held_out": {
+      "cases": 4,
+      "supported": 2,
+      "unsupported": 2,
+      "retrieval_measurements": 2,
+      "retrieval_unmeasured_errors": 0,
+      "target_hits_at_2": 2,
+      "mean_target_reciprocal_rank_at_2": 0.75,
+      "status_matches": 2,
+      "false_answer_on_unsupported": 0,
+      "false_abstention_on_supported": 1,
+      "missing_or_error_outputs": 1,
+      "human_semantics_reviewed": 0,
+      "scope": "One trial per public teaching case, not a general accuracy estimate."
+    }
+  },
+  "retrieval_null_rule": "Unsupported or unmeasured error→null, never perfect.",
+  "metric_note": "One annotated target per supported case:recall@2equalsHit@2; these are not independent measurements."
+}

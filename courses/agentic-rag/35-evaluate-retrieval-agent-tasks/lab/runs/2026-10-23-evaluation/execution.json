@@ -1,0 +1,80 @@
+{
+  "command": [
+    "python",
+    "run.py",
+    "--output",
+    "runs/2026-10-23-evaluation/result.json"
+  ],
+  "execution_mode": "offline-standard-library-scripted-task-evaluation",
+  "model_called": false,
+  "python": "3.12.8",
+  "sqlite": "3.45.3",
+  "run_returncode": 0,
+  "test_returncode": 0,
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "aefc5c3d6af8b14adb34a29ede7e7919fc96a6ca350fa3a076203e6a98f5a8eb",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "compare.py": "d8b610c9d6b52d604787461ede86f8a71eafed4d8ad04541197c8cd363981090",
+    "evaluator.py": "541471daf876dff6aeec311fbb9869106a0355eee2f775a25cd170694fdd9e36",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "limits.py": "bd7acae9935c04642d8fd5d1563d3bcf8ca135b46ae2ff5ecd106063c9c0c60f",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "refine.py": "fce4b5bd581fbfc4aaf6039bb486c8f477c3a5f80e95fc5c58473739a75e7235",
+    "requirements.lock": "a8016fa5e2f4076b17d2edd47a1af4fd549c86069ed30b3ad97a2b2ced5413d4",
+    "requirements.txt": "ffc11c7f61c86ad74982d0c627a6f5a97b8c5ae62e7d147d50955d4d9fe14343",
+    "run.py": "5ffa668f9283b4481aaffeeb3cf90bae0ba192497eac09063d63a3483c4b7e11",
+    "test_evaluator.py": "2a543acbbdb95144b50376aa1e6da152277f931f609bbad8bd5f4faa6ad05703",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "m9_source_parity": {
+    "compare.py": true,
+    "tools.py": true,
+    "refine.py": true,
+    "limits.py": true,
+    "bm25.py": true,
+    "version_documents.py": true,
+    "load_documents.py": true,
+    "requirements.txt": true,
+    "requirements.lock": true,
+    "LICENSE": true,
+    "fixtures": true
+  },
+  "result_sha256": "f89e7459226cee8cb810b59a6dae61246f04d0ce805c988c38d9e66fe4a6fb39",
+  "mutations": [
+    {
+      "mutation": "read_validation_removed",
+      "test": "test_exact_read_provenance_not_only_known_id_or_self_hash",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_exact_read_provenance_not_only_known_id_or_self_hash (test_evaluator.EvaluationTests.test_exact_read_provenance_not_only_known_id_or_self_hash) ... FAIL\n\n======================================================================\nFAIL: test_exact_read_provenance_not_only_known_id_or_self_hash (test_evaluator.EvaluationTests.test_exact_read_provenance_not_only_known_id_or_self_hash)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m12-eval-mutation-69q0blav/lab/test_evaluator.py\", line 22, in test_exact_read_provenance_not_only_known_id_or_self_hash\n    self.assertEqual(check_integrity(self.snapshot,t,self.config['limits'])['status'],'fail')\nAssertionError: 'pass' != 'fail'\n- pass\n+ fail\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.030s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "mutation": "budget_total_ignored",
+      "test": "test_budget_totals_and_admission_trace_are_independent",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_budget_totals_and_admission_trace_are_independent (test_evaluator.EvaluationTests.test_budget_totals_and_admission_trace_are_independent) ... FAIL\n\n======================================================================\nFAIL: test_budget_totals_and_admission_trace_are_independent (test_evaluator.EvaluationTests.test_budget_totals_and_admission_trace_are_independent)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m12-eval-mutation-stb_m37c/lab/test_evaluator.py\", line 25, in test_budget_totals_and_admission_trace_are_independent\n    self.assertEqual(check_integrity(self.snapshot,t,self.config['limits'])['status'],'fail')\nAssertionError: 'pass' != 'fail'\n- pass\n+ fail\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.030s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "mutation": "requested_version_ignored",
+      "test": "test_eligible_version_checked_before_target_outcome",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_eligible_version_checked_before_target_outcome (test_evaluator.EvaluationTests.test_eligible_version_checked_before_target_outcome) ... FAIL\n\n======================================================================\nFAIL: test_eligible_version_checked_before_target_outcome (test_evaluator.EvaluationTests.test_eligible_version_checked_before_target_outcome)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m12-eval-mutation-wk1wowwy/lab/test_evaluator.py\", line 33, in test_eligible_version_checked_before_target_outcome\n    self.assertEqual(check_integrity(self.snapshot,t,self.config['limits'])['status'],'fail')\nAssertionError: 'pass' != 'fail'\n- pass\n+ fail\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.030s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "mutation": "unsupported_in_denominator",
+      "test": "test_unsupported_is_incomplete_not_supported_pass",
+      "returncode": 1,
+      "killed_by_assertion": true,
+      "stdout": "",
+      "stderr": "test_unsupported_is_incomplete_not_supported_pass (test_evaluator.EvaluationTests.test_unsupported_is_incomplete_not_supported_pass) ... FAIL\n\n======================================================================\nFAIL: test_unsupported_is_incomplete_not_supported_pass (test_evaluator.EvaluationTests.test_unsupported_is_incomplete_not_supported_pass)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/8q/3xqw2gjj54vbtxmv1hz753wr0000gn/T/m12-eval-mutation-fan4gkot/lab/test_evaluator.py\", line 37, in test_unsupported_is_incomplete_not_supported_pass\n    gate=release_gate(self.report,self.report['identity'],'scripted_refinement');self.assertEqual(gate['supported_trials'],6);self.assertEqual(gate['unsupported_trials'],2)\n                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 8 != 6\n\n----------------------------------------------------------------------\nRan 1 test in 0.031s\n\nFAILED (failures=1)\n"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "mode": "fresh model requests through actual lesson App/Runner/services; original live PTY",
+  "model": "gemini-3.8-flash",
+  "provider_requests": 3,
+  "request_cap": 4,
+  "max_output_tokens_per_request": 1024,
+  "automatic_reruns": 0,
+  "process_exit": 0,
+  "scope_excludes": [
+    "native adk run/web UI",
+    "cloud resources",
+    "external trace collector",
+    "cache operations"
+  ],
+  "mechanism_check": "passed: actual local invocation/model/tool spans and metrics, service docs-assistant, message capture disabled",
+  "content_check": "passed for selected question: docs-assistant index --rebuild, citing cli.md",
+  "external_exporter": "not executed or verified",
+  "model_calls": 3,
+  "tool_calls": 2,
+  "input_tokens": 788,
+  "output_tokens": 191
+}

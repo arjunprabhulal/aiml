@@ -1,0 +1,1129 @@
+{
+  "harness_version": "1",
+  "system": {
+    "name": "model-triage-gemma4",
+    "version": "1",
+    "mode": "live",
+    "model": "gemma4:e2b@b37049369adf",
+    "prompt": "triage-v1 sha256:053fdf51b21d891e",
+    "tools": null
+  },
+  "case_set_sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6",
+  "splits": [
+    "development"
+  ],
+  "trials": 10,
+  "responses": {
+    "charged-twice": [
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.608242
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.608929
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.656983
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.635266
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.642858
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.622186
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.765657
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "stuck-tracking": [
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.584148
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.605497
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.638913
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.634609
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.638877
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.655177
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.777871
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "password-changed": [
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.587624
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.608875
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.628675
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.684397
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.657919
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.729883
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.64954
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "product-advice": [
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.609184
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.605692
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.727481
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.645192
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.666888
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.712416
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.634484
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "refund-missing": [
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.598852
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.591605
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.719234
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.650587
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.66549
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.754598
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.629855
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "charged-after-closing": [
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.606578
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.628654
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.621975
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.650517
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.634341
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.703941
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "blank-message": [
+      {
+        "metadata": {
+          "seed": 1000
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 1.4e-05
+      },
+      {
+        "metadata": {
+          "seed": 1001
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 1.1e-05
+      },
+      {
+        "metadata": {
+          "seed": 1002
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 6e-06
+      },
+      {
+        "metadata": {
+          "seed": 1003
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 6e-06
+      },
+      {
+        "metadata": {
+          "seed": 1004
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 7e-06
+      },
+      {
+        "metadata": {
+          "seed": 1005
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 6e-06
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "missing-body": [
+      {
+        "metadata": {
+          "seed": 1000
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 4e-06
+      },
+      {
+        "metadata": {
+          "seed": 1001
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 3e-06
+      },
+      {
+        "metadata": {
+          "seed": 1002
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "metadata": {
+          "seed": 1003
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "metadata": {
+          "seed": 1004
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 3e-06
+      },
+      {
+        "metadata": {
+          "seed": 1005
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 4e-06
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ],
+    "late-order": [
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.606063
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.644041
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.655646
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.627893
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.622494
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 20,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.695313
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      },
+      {
+        "error": {
+          "types": [
+            "NotRun"
+          ],
+          "message": "not run: the benchmark stopped first"
+        },
+        "latency_s": 0.0
+      }
+    ]
+  }
+}

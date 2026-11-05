@@ -1,0 +1,25 @@
+{
+  "execution_mode": "offline-local-files",
+  "command": [
+    "load_documents.py",
+    "--output",
+    "runs/2026-10-23-ingestion/documents.json"
+  ],
+  "exit_status": 0,
+  "test_command": "python3 -m unittest discover -v",
+  "test_exit_status": 0,
+  "environment": {
+    "python": "3.15.0"
+  },
+  "source_sha256": {
+    "README.md": "2f7f09baef072ab89c54a2778b1a493e10f445624dbbc23db3604c528ea5cbe3",
+    "fixtures/docs/json-text.md": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+    "fixtures/docs/path-read-3-13.md": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+    "fixtures/docs/path-read.md": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+    "fixtures/docs/path-write.md": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+    "fixtures/source-manifest.json": "aeeaa53f9c0b7d8d14ab4153304ed389f8a5cb433204f97fc02070a1a25143e9",
+    "load_documents.py": "84d30170889fc4b9f5ecbece4cdac392afe0ca3786ae09f92a9e0e49175222d7",
+    "render_output.py": "b9c7d7ff516dc613663c8dc5beba2fafa6cdd3d7368e757eb9801c28e455b9e0",
+    "test_load_documents.py": "48188414ca428df043993d63ecd5f5f4945ee329dc1e28dbc75a1201ebe754ab"
+  }
+}

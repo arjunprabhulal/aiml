@@ -1,0 +1,248 @@
+{
+  "get prompt": {
+    "result": {
+      "description": "Ask the model to review one docs page; the page text is embedded in the prompt.",
+      "messages": [
+        {
+          "content": {
+            "resource": {
+              "mimeType": "text/markdown",
+              "text": "# Retries\n\nA handler that raises is retried up to `max_retries` times, 3 by default, with exponential backoff. After the last attempt the job moves to the dead-letter queue. Make handlers idempotent: a retried job can run twice.\n",
+              "uri": "docs://pages/retries"
+            },
+            "type": "resource"
+          },
+          "role": "user"
+        },
+        {
+          "content": {
+            "text": "Review this docs page for accuracy. List each problem with the sentence it is in.",
+            "type": "text"
+          },
+          "role": "user"
+        }
+      ],
+      "resultType": "complete"
+    }
+  },
+  "get prompt for a missing page": {
+    "error": {
+      "code": -32602,
+      "message": "No docs page named scheduling."
+    }
+  },
+  "get prompt without slug": {
+    "error": {
+      "code": -32602,
+      "message": "Missing required arguments: slug"
+    }
+  },
+  "get unknown prompt": {
+    "error": {
+      "code": -32602,
+      "message": "Unknown prompt: rewrite_docs"
+    }
+  },
+  "prompts/list": {
+    "cacheScope": "private",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "name": "slug",
+            "required": true
+          },
+          {
+            "name": "focus",
+            "required": false
+          }
+        ],
+        "description": "Ask the model to review one docs page; the page text is embedded in the prompt.",
+        "name": "review_page",
+        "title": "Review a docs page"
+      }
+    ],
+    "resultType": "complete",
+    "ttlMs": 0
+  },
+  "read index": {
+    "result": {
+      "cacheScope": "private",
+      "contents": [
+        {
+          "mimeType": "application/json",
+          "text": "[{\"slug\": \"quickstart\", \"title\": \"Quickstart\"}, {\"slug\": \"configuration\", \"title\": \"Configuration\"}, {\"slug\": \"retries\", \"title\": \"Retries\"}]",
+          "uri": "docs://index"
+        }
+      ],
+      "resultType": "complete",
+      "ttlMs": 0
+    }
+  },
+  "read missing page": {
+    "error": {
+      "code": -32602,
+      "message": "No docs page named scheduling."
+    }
+  },
+  "read page": {
+    "result": {
+      "cacheScope": "private",
+      "contents": [
+        {
+          "mimeType": "text/markdown",
+          "text": "# Retries\n\nA handler that raises is retried up to `max_retries` times, 3 by default, with exponential backoff. After the last attempt the job moves to the dead-letter queue. Make handlers idempotent: a retried job can run twice.\n",
+          "uri": "docs://pages/retries"
+        }
+      ],
+      "resultType": "complete",
+      "ttlMs": 0
+    }
+  },
+  "read unmatched URI": {
+    "error": {
+      "code": -32602,
+      "message": "Unknown resource: docs://drafts/retries"
+    }
+  },
+  "resources/list": {
+    "cacheScope": "private",
+    "resources": [
+      {
+        "description": "Every page's slug and title.",
+        "mimeType": "application/json",
+        "name": "docs_index",
+        "title": "Docs index",
+        "uri": "docs://index"
+      }
+    ],
+    "resultType": "complete",
+    "ttlMs": 0
+  },
+  "resources/templates/list": {
+    "cacheScope": "private",
+    "resourceTemplates": [
+      {
+        "description": "The Markdown text of one docs page.",
+        "mimeType": "text/markdown",
+        "name": "docs_page",
+        "title": "Docs page",
+        "uriTemplate": "docs://pages/{slug}"
+      }
+    ],
+    "resultType": "complete",
+    "ttlMs": 0
+  },
+  "search empty query": {
+    "result": {
+      "content": [
+        {
+          "text": "Error executing tool search_docs: The query is empty. Pass one or more words, such as 'worker timeout'.",
+          "type": "text"
+        }
+      ],
+      "isError": true,
+      "resultType": "complete"
+    }
+  },
+  "search worker": {
+    "result": {
+      "content": [
+        {
+          "text": "{\n  \"slug\": \"quickstart\",\n  \"title\": \"Quickstart\",\n  \"uri\": \"docs://pages/quickstart\"\n}",
+          "type": "text"
+        },
+        {
+          "text": "{\n  \"slug\": \"configuration\",\n  \"title\": \"Configuration\",\n  \"uri\": \"docs://pages/configuration\"\n}",
+          "type": "text"
+        }
+      ],
+      "isError": false,
+      "resultType": "complete",
+      "structuredContent": {
+        "result": [
+          {
+            "slug": "quickstart",
+            "title": "Quickstart",
+            "uri": "docs://pages/quickstart"
+          },
+          {
+            "slug": "configuration",
+            "title": "Configuration",
+            "uri": "docs://pages/configuration"
+          }
+        ]
+      }
+    }
+  },
+  "tools/list": {
+    "cacheScope": "private",
+    "resultType": "complete",
+    "tools": [
+      {
+        "annotations": {
+          "openWorldHint": false,
+          "readOnlyHint": true
+        },
+        "description": "Return the docs pages whose text contains every word of the query.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_docsArguments",
+          "type": "object"
+        },
+        "name": "search_docs",
+        "outputSchema": {
+          "$defs": {
+            "SearchHit": {
+              "properties": {
+                "slug": {
+                  "title": "Slug",
+                  "type": "string"
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "uri": {
+                  "title": "Uri",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "slug",
+                "title",
+                "uri"
+              ],
+              "title": "SearchHit",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "result": {
+              "items": {
+                "$ref": "#/$defs/SearchHit"
+              },
+              "title": "Result",
+              "type": "array"
+            }
+          },
+          "required": [
+            "result"
+          ],
+          "title": "search_docsOutput",
+          "type": "object"
+        },
+        "title": "Search the docs"
+      }
+    ],
+    "ttlMs": 0
+  }
+}

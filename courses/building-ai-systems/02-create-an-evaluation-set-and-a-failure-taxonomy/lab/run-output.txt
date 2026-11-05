@@ -1,0 +1,13 @@
+12 authored development cases; local Python function, no model or judge
+none: pass=12; fail=0; incomplete=0
+source: pass=11; fail=1; incomplete=0
+  v3-production-lookup: source-selection
+permission: pass=11; fail=1; incomplete=0
+  reader-proposal: authorization
+approval: pass=11; fail=1; incomplete=0
+  maintainer-proposal: action-policy
+format: pass=11; fail=1; incomplete=0
+  v2-staging-lookup: response-contract
+no_output: pass=11; fail=0; incomplete=1
+  v3-staging-lookup: dependency-or-no-output
+Boundary tags identify the first failed check, not an automatically proven root cause.

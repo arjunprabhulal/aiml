@@ -1,0 +1,11 @@
+Postmortem: staging deploys stuck for 3 hours (2026-09-30)
+Team: platform
+Severity: SEV-3
+
+Summary: from 09:10 to 12:05 UTC, every staging deploy waited forever at the "acquiring environment lock" step.
+
+Cause: a deploy job was killed during a node drain while it held the PostgreSQL advisory lock for staging. The lock belongs to the database session, and the job's connection pooler kept that session open, so the lock was never released.
+
+Fix: the deploy job now takes the lock with pg_try_advisory_xact_lock inside a transaction, so the lock ends with the transaction. We also added an alert when one environment lock is held for more than 20 minutes.
+
+Follow-up: document how to release a stuck lock by hand (owner: docs team).

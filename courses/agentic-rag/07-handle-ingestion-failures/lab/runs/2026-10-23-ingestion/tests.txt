@@ -1,0 +1,27 @@
+test_all_sources_fail (test_ingest.BatchTests.test_all_sources_fail) ... ok
+test_complete_batch (test_ingest.BatchTests.test_complete_batch) ... ok
+test_exercise_rejects_traversal_before_staging (test_ingest.BatchTests.test_exercise_rejects_traversal_before_staging) ... ok
+test_exercise_requires_four_sources (test_ingest.BatchTests.test_exercise_requires_four_sources) ... ok
+test_invalid_manifest_aborts_batch (test_ingest.BatchTests.test_invalid_manifest_aborts_batch) ... ok
+test_partial_batch_reports_every_rejected_source (test_ingest.BatchTests.test_partial_batch_reports_every_rejected_source) ... ok
+test_partial_exit_is_nonzero (test_ingest.BatchTests.test_partial_exit_is_nonzero) ... ok
+test_directory_rejected_before_read (test_load_documents.LoaderTests.test_directory_rejected_before_read) ... ok
+test_duplicate_identity (test_load_documents.LoaderTests.test_duplicate_identity) ... ok
+test_empty_text (test_load_documents.LoaderTests.test_empty_text) ... ok
+test_hash_mismatch (test_load_documents.LoaderTests.test_hash_mismatch) ... ok
+test_invalid_utf8 (test_load_documents.LoaderTests.test_invalid_utf8) ... ok
+test_malformed_manifest_is_normalized (test_load_documents.LoaderTests.test_malformed_manifest_is_normalized) ... ok
+test_manifest_requires_object (test_load_documents.LoaderTests.test_manifest_requires_object) ... ok
+test_missing_file (test_load_documents.LoaderTests.test_missing_file) ... ok
+test_missing_manifest_is_normalized (test_load_documents.LoaderTests.test_missing_manifest_is_normalized) ... ok
+test_newline_normalization_preserves_byte_hash (test_load_documents.LoaderTests.test_newline_normalization_preserves_byte_hash) ... ok
+test_optional_source_metadata_requires_strings (test_load_documents.LoaderTests.test_optional_source_metadata_requires_strings) ... ok
+test_outside_root (test_load_documents.LoaderTests.test_outside_root) ... ok
+test_pinned_documents (test_load_documents.LoaderTests.test_pinned_documents) ... ok
+test_size_limit (test_load_documents.LoaderTests.test_size_limit) ... ok
+test_symlink_escape (test_load_documents.LoaderTests.test_symlink_escape) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.123s
+
+OK

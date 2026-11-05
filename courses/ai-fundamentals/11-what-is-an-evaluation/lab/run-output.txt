@@ -1,0 +1,31 @@
+--- v1: source is required
+rollback-command  3/3  
+migrations        3/3  
+revert-replaced   0/3  missing 'docuctl rollback'
+token-expiry      3/3  
+config-file       3/3  
+prod-approval     3/3  
+not-in-docs       0/3  cited config.md, expected None; cited deploy.md, expected None
+passed 15 of 21 trials
+
+--- v2: source may be null
+rollback-command  3/3  
+migrations        3/3  
+revert-replaced   0/3  missing 'docuctl rollback'
+token-expiry      3/3  
+config-file       3/3  
+prod-approval     3/3  
+not-in-docs       0/3  cited config.md, expected None; cited deploy.md, expected None
+passed 15 of 21 trials
+
+--- v3: source may be null, prompt says when
+rollback-command  3/3  
+migrations        3/3  
+revert-replaced   0/3  missing 'docuctl rollback'
+token-expiry      3/3  
+config-file       3/3  
+prod-approval     3/3  
+not-in-docs       0/3  cited config.md, expected None; cited tokens.md, expected None
+passed 15 of 21 trials
+
+v3 regressions against v1: none

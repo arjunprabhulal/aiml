@@ -1,0 +1,150 @@
+{
+  "story": "mia has a red hat. mia goes to the garden. at the garden, mia gives the hat to ava. now ava has the red hat.\n",
+  "story_tokens": 37,
+  "series_config": {
+    "d": 16,
+    "hidden": 64,
+    "max_len": 64,
+    "seed": 3
+  },
+  "vocab_size": 96,
+  "parameter_count": 7440,
+  "parameters_by_tensor": {
+    "tok_emb": [
+      96,
+      16
+    ],
+    "pos_emb": [
+      64,
+      16
+    ],
+    "ln1_g": [
+      16
+    ],
+    "ln1_b": [
+      16
+    ],
+    "Wq": [
+      16,
+      16
+    ],
+    "Wk": [
+      16,
+      16
+    ],
+    "Wv": [
+      16,
+      16
+    ],
+    "Wo": [
+      16,
+      16
+    ],
+    "ln2_g": [
+      16
+    ],
+    "ln2_b": [
+      16
+    ],
+    "W1": [
+      16,
+      64
+    ],
+    "b1": [
+      64
+    ],
+    "W2": [
+      64,
+      16
+    ],
+    "b2": [
+      16
+    ],
+    "lnf_g": [
+      16
+    ],
+    "lnf_b": [
+      16
+    ],
+    "W_out": [
+      16,
+      96
+    ],
+    "b_out": [
+      96
+    ]
+  },
+  "shapes": {
+    "x0": [
+      36,
+      16
+    ],
+    "attention_weights": [
+      36,
+      36
+    ],
+    "mlp_hidden": [
+      36,
+      64
+    ],
+    "logits": [
+      36,
+      96
+    ]
+  },
+  "initial_loss": 4.5805,
+  "uniform_loss": 4.5643,
+  "layernorm_row0": {
+    "mean": 0.0,
+    "variance": 0.9852
+  },
+  "order_test": {
+    "a": "now mia gives the hat to leo.",
+    "b": "now leo gives the hat to mia.",
+    "tokens_a": [
+      "n",
+      "ow",
+      " mia",
+      " gives",
+      " the",
+      " hat",
+      " to",
+      " leo",
+      "."
+    ],
+    "tokens_b": [
+      "n",
+      "ow",
+      " leo",
+      " gives",
+      " the",
+      " hat",
+      " to",
+      " mia",
+      "."
+    ],
+    "last_logit_gap_without_positions": 0.0,
+    "last_logit_gap_with_positions": 0.001282,
+    "gaps_by_position_without_positions": [
+      0.0,
+      0.0,
+      0.3037,
+      0.0149,
+      0.0137,
+      0.0125,
+      0.0232,
+      0.3097,
+      0.0
+    ]
+  },
+  "gradient_check": {
+    "config": {
+      "d": 4,
+      "hidden": 8,
+      "max_len": 8,
+      "seed": 3
+    },
+    "parameters_checked": 1060,
+    "max_error_rounded": 0.0
+  }
+}

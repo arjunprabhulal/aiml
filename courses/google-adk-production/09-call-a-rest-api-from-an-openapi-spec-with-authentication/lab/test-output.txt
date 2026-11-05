@@ -1,0 +1,22 @@
+test_a_spec_without_servers_fails_the_run (test_assistant.ReleaseApi.test_a_spec_without_servers_fails_the_run) ... /private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/google/adk/auth/auth_tool.py:96: DeprecationWarning: This method is deprecated. Use credential_key instead.
+  self.credential_key = self.get_credential_key()
+/private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+/private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/google/adk/tools/openapi_tool/openapi_spec_parser/rest_api_tool.py:816: DeprecationWarning: Setting per-request cookies=<...> is being deprecated, because the expected behaviour on cookie persistence is ambiguous. Set cookies directly on the client instance instead.
+  return await client.request(**request_params)
+ok
+test_a_wrong_key_comes_back_to_the_model_as_a_tool_error (test_assistant.ReleaseApi.test_a_wrong_key_comes_back_to_the_model_as_a_tool_error) ... /private/tmp/site-teaching-adk-test-venv/lib/python3.12/site-packages/google/adk/auth/auth_tool.py:96: DeprecationWarning: This method is deprecated. Use credential_key instead.
+  self.credential_key = self.get_credential_key()
+ok
+test_each_call_carries_the_invocation_id (test_assistant.ReleaseApi.test_each_call_carries_the_invocation_id) ... ok
+test_operation_ids_in_the_filter_match_nothing (test_assistant.ReleaseApi.test_operation_ids_in_the_filter_match_nothing) ... ok
+test_operations_become_snake_case_tools (test_assistant.ReleaseApi.test_operations_become_snake_case_tools) ... ok
+test_the_key_is_a_header_and_absent_from_recorded_model_requests (test_assistant.ReleaseApi.test_the_key_is_a_header_and_absent_from_recorded_model_requests) ... ok
+test_the_model_was_never_offered_the_rollback_operation (test_assistant.ReleaseApi.test_the_model_was_never_offered_the_rollback_operation) ... ok
+test_native_app_preserves_authenticated_filtered_dynamic_tools (test_native_entrypoint.NativeEntrypoint.test_native_app_preserves_authenticated_filtered_dynamic_tools) ... ok
+test_recording_requires_explicit_opt_in_before_model_or_service_work (test_native_entrypoint.NativeEntrypoint.test_recording_requires_explicit_opt_in_before_model_or_service_work) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.487s
+
+OK

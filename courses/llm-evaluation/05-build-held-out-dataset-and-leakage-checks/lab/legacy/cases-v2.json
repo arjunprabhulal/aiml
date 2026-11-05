@@ -1,0 +1,198 @@
+{
+  "name": "inbox-triage-v2",
+  "task": "Suggest a support category for one customer message and flag messages that a person must review. Reject blank text.",
+  "cases": [
+    {
+      "id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "input": "I was charged twice for my order.",
+      "expected": {
+        "category": "billing"
+      },
+      "fail_if": [],
+      "why": "The customer reports a duplicate payment."
+    },
+    {
+      "id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "input": "My order has not arrived and the tracking page has not changed for a week.",
+      "expected": {
+        "category": "delivery"
+      },
+      "fail_if": [],
+      "why": "The order has not arrived."
+    },
+    {
+      "id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "input": "My password was changed without my permission.",
+      "expected": {
+        "category": "account"
+      },
+      "fail_if": [
+        {
+          "needs_human": false
+        }
+      ],
+      "why": "A possible account takeover must reach a person, so a missing review flag fails even with the right category."
+    },
+    {
+      "id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "input": "Can you recommend a good laptop?",
+      "expected": {
+        "category": "other"
+      },
+      "fail_if": [],
+      "why": "A shopping question is not a support request; it must not enter a support queue."
+    },
+    {
+      "id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "input": "The refund for my returned order never reached my card.",
+      "expected": {
+        "category": "billing"
+      },
+      "fail_if": [],
+      "why": "The word order does not make a missing refund a delivery problem."
+    },
+    {
+      "id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "input": "I was charged after I closed my account.",
+      "expected": {
+        "category": "billing"
+      },
+      "fail_if": [],
+      "why": "Decision: an unexpected charge is billing, even when the account is mentioned."
+    },
+    {
+      "id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "input": "   ",
+      "expected": {
+        "rejected": "ValueError",
+        "message": "blank"
+      },
+      "fail_if": [],
+      "why": "Blank text breaks the input contract, so the system must reject it with ValueError instead of guessing a category."
+    },
+    {
+      "id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "input": null,
+      "expected": {
+        "rejected": "ValueError",
+        "message": "not text"
+      },
+      "fail_if": [],
+      "why": "An exported message with no body must be rejected with ValueError, like blank text."
+    },
+    {
+      "id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "input": "Where is my order? It was due on Monday.",
+      "expected": {
+        "category": "delivery"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "two-payments",
+      "split": "held_out",
+      "class": "billing",
+      "input": "I see two payments for one order on my bank statement.",
+      "expected": {
+        "category": "billing"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "cannot-log-in",
+      "split": "held_out",
+      "class": "account",
+      "input": "I cannot log in since yesterday.",
+      "expected": {
+        "category": "account"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "stranger-buying",
+      "split": "held_out",
+      "class": "account security",
+      "input": "A stranger has been buying things with my account.",
+      "expected": {
+        "category": "account"
+      },
+      "fail_if": [
+        {
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "id": "arrived-damaged",
+      "split": "held_out",
+      "class": "delivery",
+      "input": "The package arrived damaged.",
+      "expected": {
+        "category": "delivery"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "stop-charging",
+      "split": "held_out",
+      "class": "billing",
+      "input": "Please cancel my subscription and stop charging me.",
+      "expected": {
+        "category": "billing"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "shop-hours",
+      "split": "development",
+      "class": "out of scope",
+      "input": "What time does your shop open?",
+      "expected": {
+        "category": "other"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "never-opened",
+      "split": "held_out",
+      "class": "billing, ambiguous wording",
+      "input": "I was charged for an account I never opened.",
+      "expected": {
+        "category": "billing"
+      },
+      "fail_if": []
+    },
+    {
+      "id": "stranger-keeps-buying",
+      "split": "development",
+      "class": "account security",
+      "input": "A stranger keeps buying things with my account.",
+      "expected": {
+        "category": "account"
+      },
+      "fail_if": [
+        {
+          "needs_human": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "origin": "Authored example judgements, not a human-rating study or model judge run.",
+  "reviews": [
+    {
+      "answer_id": "complete",
+      "answer_sha256": "8702dd02bbdecc22c4bf563cf65a8799b03390dbe6916007e45e1ea89248d144",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "meets",
+          "reason": "The answer supplies the v3 rollback syntax with release r41 and staging.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": ""
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "meets",
+          "reason": "The health check is described after the rollback.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "meets",
+          "reason": "The substantive claims stay within the documented guide.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        }
+      }
+    },
+    {
+      "answer_id": "paraphrase",
+      "answer_sha256": "350a2d02cee1f26c843248d58a75a0f67d2fa3159df379b50e73575a3f5971f7",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "meets",
+          "reason": "The answer supplies the v3 rollback syntax with release r41 and staging.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": ""
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "meets",
+          "reason": "The health check is described after the rollback.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "meets",
+          "reason": "The substantive claims stay within the documented guide.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        }
+      }
+    },
+    {
+      "answer_id": "negation",
+      "answer_sha256": "331e665c38699c6800453691f2d46691964e3f222f3c5a84b6042db7c6a19ec3",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "meets",
+          "reason": "The answer supplies the v3 rollback syntax with release r41 and staging.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": ""
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "meets",
+          "reason": "The health check is described after the rollback.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "meets",
+          "reason": "The substantive claims stay within the documented guide.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        }
+      }
+    },
+    {
+      "answer_id": "unsupported-guarantee",
+      "answer_sha256": "c25f2a6ed4056bd378a4e557c644a30c51143f7a7f3bb89827c2193766b2b43d",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "meets",
+          "reason": "The answer supplies the v3 rollback syntax with release r41 and staging.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": ""
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "meets",
+          "reason": "The health check is described after the rollback.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "does_not_meet",
+          "reason": "The source makes no zero-downtime guarantee.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": "It guarantees zero downtime."
+        }
+      }
+    },
+    {
+      "answer_id": "missing-verification",
+      "answer_sha256": "c0584a06f84334da8a50d0351cad0f82db4dc547d18067007e2655b99562c186",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "meets",
+          "reason": "The answer supplies the v3 rollback syntax with release r41 and staging.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": ""
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "does_not_meet",
+          "reason": "The answer gives no post-rollback health check.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "meets",
+          "reason": "The substantive claims stay within the documented guide.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        }
+      }
+    },
+    {
+      "answer_id": "wrong-command",
+      "answer_sha256": "c70ddb59af93775964a5a28df3ab9909bc75f496c019e697180f9ccb6148c5fb",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "does_not_meet",
+          "reason": "The command uses the older syntax instead of the supplied version 3 command.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": "docuctl rollback r41 --env staging"
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "meets",
+          "reason": "The health check is described after the rollback.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "does_not_meet",
+          "reason": "The proposed command is not supported by this version of the guide.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": "docuctl rollback r41 --env staging"
+        }
+      }
+    },
+    {
+      "answer_id": "uncertain-wording",
+      "answer_sha256": "20b9c00e53127cc98f4d2f31991fefcb9ba3d5dd54df72c7f4a5ba231078fc3c",
+      "source_sha256": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+      "rubric_sha256": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+      "judgements": {
+        "command": {
+          "rating": "meets",
+          "reason": "The answer supplies the v3 rollback syntax with release r41 and staging.",
+          "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41.",
+          "answer_span": ""
+        },
+        "preconditions": {
+          "rating": "meets",
+          "reason": "Release approval and staging confirmation precede the command.",
+          "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging.",
+          "answer_span": ""
+        },
+        "database_scope": {
+          "rating": "meets",
+          "reason": "The answer explicitly excludes restoring database contents.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": ""
+        },
+        "verification": {
+          "rating": "meets",
+          "reason": "The health check is described after the rollback.",
+          "reference_quote": "After the rollback, check service health.",
+          "answer_span": ""
+        },
+        "support": {
+          "rating": "uncertain",
+          "reason": "Data will be safe is ambiguous: it could imply a database or durability guarantee absent from the guide.",
+          "reference_quote": "The command changes the deployed service version. It does not restore database contents.",
+          "answer_span": "Your data will be safe."
+        }
+      }
+    }
+  ]
+}

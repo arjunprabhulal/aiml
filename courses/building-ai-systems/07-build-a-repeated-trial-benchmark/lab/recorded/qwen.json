@@ -1,0 +1,1276 @@
+{
+  "harness_version": "1",
+  "system": {
+    "name": "model-triage-qwen3.5",
+    "version": "1",
+    "mode": "live",
+    "model": "qwen3.5:0.8b@de63045f2975",
+    "prompt": "triage-v1 sha256:053fdf51b21d891e",
+    "tools": null
+  },
+  "case_set_sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6",
+  "splits": [
+    "development"
+  ],
+  "trials": 10,
+  "responses": {
+    "charged-twice": [
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 3.321088
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.421743
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.387145
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.400268
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.410544
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.485904
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.398865
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 13,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.345609
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.38205
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.407558
+      }
+    ],
+    "stuck-tracking": [
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.418435
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.395939
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.374241
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.385767
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.397704
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.430523
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.380968
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 13,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.359522
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.41039
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.400542
+      }
+    ],
+    "password-changed": [
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.396457
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.403039
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.367508
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.425843
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.418463
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.389882
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.475872
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 13,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.378722
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.446391
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.41178
+      }
+    ],
+    "product-advice": [
+      {
+        "output": {
+          "category": "account",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.464574
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.458541
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.435592
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.425984
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.384171
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.401952
+      },
+      {
+        "output": {
+          "category": "other",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.408971
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.417974
+      },
+      {
+        "output": {
+          "category": "account",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.440773
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.431522
+      }
+    ],
+    "refund-missing": [
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.394399
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.396064
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.430853
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.415529
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.371816
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.3631
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.406021
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 13,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.331549
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.405125
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.412456
+      }
+    ],
+    "charged-after-closing": [
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.399889
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.387987
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.467127
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.426767
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.508488
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.385048
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.396452
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 13,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.36287
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.390167
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.412307
+      }
+    ],
+    "blank-message": [
+      {
+        "metadata": {
+          "seed": 1000
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 1.7e-05
+      },
+      {
+        "metadata": {
+          "seed": 1001
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 6e-06
+      },
+      {
+        "metadata": {
+          "seed": 1002
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 7e-06
+      },
+      {
+        "metadata": {
+          "seed": 1003
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 6e-06
+      },
+      {
+        "metadata": {
+          "seed": 1004
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 7e-06
+      },
+      {
+        "metadata": {
+          "seed": 1005
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 7e-06
+      },
+      {
+        "metadata": {
+          "seed": 1006
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 1.1e-05
+      },
+      {
+        "metadata": {
+          "seed": 1007
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 7e-06
+      },
+      {
+        "metadata": {
+          "seed": 1008
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 7e-06
+      },
+      {
+        "metadata": {
+          "seed": 1009
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is blank"
+        },
+        "latency_s": 6e-06
+      }
+    ],
+    "missing-body": [
+      {
+        "metadata": {
+          "seed": 1000
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 3e-06
+      },
+      {
+        "metadata": {
+          "seed": 1001
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 3e-06
+      },
+      {
+        "metadata": {
+          "seed": 1002
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "metadata": {
+          "seed": 1003
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 3e-06
+      },
+      {
+        "metadata": {
+          "seed": 1004
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 3e-06
+      },
+      {
+        "metadata": {
+          "seed": 1005
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "metadata": {
+          "seed": 1006
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 4e-06
+      },
+      {
+        "metadata": {
+          "seed": 1007
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "metadata": {
+          "seed": 1008
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      },
+      {
+        "metadata": {
+          "seed": 1009
+        },
+        "error": {
+          "types": [
+            "ValueError",
+            "Exception"
+          ],
+          "message": "message is not text"
+        },
+        "latency_s": 2e-06
+      }
+    ],
+    "late-order": [
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1000,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.446696
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1001,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.401411
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1002,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.393061
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1003,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.422201
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1004,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.464713
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": true
+        },
+        "metadata": {
+          "seed": 1005,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.461885
+      },
+      {
+        "output": {
+          "category": "billing",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1006,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.414929
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1007,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 13,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.341234
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1008,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.383539
+      },
+      {
+        "output": {
+          "category": "delivery",
+          "needs_human": false
+        },
+        "metadata": {
+          "seed": 1009,
+          "temperature": 1.0,
+          "ollama": "0.32.14",
+          "eval_count": 19,
+          "done_reason": "stop"
+        },
+        "latency_s": 0.38696
+      }
+    ]
+  }
+}

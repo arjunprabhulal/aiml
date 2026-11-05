@@ -1,0 +1,10 @@
+first_miss: HTTP 200 cache=miss
+normalized_hit: HTTP 200 cache=hit
+other_principal_miss: HTTP 200 cache=miss
+unknown_identity: HTTP 401
+collection_denied: HTTP 403
+empty_bypass_first: HTTP 200 cache=bypass
+empty_bypass_again: HTTP 200 cache=bypass
+real_ttl_expired_miss: HTTP 200 cache=miss
+tool_failure_first: HTTP 503
+tool_failure_again: HTTP 503

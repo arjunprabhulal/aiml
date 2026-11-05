@@ -1,0 +1,103 @@
+{
+  "lesson_id": "rerank-retrieved-passages",
+  "execution": "Actual learner CLI in original PTY, no model/provider/network",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py"
+  ],
+  "cwd": "/tmp/aiml-rag-native-cli-12-preparation-20261023/projects/rerank-retrieved-passages",
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "a2cd06aa3d94a009856e92c9d6261b2704ba9636d0a1485280d4d2b292a7f05c",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/provenance.json": "394372449fefd247b3338983764a10ec24d0ecc8826425902d093a646b964907",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "fixtures/vectors.json": "bbadb40c26e0241de36f09f6068354f7589b9ce1a38bb49ba6998be4ca3b25e6",
+    "hybrid.py": "7275cfeca034edc9602d1e2f8f28a23d5e07c53925d3b6406df38fdb0eea14ff",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "render_output.py": "be4982ac3f3125d4bb1179e5112158d4766c56d560a4a71f5f26ebb2a69e4dc2",
+    "requirements.lock": "4d2302f1d37acd13aa886acc334e3459d5633734328b5b536f10cbaf410ccf0b",
+    "requirements.txt": "c26967b06d976ea0693b36940090ee8d40004c0083bad9928c19574bf65ccc68",
+    "rerank.py": "93b1403a31495091d9ec992f9244b4448b4264f6f0ba63ce75a17136c9713757",
+    "run.py": "8f52abf4749def50af3ff2059c7d467834655a153d0c05a5f9136bc344c3503d",
+    "runs/2026-10-23-rerank/execution.json": "bf8e3251b61fb8fdd8936090f44a5006f705b5d5430dd4473f45950b7f496bf7",
+    "runs/2026-10-23-rerank/media.json": "d87d03d4ab67a2e5f0a9a6b20f8854b6f9c079acfc7dbd288377df7e0786ca1a",
+    "runs/2026-10-23-rerank/output-mobile.png": "202d0a14b565919c4eb77f274e5389957403b83fbf77a47d71e5bfbf7403a903",
+    "runs/2026-10-23-rerank/output-small.png": "47272ab614b9bdcbabfd71d5ad6c0eec48b4bf60b584f39f1344b268d7f47490",
+    "runs/2026-10-23-rerank/output.png": "01d5f27150b46886fe189c0a65144f6207d8d4a185570feadf3752224e2d5258",
+    "runs/2026-10-23-rerank/result.json": "11627ed33b0b64e15021c70641e35ec2cf5586d1cdcdc63969d9e30524928868",
+    "runs/2026-10-23-rerank/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/2026-10-23-rerank/stdout.txt": "11627ed33b0b64e15021c70641e35ec2cf5586d1cdcdc63969d9e30524928868",
+    "runs/2026-10-23-rerank/tests.txt": "d4ea5d405618b48a8b912987d3678aac99d6dc8426a48f5adcfc78cb8a6ca989",
+    "test_rerank.py": "326f8d4bfd2f60c56d88d3eb2bc132054a551ea1102f5140e1fed223f14aae43",
+    "vector_retriever.py": "950d21daccda66fb2f8dba9a74d1fabec836ccfe677725c48bf2880279976ee5",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "stdout_sha256": "3edb08418b49eb5aace5fe4469cdcc428730aaf87569bd06ab6a2c6c4907f9b0",
+  "result_sha256": "11627ed33b0b64e15021c70641e35ec2cf5586d1cdcdc63969d9e30524928868",
+  "source_files_unchanged": true,
+  "exit_code": 0,
+  "input_bytes": 0,
+  "network_attempts": 0,
+  "credentials_in_environment": false,
+  "historical_fixture": "rerank-retrieved-passages/runs/2026-10-23-rerank/result.json",
+  "same_deterministic_result_as_historical": true,
+  "historical_differences": [],
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "8081b6c04e62e84cd12780f8497ab7e9b3af799aeeae07cc24e4baea50d4cb2a",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 1044,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "{\n  \"mechanism_check\": {\n    \"scope\": \"controlled candidate-order contract check; not an evaluation case or quality gain\",\n    \"query\": \"Will write_text replace the contents of an existing file?\",\n    \"before\": [\n      {\n        \"chunk_id\": \"e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c\",\n        \"source_id\": \"json-text\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/json.html#json.dumps\",\n        \"text\": \"json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select t\nhe encoding used by a file writer.\",\n        \"lexical_score\": -3.3056246724488786e-06,\n        \"vector_score\": 0.36746132784169144,\n        \"lexical_rank\": 3,\n        \"vector_rank\": 3,\n        \"lexical_contribution\": 0.015873015873015872,\n        \"vector_contribution\": 0.015873015873015872,\n        \"fused_score\": 0.031746031746031744\n      },\n      {\n        \"chunk_id\": \"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\n        \"source_id\": \"path-read\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text\",\n        \"text\": \"Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\\\"utf-8\\\" when reading a UTF-8 file.\",\n        \"lexical_score\": -4.084683995209214e-06,\n        \"vector_score\": 0.5547892797395033,\n        \"lexical_rank\": 2,\n        \"vector_rank\": 2,\n        \"lexical_contribution\": 0.016129032258064516,\n        \"vector_contribution\": 0.016129032258064516,\n        \"fused_score\": 0.03225806451612903\n      },\n      {\n        \"chunk_id\": \"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\n        \"source_id\": \"path-write\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text\",\n        \"text\": \"Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\\\"utf-8\\\" to select UTF-8. An existing file is over\nwritten. The method returns the number of characters written.\",\n        \"lexical_score\": -2.3976548397386743,\n        \"vector_score\": 0.6357498076122466,\n        \"lexical_rank\": 1,\n        \"vector_rank\": 1,\n        \"lexical_contribution\": 0.01639344262295082,\n        \"vector_contribution\": 0.01639344262295082,\n        \"fused_score\": 0.03278688524590164\n      }"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "b8d2b7adebead1c71e53ca34ca68c19e8548a9922126c13ac493b6f0730f02d5",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 1044,
+        "viewportY": 1044,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "        \"rerank_rank\": 3\n      },\n      {\n        \"chunk_id\": \"e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c\",\n        \"source_id\": \"json-text\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/json.html#json.dumps\",\n        \"text\": \"json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select t\nhe encoding used by a file writer.\",\n        \"lexical_score\": -9.765013054830289e-07,\n        \"vector_score\": 0.4948350231504922,\n        \"lexical_rank\": 4,\n        \"vector_rank\": 4,\n        \"lexical_contribution\": 0.015625,\n        \"vector_contribution\": 0.015625,\n        \"fused_score\": 0.03125,\n        \"incoming_rank\": 4,\n        \"rerank_features\": {\n          \"query_tokens\": [\n            \"how\",\n            \"do\",\n            \"i\",\n            \"explicitly\",\n            \"select\",\n            \"utf\",\n            \"8\",\n            \"when\",\n            \"saving\",\n            \"text\",\n            \"with\",\n            \"pathlib\"\n          ],\n          \"matched_tokens\": [\n            \"select\"\n          ],\n          \"matched_count\": 1,\n          \"query_token_count\": 12\n        },\n        \"coverage_score\": 0.08333333333333333,\n        \"rerank_rank\": 4\n      }\n    ],\n    \"scope\": \"read/write lexical overlap diagnostic, not a new evaluation case\"\n  },\n  \"empty_candidates\": [],\n  \"altered_candidate_refusal\": \"candidate_payload_mismatch\",\n  \"limit\": \"Token overlap does not establish that a passage answers the question; it does not understand write versus read or unsupported requests.\"\n}\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "raw_stdout_representation": "Original PTY CRLF bytes preserved; result.json parses actual stdout or copies the actual --output file. No raw output rewriting.",
+  "stdout_prefix_note": null,
+  "time": "2026-10-23T18:43:21.035038+00:00",
+  "dependencies": {
+    "python": "3.12.8 (v3.12.8:2dc476bcb91, Dec  3 2024, 14:43:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": {
+      "numpy": "2.5.4",
+      "langchain-core": "1.6.12",
+      "transformers": "5.20.1",
+      "tokenizers": "0.23.3"
+    },
+    "sqlite_version": "3.45.3",
+    "python_executable": "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python"
+  },
+  "capture_view_review": "All unique original top/end views personally inspected; eight short-output top/end pairs are byte-identical."
+}

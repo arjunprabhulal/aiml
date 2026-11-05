@@ -1,0 +1,23 @@
+[
+  {
+    "id": "rollback-v2-staging",
+    "topic": "rollback",
+    "version": "2",
+    "environment": "staging",
+    "command": "docuctl rollback RELEASE --env staging"
+  },
+  {
+    "id": "rollback-v3-staging",
+    "topic": "rollback",
+    "version": "3",
+    "environment": "staging",
+    "command": "docuctl releases rollback RELEASE --environment staging"
+  },
+  {
+    "id": "rollback-v3-production",
+    "topic": "rollback",
+    "version": "3",
+    "environment": "production",
+    "command": "docuctl releases rollback RELEASE --environment production"
+  }
+]

@@ -1,0 +1,505 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "experiment": "gpu-autoscaling-cold-starts-and-canary-rollout",
+  "scenario_scope": "Combined signal, startup-delay and initial-standby scenarios; does not isolate signal choice",
+  "cold_start_breakdown_seconds": {
+    "unoptimized_container_and_safetensors_init": {
+      "node_alloc_and_image_pull": 75,
+      "cuda_context_and_nccl_init": 35,
+      "remote_weight_download_and_mmap": 70,
+      "total_seconds": 180
+    },
+    "pre_pulled_image_plus_object_memory_tensor_stream": {
+      "warm_container_init": 4,
+      "cuda_graph_cache_restore": 6,
+      "direct_nvme_or_rdma_tensor_stream": 12,
+      "total_seconds": 22
+    }
+  },
+  "autoscaling_comparison": {
+    "reactive_gpu_util": {
+      "mode": "reactive_gpu_util",
+      "cold_start_seconds": 180,
+      "peak_kv_utilization": 2.4444,
+      "peak_p99_ttft_ms": 5182.36,
+      "max_ready_replicas": 13,
+      "slo_breach_windows": 9,
+      "timeline": [
+        {
+          "sec": 0,
+          "demand_tokens": 48000,
+          "ready_replicas": 4,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.6667,
+          "kv_utilization": 0.6667,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.7733,
+          "p99_ttft_ms": 266.67,
+          "slo_breached": false
+        },
+        {
+          "sec": 20,
+          "demand_tokens": 52000,
+          "ready_replicas": 4,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.7222,
+          "kv_utilization": 0.7222,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.7944,
+          "p99_ttft_ms": 277.22,
+          "slo_breached": false
+        },
+        {
+          "sec": 40,
+          "demand_tokens": 74000,
+          "ready_replicas": 4,
+          "booting_replicas": 2,
+          "demand_to_kv_capacity_ratio": 1.0278,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.9106,
+          "p99_ttft_ms": 554.03,
+          "slo_breached": true
+        },
+        {
+          "sec": 60,
+          "demand_tokens": 108000,
+          "ready_replicas": 4,
+          "booting_replicas": 4,
+          "demand_to_kv_capacity_ratio": 1.5,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 1754.97,
+          "slo_breached": true
+        },
+        {
+          "sec": 80,
+          "demand_tokens": 142000,
+          "ready_replicas": 4,
+          "booting_replicas": 6,
+          "demand_to_kv_capacity_ratio": 1.9722,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 3339.44,
+          "slo_breached": true
+        },
+        {
+          "sec": 100,
+          "demand_tokens": 168000,
+          "ready_replicas": 4,
+          "booting_replicas": 8,
+          "demand_to_kv_capacity_ratio": 2.3333,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 4728.87,
+          "slo_breached": true
+        },
+        {
+          "sec": 120,
+          "demand_tokens": 176000,
+          "ready_replicas": 4,
+          "booting_replicas": 9,
+          "demand_to_kv_capacity_ratio": 2.4444,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 5182.36,
+          "slo_breached": true
+        },
+        {
+          "sec": 140,
+          "demand_tokens": 172000,
+          "ready_replicas": 4,
+          "booting_replicas": 9,
+          "demand_to_kv_capacity_ratio": 2.3889,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 4954.18,
+          "slo_breached": true
+        },
+        {
+          "sec": 160,
+          "demand_tokens": 160000,
+          "ready_replicas": 4,
+          "booting_replicas": 9,
+          "demand_to_kv_capacity_ratio": 2.2222,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 4287.12,
+          "slo_breached": true
+        },
+        {
+          "sec": 180,
+          "demand_tokens": 144000,
+          "ready_replicas": 4,
+          "booting_replicas": 9,
+          "demand_to_kv_capacity_ratio": 2.0,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 3441.4,
+          "slo_breached": true
+        },
+        {
+          "sec": 200,
+          "demand_tokens": 124000,
+          "ready_replicas": 4,
+          "booting_replicas": 9,
+          "demand_to_kv_capacity_ratio": 1.7222,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.99,
+          "p99_ttft_ms": 2463.32,
+          "slo_breached": true
+        },
+        {
+          "sec": 220,
+          "demand_tokens": 102000,
+          "ready_replicas": 6,
+          "booting_replicas": 7,
+          "demand_to_kv_capacity_ratio": 0.9444,
+          "kv_utilization": 0.9444,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.8789,
+          "p99_ttft_ms": 409.01,
+          "slo_breached": false
+        },
+        {
+          "sec": 240,
+          "demand_tokens": 84000,
+          "ready_replicas": 8,
+          "booting_replicas": 5,
+          "demand_to_kv_capacity_ratio": 0.5833,
+          "kv_utilization": 0.5833,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.7417,
+          "p99_ttft_ms": 250.83,
+          "slo_breached": false
+        },
+        {
+          "sec": 260,
+          "demand_tokens": 68000,
+          "ready_replicas": 10,
+          "booting_replicas": 3,
+          "demand_to_kv_capacity_ratio": 0.3778,
+          "kv_utilization": 0.3778,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6636,
+          "p99_ttft_ms": 211.78,
+          "slo_breached": false
+        },
+        {
+          "sec": 280,
+          "demand_tokens": 56000,
+          "ready_replicas": 12,
+          "booting_replicas": 1,
+          "demand_to_kv_capacity_ratio": 0.2593,
+          "kv_utilization": 0.2593,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6185,
+          "p99_ttft_ms": 189.26,
+          "slo_breached": false
+        },
+        {
+          "sec": 300,
+          "demand_tokens": 50000,
+          "ready_replicas": 13,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.2137,
+          "kv_utilization": 0.2137,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6012,
+          "p99_ttft_ms": 180.6,
+          "slo_breached": false
+        }
+      ]
+    },
+    "leading_kv_and_velocity": {
+      "mode": "leading_kv_and_velocity",
+      "cold_start_seconds": 22,
+      "peak_kv_utilization": 1.0,
+      "peak_p99_ttft_ms": 502.27,
+      "max_ready_replicas": 16,
+      "slo_breach_windows": 1,
+      "timeline": [
+        {
+          "sec": 0,
+          "demand_tokens": 48000,
+          "ready_replicas": 4,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.6667,
+          "kv_utilization": 0.6667,
+          "warm_standby_remaining": 2,
+          "gpu_compute_utilization": 0.7733,
+          "p99_ttft_ms": 266.67,
+          "slo_breached": false
+        },
+        {
+          "sec": 20,
+          "demand_tokens": 52000,
+          "ready_replicas": 4,
+          "booting_replicas": 1,
+          "demand_to_kv_capacity_ratio": 0.7222,
+          "kv_utilization": 0.7222,
+          "warm_standby_remaining": 1,
+          "gpu_compute_utilization": 0.7944,
+          "p99_ttft_ms": 277.22,
+          "slo_breached": false
+        },
+        {
+          "sec": 40,
+          "demand_tokens": 74000,
+          "ready_replicas": 5,
+          "booting_replicas": 4,
+          "demand_to_kv_capacity_ratio": 0.8222,
+          "kv_utilization": 0.8222,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.8324,
+          "p99_ttft_ms": 296.22,
+          "slo_breached": false
+        },
+        {
+          "sec": 60,
+          "demand_tokens": 108000,
+          "ready_replicas": 6,
+          "booting_replicas": 6,
+          "demand_to_kv_capacity_ratio": 1.0,
+          "kv_utilization": 1.0,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.9,
+          "p99_ttft_ms": 502.27,
+          "slo_breached": true
+        },
+        {
+          "sec": 80,
+          "demand_tokens": 142000,
+          "ready_replicas": 9,
+          "booting_replicas": 6,
+          "demand_to_kv_capacity_ratio": 0.8765,
+          "kv_utilization": 0.8765,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.8531,
+          "p99_ttft_ms": 320.88,
+          "slo_breached": false
+        },
+        {
+          "sec": 100,
+          "demand_tokens": 168000,
+          "ready_replicas": 12,
+          "booting_replicas": 4,
+          "demand_to_kv_capacity_ratio": 0.7778,
+          "kv_utilization": 0.7778,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.8156,
+          "p99_ttft_ms": 287.78,
+          "slo_breached": false
+        },
+        {
+          "sec": 120,
+          "demand_tokens": 176000,
+          "ready_replicas": 15,
+          "booting_replicas": 1,
+          "demand_to_kv_capacity_ratio": 0.6519,
+          "kv_utilization": 0.6519,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.7677,
+          "p99_ttft_ms": 263.85,
+          "slo_breached": false
+        },
+        {
+          "sec": 140,
+          "demand_tokens": 172000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.5972,
+          "kv_utilization": 0.5972,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.7469,
+          "p99_ttft_ms": 253.47,
+          "slo_breached": false
+        },
+        {
+          "sec": 160,
+          "demand_tokens": 160000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.5556,
+          "kv_utilization": 0.5556,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.7311,
+          "p99_ttft_ms": 245.56,
+          "slo_breached": false
+        },
+        {
+          "sec": 180,
+          "demand_tokens": 144000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.5,
+          "kv_utilization": 0.5,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.71,
+          "p99_ttft_ms": 235.0,
+          "slo_breached": false
+        },
+        {
+          "sec": 200,
+          "demand_tokens": 124000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.4306,
+          "kv_utilization": 0.4306,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6836,
+          "p99_ttft_ms": 221.81,
+          "slo_breached": false
+        },
+        {
+          "sec": 220,
+          "demand_tokens": 102000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.3542,
+          "kv_utilization": 0.3542,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6546,
+          "p99_ttft_ms": 207.29,
+          "slo_breached": false
+        },
+        {
+          "sec": 240,
+          "demand_tokens": 84000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.2917,
+          "kv_utilization": 0.2917,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6308,
+          "p99_ttft_ms": 195.42,
+          "slo_breached": false
+        },
+        {
+          "sec": 260,
+          "demand_tokens": 68000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.2361,
+          "kv_utilization": 0.2361,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.6097,
+          "p99_ttft_ms": 184.86,
+          "slo_breached": false
+        },
+        {
+          "sec": 280,
+          "demand_tokens": 56000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.1944,
+          "kv_utilization": 0.1944,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.5939,
+          "p99_ttft_ms": 176.94,
+          "slo_breached": false
+        },
+        {
+          "sec": 300,
+          "demand_tokens": 50000,
+          "ready_replicas": 16,
+          "booting_replicas": 0,
+          "demand_to_kv_capacity_ratio": 0.1736,
+          "kv_utilization": 0.1736,
+          "warm_standby_remaining": 0,
+          "gpu_compute_utilization": 0.586,
+          "p99_ttft_ms": 172.99,
+          "slo_breached": false
+        }
+      ]
+    }
+  },
+  "canary_rollouts": {
+    "defective_int4_build": {
+      "completed_100_percent": false,
+      "rolled_back": true,
+      "final_canary_traffic_percent": 0,
+      "rollback_reasons": [
+        "tpot_slo_regression",
+        "quality_score_regression"
+      ],
+      "stages": [
+        {
+          "stage_percent": 5,
+          "requests_evaluated": 250,
+          "decision": "promote",
+          "passed": true,
+          "tpot_delta_ms": 2.8000000000000007,
+          "quality_drop": 0.008000000000000007,
+          "canary_error_rate": 0.001,
+          "reasons": []
+        },
+        {
+          "stage_percent": 25,
+          "requests_evaluated": 1200,
+          "decision": "rollback_to_0_percent",
+          "passed": false,
+          "tpot_delta_ms": 19.6,
+          "quality_drop": 0.028000000000000025,
+          "canary_error_rate": 0.002,
+          "reasons": [
+            "tpot_slo_regression",
+            "quality_score_regression"
+          ]
+        }
+      ]
+    },
+    "validated_fp8_build": {
+      "completed_100_percent": true,
+      "rolled_back": false,
+      "final_canary_traffic_percent": 100,
+      "rollback_reasons": [],
+      "stages": [
+        {
+          "stage_percent": 5,
+          "requests_evaluated": 250,
+          "decision": "promote",
+          "passed": true,
+          "tpot_delta_ms": -3.599999999999998,
+          "quality_drop": 0.0030000000000000027,
+          "canary_error_rate": 0.001,
+          "reasons": []
+        },
+        {
+          "stage_percent": 25,
+          "requests_evaluated": 1200,
+          "decision": "promote",
+          "passed": true,
+          "tpot_delta_ms": -3.3999999999999986,
+          "quality_drop": 0.0040000000000000036,
+          "canary_error_rate": 0.001,
+          "reasons": []
+        },
+        {
+          "stage_percent": 100,
+          "requests_evaluated": 5000,
+          "decision": "promote",
+          "passed": true,
+          "tpot_delta_ms": -3.0,
+          "quality_drop": 0.0040000000000000036,
+          "canary_error_rate": 0.001,
+          "reasons": []
+        }
+      ]
+    }
+  },
+  "canary_gate_policy": {
+    "max_tpot_regression_ms": 6.0,
+    "max_tpot_ceiling_ms": 45.0,
+    "max_quality_drop": 0.015,
+    "max_error_rate": 0.005
+  }
+}

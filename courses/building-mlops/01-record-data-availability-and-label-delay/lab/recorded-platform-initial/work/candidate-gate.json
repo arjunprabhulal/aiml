@@ -1,0 +1,24 @@
+{
+  "declared_policy": {
+    "format": "return-release-policy-v1",
+    "purpose": "local analyst-preview exercise",
+    "threshold": 0.5,
+    "minimum_accuracy": 0.6,
+    "minimum_gain_over_majority": 2,
+    "required_validation_rows": 48,
+    "final_test_allowed": false
+  },
+  "checks": {
+    "row_count": true,
+    "minimum_accuracy": true,
+    "majority_gain": true,
+    "saved_threshold": true
+  },
+  "passed": true,
+  "validation_correct": 29,
+  "majority_correct": 27,
+  "strict_alternative_passed": false,
+  "cost_at_threshold_0_5": 41.0,
+  "permission": "local rollout exercise only",
+  "final_test_used": false
+}

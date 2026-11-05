@@ -1,0 +1,35 @@
+{
+  "method": "Five isolated changed source copies each fail their named mechanism regression; no collection or runtime errors used as substitutes.",
+  "results": [
+    {
+      "change": "return_reply_for_changed_prompt",
+      "test": "test_changed_policy_cannot_receive_a_saved_reply",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "ignore_question_binding",
+      "test": "test_changed_question_cannot_receive_a_saved_reply",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "call_model_on_empty_context",
+      "test": "test_real_empty_index_skips_the_model_and_has_a_distinct_identity",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "skip_reply_shape_validation",
+      "test": "test_bad_reply_shape_stops_before_link_resolution",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "ignore_changed_corpus",
+      "test": "test_corpus_or_record_change_changes_the_identity_or_refuses_loading",
+      "rejected": true,
+      "exit_code": 1
+    }
+  ]
+}

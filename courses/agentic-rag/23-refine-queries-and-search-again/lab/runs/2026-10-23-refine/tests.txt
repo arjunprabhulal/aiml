@@ -1,0 +1,25 @@
+test_actual_distinct_search_read_trace_preserves_original_question (test_refine.RefinementTests.test_actual_distinct_search_read_trace_preserves_original_question) ... ok
+test_corrupted_read_result_fails_controller (test_refine.RefinementTests.test_corrupted_read_result_fails_controller) ... ok
+test_development_labels_are_not_policy_inputs (test_refine.RefinementTests.test_development_labels_are_not_policy_inputs) ... ok
+test_duplicate_query_stops_before_second_search (test_refine.RefinementTests.test_duplicate_query_stops_before_second_search) ... ok
+test_no_hit_queries_are_bounded (test_refine.RefinementTests.test_no_hit_queries_are_bounded) ... ok
+test_no_new_passages_stops_without_duplicate_read (test_refine.RefinementTests.test_no_new_passages_stops_without_duplicate_read) ... ok
+test_policy_limits_and_empty_queries_refused (test_refine.RefinementTests.test_policy_limits_and_empty_queries_refused) ... ok
+test_unknown_question_has_no_general_reasoning_claim (test_refine.RefinementTests.test_unknown_question_has_no_general_reasoning_claim) ... ok
+test_changed_or_rehashed_handle_refused (test_tools.ToolTests.test_changed_or_rehashed_handle_refused) ... ok
+test_changed_read_payload_even_rehashed_refused (test_tools.ToolTests.test_changed_read_payload_even_rehashed_refused) ... ok
+test_closed_tools_refuse_actions (test_tools.ToolTests.test_closed_tools_refuse_actions) ... ok
+test_empty_and_no_eligible_results_are_explicit (test_tools.ToolTests.test_empty_and_no_eligible_results_are_explicit) ... ok
+test_input_snapshot_mutation_cannot_change_current_corpus (test_tools.ToolTests.test_input_snapshot_mutation_cannot_change_current_corpus) ... ok
+test_invalid_queries_k_versions_and_unknown_arguments_refused (test_tools.ToolTests.test_invalid_queries_k_versions_and_unknown_arguments_refused) ... ok
+test_pinned_snapshot_and_metadata_only_bounded_search (test_tools.ToolTests.test_pinned_snapshot_and_metadata_only_bounded_search) ... ok
+test_preflight_cost_does_not_invoke_read (test_tools.ToolTests.test_preflight_cost_does_not_invoke_read) ... ok
+test_read_resolves_exact_current_span_and_source_hashes (test_tools.ToolTests.test_read_resolves_exact_current_span_and_source_hashes) ... ok
+test_returned_handles_cannot_mutate_issued_receipt (test_tools.ToolTests.test_returned_handles_cannot_mutate_issued_receipt) ... ok
+test_unknown_stale_or_unissued_handles_refused (test_tools.ToolTests.test_unknown_stale_or_unissued_handles_refused) ... ok
+test_version_filter_is_before_requested_top_k (test_tools.ToolTests.test_version_filter_is_before_requested_top_k) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.017s
+
+OK

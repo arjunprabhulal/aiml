@@ -1,0 +1,27 @@
+test_empty_filter_means_all_candidates (test_filters.FilterTests.test_empty_filter_means_all_candidates) ... ok
+test_excluded_versions_never_return_from_either_retriever (test_filters.FilterTests.test_excluded_versions_never_return_from_either_retriever) ... ok
+test_invalid_lexical_query_and_k_are_refused (test_filters.FilterTests.test_invalid_lexical_query_and_k_are_refused) ... ok
+test_invalid_operator_field_and_type_are_refused (test_filters.FilterTests.test_invalid_operator_field_and_type_are_refused) ... ok
+test_invalid_source_metadata_is_refused (test_filters.FilterTests.test_invalid_source_metadata_is_refused) ... ok
+test_prefilter_avoids_post_top1_underfill (test_filters.FilterTests.test_prefilter_avoids_post_top1_underfill) ... ok
+test_reserved_lexical_words_are_literal_terms (test_filters.FilterTests.test_reserved_lexical_words_are_literal_terms) ... ok
+test_same_exact_candidate_sets (test_filters.FilterTests.test_same_exact_candidate_sets) ... ok
+test_unknown_query_is_refused_even_with_no_candidates (test_filters.FilterTests.test_unknown_query_is_refused_even_with_no_candidates) ... ok
+test_unknown_version_is_empty (test_filters.FilterTests.test_unknown_version_is_empty) ... ok
+test_changed_chunk_identity_is_refused (test_vector_retriever.VectorTests.test_changed_chunk_identity_is_refused) ... ok
+test_changed_corpus_text_is_refused (test_vector_retriever.VectorTests.test_changed_corpus_text_is_refused) ... ok
+test_embedding_results_do_not_mutate_saved_vectors (test_vector_retriever.VectorTests.test_embedding_results_do_not_mutate_saved_vectors) ... ok
+test_equal_score_ties_use_chunk_id (test_vector_retriever.VectorTests.test_equal_score_ties_use_chunk_id) ... ok
+test_invalid_dimensions_values_and_norm_are_refused (test_vector_retriever.VectorTests.test_invalid_dimensions_values_and_norm_are_refused) ... ok
+test_invalid_k_is_refused (test_vector_retriever.VectorTests.test_invalid_k_is_refused) ... ok
+test_preserved_held_out_queries_are_not_exposed (test_vector_retriever.VectorTests.test_preserved_held_out_queries_are_not_exposed) ... ok
+test_real_store_returns_known_chunk_ids (test_vector_retriever.VectorTests.test_real_store_returns_known_chunk_ids) ... ok
+test_recorded_file_tampering_is_refused (test_vector_retriever.VectorTests.test_recorded_file_tampering_is_refused) ... ok
+test_unanswerable_development_question_still_returns_candidates (test_vector_retriever.VectorTests.test_unanswerable_development_question_still_returns_candidates) ... ok
+test_unknown_document_is_refused (test_vector_retriever.VectorTests.test_unknown_document_is_refused) ... ok
+test_unknown_query_is_refused (test_vector_retriever.VectorTests.test_unknown_query_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.046s
+
+OK

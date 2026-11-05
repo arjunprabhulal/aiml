@@ -1,0 +1,5 @@
+call   list_pages({})
+result list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}
+call   read_page({'path': 'install.md'})
+result read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}
+answer The docs service failed, so I cannot provide instructions on how to install docs-assistant.

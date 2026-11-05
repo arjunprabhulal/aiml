@@ -1,0 +1,18 @@
+metrics_to_run:
+  - command_flag_accuracy
+  - agent_turn_count
+
+custom_metrics:
+  - name: command_flag_accuracy
+    custom_function: |
+      def evaluate(instance):
+          resp = str(instance.get("response") or "")
+          has_v2_cmd = ("docuctl rollback" in resp) or ("docuctl tokens" in resp)
+          used_removed = "release revert" in resp and "removed" not in resp.lower()
+          score = 1.0 if (has_v2_cmd and not used_removed) else 0.0
+          return {"score": score, "explanation": f"has_v2_cmd={has_v2_cmd}, used_removed={used_removed}"}
+  - name: agent_turn_count
+    custom_function: |
+      def evaluate(instance):
+          turns = (instance.get("agent_data") or {}).get("turns", [])
+          return {"score": float(len(turns))}

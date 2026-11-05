@@ -1,0 +1,27 @@
+{
+  "eval_config": {
+    "criteria": {
+      "cited_page_was_read": 1.0
+    },
+    "custom_metrics": {
+      "cited_page_was_read": {
+        "code_config": {
+          "name": "citation_metric.cited_page_was_read"
+        },
+        "metric_info": {
+          "metric_name": "cited_page_was_read",
+          "description": "The answer cites the expected page, and the agent read that page.",
+          "metric_value_info": {
+            "interval": {
+              "min_value": 0.0,
+              "max_value": 1.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "app_name": "docs_assistant",
+  "train_eval_set": "train",
+  "validation_eval_set": "validation"
+}

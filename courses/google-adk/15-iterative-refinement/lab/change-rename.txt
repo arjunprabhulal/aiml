@@ -1,0 +1,5 @@
+The build command's --out option is renamed to --output-dir, and the old name keeps working for one release with a deprecation warning. The DOCUCTL_OUT environment variable is renamed to DOCUCTL_OUTPUT_DIR in the same way.
+name:docuctl build
+name:--out
+name:--output-dir
+name:DOCUCTL_OUTPUT_DIR

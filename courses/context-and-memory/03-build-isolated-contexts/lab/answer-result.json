@@ -1,0 +1,204 @@
+{
+ "model": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "google/gemma-4-E2B-it",
+  "license": "Apache-2.0",
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14",
+  "quantization": "Q4_K_M",
+  "parameters": "4.6B total (E2B: about 2B effective)",
+  "options": {
+   "temperature": 1.0,
+   "top_k": 64,
+   "top_p": 0.95
+  },
+  "think": false,
+  "trials": 5,
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "num_ctx": 2048,
+ "num_predict": 160,
+ "principals": {
+  "bob/task-17/planner scoped": "bob/task-17/planner",
+  "bob/task-17/planner naive": "bob/task-17/planner",
+  "alice/task-9/planner scoped": "alice/task-9/planner",
+  "alice/task-9/planner naive": "alice/task-9/planner"
+ },
+ "answers": {
+  "bob/task-17/planner scoped": [
+   {
+    "seed": 1,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 154,
+    "answer_tokens": 19
+   },
+   {
+    "seed": 2,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 154,
+    "answer_tokens": 19
+   },
+   {
+    "seed": 3,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 154,
+    "answer_tokens": 19
+   },
+   {
+    "seed": 4,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 154,
+    "answer_tokens": 19
+   },
+   {
+    "seed": 5,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 154,
+    "answer_tokens": 19
+   }
+  ],
+  "bob/task-17/planner naive": [
+   {
+    "seed": 1,
+    "answer": "The plan for the export job is to **move the export job to PostgreSQL**.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 17
+   },
+   {
+    "seed": 2,
+    "answer": "The plan for the export job is to move the export job to PostgreSQL.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 16
+   },
+   {
+    "seed": 3,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 19
+   },
+   {
+    "seed": 4,
+    "answer": "The plan for the export job is to **move the export job to PostgreSQL** (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 23
+   },
+   {
+    "seed": 5,
+    "answer": "The plan for the export job is to **move the export job to PostgreSQL** (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 23
+   }
+  ],
+  "alice/task-9/planner scoped": [
+   {
+    "seed": 1,
+    "answer": "The plan for the export job is that **Alice's export job must finish within 15 minutes.**",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 128,
+    "answer_tokens": 23
+   },
+   {
+    "seed": 2,
+    "answer": "**Plan:**\n\n1. **Identify the task related to the export job:** Locate the item pertaining to Alice's export job.\n2. **Determine the required timeframe:** Extract the deadline or requirement for finishing the export job.\n\n**Delegated Research:**\n\n* Research the information in the item with `id=\"alice-export-limit\"` to determine the plan or requirement for the export job.\n\n**Result of Research:**\n\nAlice's export job must finish within 15 minutes.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 128,
+    "answer_tokens": 103
+   },
+   {
+    "seed": 3,
+    "answer": "**Plan:**\n\n1. **Identify the task:** The task is Alice's export job.\n2. **Determine the constraint:** Find the requirement or deadline associated with Alice's export job.\n\n**Delegation:** Research the context items to find information regarding the export job.\n\n**Result:**\nFrom the context items, the following information is available:\n*   Alice's export job must finish within 15 minutes (from item `alice-export-limit`).\n\n**Answer:**\nThe plan for the export job is that it must finish within 15 minutes.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 128,
+    "answer_tokens": 122
+   },
+   {
+    "seed": 4,
+    "answer": "The plan for the export job is that **Alice's export job must finish within 15 minutes.**",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 128,
+    "answer_tokens": 23
+   },
+   {
+    "seed": 5,
+    "answer": "**Plan:**\n\n1. **Identify relevant constraints for the export job:** Review the context items to find any information specifically related to an export job.\n2. **Determine the required timeframe for the export job:** Extract the deadline or time limit associated with the export job.\n\n**Delegated Research:**\n\n* Research the context items for any information about an \"export job.\"",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 128,
+    "answer_tokens": 77
+   }
+  ],
+  "alice/task-9/planner naive": [
+   {
+    "seed": 1,
+    "answer": "The plan for the export job is to **move the export job to PostgreSQL**.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 17
+   },
+   {
+    "seed": 2,
+    "answer": "The plan for the export job is to move the export job to PostgreSQL.",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 16
+   },
+   {
+    "seed": 3,
+    "answer": "The plan for the export job is to move it to PostgreSQL (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 19
+   },
+   {
+    "seed": 4,
+    "answer": "The plan for the export job is to **move the export job to PostgreSQL** (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 23
+   },
+   {
+    "seed": 5,
+    "answer": "The plan for the export job is to **move the export job to PostgreSQL** (Task 17).",
+    "tool_calls": [],
+    "done_reason": "stop",
+    "prompt_tokens": 175,
+    "answer_tokens": 23
+   }
+  ]
+ }
+}

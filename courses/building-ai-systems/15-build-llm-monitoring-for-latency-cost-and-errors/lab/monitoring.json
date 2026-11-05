@@ -1,0 +1,1237 @@
+{
+  "traffic": "traffic.json",
+  "calls": "calls.json",
+  "runs": [
+    {
+      "name": "A",
+      "label": "queue of 20; the worker runs every queued call",
+      "requests": 1340,
+      "totals": {
+        "ok": 675,
+        "503": 113,
+        "timeout": 552
+      },
+      "model_calls": 1227,
+      "wasted_model_ms": 263404.456,
+      "windows": [
+        {
+          "window": 0,
+          "start_s": 0,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 356.632,
+            "p95": 499.069,
+            "p95_from_buckets": 617.5,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              29,
+              71,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16197,
+          "output_tokens": 2001,
+          "cost_usd": 0.00242,
+          "model_ms": 36312.558,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 1,
+          "start_s": 60,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 354.734,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16194,
+          "output_tokens": 1994,
+          "cost_usd": 0.002417,
+          "model_ms": 36381.576,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 2,
+          "start_s": 120,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 356.632,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16232,
+          "output_tokens": 2005,
+          "cost_usd": 0.002425,
+          "model_ms": 36504.421,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 3,
+          "start_s": 180,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 356.632,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16216,
+          "output_tokens": 2015,
+          "cost_usd": 0.002428,
+          "model_ms": 36634.198,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 4,
+          "start_s": 240,
+          "arrivals": 220,
+          "ended": 212,
+          "ok": 24,
+          "errors": {
+            "503": 37,
+            "timeout": 151
+          },
+          "error_rate": 0.8868,
+          "latency_ms": {
+            "p50": 1770.068,
+            "p95": 2741.472,
+            "p95_from_buckets": 4352.0,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              13,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 21,
+          "input_tokens": 26459,
+          "output_tokens": 3309,
+          "cost_usd": 0.003969,
+          "model_ms": 59888.301,
+          "wasted_model_ms": 50776.169
+        },
+        {
+          "window": 5,
+          "start_s": 300,
+          "arrivals": 220,
+          "ended": 220,
+          "ok": 0,
+          "errors": {
+            "503": 56,
+            "timeout": 164
+          },
+          "error_rate": 1.0,
+          "latency_ms": {
+            "p50": null,
+            "p95": null,
+            "p95_from_buckets": null,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 21,
+          "input_tokens": 26843,
+          "output_tokens": 3315,
+          "cost_usd": 0.00401,
+          "model_ms": 59902.626,
+          "wasted_model_ms": 59902.626
+        },
+        {
+          "window": 6,
+          "start_s": 360,
+          "arrivals": 100,
+          "ended": 108,
+          "ok": 79,
+          "errors": {
+            "503": 0,
+            "timeout": 29
+          },
+          "error_rate": 0.2685,
+          "latency_ms": {
+            "p50": 367.957,
+            "p95": 1975.635,
+            "p95_from_buckets": 1936.0,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              17,
+              54,
+              2,
+              4,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 20,
+          "input_tokens": 19450,
+          "output_tokens": 2422,
+          "cost_usd": 0.002914,
+          "model_ms": 44133.495,
+          "wasted_model_ms": 15297.856
+        },
+        {
+          "window": 7,
+          "start_s": 420,
+          "arrivals": 100,
+          "ended": 95,
+          "ok": 18,
+          "errors": {
+            "503": 0,
+            "timeout": 77
+          },
+          "error_rate": 0.8105,
+          "latency_ms": {
+            "p50": 1705.284,
+            "p95": 2920.638,
+            "p95_from_buckets": 4544.0,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              9,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 17,
+          "input_tokens": 13452,
+          "output_tokens": 1638,
+          "cost_usd": 0.002,
+          "model_ms": 59930.226,
+          "wasted_model_ms": 47019.084
+        },
+        {
+          "window": 8,
+          "start_s": 480,
+          "arrivals": 100,
+          "ended": 101,
+          "ok": 0,
+          "errors": {
+            "503": 14,
+            "timeout": 87
+          },
+          "error_rate": 1.0,
+          "latency_ms": {
+            "p50": null,
+            "p95": null,
+            "p95_from_buckets": null,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 21,
+          "input_tokens": 13406,
+          "output_tokens": 1620,
+          "cost_usd": 0.001989,
+          "model_ms": 59711.02,
+          "wasted_model_ms": 59711.02
+        },
+        {
+          "window": 9,
+          "start_s": 540,
+          "arrivals": 100,
+          "ended": 104,
+          "ok": 54,
+          "errors": {
+            "503": 6,
+            "timeout": 44
+          },
+          "error_rate": 0.4808,
+          "latency_ms": {
+            "p50": 370.66,
+            "p95": 2567.89,
+            "p95_from_buckets": 2816.0,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              12,
+              31,
+              3,
+              5,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 21,
+          "input_tokens": 18636,
+          "output_tokens": 2353,
+          "cost_usd": 0.002805,
+          "model_ms": 50352.071,
+          "wasted_model_ms": 30697.701
+        },
+        {
+          "window": 10,
+          "start_s": 600,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 361.471,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16222,
+          "output_tokens": 2031,
+          "cost_usd": 0.002435,
+          "model_ms": 36610.563,
+          "wasted_model_ms": 0.0
+        }
+      ],
+      "alerts": [
+        {
+          "window": 0,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 1,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 2,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 3,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 4,
+          "HighErrorRate": "pending",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "firing",
+          "TokenSpend": "firing"
+        },
+        {
+          "window": 5,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "firing",
+          "TokenSpend": "firing"
+        },
+        {
+          "window": 6,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "firing",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 7,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "firing",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 8,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "firing",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 9,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "firing",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 10,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        }
+      ],
+      "alert_changes": [
+        {
+          "window": 4,
+          "rule": "HighErrorRate",
+          "from": "inactive",
+          "to": "pending",
+          "value": 0.8868
+        },
+        {
+          "window": 4,
+          "rule": "SlowAnswers",
+          "from": "inactive",
+          "to": "firing",
+          "value": 4352.0
+        },
+        {
+          "window": 4,
+          "rule": "QueueBacklog",
+          "from": "inactive",
+          "to": "firing",
+          "value": 21
+        },
+        {
+          "window": 4,
+          "rule": "TokenSpend",
+          "from": "inactive",
+          "to": "firing",
+          "value": 3309
+        },
+        {
+          "window": 5,
+          "rule": "HighErrorRate",
+          "from": "pending",
+          "to": "firing",
+          "value": 1.0
+        },
+        {
+          "window": 5,
+          "rule": "SlowAnswers",
+          "from": "firing",
+          "to": "inactive",
+          "value": null
+        },
+        {
+          "window": 6,
+          "rule": "TokenSpend",
+          "from": "firing",
+          "to": "inactive",
+          "value": 2422
+        },
+        {
+          "window": 7,
+          "rule": "SlowAnswers",
+          "from": "inactive",
+          "to": "firing",
+          "value": 4544.0
+        },
+        {
+          "window": 8,
+          "rule": "SlowAnswers",
+          "from": "firing",
+          "to": "inactive",
+          "value": null
+        },
+        {
+          "window": 9,
+          "rule": "SlowAnswers",
+          "from": "inactive",
+          "to": "firing",
+          "value": 2816.0
+        },
+        {
+          "window": 10,
+          "rule": "HighErrorRate",
+          "from": "firing",
+          "to": "inactive",
+          "value": 0.0
+        },
+        {
+          "window": 10,
+          "rule": "SlowAnswers",
+          "from": "firing",
+          "to": "inactive",
+          "value": 618.1
+        },
+        {
+          "window": 10,
+          "rule": "QueueBacklog",
+          "from": "firing",
+          "to": "inactive",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "B",
+      "label": "queue of 6; the worker skips calls whose client has given up",
+      "requests": 1340,
+      "totals": {
+        "ok": 1063,
+        "503": 104,
+        "timeout": 173
+      },
+      "model_calls": 1201,
+      "wasted_model_ms": 104745.774,
+      "windows": [
+        {
+          "window": 0,
+          "start_s": 0,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 356.632,
+            "p95": 499.069,
+            "p95_from_buckets": 617.5,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              29,
+              71,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16197,
+          "output_tokens": 2001,
+          "cost_usd": 0.00242,
+          "model_ms": 36312.558,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 1,
+          "start_s": 60,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 354.734,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16194,
+          "output_tokens": 1994,
+          "cost_usd": 0.002417,
+          "model_ms": 36381.576,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 2,
+          "start_s": 120,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 356.632,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16232,
+          "output_tokens": 2005,
+          "cost_usd": 0.002425,
+          "model_ms": 36504.421,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 3,
+          "start_s": 180,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 356.632,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16216,
+          "output_tokens": 2015,
+          "cost_usd": 0.002428,
+          "model_ms": 36634.198,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 4,
+          "start_s": 240,
+          "arrivals": 220,
+          "ended": 214,
+          "ok": 164,
+          "errors": {
+            "503": 50,
+            "timeout": 0
+          },
+          "error_rate": 0.2336,
+          "latency_ms": {
+            "p50": 2332.894,
+            "p95": 2886.108,
+            "p95_from_buckets": 4595.2,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              117,
+              40,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 7,
+          "input_tokens": 26670,
+          "output_tokens": 3332,
+          "cost_usd": 0.004,
+          "model_ms": 59944.03,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 5,
+          "start_s": 300,
+          "arrivals": 220,
+          "ended": 220,
+          "ok": 166,
+          "errors": {
+            "503": 54,
+            "timeout": 0
+          },
+          "error_rate": 0.2455,
+          "latency_ms": {
+            "p50": 2335.738,
+            "p95": 2883.308,
+            "p95_from_buckets": 4601.8,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              125,
+              41,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 7,
+          "input_tokens": 26889,
+          "output_tokens": 3297,
+          "cost_usd": 0.004008,
+          "model_ms": 59941.41,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 6,
+          "start_s": 360,
+          "arrivals": 100,
+          "ended": 106,
+          "ok": 106,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 370.66,
+            "p95": 2622.002,
+            "p95_from_buckets": 3181.7,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              23,
+              67,
+              3,
+              6,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 6,
+          "input_tokens": 17262,
+          "output_tokens": 2180,
+          "cost_usd": 0.002598,
+          "model_ms": 39188.145,
+          "wasted_model_ms": 0.0
+        },
+        {
+          "window": 7,
+          "start_s": 420,
+          "arrivals": 100,
+          "ended": 95,
+          "ok": 22,
+          "errors": {
+            "503": 0,
+            "timeout": 73
+          },
+          "error_rate": 0.7684,
+          "latency_ms": {
+            "p50": 1942.808,
+            "p95": 2953.23,
+            "p95_from_buckets": 4768.0,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              9,
+              8,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 6,
+          "input_tokens": 13498,
+          "output_tokens": 1656,
+          "cost_usd": 0.002012,
+          "model_ms": 59931.396,
+          "wasted_model_ms": 45038.408
+        },
+        {
+          "window": 8,
+          "start_s": 480,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 6,
+          "errors": {
+            "503": 0,
+            "timeout": 94
+          },
+          "error_rate": 0.94,
+          "latency_ms": {
+            "p50": 2932.004,
+            "p95": 2992.472,
+            "p95_from_buckets": 4992.0,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 6,
+          "input_tokens": 12997,
+          "output_tokens": 1698,
+          "cost_usd": 0.001979,
+          "model_ms": 59676.146,
+          "wasted_model_ms": 56286.572
+        },
+        {
+          "window": 9,
+          "start_s": 540,
+          "arrivals": 100,
+          "ended": 105,
+          "ok": 99,
+          "errors": {
+            "503": 0,
+            "timeout": 6
+          },
+          "error_rate": 0.0571,
+          "latency_ms": {
+            "p50": 367.896,
+            "p95": 1954.106,
+            "p95_from_buckets": 1717.3,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              24,
+              65,
+              3,
+              6,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 6,
+          "input_tokens": 16804,
+          "output_tokens": 2090,
+          "cost_usd": 0.002516,
+          "model_ms": 39580.296,
+          "wasted_model_ms": 3420.794
+        },
+        {
+          "window": 10,
+          "start_s": 600,
+          "arrivals": 100,
+          "ended": 100,
+          "ok": 100,
+          "errors": {
+            "503": 0,
+            "timeout": 0
+          },
+          "error_rate": 0.0,
+          "latency_ms": {
+            "p50": 361.471,
+            "p95": 499.069,
+            "p95_from_buckets": 618.1,
+            "bucket_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              27,
+              73,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_queue_depth": 0,
+          "input_tokens": 16222,
+          "output_tokens": 2031,
+          "cost_usd": 0.002435,
+          "model_ms": 36610.563,
+          "wasted_model_ms": 0.0
+        }
+      ],
+      "alerts": [
+        {
+          "window": 0,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 1,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 2,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 3,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 4,
+          "HighErrorRate": "pending",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "firing"
+        },
+        {
+          "window": 5,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "firing"
+        },
+        {
+          "window": 6,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 7,
+          "HighErrorRate": "pending",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 8,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "firing",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 9,
+          "HighErrorRate": "firing",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        },
+        {
+          "window": 10,
+          "HighErrorRate": "inactive",
+          "SlowAnswers": "inactive",
+          "QueueBacklog": "inactive",
+          "TokenSpend": "inactive"
+        }
+      ],
+      "alert_changes": [
+        {
+          "window": 4,
+          "rule": "HighErrorRate",
+          "from": "inactive",
+          "to": "pending",
+          "value": 0.2336
+        },
+        {
+          "window": 4,
+          "rule": "SlowAnswers",
+          "from": "inactive",
+          "to": "firing",
+          "value": 4595.2
+        },
+        {
+          "window": 4,
+          "rule": "TokenSpend",
+          "from": "inactive",
+          "to": "firing",
+          "value": 3332
+        },
+        {
+          "window": 5,
+          "rule": "HighErrorRate",
+          "from": "pending",
+          "to": "firing",
+          "value": 0.2455
+        },
+        {
+          "window": 6,
+          "rule": "HighErrorRate",
+          "from": "firing",
+          "to": "inactive",
+          "value": 0.0
+        },
+        {
+          "window": 6,
+          "rule": "TokenSpend",
+          "from": "firing",
+          "to": "inactive",
+          "value": 2180
+        },
+        {
+          "window": 7,
+          "rule": "HighErrorRate",
+          "from": "inactive",
+          "to": "pending",
+          "value": 0.7684
+        },
+        {
+          "window": 8,
+          "rule": "HighErrorRate",
+          "from": "pending",
+          "to": "firing",
+          "value": 0.94
+        },
+        {
+          "window": 9,
+          "rule": "SlowAnswers",
+          "from": "firing",
+          "to": "inactive",
+          "value": 1717.3
+        },
+        {
+          "window": 10,
+          "rule": "HighErrorRate",
+          "from": "firing",
+          "to": "inactive",
+          "value": 0.0
+        }
+      ]
+    }
+  ]
+}

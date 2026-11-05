@@ -1,0 +1,1 @@
+Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding="utf-8" when reading a UTF-8 file.

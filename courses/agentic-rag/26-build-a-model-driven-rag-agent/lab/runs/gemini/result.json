@@ -1,0 +1,2548 @@
+{
+  "execution_mode": "live-Gemini-API",
+  "model": "gemini-3.8-flash",
+  "config": {
+    "maxOutputTokens": 1024,
+    "temperature": 0,
+    "thinkingConfig": {
+      "thinkingLevel": "LOW"
+    },
+    "responseMimeType": "application/json"
+  },
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+  "batch_request_cap": 80,
+  "limits": {
+    "model_calls": 9,
+    "searches": 3,
+    "reads": 4,
+    "source_bytes": 4096,
+    "seconds": 180
+  },
+  "cases_sha256": "97fce118c9731e7d715b23542280883be933cb8f1e5bf53dad381520be0ba3c1",
+  "summary": {
+    "fixed": {
+      "pass": 4,
+      "fail": 2,
+      "incomplete": 2
+    },
+    "agent": {
+      "pass": 4,
+      "fail": 3,
+      "incomplete": 1
+    }
+  },
+  "trials": [
+    {
+      "id": "overwrite-fixed-1",
+      "case_id": "overwrite",
+      "split": "development",
+      "repeat": 1,
+      "mode": "fixed",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "In Python 3.12, Path.write_text overwrites an existing file.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?",
+        "version": "3.12",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 2,
+          "source_bytes": 423
+        },
+        "decisions": [
+          {
+            "action": "answer",
+            "assessment": "The documentation passage for `Path.write_text` in Python 3.12 explicitly answers whether an existing file is appended to or overwritten.",
+            "query": "",
+            "source_id": "",
+            "answer": "In Python 3.12, Path.write_text overwrites an existing file.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?"
+            },
+            "result": {
+              "query": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "json-text",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "In Python 3.12, does Path.write_text append to an existing file or overwrite it?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 2.579,
+      "provider_usage": [
+        {
+          "promptTokenCount": 996,
+          "candidatesTokenCount": 125,
+          "totalTokenCount": 1121,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 996
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "overwrite-agent-1",
+      "case_id": "overwrite",
+      "split": "development",
+      "repeat": 1,
+      "mode": "agent",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "In Python 3.12, Path.write_text overwrites an existing file.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?",
+        "version": "3.12",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 3,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 224
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Need to search Python 3.12 documentation for Path.write_text behavior regarding appending vs overwriting.",
+            "query": "Path.write_text",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Search yielded candidate 'path-write'. Need to read 'path-write' to check whether Path.write_text overwrites or appends to an existing file.",
+            "query": "",
+            "source_id": "path-write",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "answer",
+            "assessment": "The read passage 'path-write' explicitly states whether an existing file is overwritten or appended to.",
+            "query": "",
+            "source_id": "",
+            "answer": "In Python 3.12, Path.write_text overwrites an existing file.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path.write_text"
+            },
+            "result": {
+              "query": "Path.write_text",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "Path.write_text"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 7.508,
+      "provider_usage": [
+        {
+          "promptTokenCount": 471,
+          "candidatesTokenCount": 72,
+          "totalTokenCount": 543,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 471
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 557,
+          "candidatesTokenCount": 81,
+          "totalTokenCount": 638,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 557
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 759,
+          "candidatesTokenCount": 115,
+          "totalTokenCount": 874,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 759
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "serialize-and-save-fixed-1",
+      "case_id": "serialize-and-save",
+      "split": "development",
+      "repeat": 1,
+      "mode": "fixed",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "To serialize an object while keeping non-ASCII characters in the JSON string, call `json.dumps(obj, ensure_ascii=False)`. To save that string to a UTF-8 file, use `Path.write_text(data, encoding=\"utf-8\")`.",
+        "citations": [
+          {
+            "source_id": "json-text",
+            "quote": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string.",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+          },
+          {
+            "source_id": "path-write",
+            "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?",
+        "version": "3.12",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 2,
+          "source_bytes": 423
+        },
+        "decisions": [
+          {
+            "action": "answer",
+            "assessment": "The observations from `json-text` and `path-write` explain how to serialize an object with non-ASCII characters preserved using `json.dumps(obj, ensure_ascii=False)` and how to write text to a UTF-8 file using `Path.write_text(data, encoding=\"utf-8\")`.",
+            "query": "",
+            "source_id": "",
+            "answer": "To serialize an object while keeping non-ASCII characters in the JSON string, call `json.dumps(obj, ensure_ascii=False)`. To save that string to a UTF-8 file, use `Path.write_text(data, encoding=\"utf-8\")`.",
+            "citations": [
+              {
+                "source_id": "json-text",
+                "quote": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string."
+              },
+              {
+                "source_id": "path-write",
+                "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?"
+            },
+            "result": {
+              "query": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?",
+              "candidates": [
+                {
+                  "source_id": "json-text",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-write",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 4.332,
+      "provider_usage": [
+        {
+          "promptTokenCount": 1026,
+          "candidatesTokenCount": 296,
+          "totalTokenCount": 1322,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1026
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "serialize-and-save-agent-1",
+      "case_id": "serialize-and-save",
+      "split": "development",
+      "repeat": 1,
+      "mode": "agent",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "To serialize an object while keeping non-ASCII characters in the JSON string, use `json.dumps(obj, ensure_ascii=False)`. You can then save that string to a UTF-8 encoded file using `Path.write_text(data, encoding=\"utf-8\")`.",
+        "citations": [
+          {
+            "source_id": "json-text",
+            "quote": "Setting ensure_ascii=False leaves non-ASCII characters in that string.",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+          },
+          {
+            "source_id": "path-write",
+            "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?",
+        "version": "3.12",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 6,
+          "searches": 2,
+          "reads": 3,
+          "source_bytes": 577
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Find the documentation for json.dump or json.dumps regarding ensure_ascii and saving to a UTF-8 file.",
+            "query": "json dump ensure_ascii utf-8",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to check documentation on json serialization with ensure_ascii and writing to a UTF-8 file.",
+            "query": "",
+            "source_id": "json-text",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to check path-read or search for writing to a file in UTF-8 to combine with json.dumps(ensure_ascii=False).",
+            "query": "",
+            "source_id": "path-read",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "search",
+            "assessment": "We need documentation on writing/saving text to a UTF-8 file (e.g. Path.write_text or open/json.dump with utf-8 encoding).",
+            "query": "write_text encoding utf-8 open",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need documentation on writing text with UTF-8 encoding (such as Path.write_text or open) to answer how to save the serialized string to a UTF-8 file.",
+            "query": "",
+            "source_id": "path-write",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "answer",
+            "assessment": "We have sufficient evidence from `json-text` and `path-write` explaining how to keep non-ASCII characters when serializing to JSON and how to write that string to a UTF-8 file.",
+            "query": "",
+            "source_id": "",
+            "answer": "To serialize an object while keeping non-ASCII characters in the JSON string, use `json.dumps(obj, ensure_ascii=False)`. You can then save that string to a UTF-8 encoded file using `Path.write_text(data, encoding=\"utf-8\")`.",
+            "citations": [
+              {
+                "source_id": "json-text",
+                "quote": "Setting ensure_ascii=False leaves non-ASCII characters in that string."
+              },
+              {
+                "source_id": "path-write",
+                "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "json dump ensure_ascii utf-8"
+            },
+            "result": {
+              "query": "json dump ensure_ascii utf-8",
+              "candidates": [
+                {
+                  "source_id": "json-text",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-read"
+            },
+            "result": {
+              "source_id": "path-read",
+              "version": "3.12",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0"
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "write_text encoding utf-8 open"
+            },
+            "result": {
+              "query": "write_text encoding utf-8 open",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "json dump ensure_ascii utf-8",
+            "write_text encoding utf-8 open"
+          ],
+          "refined": true,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 14.977,
+      "provider_usage": [
+        {
+          "promptTokenCount": 481,
+          "candidatesTokenCount": 76,
+          "totalTokenCount": 557,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 481
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 573,
+          "candidatesTokenCount": 67,
+          "totalTokenCount": 640,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 573
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 762,
+          "candidatesTokenCount": 64,
+          "totalTokenCount": 826,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 762
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 947,
+          "candidatesTokenCount": 75,
+          "totalTokenCount": 1022,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 947
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 1039,
+          "candidatesTokenCount": 83,
+          "totalTokenCount": 1122,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1039
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 1239,
+          "candidatesTokenCount": 254,
+          "totalTokenCount": 1493,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1239
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "newline-version-fixed-1",
+      "case_id": "newline-version",
+      "split": "held-out",
+      "repeat": 1,
+      "mode": "fixed",
+      "result": {
+        "status": "incomplete",
+        "reason": "model_stopped",
+        "answer": "",
+        "citations": [],
+        "question": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?",
+        "version": "3.13",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 174
+        },
+        "decisions": [
+          {
+            "action": "stop",
+            "assessment": "The documentation retrieved for Python 3.13 Path.read_text only mentions that 'newline parameter was added in Python 3.13' and that 'Path.read_text accepts encoding, errors and newline', but it does not contain details explaining what newline controls or how to specifically select UTF-8. In fixed mode, no further searches or reads are allowed, and evidence is insufficient.",
+            "query": "",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?"
+            },
+            "result": {
+              "query": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?",
+              "candidates": [
+                {
+                  "source_id": "path-read-3-13",
+                  "rank": 1,
+                  "version": "3.13"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-read-3-13"
+            },
+            "result": {
+              "source_id": "path-read-3-13",
+              "version": "3.13",
+              "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+              "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+              "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": false,
+        "outcome": "incomplete",
+        "trajectory": {
+          "queries": [
+            "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 2.637,
+      "provider_usage": [
+        {
+          "promptTokenCount": 793,
+          "candidatesTokenCount": 125,
+          "totalTokenCount": 918,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 793
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "newline-version-agent-1",
+      "case_id": "newline-version",
+      "split": "held-out",
+      "repeat": 1,
+      "mode": "agent",
+      "result": {
+        "status": "failed",
+        "reason": "duplicate_query",
+        "answer": "",
+        "citations": [],
+        "question": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?",
+        "version": "3.13",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 3,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 174
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Need to search for Path.read_text in Python 3.13 documentation to find what newline controls and how to select UTF-8.",
+            "query": "Path read_text newline encoding",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Search yielded candidate 'path-read-3-13'. Need to read this passage to see what 'newline' controls and how to select UTF-8 encoding in Path.read_text for Python 3.13.",
+            "query": "",
+            "source_id": "path-read-3-13",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "search",
+            "assessment": "The current source mentions that Path.read_text accepts encoding, errors, and newline, but it does not specify what newline controls or how to select UTF-8 specifically. Need more documentation details on Path.read_text parameters.",
+            "query": "Path.read_text newline encoding",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path read_text newline encoding"
+            },
+            "result": {
+              "query": "Path read_text newline encoding",
+              "candidates": [
+                {
+                  "source_id": "path-read-3-13",
+                  "rank": 1,
+                  "version": "3.13"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-read-3-13"
+            },
+            "result": {
+              "source_id": "path-read-3-13",
+              "version": "3.13",
+              "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+              "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+              "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": false,
+        "outcome": "fail",
+        "trajectory": {
+          "queries": [
+            "Path read_text newline encoding"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 7.356,
+      "provider_usage": [
+        {
+          "promptTokenCount": 474,
+          "candidatesTokenCount": 66,
+          "totalTokenCount": 540,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 474
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 542,
+          "candidatesTokenCount": 99,
+          "totalTokenCount": 641,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 542
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 739,
+          "candidatesTokenCount": 98,
+          "totalTokenCount": 837,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 739
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "unsupported-fixed-1",
+      "case_id": "unsupported",
+      "split": "held-out",
+      "repeat": 1,
+      "mode": "fixed",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "In Python 3.12, Path.write_text does not retain backup copies; instead, an existing file is simply overwritten.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how many days does Path.write_text retain backup copies?",
+        "version": "3.12",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 2,
+          "source_bytes": 423
+        },
+        "decisions": [
+          {
+            "action": "answer",
+            "assessment": "The documentation states that Path.write_text overwrites an existing file and does not retain backup copies.",
+            "query": "",
+            "source_id": "",
+            "answer": "In Python 3.12, Path.write_text does not retain backup copies; instead, an existing file is simply overwritten.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "In Python 3.12, how many days does Path.write_text retain backup copies?"
+            },
+            "result": {
+              "query": "In Python 3.12, how many days does Path.write_text retain backup copies?",
+              "candidates": [
+                {
+                  "source_id": "json-text",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-write",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": null,
+        "answer_fixture_check": false,
+        "outcome": "fail",
+        "trajectory": {
+          "queries": [
+            "In Python 3.12, how many days does Path.write_text retain backup copies?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 2.206,
+      "provider_usage": [
+        {
+          "promptTokenCount": 990,
+          "candidatesTokenCount": 125,
+          "totalTokenCount": 1115,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 990
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "unsupported-agent-1",
+      "case_id": "unsupported",
+      "split": "held-out",
+      "repeat": 1,
+      "mode": "agent",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "Path.write_text does not retain backup copies; instead, an existing file is simply overwritten.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how many days does Path.write_text retain backup copies?",
+        "version": "3.12",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 3,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 224
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Need to search for Path.write_text in pathlib documentation to see what it says about backups or retaining backup copies.",
+            "query": "Path write_text",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to examine Path.write_text documentation to check whether it retains backup copies or mentions retention days.",
+            "query": "",
+            "source_id": "path-write",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "answer",
+            "assessment": "The documentation states that Path.write_text overwrites existing files and does not mention retaining any backup copies.",
+            "query": "",
+            "source_id": "",
+            "answer": "Path.write_text does not retain backup copies; instead, an existing file is simply overwritten.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path write_text"
+            },
+            "result": {
+              "query": "Path write_text",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": null,
+        "answer_fixture_check": false,
+        "outcome": "fail",
+        "trajectory": {
+          "queries": [
+            "Path write_text"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 6.84,
+      "provider_usage": [
+        {
+          "promptTokenCount": 469,
+          "candidatesTokenCount": 58,
+          "totalTokenCount": 568,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 469
+            }
+          ],
+          "thoughtsTokenCount": 41,
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 553,
+          "candidatesTokenCount": 54,
+          "totalTokenCount": 644,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 553
+            }
+          ],
+          "thoughtsTokenCount": 37,
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 755,
+          "candidatesTokenCount": 118,
+          "totalTokenCount": 873,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 755
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "overwrite-fixed-2",
+      "case_id": "overwrite",
+      "split": "development",
+      "repeat": 2,
+      "mode": "fixed",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "In Python 3.12, Path.write_text overwrites an existing file.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?",
+        "version": "3.12",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 2,
+          "source_bytes": 423
+        },
+        "decisions": [
+          {
+            "action": "answer",
+            "assessment": "The documentation passage for Path.write_text clearly answers whether it appends to or overwrites an existing file.",
+            "query": "",
+            "source_id": "",
+            "answer": "In Python 3.12, Path.write_text overwrites an existing file.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?"
+            },
+            "result": {
+              "query": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "json-text",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "In Python 3.12, does Path.write_text append to an existing file or overwrite it?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 2.24,
+      "provider_usage": [
+        {
+          "promptTokenCount": 996,
+          "candidatesTokenCount": 118,
+          "totalTokenCount": 1114,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 996
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "overwrite-agent-2",
+      "case_id": "overwrite",
+      "split": "development",
+      "repeat": 2,
+      "mode": "agent",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "In Python 3.12, Path.write_text overwrites an existing file rather than appending to it.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, does Path.write_text append to an existing file or overwrite it?",
+        "version": "3.12",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 3,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 224
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Searching for Path.write_text documentation in Python 3.12 to determine if it overwrites or appends.",
+            "query": "Path.write_text",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to check Path.write_text documentation to see whether it overwrites or appends to an existing file.",
+            "query": "",
+            "source_id": "path-write",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "answer",
+            "assessment": "The documentation in path-write explicitly states whether Path.write_text appends or overwrites.",
+            "query": "",
+            "source_id": "",
+            "answer": "In Python 3.12, Path.write_text overwrites an existing file rather than appending to it.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path.write_text"
+            },
+            "result": {
+              "query": "Path.write_text",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "Path.write_text"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 6.638,
+      "provider_usage": [
+        {
+          "promptTokenCount": 471,
+          "candidatesTokenCount": 74,
+          "totalTokenCount": 545,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 471
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 557,
+          "candidatesTokenCount": 56,
+          "totalTokenCount": 613,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 557
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 759,
+          "candidatesTokenCount": 120,
+          "totalTokenCount": 879,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 759
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "serialize-and-save-fixed-2",
+      "case_id": "serialize-and-save",
+      "split": "development",
+      "repeat": 2,
+      "mode": "fixed",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "To serialize an object keeping non-ASCII characters in the JSON string, call `json.dumps(obj, ensure_ascii=False)`. To write that resulting string to a UTF-8 file, use `Path.write_text(data, encoding=\"utf-8\")`.",
+        "citations": [
+          {
+            "source_id": "json-text",
+            "quote": "Setting ensure_ascii=False leaves non-ASCII characters in that string.",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+          },
+          {
+            "source_id": "path-write",
+            "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?",
+        "version": "3.12",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 2,
+          "source_bytes": 423
+        },
+        "decisions": [
+          {
+            "action": "answer",
+            "assessment": "The observations from 'json-text' and 'path-write' provide the necessary documentation to answer how to serialize an object keeping non-ASCII characters and write it to a UTF-8 file.",
+            "query": "",
+            "source_id": "",
+            "answer": "To serialize an object keeping non-ASCII characters in the JSON string, call `json.dumps(obj, ensure_ascii=False)`. To write that resulting string to a UTF-8 file, use `Path.write_text(data, encoding=\"utf-8\")`.",
+            "citations": [
+              {
+                "source_id": "json-text",
+                "quote": "Setting ensure_ascii=False leaves non-ASCII characters in that string."
+              },
+              {
+                "source_id": "path-write",
+                "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?"
+            },
+            "result": {
+              "query": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?",
+              "candidates": [
+                {
+                  "source_id": "json-text",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-write",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 3.355,
+      "provider_usage": [
+        {
+          "promptTokenCount": 1026,
+          "candidatesTokenCount": 250,
+          "totalTokenCount": 1276,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1026
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "serialize-and-save-agent-2",
+      "case_id": "serialize-and-save",
+      "split": "development",
+      "repeat": 2,
+      "mode": "agent",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "To serialize an object while keeping non-ASCII characters in the JSON string, call `json.dumps(obj, ensure_ascii=False)`. To save that string to a UTF-8 file, use `Path.write_text(data, encoding=\"utf-8\")`.",
+        "citations": [
+          {
+            "source_id": "json-text",
+            "quote": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string.",
+            "url": "https://docs.python.org/3.12/library/json.html#json.dumps"
+          },
+          {
+            "source_id": "path-write",
+            "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how can I serialize an object with non-ASCII characters kept in JSON and save that string to a UTF-8 file?",
+        "version": "3.12",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 6,
+          "searches": 2,
+          "reads": 3,
+          "source_bytes": 577
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Need to search Python 3.12 documentation for json.dump or json.dumps parameters regarding non-ASCII characters (ensure_ascii) and writing UTF-8 files.",
+            "query": "json dump ensure_ascii utf-8",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to examine the documentation for json.dump/dumps and ensure_ascii parameter in 'json-text'.",
+            "query": "",
+            "source_id": "json-text",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to check path-read or see how writing UTF-8 file is described in the docs.",
+            "query": "",
+            "source_id": "path-read",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "search",
+            "assessment": "We know how to keep non-ASCII characters in a JSON string via `json.dumps(..., ensure_ascii=False)` from source_id 'json-text'. However, we need documentation on saving/writing that string to a UTF-8 file (e.g. open or Path.write_text).",
+            "query": "Path write_text encoding utf-8 open",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "We need to read path-write to learn how Path.write_text or writing to a file with UTF-8 encoding works.",
+            "query": "",
+            "source_id": "path-write",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "answer",
+            "assessment": "The observations provide documentation on serializing non-ASCII characters to a JSON string using json.dumps with ensure_ascii=False, and writing that string to a UTF-8 file using Path.write_text with encoding=\"utf-8\".",
+            "query": "",
+            "source_id": "",
+            "answer": "To serialize an object while keeping non-ASCII characters in the JSON string, call `json.dumps(obj, ensure_ascii=False)`. To save that string to a UTF-8 file, use `Path.write_text(data, encoding=\"utf-8\")`.",
+            "citations": [
+              {
+                "source_id": "json-text",
+                "quote": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string."
+              },
+              {
+                "source_id": "path-write",
+                "quote": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "json dump ensure_ascii utf-8"
+            },
+            "result": {
+              "query": "json dump ensure_ascii utf-8",
+              "candidates": [
+                {
+                  "source_id": "json-text",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-read"
+            },
+            "result": {
+              "source_id": "path-read",
+              "version": "3.12",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0"
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path write_text encoding utf-8 open"
+            },
+            "result": {
+              "query": "Path write_text encoding utf-8 open",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": true,
+        "outcome": "pass",
+        "trajectory": {
+          "queries": [
+            "json dump ensure_ascii utf-8",
+            "Path write_text encoding utf-8 open"
+          ],
+          "refined": true,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 14.674,
+      "provider_usage": [
+        {
+          "promptTokenCount": 481,
+          "candidatesTokenCount": 88,
+          "totalTokenCount": 569,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 481
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 573,
+          "candidatesTokenCount": 56,
+          "totalTokenCount": 629,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 573
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 762,
+          "candidatesTokenCount": 53,
+          "totalTokenCount": 815,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 762
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 947,
+          "candidatesTokenCount": 119,
+          "totalTokenCount": 1066,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 947
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 1041,
+          "candidatesTokenCount": 74,
+          "totalTokenCount": 1115,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1041
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 1241,
+          "candidatesTokenCount": 277,
+          "totalTokenCount": 1518,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1241
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "newline-version-fixed-2",
+      "case_id": "newline-version",
+      "split": "held-out",
+      "repeat": 2,
+      "mode": "fixed",
+      "result": {
+        "status": "incomplete",
+        "reason": "model_stopped",
+        "answer": "",
+        "citations": [],
+        "question": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?",
+        "version": "3.13",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 174
+        },
+        "decisions": [
+          {
+            "action": "stop",
+            "assessment": "The available read source (`path-read-3-13`) mentions that `Path.read_text` accepts `encoding`, `errors`, and `newline`, but it does not specify what the `newline` parameter controls or how to specifically select UTF-8. In fixed mode, no further searches or reads can be performed, making the provided evidence insufficient to answer the question.",
+            "query": "",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?"
+            },
+            "result": {
+              "query": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?",
+              "candidates": [
+                {
+                  "source_id": "path-read-3-13",
+                  "rank": 1,
+                  "version": "3.13"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-read-3-13"
+            },
+            "result": {
+              "source_id": "path-read-3-13",
+              "version": "3.13",
+              "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+              "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+              "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": false,
+        "outcome": "incomplete",
+        "trajectory": {
+          "queries": [
+            "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 2.422,
+      "provider_usage": [
+        {
+          "promptTokenCount": 793,
+          "candidatesTokenCount": 121,
+          "totalTokenCount": 914,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 793
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "newline-version-agent-2",
+      "case_id": "newline-version",
+      "split": "held-out",
+      "repeat": 2,
+      "mode": "agent",
+      "result": {
+        "status": "incomplete",
+        "reason": "model_stopped",
+        "answer": "",
+        "citations": [],
+        "question": "For Python 3.13 Path.read_text, what does newline control and how do I select UTF-8?",
+        "version": "3.13",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 5,
+          "searches": 3,
+          "reads": 1,
+          "source_bytes": 174
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Need to search Python 3.13 documentation for Path.read_text and find details on the newline parameter and how to specify UTF-8 encoding.",
+            "query": "Path.read_text newline encoding",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Search returned 'path-read-3-13'. Need to read this passage to find what newline controls in Path.read_text and how to select UTF-8.",
+            "query": "",
+            "source_id": "path-read-3-13",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "search",
+            "assessment": "The read passage 'path-read-3-13' mentions that newline was added in Python 3.13 and that encoding, errors, and newline are accepted, but does not detail what newline controls or how UTF-8 is selected (e.g. passing encoding='utf-8'). Need more documentation on Path.read_text.",
+            "query": "Path.read_text newline controls encoding utf-8",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "search",
+            "assessment": "Need documentation on what newline controls in Path.read_text or how open/read_text handles newline and how to select UTF-8 (e.g. encoding='utf-8'). Searching for Path.read_text documentation details.",
+            "query": "read_text newline open encoding",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "stop",
+            "assessment": "All 3 searches are exhausted. The only read document (path-read-3-13) only states that Path.read_text accepts encoding, errors, and newline, and that newline was added in 3.13, but does not provide documentation on what newline controls or specifically how to select UTF-8. Further evidence is unavailable.",
+            "query": "",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path.read_text newline encoding"
+            },
+            "result": {
+              "query": "Path.read_text newline encoding",
+              "candidates": [
+                {
+                  "source_id": "path-read-3-13",
+                  "rank": 1,
+                  "version": "3.13"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-read-3-13"
+            },
+            "result": {
+              "source_id": "path-read-3-13",
+              "version": "3.13",
+              "text": "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file.",
+              "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+              "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f"
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path.read_text newline controls encoding utf-8"
+            },
+            "result": {
+              "query": "Path.read_text newline controls encoding utf-8",
+              "candidates": [
+                {
+                  "source_id": "path-read-3-13",
+                  "rank": 1,
+                  "version": "3.13"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "read_text newline open encoding"
+            },
+            "result": {
+              "query": "read_text newline open encoding",
+              "candidates": [
+                {
+                  "source_id": "path-read-3-13",
+                  "rank": 1,
+                  "version": "3.13"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": true,
+        "answer_fixture_check": false,
+        "outcome": "incomplete",
+        "trajectory": {
+          "queries": [
+            "Path.read_text newline encoding",
+            "Path.read_text newline controls encoding utf-8",
+            "read_text newline open encoding"
+          ],
+          "refined": true,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 10.518,
+      "provider_usage": [
+        {
+          "promptTokenCount": 474,
+          "candidatesTokenCount": 69,
+          "totalTokenCount": 543,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 474
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 544,
+          "candidatesTokenCount": 88,
+          "totalTokenCount": 632,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 544
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 741,
+          "candidatesTokenCount": 127,
+          "totalTokenCount": 868,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 741
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 819,
+          "candidatesTokenCount": 85,
+          "totalTokenCount": 904,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 819
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 887,
+          "candidatesTokenCount": 115,
+          "totalTokenCount": 1002,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 887
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "unsupported-fixed-2",
+      "case_id": "unsupported",
+      "split": "held-out",
+      "repeat": 2,
+      "mode": "fixed",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "Path.write_text does not retain backup copies; instead, an existing file is simply overwritten.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how many days does Path.write_text retain backup copies?",
+        "version": "3.12",
+        "mode": "fixed",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 1,
+          "searches": 1,
+          "reads": 2,
+          "source_bytes": 423
+        },
+        "decisions": [
+          {
+            "action": "answer",
+            "assessment": "The documentation for Path.write_text states that an existing file is overwritten and does not retain backup copies.",
+            "query": "",
+            "source_id": "",
+            "answer": "Path.write_text does not retain backup copies; instead, an existing file is simply overwritten.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "In Python 3.12, how many days does Path.write_text retain backup copies?"
+            },
+            "result": {
+              "query": "In Python 3.12, how many days does Path.write_text retain backup copies?",
+              "candidates": [
+                {
+                  "source_id": "json-text",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-write",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "json-text"
+            },
+            "result": {
+              "source_id": "json-text",
+              "version": "3.12",
+              "text": "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer.",
+              "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+              "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288"
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": null,
+        "answer_fixture_check": false,
+        "outcome": "fail",
+        "trajectory": {
+          "queries": [
+            "In Python 3.12, how many days does Path.write_text retain backup copies?"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 2.446,
+      "provider_usage": [
+        {
+          "promptTokenCount": 990,
+          "candidatesTokenCount": 118,
+          "totalTokenCount": 1108,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 990
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    },
+    {
+      "id": "unsupported-agent-2",
+      "case_id": "unsupported",
+      "split": "held-out",
+      "repeat": 2,
+      "mode": "agent",
+      "result": {
+        "status": "answered",
+        "reason": "citation_contract_passed",
+        "answer": "Path.write_text does not retain backup copies; an existing file is simply overwritten.",
+        "citations": [
+          {
+            "source_id": "path-write",
+            "quote": "An existing file is overwritten.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+          }
+        ],
+        "question": "In Python 3.12, how many days does Path.write_text retain backup copies?",
+        "version": "3.12",
+        "mode": "agent",
+        "limits": {
+          "model_calls": 9,
+          "searches": 3,
+          "reads": 4,
+          "source_bytes": 4096,
+          "seconds": 180
+        },
+        "usage": {
+          "model_calls": 3,
+          "searches": 1,
+          "reads": 1,
+          "source_bytes": 224
+        },
+        "decisions": [
+          {
+            "action": "search",
+            "assessment": "Check documentation for Path.write_text in Python 3.12 to see if backup copies are supported or retained.",
+            "query": "Path write_text",
+            "source_id": "",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "read",
+            "assessment": "Need to check Path.write_text documentation to see what it does, and whether backup copies exist or are retained.",
+            "query": "",
+            "source_id": "path-write",
+            "answer": "",
+            "citations": []
+          },
+          {
+            "action": "answer",
+            "assessment": "The documentation states that 'An existing file is overwritten' and does not mention retaining any backup copies.",
+            "query": "",
+            "source_id": "",
+            "answer": "Path.write_text does not retain backup copies; an existing file is simply overwritten.",
+            "citations": [
+              {
+                "source_id": "path-write",
+                "quote": "An existing file is overwritten."
+              }
+            ]
+          }
+        ],
+        "observations": [
+          {
+            "tool": "search",
+            "arguments": {
+              "query": "Path write_text"
+            },
+            "result": {
+              "query": "Path write_text",
+              "candidates": [
+                {
+                  "source_id": "path-write",
+                  "rank": 1,
+                  "version": "3.12"
+                },
+                {
+                  "source_id": "path-read",
+                  "rank": 2,
+                  "version": "3.12"
+                }
+              ]
+            }
+          },
+          {
+            "tool": "read",
+            "arguments": {
+              "source_id": "path-write"
+            },
+            "result": {
+              "source_id": "path-write",
+              "version": "3.12",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e"
+            }
+          }
+        ]
+      },
+      "checks": {
+        "retrieval_targets_read": null,
+        "answer_fixture_check": false,
+        "outcome": "fail",
+        "trajectory": {
+          "queries": [
+            "Path write_text"
+          ],
+          "refined": false,
+          "within_limits": true
+        },
+        "scope": "Source targets, answer patterns and explicit abstention on authored fixtures; human semantic review is separate."
+      },
+      "elapsed_seconds": 6.546,
+      "provider_usage": [
+        {
+          "promptTokenCount": 469,
+          "candidatesTokenCount": 73,
+          "totalTokenCount": 542,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 469
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 553,
+          "candidatesTokenCount": 57,
+          "totalTokenCount": 610,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 553
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        {
+          "promptTokenCount": 755,
+          "candidatesTokenCount": 114,
+          "totalTokenCount": 869,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 755
+            }
+          ],
+          "serviceTier": "standard"
+        }
+      ]
+    }
+  ],
+  "recorded_at": "2026-10-25T12:35:24.499158+00:00",
+  "actual_api_requests": 40,
+  "elapsed_seconds": 97.328,
+  "source_sha256": {
+    "agent.py": "c8e68d3f28e56ced4f02a7105a50808f56f5536e4955daafe72c9b450d5c6519",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "evaluate.py": "783c974c82031d98147b65c837a0c15eb23663aa87f716a36dff57561f632ec6",
+    "cases.json": "97fce118c9731e7d715b23542280883be933cb8f1e5bf53dad381520be0ba3c1",
+    "snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "provider.py": "e2ea572460fa4494af1133efd70f0c0c7d13a17979c3c5e87fb69fe708de9e95",
+    "retrieval.py": "a6e8aacf65aff93a7e987c17ca1161bd9bf4fe25a0323507261fbb04aef80494",
+    "run.py": "4c5ff844f049981443ed873eb7a161c9ab5479d464cce25bb23b90d4bc92beca",
+    "test_agent.py": "d15ec4179bf3486096569268d693be567aa6b8db9d2393b3e2ef00f938cfbda6",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  },
+  "environment": {
+    "python": "3.15.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "sqlite": "3.53.4"
+  },
+  "cost": {
+    "currency_cost": null,
+    "note": "Token usage recorded; no billing-price estimate or invoice available."
+  }
+}

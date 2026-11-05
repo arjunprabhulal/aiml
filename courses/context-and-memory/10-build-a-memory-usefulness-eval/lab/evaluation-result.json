@@ -1,0 +1,574 @@
+{
+  "facts_quota": 120,
+  "trials": 1,
+  "grader": "a line is useful if it contains a required fact; stale and forgotten lines contain a listed fact",
+  "summary": {
+    "managed-all": {
+      "questions": 10,
+      "facts_found": 10,
+      "facts_required": 10,
+      "recall": 1.0,
+      "lines_sent": 48,
+      "useful_lines": 10,
+      "usefulness": 0.208,
+      "stale_lines": 0,
+      "forgotten_lines": 0,
+      "memory_tokens": 632
+    },
+    "managed-relevant": {
+      "questions": 10,
+      "facts_found": 6,
+      "facts_required": 10,
+      "recall": 0.6,
+      "lines_sent": 7,
+      "useful_lines": 6,
+      "usefulness": 0.857,
+      "stale_lines": 0,
+      "forgotten_lines": 0,
+      "memory_tokens": 91
+    },
+    "append-all": {
+      "questions": 10,
+      "facts_found": 10,
+      "facts_required": 10,
+      "recall": 1.0,
+      "lines_sent": 65,
+      "useful_lines": 10,
+      "usefulness": 0.154,
+      "stale_lines": 3,
+      "forgotten_lines": 2,
+      "memory_tokens": 873
+    }
+  },
+  "questions": {
+    "managed-all": [
+      {
+        "user": "alice",
+        "question": "What should I eat for dinner?",
+        "sent": 6,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 83
+      },
+      {
+        "user": "alice",
+        "question": "What is the budget per night for the hotel?",
+        "sent": 6,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 83
+      },
+      {
+        "user": "alice",
+        "question": "When do we travel to Porto?",
+        "sent": 6,
+        "useful": 2,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 2,
+        "required": 2,
+        "missing": [],
+        "memory_tokens": 83
+      },
+      {
+        "user": "alice",
+        "question": "Can you fill in my passport number on the form?",
+        "sent": 6,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 0,
+        "required": 0,
+        "missing": [],
+        "memory_tokens": 83
+      },
+      {
+        "user": "bob",
+        "question": "Which operating system should the laptop setup guide cover?",
+        "sent": 4,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 48
+      },
+      {
+        "user": "bob",
+        "question": "Who approves my desk order?",
+        "sent": 4,
+        "useful": 2,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 2,
+        "required": 2,
+        "missing": [],
+        "memory_tokens": 48
+      },
+      {
+        "user": "bob",
+        "question": "Where should the welcome package be sent?",
+        "sent": 4,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 0,
+        "required": 0,
+        "missing": [],
+        "memory_tokens": 48
+      },
+      {
+        "user": "chen",
+        "question": "Which database does the billing service use?",
+        "sent": 4,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 52
+      },
+      {
+        "user": "chen",
+        "question": "Order snacks for the team meeting.",
+        "sent": 4,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 52
+      },
+      {
+        "user": "chen",
+        "question": "When does on-call change?",
+        "sent": 4,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 52
+      }
+    ],
+    "managed-relevant": [
+      {
+        "user": "alice",
+        "question": "What should I eat for dinner?",
+        "sent": 1,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 14
+      },
+      {
+        "user": "alice",
+        "question": "What is the budget per night for the hotel?",
+        "sent": 2,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 28
+      },
+      {
+        "user": "alice",
+        "question": "When do we travel to Porto?",
+        "sent": 1,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 2,
+        "missing": [
+          "10 to 13 November"
+        ],
+        "memory_tokens": 10
+      },
+      {
+        "user": "alice",
+        "question": "Can you fill in my passport number on the form?",
+        "sent": 0,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 0,
+        "required": 0,
+        "missing": [],
+        "memory_tokens": 0
+      },
+      {
+        "user": "bob",
+        "question": "Which operating system should the laptop setup guide cover?",
+        "sent": 0,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 0,
+        "required": 1,
+        "missing": [
+          "macOS"
+        ],
+        "memory_tokens": 0
+      },
+      {
+        "user": "bob",
+        "question": "Who approves my desk order?",
+        "sent": 1,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 2,
+        "missing": [
+          "manager is Priya"
+        ],
+        "memory_tokens": 11
+      },
+      {
+        "user": "bob",
+        "question": "Where should the welcome package be sent?",
+        "sent": 0,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 0,
+        "required": 0,
+        "missing": [],
+        "memory_tokens": 0
+      },
+      {
+        "user": "chen",
+        "question": "Which database does the billing service use?",
+        "sent": 1,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 14
+      },
+      {
+        "user": "chen",
+        "question": "Order snacks for the team meeting.",
+        "sent": 0,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 0,
+        "required": 1,
+        "missing": [
+          "allergic to peanuts"
+        ],
+        "memory_tokens": 0
+      },
+      {
+        "user": "chen",
+        "question": "When does on-call change?",
+        "sent": 1,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 14
+      }
+    ],
+    "append-all": [
+      {
+        "user": "alice",
+        "question": "What should I eat for dinner?",
+        "sent": 8,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 114
+      },
+      {
+        "user": "alice",
+        "question": "What is the budget per night for the hotel?",
+        "sent": 8,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 114
+      },
+      {
+        "user": "alice",
+        "question": "When do we travel to Porto?",
+        "sent": 8,
+        "useful": 2,
+        "stale": 1,
+        "forgotten": 0,
+        "found": 2,
+        "required": 2,
+        "missing": [],
+        "memory_tokens": 114
+      },
+      {
+        "user": "alice",
+        "question": "Can you fill in my passport number on the form?",
+        "sent": 8,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 1,
+        "found": 0,
+        "required": 0,
+        "missing": [],
+        "memory_tokens": 114
+      },
+      {
+        "user": "bob",
+        "question": "Which operating system should the laptop setup guide cover?",
+        "sent": 6,
+        "useful": 1,
+        "stale": 1,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 73
+      },
+      {
+        "user": "bob",
+        "question": "Who approves my desk order?",
+        "sent": 6,
+        "useful": 2,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 2,
+        "required": 2,
+        "missing": [],
+        "memory_tokens": 73
+      },
+      {
+        "user": "bob",
+        "question": "Where should the welcome package be sent?",
+        "sent": 6,
+        "useful": 0,
+        "stale": 0,
+        "forgotten": 1,
+        "found": 0,
+        "required": 0,
+        "missing": [],
+        "memory_tokens": 73
+      },
+      {
+        "user": "chen",
+        "question": "Which database does the billing service use?",
+        "sent": 5,
+        "useful": 1,
+        "stale": 1,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 66
+      },
+      {
+        "user": "chen",
+        "question": "Order snacks for the team meeting.",
+        "sent": 5,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 66
+      },
+      {
+        "user": "chen",
+        "question": "When does on-call change?",
+        "sent": 5,
+        "useful": 1,
+        "stale": 0,
+        "forgotten": 0,
+        "found": 1,
+        "required": 1,
+        "missing": [],
+        "memory_tokens": 66
+      }
+    ]
+  },
+  "growth": {
+    "managed": [
+      {
+        "turn": 20,
+        "stored_rows": 5,
+        "current_facts": 4,
+        "superseded_rows": 1,
+        "deletion_records": 0
+      },
+      {
+        "turn": 40,
+        "stored_rows": 9,
+        "current_facts": 7,
+        "superseded_rows": 2,
+        "deletion_records": 0
+      },
+      {
+        "turn": 60,
+        "stored_rows": 11,
+        "current_facts": 8,
+        "superseded_rows": 3,
+        "deletion_records": 1
+      },
+      {
+        "turn": 80,
+        "stored_rows": 15,
+        "current_facts": 11,
+        "superseded_rows": 4,
+        "deletion_records": 1
+      },
+      {
+        "turn": 100,
+        "stored_rows": 17,
+        "current_facts": 13,
+        "superseded_rows": 4,
+        "deletion_records": 2
+      },
+      {
+        "turn": 120,
+        "stored_rows": 21,
+        "current_facts": 16,
+        "superseded_rows": 5,
+        "deletion_records": 2
+      },
+      {
+        "turn": 140,
+        "stored_rows": 25,
+        "current_facts": 19,
+        "superseded_rows": 6,
+        "deletion_records": 2
+      },
+      {
+        "turn": 160,
+        "stored_rows": 27,
+        "current_facts": 20,
+        "superseded_rows": 7,
+        "deletion_records": 3
+      },
+      {
+        "turn": 180,
+        "stored_rows": 31,
+        "current_facts": 23,
+        "superseded_rows": 8,
+        "deletion_records": 3
+      },
+      {
+        "turn": 200,
+        "stored_rows": 33,
+        "current_facts": 25,
+        "superseded_rows": 8,
+        "deletion_records": 4
+      }
+    ],
+    "append": [
+      {
+        "turn": 20,
+        "stored_rows": 5,
+        "current_facts": 5,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 40,
+        "stored_rows": 9,
+        "current_facts": 9,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 60,
+        "stored_rows": 12,
+        "current_facts": 12,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 80,
+        "stored_rows": 16,
+        "current_facts": 16,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 100,
+        "stored_rows": 19,
+        "current_facts": 19,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 120,
+        "stored_rows": 23,
+        "current_facts": 23,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 140,
+        "stored_rows": 27,
+        "current_facts": 27,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 160,
+        "stored_rows": 30,
+        "current_facts": 30,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 180,
+        "stored_rows": 34,
+        "current_facts": 34,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      },
+      {
+        "turn": 200,
+        "stored_rows": 37,
+        "current_facts": 37,
+        "superseded_rows": 0,
+        "deletion_records": 0
+      }
+    ]
+  },
+  "counter": "Gemma 4 E2B tokenizer (tokenizer-manifest.json)",
+  "environment": {
+    "python": "3.11.11",
+    "sqlite": "3.53.4",
+    "file_bytes_after_replay": {
+      "managed": 36864,
+      "append": 36864
+    }
+  }
+}

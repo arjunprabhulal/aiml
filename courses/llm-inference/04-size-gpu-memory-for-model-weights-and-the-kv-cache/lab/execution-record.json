@@ -1,0 +1,41 @@
+{
+  "execution_mode": "executed local algorithm or offline analysis; live model executions have separate raw records",
+  "commands": [
+    "python3 lab.py",
+    "python3 -m unittest -v test_lab.py"
+  ],
+  "exit_statuses": [
+    0,
+    0
+  ],
+  "environment": {
+    "python": "3.15.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "elapsed_wall_seconds": 0.074122,
+  "source_sha256": {
+    "test_lab.py": "61b1a588730722946e57d7c5440df15a283c038db2f7468f1ced2298cfc553f9",
+    "lab.py": "63532941726e24e3407d2cbe2ac1bdb0a4cae76a3aadb1c80e999721de7fa6f3"
+  },
+  "output_sha256": "f92327e512eef05ef6bd9aa431d12f698451ebfd627f65ef19e3cf32c1c45b84",
+  "offline_guard_mutation_check": {
+    "method": "Remove one raise statement at a time in an isolated copy and rerun its unittest files; detection means nonzero exit or an eight-second mutant timeout. Live-model scripts are excluded.",
+    "mutations": [
+      {
+        "file": "lab.py",
+        "line": 47,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 105,
+        "detected": true
+      },
+      {
+        "file": "lab.py",
+        "line": 116,
+        "detected": true
+      }
+    ]
+  }
+}

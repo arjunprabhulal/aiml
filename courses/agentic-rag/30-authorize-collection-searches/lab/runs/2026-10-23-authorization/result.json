@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "mode": "actual-loopback-http-public-fixture-authorization",
+  "model_called": false,
+  "observations": [
+    {
+      "name": "unknown_identity",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 401,
+      "body": {
+        "error": {
+          "code": "unauthenticated"
+        }
+      }
+    },
+    {
+      "name": "collection_denied",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 403,
+      "body": {
+        "error": {
+          "code": "collection_denied"
+        }
+      }
+    },
+    {
+      "name": "authorized_search",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 200,
+      "body": {
+        "principal": "editor",
+        "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "query": "file",
+          "collection": "files",
+          "version": "3.12",
+          "k": 2
+        },
+        "search_request_id": "b98a6fd39b4469ca1e9d593ba26760eb9323ca7151a860624d18d77132ea4966",
+        "results": [
+          {
+            "principal": "editor",
+            "collection": "files",
+            "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "b98a6fd39b4469ca1e9d593ba26760eb9323ca7151a860624d18d77132ea4966",
+            "rank": 1,
+            "native_score": -1.6120689655172415e-06,
+            "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+            "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "byte_count": 154,
+            "issued_id": "1f3d30af4901e605229346c82d152e52"
+          },
+          {
+            "principal": "editor",
+            "collection": "files",
+            "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "b98a6fd39b4469ca1e9d593ba26760eb9323ca7151a860624d18d77132ea4966",
+            "rank": 2,
+            "native_score": -1.3203883495145633e-06,
+            "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "source_id": "path-write",
+            "version": "3.12",
+            "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+            "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+            "byte_count": 224,
+            "issued_id": "de5f6d5a226ab7b569c6085d92b5f117"
+          }
+        ]
+      }
+    },
+    {
+      "name": "authorized_read",
+      "method": "POST",
+      "path": "/read",
+      "status_code": 200,
+      "body": {
+        "principal": "editor",
+        "collection": "files",
+        "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "search_request_id": "b98a6fd39b4469ca1e9d593ba26760eb9323ca7151a860624d18d77132ea4966",
+        "rank": 1,
+        "native_score": -1.6120689655172415e-06,
+        "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+        "source_id": "path-read",
+        "version": "3.12",
+        "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+        "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+        "start_line": 1,
+        "end_line": 1,
+        "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+        "byte_count": 154,
+        "issued_id": "1f3d30af4901e605229346c82d152e52",
+        "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+        "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+        "result_sha256": "afa0d28da92290a84385faba1e50b71201cb1a4c90627afe97acd4556aa8e109"
+      }
+    },
+    {
+      "name": "foreign_handle",
+      "method": "POST",
+      "path": "/read",
+      "status_code": 403,
+      "body": {
+        "error": {
+          "code": "collection_denied"
+        }
+      }
+    },
+    {
+      "name": "tampered_handle",
+      "method": "POST",
+      "path": "/read",
+      "status_code": 403,
+      "body": {
+        "error": {
+          "code": "handle_binding_mismatch"
+        }
+      }
+    },
+    {
+      "name": "eligible_before_k",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 200,
+      "body": {
+        "principal": "reader",
+        "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "query": "file",
+          "collection": "serialization",
+          "version": "3.12",
+          "k": 1
+        },
+        "search_request_id": "d45bff89d14d764520ae0c073a2f7d5e91b918322ff799e888286dfddb228a0b",
+        "results": [
+          {
+            "principal": "reader",
+            "collection": "serialization",
+            "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "d45bff89d14d764520ae0c073a2f7d5e91b918322ff799e888286dfddb228a0b",
+            "rank": 1,
+            "native_score": -1.352622061482821e-06,
+            "passage_id": "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "source_id": "json-text",
+            "version": "3.12",
+            "document_revision": "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a",
+            "source_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+            "byte_count": 199,
+            "issued_id": "6afdce4328b7a71396113c09bf7b22e6"
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_boolean_k",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 422,
+      "body": {
+        "error": {
+          "code": "invalid_request"
+        }
+      }
+    },
+    {
+      "name": "empty_matches",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 200,
+      "body": {
+        "principal": "editor",
+        "policy_id": "0b9b91312bdcd4070944dbba0616396aa12e4d05b8893fc2d3dffdfcf85f2933",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "query": "zzzz",
+          "collection": "files",
+          "version": "3.12",
+          "k": 2
+        },
+        "search_request_id": "ea2156f3143c29769c55518c788f2b3fdaf6dc7ea4264b84db7a5fd4555eb873",
+        "results": []
+      }
+    },
+    {
+      "name": "controlled_tool_failure",
+      "method": "POST",
+      "path": "/search",
+      "status_code": 503,
+      "body": {
+        "error": {
+          "code": "tool_failure"
+        }
+      }
+    }
+  ]
+}

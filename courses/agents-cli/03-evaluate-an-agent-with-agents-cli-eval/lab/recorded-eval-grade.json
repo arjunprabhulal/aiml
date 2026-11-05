@@ -1,0 +1,134 @@
+{
+  "cli_version": "1.11.0",
+  "execution_mode": "actual-hosted-agent-traces-and-custom-function-grading",
+  "generate": {
+    "command": "agents-cli eval generate --dataset tests/eval/datasets/docuctl-eval.json --output artifacts/traces/docuctl-traces.json --concurrency 2",
+    "discovered_root_agent_name": "docuctl_docs",
+    "cases_populated": 3
+  },
+  "grade": {
+    "command": "agents-cli eval grade --traces artifacts/traces/docuctl-traces.json --config tests/eval/eval_config.yaml --output artifacts/eval_results --project vertex-ai-experminent",
+    "exit_code": 0,
+    "summary_metrics": [
+      {
+        "metric_name": "command_flag_accuracy",
+        "num_cases_total": 3,
+        "num_cases_valid": 3,
+        "num_cases_error": 0,
+        "mean_score": 1.0,
+        "stdev_score": 0.0,
+        "pass_rate": null
+      },
+      {
+        "metric_name": "agent_turn_count",
+        "num_cases_total": 3,
+        "num_cases_valid": 3,
+        "num_cases_error": 0,
+        "mean_score": 1.0,
+        "stdev_score": 0.0,
+        "pass_rate": null
+      }
+    ],
+    "case_results": [
+      {
+        "eval_case_index": 0,
+        "response_candidate_results": [
+          {
+            "response_index": 0,
+            "metric_results": {
+              "command_flag_accuracy": {
+                "metric_name": "command_flag_accuracy",
+                "score": 1.0,
+                "explanation": "has_v2_cmd=True, used_removed=False",
+                "rubric_verdicts": null,
+                "raw_output": null,
+                "error_message": null
+              },
+              "agent_turn_count": {
+                "metric_name": "agent_turn_count",
+                "score": 1.0,
+                "explanation": null,
+                "rubric_verdicts": null,
+                "raw_output": null,
+                "error_message": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "eval_case_index": 1,
+        "response_candidate_results": [
+          {
+            "response_index": 0,
+            "metric_results": {
+              "command_flag_accuracy": {
+                "metric_name": "command_flag_accuracy",
+                "score": 1.0,
+                "explanation": "has_v2_cmd=True, used_removed=False",
+                "rubric_verdicts": null,
+                "raw_output": null,
+                "error_message": null
+              },
+              "agent_turn_count": {
+                "metric_name": "agent_turn_count",
+                "score": 1.0,
+                "explanation": null,
+                "rubric_verdicts": null,
+                "raw_output": null,
+                "error_message": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "eval_case_index": 2,
+        "response_candidate_results": [
+          {
+            "response_index": 0,
+            "metric_results": {
+              "command_flag_accuracy": {
+                "metric_name": "command_flag_accuracy",
+                "score": 1.0,
+                "explanation": "has_v2_cmd=True, used_removed=False",
+                "rubric_verdicts": null,
+                "raw_output": null,
+                "error_message": null
+              },
+              "agent_turn_count": {
+                "metric_name": "agent_turn_count",
+                "score": 1.0,
+                "explanation": null,
+                "rubric_verdicts": null,
+                "raw_output": null,
+                "error_message": null
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "failures": {
+    "ambiguous_prompt_and_agent_data": {
+      "eval_case_id": "broken_ambiguous_case",
+      "error": "Case has both top-level 'prompt' and agent_data.turns; ambiguous."
+    },
+    "dropped_case_silent_exit_zero": {
+      "cli_exit_code": 0,
+      "warning": "Inference summary: 2/3 succeeded, 1 failed. Warning: Artifact contains only the 2 successful case(s); 1 failed case(s) were dropped.",
+      "summary_metrics_with_drop": [
+        {
+          "metric_name": "command_flag_accuracy",
+          "num_cases_total": 2,
+          "num_cases_valid": 2,
+          "num_cases_error": 0,
+          "mean_score": 1.0,
+          "stdev_score": 0.0
+        }
+      ]
+    }
+  },
+  "recorded_at": "2026-10-26T02:22:09.217802+00:00"
+}

@@ -1,0 +1,114 @@
+{
+  "gemma4:e2b": {
+    "complete": {
+      "ollama-native": {
+        "text": "HTTP stands for Hypertext Transfer Protocol.",
+        "finish": "stop",
+        "input_tokens": 26,
+        "output_tokens": 9
+      },
+      "openai-compatible": {
+        "text": "HTTP stands for Hypertext Transfer Protocol.",
+        "finish": "stop",
+        "input_tokens": 26,
+        "output_tokens": 9
+      },
+      "agree": true
+    },
+    "output-limit": {
+      "ollama-native": {
+        "text": "HTTP stands for",
+        "finish": "length",
+        "input_tokens": 26,
+        "output_tokens": 3
+      },
+      "openai-compatible": {
+        "text": "HTTP stands for",
+        "finish": "length",
+        "input_tokens": 26,
+        "output_tokens": 3
+      },
+      "agree": true
+    },
+    "missing-model": {
+      "ollama-native": {
+        "error": "model_not_found",
+        "message": "The server does not have this model. Pull it explicitly."
+      },
+      "openai-compatible": {
+        "error": "model_not_found",
+        "message": "The server does not have this model. Pull it explicitly."
+      },
+      "agree": true
+    },
+    "thinking-left-on": {
+      "ollama-native": {
+        "text": "HTTP stands for Hypertext Transfer Protocol.",
+        "finish": "stop",
+        "input_tokens": 28,
+        "output_tokens": 9
+      },
+      "openai-compatible": {
+        "text": "HTTP stands for Hypertext Transfer Protocol.",
+        "finish": "stop",
+        "input_tokens": 28,
+        "output_tokens": 9
+      },
+      "agree": true
+    }
+  },
+  "qwen3.5:0.8b": {
+    "complete": {
+      "ollama-native": {
+        "text": "HTTP stands for Hypertext Transfer Protocol.",
+        "finish": "stop",
+        "input_tokens": 29,
+        "output_tokens": 9
+      },
+      "openai-compatible": {
+        "text": "HTTP stands for Hypertext Transfer Protocol.",
+        "finish": "stop",
+        "input_tokens": 29,
+        "output_tokens": 9
+      },
+      "agree": true
+    },
+    "output-limit": {
+      "ollama-native": {
+        "text": "HTTP stands for",
+        "finish": "length",
+        "input_tokens": 29,
+        "output_tokens": 3
+      },
+      "openai-compatible": {
+        "text": "HTTP stands for",
+        "finish": "length",
+        "input_tokens": 29,
+        "output_tokens": 3
+      },
+      "agree": true
+    },
+    "missing-model": {
+      "ollama-native": {
+        "error": "model_not_found",
+        "message": "The server does not have this model. Pull it explicitly."
+      },
+      "openai-compatible": {
+        "error": "model_not_found",
+        "message": "The server does not have this model. Pull it explicitly."
+      },
+      "agree": true
+    },
+    "thinking-left-on": {
+      "ollama-native": {
+        "error": "protocol",
+        "message": "The reply has no text. Check that thinking is turned off."
+      },
+      "openai-compatible": {
+        "error": "protocol",
+        "message": "The reply has no text. Check that thinking is turned off."
+      },
+      "agree": true
+    }
+  }
+}

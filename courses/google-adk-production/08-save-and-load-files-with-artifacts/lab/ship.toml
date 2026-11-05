@@ -1,0 +1,20 @@
+[deploy]
+name = "docs-api"
+build = "make build"
+
+[environments.staging]
+cluster = "eu-west-staging"
+replicas = 2
+
+[environments.production]
+cluster = "eu-west-prod"
+replicas = 6
+
+[env.production]
+LOG_LEVEL = "info"
+DATABASE_URL = "postgres://docs:hunter2@db.internal:5432/docs"
+SEARCH_INDEX_URL = "secret://prod-search-index-url"
+
+[hooks]
+pre_deploy = "alembic upgrade head"
+post_deploy = "make smoke-test"

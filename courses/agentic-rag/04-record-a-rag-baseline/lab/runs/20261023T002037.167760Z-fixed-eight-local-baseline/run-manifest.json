@@ -1,0 +1,149 @@
+{
+  "created_at_utc": "2026-10-23T00:21:21.756517+00:00",
+  "plan": {
+    "mode": "plan_only_no_model_call",
+    "case_ids": [
+      "utf8-write",
+      "replace-file",
+      "json-result-type",
+      "backup-schedule",
+      "read-newline-312",
+      "read-newline-313",
+      "json-throughput",
+      "create-parents"
+    ],
+    "splits": [
+      "development",
+      "held_out"
+    ],
+    "include_held_out": true,
+    "trials": 1,
+    "config": {
+      "embedding_model": "qwen3-embedding:0.6b",
+      "answer_model": "gemma4:e2b",
+      "query_instruction": "Retrieve Python documentation that answers the developer question",
+      "k": 2,
+      "splitter": {
+        "name": "RecursiveCharacterTextSplitter",
+        "chunk_size": 280,
+        "chunk_overlap": 40
+      },
+      "temperature": 0,
+      "num_predict": 400,
+      "structured_output_method": "json_schema",
+      "trials": 1,
+      "embedding_http_timeout_seconds": 120,
+      "generation_http_timeout_seconds": 180,
+      "whole_child_timeout_seconds": 1200,
+      "automatic_retries": 0,
+      "judge_calls": 0
+    },
+    "case_set_sha256": "1603dde3e9e4d3fbafb14126e5c002584c6f945c29968488b01406618a6035b9",
+    "corpus_canonical_sha256": "acd2e77291bdfae40dcc8aacbaec250e507375ca8e55511c31eaa630d3b531cb",
+    "rubric_sha256": "9879ecc82fcfb369b2fbbb1993fe841db97ebd11a05e7e825c772764ceb47b47",
+    "code_bundle_sha256": "f1d5776e582b503c87e8842f9c650e5c175a4106931069ef7bc9813849aa8e6c",
+    "model_digests": {
+      "qwen3-embedding:0.6b": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+      "gemma4:e2b": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2"
+    },
+    "max_document_embedding_calls": 1,
+    "max_query_embedding_calls": 8,
+    "max_generation_calls": 8,
+    "max_inference_http_calls": 17,
+    "requested_generation_token_ceiling": 3200,
+    "max_metadata_calls": 3,
+    "teaching_split": "Public4development/4held_out fixtures; not unseen external data.",
+    "root_review_required_before_inference": true
+  },
+  "execution_mode": "fresh_local_inference",
+  "source_hashes": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "d03fbebbf743197f91fdff697ffc978c2213d55809bba78b5eda38b2443218df",
+    "baseline-source-versions.json": "119c15f66b3500e162aeeeb5869be21d3255d76068dba204bc4284fe05fbd3cf",
+    "baseline.py": "27c7b1954e89043fd15001c3b2653f148ad00ac0fb288843a7ce839b3a57ca43",
+    "baseline_lib.py": "b3add549b0b169ab1d6eb1eec1758f82b891c25d2c5c852c6f2289ced233bd7f",
+    "baseline_task.py": "d647c468d8ce1d66943d0a53af49ee26c5ccb83959aea63c79f8dbdb24f8f0f1",
+    "data/cases.json": "7908df08f84fc1673f3772870c7da5a62b94fce681516dce0708dddd5e6903f5",
+    "data/corpus-manifest.json": "924d66bc01161ee6aee09676afbadb5c56c62e9dd996c50083dab744fcc76a93",
+    "data/docs.json": "b1b2bb8452ce7177e6653258a91ef6961eec722eab56698453b7e38606d17a4b",
+    "data/held-out.lock.json": "567169e5fdbb60468ac801831562ff49be09703dae80fe1f58021aa9beb91089",
+    "data/sources.json": "b1b2bb8452ce7177e6653258a91ef6961eec722eab56698453b7e38606d17a4b",
+    "eval_task.py": "9ffe18bffb12da65ca21ba49611a15f23f13d8be6af054b68fc9c90647713530",
+    "frozen-rubric.json": "9879ecc82fcfb369b2fbbb1993fe841db97ebd11a05e7e825c772764ceb47b47",
+    "local_models.py": "7a72d932bd3c81323211f53d097641bbdef6bbd1d3814f7522d978f4041e5916",
+    "pipeline_ids.py": "497a7252fceb7c1ebb2f9fd6d19630472b0cf861fc4190065873e06f50813fd9",
+    "pyproject.toml": "54a0efac39adbb0fdfbba1f8600f2d8cc51d27b959892427db8c6db6e863b6c1",
+    "rag_dataset.py": "f9814cde465fbfbdff06129279543ec92e56a83abadfc6b93f2131ed4af541bf",
+    "requirements-lock.txt": "9ee5dbc7310835f44255d833cb506ff8506543d672133dde0bc556105f9953aa",
+    "source-versions.json": "e783e70c4b8e4b577ebe8b827af0e65383b033f6e6d21d586faed051a24cacfc",
+    "src/agentic_rag/__init__.py": "33e3fb0ec92052d03b678bd67a77de17d78b8f3bb178ae37c2661051e504ae97",
+    "src/agentic_rag/concepts.py": "6ed0eba26ab499d59294c1f0838fa5d8591da93cfecef71e74baeefb658c2850",
+    "src/agentic_rag/request_trace.py": "f53481776b34813d1fc0151e207ed21edd4378119da2302e982d4c5ebcc5b0ae",
+    "test_baseline.py": "7db838b699e75af92105505bc6b369bfc637e0c03e70465eaa8eea8ff094317c",
+    "test_dataset.py": "d9fcda7a247e5d0b67e307492c0e6a0c215891b4a54d36f9843a0156cb6c9a4d",
+    "vendor/evals/harness.py": "cc41a86aeb449476abbb983fae570daeef45aa970206aae7a1da20c2026b19a5",
+    "vendor/evals/leakcheck.py": "7b01ffb1dba8869b45317dc3b6a987af25a9edeb0cbd2d909c9eb8a55fe26ba6",
+    "vendor/evals/retrieval_scores.py": "759b6bb675e9c1836394f4223ea1103e36391d6c1037fcf54412c596b99e9c80"
+  },
+  "artifacts": {
+    "recording.json": "193d4c3c91e66432d3717bf85dced0034b572e804cd50efc246042b574baeaa0",
+    "case-observations.json": "00b9d380c5f67ffa80f129bb5d22e4c137b8dcbd82856e3af41add5f7f8e475a",
+    "vectors.json": "bbadb40c26e0241de36f09f6068354f7589b9ce1a38bb49ba6998be4ca3b25e6",
+    "automatic-contracts.json": "62010939ccd5350c4d8b6f579417a63b4f88e211eece20f740e567005688c48e",
+    "measurements.json": "e551c89f1d0623427c364bf0dc0e5a4e20bd9c98b2d2087e3fd3b3245585bda5",
+    "human-review.json": "971a3048eeb84adab66114c6e31f507ce88753de5d868e8f50790719abeaca24"
+  },
+  "index_identity": {
+    "corpus_sha256": "b1b2bb8452ce7177e6653258a91ef6961eec722eab56698453b7e38606d17a4b",
+    "logical_index_id": "0cfbea2af45b2bb9b0cc42e733882e6da702ee0378d84493f1b1d58431168257",
+    "index_descriptor": {
+      "corpus_canonical_sha256": "acd2e77291bdfae40dcc8aacbaec250e507375ca8e55511c31eaa630d3b531cb",
+      "pipeline_corpus_file_sha256": "b1b2bb8452ce7177e6653258a91ef6961eec722eab56698453b7e38606d17a4b",
+      "embedding_model": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+      "splitter": {
+        "name": "RecursiveCharacterTextSplitter",
+        "chunk_size": 280,
+        "chunk_overlap": 40
+      },
+      "chunk_ids": [
+        "path-write:b71a2d18a53d86bf",
+        "path-read:1f1129b8d1011a82",
+        "json-text:8a17e251a41ccb3b",
+        "path-read-3-13:3f86296ba6f04cc2"
+      ],
+      "vectors_sha256": "e97cdb7c34c49d9942784cba74c87b3b9e589b9a88abc3a31f4e85da7eaec7d8"
+    },
+    "model_digests": {
+      "qwen3-embedding:0.6b": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+      "gemma4:e2b": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2"
+    }
+  },
+  "document_embedding_seconds": 1.7241103330161422,
+  "index_build_seconds": 0.0014106669696047902,
+  "human_semantics": "unreviewed; automatic passes are not factual accuracy",
+  "observed_counts": {
+    "documents": 1,
+    "queries": {
+      "utf8-write": 1,
+      "replace-file": 1,
+      "json-result-type": 1,
+      "backup-schedule": 1,
+      "read-newline-312": 1,
+      "read-newline-313": 1,
+      "json-throughput": 1,
+      "create-parents": 1
+    },
+    "generation": {
+      "utf8-write": 1,
+      "replace-file": 1,
+      "json-result-type": 1,
+      "backup-schedule": 1,
+      "read-newline-312": 1,
+      "read-newline-313": 1,
+      "json-throughput": 1,
+      "create-parents": 1
+    },
+    "metadata": 1
+  },
+  "budget": "No retry/repair/judge. One trial; public teaching split, not unseen benchmark."
+}

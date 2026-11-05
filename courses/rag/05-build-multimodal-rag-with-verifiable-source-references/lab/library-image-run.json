@@ -1,0 +1,110 @@
+{
+  "recorded_at": "2026-10-22T12:39:10.742648+00:00",
+  "model": "gemini-3.8-flash",
+  "runs_per_mode": 1,
+  "question": "Which model size has the lowest p95 latency, and what is its value in ms?",
+  "expected": {
+    "model_size": "medium",
+    "latency_ms": 380
+  },
+  "chart_values_are": "supplied illustration values, not measurements of this pipeline",
+  "selected": [
+    {
+      "id": "b1dc8253-4639-55bd-abe8-41db19dfa716",
+      "source": "latency-p95",
+      "image": "images/latency-p95.png",
+      "pixel_sha256": "da71cc486460a97d5c72bbb6950d5d4a4460f3df90a184b6485b4f99eeb3de1f",
+      "team": "platform"
+    },
+    {
+      "id": "35471ac0-6ad8-5d0a-b0ea-cc9730cdba39",
+      "source": "latency-p50",
+      "image": "images/latency-p50.png",
+      "pixel_sha256": "96794097a2092fd56a9a1176a9cfa350560cd83156e95471ef43ecd4d6b1f6d3",
+      "team": "platform"
+    }
+  ],
+  "results": [
+    {
+      "mode": "descriptions",
+      "answer": {
+        "status": "not_in_sources",
+        "answer": "The provided sources do not include the specific latency values for the model sizes.",
+        "citations": []
+      },
+      "citation_error": null,
+      "retrieved": [
+        {
+          "source_id": "b1dc8253-4639-55bd-abe8-41db19dfa716",
+          "source": "latency-p95",
+          "text": "Chart: p95 latency by model. The bars compare small, medium and large model sizes. Values are printed on the image."
+        },
+        {
+          "source_id": "35471ac0-6ad8-5d0a-b0ea-cc9730cdba39",
+          "source": "latency-p50",
+          "text": "Chart: p50 latency by model. The bars compare small, medium and large model sizes. Values are printed on the image."
+        }
+      ],
+      "usage": {
+        "input_tokens": 249,
+        "output_tokens": 341,
+        "total_tokens": 590,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 307
+        }
+      },
+      "response_metadata": {
+        "finish_reason": "STOP",
+        "model_name": "gemini-3.8-flash",
+        "safety_ratings": [],
+        "model_provider": "google_genai"
+      }
+    },
+    {
+      "mode": "images",
+      "answer": {
+        "status": "answered",
+        "answer": "Based on the p95 latency chart, the medium model size has the lowest p95 latency at 380 ms.",
+        "citations": [
+          {
+            "source_id": "b1dc8253-4639-55bd-abe8-41db19dfa716",
+            "quote": "p95 latency by model. The bars compare small, medium and large model sizes"
+          }
+        ]
+      },
+      "citation_error": null,
+      "retrieved": [
+        {
+          "source_id": "b1dc8253-4639-55bd-abe8-41db19dfa716",
+          "source": "latency-p95",
+          "text": "Chart: p95 latency by model. The bars compare small, medium and large model sizes. Values are printed on the image."
+        },
+        {
+          "source_id": "35471ac0-6ad8-5d0a-b0ea-cc9730cdba39",
+          "source": "latency-p50",
+          "text": "Chart: p50 latency by model. The bars compare small, medium and large model sizes. Values are printed on the image."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2494,
+        "output_tokens": 365,
+        "total_tokens": 2859,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "reasoning": 265
+        }
+      },
+      "response_metadata": {
+        "finish_reason": "STOP",
+        "model_name": "gemini-3.8-flash",
+        "safety_ratings": [],
+        "model_provider": "google_genai"
+      }
+    }
+  ]
+}

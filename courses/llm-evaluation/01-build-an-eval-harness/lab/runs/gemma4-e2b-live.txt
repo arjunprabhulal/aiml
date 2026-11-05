@@ -1,0 +1,36 @@
+.........................F..........F..............                      [100%]Running teardown with pytest sessionfinish...
+
+=================================== FAILURES ===================================
+______________________ test_priority[import-drops-tasks] _______________________
+
+case = Case(id='import-drops-tasks', issue='Importing a CSV with 500 rows with `tracker import tasks.csv` reports success, bu... file is already moved to the archive folder.', expected=Expected(label='bug', priority='p0'), must_mention=['import'])
+output = Triage(label='bug', priority='p1', summary='tracker import tasks.csv fails to import all 500 rows, dropping tasks silently.')
+
+    @pytest.mark.parametrize("case", critical, ids=lambda c: c.id)
+    def test_priority(case, output):
+>       assert output.priority == case.expected.priority
+E       AssertionError: assert 'p1' == 'p0'
+E         
+E         - p0
+E         + p1
+
+test_triage.py:25: AssertionError
+______________ test_summary_is_short_and_specific[where-is-data] _______________
+
+case = Case(id='where-is-data', issue='Where does tracker store its database on disk? I want to include it in my backups.', expected=Expected(label='question', priority=None), must_mention=['backup'])
+output = Triage(label='question', priority='p2', summary='Where does tracker store its database on disk?')
+
+    @every_case
+    def test_summary_is_short_and_specific(case, output):
+        words = output.summary.split()
+        assert len(words) <= 20, f"{len(words)} words"
+        missing = [term for term in case.must_mention if term not in output.summary.lower()]
+>       assert not missing, f"summary lacks {missing}: {output.summary!r}"
+E       AssertionError: summary lacks ['backup']: 'Where does tracker store its database on disk?'
+E       assert not ['backup']
+
+test_triage.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED test_triage.py::test_priority[import-drops-tasks] - AssertionError: as...
+FAILED test_triage.py::test_summary_is_short_and_specific[where-is-data] - As...
+2 failed, 49 passed in 445.97s (0:07:25)

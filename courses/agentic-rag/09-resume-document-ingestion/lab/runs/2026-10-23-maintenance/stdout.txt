@@ -1,0 +1,228 @@
+{
+  "execution_mode": "offline-sqlite-source-maintenance",
+  "model_called": false,
+  "sqlite_version": "3.53.4",
+  "snapshot_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+  "steps": [
+    {
+      "operation": "interrupt-before-second-source-commit",
+      "status": "interrupted",
+      "error": "injected interruption before source commit",
+      "state": {
+        "jobs": [
+          [
+            "python-docs-v1",
+            "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "53a35a4f444bf0ea58c4561b94d9b468a611c0439be1e0006467d306afb02bed"
+          ]
+        ],
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ]
+        ],
+        "chunks": [
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "checkpoints": [
+          [
+            "python-docs-v1",
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ]
+        ]
+      }
+    },
+    {
+      "operation": "close-reopen-and-resume",
+      "status": "completed",
+      "actions": [
+        {
+          "source_id": "json-text",
+          "action": "skipped"
+        },
+        {
+          "source_id": "path-read",
+          "action": "committed"
+        },
+        {
+          "source_id": "path-read-3-13",
+          "action": "committed"
+        },
+        {
+          "source_id": "path-write",
+          "action": "committed"
+        }
+      ],
+      "state": {
+        "jobs": [
+          [
+            "python-docs-v1",
+            "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "53a35a4f444bf0ea58c4561b94d9b468a611c0439be1e0006467d306afb02bed"
+          ]
+        ],
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "path-write",
+            "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7"
+          ]
+        ],
+        "chunks": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "checkpoints": [
+          [
+            "python-docs-v1",
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "python-docs-v1",
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "python-docs-v1",
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "python-docs-v1",
+            "path-write",
+            "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7"
+          ]
+        ]
+      }
+    },
+    {
+      "operation": "retry-completed-job",
+      "status": "completed",
+      "actions": [
+        {
+          "source_id": "json-text",
+          "action": "skipped"
+        },
+        {
+          "source_id": "path-read",
+          "action": "skipped"
+        },
+        {
+          "source_id": "path-read-3-13",
+          "action": "skipped"
+        },
+        {
+          "source_id": "path-write",
+          "action": "skipped"
+        }
+      ],
+      "state": {
+        "jobs": [
+          [
+            "python-docs-v1",
+            "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "53a35a4f444bf0ea58c4561b94d9b468a611c0439be1e0006467d306afb02bed"
+          ]
+        ],
+        "sources": [
+          [
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "path-write",
+            "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7"
+          ]
+        ],
+        "chunks": [
+          [
+            "bdaeff5ae3ab88b70b12b9b6d4a0a46de45ea14520b971a7756cb03bbd384f35",
+            "path-read-3-13",
+            "In Python 3.13, Path.read_text accepts encoding, errors and newline. The newline parameter was added in Python 3.13. The method returns decoded file text and closes the file."
+          ],
+          [
+            "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "path-write",
+            "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written."
+          ],
+          [
+            "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "path-read",
+            "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file."
+          ],
+          [
+            "e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c",
+            "json-text",
+            "json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select the encoding used by a file writer."
+          ]
+        ],
+        "checkpoints": [
+          [
+            "python-docs-v1",
+            "json-text",
+            "0c4b565b2b1900787d6da9f8539c471f8cb2245c00abf887a57d460364abc57a"
+          ],
+          [
+            "python-docs-v1",
+            "path-read",
+            "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2"
+          ],
+          [
+            "python-docs-v1",
+            "path-read-3-13",
+            "d68df3e7ea1e24af3f40366a61402fc80558fefe2ef5f3eda928de0e01820db9"
+          ],
+          [
+            "python-docs-v1",
+            "path-write",
+            "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {"id": "install", "title": "Install tracker", "text": "Install tracker with `pipx install tracker-cli`. Version 2.4 needs Python 3.10 or later. Run `tracker --version` to check the install."},
+  {"id": "init", "title": "Create a task list", "text": "Run `tracker init --dir ~/tasks` to create a task list. The `--dir` option sets where the list lives; without it, tracker uses ~/.tracker. The command fails if the folder already contains a task list."},
+  {"id": "storage", "title": "Where tracker stores data", "text": "Each task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it."},
+  {"id": "sync", "title": "Sync with a remote", "text": "`tracker sync` pushes local changes and pulls remote ones. Sync takes a lock on the remote, so a second machine that syncs at the same time waits up to 30 seconds and then exits with 'remote is locked'. Running sync from two machines at once is safe."},
+  {"id": "archive", "title": "Archive and delete", "text": "`tracker archive ID` hides a task from `tracker list` but keeps it in tasks.db; `tracker restore ID` brings it back. `tracker delete ID` removes the task permanently and cannot be undone."},
+  {"id": "import", "title": "Import from CSV", "text": "`tracker import FILE.csv` reads columns title, due and tags. Rows without a title are skipped and counted in the summary line. Use `--dry-run` to see the summary without writing tasks."},
+  {"id": "config", "title": "Configuration keys", "text": "tracker reads config.toml from the list folder. Allowed keys are default_project, week_start (monday or sunday), color (auto, always or never) and editor."},
+  {"id": "output", "title": "Output formats", "text": "`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows."},
+  {"id": "tokens", "title": "API tokens", "text": "`tracker login` stores an API token in the system keychain. `tracker logout` removes it. Tokens expire after 90 days; run `tracker login` again to get a new one."},
+  {"id": "debug", "title": "Debug logging", "text": "`--debug` writes request details to debug.log in the list folder. Version 2.4.1 redacts API tokens in debug output; earlier versions do not."}
+]

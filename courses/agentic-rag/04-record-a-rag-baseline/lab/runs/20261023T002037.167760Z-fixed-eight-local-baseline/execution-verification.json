@@ -1,0 +1,334 @@
+{
+  "verified_at_utc": "2026-10-23T00:23:34.124803+00:00",
+  "execution_author_not_independent_approval": true,
+  "run": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline",
+  "checks": {
+    "source_27_byte_exact": true,
+    "run_source_binding": true,
+    "all_6_saved_artifact_bindings": true,
+    "dataset_4_plus_4_unchanged": true,
+    "one_doc_eight_queries_eight_generations": true,
+    "one_metadata_all18_status200": true,
+    "only_observed_local_connections": true,
+    "new_real_4_document_8_question_1024_vectors": true,
+    "human_review_stays_unreviewed": true,
+    "assistant_review_separate_bound": true,
+    "prior97_files_preserved": true,
+    "unsupported_metrics_remain_null": true,
+    "incomplete_empty_length_retained": true,
+    "frozen_pipeline_prompt_no_oracle": true,
+    "unchanged_exact_generation_request_limits": true
+  },
+  "passed_checks": 15,
+  "source_bundle_sha256": "f1d5776e582b503c87e8842f9c650e5c175a4106931069ef7bc9813849aa8e6c",
+  "recording_file_sha256": "193d4c3c91e66432d3717bf85dced0034b572e804cd50efc246042b574baeaa0",
+  "http_ledger_sha256": "98864fe92ff03cc325a6a1e69a2f44b95874ddc466c04424a4699e3d6dbbdd58",
+  "actual_http_counts": {
+    "documents": 1,
+    "queries": {
+      "utf8-write": 1,
+      "replace-file": 1,
+      "json-result-type": 1,
+      "backup-schedule": 1,
+      "read-newline-312": 1,
+      "read-newline-313": 1,
+      "json-throughput": 1,
+      "create-parents": 1
+    },
+    "generation": {
+      "utf8-write": 1,
+      "replace-file": 1,
+      "json-result-type": 1,
+      "backup-schedule": 1,
+      "read-newline-312": 1,
+      "read-newline-313": 1,
+      "json-throughput": 1,
+      "create-parents": 1
+    },
+    "metadata": 1
+  },
+  "actual_inference_http_calls": 17,
+  "metadata_http_calls": 1,
+  "hosted_calls": 0,
+  "new_downloads": 0,
+  "reruns": 0,
+  "automatic_contract_summary": {
+    "development": {
+      "cases": 4,
+      "trials": 4,
+      "pass": 3,
+      "fail": 1,
+      "incomplete": 0,
+      "cases_passing_any_trial": 3,
+      "cases_passing_every_trial": 3,
+      "per_case": {
+        "utf8-write": {
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0
+        },
+        "replace-file": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "json-result-type": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "backup-schedule": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        }
+      },
+      "by_tag": {
+        "intent_family": {
+          "path-write": {
+            "cases": 2,
+            "pass": 1,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "json-return": {
+            "cases": 1,
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "service-policy": {
+            "cases": 1,
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "python_version": {
+          "3.12": {
+            "cases": 4,
+            "pass": 3,
+            "fail": 1,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "held_out": {
+      "cases": 4,
+      "trials": 4,
+      "pass": 2,
+      "fail": 1,
+      "incomplete": 1,
+      "cases_passing_any_trial": 2,
+      "cases_passing_every_trial": 2,
+      "per_case": {
+        "read-newline-312": {
+          "pass": 0,
+          "fail": 1,
+          "incomplete": 0
+        },
+        "read-newline-313": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "json-throughput": {
+          "pass": 1,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "create-parents": {
+          "pass": 0,
+          "fail": 0,
+          "incomplete": 1
+        }
+      },
+      "by_tag": {
+        "intent_family": {
+          "read-newline": {
+            "cases": 2,
+            "pass": 1,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "runtime-throughput": {
+            "cases": 1,
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "parent-directory-policy": {
+            "cases": 1,
+            "pass": 0,
+            "fail": 0,
+            "incomplete": 1
+          }
+        },
+        "python_version": {
+          "3.12": {
+            "cases": 3,
+            "pass": 1,
+            "fail": 1,
+            "incomplete": 1
+          },
+          "3.13": {
+            "cases": 1,
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        }
+      }
+    }
+  },
+  "measurements_by_split": {
+    "development": {
+      "cases": 4,
+      "supported": 3,
+      "unsupported": 1,
+      "retrieval_measurements": 3,
+      "retrieval_unmeasured_errors": 0,
+      "target_hits_at_2": 2,
+      "mean_target_reciprocal_rank_at_2": 0.6666666666666666,
+      "status_matches": 3,
+      "false_answer_on_unsupported": 0,
+      "false_abstention_on_supported": 1,
+      "missing_or_error_outputs": 0,
+      "human_semantics_reviewed": 0,
+      "scope": "One trial per public teaching case, not a general accuracy estimate."
+    },
+    "held_out": {
+      "cases": 4,
+      "supported": 2,
+      "unsupported": 2,
+      "retrieval_measurements": 2,
+      "retrieval_unmeasured_errors": 0,
+      "target_hits_at_2": 2,
+      "mean_target_reciprocal_rank_at_2": 0.75,
+      "status_matches": 2,
+      "false_answer_on_unsupported": 0,
+      "false_abstention_on_supported": 1,
+      "missing_or_error_outputs": 1,
+      "human_semantics_reviewed": 0,
+      "scope": "One trial per public teaching case, not a general accuracy estimate."
+    }
+  },
+  "assistant_inspection_summary": {
+    "fail": 1,
+    "pass": 5,
+    "needs_review": 2
+  },
+  "wire_observations": [
+    {
+      "case_id": "utf8-write",
+      "streamed_final_content_chars": 177,
+      "streamed_thinking_chars": 1073,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 516,
+      "reported_eval_count": 44,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "replace-file",
+      "streamed_final_content_chars": 107,
+      "streamed_thinking_chars": 988,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 497,
+      "reported_eval_count": 39,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "json-result-type",
+      "streamed_final_content_chars": 122,
+      "streamed_thinking_chars": 909,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 475,
+      "reported_eval_count": 38,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "backup-schedule",
+      "streamed_final_content_chars": 172,
+      "streamed_thinking_chars": 1080,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 491,
+      "reported_eval_count": 40,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "read-newline-312",
+      "streamed_final_content_chars": 215,
+      "streamed_thinking_chars": 1094,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 554,
+      "reported_eval_count": 59,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "read-newline-313",
+      "streamed_final_content_chars": 187,
+      "streamed_thinking_chars": 1078,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 553,
+      "reported_eval_count": 60,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "json-throughput",
+      "streamed_final_content_chars": 177,
+      "streamed_thinking_chars": 1145,
+      "finish_reason": "stop",
+      "reported_prompt_eval_count": 500,
+      "reported_eval_count": 41,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    },
+    {
+      "case_id": "create-parents",
+      "streamed_final_content_chars": 0,
+      "streamed_thinking_chars": 1652,
+      "finish_reason": "length",
+      "reported_prompt_eval_count": 227,
+      "reported_eval_count": 400,
+      "separate_thinking_token_count": null,
+      "raw_ndjson_retained_in": "http-ledger.json"
+    }
+  ],
+  "reported_usage_total": {
+    "input_tokens": 3813,
+    "output_tokens": 721,
+    "separate_thinking_tokens": null,
+    "caution": "Provider reported fields only. Every stream included a thinking field, but no separate thinking token count was supplied. Requested num_predict=400 is preserved; do not infer exact reasoning tokens, total compute or per-channel accounting."
+  },
+  "timing_scope": {
+    "operator_total_seconds": 44.326352041971404,
+    "document_embedding_seconds": 1.7241103330161422,
+    "index_build_seconds": 0.0014106669696047902,
+    "query_times": "Use recording.json per-case latency_s, including fresh query embedding. automatic-contracts.json latency_s is replay grading time, not model latency."
+  },
+  "root_review_pending": true,
+  "public_article_or_preview_created": false,
+  "raw_links": {
+    "run-plan.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/run-plan.json",
+    "launch.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/launch.json",
+    "http-ledger.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/http-ledger.json",
+    "recording.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/recording.json",
+    "vectors.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/vectors.json",
+    "case-observations.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/case-observations.json",
+    "automatic-contracts.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/automatic-contracts.json",
+    "measurements.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/measurements.json",
+    "human-review.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/human-review.json",
+    "assistant-review.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/assistant-review.json",
+    "run-manifest.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/run-manifest.json",
+    "prior-files-preservation.json": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/prior-files-preservation.json",
+    "stdout.txt": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/stdout.txt",
+    "stderr.txt": "/Users/arjunprabhulal/aiml-labs/agentic-rag/lessons/record-a-rag-baseline/runs/20261023T002037.167760Z-fixed-eight-local-baseline/stderr.txt"
+  }
+}

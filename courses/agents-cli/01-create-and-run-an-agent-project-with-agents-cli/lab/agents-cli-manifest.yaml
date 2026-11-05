@@ -1,0 +1,17 @@
+name: docuctl-docs
+acli_version: 1.11.0
+agent_directory: app
+region: us-central1
+base_template: adk
+language: python
+framework: google-adk
+create_params:
+  root_agent_name: docuctl_docs
+  deployment_target: none
+  session_type: in_memory
+  cicd_runner: skip
+  is_a2a: true
+  agent_gateway: false
+  agent_guidance_filename: GEMINI.md
+  agent_runtime:
+    identity_default: agent_identity

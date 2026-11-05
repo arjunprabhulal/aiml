@@ -1,0 +1,349 @@
+{
+  "execution_mode": "CPU algorithm with controlled inputs; any latency/capacity coefficients are assumptions",
+  "gpu_catalog": [
+    {
+      "name": "example-small",
+      "memory_gb": 48.0,
+      "bandwidth_gbps": 864.0,
+      "bf16_tflops": 362.0,
+      "hourly_cost_usd": 1.55,
+      "ridge_point_flops_per_byte": 418.98
+    },
+    {
+      "name": "example-fast",
+      "memory_gb": 80.0,
+      "bandwidth_gbps": 3350.0,
+      "bf16_tflops": 989.0,
+      "hourly_cost_usd": 3.2,
+      "ridge_point_flops_per_byte": 295.22
+    },
+    {
+      "name": "example-large-memory",
+      "memory_gb": 141.0,
+      "bandwidth_gbps": 4800.0,
+      "bf16_tflops": 989.0,
+      "hourly_cost_usd": 3.8,
+      "ridge_point_flops_per_byte": 206.04
+    },
+    {
+      "name": "example-wide-bandwidth",
+      "memory_gb": 192.0,
+      "bandwidth_gbps": 8000.0,
+      "bf16_tflops": 2250.0,
+      "hourly_cost_usd": 6.2,
+      "ridge_point_flops_per_byte": 281.25
+    }
+  ],
+  "llama_8b_batch8": [
+    {
+      "gpu": "example-small",
+      "memory_gb": 48.0,
+      "required_memory_gb": 20.42,
+      "fits_single_gpu": true,
+      "ridge_point_flops_per_byte": 418.98,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 262144000000000.0,
+        "hbm_bytes": 18147483648.0,
+        "operational_intensity": 14445.2,
+        "ridge_point": 418.98,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 362.0,
+        "latency_ms": 724.155
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 128000000000.0,
+        "hbm_bytes": 18281701376.0,
+        "operational_intensity": 7.0,
+        "ridge_point": 418.98,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 6.05,
+        "latency_ms": 21.159
+      },
+      "ttft_ms": 724.15,
+      "tpot_ms": 21.159,
+      "decode_tokens_per_sec": 378.09,
+      "end_to_end_tokens_per_sec": 334.66,
+      "tokens_per_dollar": 777267.7
+    },
+    {
+      "gpu": "example-fast",
+      "memory_gb": 80.0,
+      "required_memory_gb": 20.42,
+      "fits_single_gpu": true,
+      "ridge_point_flops_per_byte": 295.22,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 262144000000000.0,
+        "hbm_bytes": 18147483648.0,
+        "operational_intensity": 14445.2,
+        "ridge_point": 295.22,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 989.0,
+        "latency_ms": 265.06
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 128000000000.0,
+        "hbm_bytes": 18281701376.0,
+        "operational_intensity": 7.0,
+        "ridge_point": 295.22,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 23.46,
+        "latency_ms": 5.457
+      },
+      "ttft_ms": 265.06,
+      "tpot_ms": 5.457,
+      "decode_tokens_per_sec": 1466.01,
+      "end_to_end_tokens_per_sec": 1236.27,
+      "tokens_per_dollar": 1390804.63
+    },
+    {
+      "gpu": "example-large-memory",
+      "memory_gb": 141.0,
+      "required_memory_gb": 20.42,
+      "fits_single_gpu": true,
+      "ridge_point_flops_per_byte": 206.04,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 262144000000000.0,
+        "hbm_bytes": 18147483648.0,
+        "operational_intensity": 14445.2,
+        "ridge_point": 206.04,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 989.0,
+        "latency_ms": 265.06
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 128000000000.0,
+        "hbm_bytes": 18281701376.0,
+        "operational_intensity": 7.0,
+        "ridge_point": 206.04,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 33.61,
+        "latency_ms": 3.809
+      },
+      "ttft_ms": 265.06,
+      "tpot_ms": 3.809,
+      "decode_tokens_per_sec": 2100.29,
+      "end_to_end_tokens_per_sec": 1656.48,
+      "tokens_per_dollar": 1569298.89
+    },
+    {
+      "gpu": "example-wide-bandwidth",
+      "memory_gb": 192.0,
+      "required_memory_gb": 20.42,
+      "fits_single_gpu": true,
+      "ridge_point_flops_per_byte": 281.25,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 262144000000000.0,
+        "hbm_bytes": 18147483648.0,
+        "operational_intensity": 14445.2,
+        "ridge_point": 281.25,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 2250.0,
+        "latency_ms": 116.508
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 128000000000.0,
+        "hbm_bytes": 18281701376.0,
+        "operational_intensity": 7.0,
+        "ridge_point": 281.25,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 56.01,
+        "latency_ms": 2.285
+      },
+      "ttft_ms": 116.51,
+      "tpot_ms": 2.285,
+      "decode_tokens_per_sec": 3501.09,
+      "end_to_end_tokens_per_sec": 2929.13,
+      "tokens_per_dollar": 1700786.9
+    }
+  ],
+  "qwen_32b_long_context": [
+    {
+      "gpu": "example-small",
+      "memory_gb": 48.0,
+      "required_memory_gb": 85.33,
+      "fits_single_gpu": false,
+      "ridge_point_flops_per_byte": 418.98,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 4194304000000000.0,
+        "hbm_bytes": 81179869184.0,
+        "operational_intensity": 51666.8,
+        "ridge_point": 418.98,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 362.0,
+        "latency_ms": 11586.475
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 1024000000000.0,
+        "hbm_bytes": 82253611008.0,
+        "operational_intensity": 12.45,
+        "ridge_point": 418.98,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 10.76,
+        "latency_ms": 95.201
+      },
+      "ttft_ms": 11586.48,
+      "tpot_ms": 95.201,
+      "decode_tokens_per_sec": 168.07,
+      "end_to_end_tokens_per_sec": 136.0,
+      "tokens_per_dollar": 315876.78
+    },
+    {
+      "gpu": "example-fast",
+      "memory_gb": 80.0,
+      "required_memory_gb": 85.33,
+      "fits_single_gpu": false,
+      "ridge_point_flops_per_byte": 295.22,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 4194304000000000.0,
+        "hbm_bytes": 81179869184.0,
+        "operational_intensity": 51666.8,
+        "ridge_point": 295.22,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 989.0,
+        "latency_ms": 4240.954
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 1024000000000.0,
+        "hbm_bytes": 82253611008.0,
+        "operational_intensity": 12.45,
+        "ridge_point": 295.22,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 41.71,
+        "latency_ms": 24.553
+      },
+      "ttft_ms": 4240.95,
+      "tpot_ms": 24.553,
+      "decode_tokens_per_sec": 651.65,
+      "end_to_end_tokens_per_sec": 487.98,
+      "tokens_per_dollar": 548978.69
+    },
+    {
+      "gpu": "example-large-memory",
+      "memory_gb": 141.0,
+      "required_memory_gb": 85.33,
+      "fits_single_gpu": true,
+      "ridge_point_flops_per_byte": 206.04,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 4194304000000000.0,
+        "hbm_bytes": 81179869184.0,
+        "operational_intensity": 51666.8,
+        "ridge_point": 206.04,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 989.0,
+        "latency_ms": 4240.954
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 1024000000000.0,
+        "hbm_bytes": 82253611008.0,
+        "operational_intensity": 12.45,
+        "ridge_point": 206.04,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 59.76,
+        "latency_ms": 17.136
+      },
+      "ttft_ms": 4240.95,
+      "tpot_ms": 17.136,
+      "decode_tokens_per_sec": 933.71,
+      "end_to_end_tokens_per_sec": 630.28,
+      "tokens_per_dollar": 597104.98
+    },
+    {
+      "gpu": "example-wide-bandwidth",
+      "memory_gb": 192.0,
+      "required_memory_gb": 85.33,
+      "fits_single_gpu": true,
+      "ridge_point_flops_per_byte": 281.25,
+      "prefill": {
+        "phase": "prefill",
+        "flops": 4194304000000000.0,
+        "hbm_bytes": 81179869184.0,
+        "operational_intensity": 51666.8,
+        "ridge_point": 281.25,
+        "regime": "compute-bound",
+        "roofline_tflops_bound": 2250.0,
+        "latency_ms": 1864.135
+      },
+      "decode": {
+        "phase": "decode_step",
+        "flops": 1024000000000.0,
+        "hbm_bytes": 82253611008.0,
+        "operational_intensity": 12.45,
+        "ridge_point": 281.25,
+        "regime": "bandwidth-bound",
+        "roofline_tflops_bound": 99.59,
+        "latency_ms": 10.282
+      },
+      "ttft_ms": 1864.13,
+      "tpot_ms": 10.282,
+      "decode_tokens_per_sec": 1556.12,
+      "end_to_end_tokens_per_sec": 1150.85,
+      "tokens_per_dollar": 668233.6
+    }
+  ],
+  "h100_batch_sweep": [
+    {
+      "batch_size": 1,
+      "prefill_intensity": 1015.48,
+      "prefill_regime": "compute-bound",
+      "decode_intensity": 0.99,
+      "decode_regime": "bandwidth-bound",
+      "decode_roofline_tflops_bound": 3.32,
+      "tpot_ms": 4.819,
+      "decode_tokens_per_sec": 207.51
+    },
+    {
+      "batch_size": 8,
+      "prefill_intensity": 7676.82,
+      "prefill_regime": "compute-bound",
+      "decode_intensity": 7.47,
+      "decode_regime": "bandwidth-bound",
+      "decode_roofline_tflops_bound": 25.02,
+      "tpot_ms": 5.117,
+      "decode_tokens_per_sec": 1563.42
+    },
+    {
+      "batch_size": 32,
+      "prefill_intensity": 25833.4,
+      "prefill_regime": "compute-bound",
+      "decode_intensity": 24.9,
+      "decode_regime": "bandwidth-bound",
+      "decode_roofline_tflops_bound": 83.41,
+      "tpot_ms": 6.138,
+      "decode_tokens_per_sec": 5213.42
+    },
+    {
+      "batch_size": 128,
+      "prefill_intensity": 63205.55,
+      "prefill_regime": "compute-bound",
+      "decode_intensity": 59.79,
+      "decode_regime": "bandwidth-bound",
+      "decode_roofline_tflops_bound": 200.29,
+      "tpot_ms": 10.225,
+      "decode_tokens_per_sec": 12518.34
+    },
+    {
+      "batch_size": 256,
+      "prefill_intensity": 83286.85,
+      "prefill_regime": "compute-bound",
+      "decode_intensity": 78.01,
+      "decode_regime": "bandwidth-bound",
+      "decode_roofline_tflops_bound": 261.33,
+      "tpot_ms": 15.674,
+      "decode_tokens_per_sec": 16332.78
+    }
+  ]
+}

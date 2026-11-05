@@ -1,0 +1,30 @@
+{
+  "format": "return-model-v1",
+  "project": "user-return-24h-v1",
+  "features": [
+    "recent_event_count"
+  ],
+  "cohort_sha256": "bacaa0053ffd5fd844af307b5ee5370515a4f99dea02a2fa7b76e7122c2ccf6b",
+  "training_rows": 144,
+  "preprocessing": {
+    "mean": [
+      4.048611111111111
+    ],
+    "std": [
+      2.395974230961614
+    ]
+  },
+  "estimator": {
+    "weights": [
+      0.8097974386563225
+    ],
+    "bias": -0.035196597977641346
+  },
+  "training_positive_rate": 0.4930555555555556,
+  "settings": {
+    "epochs": 200,
+    "learning_rate": 0.5,
+    "threshold": 0.5,
+    "scaler_fitted_on": "training"
+  }
+}

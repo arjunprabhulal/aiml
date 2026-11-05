@@ -1,0 +1,9 @@
+read_page schema: {"page": {"description": "A page name returned by search_docs.", "enum": ["config.md", "deploy.md", "rollback.md", "tokens.md"], "title": "Page", "type": "string"}}
+Q: How do I roll back production to r41?
+   call search_docs({"query": "rollback production r41"}) -> [{"page": "rollback.md", "title": "Roll back a release"}, {"page": "deploy.md", "title": "
+   call read_page({"page": "rollback.md"}) -> "# Roll back a release\n\n`docuctl rollback` moves an environment back to an earlier relea
+   answer: To roll back production to r41, you should use the command `docuctl rollback --env production --to r41`. Please note that database migrations are not rolled back, and you should write a new migration to reverse any migrations if necessary.
+Q: How long is a CI deploy token valid?
+   call search_docs({"query": "CI deploy token validity"}) -> [{"page": "tokens.md", "title": "Authenticate docuctl in CI"}, {"page": "deploy.md", "titl
+   call read_page({"page": "tokens.md"}) -> "# Authenticate docuctl in CI\n\nCI jobs authenticate with a deploy token, not a personal 
+   answer: A deploy token expires after 90 days. You can check the expiry date for each token using the `docuctl tokens list` command.

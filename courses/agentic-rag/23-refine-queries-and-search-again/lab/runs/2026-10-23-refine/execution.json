@@ -1,0 +1,31 @@
+{
+  "execution_mode": "offline-scripted-retrieval-controller",
+  "model_called": false,
+  "command": [
+    "run.py",
+    "--output",
+    "runs/2026-10-23-refine/result.json"
+  ],
+  "exit_status": 0,
+  "test_command": "python3 -m unittest discover -v",
+  "test_exit_status": 0,
+  "environment": {
+    "python": "3.15.0",
+    "sqlite": "3.53.4"
+  },
+  "source_sha256": {
+    "LICENSE": "62c4fd010b074a4b9854c0c48c4e9f3ce507e029e08bf5d25f729dc89b246c83",
+    "README.md": "6218b86afd0f44bf0d4d2a2708e7e015a19ec8a793231a6d2af12b6de415b37d",
+    "bm25.py": "5f647bc207c21113f5aadd80a482c1c844c181e6bf9b8f12c2bccc5ff08062bb",
+    "fixtures/development-cases.json": "ee856a279752c1b4f0e4dc83779422225f2612430d716984119302f20da9a54c",
+    "fixtures/snapshot.json": "56bbeff06b0349186c3e5999d2b4fe634c6355f3bc267d6e07c47bf2d5e32b19",
+    "load_documents.py": "824741965e3599b52b00ade293e966c738f6dd4dc16ea458048eda2aaa9d9431",
+    "refine.py": "fce4b5bd581fbfc4aaf6039bb486c8f477c3a5f80e95fc5c58473739a75e7235",
+    "render_output.py": "9bde7d26a6540b3664eda1733567dc3143459486fc362aa5b577f5b15292fa87",
+    "run.py": "c3bdc10bcf595eb2782ec1ec7d4124f3cd678d088ebf4eea71b58ab30a5de5c3",
+    "test_refine.py": "a7605e74ad941f626144b1ebd26b622e6397ae97903de17d9f7065134b19873a",
+    "test_tools.py": "6779d0b253338970212a03169ea37843ba7f7eae75bd8f3175234896a236857f",
+    "tools.py": "a10a3361f4248130a6029dcf2b09d1599ac8f67e7b187452a8a4f62b546d9205",
+    "version_documents.py": "ef7e400f024d99309fc4b389550226f158cff49fe8a3cddf4be7c4bdd1324a66"
+  }
+}

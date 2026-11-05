@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "kind": "actual-offline-sdk-execution",
+  "lesson": "langgraph-context-budget",
+  "started_utc": "2026-10-23T14:41:49.873212+00:00",
+  "command": [
+    "/private/tmp/langgraph-agents-venv/bin/python",
+    "-m",
+    "pytest",
+    "-v",
+    "--no-header",
+    "--tb=short",
+    "--color=no",
+    "test_graph.py"
+  ],
+  "exit_code": 0,
+  "model": "scripted test doubles; no inference",
+  "network": "Python socket transport blocked; credentials removed",
+  "network_guard_sha256": "7d8f54ce35cc81ebe0b19b0d7a5749d04f6f41a43323a6ec23dfd758fd15ce3f",
+  "environment": {
+    "langgraph": "1.2.16",
+    "langchain-google-genai": "4.4.2",
+    "langgraph-checkpoint-sqlite": "3.1.2",
+    "langchain": "1.4.6",
+    "langchain-core": "1.6.12",
+    "pytest": "9.1.1"
+  },
+  "source_sha256": {
+    "graph.py": "4d8d4525ad9a600e15d2db78dc37e68460720c0b8ad625c81cf8b82109e46a9d",
+    "record.py": "0268f08d73c431fc08668a5037f72d39460ad205d604dada7cb7ee267f59fc05",
+    "test_graph.py": "ae68cb0af0a06a08d361feb6fc10cbce0ece66b28956fb831a219b43ab72b8c9",
+    "requirements-lock.txt": "2a700aa8c9b9c67cec52e69f9fdc41998ca32deaf6d8f6dfd703e53a95672576"
+  },
+  "stdout_sha256": "f91d237c669322e04fae9d6f4948a92caf5a39694ed12a5e85cb25d1a79d6d97",
+  "screenshots": {
+    "images/stdout-1440@2x.png": {
+      "sha256": "9e63e78e6427d32420a324d5e6e07989e6aecb2f0e6dd1d4402a0411ce478df7",
+      "viewport_css": {
+        "width": 1440,
+        "height": 1100
+      },
+      "image_pixels": {
+        "width": 2880,
+        "height": 2200
+      },
+      "device_scale_factor": 2,
+      "full_page": true
+    },
+    "images/stdout-390@2x.png": {
+      "sha256": "6866bf05634aa0f0d253286b95dddc05ba887a34f93e4342a8c4b71e969c96df",
+      "viewport_css": {
+        "width": 390,
+        "height": 1100
+      },
+      "image_pixels": {
+        "width": 780,
+        "height": 2200
+      },
+      "device_scale_factor": 2,
+      "full_page": true
+    },
+    "images/stdout-320@2x.png": {
+      "sha256": "c86f19d64c64a7ff7cd179efb58595082e9e998b8abb8540069136711d35c0dc",
+      "viewport_css": {
+        "width": 320,
+        "height": 1100
+      },
+      "image_pixels": {
+        "width": 640,
+        "height": 2200
+      },
+      "device_scale_factor": 2,
+      "full_page": true
+    }
+  },
+  "capture": "Unmodified browser screenshots of the raw text/plain subprocess stdout. Not native terminal screenshots and not model proof.",
+  "tests_passed": 9
+}

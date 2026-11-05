@@ -1,0 +1,11 @@
+test_continuous_batching_eliminates_padding_and_improves_throughput (test_lab.ContinuousBatchingTest.test_continuous_batching_eliminates_padding_and_improves_throughput) ... ok
+test_single_long_request_pins_entire_static_batch (test_lab.ContinuousBatchingTest.test_single_long_request_pins_entire_static_batch)
+In static batching, batch slots stay reserved until the longest output; short responses can still finish sooner. ... ok
+test_unbounded_continuous_batch_exceeds_kv_capacity (test_lab.ContinuousBatchingTest.test_unbounded_continuous_batch_exceeds_kv_capacity)
+Admitting requests without checking the KV cache token budget overflows GPU memory during decode. ... ok
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

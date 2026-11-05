@@ -1,0 +1,38 @@
+{
+  "id": "staging-rollback-explanation",
+  "version": 1,
+  "task": "Explain a staging rollback to r41, including the command, prerequisites, database boundary and post-rollback verification. Do not execute it.",
+  "acceptance": "First require a judgement for every criterion with no uncertainty; otherwise pending. Then reject any does_not_meet and accept only when all meet.",
+  "ratings": [
+    "meets",
+    "does_not_meet",
+    "uncertain"
+  ],
+  "criteria": [
+    {
+      "id": "command",
+      "rule": "Give the exact docuctl 3 staging command for release r41.",
+      "reference_quote": "Use `docuctl releases rollback r41 --environment staging` to select release r41."
+    },
+    {
+      "id": "preconditions",
+      "rule": "Require release approval and confirm staging before the command.",
+      "reference_quote": "Before the command, obtain release approval and confirm that the active environment is staging."
+    },
+    {
+      "id": "database_scope",
+      "rule": "Explain that rollback does not restore database contents.",
+      "reference_quote": "The command changes the deployed service version. It does not restore database contents."
+    },
+    {
+      "id": "verification",
+      "rule": "Tell the reader to check service health after rollback.",
+      "reference_quote": "After the rollback, check service health."
+    },
+    {
+      "id": "support",
+      "rule": "Every material claim must be supported by this source; do not invent guarantees.",
+      "reference_quote": "The command changes the deployed service version. It does not restore database contents."
+    }
+  ]
+}

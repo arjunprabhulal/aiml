@@ -1,0 +1,108 @@
+{
+ "config": {
+  "d": 16,
+  "hidden": 64,
+  "max_len": 64,
+  "init_seed": 3,
+  "data_seed": 5,
+  "batch": 8,
+  "steps": 600,
+  "learning_rate": 0.01,
+  "beta1": 0.9,
+  "beta2": 0.999,
+  "adam_eps": 1e-08,
+  "eval_every": 50
+ },
+ "interrupted_at_step": 300,
+ "uninterrupted": {
+  "dev_loss": [
+   {
+    "step": 50,
+    "dev_loss": 0.7212
+   },
+   {
+    "step": 100,
+    "dev_loss": 0.5114
+   },
+   {
+    "step": 150,
+    "dev_loss": 0.4558
+   },
+   {
+    "step": 200,
+    "dev_loss": 0.4143
+   },
+   {
+    "step": 250,
+    "dev_loss": 0.3454
+   },
+   {
+    "step": 300,
+    "dev_loss": 0.3116
+   },
+   {
+    "step": 350,
+    "dev_loss": 0.3082
+   },
+   {
+    "step": 400,
+    "dev_loss": 0.304
+   },
+   {
+    "step": 450,
+    "dev_loss": 0.2941
+   },
+   {
+    "step": 500,
+    "dev_loss": 0.297
+   },
+   {
+    "step": 550,
+    "dev_loss": 0.3141
+   },
+   {
+    "step": 600,
+    "dev_loss": 0.3078
+   }
+  ],
+  "final": {
+   "test_loss": 0.2694,
+   "color_recall": {
+    "correct": 39,
+    "total": 60
+   },
+   "params_sha256": "432cc8995907c11af87dfecd4bf5914d206c9c02ed5ba219a75e10db39fdf756",
+   "checksum": 501.972163829
+  }
+ },
+ "best_checkpoint": {
+  "step": 450,
+  "dev_loss": 0.2941,
+  "test_loss": 0.2628,
+  "color_recall": {
+   "correct": 36,
+   "total": 60
+  },
+  "params_sha256": "8342f2b53060f3a56a340b87eaaf53348afa9f9c1b8697e4995ec06564d24677",
+  "checksum": 455.712777262
+ },
+ "resume_runs": {
+  "resumed": {
+   "final_dev_loss": 0.3078,
+   "params_sha256": "432cc8995907c11af87dfecd4bf5914d206c9c02ed5ba219a75e10db39fdf756"
+  },
+  "resumed_without_optimizer_state": {
+   "final_dev_loss": 0.298,
+   "params_sha256": "b04c82ed581898a15f00ff365b7e234f166b587630c0567bc5e16763fd178bd3"
+  },
+  "resumed_without_shuffle_state": {
+   "final_dev_loss": 0.2999,
+   "params_sha256": "e4f11e32d37f98bfa6286484ec27f2cd52987c588c7e600c643c1dd0292e6e4f"
+  }
+ },
+ "integrity": {
+  "one changed value": "checkpoint tampered.json failed its SHA-256 check",
+  "truncated file": "checkpoint truncated.json is not valid JSON: Expecting ',' delimiter",
+  "different learning rate": "checkpoint was written with a different config: ['learning_rate']"
+ }
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "correct",
+    "case": {
+      "id": "rollback-direct",
+      "family": "rollback",
+      "question": "rollback staging",
+      "version": "v2",
+      "expected_doc": "rollback-v2",
+      "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+    },
+    "result": {
+      "stop": "final",
+      "answer": "docuctl rollback --env staging --release LAST_GOOD",
+      "citation": "rollback-v2"
+    },
+    "reference_label": true
+  },
+  {
+    "id": "wrong-version",
+    "case": {
+      "id": "rollback-direct",
+      "family": "rollback",
+      "question": "rollback staging",
+      "version": "v2",
+      "expected_doc": "rollback-v2",
+      "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+    },
+    "result": {
+      "stop": "final",
+      "answer": "docuctl release create --target staging",
+      "citation": "deploy-v1"
+    },
+    "reference_label": false
+  },
+  {
+    "id": "invented-command",
+    "case": {
+      "id": "rollback-direct",
+      "family": "rollback",
+      "question": "rollback staging",
+      "version": "v2",
+      "expected_doc": "rollback-v2",
+      "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+    },
+    "result": {
+      "stop": "final",
+      "answer": "docuctl undo --env staging",
+      "citation": "rollback-v2"
+    },
+    "reference_label": false
+  },
+  {
+    "id": "missing-source",
+    "case": {
+      "id": "rollback-direct",
+      "family": "rollback",
+      "question": "rollback staging",
+      "version": "v2",
+      "expected_doc": "rollback-v2",
+      "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+    },
+    "result": {
+      "stop": "final",
+      "answer": "docuctl rollback --env staging --release LAST_GOOD",
+      "citation": ""
+    },
+    "reference_label": false
+  },
+  {
+    "id": "unsupported-refusal",
+    "case": {
+      "id": "rollback-direct",
+      "family": "rollback",
+      "question": "rollback staging",
+      "version": "v2",
+      "expected_doc": "rollback-v2",
+      "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+    },
+    "result": {
+      "stop": "final",
+      "answer": "I cannot answer.",
+      "citation": ""
+    },
+    "reference_label": false
+  },
+  {
+    "id": "second-correct",
+    "case": {
+      "id": "deploy-direct",
+      "family": "deploy",
+      "question": "deploy staging",
+      "version": "v2",
+      "expected_doc": "deploy-v2",
+      "expected_command": "docuctl deploy --env staging"
+    },
+    "result": {
+      "stop": "final",
+      "answer": "docuctl deploy --env staging",
+      "citation": "deploy-v2"
+    },
+    "reference_label": true
+  }
+]

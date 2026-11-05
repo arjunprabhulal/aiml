@@ -1,0 +1,24 @@
+test_a_body_that_is_not_one_json_object_is_refused_before_any_tool (test_remote_auth.RecordedFlows.test_a_body_that_is_not_one_json_object_is_refused_before_any_tool) ... ok
+test_a_client_pinned_to_another_issuer_never_sends_its_secret (test_remote_auth.RecordedFlows.test_a_client_pinned_to_another_issuer_never_sends_its_secret) ... ok
+test_a_foreign_origin_is_refused (test_remote_auth.RecordedFlows.test_a_foreign_origin_is_refused) ... ok
+test_a_refused_step_up_never_runs_the_tool (test_remote_auth.RecordedFlows.test_a_refused_step_up_never_runs_the_tool) ... ok
+test_a_request_without_a_token_is_told_where_to_get_one (test_remote_auth.RecordedFlows.test_a_request_without_a_token_is_told_where_to_get_one) ... ok
+test_a_token_without_the_tool_scope_gets_403_insufficient_scope (test_remote_auth.RecordedFlows.test_a_token_without_the_tool_scope_gets_403_insufficient_scope) ... ok
+test_expired_and_query_string_tokens_are_refused (test_remote_auth.RecordedFlows.test_expired_and_query_string_tokens_are_refused) ... ok
+test_saved_fixture_matches_this_run (test_remote_auth.RecordedFlows.test_saved_fixture_matches_this_run) ... ok
+test_sdk_client_discovers_then_steps_up_to_the_union_of_scopes (test_remote_auth.RecordedFlows.test_sdk_client_discovers_then_steps_up_to_the_union_of_scopes) ... ok
+test_the_issuer_refuses_what_the_client_was_not_given (test_remote_auth.RecordedFlows.test_the_issuer_refuses_what_the_client_was_not_given) ... ok
+test_tokens_are_bound_to_one_resource (test_remote_auth.RecordedFlows.test_tokens_are_bound_to_one_resource) ... ok
+test_a_batch_that_calls_publish_page_is_refused_before_the_app (test_remote_auth.ScopeChallengeInProcess.test_a_batch_that_calls_publish_page_is_refused_before_the_app) ... ok
+test_a_call_the_token_allows_reaches_the_app_with_the_same_bytes (test_remote_auth.ScopeChallengeInProcess.test_a_call_the_token_allows_reaches_the_app_with_the_same_bytes) ... ok
+test_publish_page_refuses_a_token_without_docs_write (test_remote_auth.ToolRechecksScope.test_publish_page_refuses_a_token_without_docs_write) ... ok
+test_verify_token_accepts_a_token_for_this_server (test_remote_auth.VerifierClaims.test_verify_token_accepts_a_token_for_this_server) ... ok
+test_verify_token_refuses_a_token_for_another_audience (test_remote_auth.VerifierClaims.test_verify_token_refuses_a_token_for_another_audience) ... ok
+test_verify_token_refuses_a_token_without_client_id_or_scope (test_remote_auth.VerifierClaims.test_verify_token_refuses_a_token_without_client_id_or_scope)
+A signed token for this server with a missing or malformed claim is invalid, not a KeyError. ... ok
+test_verify_token_refuses_an_expired_token (test_remote_auth.VerifierClaims.test_verify_token_refuses_an_expired_token) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 3.143s
+
+OK

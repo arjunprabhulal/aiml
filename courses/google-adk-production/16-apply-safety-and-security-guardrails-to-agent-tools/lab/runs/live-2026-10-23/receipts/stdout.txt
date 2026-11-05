@@ -1,0 +1,23 @@
+actual test caller role: reader confirmation decision: pause
+call   list_pages({})
+result list_pages -> {'pages': ['cli.md', 'contributing.md', 'install.md', 'troubleshooting.md']}
+call   delete_page({'path': 'install.md'})
+result delete_page -> {'error': "Not allowed: role 'reader' may not call delete_page."}
+answer I am unable to delete `install.md` because my current role is `reader`, which does not have permission to delete pages.
+temporary corpus added: [] removed: []
+actual test caller role: maintainer confirmation decision: pause
+call   list_pages({})
+result list_pages -> {'pages': ['cli.md', 'contributing.md', 'install.md', 'troubleshooting.md']}
+call   delete_page({'path': 'install.md'})
+call   adk_request_confirmation({'originalFunctionCall': {'id': 'call_43704', 'args': {'path': 'install.md'}, 'name': 'delete_page'}, 'toolConfirmation': {'hint': 'Please approve or reject the tool call delete_page() by responding with a FunctionResponse with an expected ToolConfirmation payload.', 'confirmed': False}})
+result delete_page -> {'error': 'This tool call requires confirmation, please approve or reject.'}
+temporary corpus added: [] removed: []
+actual test caller role: maintainer confirmation decision: deny
+call   list_pages({})
+result list_pages -> {'pages': ['cli.md', 'contributing.md', 'install.md', 'troubleshooting.md']}
+call   delete_page({'path': 'install.md'})
+call   adk_request_confirmation({'originalFunctionCall': {'id': 'call_49564', 'args': {'path': 'install.md'}, 'name': 'delete_page'}, 'toolConfirmation': {'hint': 'Please approve or reject the tool call delete_page() by responding with a FunctionResponse with an expected ToolConfirmation payload.', 'confirmed': False}})
+result delete_page -> {'error': 'This tool call requires confirmation, please approve or reject.'}
+result delete_page -> {'error': 'This tool call is rejected.'}
+answer The request to delete `install.md` was rejected and could not be completed.
+temporary corpus added: [] removed: []

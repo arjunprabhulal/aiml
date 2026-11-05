@@ -1,0 +1,47 @@
+{
+  "check_version": "1",
+  "case_set": {
+    "name": "inbox-triage-v2",
+    "sha256": "0832981fe397ac2e7165213096aae034588142522c86a06521ce3c4d43600aa4"
+  },
+  "cases": {
+    "development": 11,
+    "held_out": 6
+  },
+  "artifacts": [
+    "triage.py"
+  ],
+  "locked": true,
+  "decision": "block",
+  "findings": [
+    {
+      "check": "overlap",
+      "severity": "block",
+      "development": "stranger-keeps-buying",
+      "held_out": "stranger-buying",
+      "similarity": 0.7
+    },
+    {
+      "check": "held-out-only term",
+      "severity": "review",
+      "artifact": "triage.py",
+      "term": "log in",
+      "held_out": [
+        "cannot-log-in"
+      ]
+    },
+    {
+      "check": "lock",
+      "severity": "block",
+      "case": "cannot-log-in",
+      "reason": "edited"
+    },
+    {
+      "check": "lock",
+      "severity": "block",
+      "case": "shop-hours",
+      "reason": "moved to development"
+    }
+  ],
+  "held_out_runs": []
+}

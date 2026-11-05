@@ -1,0 +1,36 @@
+test_directory_rejected_before_read (test_load_documents.LoaderTests.test_directory_rejected_before_read) ... ok
+test_duplicate_identity (test_load_documents.LoaderTests.test_duplicate_identity) ... ok
+test_empty_text (test_load_documents.LoaderTests.test_empty_text) ... ok
+test_hash_mismatch (test_load_documents.LoaderTests.test_hash_mismatch) ... ok
+test_invalid_utf8 (test_load_documents.LoaderTests.test_invalid_utf8) ... ok
+test_malformed_manifest_is_normalized (test_load_documents.LoaderTests.test_malformed_manifest_is_normalized) ... ok
+test_manifest_requires_object (test_load_documents.LoaderTests.test_manifest_requires_object) ... ok
+test_missing_file (test_load_documents.LoaderTests.test_missing_file) ... ok
+test_missing_manifest_is_normalized (test_load_documents.LoaderTests.test_missing_manifest_is_normalized) ... ok
+test_newline_normalization_preserves_byte_hash (test_load_documents.LoaderTests.test_newline_normalization_preserves_byte_hash) ... ok
+test_optional_source_metadata_requires_strings (test_load_documents.LoaderTests.test_optional_source_metadata_requires_strings) ... ok
+test_outside_root (test_load_documents.LoaderTests.test_outside_root) ... ok
+test_pinned_documents (test_load_documents.LoaderTests.test_pinned_documents) ... ok
+test_size_limit (test_load_documents.LoaderTests.test_size_limit) ... ok
+test_symlink_escape (test_load_documents.LoaderTests.test_symlink_escape) ... ok
+test_api_version_is_distinct_from_content_revision (test_versions.VersionTests.test_api_version_is_distinct_from_content_revision) ... ok
+test_changed_text_replaces_only_its_document (test_versions.VersionTests.test_changed_text_replaces_only_its_document) ... ok
+test_chunk_hash_binds_content_span_and_chunker (test_versions.VersionTests.test_chunk_hash_binds_content_span_and_chunker) ... ok
+test_manifest_order_does_not_change_snapshot (test_versions.VersionTests.test_manifest_order_does_not_change_snapshot) ... ok
+test_metadata_only_change_invalidates_revision_and_chunks (test_versions.VersionTests.test_metadata_only_change_invalidates_revision_and_chunks) ... ok
+test_paragraph_spans_reconstruct_exact_content (test_versions.VersionTests.test_paragraph_spans_reconstruct_exact_content) ... ok
+test_rederived_changed_text_retaining_snapshot_id_is_refused (test_versions.VersionTests.test_rederived_changed_text_retaining_snapshot_id_is_refused) ... ok
+test_rehashed_inconsistent_chunk_is_refused (test_versions.VersionTests.test_rehashed_inconsistent_chunk_is_refused) ... ok
+test_repeat_run_is_identical (test_versions.VersionTests.test_repeat_run_is_identical) ... ok
+test_tampered_chunk_same_id_is_refused (test_versions.VersionTests.test_tampered_chunk_same_id_is_refused) ... ok
+test_tampered_config_same_id_is_refused (test_versions.VersionTests.test_tampered_config_same_id_is_refused) ... ok
+test_tampered_metadata_same_id_is_refused (test_versions.VersionTests.test_tampered_metadata_same_id_is_refused) ... ok
+test_tampered_text_same_id_is_refused (test_versions.VersionTests.test_tampered_text_same_id_is_refused) ... ok
+test_unknown_chunker_is_rejected (test_versions.VersionTests.test_unknown_chunker_is_rejected) ... ok
+test_unpinned_byte_change_is_rejected (test_versions.VersionTests.test_unpinned_byte_change_is_rejected) ... ok
+test_valid_snapshot_round_trip (test_versions.VersionTests.test_valid_snapshot_round_trip) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.020s
+
+OK

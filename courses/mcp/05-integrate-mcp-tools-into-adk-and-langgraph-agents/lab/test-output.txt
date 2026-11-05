@@ -1,0 +1,23 @@
+test_adk_agent_resolves_a_task_name_to_its_id (test_agents.AgentReplay.test_adk_agent_resolves_a_task_name_to_its_id) ... Skipping missing token usage metadata for agent tasks_agent and model replay
+Skipping missing token usage metadata for agent tasks_agent and model replay
+Skipping missing token usage metadata for agent tasks_agent and model replay
+ok
+test_adk_returns_a_tool_error_to_the_model (test_agents.AgentReplay.test_adk_returns_a_tool_error_to_the_model) ... Tool 'complete_task' failed: 'Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.'
+Skipping missing token usage metadata for agent tasks_agent and model replay
+Skipping missing token usage metadata for agent tasks_agent and model replay
+ok
+test_agent_server_is_the_typed_tools_lesson_server (test_agents.AgentReplay.test_agent_server_is_the_typed_tools_lesson_server) ... ok
+test_both_frameworks_discover_the_recorded_tools (test_agents.AgentReplay.test_both_frameworks_discover_the_recorded_tools) ... ok
+test_every_recorded_trial_reached_the_expected_outcome (test_agents.AgentReplay.test_every_recorded_trial_reached_the_expected_outcome) ... ok
+test_get_tools_starts_a_new_server_session_for_each_call (test_agents.AgentReplay.test_get_tools_starts_a_new_server_session_for_each_call) ... ok
+test_langgraph_agent_resolves_a_task_name_to_its_id (test_agents.AgentReplay.test_langgraph_agent_resolves_a_task_name_to_its_id) ... ok
+test_langgraph_returns_a_tool_error_to_the_model (test_agents.AgentReplay.test_langgraph_returns_a_tool_error_to_the_model) ... Tool 'complete_task' failed: 'Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.'
+ok
+test_langgraph_without_error_handling_raises_instead (test_agents.AgentReplay.test_langgraph_without_error_handling_raises_instead) ... Tool 'complete_task' failed: 'Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.'
+ok
+test_one_session_keeps_server_state_between_calls (test_agents.AgentReplay.test_one_session_keeps_server_state_between_calls) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.567s
+
+OK

@@ -1,0 +1,17 @@
+test_bad_comparison_shapes_and_nonfinite_values_refused (test_bridge.BridgeTests.test_bad_comparison_shapes_and_nonfinite_values_refused) ... ok
+test_causal_future_token_cannot_change_earlier_logits (test_bridge.BridgeTests.test_causal_future_token_cannot_change_earlier_logits) ... ok
+test_explicit_outputs_loss_and_all_gradients (test_bridge.BridgeTests.test_explicit_outputs_loss_and_all_gradients) ... ok
+test_invalid_ids_and_target_lengths_refused (test_bridge.BridgeTests.test_invalid_ids_and_target_lengths_refused) ... ok
+test_missing_scale_changes_outputs (test_bridge.BridgeTests.test_missing_scale_changes_outputs) ... ok
+test_no_causal_mask_changes_outputs (test_bridge.BridgeTests.test_no_causal_mask_changes_outputs) ... ok
+test_repeated_token_embedding_accumulates_gradient (test_bridge.BridgeTests.test_repeated_token_embedding_accumulates_gradient) ... ok
+test_saved_run_still_matches_implementation_sources (test_bridge.BridgeTests.test_saved_run_still_matches_implementation_sources) ... ok
+test_sdpa_outputs_loss_and_all_gradients (test_bridge.BridgeTests.test_sdpa_outputs_loss_and_all_gradients) ... ok
+test_unknown_attention_path_refused (test_bridge.BridgeTests.test_unknown_attention_path_refused) ... ok
+test_unused_embedding_rows_and_positions_have_zero_gradient (test_bridge.BridgeTests.test_unused_embedding_rows_and_positions_have_zero_gradient) ... ok
+test_wrong_layernorm_epsilon_changes_outputs (test_bridge.BridgeTests.test_wrong_layernorm_epsilon_changes_outputs) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.024s
+
+OK

@@ -1,0 +1,27 @@
+{
+  "execution_mode": "offline analysis of fresh Metal eager and compiled expression runs",
+  "cases": [
+    {
+      "rows": 1,
+      "width": 896,
+      "max_abs_error": 0.0,
+      "eager_median_ms": 0.45025,
+      "compiled_median_ms": 0.290083
+    },
+    {
+      "rows": 32,
+      "width": 896,
+      "max_abs_error": 0.0,
+      "eager_median_ms": 0.222666,
+      "compiled_median_ms": 0.192312
+    },
+    {
+      "rows": 32,
+      "width": 1003,
+      "max_abs_error": 0.0,
+      "eager_median_ms": 0.228792,
+      "compiled_median_ms": 0.196583
+    }
+  ],
+  "limits": "Shape-specific tensor timings; no Triton/CUDA run, device-memory counter or whole-model speedup."
+}

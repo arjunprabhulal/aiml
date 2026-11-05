@@ -1,0 +1,23 @@
+answer: You can rebuild the search index by running `docs-assistant index --rebuild` (cli.md).
+
+spans:
+invocation                                 7321.1 ms
+  invoke_agent docs_assistant              7319.4 ms
+    call_llm                               3632.7 ms  model=gemini-3.8-flash input_tokens=156 output_tokens=66
+      generate_content gemini-3.8-flash    3629.9 ms  model=gemini-3.8-flash input_tokens=156 output_tokens=66
+    execute_tool list_pages                   1.4 ms  name=list_pages
+    call_llm                               1841.6 ms  model=gemini-3.8-flash input_tokens=251 output_tokens=52
+      generate_content gemini-3.8-flash    1840.0 ms  model=gemini-3.8-flash input_tokens=251 output_tokens=52
+    execute_tool read_page                    0.4 ms  name=read_page
+    call_llm                               1828.1 ms  model=gemini-3.8-flash input_tokens=381 output_tokens=73
+      generate_content gemini-3.8-flash    1827.6 ms  model=gemini-3.8-flash input_tokens=381 output_tokens=73
+
+metrics:
+gen_ai.execute_tool.duration               docs_assistant,list_pages count=1 sum=0.001 s
+gen_ai.execute_tool.duration               docs_assistant,read_page count=1 sum=0.0 s
+gen_ai.client.operation.duration           docs_assistant           count=3 sum=7.297 s
+gen_ai.client.token.usage                  docs_assistant,input     count=3 sum=788 {token}
+gen_ai.client.token.usage                  docs_assistant,output    count=3 sum=191 {token}
+gen_ai.invoke_agent.duration               docs_assistant           count=1 sum=7.319 s
+gen_ai.invoke_agent.inference_calls        docs_assistant           count=1 sum=3
+gen_ai.invoke_agent.tool_calls             docs_assistant           count=1 sum=2

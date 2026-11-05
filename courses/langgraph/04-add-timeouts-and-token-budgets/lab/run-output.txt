@@ -1,0 +1,41 @@
+== answered: Why is CI failing on pull request 415? limits={}
+  agent    2.5s  279 tokens (83 reasoning)
+  tools    0.1s  [{"job_id": 812, "name": "unit-tests"}]
+  agent    1.9s  390 tokens (62 reasoning)
+  tools    0.2s  FAILED tests/test_client.py::test_default_timeout - AssertionError: ex
+  agent    4.1s  1006 tokens (496 reasoning)
+  outcome: answered  tokens: 1675
+  final:   The failed CI job for pull request 415 is:
+- **unit-tests** (Job ID: 812)
+
+The `unit-tests` job failed due to an `AssertionError` in `tests/test_client.py::test_default_timeout`. The test expected a d
+== slow-tool: Why is CI failing on pull request 421? limits={}
+  agent    2.5s  278 tokens (82 reasoning)
+  tools    0.1s  [{"job_id": 815, "name": "integration"}]
+  agent    1.7s  366 tokens (41 reasoning)
+  tools    3.0s  The tool call did not finish within 3s, so its result is unknown. This
+  agent    6.5s  1177 tokens (719 reasoning)
+  outcome: answered  tokens: 1821
+  final:   The only failed CI job for pull request 421 is `integration` (job ID 815). I could not check the log for this job to determine the cause of the failure because fetching the log timed out.
+== budget-stopped: Why is CI failing on pull request 415? limits={'token_budget': 500}
+  agent    2.2s  278 tokens (82 reasoning)
+  tools    0.1s  [{"job_id": 812, "name": "unit-tests"}]
+  agent    2.2s  354 tokens (27 reasoning)
+  stop     0.0s  
+  outcome: token_budget  tokens: 632
+  final:   Stopped: 632 of 500 tokens used.
+== budget-overshoot: Why is CI failing on pull request 415? limits={'token_budget': 1000}
+  agent    2.4s  309 tokens (113 reasoning)
+  tools    0.1s  [{"job_id": 812, "name": "unit-tests"}]
+  agent    1.6s  389 tokens (31 reasoning)
+  tools    0.2s  FAILED tests/test_client.py::test_default_timeout - AssertionError: ex
+  agent    3.9s  951 tokens (441 reasoning)
+  outcome: answered  tokens: 1649
+  final:   The failed job for pull request 415 is:
+* **unit-tests** (Job ID: 812)
+
+The `unit-tests` job failed due to an `AssertionError` in `tests/test_client.py::test_default_timeout`. Specifically, the test e
+== slow-model: Why is CI failing on pull request 415? limits={'model_timeout': 0.5}
+  __error_handler__agent   0.5s  
+  outcome: model_timeout  tokens: 0
+  final:   Stopped: Node 'agent' exceeded its run timeout of 0.500s (elapsed: 0.501s).

@@ -1,0 +1,166 @@
+{
+  "execution_mode": "authored proposals; local simulated services; no model request",
+  "clock": "simulated Unix seconds",
+  "tool_effects": "returned data only; no page is published",
+  "cases": [
+    {
+      "case": "maintainer-read",
+      "status": 200,
+      "minted": 1,
+      "result": {
+        "page_id": "deploy-35",
+        "status": "draft"
+      }
+    },
+    {
+      "case": "viewer-publish",
+      "status": 403,
+      "minted": 0,
+      "result": {
+        "error": "role viewer lacks docs:publish"
+      }
+    },
+    {
+      "case": "cross-tenant-read",
+      "status": 404,
+      "minted": 1,
+      "result": {
+        "error": "page not found"
+      }
+    },
+    {
+      "case": "missing-page",
+      "status": 404,
+      "minted": 1,
+      "result": {
+        "error": "page not found"
+      }
+    },
+    {
+      "case": "tenant-in-arguments",
+      "status": 400,
+      "minted": 0,
+      "result": {
+        "error": "unexpected argument tenant"
+      }
+    },
+    {
+      "case": "unknown-tool",
+      "status": 404,
+      "minted": 0,
+      "result": {
+        "error": "unknown tool export_all"
+      }
+    },
+    {
+      "case": "maintainer-publish",
+      "status": 200,
+      "minted": 1,
+      "result": {
+        "page_id": "deploy-35",
+        "published": true,
+        "reason": "correction"
+      }
+    },
+    {
+      "case": "delegated-first-use",
+      "status": 200,
+      "result": {
+        "page_id": "deploy-35",
+        "status": "draft"
+      }
+    },
+    {
+      "case": "delegated-replay",
+      "status": 401,
+      "check": "service token"
+    },
+    {
+      "case": "wrong-audience",
+      "status": 401,
+      "check": "service token"
+    },
+    {
+      "case": "session-at-tool",
+      "status": 401,
+      "check": "service token"
+    },
+    {
+      "case": "exact-expiry",
+      "status": 401,
+      "check": "service token"
+    }
+  ],
+  "audit": [
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "read_page",
+      "arguments_sha256": "29e21c418f73d81b3020913b7b1645e5e4d054fd85b6bcc244d24441c9ae57bc",
+      "decision": "allowed",
+      "check": null,
+      "reason": null,
+      "jti": "f97aef83fd78c19c"
+    },
+    {
+      "at": 1800000000,
+      "user": "ben",
+      "tool": "publish_page",
+      "arguments_sha256": "aadae2536b6c765bddf363d3674cfdd22e8078f752fe0d796345d36ffbb6dcd9",
+      "decision": "refused",
+      "check": "gateway role",
+      "reason": "role viewer lacks docs:publish",
+      "jti": null
+    },
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "read_page",
+      "arguments_sha256": "3cd85f68b1586c1ba826f79f18b355480521965b6d26d8cbb4bfc20e0be3ca05",
+      "decision": "refused",
+      "check": "service tenant",
+      "reason": "page not found",
+      "jti": "c602bfa75b20b078"
+    },
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "read_page",
+      "arguments_sha256": "fe1dbe8d12cdcc9cbec7f7a1d7a39c4e53b632ee89a5f4de381076cc1f3e7ce9",
+      "decision": "refused",
+      "check": "service tenant",
+      "reason": "page not found",
+      "jti": "32fb0e8643325003"
+    },
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "read_page",
+      "arguments_sha256": "87807e50ebd7b6b31f126a8d50f5326563e18cb4696121012db43d617aa7d272",
+      "decision": "refused",
+      "check": "schema",
+      "reason": "unexpected argument tenant",
+      "jti": null
+    },
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "export_all",
+      "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "decision": "refused",
+      "check": "tool",
+      "reason": "unknown tool",
+      "jti": null
+    },
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "publish_page",
+      "arguments_sha256": "86a00f0465b75b1ee17663d51354fe1a19df9530a5cf30d335a50d8da922c643",
+      "decision": "allowed",
+      "check": null,
+      "reason": null,
+      "jti": "0f7a344ee5ff76ae"
+    }
+  ]
+}

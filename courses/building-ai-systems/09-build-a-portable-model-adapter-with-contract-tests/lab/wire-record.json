@@ -1,0 +1,442 @@
+{
+  "recorded_on": "2026-10-20",
+  "environment": {
+    "python": "3.15.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "ollama": "0.32.14",
+    "digests": {
+      "gemma4:e2b": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+      "qwen3.5:0.8b": "de63045f29755d4721c09d54c9b45c2dadb644f4fd7d604d4cac90d96049971c"
+    }
+  },
+  "rows": [
+    {
+      "model": "gemma4:e2b",
+      "adapter": "ollama-native",
+      "case": "complete",
+      "request": {
+        "model": "gemma4:e2b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "num_predict": 48,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 200,
+      "body": "{\"model\":\"gemma4:e2b\",\"created_at\":\"2026-10-20T17:07:06.83998Z\",\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for Hypertext Transfer Protocol.\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":3253627750,\"load_duration\":3024329250,\"prompt_eval_count\":26,\"prompt_eval_duration\":85003000,\"eval_count\":9,\"eval_duration\":143246000}",
+      "client_ms": 3264.1
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "ollama-native",
+      "case": "output-limit",
+      "request": {
+        "model": "gemma4:e2b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "num_predict": 3,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 200,
+      "body": "{\"model\":\"gemma4:e2b\",\"created_at\":\"2026-10-20T17:07:12.478553Z\",\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for\"},\"done\":true,\"done_reason\":\"length\",\"total_duration\":5637498417,\"load_duration\":5518662834,\"prompt_eval_count\":26,\"prompt_eval_duration\":84000000,\"eval_count\":3,\"eval_duration\":33523000}",
+      "client_ms": 5638.1
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "ollama-native",
+      "case": "missing-model",
+      "request": {
+        "model": "aiml-missing:never",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "num_predict": 48,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 404,
+      "body": "{\"error\":\"model 'aiml-missing:never' not found\"}",
+      "client_ms": 0.9
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "ollama-native",
+      "case": "thinking-left-on",
+      "request": {
+        "model": "gemma4:e2b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "options": {
+          "num_predict": 48,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 200,
+      "body": "{\"model\":\"gemma4:e2b\",\"created_at\":\"2026-10-20T17:07:17.95317Z\",\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for Hypertext Transfer Protocol.\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":5473064625,\"load_duration\":5252614250,\"prompt_eval_count\":28,\"prompt_eval_duration\":80521000,\"eval_count\":9,\"eval_duration\":137231000}",
+      "client_ms": 5473.6
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "openai-compatible",
+      "case": "complete",
+      "request": {
+        "model": "gemma4:e2b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 48,
+        "temperature": 0.0,
+        "stream": false,
+        "reasoning_effort": "none",
+        "seed": 42
+      },
+      "status": 200,
+      "body": "{\"id\":\"chatcmpl-943\",\"object\":\"chat.completion\",\"created\":1792516038,\"model\":\"gemma4:e2b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for Hypertext Transfer Protocol.\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":26,\"completion_tokens\":9,\"total_tokens\":35}}\n",
+      "client_ms": 945.9
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "openai-compatible",
+      "case": "output-limit",
+      "request": {
+        "model": "gemma4:e2b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 3,
+        "temperature": 0.0,
+        "stream": false,
+        "reasoning_effort": "none",
+        "seed": 42
+      },
+      "status": 200,
+      "body": "{\"id\":\"chatcmpl-840\",\"object\":\"chat.completion\",\"created\":1792516044,\"model\":\"gemma4:e2b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for\"},\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":26,\"completion_tokens\":3,\"total_tokens\":29}}\n",
+      "client_ms": 5362.8
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "openai-compatible",
+      "case": "missing-model",
+      "request": {
+        "model": "aiml-missing:never",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 48,
+        "temperature": 0.0,
+        "stream": false,
+        "reasoning_effort": "none",
+        "seed": 42
+      },
+      "status": 404,
+      "body": "{\"error\":{\"message\":\"model 'aiml-missing:never' not found\",\"type\":\"not_found_error\",\"param\":null,\"code\":null}}\n",
+      "client_ms": 0.8
+    },
+    {
+      "model": "gemma4:e2b",
+      "adapter": "openai-compatible",
+      "case": "thinking-left-on",
+      "request": {
+        "model": "gemma4:e2b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 48,
+        "temperature": 0.0,
+        "stream": false,
+        "seed": 42
+      },
+      "status": 200,
+      "body": "{\"id\":\"chatcmpl-561\",\"object\":\"chat.completion\",\"created\":1792516045,\"model\":\"gemma4:e2b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for Hypertext Transfer Protocol.\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":28,\"completion_tokens\":9,\"total_tokens\":37}}\n",
+      "client_ms": 915.0
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "ollama-native",
+      "case": "complete",
+      "request": {
+        "model": "qwen3.5:0.8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "num_predict": 48,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 200,
+      "body": "{\"model\":\"qwen3.5:0.8b\",\"created_at\":\"2026-10-20T17:07:25.484113Z\",\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for Hypertext Transfer Protocol.\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":305279250,\"load_duration\":153923417,\"prompt_eval_count\":29,\"prompt_eval_duration\":25572000,\"eval_count\":9,\"eval_duration\":124392000}",
+      "client_ms": 305.8
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "ollama-native",
+      "case": "output-limit",
+      "request": {
+        "model": "qwen3.5:0.8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "num_predict": 3,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 200,
+      "body": "{\"model\":\"qwen3.5:0.8b\",\"created_at\":\"2026-10-20T17:07:25.703836Z\",\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for\"},\"done\":true,\"done_reason\":\"length\",\"total_duration\":219233666,\"load_duration\":155552208,\"prompt_eval_count\":29,\"prompt_eval_duration\":32194000,\"eval_count\":3,\"eval_duration\":30362000}",
+      "client_ms": 219.7
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "ollama-native",
+      "case": "missing-model",
+      "request": {
+        "model": "aiml-missing:never",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "num_predict": 48,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 404,
+      "body": "{\"error\":\"model 'aiml-missing:never' not found\"}",
+      "client_ms": 0.8
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "ollama-native",
+      "case": "thinking-left-on",
+      "request": {
+        "model": "qwen3.5:0.8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "stream": false,
+        "options": {
+          "num_predict": 48,
+          "temperature": 0.0,
+          "seed": 42
+        }
+      },
+      "status": 200,
+      "body": "{\"model\":\"qwen3.5:0.8b\",\"created_at\":\"2026-10-20T17:07:26.390877Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"thinking\":\"Thinking Process:\\n\\n1.  **Analyze the Request:** The user is asking for the acronym \\\"HTTP\\\" and wants the answer in one short sentence.\\n\\n2.  **Identify the Acronym:** HTTP stands for Hypertext\"},\"done\":true,\"done_reason\":\"length\",\"total_duration\":685886500,\"load_duration\":153232916,\"prompt_eval_count\":27,\"prompt_eval_duration\":11564000,\"eval_count\":48,\"eval_duration\":519955000}",
+      "client_ms": 686.3
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "openai-compatible",
+      "case": "complete",
+      "request": {
+        "model": "qwen3.5:0.8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 48,
+        "temperature": 0.0,
+        "stream": false,
+        "reasoning_effort": "none",
+        "seed": 42
+      },
+      "status": 200,
+      "body": "{\"id\":\"chatcmpl-351\",\"object\":\"chat.completion\",\"created\":1792516046,\"model\":\"qwen3.5:0.8b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for Hypertext Transfer Protocol.\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":29,\"completion_tokens\":9,\"total_tokens\":38}}\n",
+      "client_ms": 299.5
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "openai-compatible",
+      "case": "output-limit",
+      "request": {
+        "model": "qwen3.5:0.8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 3,
+        "temperature": 0.0,
+        "stream": false,
+        "reasoning_effort": "none",
+        "seed": 42
+      },
+      "status": 200,
+      "body": "{\"id\":\"chatcmpl-52\",\"object\":\"chat.completion\",\"created\":1792516046,\"model\":\"qwen3.5:0.8b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"HTTP stands for\"},\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":29,\"completion_tokens\":3,\"total_tokens\":32}}\n",
+      "client_ms": 248.6
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "openai-compatible",
+      "case": "missing-model",
+      "request": {
+        "model": "aiml-missing:never",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 48,
+        "temperature": 0.0,
+        "stream": false,
+        "reasoning_effort": "none",
+        "seed": 42
+      },
+      "status": 404,
+      "body": "{\"error\":{\"message\":\"model 'aiml-missing:never' not found\",\"type\":\"not_found_error\",\"param\":null,\"code\":null}}\n",
+      "client_ms": 5.0
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "adapter": "openai-compatible",
+      "case": "thinking-left-on",
+      "request": {
+        "model": "qwen3.5:0.8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": "What does HTTP stand for?"
+          }
+        ],
+        "max_tokens": 48,
+        "temperature": 0.0,
+        "stream": false,
+        "seed": 42
+      },
+      "status": 200,
+      "body": "{\"id\":\"chatcmpl-631\",\"object\":\"chat.completion\",\"created\":1792516047,\"model\":\"qwen3.5:0.8b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning\":\"Thinking Process:\\n\\n1.  **Analyze the Request:** The user is asking for the acronym \\\"HTTP\\\" and wants the answer in one short sentence.\\n\\n2.  **Identify the Acronym:** HTTP stands for Hypertext\"},\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":27,\"completion_tokens\":48,\"total_tokens\":75}}\n",
+      "client_ms": 633.4
+    }
+  ]
+}

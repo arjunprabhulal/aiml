@@ -1,0 +1,13 @@
+test_canary_gate_rejects_elevated_error_rate_even_when_fast (test_lab.AutoscalingAndRolloutTest.test_canary_gate_rejects_elevated_error_rate_even_when_fast) ... ok
+test_canary_recommends_rollback_on_quality_or_tpot_regression (test_lab.AutoscalingAndRolloutTest.test_canary_recommends_rollback_on_quality_or_tpot_regression) ... ok
+test_combined_fast_start_scenario_keeps_finite_standby_accounting (test_lab.AutoscalingAndRolloutTest.test_combined_fast_start_scenario_keeps_finite_standby_accounting) ... ok
+test_scaling_on_gpu_utilization_reacts_after_slo_breach (test_lab.AutoscalingAndRolloutTest.test_scaling_on_gpu_utilization_reacts_after_slo_breach) ... ok
+test_threshold_breaches_are_not_rounded_away (test_lab.AutoscalingAndRolloutTest.test_threshold_breaches_are_not_rounded_away) ... ok
+test_empty_observation_cannot_be_promoted (test_lab.CanaryValidationTests.test_empty_observation_cannot_be_promoted) ... ok
+test_nonfinite_sample_cannot_pass_gates (test_lab.CanaryValidationTests.test_nonfinite_sample_cannot_pass_gates) ... ok
+test_rejects_invalid_boundary_inputs_with_specific_reason (test_lab.GuardBoundaryTests.test_rejects_invalid_boundary_inputs_with_specific_reason) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

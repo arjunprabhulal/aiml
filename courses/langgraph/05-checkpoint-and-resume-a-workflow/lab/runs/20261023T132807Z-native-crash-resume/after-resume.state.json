@@ -1,0 +1,32 @@
+{
+  "next": [],
+  "values": {
+    "version": "2.5.0",
+    "prs": [
+      {
+        "number": 409,
+        "title": "Add a per-client timeout override",
+        "labels": [
+          "feature"
+        ]
+      },
+      {
+        "number": 412,
+        "title": "Retry webhook delivery on 503",
+        "labels": [
+          "bug",
+          "webhooks"
+        ]
+      },
+      {
+        "number": 418,
+        "title": "Remove the unused legacy CSV export",
+        "labels": [
+          "cleanup"
+        ]
+      }
+    ],
+    "notes": "## Version 2.5.0\n\n* Added the ability to configure custom timeout overrides for individual clients (#409).\n* Improved webhook reliability by automatically retrying delivery when receiving a 503 (Service Unavailable) response (#412).\n* Removed the legacy CSV export option to streamline export functionality (#418).",
+    "path": "out/2.5.0.md"
+  }
+}

@@ -1,0 +1,1980 @@
+{
+  "manifest": {
+    "harness_version": "1",
+    "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+    "started_at": "2026-10-20T19:57:55+00:00",
+    "case_set": {
+      "name": "inbox-triage",
+      "sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6"
+    },
+    "task": {
+      "name": "inbox-triage",
+      "version": "1",
+      "sha256": "7e81b30b5e01033ba59d25d9b21f596ac5f300dac36fd9783e729daf0d8e280e"
+    },
+    "system": {
+      "name": "model-triage-qwen3.5",
+      "version": "1",
+      "mode": "replay",
+      "model": "qwen3.5:0.8b@de63045f2975",
+      "prompt": "triage-v1 sha256:053fdf51b21d891e",
+      "tools": null
+    },
+    "recording_sha256": "b314b3dc5d1110821cfed88b21b39bc0212244e9eb5c3e6f51d695fc6fd38d6b",
+    "graders": [
+      {
+        "name": "triage-contract",
+        "version": "1",
+        "kind": "contract"
+      },
+      {
+        "name": "triage-outcome",
+        "version": "1",
+        "kind": "outcome"
+      },
+      {
+        "name": "failure-criteria",
+        "version": "1",
+        "kind": "outcome"
+      }
+    ],
+    "splits": [
+      "development"
+    ],
+    "trials": 10,
+    "environment": {
+      "python": "3.15.0",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+    }
+  },
+  "summary": {
+    "development": {
+      "cases": 9,
+      "trials": 90,
+      "pass": 77,
+      "fail": 13,
+      "incomplete": 0,
+      "cases_passing_any_trial": 9,
+      "cases_passing_every_trial": 6,
+      "per_case": {
+        "charged-twice": {
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "stuck-tracking": {
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "password-changed": {
+          "pass": 7,
+          "fail": 3,
+          "incomplete": 0
+        },
+        "product-advice": {
+          "pass": 2,
+          "fail": 8,
+          "incomplete": 0
+        },
+        "refund-missing": {
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "charged-after-closing": {
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "blank-message": {
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "missing-body": {
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0
+        },
+        "late-order": {
+          "pass": 8,
+          "fail": 2,
+          "incomplete": 0
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 3.321088
+      },
+      "latency_s": 1e-05
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.421743
+      },
+      "latency_s": 4e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.387145
+      },
+      "latency_s": 3e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.400268
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.410544
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 5,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.485904
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.398865
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 13,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.345609
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.38205
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-twice",
+      "split": "development",
+      "class": "billing",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.407558
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.418435
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.395939
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.374241
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.385767
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.397704
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 5,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.430523
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.380968
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 13,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.359522
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.41039
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "stuck-tracking",
+      "split": "development",
+      "class": "delivery",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.400542
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.396457
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 1,
+      "verdict": "fail",
+      "check": "failure-criteria",
+      "kind": "outcome",
+      "reason": "failure criterion met: {\"needs_human\":false}",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.403039
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.367508
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.425843
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.418463
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 5,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'account', got 'billing'",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.389882
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 6,
+      "verdict": "fail",
+      "check": "failure-criteria",
+      "kind": "outcome",
+      "reason": "failure criterion met: {\"needs_human\":false}",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.475872
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 13,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.378722
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.446391
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "password-changed",
+      "split": "development",
+      "class": "account security",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.41178
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 0,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'account'",
+      "output": {
+        "category": "account",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.464574
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 1,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'billing'",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.458541
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 2,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'account'",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.435592
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "other",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.425984
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 4,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'account'",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.384171
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 5,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'delivery'",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.401952
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "other",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.408971
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 7,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'billing'",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.417974
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 8,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'account'",
+      "output": {
+        "category": "account",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.440773
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "product-advice",
+      "split": "development",
+      "class": "out of scope",
+      "trial": 9,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'other', got 'billing'",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.431522
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.394399
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.396064
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.430853
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.415529
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.371816
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 5,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.3631
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.406021
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 13,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.331549
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.405125
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "refund-missing",
+      "split": "development",
+      "class": "billing",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.412456
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.399889
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.387987
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.467127
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.426767
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.508488
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 5,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.385048
+      },
+      "latency_s": 3e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.396452
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 13,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.36287
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.390167
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "charged-after-closing",
+      "split": "development",
+      "class": "billing, ambiguous wording",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.412307
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 8e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 4e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 5,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "blank-message",
+      "split": "development",
+      "class": "empty input",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is blank",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 5,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 6,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "missing-body",
+      "split": "development",
+      "class": "missing input",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "rejected as expected: ValueError: message is not text",
+      "output": null,
+      "metadata": {},
+      "latency_s": 1e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 0,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1000,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.446696
+      },
+      "latency_s": 3e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 1,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1001,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.401411
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 2,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1002,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.393061
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 3,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1003,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.422201
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 4,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1004,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.464713
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 5,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'delivery', got 'billing'",
+      "output": {
+        "category": "billing",
+        "needs_human": true
+      },
+      "metadata": {
+        "seed": 1005,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.461885
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 6,
+      "verdict": "fail",
+      "check": "triage-outcome",
+      "kind": "outcome",
+      "reason": "category: expected 'delivery', got 'billing'",
+      "output": {
+        "category": "billing",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1006,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.414929
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 7,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1007,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 13,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.341234
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 8,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1008,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.383539
+      },
+      "latency_s": 2e-06
+    },
+    {
+      "case_id": "late-order",
+      "split": "development",
+      "class": "delivery",
+      "trial": 9,
+      "verdict": "pass",
+      "check": null,
+      "kind": null,
+      "reason": "",
+      "output": {
+        "category": "delivery",
+        "needs_human": false
+      },
+      "metadata": {
+        "seed": 1009,
+        "temperature": 1.0,
+        "ollama": "0.32.14",
+        "eval_count": 19,
+        "done_reason": "stop",
+        "recorded_latency_s": 0.38696
+      },
+      "latency_s": 2e-06
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "mutation": "unsupported-perfect",
+    "test": "test_unsupported_retrieval_is_null_not_perfect",
+    "exit_code": 1,
+    "meaning": "specific assertion fails without the guard",
+    "network_attempts": 0,
+    "log": "/tmp/rag-baseline-mutations/unsupported-perfect.log"
+  },
+  {
+    "mutation": "duplicate-generation",
+    "test": "test_guard_caps_each_query_and_generation_without_retry",
+    "exit_code": 1,
+    "meaning": "specific assertion fails without the guard",
+    "network_attempts": 0,
+    "log": "/tmp/rag-baseline-mutations/duplicate-generation.log"
+  },
+  {
+    "mutation": "ignore-artifact-binding",
+    "test": "test_replay_refuses_artifact_change_instead_of_new_inference",
+    "exit_code": 1,
+    "meaning": "specific assertion fails without the guard",
+    "network_attempts": 0,
+    "log": "/tmp/rag-baseline-mutations/ignore-artifact-binding.log"
+  }
+]

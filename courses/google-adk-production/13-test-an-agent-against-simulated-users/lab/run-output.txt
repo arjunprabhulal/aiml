@@ -1,0 +1,467 @@
+# Run simulated-users
+$ adk eval docs_assistant scenarios --config_file_path eval_config.json --print_detailed_results
+Using evaluation criteria: criteria={'hallucinations_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False, evaluate_intermediate_nl_responses=True, judge_model_options={'judge_model': 'gemini-3.8-flash', 'num_samples': 1}), 'per_turn_user_simulator_quality_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False, judge_model_options={'judge_model': 'gemini-3.8-flash', 'num_samples': 1})} custom_metrics=None user_simulator_config=LlmBackedUserSimulatorConfig(type='llm_backed', model='gemini-3.8-flash', model_configuration=GenerateContentConfig(
+  thinking_config=ThinkingConfig(
+    include_thoughts=True,
+    thinking_budget=10240
+  )
+), max_allowed_invocations=6, custom_instructions=None, include_function_calls=False) live_model_config=None
+*********************************************************************
+Eval Run Summary
+scenarios:
+  Tests passed: 2
+  Tests failed: 0
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 6be7706e
+Overall Eval Status: PASSED
+---------------------------------------------------------------------
+Metric: hallucinations_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: per_turn_user_simulator_quality_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 4.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 5073.5, Threshold: None
+Token breakdown:
+  total:            5073.5
+    input:          4319
+      prompt:       4319
+        cached:     n/a
+      tool use:     n/a
+    output:         754.5
+      candidates:   67.5
+      reasoning:    687
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 11.531500000000001, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     How do I make the assistant use a local model instead of Gemini?
+  actual_response:            Set `OLLAMA_API_BASE` to use a local model instead of Gemini (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='install.md')
+                              read_page(
+                                path='troubleshooting.md')
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: PASSED (1.0)
+  tool_call_count_v1:         4
+  inference_call_count_v1:    5
+  token_usage_v1:             4205 (in 2753, out 1452)
+  invocation_duration_v1:     18.40s
+
+Invocation 2 of 2
+  prompt:                     Which Python version does the project require?
+  actual_response:            The docs-assistant project requires Python 3.12 or later (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='install.md')
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: PASSED (1.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             5942 (in 5885, out 57)
+  invocation_duration_v1:     4.67s
+
+
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 1ae10b45
+Overall Eval Status: PASSED
+---------------------------------------------------------------------
+Metric: hallucinations_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: per_turn_user_simulator_quality_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 1.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 883.5, Threshold: None
+Token breakdown:
+  total:            883.5
+    input:          723.5
+      prompt:       723.5
+        cached:     n/a
+      tool use:     n/a
+    output:         160
+      candidates:   34.5
+      reasoning:    125.5
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 4.3185, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     The docs assistant isn't working for me.
+  actual_response:            What specific error or symptom are you encountering when trying to use the docs
+                              assistant?
+  actual_tool_calls:          (none)
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: PASSED (1.0)
+  tool_call_count_v1:         0
+  inference_call_count_v1:    1
+  token_usage_v1:             290 (in 177, out 113)
+  invocation_duration_v1:     2.00s
+
+Invocation 2 of 2
+  prompt:                     It's saying that it can't reach Ollama.
+  actual_response:            Check that `OLLAMA_API_BASE` points to a running Ollama server
+                              (troubleshooting.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='troubleshooting.md')
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: PASSED (1.0)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1477 (in 1270, out 207)
+  invocation_duration_v1:     6.63s
+
+# Run default-criteria
+$ adk eval docs_assistant scenarios --print_detailed_results
+Using evaluation criteria: criteria={'tool_trajectory_avg_score': 1.0, 'response_match_score': 0.8} custom_metrics=None user_simulator_config=None live_model_config=None
+*********************************************************************
+Eval Run Summary
+scenarios:
+  Tests passed: 0
+  Tests failed: 2
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 6be7706e
+Overall Eval Status: NOT_EVALUATED
+---------------------------------------------------------------------
+Metric: tool_trajectory_avg_score, Status: NOT_EVALUATED, Score: None, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: response_match_score, Status: NOT_EVALUATED, Score: None, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 2.5, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 3.5, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1366.0, Threshold: None
+Token breakdown:
+  total:            1366
+    input:          1307.5
+      prompt:       1307.5
+        cached:     n/a
+      tool use:     n/a
+    output:         58.5
+      candidates:   58.5
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 5.263999999999999, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     How do I make the assistant use a local model instead of Gemini?
+  actual_response:            To make the assistant use a local model instead of Gemini, set `OLLAMA_API_BASE`
+                              (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='install.md')
+  tool_trajectory_avg_score:  NOT_EVALUATED (None)
+  response_match_score:       NOT_EVALUATED (None)
+  tool_call_count_v1:         3
+  inference_call_count_v1:    4
+  token_usage_v1:             1195 (in 1122, out 73)
+  invocation_duration_v1:     5.95s
+
+Invocation 2 of 2
+  prompt:                     What Python version does the project require?
+  actual_response:            The project requires Python 3.12 or later (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='install.md')
+  tool_trajectory_avg_score:  NOT_EVALUATED (None)
+  response_match_score:       NOT_EVALUATED (None)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1537 (in 1493, out 44)
+  invocation_duration_v1:     4.58s
+
+
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 1ae10b45
+Overall Eval Status: NOT_EVALUATED
+---------------------------------------------------------------------
+Metric: tool_trajectory_avg_score, Status: NOT_EVALUATED, Score: None, Threshold: 1.0
+---------------------------------------------------------------------
+Metric: response_match_score, Status: NOT_EVALUATED, Score: None, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 1.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1065.5, Threshold: None
+Token breakdown:
+  total:            1065.5
+    input:          861.5
+      prompt:       861.5
+        cached:     n/a
+      tool use:     n/a
+    output:         204
+      candidates:   34.5
+      reasoning:    169.5
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 4.036, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     The docs assistant isn't working for me.
+  actual_response:            What specific error or symptom are you encountering when trying to use the docs
+                              assistant?
+  actual_tool_calls:          (none)
+  tool_trajectory_avg_score:  NOT_EVALUATED (None)
+  response_match_score:       NOT_EVALUATED (None)
+  tool_call_count_v1:         0
+  inference_call_count_v1:    1
+  token_usage_v1:             395 (in 177, out 218)
+  invocation_duration_v1:     2.78s
+
+Invocation 2 of 2
+  prompt:                     It reports that it cannot reach Ollama.
+  actual_response:            Check that `OLLAMA_API_BASE` points to a running Ollama server
+                              (troubleshooting.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='troubleshooting.md')
+  tool_trajectory_avg_score:  NOT_EVALUATED (None)
+  response_match_score:       NOT_EVALUATED (None)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1736 (in 1546, out 190)
+  invocation_duration_v1:     5.30s
+2026-10-21 20:22:36,890 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `tool_trajectory_avg_score` for eval case id '6be7706e' with following error `expected_invocations is needed by this metri ...
+ValueError: expected_invocations is needed by this metric.
+2026-10-21 20:22:36,890 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `response_match_score` for eval case id '6be7706e' with following error `expected_invocations is required for this metric. ...
+ValueError: expected_invocations is required for this metric.
+2026-10-21 20:22:36,891 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `tool_trajectory_avg_score` for eval case id '1ae10b45' with following error `expected_invocations is needed by this metri ...
+2026-10-21 20:22:36,891 - ERROR - local_eval_service.py:436 - Metric evaluation failed for metric `response_match_score` for eval case id '1ae10b45' with following error `expected_invocations is required for this metric. ...
+
+# Run one-turn-limit
+$ adk eval docs_assistant scenarios --config_file_path config-one-turn.json --print_detailed_results
+Using evaluation criteria: criteria={'hallucinations_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False, evaluate_intermediate_nl_responses=True, judge_model_options={'judge_model': 'gemini-3.8-flash', 'num_samples': 1}), 'per_turn_user_simulator_quality_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False, judge_model_options={'judge_model': 'gemini-3.8-flash', 'num_samples': 1})} custom_metrics=None user_simulator_config=LlmBackedUserSimulatorConfig(type='llm_backed', model='gemini-3.8-flash', model_configuration=GenerateContentConfig(
+  thinking_config=ThinkingConfig(
+    include_thoughts=True,
+    thinking_budget=10240
+  )
+), max_allowed_invocations=1, custom_instructions=None, include_function_calls=False) live_model_config=None
+*********************************************************************
+Eval Run Summary
+scenarios:
+  Tests passed: 0
+  Tests failed: 2
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 6be7706e
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: hallucinations_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: per_turn_user_simulator_quality_v1, Status: FAILED, Score: 0.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 4.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 1191.0, Threshold: None
+Token breakdown:
+  total:            1191
+    input:          1122
+      prompt:       1122
+        cached:     n/a
+      tool use:     n/a
+    output:         69
+      candidates:   69
+      reasoning:    n/a
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 6.235, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     How do I make the assistant use a local model instead of Gemini?
+  actual_response:            Set `OLLAMA_API_BASE` to use a local model instead of Gemini (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='install.md')
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: FAILED (0.0)
+  tool_call_count_v1:         3
+  inference_call_count_v1:    4
+  token_usage_v1:             1191 (in 1122, out 69)
+  invocation_duration_v1:     6.24s
+
+
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 1ae10b45
+Overall Eval Status: FAILED
+---------------------------------------------------------------------
+Metric: hallucinations_v1, Status: PASSED, Score: 1.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: per_turn_user_simulator_quality_v1, Status: FAILED, Score: 0.0, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 0.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 1.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 244.0, Threshold: None
+Token breakdown:
+  total:            244
+    input:          177
+      prompt:       177
+        cached:     n/a
+      tool use:     n/a
+    output:         67
+      candidates:   9
+      reasoning:    58
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 2.1, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 1
+  prompt:                     The docs assistant isn't working for me.
+  actual_response:            What specific error or symptom are you experiencing?
+  actual_tool_calls:          (none)
+  hallucinations_v1:          PASSED (1.0)
+  per_turn_user_simulator_quality_v1: FAILED (0.0)
+  tool_call_count_v1:         0
+  inference_call_count_v1:    1
+  token_usage_v1:             244 (in 177, out 67)
+  invocation_duration_v1:     2.10s
+
+# Run task-success-metric
+$ adk eval docs_assistant scenarios --config_file_path config-task-success.json --print_detailed_results
+Using evaluation criteria: criteria={'multi_turn_task_success_v1': BaseCriterion(threshold=0.8, include_intermediate_responses_in_final=False)} custom_metrics=None user_simulator_config=LlmBackedUserSimulatorConfig(type='llm_backed', model='gemini-3.8-flash', model_configuration=GenerateContentConfig(
+  thinking_config=ThinkingConfig(
+    include_thoughts=True,
+    thinking_budget=10240
+  )
+), max_allowed_invocations=6, custom_instructions=None, include_function_calls=False) live_model_config=None
+*********************************************************************
+Eval Run Summary
+scenarios:
+  Tests passed: 0
+  Tests failed: 2
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 1ae10b45
+Overall Eval Status: NOT_EVALUATED
+---------------------------------------------------------------------
+Metric: multi_turn_task_success_v1, Status: NOT_EVALUATED, Score: None, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 1.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 2.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 844.5, Threshold: None
+Token breakdown:
+  total:            844.5
+    input:          676
+      prompt:       676
+        cached:     n/a
+      tool use:     n/a
+    output:         168.5
+      candidates:   31.5
+      reasoning:    137
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 4.402, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     The docs assistant isn't working for me.
+  actual_response:            What specific error message or symptom are you encountering?
+  actual_tool_calls:          (none)
+  multi_turn_task_success_v1: NOT_EVALUATED (None)
+  tool_call_count_v1:         0
+  inference_call_count_v1:    1
+  token_usage_v1:             250 (in 177, out 73)
+  invocation_duration_v1:     2.31s
+
+Invocation 2 of 2
+  prompt:                     It's telling me that it can't reach Ollama.
+  actual_response:            Check that `OLLAMA_API_BASE` points to a running Ollama server
+                              (troubleshooting.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='troubleshooting.md')
+  multi_turn_task_success_v1: NOT_EVALUATED (None)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             1439 (in 1175, out 264)
+  invocation_duration_v1:     6.50s
+
+
+********************************************************************
+Eval Set Id: scenarios
+Eval Id: 6be7706e
+Overall Eval Status: NOT_EVALUATED
+---------------------------------------------------------------------
+Metric: multi_turn_task_success_v1, Status: NOT_EVALUATED, Score: None, Threshold: 0.8
+---------------------------------------------------------------------
+Metric: tool_call_count_v1, Status: INFORMATIONAL, Score: 3.0, Threshold: None
+---------------------------------------------------------------------
+Metric: inference_call_count_v1, Status: INFORMATIONAL, Score: 4.0, Threshold: None
+---------------------------------------------------------------------
+Metric: token_usage_v1, Status: INFORMATIONAL, Score: 5863.5, Threshold: None
+Token breakdown:
+  total:            5863.5
+    input:          4997
+      prompt:       4997
+        cached:     n/a
+      tool use:     n/a
+    output:         866.5
+      candidates:   66
+      reasoning:    800.5
+---------------------------------------------------------------------
+Metric: invocation_duration_v1, Status: INFORMATIONAL, Score: 11.546500000000002, Threshold: None
+---------------------------------------------------------------------
+Invocation Details:
+
+Invocation 1 of 2
+  prompt:                     How do I make the assistant use a local model instead of Gemini?
+  actual_response:            Set `OLLAMA_API_BASE` to use a local model instead of Gemini (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='cli.md')
+                              read_page(
+                                path='install.md')
+                              read_page(
+                                path='troubleshooting.md')
+  multi_turn_task_success_v1: NOT_EVALUATED (None)
+  tool_call_count_v1:         4
+  inference_call_count_v1:    5
+  token_usage_v1:             5193 (in 3681, out 1512)
+  invocation_duration_v1:     16.95s
+
+Invocation 2 of 2
+  prompt:                     Which Python version does the project require?
+  actual_response:            The project requires Python 3.12 or later (install.md).
+  actual_tool_calls:          list_pages()
+                              read_page(
+                                path='install.md')
+  multi_turn_task_success_v1: NOT_EVALUATED (None)
+  tool_call_count_v1:         2
+  inference_call_count_v1:    3
+  token_usage_v1:             6534 (in 6313, out 221)
+  invocation_duration_v1:     6.14s
+2026-10-21 20:24:00,505 - ERROR - _evals_metric_handlers.py:1108 - Error processing metric multi_turn_task_success_v1 for case None: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Requests to this API aiplatf ...
+google.genai.errors.ClientError: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Requests to this API aiplatform.googleapis.com method google.cloud.aiplatform.v1beta1.EvaluationService.EvaluateInstances are bl ...
+2026-10-21 20:24:01,318 - ERROR - _evals_metric_handlers.py:1108 - Error processing metric multi_turn_task_success_v1 for case None: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Requests to this API aiplatf ...

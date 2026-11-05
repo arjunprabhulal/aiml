@@ -1,0 +1,2453 @@
+{
+ "recorded_at": "2026-10-22T12:23:31.863583+00:00",
+ "environment": {
+  "google-adk": "2.12.0",
+  "google-genai": "2.32.0",
+  "model": "gemini-3.8-live",
+  "tools_model": "gemini-3.8-live"
+ },
+ "runs": [
+  {
+   "name": "blocking lookup",
+   "events": [
+    {
+     "author": "docs_helper",
+     "resumption_update": true
+    },
+    {
+     "author": "docs_helper"
+    },
+    {
+     "author": "user",
+     "input_transcription": {
+      "text": "How long does a Live API connection stay open? Please look it up.",
+      "finished": true
+     }
+    },
+    {
+     "author": "docs_helper"
+    },
+    {
+     "author": "docs_helper",
+     "calls": [
+      {
+       "name": "search_docs",
+       "args": {
+        "query": "Live API connection duration"
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "responses": [
+      {
+       "name": "search_docs",
+       "response": {
+        "query": "Live API connection duration",
+        "hits": [
+         {
+          "page": "live-streaming.md",
+          "line": "`Runner.run_live()` holds one open connection to the Gemini Live API while the user talks."
+         },
+         {
+          "page": "live-streaming.md",
+          "line": "A Live API connection closes after about 10 minutes; enable session resumption to continue."
+         },
+         {
+          "page": "tools.md",
+          "line": "ADK runs a live agent's tool calls itself and sends each result back to the model."
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 5280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "The Live API ",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 5760,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "connection closes after",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 9600,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 9600,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 5760,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 28800,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " about ten minutes,",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 19200,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 24960,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " but you can enable session",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 28800,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " resumption to continue.",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 19200,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 11520,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "output_transcription": {
+      "text": "The Live API connection closes after about ten minutes, but you can enable session resumption to continue.",
+      "finished": true
+     }
+    },
+    {
+     "author": "docs_helper",
+     "total_tokens": 2294
+    },
+    {
+     "author": "docs_helper",
+     "turn_complete": true
+    }
+   ],
+   "answer": "The Live API connection closes after about ten minutes, but you can enable session resumption to continue.",
+   "connections": [
+    {
+     "model": "gemini-3.8-live",
+     "traffic": [
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "live_session_resumption_update": {
+         "new_handle": "3dee3681-b336-4108-860c-f10c0aa2e033",
+         "resumable": true
+        }
+       }
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "ActivityStart",
+       "bytes": 0,
+       "chunks": 1
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "audio/pcm;rate=16000",
+       "bytes": 127328,
+       "chunks": 40
+      },
+      {
+       "sent": "realtime",
+       "mime_type": "ActivityEnd",
+       "bytes": 0,
+       "chunks": 1
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "voice_activity": {
+         "voice_activity_type": "ACTIVITY_START",
+         "audio_offset": "0s"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": false,
+        "input_transcription": {
+         "text": "How long does a Live API connection stay open? Please look it up.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "voice_activity": {
+         "voice_activity_type": "ACTIVITY_END",
+         "audio_offset": "3.979s"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "function_call": {
+            "id": "fc_7270779162791240741",
+            "args": {
+             "query": "Live API connection duration"
+            },
+            "name": "search_docs"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "search_docs"
+       ]
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 5280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "The Live API ",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 5760,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "connection closes after",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 5760,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 28800,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " about ten minutes,",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 19200,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 24960,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " but you can enable session",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 28800,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " resumption to continue.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 19200,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 11520,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": false,
+        "output_transcription": {
+         "text": "The Live API connection closes after about ten minutes, but you can enable session resumption to continue.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "usage_metadata": {
+         "candidates_token_count": 160,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 145
+          }
+         ],
+         "prompt_token_count": 2134,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 1228
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 640
+          }
+         ],
+         "thoughts_token_count": 89,
+         "total_token_count": 2294
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ],
+     "tools": [
+      {
+       "name": "search_docs",
+       "behavior": "BLOCKING"
+      },
+      {
+       "name": "export_page_index",
+       "behavior": "NON_BLOCKING"
+      },
+      {
+       "name": "check_links",
+       "behavior": "NON_BLOCKING"
+      },
+      {
+       "name": "stop_streaming",
+       "behavior": null
+      }
+     ],
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "input_audio_transcription": {},
+      "output_audio_transcription": {},
+      "realtime_input_config": {
+       "automatic_activity_detection": {
+        "disabled": true
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "name": "streaming link check, then stop",
+   "events": [
+    {
+     "author": "docs_helper",
+     "resumption_update": true
+    },
+    {
+     "author": "docs_helper",
+     "calls": [
+      {
+       "name": "check_links",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "responses": [
+      {
+       "name": "check_links",
+       "response": {
+        "status": "The function is running asynchronously and the results are pending."
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "total_tokens": 869
+    },
+    {
+     "author": "docs_helper",
+     "turn_complete": true
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "I've started checking the ",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 13440,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 28800,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "links in the documentation",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 1920,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 30720,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " pages and will let you know",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " once it's complete.",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "output_transcription": {
+      "text": "I've started checking the links in the documentation pages and will let you know once it's complete.",
+      "finished": true
+     }
+    },
+    {
+     "author": "docs_helper",
+     "total_tokens": 1015
+    },
+    {
+     "author": "docs_helper",
+     "turn_complete": true
+    },
+    {
+     "author": "docs_helper",
+     "calls": [
+      {
+       "name": "stop_streaming",
+       "args": {
+        "function_name": "check_links"
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "responses": [
+      {
+       "name": "stop_streaming",
+       "response": {
+        "status": "Successfully stopped streaming function check_links"
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "total_tokens": 1135
+    },
+    {
+     "author": "docs_helper",
+     "turn_complete": true
+    }
+   ],
+   "answer": "I've started checking the links in the documentation pages and will let you know once it's complete.",
+   "connections": [
+    {
+     "model": "gemini-3.8-live",
+     "traffic": [
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "live_session_resumption_update": {
+         "new_handle": "b8df6741-b801-4488-833d-22290e764855",
+         "resumable": true
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "Check the links in the docs pages.",
+       "function_responses": []
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "function_call": {
+            "id": "call_84227",
+            "args": {},
+            "name": "check_links"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "check_links"
+       ]
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "usage_metadata": {
+         "candidates_token_count": 6,
+         "prompt_token_count": 863,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 534
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 222
+          }
+         ],
+         "thoughts_token_count": 71,
+         "total_token_count": 869
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "I've started checking the ",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 13440,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 28800,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "links in the documentation",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 30720,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " pages and will let you know",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " once it's complete.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": false,
+        "output_transcription": {
+         "text": "I've started checking the links in the documentation pages and will let you know once it's complete.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "check_links"
+       ]
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "check_links"
+       ]
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "usage_metadata": {
+         "candidates_token_count": 120,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 120
+          }
+         ],
+         "prompt_token_count": 895,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 552
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 222
+          }
+         ],
+         "thoughts_token_count": 95,
+         "total_token_count": 1015
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "content",
+       "text": "Never mind, stop the link check.",
+       "function_responses": []
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "function_call": {
+            "id": "call_84334",
+            "args": {
+             "function_name": "check_links"
+            },
+            "name": "stop_streaming"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "stop_streaming"
+       ]
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "usage_metadata": {
+         "candidates_token_count": 16,
+         "prompt_token_count": 1119,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 620
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 342
+          }
+         ],
+         "thoughts_token_count": 38,
+         "total_token_count": 1135
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ],
+     "tools": [
+      {
+       "name": "search_docs",
+       "behavior": "BLOCKING"
+      },
+      {
+       "name": "export_page_index",
+       "behavior": "NON_BLOCKING"
+      },
+      {
+       "name": "check_links",
+       "behavior": "NON_BLOCKING"
+      },
+      {
+       "name": "stop_streaming",
+       "behavior": null
+      }
+     ],
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     }
+    }
+   ]
+  },
+  {
+   "name": "scheduled export on current Live model",
+   "events": [
+    {
+     "author": "docs_helper",
+     "resumption_update": true
+    },
+    {
+     "author": "docs_helper",
+     "calls": [
+      {
+       "name": "export_page_index",
+       "args": {}
+      },
+      {
+       "name": "search_docs",
+       "args": {
+        "query": "input sample rate"
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "responses": [
+      {
+       "name": "search_docs",
+       "response": {
+        "query": "input sample rate",
+        "hits": [
+         {
+          "page": "live-streaming.md",
+          "line": "Microphone audio goes in as 16-bit PCM, 16 kHz, mono (`audio/pcm;rate=16000`)."
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 2,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "The input sample rate ",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 13440,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 11520,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 9600,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 1920,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "is 16 kHz,",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 30720,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 9600,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 24960,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " and the page index",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 32640,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " export has been started.",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 17280,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 23040,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 13440,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "output_transcription": {
+      "text": "The input sample rate is 16 kHz, and the page index export has been started.",
+      "finished": true
+     }
+    },
+    {
+     "author": "docs_helper",
+     "total_tokens": 2074
+    },
+    {
+     "author": "docs_helper",
+     "turn_complete": true
+    },
+    {
+     "author": "docs_helper",
+     "responses": [
+      {
+       "name": "export_page_index",
+       "response": {
+        "status": "done",
+        "pages": [
+         "live-streaming.md",
+         "sessions.md",
+         "tools.md"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 2,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "The page index ",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 4320,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 9600,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 7680,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 13440,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": "export has successfully",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 11520,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 23040,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 19200,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "partial": true,
+     "output_transcription": {
+      "text": " finished processing.",
+      "finished": false
+     }
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 19200,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 15360,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "audio_bytes": 9600,
+     "mime_type": "audio/pcm;rate=24000"
+    },
+    {
+     "author": "docs_helper",
+     "output_transcription": {
+      "text": "The page index export has successfully finished processing.",
+      "finished": true
+     }
+    },
+    {
+     "author": "docs_helper",
+     "total_tokens": 1254
+    },
+    {
+     "author": "docs_helper",
+     "turn_complete": true
+    }
+   ],
+   "answer": "The input sample rate is 16 kHz, and the page index export has been started.The page index export has successfully finished processing.",
+   "connections": [
+    {
+     "model": "gemini-3.8-live",
+     "traffic": [
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "live_session_resumption_update": {
+         "new_handle": "ae7d94d5-e7b1-4cbb-95b9-de22c9aac66a",
+         "resumable": true
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "Start the page index export. While it runs, tell me the input sample rate.",
+       "function_responses": []
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "function_call": {
+            "id": "call_187445",
+            "args": {},
+            "name": "export_page_index"
+           }
+          },
+          {
+           "function_call": {
+            "id": "fc_14879619447086269061",
+            "args": {
+             "query": "input sample rate"
+            },
+            "name": "search_docs"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "search_docs"
+       ]
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 2,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "The input sample rate ",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 13440,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 11520,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 1920,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "is 16 kHz,",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 30720,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 24960,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " and the page index",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 32640,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " export has been started.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 17280,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 23040,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 13440,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": false,
+        "output_transcription": {
+         "text": "The input sample rate is 16 kHz, and the page index export has been started.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "usage_metadata": {
+         "candidates_token_count": 146,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 132
+          }
+         ],
+         "prompt_token_count": 1928,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 1228
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 444
+          }
+         ],
+         "thoughts_token_count": 64,
+         "total_token_count": 2074
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "content",
+       "text": "",
+       "function_responses": [
+        "export_page_index"
+       ]
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 2,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "The page index ",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 4320,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 7680,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 13440,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": "export has successfully",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 11520,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 23040,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 19200,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": true,
+        "output_transcription": {
+         "text": " finished processing.",
+         "finished": false
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 19200,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 15360,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "inline_data": {
+            "data": 9600,
+            "mime_type": "audio/pcm;rate=24000"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "partial": false,
+        "output_transcription": {
+         "text": "The page index export has successfully finished processing.",
+         "finished": true
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "usage_metadata": {
+         "candidates_token_count": 83,
+         "candidates_tokens_details": [
+          {
+           "modality": "AUDIO",
+           "token_count": 83
+          }
+         ],
+         "prompt_token_count": 1171,
+         "prompt_tokens_details": [
+          {
+           "modality": "TEXT",
+           "token_count": 645
+          },
+          {
+           "modality": "AUDIO",
+           "token_count": 354
+          }
+         ],
+         "thoughts_token_count": 54,
+         "total_token_count": 1254
+        }
+       }
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "grounding_metadata": {},
+        "turn_complete": true
+       }
+      },
+      {
+       "sent": "close"
+      }
+     ],
+     "tools": [
+      {
+       "name": "search_docs",
+       "behavior": "BLOCKING"
+      },
+      {
+       "name": "export_page_index",
+       "behavior": "NON_BLOCKING"
+      },
+      {
+       "name": "check_links",
+       "behavior": "NON_BLOCKING"
+      },
+      {
+       "name": "stop_streaming",
+       "behavior": null
+      }
+     ],
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     }
+    }
+   ]
+  },
+  {
+   "name": "tool raises an exception",
+   "error": "FileNotFoundError: [Errno 2] No such file or directory: 'docs/deploy.md'",
+   "events": [],
+   "answer": "",
+   "connections": [
+    {
+     "model": "gemini-3.8-live",
+     "traffic": [
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "live_session_resumption_update": {
+         "new_handle": "1cedff99-21d8-43bb-8932-005f94f091e6",
+         "resumable": true
+        }
+       }
+      },
+      {
+       "sent": "content",
+       "text": "Read the page deploy.md.",
+       "function_responses": []
+      },
+      {
+       "received": {
+        "model_version": "gemini-3.8-live",
+        "content": {
+         "parts": [
+          {
+           "function_call": {
+            "id": "call_180128",
+            "args": {
+             "name": "deploy.md"
+            },
+            "name": "read_page"
+           }
+          }
+         ],
+         "role": "model"
+        }
+       }
+      }
+     ],
+     "tools": [
+      {
+       "name": "read_page",
+       "behavior": null
+      }
+     ],
+     "config": {
+      "response_modalities": [
+       "AUDIO"
+      ],
+      "input_audio_transcription": {},
+      "output_audio_transcription": {}
+     }
+    }
+   ]
+  }
+ ],
+ "raw_tool_call": [
+  {
+   "model": "gemini-3.8-live",
+   "messages": [
+    "tool_call",
+    "turn_complete"
+   ]
+  }
+ ]
+}

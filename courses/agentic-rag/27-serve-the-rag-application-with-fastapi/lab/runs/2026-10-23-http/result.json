@@ -1,0 +1,955 @@
+{
+  "execution_mode": "actual-loopback-fastapi-http-offline-scripted-retrieval",
+  "model_called": false,
+  "health": {
+    "status": "ok",
+    "mode": "offline-scripted-retrieval",
+    "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e"
+  },
+  "cases": [
+    {
+      "scenario": "completed",
+      "http_status": 200,
+      "response": {
+        "schema_version": 1,
+        "execution_mode": "offline-scripted-retrieval-http",
+        "model_called": false,
+        "request_id": "c4b35bcad796671fdb9ebd92411172aa68574ee99fecbd854bcef13db24dc067",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "question": "Will write_text replace the contents of an existing file?",
+          "version": "3.12",
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "status": "completed",
+        "reason": "configured_context_marker_found",
+        "admission": {
+          "accepted": true,
+          "limits": {
+            "max_steps": 6,
+            "max_searches": 2,
+            "max_reads": 2,
+            "max_source_bytes": 4096
+          }
+        },
+        "usage": {
+          "steps": 4,
+          "searches": 2,
+          "reads": 2,
+          "reserved_source_bytes": 378,
+          "delivered_source_bytes": 378
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "overwritten",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "query": "overwritten",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -0.7992166451067194,
+                  "rank": 1,
+                  "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 3,
+              "searches": 2,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -0.7992166451067194,
+                  "rank": 1,
+                  "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 224,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+              "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+              "source_id": "path-write",
+              "version": "3.12",
+              "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+              "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+              "byte_count": 224,
+              "native_score": -0.7992166451067194,
+              "rank": 1,
+              "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84",
+              "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+              "read_request_id": "ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4",
+              "result_sha256": "b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38"
+            },
+            "usage_after": {
+              "steps": 4,
+              "searches": 2,
+              "reads": 2,
+              "reserved_source_bytes": 378,
+              "delivered_source_bytes": 378
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+            "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+            "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "byte_count": 154,
+            "native_score": -1.4220532319391636e-06,
+            "rank": 1,
+            "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+            "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+          },
+          {
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127",
+            "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+            "source_id": "path-write",
+            "version": "3.12",
+            "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+            "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+            "byte_count": 224,
+            "native_score": -0.7992166451067194,
+            "rank": 1,
+            "read_token": "93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84",
+            "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+            "read_request_id": "ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4",
+            "result_sha256": "b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38"
+          }
+        ],
+        "policy": {
+          "name": "existing-path",
+          "initial_query": "text",
+          "refinement_query": "overwritten",
+          "required_marker": "overwritten",
+          "max_rounds": 2
+        },
+        "result_sha256": "dc00e17712c2fc6cde273b32d458f15615496490bf7b5e54093e866fd7b7773b"
+      },
+      "body_sha256_header": "6e1fc046cc30d8fad53ab0fa558a3749928da7efd5e50d5f2b8f9d2e5bd3e55d",
+      "raw_body_sha256": "6e1fc046cc30d8fad53ab0fa558a3749928da7efd5e50d5f2b8f9d2e5bd3e55d",
+      "raw_response_text": "{\"schema_version\":1,\"execution_mode\":\"offline-scripted-retrieval-http\",\"model_called\":false,\"request_id\":\"c4b35bcad796671fdb9ebd92411172aa68574ee99fecbd854bcef13db24dc067\",\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"request\":{\"question\":\"Will write_text replace the contents of an existing file?\",\"version\":\"3.12\",\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096},\"status\":\"completed\",\"reason\":\"configured_context_marker_found\",\"admission\":{\"accepted\":true,\"limits\":{\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096}},\"usage\":{\"steps\":4,\"searches\":2,\"reads\":2,\"reserved_source_bytes\":378,\"delivered_source_bytes\":378},\"trace\":[{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"text\",\"version\":\"3.12\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"query\":\"text\",\"version\":\"3.12\",\"k\":2,\"results\":[{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\"},{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-1.3203883495145633e-06,\"rank\":2,\"read_token\":\"189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81\"}]},\"usage_after\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0}},{\"action\":{\"tool\":\"read\",\"arguments\":{\"handle\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\"}}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":154,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\",\"text\":\"Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\\\"utf-8\\\" when reading a UTF-8 file.\",\"url\":\"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text\",\"read_request_id\":\"b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe\",\"result_sha256\":\"2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5\"},\"usage_after\":{\"steps\":2,\"searches\":1,\"reads\":1,\"reserved_source_bytes\":154,\"delivered_source_bytes\":154}},{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"overwritten\",\"version\":\"3.12\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127\",\"query\":\"overwritten\",\"version\":\"3.12\",\"k\":2,\"results\":[{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-0.7992166451067194,\"rank\":1,\"read_token\":\"93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84\"}]},\"usage_after\":{\"steps\":3,\"searches\":2,\"reads\":1,\"reserved_source_bytes\":154,\"delivered_source_bytes\":154}},{\"action\":{\"tool\":\"read\",\"arguments\":{\"handle\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-0.7992166451067194,\"rank\":1,\"read_token\":\"93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84\"}}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":224,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-0.7992166451067194,\"rank\":1,\"read_token\":\"93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84\",\"text\":\"Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\\\"utf-8\\\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\",\"url\":\"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text\",\"read_request_id\":\"ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4\",\"result_sha256\":\"b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38\"},\"usage_after\":{\"steps\":4,\"searches\":2,\"reads\":2,\"reserved_source_bytes\":378,\"delivered_source_bytes\":378}}],\"evidence\":[{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\",\"text\":\"Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\\\"utf-8\\\" when reading a UTF-8 file.\",\"url\":\"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text\",\"read_request_id\":\"b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe\",\"result_sha256\":\"2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5\"},{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"aeffc68efdee46b8d23c597f651143424c575c0c1a4699ab08a48734d011f127\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-0.7992166451067194,\"rank\":1,\"read_token\":\"93594ba3ddd6fd296ba70304fa0bd5bf8c8c5d39e1d4d3b97db54d31c512fb84\",\"text\":\"Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\\\"utf-8\\\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.\",\"url\":\"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text\",\"read_request_id\":\"ebff16e2002855a51b3a7f1ce690d01e0e29c9bc77e4e87001979c0a88be7db4\",\"result_sha256\":\"b6df6bc29cc62ee7c203fe983839c14991b707c9c2d312b3f5561b40769b2c38\"}],\"policy\":{\"name\":\"existing-path\",\"initial_query\":\"text\",\"refinement_query\":\"overwritten\",\"required_marker\":\"overwritten\",\"max_rounds\":2},\"result_sha256\":\"dc00e17712c2fc6cde273b32d458f15615496490bf7b5e54093e866fd7b7773b\"}"
+    },
+    {
+      "scenario": "incomplete",
+      "http_status": 200,
+      "response": {
+        "schema_version": 1,
+        "execution_mode": "offline-scripted-retrieval-http",
+        "model_called": false,
+        "request_id": "f0ede4487c62ef1467442f2b84067ce89f9a83216123911eb086f92c19afdc5c",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "question": "How frequently does our cloud provider back up these files?",
+          "version": "3.12",
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "status": "incomplete",
+        "reason": "no_refinement_rule",
+        "admission": {
+          "accepted": true,
+          "limits": {
+            "max_steps": 6,
+            "max_searches": 2,
+            "max_reads": 2,
+            "max_source_bytes": 4096
+          }
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 1,
+          "reads": 1,
+          "reserved_source_bytes": 154,
+          "delivered_source_bytes": 154
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 154,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+              "source_id": "path-read",
+              "version": "3.12",
+              "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+              "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "start_line": 1,
+              "end_line": 1,
+              "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+              "byte_count": 154,
+              "native_score": -1.4220532319391636e-06,
+              "rank": 1,
+              "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+              "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+              "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+              "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+              "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 1,
+              "reads": 1,
+              "reserved_source_bytes": 154,
+              "delivered_source_bytes": 154
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+            "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+            "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+            "source_id": "path-read",
+            "version": "3.12",
+            "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+            "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "start_line": 1,
+            "end_line": 1,
+            "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+            "byte_count": 154,
+            "native_score": -1.4220532319391636e-06,
+            "rank": 1,
+            "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124",
+            "text": "Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\"utf-8\" when reading a UTF-8 file.",
+            "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+            "read_request_id": "b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe",
+            "result_sha256": "2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5"
+          }
+        ],
+        "policy": {
+          "name": "no-matching-rule",
+          "initial_query": "text",
+          "refinement_query": null,
+          "required_marker": null,
+          "max_rounds": 2
+        },
+        "result_sha256": "d9b383bf67df785a022be61316e488d738dcb3c2bd921bef7543b99997bc1446"
+      },
+      "body_sha256_header": "692af09096ceb6f12da0167f6de42415a8c961a4a03f83582fcbd6ab1561a373",
+      "raw_body_sha256": "692af09096ceb6f12da0167f6de42415a8c961a4a03f83582fcbd6ab1561a373",
+      "raw_response_text": "{\"schema_version\":1,\"execution_mode\":\"offline-scripted-retrieval-http\",\"model_called\":false,\"request_id\":\"f0ede4487c62ef1467442f2b84067ce89f9a83216123911eb086f92c19afdc5c\",\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"request\":{\"question\":\"How frequently does our cloud provider back up these files?\",\"version\":\"3.12\",\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096},\"status\":\"incomplete\",\"reason\":\"no_refinement_rule\",\"admission\":{\"accepted\":true,\"limits\":{\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096}},\"usage\":{\"steps\":2,\"searches\":1,\"reads\":1,\"reserved_source_bytes\":154,\"delivered_source_bytes\":154},\"trace\":[{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"text\",\"version\":\"3.12\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"query\":\"text\",\"version\":\"3.12\",\"k\":2,\"results\":[{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\"},{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-1.3203883495145633e-06,\"rank\":2,\"read_token\":\"189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81\"}]},\"usage_after\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0}},{\"action\":{\"tool\":\"read\",\"arguments\":{\"handle\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\"}}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":154,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\",\"text\":\"Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\\\"utf-8\\\" when reading a UTF-8 file.\",\"url\":\"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text\",\"read_request_id\":\"b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe\",\"result_sha256\":\"2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5\"},\"usage_after\":{\"steps\":2,\"searches\":1,\"reads\":1,\"reserved_source_bytes\":154,\"delivered_source_bytes\":154}}],\"evidence\":[{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\",\"text\":\"Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\\\"utf-8\\\" when reading a UTF-8 file.\",\"url\":\"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text\",\"read_request_id\":\"b2ce4d1e809a197df6c864261264b583737b1f41c59f8a4b6e353911b84c5bfe\",\"result_sha256\":\"2d855cfa0b4f7e90c3711783b7779709f3b964760fd789d0d65b11f9b3604ac5\"}],\"policy\":{\"name\":\"no-matching-rule\",\"initial_query\":\"text\",\"refinement_query\":null,\"required_marker\":null,\"max_rounds\":2},\"result_sha256\":\"d9b383bf67df785a022be61316e488d738dcb3c2bd921bef7543b99997bc1446\"}"
+    },
+    {
+      "scenario": "empty_eligible",
+      "http_status": 200,
+      "response": {
+        "schema_version": 1,
+        "execution_mode": "offline-scripted-retrieval-http",
+        "model_called": false,
+        "request_id": "965bab2126eead5f02fa7d6bdc7dc544e6a2c9a9fa40c43a9a0ed6489521b32d",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "question": "Will write_text replace the contents of an existing file?",
+          "version": "9.99",
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "status": "incomplete",
+        "reason": "round_limit",
+        "admission": {
+          "accepted": true,
+          "limits": {
+            "max_steps": 6,
+            "max_searches": 2,
+            "max_reads": 2,
+            "max_source_bytes": 4096
+          }
+        },
+        "usage": {
+          "steps": 2,
+          "searches": 2,
+          "reads": 0,
+          "reserved_source_bytes": 0,
+          "delivered_source_bytes": 0
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "9.99",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "fefe356a697d65ea81980cd228d12ddde25c3d62fe8a4badbaafc3f385052d97",
+              "query": "text",
+              "version": "9.99",
+              "k": 2,
+              "results": []
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "overwritten",
+                "version": "9.99",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "39a9d404c56be7c96dadecd7ef9d361f8f749b4b62d095516e9fa8c864e7941a",
+              "query": "overwritten",
+              "version": "9.99",
+              "k": 2,
+              "results": []
+            },
+            "usage_after": {
+              "steps": 2,
+              "searches": 2,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          }
+        ],
+        "evidence": [],
+        "policy": {
+          "name": "existing-path",
+          "initial_query": "text",
+          "refinement_query": "overwritten",
+          "required_marker": "overwritten",
+          "max_rounds": 2
+        },
+        "result_sha256": "4f36a6fdd57146040e4c5c62173d154e1d6075abb42f8a209df9bde2b43e1da6"
+      },
+      "body_sha256_header": "5839179940b4a494b77eee660b2ae3df9fdc753dc2e1fac17233e9352711a06d",
+      "raw_body_sha256": "5839179940b4a494b77eee660b2ae3df9fdc753dc2e1fac17233e9352711a06d",
+      "raw_response_text": "{\"schema_version\":1,\"execution_mode\":\"offline-scripted-retrieval-http\",\"model_called\":false,\"request_id\":\"965bab2126eead5f02fa7d6bdc7dc544e6a2c9a9fa40c43a9a0ed6489521b32d\",\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"request\":{\"question\":\"Will write_text replace the contents of an existing file?\",\"version\":\"9.99\",\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096},\"status\":\"incomplete\",\"reason\":\"round_limit\",\"admission\":{\"accepted\":true,\"limits\":{\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096}},\"usage\":{\"steps\":2,\"searches\":2,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0},\"trace\":[{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"text\",\"version\":\"9.99\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"fefe356a697d65ea81980cd228d12ddde25c3d62fe8a4badbaafc3f385052d97\",\"query\":\"text\",\"version\":\"9.99\",\"k\":2,\"results\":[]},\"usage_after\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0}},{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"overwritten\",\"version\":\"9.99\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"39a9d404c56be7c96dadecd7ef9d361f8f749b4b62d095516e9fa8c864e7941a\",\"query\":\"overwritten\",\"version\":\"9.99\",\"k\":2,\"results\":[]},\"usage_after\":{\"steps\":2,\"searches\":2,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0}}],\"evidence\":[],\"policy\":{\"name\":\"existing-path\",\"initial_query\":\"text\",\"refinement_query\":\"overwritten\",\"required_marker\":\"overwritten\",\"max_rounds\":2},\"result_sha256\":\"4f36a6fdd57146040e4c5c62173d154e1d6075abb42f8a209df9bde2b43e1da6\"}"
+    },
+    {
+      "scenario": "limited",
+      "http_status": 200,
+      "response": {
+        "schema_version": 1,
+        "execution_mode": "offline-scripted-retrieval-http",
+        "model_called": false,
+        "request_id": "2a05a37d5fbe61ca06db5d59beecd7361571913e7760fc5f584f2507e92ca93e",
+        "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+        "request": {
+          "question": "Will write_text replace the contents of an existing file?",
+          "version": "3.12",
+          "max_steps": 1,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        },
+        "status": "limited",
+        "reason": "max_steps",
+        "admission": {
+          "accepted": true,
+          "limits": {
+            "max_steps": 1,
+            "max_searches": 2,
+            "max_reads": 2,
+            "max_source_bytes": 4096
+          }
+        },
+        "usage": {
+          "steps": 1,
+          "searches": 1,
+          "reads": 0,
+          "reserved_source_bytes": 0,
+          "delivered_source_bytes": 0
+        },
+        "trace": [
+          {
+            "action": {
+              "tool": "search",
+              "arguments": {
+                "query": "text",
+                "version": "3.12",
+                "k": 2
+              }
+            },
+            "decision": "executed",
+            "invoked": true,
+            "reserved_source_bytes": 0,
+            "status": "succeeded",
+            "result": {
+              "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+              "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+              "query": "text",
+              "version": "3.12",
+              "k": 2,
+              "results": [
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                },
+                {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7",
+                  "source_id": "path-write",
+                  "version": "3.12",
+                  "document_revision": "28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7",
+                  "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+                  "byte_count": 224,
+                  "native_score": -1.3203883495145633e-06,
+                  "rank": 2,
+                  "read_token": "189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81"
+                }
+              ]
+            },
+            "usage_after": {
+              "steps": 1,
+              "searches": 1,
+              "reads": 0,
+              "reserved_source_bytes": 0,
+              "delivered_source_bytes": 0
+            }
+          },
+          {
+            "action": {
+              "tool": "read",
+              "arguments": {
+                "handle": {
+                  "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+                  "search_request_id": "3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f",
+                  "passage_id": "c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900",
+                  "source_id": "path-read",
+                  "version": "3.12",
+                  "document_revision": "b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2",
+                  "source_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+                  "byte_count": 154,
+                  "native_score": -1.4220532319391636e-06,
+                  "rank": 1,
+                  "read_token": "72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124"
+                }
+              }
+            },
+            "decision": "denied",
+            "reason": "max_steps",
+            "invoked": false,
+            "preflight_source_bytes": 154
+          }
+        ],
+        "evidence": [],
+        "policy": {
+          "name": "existing-path",
+          "initial_query": "text",
+          "refinement_query": "overwritten",
+          "required_marker": "overwritten",
+          "max_rounds": 2
+        },
+        "result_sha256": "78e5c720039227f38ec23b0ef2161123f4f78dc2bded2cf67da62025ad9822c4"
+      },
+      "body_sha256_header": "570be3a9715888a566358d941843377c7e09db5e848c0bda35dfe2054a2227fb",
+      "raw_body_sha256": "570be3a9715888a566358d941843377c7e09db5e848c0bda35dfe2054a2227fb",
+      "raw_response_text": "{\"schema_version\":1,\"execution_mode\":\"offline-scripted-retrieval-http\",\"model_called\":false,\"request_id\":\"2a05a37d5fbe61ca06db5d59beecd7361571913e7760fc5f584f2507e92ca93e\",\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"request\":{\"question\":\"Will write_text replace the contents of an existing file?\",\"version\":\"3.12\",\"max_steps\":1,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096},\"status\":\"limited\",\"reason\":\"max_steps\",\"admission\":{\"accepted\":true,\"limits\":{\"max_steps\":1,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096}},\"usage\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0},\"trace\":[{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"text\",\"version\":\"3.12\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"succeeded\",\"result\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"query\":\"text\",\"version\":\"3.12\",\"k\":2,\"results\":[{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\"},{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\"source_id\":\"path-write\",\"version\":\"3.12\",\"document_revision\":\"28c6349eaf80b629322edb310bb871dc45a04af9fad3b752bc75d12f0d7314e7\",\"source_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e\",\"byte_count\":224,\"native_score\":-1.3203883495145633e-06,\"rank\":2,\"read_token\":\"189bf56802f958924691f452106802696dcd22186df4ee9c03bf0efecf1e1f81\"}]},\"usage_after\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0}},{\"action\":{\"tool\":\"read\",\"arguments\":{\"handle\":{\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"search_request_id\":\"3f33383e706e36449e22c380704d880d5e2b8a4b1f6b779b8aa54206e072ad5f\",\"passage_id\":\"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\"source_id\":\"path-read\",\"version\":\"3.12\",\"document_revision\":\"b58385b9bf597a951c16c035653d639929924e53eae3e5ada255afd6ee1592f2\",\"source_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"start_line\":1,\"end_line\":1,\"text_sha256\":\"dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0\",\"byte_count\":154,\"native_score\":-1.4220532319391636e-06,\"rank\":1,\"read_token\":\"72abbf5e0022ef780447ed8c2322b711cac8b4971d817a440bc02dfa28b07124\"}}},\"decision\":\"denied\",\"reason\":\"max_steps\",\"invoked\":false,\"preflight_source_bytes\":154}],\"evidence\":[],\"policy\":{\"name\":\"existing-path\",\"initial_query\":\"text\",\"refinement_query\":\"overwritten\",\"required_marker\":\"overwritten\",\"max_rounds\":2},\"result_sha256\":\"78e5c720039227f38ec23b0ef2161123f4f78dc2bded2cf67da62025ad9822c4\"}"
+    },
+    {
+      "scenario": "invalid_boolean_limit",
+      "http_status": 422,
+      "response": {
+        "error": {
+          "code": "invalid_request",
+          "issues": [
+            {
+              "path": [
+                "body",
+                "max_steps"
+              ],
+              "type": "int_type"
+            }
+          ]
+        },
+        "admission": {
+          "accepted": false
+        }
+      },
+      "body_sha256_header": null,
+      "raw_body_sha256": "9a36c99280174accd76e3feedc0dc67dd50ae4b3c56c7fd019830530a332ee05",
+      "raw_response_text": "{\"error\":{\"code\":\"invalid_request\",\"issues\":[{\"path\":[\"body\",\"max_steps\"],\"type\":\"int_type\"}]},\"admission\":{\"accepted\":false}}"
+    },
+    {
+      "scenario": "extra_field",
+      "http_status": 422,
+      "response": {
+        "error": {
+          "code": "invalid_request",
+          "issues": [
+            {
+              "path": [
+                "body",
+                "fault"
+              ],
+              "type": "extra_forbidden"
+            }
+          ]
+        },
+        "admission": {
+          "accepted": false
+        }
+      },
+      "body_sha256_header": null,
+      "raw_body_sha256": "9bb56b2023846ce252ee8aec429d7a45be4e5a6f3ca5f055cc805f2315a94160",
+      "raw_response_text": "{\"error\":{\"code\":\"invalid_request\",\"issues\":[{\"path\":[\"body\",\"fault\"],\"type\":\"extra_forbidden\"}]},\"admission\":{\"accepted\":false}}"
+    },
+    {
+      "scenario": "invalid_json",
+      "http_status": 422,
+      "response": {
+        "error": {
+          "code": "invalid_json"
+        },
+        "admission": {
+          "accepted": false
+        }
+      },
+      "body_sha256_header": null,
+      "raw_body_sha256": "58156c25177f55a196e09977a5ef68d844004fdc57077b4a0493d871b1bf1233",
+      "raw_response_text": "{\"error\":{\"code\":\"invalid_json\"},\"admission\":{\"accepted\":false}}"
+    },
+    {
+      "scenario": "body_too_large_chunked",
+      "http_status": 413,
+      "response": {
+        "error": {
+          "code": "body_too_large"
+        },
+        "admission": {
+          "accepted": false
+        }
+      },
+      "body_sha256_header": null,
+      "raw_body_sha256": "6ccdbd168b3329805bf785c2848e9280055cef5672ebc0da8a5fadb8cb2ea35c",
+      "raw_response_text": "{\"error\":{\"code\":\"body_too_large\"},\"admission\":{\"accepted\":false}}"
+    },
+    {
+      "scenario": "unsupported_media",
+      "http_status": 415,
+      "response": {
+        "error": {
+          "code": "unsupported_media_type"
+        },
+        "admission": {
+          "accepted": false
+        }
+      },
+      "body_sha256_header": null,
+      "raw_body_sha256": "94746bc9fb69e2f66ad1afc8688d2dfdf2c4fa9a08d7151a9935d18bdebd760c",
+      "raw_response_text": "{\"error\":{\"code\":\"unsupported_media_type\"},\"admission\":{\"accepted\":false}}"
+    }
+  ],
+  "trusted_fault": {
+    "scenario": "trusted_controlled_tool_failure",
+    "http_status": 503,
+    "response": {
+      "schema_version": 1,
+      "execution_mode": "offline-scripted-retrieval-http",
+      "model_called": false,
+      "request_id": "c4b35bcad796671fdb9ebd92411172aa68574ee99fecbd854bcef13db24dc067",
+      "corpus_id": "0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e",
+      "request": {
+        "question": "Will write_text replace the contents of an existing file?",
+        "version": "3.12",
+        "max_steps": 6,
+        "max_searches": 2,
+        "max_reads": 2,
+        "max_source_bytes": 4096
+      },
+      "status": "failed",
+      "reason": "retrieval_failed",
+      "admission": {
+        "accepted": true,
+        "limits": {
+          "max_steps": 6,
+          "max_searches": 2,
+          "max_reads": 2,
+          "max_source_bytes": 4096
+        }
+      },
+      "usage": {
+        "steps": 1,
+        "searches": 1,
+        "reads": 0,
+        "reserved_source_bytes": 0,
+        "delivered_source_bytes": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "search",
+            "arguments": {
+              "query": "text",
+              "version": "3.12",
+              "k": 2
+            }
+          },
+          "decision": "executed",
+          "invoked": true,
+          "reserved_source_bytes": 0,
+          "status": "failed",
+          "reason": "tool_failure",
+          "usage_after": {
+            "steps": 1,
+            "searches": 1,
+            "reads": 0,
+            "reserved_source_bytes": 0,
+            "delivered_source_bytes": 0
+          }
+        }
+      ],
+      "evidence": [],
+      "policy": {
+        "name": "existing-path",
+        "initial_query": "text",
+        "refinement_query": "overwritten",
+        "required_marker": "overwritten",
+        "max_rounds": 2
+      },
+      "result_sha256": "735b9907d3f2670aca53e2608a616dbd1becbb5124335b231b3ff13409f0f80d"
+    },
+    "body_sha256_header": "16208bae1e792e807e6b8007af051170e0b8a18f6b514ba020606574597b312e",
+    "raw_body_sha256": "16208bae1e792e807e6b8007af051170e0b8a18f6b514ba020606574597b312e",
+    "raw_response_text": "{\"schema_version\":1,\"execution_mode\":\"offline-scripted-retrieval-http\",\"model_called\":false,\"request_id\":\"c4b35bcad796671fdb9ebd92411172aa68574ee99fecbd854bcef13db24dc067\",\"corpus_id\":\"0615d22a3315e97c0a88c6c566c546877304f5a28a97e83f68dd36881d4bbd0e\",\"request\":{\"question\":\"Will write_text replace the contents of an existing file?\",\"version\":\"3.12\",\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096},\"status\":\"failed\",\"reason\":\"retrieval_failed\",\"admission\":{\"accepted\":true,\"limits\":{\"max_steps\":6,\"max_searches\":2,\"max_reads\":2,\"max_source_bytes\":4096}},\"usage\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0},\"trace\":[{\"action\":{\"tool\":\"search\",\"arguments\":{\"query\":\"text\",\"version\":\"3.12\",\"k\":2}},\"decision\":\"executed\",\"invoked\":true,\"reserved_source_bytes\":0,\"status\":\"failed\",\"reason\":\"tool_failure\",\"usage_after\":{\"steps\":1,\"searches\":1,\"reads\":0,\"reserved_source_bytes\":0,\"delivered_source_bytes\":0}}],\"evidence\":[],\"policy\":{\"name\":\"existing-path\",\"initial_query\":\"text\",\"refinement_query\":\"overwritten\",\"required_marker\":\"overwritten\",\"max_rounds\":2},\"result_sha256\":\"735b9907d3f2670aca53e2608a616dbd1becbb5124335b231b3ff13409f0f80d\"}"
+  },
+  "lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "api:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [16900]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [16900]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "fault_lifecycle": {
+    "command": [
+      "python3",
+      "serve.py",
+      "--fd",
+      "<inherited-loopback-socket>",
+      "--app",
+      "fault_fixture:app"
+    ],
+    "startup_observed": true,
+    "shutdown_exit_status": -15,
+    "stdout": "",
+    "stderr": "INFO:     Started server process [16908]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [16908]\n",
+    "shutdown_complete_observed": true,
+    "server_process_reaped": true
+  },
+  "interpretation": "Real local HTTP boundary plus scripted retrieval; no generated answers, external deployment, authorization, capacity or quality claim."
+}

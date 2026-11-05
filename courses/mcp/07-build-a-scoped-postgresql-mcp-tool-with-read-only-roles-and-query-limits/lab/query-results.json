@@ -1,0 +1,279 @@
+{
+  "postgres": "17.4",
+  "visible_columns": [
+    {
+      "table": "docs.pages",
+      "column": "slug",
+      "type": "text"
+    },
+    {
+      "table": "docs.pages",
+      "column": "editor_id",
+      "type": "text"
+    },
+    {
+      "table": "docs.pages",
+      "column": "section",
+      "type": "text"
+    },
+    {
+      "table": "docs.pages",
+      "column": "words",
+      "type": "integer"
+    }
+  ],
+  "write_problems": [],
+  "queries": {
+    "first five pages": {
+      "sql": "SELECT slug, section, words FROM docs.pages ORDER BY slug",
+      "max_rows": 5,
+      "result": {
+        "columns": [
+          "slug",
+          "section",
+          "words"
+        ],
+        "rows": [
+          [
+            "page-01",
+            "reference",
+            225
+          ],
+          [
+            "page-02",
+            "changelog",
+            250
+          ],
+          [
+            "page-03",
+            "guides",
+            275
+          ],
+          [
+            "page-04",
+            "reference",
+            300
+          ],
+          [
+            "page-05",
+            "changelog",
+            325
+          ]
+        ],
+        "truncated": true
+      }
+    },
+    "pages per section": {
+      "sql": "SELECT section, count(*) AS pages FROM docs.pages GROUP BY section ORDER BY section",
+      "max_rows": 50,
+      "result": {
+        "columns": [
+          "section",
+          "pages"
+        ],
+        "rows": [
+          [
+            "changelog",
+            10
+          ],
+          [
+            "guides",
+            10
+          ],
+          [
+            "reference",
+            10
+          ]
+        ],
+        "truncated": false
+      }
+    },
+    "one row of a million": {
+      "sql": "SELECT n FROM generate_series(1, 1000000) AS n",
+      "max_rows": 1,
+      "result": {
+        "columns": [
+          "n"
+        ],
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "truncated": true
+      }
+    },
+    "insert a page": {
+      "sql": "INSERT INTO docs.pages VALUES ('page-99', 'e-1', 'guides', 100)",
+      "max_rows": 50,
+      "rejected": "only one SELECT or VALUES query is allowed",
+      "sqlstate": "42601"
+    },
+    "delete inside WITH": {
+      "sql": "WITH gone AS (DELETE FROM docs.pages RETURNING slug) SELECT * FROM gone",
+      "max_rows": 50,
+      "rejected": "the query uses a feature a cursor does not allow, such as a data-modifying WITH",
+      "sqlstate": "0A000"
+    },
+    "function that writes": {
+      "sql": "SELECT lo_create(0)",
+      "max_rows": 50,
+      "rejected": "the transaction is read-only",
+      "sqlstate": "25006"
+    },
+    "read editor emails": {
+      "sql": "SELECT email FROM docs.editors",
+      "max_rows": 50,
+      "rejected": "the role lacks the privilege",
+      "sqlstate": "42501"
+    },
+    "slow query": {
+      "sql": "SELECT pg_sleep(2)",
+      "max_rows": 50,
+      "rejected": "the query ran longer than 500 ms",
+      "sqlstate": "57014"
+    },
+    "two statements": {
+      "sql": "SELECT 1; SELECT 2",
+      "max_rows": 50,
+      "rejected": "only one SELECT or VALUES query is allowed",
+      "sqlstate": "42601"
+    },
+    "turn off read-only for the session": {
+      "sql": "SELECT set_config('default_transaction_read_only', 'off', false)",
+      "max_rows": 50,
+      "result": {
+        "columns": [
+          "set_config"
+        ],
+        "rows": [
+          [
+            "off"
+          ]
+        ],
+        "truncated": false
+      }
+    },
+    "function that writes, next call": {
+      "sql": "SELECT lo_create(0)",
+      "max_rows": 50,
+      "rejected": "the transaction is read-only",
+      "sqlstate": "25006"
+    },
+    "one 300,000-character value": {
+      "sql": "SELECT repeat('x', 300000) AS big",
+      "max_rows": 1,
+      "rejected": "the result is larger than 200000 bytes; select fewer or shorter values",
+      "sqlstate": null
+    },
+    "send a notification": {
+      "sql": "SELECT pg_notify('docs', 'hello')",
+      "max_rows": 50,
+      "result": {
+        "columns": [
+          "pg_notify"
+        ],
+        "rows": [
+          [
+            ""
+          ]
+        ],
+        "truncated": false
+      }
+    },
+    "too many rows requested": {
+      "sql": "SELECT slug FROM docs.pages",
+      "max_rows": 1000,
+      "rejected": "max_rows must be an integer from 1 to 200",
+      "sqlstate": null
+    }
+  },
+  "role_checks": {
+    "read-only default after SET": "off",
+    "insert with read-only off": "42501: permission denied for table pages",
+    "delete with read-only off": "42501: permission denied for table pages",
+    "read editors with read-only off": "42501: permission denied for table editors",
+    "create a large object with read-only off": "allowed"
+  },
+  "mcp": {
+    "tool": {
+      "name": "run_query",
+      "title": "Run a read-only SQL query",
+      "description": "Run one SELECT or VALUES query on the docs database. Returns at most max_rows rows (200 at most) and 200,000 bytes; each query stops after 500 ms.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Sql",
+            "type": "string"
+          },
+          "max_rows": {
+            "default": 50,
+            "maximum": 200,
+            "minimum": 1,
+            "title": "Max Rows",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sql"
+        ],
+        "title": "run_queryArguments"
+      },
+      "outputSchema": {
+        "properties": {
+          "columns": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Columns",
+            "type": "array"
+          },
+          "rows": {
+            "items": {
+              "items": {},
+              "type": "array"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "columns",
+          "rows",
+          "truncated"
+        ],
+        "title": "QueryResult",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    },
+    "count": {
+      "isError": false,
+      "structuredContent": {
+        "columns": [
+          "pages"
+        ],
+        "rows": [
+          [
+            30
+          ]
+        ],
+        "truncated": false
+      }
+    },
+    "write": {
+      "isError": true,
+      "text": "Error executing tool run_query: Query rejected: the transaction is read-only (SQLSTATE 25006)."
+    }
+  }
+}

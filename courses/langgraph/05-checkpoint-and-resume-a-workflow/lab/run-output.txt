@@ -1,0 +1,59 @@
+== crash between steps, then resume
+$ CRASH_AT='after summarize' python workflow.py --thread r1 --version 2.5.0
+finished collect
+finished summarize
+!! process killed in after summarize
+(exit 1)
+$ python workflow.py --thread r1
+resuming r1 at write_file
+finished write_file
+finished announce
+(exit 0)
+== crash inside a step with a side effect
+$ CRASH_AT='announce' python workflow.py --thread r2 --version 2.5.1
+finished collect
+finished summarize
+finished write_file
+!! process killed in announce
+(exit 1)
+$ python workflow.py --thread r2
+resuming r2 at announce
+finished announce
+(exit 0)
+== resume under a new thread id
+$ CRASH_AT='after summarize' python workflow.py --thread r3 --version 2.5.2
+finished collect
+finished summarize
+!! process killed in after summarize
+(exit 1)
+$ python workflow.py --thread r3-retry --version 2.5.2
+finished collect
+finished summarize
+finished write_file
+finished announce
+(exit 0)
+== durability exit, then a crash
+$ CRASH_AT='after summarize' python workflow.py --thread r4 --version 2.5.3 --durability exit
+finished collect
+finished summarize
+!! process killed in after summarize
+(exit 1)
+$ python workflow.py --thread r4 --version 2.5.3 --durability exit
+finished collect
+finished summarize
+finished write_file
+finished announce
+(exit 0)
+== out/announcements.log
+Released 2.5.0: out/2.5.0.md
+Released 2.5.1: out/2.5.1.md
+Released 2.5.1: out/2.5.1.md
+Released 2.5.2: out/2.5.2.md
+Released 2.5.3: out/2.5.3.md
+== checkpoints saved for thread r1
+  step -1 input next=['__start__'] state keys=[]
+  step  0 loop  next=['collect'] state keys=['version']
+  step  1 loop  next=['summarize'] state keys=['prs', 'version']
+  step  2 loop  next=['write_file'] state keys=['notes', 'prs', 'version']
+  step  3 loop  next=['announce'] state keys=['notes', 'path', 'prs', 'version']
+  step  4 loop  next=[] state keys=['notes', 'path', 'prs', 'version']

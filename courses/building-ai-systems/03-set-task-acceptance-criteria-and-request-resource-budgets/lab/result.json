@@ -1,0 +1,314 @@
+{
+  "mode": "Local function calls and local capacity admission; no model, tokenizer or paid API",
+  "assumption": "Byte, capacity and queue-wait limits are declared scenario policy, not measured latency or monetary caps.",
+  "files": {
+    "architecture.py": "c2ac843c561904d54c1f789d1b10d54f19f7f0d8c5df52e58e4fdd34f8065881",
+    "pages.json": "d2d0748472de2483acde6f5cbd9f2d072f8561c047aafcc0b1bfb350c4c64e69",
+    "cases.json": "e088ec1662e1ffaa2eab48164b228f562836577ffc9bfaa06adf10902d1f9087",
+    "task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+    "acceptance.py": "c0b566d292f1e28ef4d1935fee5686881870db583c930e4a784efcb54142d6f9",
+    "inspect_acceptance.py": "f908d6c9a5f0603c6706d01d0182c6f48721f975566385891c401cd5fa9a63d8",
+    "policy.json": "36d040e21e41314cf9b3eee0705754a166f87c0869429a96d55885dcd416f678",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+    "vendor/gate.py": "f875bb612e3eaafa0664026a0998f20aae12d7846b423c557761abb622caac6b"
+  },
+  "scenarios": {
+    "normal": {
+      "called": true,
+      "source_bytes": 565,
+      "output_bytes": 167,
+      "quality": {
+        "verdict": "pass",
+        "check": null,
+        "kind": null,
+        "reason": ""
+      },
+      "resource_status": "within_limits",
+      "response": {
+        "architecture": "filtered_lookup",
+        "command_template": "docuctl releases rollback RELEASE --environment production",
+        "citation": "rollback-v3-production",
+        "executed": false
+      },
+      "meets_contract": true,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 512,
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      }
+    },
+    "wrong_command": {
+      "called": true,
+      "source_bytes": 565,
+      "output_bytes": 147,
+      "quality": {
+        "verdict": "fail",
+        "check": "task-result",
+        "kind": "outcome",
+        "reason": "command or operation result differs from the task contract"
+      },
+      "resource_status": "within_limits",
+      "response": null,
+      "meets_contract": false,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 512,
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      }
+    },
+    "oversized_source": {
+      "called": false,
+      "source_bytes": 1589,
+      "output_bytes": 0,
+      "quality": {
+        "verdict": "not_run"
+      },
+      "resource_status": "source_too_large",
+      "response": null,
+      "meets_contract": false,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 512,
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      }
+    },
+    "output_limit": {
+      "called": true,
+      "source_bytes": 565,
+      "output_bytes": 167,
+      "quality": {
+        "verdict": "pass",
+        "check": null,
+        "kind": null,
+        "reason": ""
+      },
+      "resource_status": "output_too_large",
+      "response": null,
+      "meets_contract": false,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 1,
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      }
+    },
+    "queue_full": {
+      "called": false,
+      "source_bytes": 565,
+      "output_bytes": 0,
+      "quality": {
+        "verdict": "not_run"
+      },
+      "resource_status": "queue_full",
+      "response": null,
+      "meets_contract": false,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 512,
+        "max_active": 1,
+        "max_waiting": 0,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "queue_full",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 3,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 0,
+        "wait_seconds": 0.02
+      }
+    },
+    "wait_timeout": {
+      "called": false,
+      "source_bytes": 565,
+      "output_bytes": 0,
+      "quality": {
+        "verdict": "not_run"
+      },
+      "resource_status": "wait_timeout",
+      "response": null,
+      "meets_contract": false,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 512,
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "queued",
+            "active": 1,
+            "waiting": 1
+          },
+          {
+            "order": 3,
+            "status": "wait_timeout",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 4,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      }
+    },
+    "required_refusal": {
+      "called": true,
+      "source_bytes": 565,
+      "output_bytes": 61,
+      "quality": {
+        "verdict": "pass",
+        "check": null,
+        "kind": null,
+        "reason": "rejected as expected: Refused: maintainer role required for an action proposal"
+      },
+      "resource_status": "within_limits",
+      "response": {
+        "refused": "maintainer role required for an action proposal"
+      },
+      "meets_contract": true,
+      "policy": {
+        "max_source_bytes": 1024,
+        "max_output_bytes": 512,
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      },
+      "capacity_after": {
+        "active": 0,
+        "waiting": 0,
+        "events": [
+          {
+            "order": 1,
+            "status": "admitted",
+            "active": 1,
+            "waiting": 0
+          },
+          {
+            "order": 2,
+            "status": "released",
+            "active": 0,
+            "waiting": 0
+          }
+        ],
+        "max_active": 1,
+        "max_waiting": 1,
+        "wait_seconds": 0.02
+      }
+    }
+  }
+}

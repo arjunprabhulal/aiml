@@ -1,0 +1,93 @@
+{
+  "mode": "fresh CPU parameter updates on a tiny synthetic-vocabulary language model",
+  "method": "DPO sigmoid loss; frozen reference; completion log-probability sums",
+  "pairs": [
+    {
+      "prompt": [
+        1,
+        3
+      ],
+      "chosen": [
+        6,
+        2
+      ],
+      "rejected": [
+        4,
+        2
+      ]
+    },
+    {
+      "prompt": [
+        2,
+        5
+      ],
+      "chosen": [
+        6,
+        2
+      ],
+      "rejected": [
+        7,
+        2
+      ]
+    }
+  ],
+  "beta": 0.3,
+  "steps": 30,
+  "learning_rate": 0.1,
+  "loss_before": 0.6931471805599453,
+  "loss_after": 0.1513033481428186,
+  "loss_history": [
+    0.6931471805599453,
+    0.6785139087244103,
+    0.6636265041932342,
+    0.6328846300805822,
+    0.5999378358421323,
+    0.5586964171496265,
+    0.5230459778075551,
+    0.49329939340557705,
+    0.4896008910560762,
+    0.4983428009101378,
+    0.4181841107721719,
+    0.3969950887427858,
+    0.3778802687988367,
+    0.35795544527638645,
+    0.33848440737025043,
+    0.31833017621626836,
+    0.3000008925010669,
+    0.2825992262196214,
+    0.26690079026931857,
+    0.2523868307424034,
+    0.23917157721955895,
+    0.22700759290218503,
+    0.21584463917979668,
+    0.2055461725569271,
+    0.19603201054824548,
+    0.1872119029961149,
+    0.1790143710333849,
+    0.17137497974937604,
+    0.16423977268768425,
+    0.15756244566787808
+  ],
+  "reference_has_gradients": false,
+  "scope": "Authored token preferences, not human annotation or pretrained-model alignment.",
+  "refusal": "distinct chosen and rejected completions required",
+  "command": [
+    "python",
+    "run.py",
+    "dpo",
+    "--record"
+  ],
+  "exit_status": 0,
+  "environment": {
+    "python": "3.12.8",
+    "torch": "2.14.1",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "sources": {
+    "updates.py": "471ac4ec96c3b092c0c7845a2f812d50dfaac4619fcc2a4bac19c8bd41992f0e",
+    "decoder.py": "5706ca21af551b17ee54ca00f5a6011981b327e03b1e880b6712c06dd7d1c39a",
+    "vendor/model.py": "0d3d469afd5f35ef19b04e0b0587143c39f8fbca37d6154e6435c4ed4e8b80fc",
+    "run.py": "bb3708aaf674c9cd55bd1a21276fb4d4a40e4cd4d15b239f1f994803142d50ce",
+    "test_updates.py": "bf71137ae859b1a405941645cdb0db4378fcf55478c548364570778d52186552"
+  }
+}

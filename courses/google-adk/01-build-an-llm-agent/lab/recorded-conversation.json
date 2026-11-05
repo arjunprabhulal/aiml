@@ -1,0 +1,90 @@
+{
+  "execution_mode": "fresh-hosted-model-run",
+  "model": "gemini-3.8-flash",
+  "turns": [
+    {
+      "question": "How do I deploy to staging and list its releases?",
+      "answer": "To deploy the service in the current directory to staging, run:\n`docuctl deploy --env staging`\n\nTo list the staging releases with the newest first, run:\n`docuctl releases --env staging`",
+      "events": [
+        {
+          "model_version": "gemini-3.8-flash",
+          "content": {
+            "parts": [
+              {
+                "text": "To deploy the service in the current directory to staging, run:\n`docuctl deploy --env staging`\n\nTo list the staging releases with the newest first, run:\n`docuctl releases --env staging`"
+              }
+            ],
+            "role": "model"
+          },
+          "finish_reason": "STOP",
+          "usage_metadata": {
+            "candidates_token_count": 46,
+            "prompt_token_count": 206,
+            "prompt_tokens_details": [
+              {
+                "modality": "TEXT",
+                "token_count": 206
+              }
+            ],
+            "total_token_count": 252
+          },
+          "invocation_id": "e-b0337917-57bb-4ae7-bdb3-c29f76921c10",
+          "author": "docs_assistant",
+          "actions": {
+            "state_delta": {},
+            "artifact_delta": {},
+            "requested_auth_configs": {},
+            "requested_tool_confirmations": {}
+          },
+          "node_info": {
+            "path": "docs_assistant@1"
+          },
+          "id": "f48a4f27-6e78-4482-8ab6-e79c51560997",
+          "timestamp": 1792980450.05949
+        }
+      ]
+    },
+    {
+      "question": "How do I configure automatic database backups?",
+      "answer": "The guide does not cover how to configure automatic database backups.",
+      "events": [
+        {
+          "model_version": "gemini-3.8-flash",
+          "content": {
+            "parts": [
+              {
+                "text": "The guide does not cover how to configure automatic database backups."
+              }
+            ],
+            "role": "model"
+          },
+          "finish_reason": "STOP",
+          "usage_metadata": {
+            "candidates_token_count": 12,
+            "prompt_token_count": 262,
+            "prompt_tokens_details": [
+              {
+                "modality": "TEXT",
+                "token_count": 262
+              }
+            ],
+            "total_token_count": 274
+          },
+          "invocation_id": "e-77963981-ef41-43a2-9979-c568b4f32e66",
+          "author": "docs_assistant",
+          "actions": {
+            "state_delta": {},
+            "artifact_delta": {},
+            "requested_auth_configs": {},
+            "requested_tool_confirmations": {}
+          },
+          "node_info": {
+            "path": "docs_assistant@1"
+          },
+          "id": "a379ef31-d9b9-4208-aa2a-850434988404",
+          "timestamp": 1792980452.338072
+        }
+      ]
+    }
+  ]
+}

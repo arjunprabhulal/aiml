@@ -1,0 +1,14 @@
+{
+  "scenarios": [
+    {
+      "starting_prompt": "The docs assistant isn't working for me.",
+      "conversation_plan": "When the agent asks what is failing, say it reports that it cannot reach Ollama. After it answers, ask which setting tells it where the Ollama server is. End the conversation once you have the setting name.",
+      "user_persona": "NOVICE"
+    },
+    {
+      "starting_prompt": "How do I make the assistant use a local model instead of Gemini?",
+      "conversation_plan": "After the answer, ask which Python version the project needs. If the agent states a fact you have reason to doubt, ask it to check. End once you know both the setting and the Python version.",
+      "user_persona": "EXPERT"
+    }
+  ]
+}

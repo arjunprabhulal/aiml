@@ -1,0 +1,21 @@
+{
+  "scenario": "environment_outage",
+  "mode": "fresh model requests through original run.py client and actual lesson App/Runner/plugins; original live PTY",
+  "model": "gemini-3.8-flash",
+  "provider_requests": 3,
+  "request_cap": 4,
+  "max_output_tokens_per_request": 1024,
+  "automatic_reruns": 0,
+  "process_exit": 0,
+  "question": "How do I install docs-assistant?",
+  "display_output": "call   list_pages({})\nresult list_pages -> {'pages': ['cli.md', 'install.md', 'troubleshooting.md']}\ncall   read_page({'path': 'install.md'})\nresult read_page -> {'error_code': 503, 'error_message': 'Docs service unavailable.'}\nanswer The docs service failed, so I cannot provide instructions on how to install docs-assistant.\n",
+  "no_resources_downloads_external_exporters": true,
+  "injected_status": 503,
+  "retry_plugin": "none",
+  "tool_result": {
+    "error_code": 503,
+    "error_message": "Docs service unavailable."
+  },
+  "outcome": "Final reply reports docs service failure and declines installation instructions; no invented command or citation",
+  "scope": "Deterministic EnvironmentSimulationFactory injection, not a real service outage or LLM-generated tool simulation"
+}

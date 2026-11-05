@@ -1,0 +1,66 @@
+{
+  "execution_mode": "fresh local CPU inference; dynamic INT8 Linear modules",
+  "environment": {
+    "python": "3.12.8",
+    "torch": "2.14.1",
+    "transformers": "5.20.2",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "quantized_engine": "qnnpack",
+    "threads": 4
+  },
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "license": "Apache-2.0",
+  "source_sha256": "c4d751f71c0c4a409fe091000f640597b21f8a41cd8ef310f783f6ed4ade98ab",
+  "quantized_linear_modules": 169,
+  "baseline_fp32": {
+    "cases": [
+      {
+        "text": "An inference service should release the request cache when a client cancels.",
+        "predicted_tokens": 13,
+        "nll": 6.5931525230407715,
+        "elapsed_ms": 114.118
+      },
+      {
+        "text": "A bounded queue rejects excess requests instead of allowing memory to grow without a limit.",
+        "predicted_tokens": 15,
+        "nll": 5.608316421508789,
+        "elapsed_ms": 87.19
+      },
+      {
+        "text": "Measure time to first token separately from the time between later output tokens.",
+        "predicted_tokens": 13,
+        "nll": 5.9717793464660645,
+        "elapsed_ms": 70.992
+      }
+    ],
+    "token_weighted_nll": 6.035825868932212,
+    "perplexity": 418.14399921617934
+  },
+  "candidate_int8": {
+    "cases": [
+      {
+        "text": "An inference service should release the request cache when a client cancels.",
+        "predicted_tokens": 13,
+        "nll": 7.135319709777832,
+        "elapsed_ms": 554.379
+      },
+      {
+        "text": "A bounded queue rejects excess requests instead of allowing memory to grow without a limit.",
+        "predicted_tokens": 15,
+        "nll": 7.456194877624512,
+        "elapsed_ms": 71.903
+      },
+      {
+        "text": "Measure time to first token separately from the time between later output tokens.",
+        "predicted_tokens": 13,
+        "nll": 7.2388176918029785,
+        "elapsed_ms": 61.35
+      }
+    ],
+    "token_weighted_nll": 7.285529497193127,
+    "perplexity": 1459.033482494216
+  },
+  "perplexity_delta": 1040.8894832780368,
+  "limits": "Three manually written development texts, not held-out task-quality evaluation. Timing includes forward and loss calculation. No GPU quantized kernels, FP8, INT4, or NVFP4 tested."
+}

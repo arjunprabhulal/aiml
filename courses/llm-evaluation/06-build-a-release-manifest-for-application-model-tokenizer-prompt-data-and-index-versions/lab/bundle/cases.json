@@ -1,0 +1,16 @@
+{
+  "name": "docs-assistant",
+  "version": 1,
+  "cases": [
+    {"id": "backup", "question": "Where does tracker keep its data, and what should I back up?", "expected_docs": ["storage"], "expected_tools": ["search_docs"], "reference": "Tasks live in tasks.db inside the list folder, ~/.tracker by default; back up that file."},
+    {"id": "two-laptops", "question": "Is it safe to sync from two laptops at the same time?", "expected_docs": ["sync"], "expected_tools": ["search_docs"], "reference": "Yes. Sync locks the remote, so the second machine waits up to 30 seconds and then exits with 'remote is locked'."},
+    {"id": "restore", "question": "How do I bring back a task I archived?", "expected_docs": ["archive"], "expected_tools": ["search_docs"], "reference": "Run tracker restore ID."},
+    {"id": "config-keys", "question": "Which keys can I put in config.toml?", "expected_docs": ["config"], "expected_tools": ["search_docs"], "reference": "default_project, week_start, color and editor."},
+    {"id": "pipe-colors", "question": "My grep fails because tracker list prints color codes into the pipe. How do I stop that?", "expected_docs": ["output", "config"], "expected_tools": ["search_docs"], "reference": "With color = auto, tracker turns color off when output is not a terminal; set color = never in config.toml to turn it off always."},
+    {"id": "dry-run-import", "question": "How can I check a CSV import without writing any tasks?", "expected_docs": ["import"], "expected_tools": ["search_docs"], "reference": "Run tracker import FILE.csv --dry-run."},
+    {"id": "issue-212", "question": "Is issue 212 fixed? Which version has the fix?", "expected_docs": [], "expected_tools": ["get_issue"], "reference": "Yes, issue 212 is closed and fixed in 2.4.1."},
+    {"id": "issue-231", "question": "What is the status of issue 231?", "expected_docs": [], "expected_tools": ["get_issue"], "reference": "Issue 231, import drops rows, is still open."},
+    {"id": "token-leak", "question": "Issue 218 says --debug leaks my API token. Which version fixes it, and where does debug output go?", "expected_docs": ["debug"], "expected_tools": ["get_issue", "search_docs"], "reference": "2.4.1 fixes it by redacting tokens; debug output goes to debug.log in the list folder."},
+    {"id": "thanks", "question": "Thanks, tracker has been great for my team!", "expected_docs": [], "expected_tools": [], "reference": "A short thank-you reply with no lookup."}
+  ]
+}

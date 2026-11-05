@@ -1,0 +1,28 @@
+test_313_source_is_explicitly_documented_only (test_dataset.DatasetTests.test_313_source_is_explicitly_documented_only) ... ok
+test_actual_dataset_has_all_source_bound_targets_and_expected_classes (test_dataset.DatasetTests.test_actual_dataset_has_all_source_bound_targets_and_expected_classes) ... ok
+test_answerable_case_needs_a_relevant_target (test_dataset.DatasetTests.test_answerable_case_needs_a_relevant_target) ... ok
+test_blank_question_and_missing_intent_family_are_refused (test_dataset.DatasetTests.test_blank_question_and_missing_intent_family_are_refused) ... ok
+test_blank_source_id_is_refused_before_snapshot_comparison (test_dataset.DatasetTests.test_blank_source_id_is_refused_before_snapshot_comparison) ... ok
+test_chunk_from_other_source_cannot_be_attached_to_source_id (test_dataset.DatasetTests.test_chunk_from_other_source_cannot_be_attached_to_source_id) ... ok
+test_chunk_ids_change_with_content_and_keep_versioned_source_identity (test_dataset.DatasetTests.test_chunk_ids_change_with_content_and_keep_versioned_source_identity) ... ok
+test_existing_dataset_hash_changes_on_label_edit_not_json_whitespace (test_dataset.DatasetTests.test_existing_dataset_hash_changes_on_label_edit_not_json_whitespace) ... ok
+test_existing_loader_rejects_duplicate_case_ids (test_dataset.DatasetTests.test_existing_loader_rejects_duplicate_case_ids) ... ok
+test_existing_lock_detects_changed_labels_added_removed_or_moved_cases (test_dataset.DatasetTests.test_existing_lock_detects_changed_labels_added_removed_or_moved_cases) ... ok
+test_existing_other_version_source_is_not_relevant_to_312_request (test_dataset.DatasetTests.test_existing_other_version_source_is_not_relevant_to_312_request) ... ok
+test_held_out_question_edits_do_not_silently_refresh_the_lock (test_dataset.DatasetTests.test_held_out_question_edits_do_not_silently_refresh_the_lock) ... ok
+test_lock_for_another_dataset_is_refused (test_dataset.DatasetTests.test_lock_for_another_dataset_is_refused) ... ok
+test_paraphrase_parent_cannot_cross_the_split_boundary (test_dataset.DatasetTests.test_paraphrase_parent_cannot_cross_the_split_boundary) ... ok
+test_question_class_and_answerability_must_agree (test_dataset.DatasetTests.test_question_class_and_answerability_must_agree) ... ok
+test_related_intent_family_stays_in_one_split (test_dataset.DatasetTests.test_related_intent_family_stays_in_one_split) ... ok
+test_semantic_relevance_is_not_proved_by_structural_validation (test_dataset.DatasetTests.test_semantic_relevance_is_not_proved_by_structural_validation) ... ok
+test_source_changes_require_a_reviewed_snapshot (test_dataset.DatasetTests.test_source_changes_require_a_reviewed_snapshot) ... ok
+test_stale_chunk_hash_is_refused (test_dataset.DatasetTests.test_stale_chunk_hash_is_refused) ... ok
+test_stale_source_hash_is_refused (test_dataset.DatasetTests.test_stale_source_hash_is_refused) ... ok
+test_unknown_chunk_is_refused_even_with_a_real_source (test_dataset.DatasetTests.test_unknown_chunk_is_refused_even_with_a_real_source) ... ok
+test_unsupported_case_cannot_list_a_relevant_target (test_dataset.DatasetTests.test_unsupported_case_cannot_list_a_relevant_target) ... ok
+test_wrong_declared_version_is_refused (test_dataset.DatasetTests.test_wrong_declared_version_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.009s
+
+OK

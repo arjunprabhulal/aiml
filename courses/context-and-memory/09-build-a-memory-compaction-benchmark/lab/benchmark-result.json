@@ -1,0 +1,355 @@
+{
+  "budget": {
+    "context_limit": 512,
+    "max_new_tokens": 128,
+    "margin": 32
+  },
+  "input_budget": 352,
+  "facts_quota": 160,
+  "checkpoints": {
+    "recent": [
+      {
+        "after": 10,
+        "found": 2,
+        "required": 3,
+        "missing": [
+          "I am vegetarian."
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 293
+      },
+      {
+        "after": 20,
+        "found": 1,
+        "required": 5,
+        "missing": [
+          "I am vegetarian.",
+          "150 euros per night",
+          "going to Porto",
+          "3 to 6 November"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 352
+      },
+      {
+        "after": 30,
+        "found": 0,
+        "required": 5,
+        "missing": [
+          "180 euros per night",
+          "going to Porto",
+          "3 to 6 November",
+          "hotel near the river",
+          "morning flight"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 146
+      },
+      {
+        "after": 40,
+        "found": 1,
+        "required": 6,
+        "missing": [
+          "fish now",
+          "180 euros per night",
+          "going to Porto",
+          "hotel near the river",
+          "morning flight"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 226
+      },
+      {
+        "after": 50,
+        "found": 0,
+        "required": 7,
+        "missing": [
+          "fish now",
+          "180 euros per night",
+          "going to Porto",
+          "10 to 13 November",
+          "hotel near the river",
+          "morning flight",
+          "Bob will join"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 142
+      }
+    ],
+    "notes": [
+      {
+        "after": 10,
+        "found": 1,
+        "required": 3,
+        "missing": [
+          "I am vegetarian.",
+          "150 euros per night"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 215
+      },
+      {
+        "after": 20,
+        "found": 0,
+        "required": 5,
+        "missing": [
+          "I am vegetarian.",
+          "150 euros per night",
+          "going to Porto",
+          "3 to 6 November",
+          "hotel near the river"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 38
+      },
+      {
+        "after": 30,
+        "found": 0,
+        "required": 5,
+        "missing": [
+          "180 euros per night",
+          "going to Porto",
+          "3 to 6 November",
+          "hotel near the river",
+          "morning flight"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 146
+      },
+      {
+        "after": 40,
+        "found": 1,
+        "required": 6,
+        "missing": [
+          "fish now",
+          "180 euros per night",
+          "going to Porto",
+          "hotel near the river",
+          "morning flight"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 226
+      },
+      {
+        "after": 50,
+        "found": 0,
+        "required": 7,
+        "missing": [
+          "fish now",
+          "180 euros per night",
+          "going to Porto",
+          "10 to 13 November",
+          "hotel near the river",
+          "morning flight",
+          "Bob will join"
+        ],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 142
+      }
+    ],
+    "append-only": [
+      {
+        "after": 10,
+        "found": 3,
+        "required": 3,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 344
+      },
+      {
+        "after": 20,
+        "found": 5,
+        "required": 5,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 174
+      },
+      {
+        "after": 30,
+        "found": 5,
+        "required": 5,
+        "missing": [],
+        "stale": [
+          "150 euros per night"
+        ],
+        "deleted": [],
+        "input_tokens": 321
+      },
+      {
+        "after": 40,
+        "found": 6,
+        "required": 6,
+        "missing": [],
+        "stale": [
+          "3 to 6 November"
+        ],
+        "deleted": [
+          "P1234567"
+        ],
+        "input_tokens": 304
+      },
+      {
+        "after": 50,
+        "found": 6,
+        "required": 7,
+        "missing": [
+          "going to Porto"
+        ],
+        "stale": [
+          "3 to 6 November"
+        ],
+        "deleted": [],
+        "input_tokens": 329
+      }
+    ],
+    "managed": [
+      {
+        "after": 10,
+        "found": 3,
+        "required": 3,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 344
+      },
+      {
+        "after": 20,
+        "found": 5,
+        "required": 5,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 174
+      },
+      {
+        "after": 30,
+        "found": 5,
+        "required": 5,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 301
+      },
+      {
+        "after": 40,
+        "found": 6,
+        "required": 6,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 315
+      },
+      {
+        "after": 50,
+        "found": 7,
+        "required": 7,
+        "missing": [],
+        "stale": [],
+        "deleted": [],
+        "input_tokens": 305
+      }
+    ]
+  },
+  "totals": {
+    "recent": {
+      "found": 4,
+      "required": 26,
+      "stale": 0,
+      "deleted": 0
+    },
+    "notes": {
+      "found": 2,
+      "required": 26,
+      "stale": 0,
+      "deleted": 0
+    },
+    "append-only": {
+      "found": 25,
+      "required": 26,
+      "stale": 3,
+      "deleted": 1
+    },
+    "managed": {
+      "found": 26,
+      "required": 26,
+      "stale": 0,
+      "deleted": 0
+    }
+  },
+  "storage": {
+    "append-only": {
+      "stored_rows": 12,
+      "current_facts": 12,
+      "deletion_records": 0,
+      "resolutions": 0
+    },
+    "managed": {
+      "stored_rows": 11,
+      "current_facts": 7,
+      "deletion_records": 1,
+      "resolutions": 1
+    }
+  },
+  "counter": "Gemma 4 E2B tokenizer and chat template (tokenizer-manifest.json)",
+  "trials": 1,
+  "environment": {
+    "python": "3.11.11",
+    "sqlite": "3.53.4"
+  },
+  "quota_sweep": {
+    "120": {
+      "append-only": {
+        "found": 24,
+        "required": 26,
+        "stale": 1,
+        "deleted": 0
+      },
+      "managed": {
+        "found": 25,
+        "required": 26,
+        "stale": 0,
+        "deleted": 0
+      }
+    },
+    "160": {
+      "append-only": {
+        "found": 25,
+        "required": 26,
+        "stale": 3,
+        "deleted": 1
+      },
+      "managed": {
+        "found": 26,
+        "required": 26,
+        "stale": 0,
+        "deleted": 0
+      }
+    },
+    "240": {
+      "append-only": {
+        "found": 26,
+        "required": 26,
+        "stale": 7,
+        "deleted": 2
+      },
+      "managed": {
+        "found": 26,
+        "required": 26,
+        "stale": 0,
+        "deleted": 0
+      }
+    }
+  }
+}

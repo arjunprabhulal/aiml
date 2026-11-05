@@ -1,0 +1,18 @@
+{
+  "execution_mode": "offline-source-verification",
+  "model_called": false,
+  "fixture_kind": "supplied original Python API summaries",
+  "passage": {
+    "chunk_id": "dc15f2a3d615086bc11ba6695d673d064b6385a6277ae93079e9c7901144950e",
+    "source_path": "docs/path-write.md",
+    "source_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+    "start_line": 1,
+    "end_line": 1,
+    "text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+    "source_id": "path-write",
+    "version": "3.12",
+    "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text"
+  },
+  "verified_text": "Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\"utf-8\" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.",
+  "tampered_text_rejection": "passage does not match the current source snapshot"
+}

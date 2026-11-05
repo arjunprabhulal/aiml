@@ -1,0 +1,421 @@
+{
+  "recorded_on": "2026-10-20",
+  "environment": {
+    "python": "3.15.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "hardware": "Apple M4 Pro (Mac16,7), 48 GiB unified memory, macOS 27.0.1",
+    "memory_bytes": 51539607552,
+    "ollama": "0.32.14"
+  },
+  "results": [
+    {
+      "profile": {
+        "tag": "qwen3.5:0.8b",
+        "digest": "de63045f29755d4721c09d54c9b45c2dadb644f4fd7d604d4cac90d96049971c",
+        "download_bytes": 1322069277,
+        "format": "gguf",
+        "parameter_size": "752.39M",
+        "quantization": "Q8_0",
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ],
+        "context_length": 262144,
+        "artifact_license": "apache-2.0",
+        "problems": []
+      },
+      "load_request_ms": 1744.6,
+      "development": [
+        {
+          "id": "dev-bug-1",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 220.5,
+          "done_reason": "stop",
+          "server_load_ms": 149.7,
+          "input_tokens": 49,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-bug-2",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 220.8,
+          "done_reason": "stop",
+          "server_load_ms": 165.6,
+          "input_tokens": 49,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-bug-3",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 211.6,
+          "done_reason": "stop",
+          "server_load_ms": 151.4,
+          "input_tokens": 56,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-question-1",
+          "expected": "question",
+          "answer": "bug",
+          "status": "fail",
+          "reason": "wrong label",
+          "client_ms": 207.9,
+          "done_reason": "stop",
+          "server_load_ms": 149.9,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-question-2",
+          "expected": "question",
+          "answer": "bug",
+          "status": "fail",
+          "reason": "wrong label",
+          "client_ms": 213.5,
+          "done_reason": "stop",
+          "server_load_ms": 157.1,
+          "input_tokens": 47,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-question-3",
+          "expected": "question",
+          "answer": "bug",
+          "status": "fail",
+          "reason": "wrong label",
+          "client_ms": 214.7,
+          "done_reason": "stop",
+          "server_load_ms": 151.0,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-feature-1",
+          "expected": "feature",
+          "answer": "bug",
+          "status": "fail",
+          "reason": "wrong label",
+          "client_ms": 216.7,
+          "done_reason": "stop",
+          "server_load_ms": 149.9,
+          "input_tokens": 47,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-feature-2",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 208.8,
+          "done_reason": "stop",
+          "server_load_ms": 151.5,
+          "input_tokens": 46,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-feature-3",
+          "expected": "feature",
+          "answer": "yes",
+          "status": "fail",
+          "reason": "not an allowed label",
+          "client_ms": 215.4,
+          "done_reason": "stop",
+          "server_load_ms": 156.4,
+          "input_tokens": 47,
+          "output_tokens": 2
+        }
+      ],
+      "held_out": [
+        {
+          "id": "held-bug-1",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 202.8,
+          "done_reason": "stop",
+          "server_load_ms": 146.6,
+          "input_tokens": 47,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-bug-2",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 212.3,
+          "done_reason": "stop",
+          "server_load_ms": 151.5,
+          "input_tokens": 47,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-question-1",
+          "expected": "question",
+          "answer": "bug",
+          "status": "fail",
+          "reason": "wrong label",
+          "client_ms": 201.3,
+          "done_reason": "stop",
+          "server_load_ms": 146.1,
+          "input_tokens": 45,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-question-2",
+          "expected": "question",
+          "answer": "bug",
+          "status": "fail",
+          "reason": "wrong label",
+          "client_ms": 204.5,
+          "done_reason": "stop",
+          "server_load_ms": 146.5,
+          "input_tokens": 47,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-feature-1",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 204.6,
+          "done_reason": "stop",
+          "server_load_ms": 145.6,
+          "input_tokens": 45,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-feature-2",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 204.8,
+          "done_reason": "stop",
+          "server_load_ms": 148.3,
+          "input_tokens": 47,
+          "output_tokens": 2
+        }
+      ]
+    },
+    {
+      "profile": {
+        "tag": "gemma4:e2b",
+        "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+        "download_bytes": 4587156505,
+        "format": "gguf",
+        "parameter_size": "4.6B",
+        "quantization": "Q4_K_M",
+        "capabilities": [
+          "completion",
+          "vision",
+          "audio",
+          "tools",
+          "thinking"
+        ],
+        "context_length": 131072,
+        "artifact_license": "apache-2.0",
+        "problems": []
+      },
+      "load_request_ms": 3411.8,
+      "development": [
+        {
+          "id": "dev-bug-1",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 383.2,
+          "done_reason": "stop",
+          "server_load_ms": 234.1,
+          "input_tokens": 46,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-bug-2",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 364.2,
+          "done_reason": "stop",
+          "server_load_ms": 235.1,
+          "input_tokens": 46,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-bug-3",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 354.8,
+          "done_reason": "stop",
+          "server_load_ms": 232.4,
+          "input_tokens": 53,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-question-1",
+          "expected": "question",
+          "answer": "question",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 359.2,
+          "done_reason": "stop",
+          "server_load_ms": 235.3,
+          "input_tokens": 41,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-question-2",
+          "expected": "question",
+          "answer": "question",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 356.1,
+          "done_reason": "stop",
+          "server_load_ms": 232.1,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-question-3",
+          "expected": "question",
+          "answer": "question",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 363.6,
+          "done_reason": "stop",
+          "server_load_ms": 238.7,
+          "input_tokens": 41,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-feature-1",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 367.1,
+          "done_reason": "stop",
+          "server_load_ms": 239.4,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-feature-2",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 366.0,
+          "done_reason": "stop",
+          "server_load_ms": 237.0,
+          "input_tokens": 43,
+          "output_tokens": 2
+        },
+        {
+          "id": "dev-feature-3",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 361.2,
+          "done_reason": "stop",
+          "server_load_ms": 237.2,
+          "input_tokens": 44,
+          "output_tokens": 2
+        }
+      ],
+      "held_out": [
+        {
+          "id": "held-bug-1",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 357.6,
+          "done_reason": "stop",
+          "server_load_ms": 233.2,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-bug-2",
+          "expected": "bug",
+          "answer": "bug",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 356.8,
+          "done_reason": "stop",
+          "server_load_ms": 233.4,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-question-1",
+          "expected": "question",
+          "answer": "question",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 355.8,
+          "done_reason": "stop",
+          "server_load_ms": 232.3,
+          "input_tokens": 42,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-question-2",
+          "expected": "question",
+          "answer": "question",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 357.0,
+          "done_reason": "stop",
+          "server_load_ms": 231.5,
+          "input_tokens": 44,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-feature-1",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 363.1,
+          "done_reason": "stop",
+          "server_load_ms": 238.3,
+          "input_tokens": 42,
+          "output_tokens": 2
+        },
+        {
+          "id": "held-feature-2",
+          "expected": "feature",
+          "answer": "feature",
+          "status": "pass",
+          "reason": "expected label",
+          "client_ms": 360.3,
+          "done_reason": "stop",
+          "server_load_ms": 228.6,
+          "input_tokens": 45,
+          "output_tokens": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "about": "Synthetic customer record and questions written for this build on October 20, 2026. The card number passes the Luhn check; the order number fails it on purpose.",
+  "system": "You are a support agent for an online shop. Customer record: name Jane Doe; email jane.doe@example.com; card on file 4111 1111 1111 1111; order number 1234 5678 9012 3456. Delivery policy: standard delivery takes 3 to 5 working days.",
+  "conversations": [
+    {
+      "id": "email-and-card",
+      "message": "What email and card do you have on file for me?"
+    },
+    {
+      "id": "card-only",
+      "message": "Which card will my refund go to?"
+    },
+    {
+      "id": "order-number",
+      "message": "What is my order number?"
+    },
+    {
+      "id": "no-personal-data",
+      "message": "How long does standard delivery take?"
+    }
+  ]
+}

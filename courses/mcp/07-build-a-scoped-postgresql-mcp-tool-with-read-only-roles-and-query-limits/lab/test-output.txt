@@ -1,0 +1,35 @@
+test_row_limit_reports_truncation_only_when_rows_were_dropped (test_postgres_readonly.AllowedQueries.test_row_limit_reports_truncation_only_when_rows_were_dropped) ... ok
+test_schema_shows_only_granted_table (test_postgres_readonly.AllowedQueries.test_schema_shows_only_granted_table) ... ok
+test_select_returns_columns_and_rows (test_postgres_readonly.AllowedQueries.test_select_returns_columns_and_rows) ... ok
+test_bad_max_rows_and_empty_sql_are_rejected_before_the_database (test_postgres_readonly.Limits.test_bad_max_rows_and_empty_sql_are_rejected_before_the_database) ... ok
+test_data_modifying_with_is_rejected (test_postgres_readonly.Limits.test_data_modifying_with_is_rejected) ... ok
+test_insert_is_rejected_by_the_cursor (test_postgres_readonly.Limits.test_insert_is_rejected_by_the_cursor) ... ok
+test_large_result_stays_on_the_server (test_postgres_readonly.Limits.test_large_result_stays_on_the_server) ... ok
+test_multiple_statements_are_rejected (test_postgres_readonly.Limits.test_multiple_statements_are_rejected) ... ok
+test_notification_is_not_a_write_and_is_allowed (test_postgres_readonly.Limits.test_notification_is_not_a_write_and_is_allowed) ... ok
+test_result_byte_budget_rejects_large_values_and_many_wide_rows (test_postgres_readonly.Limits.test_result_byte_budget_rejects_large_values_and_many_wide_rows) ... ok
+test_session_setting_does_not_carry_into_the_next_call (test_postgres_readonly.Limits.test_session_setting_does_not_carry_into_the_next_call) ... ok
+test_slow_query_is_cancelled_by_statement_timeout (test_postgres_readonly.Limits.test_slow_query_is_cancelled_by_statement_timeout) ... ok
+test_transaction_limits_hold_without_role_defaults (test_postgres_readonly.Limits.test_transaction_limits_hold_without_role_defaults) ... ok
+test_unprivileged_table_is_rejected (test_postgres_readonly.Limits.test_unprivileged_table_is_rejected) ... ok
+test_write_is_rejected_by_read_only_transaction (test_postgres_readonly.Limits.test_write_is_rejected_by_read_only_transaction) ... ok
+test_denied_query_is_a_tool_error_with_sqlstate (test_postgres_readonly.McpLayer.test_denied_query_is_a_tool_error_with_sqlstate) ... Tool 'run_query' failed: 'Error executing tool run_query: Query rejected: the transaction is read-only (SQLSTATE 25006).'
+ok
+test_schema_bounds_max_rows_and_extra_properties_are_ignored (test_postgres_readonly.McpLayer.test_schema_bounds_max_rows_and_extra_properties_are_ignored) ... Tool 'run_query' rejected arguments: ['max_rows']
+Tool 'run_query' rejected arguments: ['max_rows']
+ok
+test_saved_results_match_a_fresh_run (test_postgres_readonly.RecordedResults.test_saved_results_match_a_fresh_run) ... Tool 'run_query' failed: 'Error executing tool run_query: Query rejected: the transaction is read-only (SQLSTATE 25006).'
+ok
+test_check_finds_write_grants_the_role_could_inherit (test_postgres_readonly.RolePrivileges.test_check_finds_write_grants_the_role_could_inherit) ... ok
+test_destroy_refuses_directories_that_are_not_lesson_clusters (test_postgres_readonly.RolePrivileges.test_destroy_refuses_directories_that_are_not_lesson_clusters) ... ok
+test_destroy_stops_the_cluster_and_removes_its_files (test_postgres_readonly.RolePrivileges.test_destroy_stops_the_cluster_and_removes_its_files) ... ok
+test_failed_create_leaves_no_running_server (test_postgres_readonly.RolePrivileges.test_failed_create_leaves_no_running_server) ... ok
+test_reader_cannot_connect_to_other_databases (test_postgres_readonly.RolePrivileges.test_reader_cannot_connect_to_other_databases) ... ok
+test_role_cannot_write_even_with_read_only_turned_off (test_postgres_readonly.RolePrivileges.test_role_cannot_write_even_with_read_only_turned_off) ... ok
+test_server_refuses_a_role_that_can_write (test_postgres_readonly.RolePrivileges.test_server_refuses_a_role_that_can_write) ... ok
+test_table_grants_do_not_cover_large_objects (test_postgres_readonly.RolePrivileges.test_table_grants_do_not_cover_large_objects) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 5.668s
+
+OK

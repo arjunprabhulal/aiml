@@ -1,0 +1,27 @@
+{
+  "mode": "actual local diagnostics on authored response/review fixtures; no model or external command execution",
+  "commands": [
+    "python3 diagnose.py --save result.json",
+    "python3 -m unittest -v test_diagnostics.py"
+  ],
+  "unchanged_reuse": {
+    "vendor/rubric.py": "ai-system-answer-rubric/rubric.py",
+    "vendor/action_task.py": "ai-system-evaluation/task.py"
+  },
+  "sha256": {
+    "README.md": "b578748ff455fce54e24695f34357057f6e056cbb3caf329ae623d3c427b904f",
+    "diagnose.py": "391dda6864725c662e3e4d107230d67087c434636dda588e499eb5cbad497604",
+    "expected-action.json": "155d37b2e55e3f163a4179c018d164eacc50dfc57829e4e6795a29b6f4817830",
+    "requirements-lock.txt": "f933dc4baa1d1a82b6d385a210101b198184e5ad112b322df1290cbeff839a2d",
+    "responses.json": "8c9c262769a1404f1600879a2ee39973c2d0a4a54547b91293396da0ef1185c9",
+    "result.json": "e4b56b59e0cd10defc7ac4f0662f7e76ceb33f16b1119b306c73f9a05651aa2b",
+    "rubric-inputs/annotations.json": "12f29c4c569193e1f7d1caa5ea04638f9061f8dd4705a28b26eb2bde370085cb",
+    "rubric-inputs/cases.json": "b9eabe707498edfd0444bab82630985fbb7c607162a80e82e88465da01ea4370",
+    "rubric-inputs/rubric.json": "3a8dcd22e9f421ec51f4eae59bee09d2ac2f67b1bc5ad98ff1f465e7d6535228",
+    "rubric-inputs/source.txt": "2ce5d06d1dc27d2c278ac24bf446442d8276124ce33a629c1ca58fdb59d5fbd2",
+    "run-output.txt": "45c41fe2494b5b0eb973b02ba46668f9927be58dbeaeae5e6d704f86a219a58c",
+    "test_diagnostics.py": "4e470c06e65c1422ee64a8c1f74462ec2348b28622cb0688e8d4f4fe33caa7e4",
+    "vendor/action_task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+    "vendor/rubric.py": "f3bfaa643012b892833cf9ed867184cd9cadf3cbdee8b267a0a1f2a7c1d894e5"
+  }
+}

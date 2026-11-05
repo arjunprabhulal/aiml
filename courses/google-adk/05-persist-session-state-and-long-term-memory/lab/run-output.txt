@@ -1,0 +1,73 @@
+# run 1, user dana, new session
+> I'm on docuctl 1.x. How do I roll back production to r41?
+call   set_docuctl_version {'version': '1.x'}
+call   read_page {'page': 'rollback'}
+result set_docuctl_version ['saved']
+result read_page ['page', 'text']
+state  {'user:docuctl_version': '1.x'}
+state  {'last_answer': 'In docuctl 1.x, roll back using:\n\n```bash\ndocuctl release revert r41\n```\n\n(`docuctl rollback` was introduced in docuctl 2.0 to replace `docuctl release revert`). Note that database migrations are not rolled back automatically.'}
+answer In docuctl 1.x, roll back using:
+
+```bash
+docuctl release revert r41
+```
+
+(`docuctl rollback` was introduced in docuctl 2.0 to replace `docuctl release revert`). Note that database migrations are not rolled back automatically.
+
+# run 1, user dana, new session
+> Which release did you tell me to revert production to earlier?
+call   load_memory {'query': 'revert production release'}
+result load_memory ['result']
+state  {'last_answer': 'Earlier, I told you to revert production to release **r41** using:\n\n```bash\ndocuctl release revert r41\n```'}
+answer Earlier, I told you to revert production to release **r41** using:
+
+```bash
+docuctl release revert r41
+```
+
+# run 2, user dana, new session
+> How do I roll back staging to the previous release?
+call   read_page {'page': 'rollback'}
+result read_page ['page', 'text']
+state  {'last_answer': 'In docuctl 1.x, use `docuctl release revert`:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```\n\nFind the previous release ID using `docuctl releases --env staging`, then pass it to `docuctl release revert`. Note that database migrations are not rolled back automatically.'}
+answer In docuctl 1.x, use `docuctl release revert`:
+
+```bash
+docuctl release revert <release-id> --env staging
+```
+
+Find the previous release ID using `docuctl releases --env staging`, then pass it to `docuctl release revert`. Note that database migrations are not rolled back automatically.
+
+# run 2, user dana, new session
+> Which release did you tell me to revert production to earlier?
+call   load_memory {'query': 'revert production release'}
+result load_memory ['result']
+call   load_memory {'query': 'production'}
+result load_memory ['result']
+call   load_memory {'query': 'release'}
+result load_memory ['result']
+call   load_memory {'query': 'revert'}
+result load_memory ['result']
+call   load_memory {'query': ''}
+result load_memory ['result']
+state  {'last_answer': "Earlier, we discussed rolling back **staging** rather than production. I didn't specify a release ID; instead, I recommended finding the previous release ID with:\n\n```bash\ndocuctl releases --env staging\n```\n\nand then reverting to it using:\n\n```bash\ndocuctl release revert <release-id> --env staging\n```"}
+answer Earlier, we discussed rolling back **staging** rather than production. I didn't specify a release ID; instead, I recommended finding the previous release ID with:
+
+```bash
+docuctl releases --env staging
+```
+
+and then reverting to it using:
+
+```bash
+docuctl release revert <release-id> --env staging
+```
+
+# run 2, user lee, new session
+> How do I roll back staging to the previous release?
+call   read_page {'page': 'rollback'}
+result read_page ['page', 'text']
+state  {'last_answer': 'Which version of docuctl are you using (1.x or 2.x)? \n\nThe rollback command depends on your version: docuctl 2.x uses `docuctl rollback`, while 1.x used `docuctl release revert`. Once you confirm your version, I can provide the exact command.'}
+answer Which version of docuctl are you using (1.x or 2.x)? 
+
+The rollback command depends on your version: docuctl 2.x uses `docuctl rollback`, while 1.x used `docuctl release revert`. Once you confirm your version, I can provide the exact command.

@@ -1,0 +1,43 @@
+{
+  "name": "python-api-summaries-2026-10-22",
+  "sources_sha256": "acd2e77291bdfae40dcc8aacbaec250e507375ca8e55511c31eaa630d3b531cb",
+  "splitter": {
+    "name": "RecursiveCharacterTextSplitter",
+    "chunk_size": 280,
+    "chunk_overlap": 40
+  },
+  "sources": [
+    {
+      "id": "path-write",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text",
+      "text_sha256": "a48b4b9f763cd6309ebe32af19c5a814adcf810c2259683da9f328ccee46948e",
+      "license": "Original summary MIT; linked Python documentation PSF",
+      "verification": "primary_docs_and_local312_fact_check"
+    },
+    {
+      "id": "path-read",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text",
+      "text_sha256": "dc097ca63486ace45279f412ea266bf754fcd2f0b1153f5d763ce905dafbc2c0",
+      "license": "Original summary MIT; linked Python documentation PSF",
+      "verification": "primary_docs_and_local312_fact_check"
+    },
+    {
+      "id": "json-text",
+      "version": "3.12",
+      "url": "https://docs.python.org/3.12/library/json.html#json.dumps",
+      "text_sha256": "0f5efa9669a97f93d5e7e8fe91de80a0d954643947ac9619dba41d3904166288",
+      "license": "Original summary MIT; linked Python documentation PSF",
+      "verification": "primary_docs_and_local312_fact_check"
+    },
+    {
+      "id": "path-read-3-13",
+      "version": "3.13",
+      "url": "https://docs.python.org/3.13/library/pathlib.html#pathlib.Path.read_text",
+      "text_sha256": "0dd5becb0c04458ad5f8bbf3fdef4f71034c584ef863bf748793bef7309b9f4f",
+      "license": "Original summary MIT; linked Python documentation PSF",
+      "verification": "documented_only"
+    }
+  ]
+}

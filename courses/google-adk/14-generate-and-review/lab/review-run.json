@@ -1,0 +1,595 @@
+{
+  "environment": {
+    "google-adk": "2.12.0",
+    "google-genai": "2.32.0",
+    "model": "gemini-3.8-flash"
+  },
+  "runs": [
+    {
+      "changelog": "changelog-3.5.0.md",
+      "style": "upbeat",
+      "version_in_facts": true,
+      "events": [
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/read_changelog@1",
+            "output_for": [
+              "announce_release@1/read_changelog@1"
+            ]
+          },
+          "output": {
+            "version": "3.5.0",
+            "entries": [
+              "Build pages in parallel; set the worker count with `--jobs`.",
+              "Cache rendered code blocks in `.docuctl/cache`.",
+              "Fix the search index missing pages whose title contains a colon."
+            ]
+          },
+          "state": {
+            "changelog": "- docuctl 3.5.0 is released.\n- Build pages in parallel; set the worker count with `--jobs`.\n- Cache rendered code blocks in `.docuctl/cache`.\n- Fix the search index missing pages whose title contains a colon."
+          }
+        },
+        {
+          "author": "write_announcement",
+          "node_info": {
+            "path": "announce_release@1/write_announcement@1",
+            "output_for": [
+              "announce_release@1/write_announcement@1"
+            ]
+          },
+          "output": {
+            "title": "docuctl v3.5.0: Faster builds and better search!",
+            "body": "Get ready for a massive speed boost with docuctl 3.5.0! You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast. Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index. Update today and enjoy a smoother, speedier documentation workflow!"
+          },
+          "state": {
+            "draft": {
+              "title": "docuctl v3.5.0: Faster builds and better search!",
+              "body": "Get ready for a massive speed boost with docuctl 3.5.0! You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast. Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index. Update today and enjoy a smoother, speedier documentation workflow!"
+            }
+          },
+          "message": "{\"title\": \"docuctl v3.5.0: Faster builds and better search!\", \"body\": \"Get ready for a massive speed boost with docuctl 3.5.0! You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast. Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index. Update today and enjoy a smoother, speedier documentation workflow!\"}"
+        },
+        {
+          "author": "review_announcement",
+          "node_info": {
+            "path": "announce_release@1/review_announcement@1",
+            "output_for": [
+              "announce_release@1/review_announcement@1"
+            ]
+          },
+          "output": {
+            "verdict": "reject",
+            "unsupported": [
+              "Get ready for a massive speed boost with docuctl 3.5.0!",
+              "You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast.",
+              "Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index.",
+              "Update today and enjoy a smoother, speedier documentation workflow!"
+            ]
+          },
+          "message": "{\n  \"verdict\": \"reject\",\n  \"unsupported\": [\n    \"Get ready for a massive speed boost with docuctl 3.5.0!\",\n    \"You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast.\",\n    \"Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index.\",\n    \"Update today and enjoy a smoother, speedier documentation workflow!\"\n  ]\n}"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/gate@1",
+            "output_for": [
+              "announce_release@1/gate@1"
+            ]
+          },
+          "output": {
+            "draft": {
+              "title": "docuctl v3.5.0: Faster builds and better search!",
+              "body": "Get ready for a massive speed boost with docuctl 3.5.0! You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast. Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index. Update today and enjoy a smoother, speedier documentation workflow!"
+            },
+            "unsupported": [
+              "Get ready for a massive speed boost with docuctl 3.5.0!",
+              "You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast.",
+              "Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index.",
+              "Update today and enjoy a smoother, speedier documentation workflow!"
+            ]
+          },
+          "route": "reject"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/send_back@1"
+          },
+          "message": "REJECTED: the reviewer found claims with no changelog entry:\n- Get ready for a massive speed boost with docuctl 3.5.0!\n- You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast.\n- Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index.\n- Update today and enjoy a smoother, speedier documentation workflow!"
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "d6324ea7da8e",
+          "request": "{\"version\": \"3.5.0\", \"entries\": [\"Build pages in parallel; set the worker count with `--jobs`.\", \"Cache rendered code blocks in `.docuctl/cache`.\", \"Fix the search index missing pages whose title contains a colon.\"]}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"title\": \"docuctl v3.5.0: Faster builds and better search!\", \"body\": \"Get ready for a massive speed boost with docuctl 3.5.0! You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast. Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index. Update today and enjoy a smoother, speedier documentation workflow!\"}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 118,
+              "prompt_token_count": 95,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 95
+                }
+              ],
+              "total_token_count": 213
+            }
+          },
+          "latency_s": 2.99
+        },
+        {
+          "system": "d11b566a4874",
+          "request": "{\"title\": \"docuctl v3.5.0: Faster builds and better search!\", \"body\": \"Get ready for a massive speed boost with docuctl 3.5.0! You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast. Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index. Update today and enjoy a smoother, speedier documentation workflow!\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\n  \"verdict\": \"reject\",\n  \"unsupported\": [\n    \"Get ready for a massive speed boost with docuctl 3.5.0!\",\n    \"You can now slash your deployment times by building pages in parallel with the new `--jobs` flag, while automatic caching for rendered code blocks keeps everyday rebuilds lightning-fast.\",\n    \"Plus, your readers will always find what they need thanks to a key fix ensuring titles with colons are never missed by the search index.\",\n    \"Update today and enjoy a smoother, speedier documentation workflow!\"\n  ]\n}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 127,
+              "prompt_token_count": 221,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 221
+                }
+              ],
+              "total_token_count": 348
+            }
+          },
+          "latency_s": 2.25
+        }
+      ]
+    },
+    {
+      "changelog": "changelog-3.5.0.md",
+      "style": "factual",
+      "version_in_facts": true,
+      "events": [
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/read_changelog@1",
+            "output_for": [
+              "announce_release@1/read_changelog@1"
+            ]
+          },
+          "output": {
+            "version": "3.5.0",
+            "entries": [
+              "Build pages in parallel; set the worker count with `--jobs`.",
+              "Cache rendered code blocks in `.docuctl/cache`.",
+              "Fix the search index missing pages whose title contains a colon."
+            ]
+          },
+          "state": {
+            "changelog": "- docuctl 3.5.0 is released.\n- Build pages in parallel; set the worker count with `--jobs`.\n- Cache rendered code blocks in `.docuctl/cache`.\n- Fix the search index missing pages whose title contains a colon."
+          }
+        },
+        {
+          "author": "write_announcement",
+          "node_info": {
+            "path": "announce_release@1/write_announcement@1",
+            "output_for": [
+              "announce_release@1/write_announcement@1"
+            ]
+          },
+          "output": {
+            "title": "docuctl 3.5.0 Release Announcement",
+            "body": "docuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon."
+          },
+          "state": {
+            "draft": {
+              "title": "docuctl 3.5.0 Release Announcement",
+              "body": "docuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon."
+            }
+          },
+          "message": "{\n  \"title\": \"docuctl 3.5.0 Release Announcement\",\n  \"body\": \"docuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon.\"\n}"
+        },
+        {
+          "author": "review_announcement",
+          "node_info": {
+            "path": "announce_release@1/review_announcement@1",
+            "output_for": [
+              "announce_release@1/review_announcement@1"
+            ]
+          },
+          "output": {
+            "verdict": "approve",
+            "unsupported": []
+          },
+          "message": "{\"verdict\":\"approve\",\"unsupported\":[]}"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/gate@1",
+            "output_for": [
+              "announce_release@1/gate@1"
+            ]
+          },
+          "output": {
+            "draft": {
+              "title": "docuctl 3.5.0 Release Announcement",
+              "body": "docuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon."
+            },
+            "unsupported": []
+          },
+          "route": "approve"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/publish@1"
+          },
+          "message": "APPROVED\n# docuctl 3.5.0 Release Announcement\n\ndocuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon."
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "9a75d287f632",
+          "request": "{\"version\": \"3.5.0\", \"entries\": [\"Build pages in parallel; set the worker count with `--jobs`.\", \"Cache rendered code blocks in `.docuctl/cache`.\", \"Fix the search index missing pages whose title contains a colon.\"]}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\n  \"title\": \"docuctl 3.5.0 Release Announcement\",\n  \"body\": \"docuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon.\"\n}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 97,
+              "prompt_token_count": 107,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 107
+                }
+              ],
+              "total_token_count": 204
+            }
+          },
+          "latency_s": 2.62
+        },
+        {
+          "system": "d11b566a4874",
+          "request": "{\"title\": \"docuctl 3.5.0 Release Announcement\", \"body\": \"docuctl 3.5.0 is now available with several updates. You can now build pages in parallel and configure the worker count using the `--jobs` flag. The tool also caches rendered code blocks in `.docuctl/cache`. Additionally, this release fixes an issue where the search index missed pages with titles containing a colon.\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"verdict\":\"approve\",\"unsupported\":[]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 10,
+              "prompt_token_count": 193,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 193
+                }
+              ],
+              "total_token_count": 203
+            }
+          },
+          "latency_s": 1.52
+        }
+      ]
+    },
+    {
+      "changelog": "changelog-3.4.0.md",
+      "style": "factual",
+      "version_in_facts": true,
+      "events": [
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/read_changelog@1",
+            "output_for": [
+              "announce_release@1/read_changelog@1"
+            ]
+          },
+          "output": {
+            "version": "3.4.0",
+            "entries": [
+              "Add a `--dry-run` flag to `docuctl publish` that prints the pages it would upload.",
+              "Fix `docuctl build` exiting with code 0 when a page has a broken link.",
+              "Remove the deprecated `--legacy-nav` flag."
+            ]
+          },
+          "state": {
+            "changelog": "- docuctl 3.4.0 is released.\n- Add a `--dry-run` flag to `docuctl publish` that prints the pages it would upload.\n- Fix `docuctl build` exiting with code 0 when a page has a broken link.\n- Remove the deprecated `--legacy-nav` flag."
+          }
+        },
+        {
+          "author": "write_announcement",
+          "node_info": {
+            "path": "announce_release@1/write_announcement@1",
+            "output_for": [
+              "announce_release@1/write_announcement@1"
+            ]
+          },
+          "output": {
+            "title": "docuctl 3.4.0 Release Announcement",
+            "body": "docuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag."
+          },
+          "state": {
+            "draft": {
+              "title": "docuctl 3.4.0 Release Announcement",
+              "body": "docuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag."
+            }
+          },
+          "message": "{\"title\": \"docuctl 3.4.0 Release Announcement\", \"body\": \"docuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag.\"}"
+        },
+        {
+          "author": "review_announcement",
+          "node_info": {
+            "path": "announce_release@1/review_announcement@1",
+            "output_for": [
+              "announce_release@1/review_announcement@1"
+            ]
+          },
+          "output": {
+            "verdict": "approve",
+            "unsupported": []
+          },
+          "message": "{\"verdict\": \"approve\", \"unsupported\": []}"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/gate@1",
+            "output_for": [
+              "announce_release@1/gate@1"
+            ]
+          },
+          "output": {
+            "draft": {
+              "title": "docuctl 3.4.0 Release Announcement",
+              "body": "docuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag."
+            },
+            "unsupported": []
+          },
+          "route": "approve"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/publish@1"
+          },
+          "message": "APPROVED\n# docuctl 3.4.0 Release Announcement\n\ndocuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag."
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "9a75d287f632",
+          "request": "{\"version\": \"3.4.0\", \"entries\": [\"Add a `--dry-run` flag to `docuctl publish` that prints the pages it would upload.\", \"Fix `docuctl build` exiting with code 0 when a page has a broken link.\", \"Remove the deprecated `--legacy-nav` flag.\"]}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"title\": \"docuctl 3.4.0 Release Announcement\", \"body\": \"docuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag.\"}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 94,
+              "prompt_token_count": 121,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 121
+                }
+              ],
+              "total_token_count": 215
+            }
+          },
+          "latency_s": 2.56
+        },
+        {
+          "system": "d94b9ac46bb1",
+          "request": "{\"title\": \"docuctl 3.4.0 Release Announcement\", \"body\": \"docuctl version 3.4.0 is now available. This release adds a `--dry-run` flag to `docuctl publish` that prints the pages it would upload. It fixes `docuctl build` exiting with code 0 when a page has a broken link. Additionally, it removes the deprecated `--legacy-nav` flag.\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"verdict\": \"approve\", \"unsupported\": []}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 13,
+              "prompt_token_count": 213,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 213
+                }
+              ],
+              "total_token_count": 226
+            }
+          },
+          "latency_s": 1.6
+        }
+      ]
+    },
+    {
+      "changelog": "changelog-3.4.0.md",
+      "style": "factual",
+      "version_in_facts": false,
+      "events": [
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/read_changelog@1",
+            "output_for": [
+              "announce_release@1/read_changelog@1"
+            ]
+          },
+          "output": {
+            "version": "3.4.0",
+            "entries": [
+              "Add a `--dry-run` flag to `docuctl publish` that prints the pages it would upload.",
+              "Fix `docuctl build` exiting with code 0 when a page has a broken link.",
+              "Remove the deprecated `--legacy-nav` flag."
+            ]
+          },
+          "state": {
+            "changelog": "- Add a `--dry-run` flag to `docuctl publish` that prints the pages it would upload.\n- Fix `docuctl build` exiting with code 0 when a page has a broken link.\n- Remove the deprecated `--legacy-nav` flag."
+          }
+        },
+        {
+          "author": "write_announcement",
+          "node_info": {
+            "path": "announce_release@1/write_announcement@1",
+            "output_for": [
+              "announce_release@1/write_announcement@1"
+            ]
+          },
+          "output": {
+            "title": "docuctl 3.4.0 Release Announcement",
+            "body": "docuctl version 3.4.0 is now available. This release adds a --dry-run flag to docuctl publish that prints the pages it would upload. It also fixes an issue where docuctl build exited with code 0 when a page had a broken link. Finally, the deprecated --legacy-nav flag has been removed."
+          },
+          "state": {
+            "draft": {
+              "title": "docuctl 3.4.0 Release Announcement",
+              "body": "docuctl version 3.4.0 is now available. This release adds a --dry-run flag to docuctl publish that prints the pages it would upload. It also fixes an issue where docuctl build exited with code 0 when a page had a broken link. Finally, the deprecated --legacy-nav flag has been removed."
+            }
+          },
+          "message": "{\"title\":\"docuctl 3.4.0 Release Announcement\",\"body\":\"docuctl version 3.4.0 is now available. This release adds a --dry-run flag to docuctl publish that prints the pages it would upload. It also fixes an issue where docuctl build exited with code 0 when a page had a broken link. Finally, the deprecated --legacy-nav flag has been removed.\"}"
+        },
+        {
+          "author": "review_announcement",
+          "node_info": {
+            "path": "announce_release@1/review_announcement@1",
+            "output_for": [
+              "announce_release@1/review_announcement@1"
+            ]
+          },
+          "output": {
+            "verdict": "reject",
+            "unsupported": [
+              "docuctl version 3.4.0 is now available."
+            ]
+          },
+          "message": "{\"verdict\":\"reject\",\"unsupported\":[\"docuctl version 3.4.0 is now available.\"]}"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/gate@1",
+            "output_for": [
+              "announce_release@1/gate@1"
+            ]
+          },
+          "output": {
+            "draft": {
+              "title": "docuctl 3.4.0 Release Announcement",
+              "body": "docuctl version 3.4.0 is now available. This release adds a --dry-run flag to docuctl publish that prints the pages it would upload. It also fixes an issue where docuctl build exited with code 0 when a page had a broken link. Finally, the deprecated --legacy-nav flag has been removed."
+            },
+            "unsupported": [
+              "docuctl version 3.4.0 is now available."
+            ]
+          },
+          "route": "reject"
+        },
+        {
+          "author": "announce_release",
+          "node_info": {
+            "path": "announce_release@1/send_back@1"
+          },
+          "message": "REJECTED: the reviewer found claims with no changelog entry:\n- docuctl version 3.4.0 is now available."
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "9a75d287f632",
+          "request": "{\"version\": \"3.4.0\", \"entries\": [\"Add a `--dry-run` flag to `docuctl publish` that prints the pages it would upload.\", \"Fix `docuctl build` exiting with code 0 when a page has a broken link.\", \"Remove the deprecated `--legacy-nav` flag.\"]}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"title\":\"docuctl 3.4.0 Release Announcement\",\"body\":\"docuctl version 3.4.0 is now available. This release adds a --dry-run flag to docuctl publish that prints the pages it would upload. It also fixes an issue where docuctl build exited with code 0 when a page had a broken link. Finally, the deprecated --legacy-nav flag has been removed.\"}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 90,
+              "prompt_token_count": 121,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 121
+                }
+              ],
+              "total_token_count": 211
+            }
+          },
+          "latency_s": 2.18
+        },
+        {
+          "system": "06ef6db5905f",
+          "request": "{\"title\": \"docuctl 3.4.0 Release Announcement\", \"body\": \"docuctl version 3.4.0 is now available. This release adds a --dry-run flag to docuctl publish that prints the pages it would upload. It also fixes an issue where docuctl build exited with code 0 when a page had a broken link. Finally, the deprecated --legacy-nav flag has been removed.\"}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"verdict\":\"reject\",\"unsupported\":[\"docuctl version 3.4.0 is now available.\"]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 24,
+              "prompt_token_count": 198,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 198
+                }
+              ],
+              "total_token_count": 222
+            }
+          },
+          "latency_s": 1.59
+        }
+      ]
+    }
+  ]
+}

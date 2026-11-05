@@ -1,0 +1,17 @@
+{
+  "split": "development",
+  "written_on": "2026-10-20",
+  "note": "Synthetic developer reports written for this lesson. The reports listed in seen_while_drafting were sent to both models once while the lesson's prompt was drafted, so they are not unseen.",
+  "seen_while_drafting": ["dev-bug-1", "dev-bug-2", "dev-question-1", "dev-question-2", "dev-feature-1", "dev-feature-2"],
+  "cases": [
+    {"id": "dev-bug-1", "report": "The command crashes with a traceback when I open an empty file.", "expected": "bug"},
+    {"id": "dev-bug-2", "report": "Saving a file with a space in its name silently writes nothing.", "expected": "bug"},
+    {"id": "dev-bug-3", "report": "After upgrading to 2.4 the progress bar shows 140% and never finishes.", "expected": "bug"},
+    {"id": "dev-question-1", "report": "How can I change the output directory?", "expected": "question"},
+    {"id": "dev-question-2", "report": "Is there a way to run it without network access?", "expected": "question"},
+    {"id": "dev-question-3", "report": "Which Python versions does the installer support?", "expected": "question"},
+    {"id": "dev-feature-1", "report": "Please add a flag to export the result as JSON.", "expected": "feature"},
+    {"id": "dev-feature-2", "report": "It would help to support YAML config files too.", "expected": "feature"},
+    {"id": "dev-feature-3", "report": "Could the report include a summary table at the top?", "expected": "feature"}
+  ]
+}

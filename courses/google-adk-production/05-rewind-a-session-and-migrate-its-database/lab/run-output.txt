@@ -1,0 +1,80 @@
+$ python pins.py
+after turn 1: {'pinned': ['rollback'], 'user:team': 'payments', 'artifact_versions': [0], 'artifact': '- rollback', 'events': 4}
+after turn 2: {'pinned': ['rollback', 'tokens'], 'user:team': 'platform', 'artifact_versions': [0, 1], 'artifact': '- rollback\n- tokens', 'events': 8}
+after rewind: {'pinned': ['rollback'], 'user:team': 'platform', 'artifact_versions': [0, 1, 2], 'artifact': '- rollback', 'events': 9}
+turn 3: You are on the payments team, and the rollback page is currently pinned.
+
+# runner.rewind_async(..., rewind_before_invocation_id='e-0000')
+InvocationNotFoundError: Invocation ID not found: e-0000
+
+$ python legacy.py legacy.db
+The database is using the legacy v0 schema, which uses Pickle to serialize event actions. The v0 schema will not be supported going forward and will be deprecated in a few rollouts. Please migrate to the v1 schema which uses JSON serialization for event data.  …
+This database uses the legacy schema, which stores an event as one column per field. 16 event fields are dropped on write and read back as unset: avg_logprobs, cache_metadata, environment_id, finish_reason, go_away, interaction_id, interaction_status, isolatio …
+exit 0
+
+$ adk migrate session --source_db_url sqlite:///legacy.db --dest_db_url sqlite:///migrated.db
+WARNING - _schema_check_utils.py:81 - The database is using the legacy v0 schema, which uses Pickle to serialize event actions. The v0 schema will not be supported going forward and will be deprecated in a few rollouts. Please migrate to the v1 schema which us …
+INFO - migration_runner.py:121 - Migrating from sqlite:///legacy.db to sqlite:///migrated.db (schema v1)...
+INFO - migrate_from_sqlalchemy_pickle.py:214 - Connecting to source database: sqlite:///legacy.db
+INFO - migrate_from_sqlalchemy_pickle.py:236 - Connecting to destination database: sqlite:///migrated.db
+INFO - migrate_from_sqlalchemy_pickle.py:261 - Created metadata table in destination database.
+INFO - migrate_from_sqlalchemy_pickle.py:265 - Migrating app_states...
+INFO - migrate_from_sqlalchemy_pickle.py:279 - Migrated 1 app_states.
+INFO - migrate_from_sqlalchemy_pickle.py:283 - Migrating user_states...
+INFO - migrate_from_sqlalchemy_pickle.py:298 - Migrated 1 user_states.
+INFO - migrate_from_sqlalchemy_pickle.py:302 - Migrating sessions...
+INFO - migrate_from_sqlalchemy_pickle.py:319 - Migrated 1 sessions.
+INFO - migrate_from_sqlalchemy_pickle.py:323 - Migrating events...
+WARNING - migrate_from_sqlalchemy_pickle.py:85 - Failed to unpickle actions for event 48902870-36c9-4482-9ad1-d8b7beaab783: Refusing to load collections.Counter from a legacy pickled `events.actions` value: it is not a type that `EventActions` can hold. This v …
+INFO - migrate_from_sqlalchemy_pickle.py:351 - Migrated 4 events.
+INFO - migrate_from_sqlalchemy_pickle.py:356 - Migration completed successfully.
+INFO - migration_runner.py:135 - Finished migration step to schema 1.
+Migration check and upgrade process finished.
+exit 0
+
+$ python check_migrated.py migrated.db
+session pins-2025: 4 events, state {'pinned': ['rollback', 'tokens'], 'page_views': {'rollback': 3, 'tokens': 1}, 'user:team': 'payments'}
+event e-1 user            state_delta={}
+event e-1 docs_assistant  state_delta={'pinned': ['rollback']}
+event e-2 user            state_delta={}
+event e-2 docs_assistant  state_delta={}
+exit 0
+
+$ adk migrate session --source_db_url sqlite:///legacy.db --dest_db_url sqlite:///migrated-full.db --allow-unsafe-unpickling
+WARNING - _schema_check_utils.py:81 - The database is using the legacy v0 schema, which uses Pickle to serialize event actions. The v0 schema will not be supported going forward and will be deprecated in a few rollouts. Please migrate to the v1 schema which us …
+INFO - migration_runner.py:121 - Migrating from sqlite:///legacy.db to sqlite:///migrated-full.db (schema v1)...
+INFO - migrate_from_sqlalchemy_pickle.py:214 - Connecting to source database: sqlite:///legacy.db
+WARNING - migrate_from_sqlalchemy_pickle.py:219 - Unsafe pickle migration mode is enabled. Only use this with a trusted source database.
+INFO - migrate_from_sqlalchemy_pickle.py:236 - Connecting to destination database: sqlite:///migrated-full.db
+INFO - migrate_from_sqlalchemy_pickle.py:261 - Created metadata table in destination database.
+INFO - migrate_from_sqlalchemy_pickle.py:265 - Migrating app_states...
+INFO - migrate_from_sqlalchemy_pickle.py:279 - Migrated 1 app_states.
+INFO - migrate_from_sqlalchemy_pickle.py:283 - Migrating user_states...
+INFO - migrate_from_sqlalchemy_pickle.py:298 - Migrated 1 user_states.
+INFO - migrate_from_sqlalchemy_pickle.py:302 - Migrating sessions...
+INFO - migrate_from_sqlalchemy_pickle.py:319 - Migrated 1 sessions.
+INFO - migrate_from_sqlalchemy_pickle.py:323 - Migrating events...
+INFO - migrate_from_sqlalchemy_pickle.py:351 - Migrated 4 events.
+INFO - migrate_from_sqlalchemy_pickle.py:356 - Migration completed successfully.
+INFO - migration_runner.py:135 - Finished migration step to schema 1.
+Migration check and upgrade process finished.
+exit 0
+
+$ python check_migrated.py migrated-full.db
+session pins-2025: 4 events, state {'pinned': ['rollback', 'tokens'], 'page_views': {'rollback': 3, 'tokens': 1}, 'user:team': 'payments'}
+event e-1 user            state_delta={}
+event e-1 docs_assistant  state_delta={'pinned': ['rollback']}
+event e-2 user            state_delta={}
+event e-2 docs_assistant  state_delta={'pinned': ['rollback', 'tokens'], 'page_views': {'rollback': 3, 'tokens': 1}}
+exit 0
+
+$ adk migrate session --source_db_url sqlite:///legacy.db --dest_db_url sqlite:///legacy.db
+Migration failed: In-place migration is not supported. Please provide a different URL for dest_db_url.
+exit 1
+
+$ adk migrate session --source_db_url sqlite:///legacy-db.db --dest_db_url sqlite:///out.db
+INFO - migration_runner.py:84 - Database sqlite:///legacy-db.db is already at latest version 1. No migration needed.
+Migration check and upgrade process finished.
+exit 0
+
+files now: ['legacy-db.db', 'legacy.db', 'migrated-full.db', 'migrated.db', 'sessions.db']

@@ -1,0 +1,6 @@
+Fictional docuctl 3 guide: staging rollback to r41
+Use `docuctl releases rollback r41 --environment staging` to select release r41.
+Before the command, obtain release approval and confirm that the active environment is staging.
+The command changes the deployed service version. It does not restore database contents.
+After the rollback, check service health.
+An assistant may explain or propose this command; it does not execute it in this example.

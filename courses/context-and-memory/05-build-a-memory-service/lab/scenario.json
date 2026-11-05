@@ -1,0 +1,21 @@
+{
+  "sessions": [
+    {
+      "writes": [
+        {"as": ["alice", "trip-planning"], "level": "user", "text": "Alice is vegetarian.", "source": "trip-planning/turn-3"},
+        {"as": ["alice", "trip-planning"], "level": "task", "text": "Book the Lisbon hotel near the river.", "source": "trip-planning/turn-5"},
+        {"as": ["alice", "trip-planning"], "level": "user", "text": "Alice prefers aisle seats on flights.", "source": "trip-planning/turn-6"},
+        {"as": ["bob", "onboarding"], "level": "user", "text": "Bob uses a screen reader, so describe images in text.", "source": "onboarding/turn-2"},
+        {"as": ["bob", "onboarding"], "level": "task", "text": "Bob's onboarding hotel is booked near the office.", "source": "onboarding/turn-4"}
+      ]
+    },
+    {
+      "queries": [
+        {"as": ["alice", "trip-planning"], "query": "Which hotel should I book, and is my meal vegetarian?"},
+        {"as": ["alice", "conference-trip"], "query": "Which hotel should I book, and is my meal vegetarian?"},
+        {"as": ["alice", "conference-trip"], "query": "Which seats do I prefer on flights?"},
+        {"as": ["bob", "onboarding"], "query": "Which hotel should I book, and is my meal vegetarian?"}
+      ]
+    }
+  ]
+}

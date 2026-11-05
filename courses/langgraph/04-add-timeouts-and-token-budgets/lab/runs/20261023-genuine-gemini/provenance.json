@@ -1,0 +1,19 @@
+{
+  "classification": "Original native-process output and original completed PTY screenshots; no reconstructed stdout or image editing",
+  "original_receipt_sha256": "530642783f5b2b1f33c5b1b2a6195e5c9c44b0ab8b0b25d72dbdb733d824f352",
+  "original_independent_review_sha256": "e25afff14ec1d625113b44f5dcb81459c8a9a8a51e637f96fc5d7c7222aa560f",
+  "original_capture_manifest_sha256": "439b0f588d8e9e4085456e0216488ba083e06357dc0662156f2c6d8f0f058779",
+  "original_native_launch_record_sha256": "3ff36863192ac202c05b17c45826ce4159076602f489b9254ce2dc970abd9a49",
+  "original_native_result_record_sha256": "30e583b874e7f8610c25d9df920b171e2d2410ddcef843e57c591d64eed1aa56",
+  "scope_sha256": "950ceb6c3c11fcf66dbe812d10b0a1a1b4568e7622810ec15e80a7c3f2f04fe3",
+  "stdout_bytes_preserved_including_CRLF": true,
+  "all_images_original_unchanged": true,
+  "private_evidence_excluded": [
+    "Credentials, headers, owner-consent records and attempt ledger",
+    "Opaque provider signatures and raw HTTP response bodies",
+    "Private capture scripts, directories and host environment paths"
+  ],
+  "image_header_exception": "The untouched original terminal images retain their executed temporary argv as process provenance, matching the other published LangGraph run captures. No credential appears in that header.",
+  "failed_preparation_files_preserved_unchanged": 67,
+  "raw_response_representation": "Private response evidence stores HTTPX-decoded JSON content, not compressed wire bytes. Successful response content-encoding metadata was retained separately; no raw provider body is published."
+}

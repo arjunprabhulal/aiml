@@ -1,0 +1,197 @@
+{
+ "note": "Questions written for this build (CC0). expected lists answer strings, any one of which must appear in the answer as a whole word or number; sources lists the sources that contain the answer. An empty expected list means the sources do not answer the question. The 10 development questions were used to check the prompt, the JSON schema and k. The 8 held-out questions were written on 2026-10-20 after those were fixed and run once.",
+ "questions": [
+  {
+   "id": "d01",
+   "split": "development",
+   "question": "Which Ollama version must the version check return after a restart?",
+   "expected": [
+    "0.32.14"
+   ],
+   "sources": [
+    "runbook-c04"
+   ]
+  },
+  {
+   "id": "d02",
+   "split": "development",
+   "question": "Which model size has the lowest p95 latency?",
+   "expected": [
+    "medium"
+   ],
+   "sources": [
+    "latency-p95"
+   ]
+  },
+  {
+   "id": "d03",
+   "split": "development",
+   "question": "How many tokens does the context budget reserve?",
+   "expected": [
+    "728"
+   ],
+   "sources": [
+    "context-budget"
+   ]
+  },
+  {
+   "id": "d04",
+   "split": "development",
+   "question": "What should the operator do at the first failed health check?",
+   "expected": [
+    "stop"
+   ],
+   "sources": [
+    "runbook-c05"
+   ]
+  },
+  {
+   "id": "d05",
+   "split": "development",
+   "question": "What is the p50 latency of the large model?",
+   "expected": [
+    "640"
+   ],
+   "sources": [
+    "latency-p50"
+   ]
+  },
+  {
+   "id": "d06",
+   "split": "development",
+   "question": "Which state does a running job move to when there is an error?",
+   "expected": [
+    "failed"
+   ],
+   "sources": [
+    "job-states"
+   ]
+  },
+  {
+   "id": "d07",
+   "split": "development",
+   "question": "How much memory must be free before loading the vision model?",
+   "expected": [
+    "6 GB"
+   ],
+   "sources": [
+    "runbook-c02"
+   ]
+  },
+  {
+   "id": "d08",
+   "split": "development",
+   "question": "Which GPU does the inference server need?",
+   "expected": [],
+   "sources": []
+  },
+  {
+   "id": "d09",
+   "split": "development",
+   "question": "In the grader agreement grid, how many cases did both graders mark as fail?",
+   "expected": [
+    "11"
+   ],
+   "sources": [
+    "confusion"
+   ]
+  },
+  {
+   "id": "d10",
+   "split": "development",
+   "question": "Where does the start script write its process ID?",
+   "expected": [
+    "run/server.pid"
+   ],
+   "sources": [
+    "runbook-c03"
+   ]
+  },
+  {
+   "id": "h01",
+   "split": "held-out",
+   "question": "How many requests per second do 4 workers handle?",
+   "expected": [
+    "130"
+   ],
+   "sources": [
+    "throughput-bars"
+   ]
+  },
+  {
+   "id": "h02",
+   "split": "held-out",
+   "question": "Which prompt version has the highest pass rate?",
+   "expected": [
+    "4"
+   ],
+   "sources": [
+    "pass-rate-line"
+   ]
+  },
+  {
+   "id": "h03",
+   "split": "held-out",
+   "question": "What share of chunks are medium sized?",
+   "expected": [
+    "50%",
+    "50"
+   ],
+   "sources": [
+    "chunk-pie"
+   ]
+  },
+  {
+   "id": "h04",
+   "split": "held-out",
+   "question": "How many read errors were there in the west region?",
+   "expected": [
+    "0",
+    "zero"
+   ],
+   "sources": [
+    "errors-grid"
+   ]
+  },
+  {
+   "id": "h05",
+   "split": "held-out",
+   "question": "Which hash should be written next to the vectors?",
+   "expected": [
+    "SHA-256"
+   ],
+   "sources": [
+    "embedjob-c03"
+   ]
+  },
+  {
+   "id": "h06",
+   "split": "held-out",
+   "question": "What does each passage in corpus.json need besides its ID?",
+   "expected": [
+    "slug"
+   ],
+   "sources": [
+    "embedjob-c01"
+   ]
+  },
+  {
+   "id": "h07",
+   "split": "held-out",
+   "question": "What state does a fresh cache entry move to when it expires?",
+   "expected": [
+    "stale"
+   ],
+   "sources": [
+    "cache-states"
+   ]
+  },
+  {
+   "id": "h08",
+   "split": "held-out",
+   "question": "How long is the warranty on the server hardware?",
+   "expected": [],
+   "sources": []
+  }
+ ]
+}

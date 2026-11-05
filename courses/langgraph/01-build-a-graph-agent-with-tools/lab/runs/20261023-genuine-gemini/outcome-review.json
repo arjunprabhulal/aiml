@@ -1,0 +1,16 @@
+{
+  "verdict": "PASS_GENUINE_MODEL_OUTCOME_FOR_THIS_LOCAL_FIXTURE",
+  "scope": "Independent outcome, fixture, accounting and original media review; reviewer authored the probe and does not claim independent source review.",
+  "review_source_sha256": "cb2d53875f2930d230ba2c1fd42b82d3b81cb3f786e0332b5ffaa88b32a02a00",
+  "semantic_result": "The two-sentence answer matches both actual local tool results: DEFAULT_TIMEOUT changed from 10 to 30, while test_default_timeout expected 10.",
+  "checks": [
+    "agent \u2192 tools \u2192 agent with matching tool call IDs",
+    "Both model responses ended with STOP; process exited 0",
+    "Two generation and two token-count requests stayed within approval",
+    "Original completed process images readable at 1440, 390 and 320 CSS pixels"
+  ],
+  "limitations": [
+    "One local fixture task, not live code-host or CI validation or general accuracy.",
+    "Provider usage is not an invoice; no separate thoughtsTokenCount was supplied."
+  ]
+}

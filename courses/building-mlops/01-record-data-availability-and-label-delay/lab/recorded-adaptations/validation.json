@@ -1,0 +1,20 @@
+{
+  "clean_batch": {
+    "status": "ready",
+    "accepted": 1193,
+    "quarantined": 0,
+    "reason_counts": {},
+    "training_file": "accepted.jsonl",
+    "source_sha256": "2a4d21ec1a2934bfe78e57054f2ee5904809dbad1338b6b8aa6452f39c40a168"
+  },
+  "deliberately_invalid_batch": {
+    "status": "blocked",
+    "accepted": 1193,
+    "quarantined": 1,
+    "reason_counts": {
+      "event_contract": 1
+    },
+    "training_file": null,
+    "source_sha256": "5467a40341eee85f3994740b346a34662ad14cf2add2bc285dec5928b1e4d2a4"
+  }
+}

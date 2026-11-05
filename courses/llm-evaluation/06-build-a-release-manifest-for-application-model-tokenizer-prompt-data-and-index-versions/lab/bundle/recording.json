@@ -1,0 +1,439 @@
+{
+  "entries": {
+    "agent/backup": {
+      "answer": "Tracker stores its data in a SQLite file named `tasks.db` inside the list folder, which defaults to `~/.tracker`. To back up every task, tag, and comment, back up that `tasks.db` file. Make sure to close running tracker commands before copying it.",
+      "retrieved": [
+        "storage",
+        "debug",
+        "archive"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "query": "data location backup"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "[{\"id\": \"storage\", \"text\": \"Where tracker stores data\\nEach task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it.\"}, {\"id\": \"debug\", \"text\": \"Debug logging\\n`--debug` writes request details to debug.log in the list folder. Version 2.4.1 redacts API tokens in debug output; earlier versions do not.\"}, {\"id\": \"archive\", \"text\": \"Archive and delete\\n`tracker archive ID` hides a task from `tracker list` but keeps it in tasks.db; `tracker restore ID` brings it back. `tracker delete ID` removes the task permanently and cannot be undone.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "agent/config-keys": {
+      "answer": "You can include `default_project`, `week_start` (set to `monday` or `sunday`), `color` (set to `auto`, `always`, or `never`), and `editor` in `config.toml`.",
+      "retrieved": [
+        "config",
+        "output",
+        "tokens"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "query": "config.toml keys"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "[{\"id\": \"config\", \"text\": \"Configuration keys\\ntracker reads config.toml from the list folder. Allowed keys are default_project, week_start (monday or sunday), color (auto, always or never) and editor.\"}, {\"id\": \"output\", \"text\": \"Output formats\\n`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.\"}, {\"id\": \"tokens\", \"text\": \"API tokens\\n`tracker login` stores an API token in the system keychain. `tracker logout` removes it. Tokens expire after 90 days; run `tracker login` again to get a new one.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "agent/dry-run-import": {
+      "answer": "You can use the `--dry-run` flag when running the import command, such as `tracker import FILE.csv --dry-run`. This will display the import summary without writing any tasks.",
+      "retrieved": [
+        "import",
+        "output",
+        "debug"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "query": "CSV import dry run check without writing"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "[{\"id\": \"import\", \"text\": \"Import from CSV\\n`tracker import FILE.csv` reads columns title, due and tags. Rows without a title are skipped and counted in the summary line. Use `--dry-run` to see the summary without writing tasks.\"}, {\"id\": \"output\", \"text\": \"Output formats\\n`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.\"}, {\"id\": \"debug\", \"text\": \"Debug logging\\n`--debug` writes request details to debug.log in the list folder. Version 2.4.1 redacts API tokens in debug output; earlier versions do not.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "agent/issue-212": {
+      "answer": "Yes, issue 212 (\"`tracker sync` crashes with KeyError: 'due'\") is closed and fixed. The fix is included in version 2.4.1.",
+      "retrieved": [],
+      "tool_calls": [
+        {
+          "args": {
+            "number": 212
+          },
+          "name": "get_issue"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "{\"number\": 212, \"title\": \"`tracker sync` crashes with KeyError: 'due'\", \"state\": \"closed\", \"fixed_in\": \"2.4.1\"}",
+          "tool": "get_issue"
+        }
+      ]
+    },
+    "agent/issue-231": {
+      "answer": "Issue 231, titled \"Import drops rows and reports success\", is currently open.",
+      "retrieved": [],
+      "tool_calls": [
+        {
+          "args": {
+            "number": 231
+          },
+          "name": "get_issue"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "{\"number\": 231, \"title\": \"Import drops rows and reports success\", \"state\": \"open\", \"fixed_in\": null}",
+          "tool": "get_issue"
+        }
+      ]
+    },
+    "agent/pipe-colors": {
+      "answer": "Color output follows the `color` setting. Set `color = auto` so that tracker automatically turns color off when standard output is not a terminal (such as when piped to `grep`). Alternatively, you can use `tracker list --format csv` for comma-separated output without table formatting.",
+      "retrieved": [
+        "output",
+        "install",
+        "storage"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "query": "disable color output pipe tracker list"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "[{\"id\": \"output\", \"text\": \"Output formats\\n`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.\"}, {\"id\": \"install\", \"text\": \"Install tracker\\nInstall tracker with `pipx install tracker-cli`. Version 2.4 needs Python 3.10 or later. Run `tracker --version` to check the install.\"}, {\"id\": \"storage\", \"text\": \"Where tracker stores data\\nEach task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "agent/restore": {
+      "answer": "You can bring back an archived task using the command `tracker restore ID`.",
+      "retrieved": [
+        "archive",
+        "storage",
+        "import"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "query": "bring back unarchive task"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "[{\"id\": \"archive\", \"text\": \"Archive and delete\\n`tracker archive ID` hides a task from `tracker list` but keeps it in tasks.db; `tracker restore ID` brings it back. `tracker delete ID` removes the task permanently and cannot be undone.\"}, {\"id\": \"storage\", \"text\": \"Where tracker stores data\\nEach task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it.\"}, {\"id\": \"import\", \"text\": \"Import from CSV\\n`tracker import FILE.csv` reads columns title, due and tags. Rows without a title are skipped and counted in the summary line. Use `--dry-run` to see the summary without writing tasks.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "agent/thanks": {
+      "answer": "You're very welcome! I'm glad to hear that tracker has been working well for your team. Let me know if you have any questions or need help with anything!",
+      "retrieved": [],
+      "tool_calls": [],
+      "tool_outputs": []
+    },
+    "agent/token-leak": {
+      "answer": "Issue 218 is fixed in version 2.4.1. When using `--debug`, request details are written to `debug.log` in the list folder.",
+      "retrieved": [
+        "debug",
+        "output",
+        "tokens"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "number": 218
+          },
+          "name": "get_issue"
+        },
+        {
+          "args": {
+            "query": "debug output"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "{\"number\": 218, \"title\": \"`--debug` prints the API token in plain text\", \"state\": \"closed\", \"fixed_in\": \"2.4.1\"}",
+          "tool": "get_issue"
+        },
+        {
+          "content": "[{\"id\": \"debug\", \"text\": \"Debug logging\\n`--debug` writes request details to debug.log in the list folder. Version 2.4.1 redacts API tokens in debug output; earlier versions do not.\"}, {\"id\": \"output\", \"text\": \"Output formats\\n`tracker list` prints a table. Color follows the color setting; with color = auto, tracker turns color off when standard output is not a terminal. `tracker list --format csv` prints comma-separated rows.\"}, {\"id\": \"tokens\", \"text\": \"API tokens\\n`tracker login` stores an API token in the system keychain. `tracker logout` removes it. Tokens expire after 90 days; run `tracker login` again to get a new one.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "agent/two-laptops": {
+      "answer": "Yes, running sync from two machines at once is safe. `tracker sync` takes a lock on the remote, so a second machine attempting to sync concurrently will wait up to 30 seconds and then exit with \"remote is locked.\"",
+      "retrieved": [
+        "sync",
+        "storage",
+        "tokens"
+      ],
+      "tool_calls": [
+        {
+          "args": {
+            "query": "sync concurrent laptops same time"
+          },
+          "name": "search_docs"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "content": "[{\"id\": \"sync\", \"text\": \"Sync with a remote\\n`tracker sync` pushes local changes and pulls remote ones. Sync takes a lock on the remote, so a second machine that syncs at the same time waits up to 30 seconds and then exits with 'remote is locked'. Running sync from two machines at once is safe.\"}, {\"id\": \"storage\", \"text\": \"Where tracker stores data\\nEach task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default. Back up that file to back up every task, tag and comment. Close running tracker commands before you copy it.\"}, {\"id\": \"tokens\", \"text\": \"API tokens\\n`tracker login` stores an API token in the system keychain. `tracker logout` removes it. Tokens expire after 90 days; run `tracker login` again to get a new one.\"}]",
+          "tool": "search_docs"
+        }
+      ]
+    },
+    "judge/backup": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly addresses where Tracker stores its data and what to back up, without any irrelevant information. Great job!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the most relevant information was perfectly prioritized at the very top! The first node in the retrieval contexts directly answers the question by stating that \"Each task list is one SQLite file named tasks.db inside the list folder, ~/.tracker by default\" and instructing to \"Back up that file to back up every task, tag and comment,\" while the irrelevant nodes were correctly ranked lower.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 is completely and accurately supported by node 1 in retrieval context, making the retrieval perfectly spot on!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the output is completely aligned with the context without any contradictions, demonstrating perfect faithfulness!",
+        "score": 1.0
+      }
+    },
+    "judge/config-keys": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly addresses which keys can be included in config.toml with completely relevant and helpful information.",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the first node in the retrieval contexts is perfectly placed right at the top, directly answering the query by noting that 'Allowed keys are default_project, week_start (monday or sunday), color (auto, always or never) and editor.', cleanly outranking the irrelevant nodes.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 is completely and accurately supported by node 1 in retrieval context. Excellent retrieval quality!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because there are no contradictions, and the actual output is completely faithful to the retrieval context!",
+        "score": 1.0
+      }
+    },
+    "judge/dry-run-import": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly addresses the question with zero irrelevant information, providing a perfectly focused and helpful answer!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the retrieval contexts are perfectly ordered! The first node is directly relevant as it explains that you can use `--dry-run` to 'see the summary without writing tasks', rightfully placing it ahead of the irrelevant second and third nodes that focus on 'output formats for `tracker list`' and 'debug logging'.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 is completely and accurately supported by node 1 in retrieval context, capturing the required command and flag perfectly!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the actual output aligns perfectly with the retrieval context with no contradictions found. Great job!",
+        "score": 1.0
+      }
+    },
+    "judge/issue-212": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly addresses both parts of the question clearly and contains no irrelevant information. Nicely done!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the retrieval context performed brilliantly! The first node in the retrieval contexts is perfectly relevant, directly answering the query by showing that issue number 212 has \"state\": \"closed\" and was \"fixed_in\": \"2.4.1\".",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 is fully and accurately substantiated by node 1 in retrieval context, capturing all the key details flawlessly!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the output is completely faithful to the retrieval context with zero contradictions detected. Great job!",
+        "score": 1.0
+      }
+    },
+    "judge/issue-231": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly and accurately addresses the status of issue 231 without any irrelevant information. Great job!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the first node in the retrieval contexts is perfectly relevant, directly specifying that issue number 231 has the title 'Import drops rows and reports success' and its state is 'open'.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 is fully supported by node 1 in retrieval context, capturing the required information perfectly!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the actual output aligns perfectly with the retrieval context, with no contradictions found! Great job!",
+        "score": 1.0
+      }
+    },
+    "judge/pipe-colors": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly and accurately addresses how to disable color codes when piping tracker list, without any irrelevant information.",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the retrieval contexts are ranked perfectly! The first node in the retrieval contexts is directly relevant, explaining that 'with color = auto, tracker turns color off when standard output is not a terminal', while the irrelevant nodes discussing installation instructions and 'tasks.db' were correctly placed after it.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 0.00 because sentence 1 is not fully supported; while node 1 in retrieval context mentions turning color off when output is not a terminal under color = auto, the context completely lacks information on setting color = never in config.toml to turn it off always.",
+        "score": 0.0
+      },
+      "faithfulness": {
+        "reason": "The score is 0.67 because while the retrieval context confirms color is disabled when standard output is not a terminal under auto settings, it does not specifically mention piping to 'grep' as an example.",
+        "score": 0.6666666666666666
+      }
+    },
+    "judge/restore": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly addresses how to restore an archived task with completely relevant and helpful information. Nicely done!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the first node in the retrieval contexts is perfectly prioritized at the top, directly answering the question by stating that '`tracker restore ID` brings it back' ahead of irrelevant nodes.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 is fully supported by node 1 in retrieval context, providing a perfectly accurate retrieval!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the actual output aligns perfectly with the retrieval context with no contradictions detected. Great job!",
+        "score": 1.0
+      }
+    },
+    "judge/thanks": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response is completely relevant and spot-on with no irrelevant statements included. Great job!",
+        "score": 1.0
+      }
+    },
+    "judge/token-leak": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly and accurately addresses both questions with no irrelevant information included. Great job!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 0.75 because the first node in retrieval contexts is correctly placed at the top, directly answering the query by stating '`--debug` writes request details to debug.log in the list folder' and that 'Version 2.4.1 redacts API tokens in debug output'. However, the score is not higher because the relevant fourth node, which confirms issue 218 was closed with '\"fixed_in\": \"2.4.1\"', is ranked below irrelevant nodes: the second node merely discusses 'output formats and color settings for `tracker list`', and the third node only details 'how `tracker login` stores tokens and when they expire, without addressing debug output or version fixes for issue 218'.",
+        "score": 0.75
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because sentence 1 in the expected output is fully supported by node 1 and node 4 in retrieval context, accurately capturing all the required details!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions whatsoever. Fantastic job!",
+        "score": 1.0
+      }
+    },
+    "judge/two-laptops": {
+      "answer_relevancy": {
+        "reason": "The score is 1.00 because the response directly addresses the question with completely relevant information. Great job!",
+        "score": 1.0
+      },
+      "contextual_precision": {
+        "reason": "The score is 1.00 because the most relevant information is perfectly ranked at the top! The first node in the retrieval contexts directly answers the query, confirming that 'Running sync from two machines at once is safe' and clarifying that 'Sync takes a lock on the remote, so a second machine that syncs at the same time waits up to 30 seconds and then exits with \\'remote is locked\\'', while the irrelevant nodes concerning SQLite file storage and API tokens were correctly placed lower.",
+        "score": 1.0
+      },
+      "contextual_recall": {
+        "reason": "The score is 1.00 because both sentence 1 and sentence 2 are perfectly supported by node 1 in retrieval context, successfully covering all the expected details!",
+        "score": 1.0
+      },
+      "faithfulness": {
+        "reason": "The score is 1.00 because the output is completely faithful to the retrieval context, with no contradictions found! Great job!",
+        "score": 1.0
+      }
+    },
+    "tools/backup": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/config-keys": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/dry-run-import": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/issue-212": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/issue-231": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/pipe-colors": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/restore": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/thanks": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/token-leak": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    },
+    "tools/two-laptops": {
+      "pass": true,
+      "score": 1.0,
+      "unexpected": []
+    }
+  },
+  "key": {
+    "cases": "docs-assistant@1",
+    "cases_sha": "98b0e5bca6c8",
+    "docs_sha": "ea13ab95ac63",
+    "embedder": "gemini-embedding-2",
+    "judge": "gemini-3.8-flash",
+    "k": 3,
+    "model": "gemini-3.8-flash",
+    "prompt_sha": "a7990e4dc62c",
+    "strict_faithfulness": true
+  }
+}

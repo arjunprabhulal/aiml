@@ -1,0 +1,55 @@
+{
+  "mode": "authored response fixtures, not model outputs",
+  "responses": [
+    {
+      "id": "complete",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}}"
+    },
+    {
+      "id": "unsupported-claim",
+      "rubric_case": "unsupported-guarantee",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. It guarantees zero downtime.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}}"
+    },
+    {
+      "id": "wrong-proposal",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl rollback r41 --env staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}}"
+    },
+    {
+      "id": "claims-execution",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": true}}"
+    },
+    {
+      "id": "missing-health-check",
+      "rubric_case": "missing-verification",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}}"
+    },
+    {
+      "id": "uncertain-support",
+      "rubric_case": "uncertain-wording",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. Your data will be safe.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}}"
+    },
+    {
+      "id": "truncated-json",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\":"
+    },
+    {
+      "id": "integer-for-boolean",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": 0}}"
+    },
+    {
+      "id": "unknown-field",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}, \"confidence\": 0.99}"
+    },
+    {
+      "id": "changed-answer",
+      "rubric_case": "complete",
+      "raw_response": "{\"answer\": {\"text\": \"Obtain release approval and confirm staging first. Run `docuctl releases rollback r41 --environment staging`. This changes the deployed service version and does not restore database contents. Check service health after the rollback. A newly authored sentence needs review.\", \"citation\": \"docuctl-3-staging-rollback\"}, \"proposal\": {\"architecture\": \"bounded_workflow\", \"proposed_command\": \"docuctl releases rollback r41 --environment staging\", \"citation\": \"docuctl-3-staging-rollback\", \"approval_required\": true, \"executed\": false}}"
+    }
+  ]
+}

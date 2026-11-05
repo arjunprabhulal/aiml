@@ -1,0 +1,8 @@
+[text turn] 'ADK stands for the Agent Development Kit.' check_passed=True
+[spoken turn] 'Microphone audio should use a 16 kHz sample rate.' check_passed=True
+[ungrounded trial 1] 'ADK stands for Application Development Kit.' check_passed=False
+[ungrounded trial 2] 'ADK stands for Application Development Kit.' check_passed=False
+[ungrounded trial 3] 'ADK stands for Application Development Kit.' check_passed=False
+[TEXT response modality] APIError: 1007 None. The requested combination of response modalities (TEXT) is not supported by the model. models/gemini-2.5-flash-native-audio
+[standard Gemini model] APIError: 1008 None. models/gemini-3.8-flash is not found for API version v1alpha, or is not supported for bidiGenerateContent. Call ModelServic
+[session not created] SessionNotFoundError: Session not found: never-created

@@ -1,0 +1,7 @@
+[blocking lookup] calls=['search_docs'] said="A live API connection closes after about 10 minutes. You can enable session resumption to continue beyond that. Is there anything else you'd like to know about connections?"
+[streaming link check, then stop] calls=['check_links', 'stop_streaming'] said="async returnI've started the process of checking all the links. I'll let you know when it's done. Anything else I can help with while we wait?It looks like the link check actually finished by itself j"
+[scheduled export on Gemini 3.1 Flash Live] calls=['export_page_index', 'search_docs'] said='The page index export is running. The input sample rate is 16 kHz.' error=TimeoutError: no further turn within 60 s
+[tool raises an exception] calls=[] said='' error=FileNotFoundError: [Errno 2] No such file or directory: 'docs/deploy.md'
+[tools on Gemini 2.5 Flash Live] calls=[] said='' error=TimeoutError: no further turn within 40 s
+[raw Live API, gemini-2.5-flash-native-audio-preview-12-2025] ['tool_call', 'nothing more in 25 s']
+[raw Live API, gemini-3.1-flash-live-preview] ['tool_call', 'nothing more in 25 s']

@@ -1,0 +1,11 @@
+[first connection] interrupted=True resumption updates=3
+  agent: A Live API connection closes after about 10 minutes.
+  user: Wait, just tell me the input sample rate.
+  agent: Microphone audio uses a 16 kHz sample rate.
+[saved] 13 events, audio parts saved: 0
+[second connection] history sent: [{'role': 'user', 'text': 'Read me every limit on the page, one at a time, with a sentence about each.'}, {'role': 'model', 'text': 'A Live API connection closes after about 10 minutes.'}, {'role': 'user', 'text': ' Wait, just tell me the input sample rate.'}, {'role': 'model', 'text': 'Microphone audio uses a 16 kHz sample rate.'}]
+  user: What did I ask you a moment ago?
+  agent: You haven't asked any questions yet.
+[third connection, state asked=['Read me every limit on the page, one at a time, with a sentence about each.', 'Wait, just tell me the input sample rate.', 'What did I ask you a moment ago?']]
+  agent: You asked, "Wait, just tell me the input sample rate."
+[reused closed queue] 0 events, turn complete

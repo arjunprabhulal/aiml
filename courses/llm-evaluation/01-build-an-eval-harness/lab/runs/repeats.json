@@ -1,0 +1,215 @@
+{
+  "model": "gemini-3.8-flash",
+  "k": 5,
+  "cases": {
+    "sync-crash-no-due-date": {
+      "expected": "bug",
+      "labels": [
+        "bug",
+        "bug",
+        "bug",
+        "bug",
+        "bug"
+      ],
+      "priorities": [
+        "p1",
+        "p1",
+        "p1",
+        "p1",
+        "p1"
+      ]
+    },
+    "token-in-debug-log": {
+      "expected": "bug",
+      "labels": [
+        "bug",
+        "bug",
+        "bug",
+        "bug",
+        "bug"
+      ],
+      "priorities": [
+        "p0",
+        "p0",
+        "p0",
+        "p0",
+        "p0"
+      ]
+    },
+    "import-drops-tasks": {
+      "expected": "bug",
+      "labels": [
+        "bug",
+        "bug",
+        "bug",
+        "bug",
+        "bug"
+      ],
+      "priorities": [
+        "p0",
+        "p0",
+        "p0",
+        "p0",
+        "p0"
+      ]
+    },
+    "color-in-pipes": {
+      "expected": "bug",
+      "labels": [
+        "bug",
+        "bug",
+        "bug",
+        "bug",
+        "bug"
+      ],
+      "priorities": [
+        "p1",
+        "p1",
+        "p1",
+        "p1",
+        "p1"
+      ]
+    },
+    "recurring-tasks": {
+      "expected": "feature",
+      "labels": [
+        "feature",
+        "feature",
+        "feature",
+        "feature",
+        "feature"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "json-output": {
+      "expected": "feature",
+      "labels": [
+        "feature",
+        "feature",
+        "feature",
+        "feature",
+        "feature"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "calendar-export": {
+      "expected": "feature",
+      "labels": [
+        "feature",
+        "feature",
+        "feature",
+        "feature",
+        "feature"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "readme-wrong-flag": {
+      "expected": "docs",
+      "labels": [
+        "docs",
+        "docs",
+        "docs",
+        "docs",
+        "docs"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "missing-config-docs": {
+      "expected": "docs",
+      "labels": [
+        "docs",
+        "docs",
+        "docs",
+        "docs",
+        "docs"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "two-machines": {
+      "expected": "question",
+      "labels": [
+        "question",
+        "question",
+        "question",
+        "question",
+        "question"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "where-is-data": {
+      "expected": "question",
+      "labels": [
+        "question",
+        "question",
+        "question",
+        "question",
+        "question"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    },
+    "archive-vs-delete": {
+      "expected": "question",
+      "labels": [
+        "question",
+        "question",
+        "question",
+        "question",
+        "question"
+      ],
+      "priorities": [
+        "p2",
+        "p2",
+        "p2",
+        "p2",
+        "p2"
+      ]
+    }
+  },
+  "rates": {
+    "pass@1": 1.0,
+    "pass@5": 1.0,
+    "pass^5": 1.0
+  }
+}

@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+collecting ... collected 10 items
+
+test_graph.py::test_a_reply_without_tool_calls_ends_the_run PASSED       [ 10%]
+test_graph.py::test_tool_results_go_back_to_the_agent PASSED             [ 20%]
+test_graph.py::test_parallel_tool_calls_run_in_one_tools_step PASSED     [ 30%]
+test_graph.py::test_unknown_pull_request_becomes_an_error_tool_message PASSED [ 40%]
+test_graph.py::test_default_tool_errors_stop_the_run PASSED              [ 50%]
+test_graph.py::test_invalid_arguments_become_an_error_tool_message_by_default PASSED [ 60%]
+test_graph.py::test_endless_tool_calls_hit_the_recursion_limit PASSED    [ 70%]
+test_graph.py::test_recorded_tool_results_match_the_queue PASSED         [ 80%]
+test_graph.py::test_the_record_counts_steps_tool_calls_and_messages_separately PASSED [ 90%]
+test_graph.py::test_the_step_limit_counts_graph_steps_not_messages PASSED [100%]
+
+============================== 10 passed in 0.74s ==============================

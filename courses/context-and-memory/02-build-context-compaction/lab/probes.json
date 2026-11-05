@@ -1,0 +1,48 @@
+[
+  {
+    "id": "audit-retention",
+    "kind": "constraint",
+    "fact": "keep 400 days of history"
+  },
+  {
+    "id": "db-choice",
+    "kind": "decision",
+    "fact": "We chose PostgreSQL for the application."
+  },
+  {
+    "id": "db-first-version",
+    "kind": "decision",
+    "fact": "we will use MySQL",
+    "superseded_by": "db-choice"
+  },
+  {
+    "id": "mysql-replaced",
+    "kind": "decision",
+    "fact": "It replaces MySQL because we need row-level security."
+  },
+  {
+    "id": "export-limit",
+    "kind": "constraint",
+    "fact": "Exports must finish within 15 minutes."
+  },
+  {
+    "id": "service-name",
+    "kind": "detail",
+    "fact": "ledger-export"
+  },
+  {
+    "id": "billing-deadline",
+    "kind": "constraint",
+    "fact": "02:00 UTC"
+  },
+  {
+    "id": "pool-size",
+    "kind": "detail",
+    "fact": "from 10 to 20"
+  },
+  {
+    "id": "rls-tables",
+    "kind": "decision",
+    "fact": "Invoices and exports need row security first."
+  }
+]

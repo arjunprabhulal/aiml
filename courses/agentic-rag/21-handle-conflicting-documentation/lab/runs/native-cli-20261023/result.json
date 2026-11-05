@@ -1,0 +1,334 @@
+{
+  "execution_mode": "offline-explicit-synthetic-directive-gate",
+  "model_called": false,
+  "fixture_kind": "original synthetic developer documentation; Quill is fictional",
+  "grammar": "exact whole line @quill create_copy existing_path=refuse|overwrite or close_required=yes|no",
+  "cases": [
+    {
+      "case_id": "newer-wrong-version-excluded",
+      "candidate_ids": [
+        "quill-guide",
+        "quill-new-version"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "existing_path",
+      "result": {
+        "requested_version": "1.0",
+        "claim_key": "existing_path",
+        "operation": "create_copy",
+        "candidate_ids": [
+          "quill-guide",
+          "quill-new-version"
+        ],
+        "eligible_source_ids": [
+          "quill-guide"
+        ],
+        "excluded_wrong_version_ids": [
+          "quill-new-version"
+        ],
+        "answer_request": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "Describe only the supplied explicit fictional API contract. Cite every supplied source ID. Do not invent an unsupported rule."
+            },
+            {
+              "role": "user",
+              "content": "{\"claim_key\": \"existing_path\", \"operation\": \"create_copy\", \"requested_version\": \"1.0\", \"source_claims\": [{\"claim_key\": \"existing_path\", \"document_revision\": \"fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4\", \"end\": 172, \"end_line\": 5, \"operation\": \"create_copy\", \"path\": \"docs/quill-guide.md\", \"quote\": \"@quill create_copy existing_path=refuse\", \"source_id\": \"quill-guide\", \"source_sha256\": \"d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2\", \"start\": 133, \"start_line\": 5, \"url\": \"https://quill.invalid/teaching/1.0/quill-guide\", \"value\": \"refuse\", \"version\": \"1.0\"}]}"
+            }
+          ]
+        },
+        "status": "ready",
+        "reason": "eligible_directives_agree",
+        "agreed_value": "refuse",
+        "claims": [
+          {
+            "source_id": "quill-guide",
+            "version": "1.0",
+            "path": "docs/quill-guide.md",
+            "url": "https://quill.invalid/teaching/1.0/quill-guide",
+            "source_sha256": "d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2",
+            "document_revision": "fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4",
+            "operation": "create_copy",
+            "claim_key": "existing_path",
+            "value": "refuse",
+            "start_line": 5,
+            "end_line": 5,
+            "start": 133,
+            "end": 172,
+            "quote": "@quill create_copy existing_path=refuse"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "compatible-agreement",
+      "candidate_ids": [
+        "quill-guide",
+        "quill-reference"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "existing_path",
+      "result": {
+        "requested_version": "1.0",
+        "claim_key": "existing_path",
+        "operation": "create_copy",
+        "candidate_ids": [
+          "quill-guide",
+          "quill-reference"
+        ],
+        "eligible_source_ids": [
+          "quill-guide",
+          "quill-reference"
+        ],
+        "excluded_wrong_version_ids": [],
+        "answer_request": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "Describe only the supplied explicit fictional API contract. Cite every supplied source ID. Do not invent an unsupported rule."
+            },
+            {
+              "role": "user",
+              "content": "{\"claim_key\": \"existing_path\", \"operation\": \"create_copy\", \"requested_version\": \"1.0\", \"source_claims\": [{\"claim_key\": \"existing_path\", \"document_revision\": \"fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4\", \"end\": 172, \"end_line\": 5, \"operation\": \"create_copy\", \"path\": \"docs/quill-guide.md\", \"quote\": \"@quill create_copy existing_path=refuse\", \"source_id\": \"quill-guide\", \"source_sha256\": \"d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2\", \"start\": 133, \"start_line\": 5, \"url\": \"https://quill.invalid/teaching/1.0/quill-guide\", \"value\": \"refuse\", \"version\": \"1.0\"}, {\"claim_key\": \"existing_path\", \"document_revision\": \"dbc5c8bbffb9276508728fa9faf9dffdaa8463dc5ca88228852744843889756e\", \"end\": 166, \"end_line\": 5, \"operation\": \"create_copy\", \"path\": \"docs/quill-reference.md\", \"quote\": \"@quill create_copy existing_path=refuse\", \"source_id\": \"quill-reference\", \"source_sha256\": \"77dac3a322bf772c26674696a7820c55e947b52eb475e6599b95c14ed9075d92\", \"start\": 127, \"start_line\": 5, \"url\": \"https://quill.invalid/teaching/1.0/quill-reference\", \"value\": \"refuse\", \"version\": \"1.0\"}]}"
+            }
+          ]
+        },
+        "status": "ready",
+        "reason": "eligible_directives_agree",
+        "agreed_value": "refuse",
+        "claims": [
+          {
+            "source_id": "quill-guide",
+            "version": "1.0",
+            "path": "docs/quill-guide.md",
+            "url": "https://quill.invalid/teaching/1.0/quill-guide",
+            "source_sha256": "d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2",
+            "document_revision": "fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4",
+            "operation": "create_copy",
+            "claim_key": "existing_path",
+            "value": "refuse",
+            "start_line": 5,
+            "end_line": 5,
+            "start": 133,
+            "end": 172,
+            "quote": "@quill create_copy existing_path=refuse"
+          },
+          {
+            "source_id": "quill-reference",
+            "version": "1.0",
+            "path": "docs/quill-reference.md",
+            "url": "https://quill.invalid/teaching/1.0/quill-reference",
+            "source_sha256": "77dac3a322bf772c26674696a7820c55e947b52eb475e6599b95c14ed9075d92",
+            "document_revision": "dbc5c8bbffb9276508728fa9faf9dffdaa8463dc5ca88228852744843889756e",
+            "operation": "create_copy",
+            "claim_key": "existing_path",
+            "value": "refuse",
+            "start_line": 5,
+            "end_line": 5,
+            "start": 127,
+            "end": 166,
+            "quote": "@quill create_copy existing_path=refuse"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "same-version-conflict",
+      "candidate_ids": [
+        "quill-guide",
+        "quill-conflicting-guide"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "existing_path",
+      "result": {
+        "requested_version": "1.0",
+        "claim_key": "existing_path",
+        "operation": "create_copy",
+        "candidate_ids": [
+          "quill-guide",
+          "quill-conflicting-guide"
+        ],
+        "eligible_source_ids": [
+          "quill-guide",
+          "quill-conflicting-guide"
+        ],
+        "excluded_wrong_version_ids": [],
+        "answer_request": null,
+        "status": "conflict",
+        "reason": "same_version_directives_disagree",
+        "claims": [
+          {
+            "source_id": "quill-guide",
+            "version": "1.0",
+            "path": "docs/quill-guide.md",
+            "url": "https://quill.invalid/teaching/1.0/quill-guide",
+            "source_sha256": "d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2",
+            "document_revision": "fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4",
+            "operation": "create_copy",
+            "claim_key": "existing_path",
+            "value": "refuse",
+            "start_line": 5,
+            "end_line": 5,
+            "start": 133,
+            "end": 172,
+            "quote": "@quill create_copy existing_path=refuse"
+          },
+          {
+            "source_id": "quill-conflicting-guide",
+            "version": "1.0",
+            "path": "docs/quill-conflicting-guide.md",
+            "url": "https://quill.invalid/teaching/1.0/quill-conflicting-guide",
+            "source_sha256": "b67b7e53117f9e954edd60cc050b3eed2541bdebb3349a12ab6d4ded376e85df",
+            "document_revision": "75a663bc55f56fd0411656c4e686468d34389d1d6863a07fd9ef798aee2faa0b",
+            "operation": "create_copy",
+            "claim_key": "existing_path",
+            "value": "overwrite",
+            "start_line": 5,
+            "end_line": 5,
+            "start": 131,
+            "end": 173,
+            "quote": "@quill create_copy existing_path=overwrite"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "absent-version",
+      "candidate_ids": [
+        "quill-guide",
+        "quill-new-version"
+      ],
+      "requested_version": "3.0",
+      "claim_key": "existing_path",
+      "result": {
+        "requested_version": "3.0",
+        "claim_key": "existing_path",
+        "operation": "create_copy",
+        "candidate_ids": [
+          "quill-guide",
+          "quill-new-version"
+        ],
+        "eligible_source_ids": [],
+        "excluded_wrong_version_ids": [
+          "quill-guide",
+          "quill-new-version"
+        ],
+        "answer_request": null,
+        "status": "not_in_docs",
+        "reason": "no_eligible_version",
+        "claims": []
+      }
+    },
+    {
+      "case_id": "missing-claim",
+      "candidate_ids": [
+        "quill-guide"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "close_required",
+      "result": {
+        "requested_version": "1.0",
+        "claim_key": "close_required",
+        "operation": "create_copy",
+        "candidate_ids": [
+          "quill-guide"
+        ],
+        "eligible_source_ids": [
+          "quill-guide"
+        ],
+        "excluded_wrong_version_ids": [],
+        "answer_request": null,
+        "status": "not_in_docs",
+        "reason": "requested_claim_missing",
+        "missing_claim_source_ids": [
+          "quill-guide"
+        ],
+        "claims": []
+      }
+    },
+    {
+      "case_id": "partial-missing-claim",
+      "candidate_ids": [
+        "quill-guide",
+        "quill-missing-claim"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "existing_path",
+      "result": {
+        "requested_version": "1.0",
+        "claim_key": "existing_path",
+        "operation": "create_copy",
+        "candidate_ids": [
+          "quill-guide",
+          "quill-missing-claim"
+        ],
+        "eligible_source_ids": [
+          "quill-guide",
+          "quill-missing-claim"
+        ],
+        "excluded_wrong_version_ids": [],
+        "answer_request": null,
+        "status": "not_in_docs",
+        "reason": "requested_claim_missing",
+        "missing_claim_source_ids": [
+          "quill-missing-claim"
+        ],
+        "claims": [
+          {
+            "source_id": "quill-guide",
+            "version": "1.0",
+            "path": "docs/quill-guide.md",
+            "url": "https://quill.invalid/teaching/1.0/quill-guide",
+            "source_sha256": "d031c7d2dd38a33f9f1c89b0439ca5711e0f32b94ed6e0eacf5cfd175f8d9cf2",
+            "document_revision": "fb2123ad052ea8002fedb4a708debd0b40e1aaa4d8ec34bd6c3f70aa01769ad4",
+            "operation": "create_copy",
+            "claim_key": "existing_path",
+            "value": "refuse",
+            "start_line": 5,
+            "end_line": 5,
+            "start": 133,
+            "end": 172,
+            "quote": "@quill create_copy existing_path=refuse"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "unknown-directive-value",
+      "candidate_ids": [
+        "quill-unknown-value"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "existing_path",
+      "result": {
+        "status": "refused",
+        "error": "DirectiveError",
+        "reason": "unknown_directive_value",
+        "answer_request": null
+      }
+    },
+    {
+      "case_id": "malformed-directive",
+      "candidate_ids": [
+        "quill-malformed"
+      ],
+      "requested_version": "1.0",
+      "claim_key": "existing_path",
+      "result": {
+        "status": "refused",
+        "error": "DirectiveError",
+        "reason": "malformed_directive",
+        "answer_request": null
+      }
+    }
+  ],
+  "changed_source": {
+    "status": "refused",
+    "error": "IngestionError",
+    "reason": "hash_mismatch",
+    "answer_request": null
+  },
+  "policy": "Exact requested version before directive parsing. Any eligible source missing the requested key withholds the request. No source-priority or newest-version winner.",
+  "limit": "This parses explicit machine-readable teaching contracts, not arbitrary prose contradictions or semantic agreement. A prepared cited request is not a generated answer or a correctness/security guarantee."
+}

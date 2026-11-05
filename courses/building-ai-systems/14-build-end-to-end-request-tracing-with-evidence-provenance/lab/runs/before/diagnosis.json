@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "refund-window",
+    "trial": 0,
+    "verdict": "fail",
+    "trace_id": "f823204960517abb6fd1fb2069672552",
+    "step": "index",
+    "detail": "refund-policy was served at version 1; the current version is 2"
+  },
+  {
+    "case_id": "refund-window",
+    "trial": 1,
+    "verdict": "fail",
+    "trace_id": "106cc72602144fb57835b2748f8373ec",
+    "step": "index",
+    "detail": "refund-policy was served at version 1; the current version is 2"
+  },
+  {
+    "case_id": "refund-window",
+    "trial": 2,
+    "verdict": "fail",
+    "trace_id": "8ccd032ac5f37cc791996818282ee966",
+    "step": "index",
+    "detail": "refund-policy was served at version 1; the current version is 2"
+  },
+  {
+    "case_id": "unwanted-parcel",
+    "trial": 0,
+    "verdict": "fail",
+    "trace_id": "679d121435dddd1ebc8490b4d198aff2",
+    "step": "context assembly",
+    "detail": "returns was retrieved at rank 3 and dropped by the limit of 2 passages"
+  },
+  {
+    "case_id": "unwanted-parcel",
+    "trial": 1,
+    "verdict": "fail",
+    "trace_id": "df78743750a1fd0a29bc1bb306fb0b5c",
+    "step": "context assembly",
+    "detail": "returns was retrieved at rank 3 and dropped by the limit of 2 passages"
+  },
+  {
+    "case_id": "unwanted-parcel",
+    "trial": 2,
+    "verdict": "fail",
+    "trace_id": "7904aef50516a2b7becbfa70d82705d8",
+    "step": "context assembly",
+    "detail": "returns was retrieved at rank 3 and dropped by the limit of 2 passages"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "execution_mode": "offline-exact-request-replay-and-controlled-contract-tests",
+  "command": "python3 -m unittest discover -v",
+  "exit_status": 0,
+  "test_count": 19,
+  "live_requests": 0,
+  "post_run_changes": {
+    "provider.py": {
+      "recorded_sha256": "e2ea572460fa4494af1133efd70f0c0c7d13a17979c3c5e87fb69fe708de9e95",
+      "current_sha256": "e181f4562d196dc92e97626c5035104dd574962a4204f36547861048137fa994"
+    },
+    "run.py": {
+      "recorded_sha256": "4c5ff844f049981443ed873eb7a161c9ab5479d464cce25bb23b90d4bc92beca",
+      "current_sha256": "6404889b476dbd58d364907f302fb518561e6b7e32dacaf833d38fd81ac39e72"
+    },
+    "test_agent.py": {
+      "recorded_sha256": "d15ec4179bf3486096569268d693be567aa6b8db9d2393b3e2ef00f938cfbda6",
+      "current_sha256": "02b9554c93ed3ef5be9e058cc4033e90f2d16c9f44b4600e79c5badd5af7066f"
+    }
+  },
+  "change_scope": "Owner raised batch allowance 80 to 200; selected-case replay summary checking corrected and tested. Original live records unchanged."
+}

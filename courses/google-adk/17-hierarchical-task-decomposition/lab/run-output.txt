@@ -1,0 +1,69 @@
+Mode: fresh hosted Gemini recording
+Write the upgrade guide for moving a docs site from docuctl 3.4 to 3.6.
+
+depth=3, trial=1: 24 model replies, 24.5 seconds
+RuntimeError: Error in plugin 'delegation_log' during 'before_model_callback' callback: tree-wide model call budget of 24 exceeded
+
+depth=3, trial=2: 23 model replies, 21.7 seconds
+RuntimeError: Error in plugin 'delegation_log' during 'before_model_callback' callback: tree-wide model call budget of 24 exceeded
+
+depth=3, trial=3: 24 model replies, 48.35 seconds
+RuntimeError: Error in plugin 'delegation_log' during 'before_model_callback' callback: tree-wide model call budget of 24 exceeded
+
+depth=2, trial=1: 9 model replies, 11.62 seconds
+# Upgrading docuctl from 3.4 to 3.6
+
+## Upgrading from 3.4 to 3.5
+
+1. Rename your configuration file from `docuctl.yaml` to `docuctl.toml`, as `docuctl build` no longer reads `docuctl.yaml`.
+
+Source: changelog.md
+
+## Upgrading to docuctl 3.6
+
+1. Run `docuctl nav init` once to generate a `nav.toml` file from your current folder layout.
+2. Remove the `--legacy-nav` flag from your `docuctl build` commands, as navigation is now configured exclusively via `nav.toml`.
+
+Source: guide/navigation.md
+
+depth=2, trial=2: 14 model replies, 21.26 seconds
+# Upgrading docuctl from 3.4 to 3.6
+
+## Upgrading to docuctl 3.5
+
+1. Run `docuctl migrate` to convert your `docuctl.yaml` file into `docuctl.toml` in your project root.
+2. Check the generated `docuctl.toml` file to verify the result.
+3. Delete the old `docuctl.yaml` file.
+
+Source: reference/config.md
+
+## Upgrading to docuctl 3.6
+
+In docuctl 3.6.0, the `--legacy-nav` flag is removed, and passing it causes `docuctl build` to fail with `unknown flag: --legacy-nav`. Navigation is now configured exclusively through `nav.toml`.
+
+To update your project:
+1. Run `docuctl nav init` once to generate a `nav.toml` file from your current folder layout.
+2. Remove the `--legacy-nav` flag from your `docuctl build` commands.
+
+Source: guide/navigation.md
+
+depth=2, trial=3: 15 model replies, 26.01 seconds
+# Upgrade Guide: docuctl 3.4 to 3.6
+
+## Upgrading from 3.4 to 3.5
+
+Starting in 3.5.0, `docuctl build` only reads `docuctl.toml` in the project root and ignores `docuctl.yaml`. To migrate:
+
+1. Run `docuctl migrate` to convert your old configuration file. This writes `docuctl.toml` next to the old file and leaves `docuctl.yaml` in place.
+2. Check the resulting `docuctl.toml` file.
+3. Delete the old `docuctl.yaml` file.
+
+Source: reference/config.md
+
+## Upgrading from 3.5 to 3.6: Remove legacy navigation
+
+1. Run `docuctl nav init` once to write a `nav.toml` from the current folder layout.
+2. Remove the `--legacy-nav` flag from your `docuctl build` commands.
+
+Source: guide/navigation.md
+

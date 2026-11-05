@@ -1,0 +1,10 @@
+tool   list_tasks(status) -> TaskList
+tool   add_task(title, priority) -> Task
+tool   complete_task(task_id) -> Task
+ok     {'id': 'T-4', 'title': 'Tag v1.2', 'priority': 'high', 'status': 'open'}
+error  True Error executing tool add_task: 1 validation error for add_taskArguments
+title
+  String should have at least 3 characters [type=string_too_short, input_value='v2', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/string_too_short
+error  True Error executing tool complete_task: No task with ID T-9. Call list_tasks to see the valid IDs.
+raised MCPError -32602 Invalid request parameters

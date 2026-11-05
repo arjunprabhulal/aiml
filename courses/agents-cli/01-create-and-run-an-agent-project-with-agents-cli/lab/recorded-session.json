@@ -1,0 +1,164 @@
+{
+  "execution_mode": "actual-local-CLI-with-hosted-model",
+  "recorded_at": "2026-10-26T02:21:28.306664+00:00",
+  "cli_version": "1.11.0",
+  "project_name": "docuctl-docs",
+  "root_agent_name": "docuctl_docs",
+  "app_name": "app",
+  "server_port": 18080,
+  "session_id": "83dcfbf6-2887-4892-9277-adc381bfe6b7",
+  "lint": {
+    "command": "agents-cli lint",
+    "exit_code": 0,
+    "output": "  \u25b8 uv sync --dev --extra lint\nResolved 173 packages in 0.47ms\nAudited 127 packages in 0.10ms\n  \u25b8 uv run ruff check .\nAll checks passed!\n  \u25b8 uv run ruff format . --check\n16 files already formatted\n  \u25b8 uv run codespell\n  \u25b8 uv run ty check .\nAll checks passed!\n"
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "user": "I use docuctl 2.x. How do I roll production back to r41?",
+      "session_id": "83dcfbf6-2887-4892-9277-adc381bfe6b7",
+      "command": "agents-cli run \"I use docuctl 2.x. How do I roll production back to r41?\" --start-server",
+      "tool_call": {
+        "id": "call_1187947",
+        "args": {
+          "page": "rollback"
+        },
+        "name": "read_page"
+      },
+      "assistant": "In docuctl 2.x, run:\n\n```bash\ndocuctl rollback --env production --to r41\n```\n\nThis points production traffic back to release `r41` without rebuilding. Note that database migrations are not automatically rolled back.",
+      "model_versions": [
+        "gemini-3.8-flash"
+      ],
+      "usage": [
+        {
+          "candidatesTokenCount": 16,
+          "promptTokenCount": 177,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 177
+            }
+          ],
+          "thoughtsTokenCount": 77,
+          "totalTokenCount": 270
+        },
+        {
+          "candidatesTokenCount": 55,
+          "promptTokenCount": 432,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 432
+            }
+          ],
+          "thoughtsTokenCount": 70,
+          "totalTokenCount": 557
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "And on staging?",
+      "session_id": "83dcfbf6-2887-4892-9277-adc381bfe6b7",
+      "command": "agents-cli run \"And on staging?\" --session-id 83dcfbf6-2887-4892-9277-adc381bfe6b7",
+      "tool_call": {
+        "id": "call_2516213",
+        "args": {
+          "page": "rollback"
+        },
+        "name": "read_page"
+      },
+      "assistant": "In docuctl 2.x, run:\n\n```bash\ndocuctl rollback --env staging --to r41\n```\n\nIf you just want to revert staging to the previous release without specifying `r41`, omit `--to`:\n\n```bash\ndocuctl rollback --env staging\n```",
+      "model_versions": [
+        "gemini-3.8-flash"
+      ],
+      "usage": [
+        {
+          "candidatesTokenCount": 16,
+          "promptTokenCount": 563,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 563
+            }
+          ],
+          "thoughtsTokenCount": 220,
+          "totalTokenCount": 799
+        },
+        {
+          "candidatesTokenCount": 65,
+          "promptTokenCount": 961,
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 961
+            }
+          ],
+          "thoughtsTokenCount": 11,
+          "totalTokenCount": 1037
+        }
+      ]
+    }
+  ],
+  "agent_card": {
+    "name": "docuctl_docs",
+    "description": "An ADK Agent",
+    "supportedInterfaces": [
+      {
+        "url": "http://0.0.0.0:8000/a2a/app",
+        "protocolBinding": "JSONRPC",
+        "protocolVersion": "1.0"
+      },
+      {
+        "url": "http://0.0.0.0:8000/a2a/app",
+        "protocolBinding": "JSONRPC",
+        "protocolVersion": "0.3"
+      }
+    ],
+    "version": "0.1.0",
+    "capabilities": {
+      "streaming": true,
+      "extensions": [
+        {
+          "uri": "https://google.github.io/adk-docs/a2a/a2a-extension/",
+          "description": "Ability to use the new agent executor implementation",
+          "required": false
+        }
+      ]
+    },
+    "defaultInputModes": [
+      "text/plain"
+    ],
+    "defaultOutputModes": [
+      "text/plain"
+    ],
+    "skills": [
+      {
+        "id": "docuctl_docs",
+        "name": "model",
+        "description": "An LLM-based agent",
+        "tags": [
+          "llm"
+        ]
+      },
+      {
+        "id": "docuctl_docs-read_page",
+        "name": "read_page",
+        "description": "Read one page of the docuctl documentation: config, deploy, rollback or tokens.",
+        "tags": [
+          "llm",
+          "tools"
+        ]
+      }
+    ],
+    "preferredTransport": "JSONRPC",
+    "protocolVersion": "0.3",
+    "url": "http://0.0.0.0:8000/a2a/app"
+  },
+  "raw_log_sha256": {
+    "cli-first-turn.log": "bb1bfb7c8c2083462b687879e820bafead9aceaacb5858b8f8688c5d9d0d58b5",
+    "cli-second-turn.log": "96a26e172450b17c4c14b0a9d4951b2a9505fa3dc18dbe8eda28c0f328d2f4c0",
+    "cli-lint.log": "b7ac2cd0b3c09e966c002d052efaf55fa3c22a03fe3597c530442637d578d54e",
+    "cli-agent-card.json": "ab671cf9475eaf74c4af448f32696311aa29377575b22050d9b9930fd0b2139a"
+  }
+}

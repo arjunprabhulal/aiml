@@ -1,0 +1,122 @@
+{
+ "model": "gemini-3.8-flash",
+ "log": "job unit-tests #812 on pull request 415 (Raise the default HTTP timeout to 30s)\nFAILED tests/test_client.py::test_default_timeout - AssertionError: expected 10, got 30\n1 failed, 214 passed in 38.2s",
+ "runs": [
+  {
+   "scenario": "default policy",
+   "error": "TimeoutError: tracker did not answer within 5s",
+   "create_requests": 1,
+   "tickets": [
+    {
+     "id": "REV-101",
+     "title": "tests/test_client.py: test_default_timeout fails with AssertionError",
+     "labels": [
+      "bug"
+     ]
+    }
+   ],
+   "model_calls": 1
+  },
+  {
+   "scenario": "retry, no key",
+   "filed": {
+    "id": "REV-102",
+    "title": "test_default_timeout failed in tests/test_client.py",
+    "labels": [
+     "bug"
+    ]
+   },
+   "create_requests": 2,
+   "tickets": [
+    {
+     "id": "REV-101",
+     "title": "test_default_timeout failed in tests/test_client.py",
+     "labels": [
+      "bug"
+     ]
+    },
+    {
+     "id": "REV-102",
+     "title": "test_default_timeout failed in tests/test_client.py",
+     "labels": [
+      "bug"
+     ]
+    }
+   ],
+   "model_calls": 1
+  },
+  {
+   "scenario": "retry, key per attempt",
+   "filed": {
+    "id": "REV-102",
+    "title": "AssertionError in tests/test_client.py::test_default_timeout",
+    "labels": [
+     "bug"
+    ]
+   },
+   "create_requests": 2,
+   "tickets": [
+    {
+     "id": "REV-101",
+     "title": "AssertionError in tests/test_client.py::test_default_timeout",
+     "labels": [
+      "bug"
+     ]
+    },
+    {
+     "id": "REV-102",
+     "title": "AssertionError in tests/test_client.py::test_default_timeout",
+     "labels": [
+      "bug"
+     ]
+    }
+   ],
+   "model_calls": 1
+  },
+  {
+   "scenario": "retry, stable key",
+   "filed": {
+    "id": "REV-101",
+    "title": "test_default_timeout failed in tests/test_client.py",
+    "labels": [
+     "bug"
+    ],
+    "replayed": true
+   },
+   "create_requests": 2,
+   "tickets": [
+    {
+     "id": "REV-101",
+     "title": "test_default_timeout failed in tests/test_client.py",
+     "labels": [
+      "bug"
+     ]
+    }
+   ],
+   "model_calls": 1
+  },
+  {
+   "scenario": "fail, then resume with a stable key",
+   "error": "TimeoutError: tracker did not answer within 5s",
+   "filed": {
+    "id": "REV-101",
+    "title": "test_default_timeout failed in tests/test_client.py",
+    "labels": [
+     "bug"
+    ],
+    "replayed": true
+   },
+   "create_requests": 2,
+   "tickets": [
+    {
+     "id": "REV-101",
+     "title": "test_default_timeout failed in tests/test_client.py",
+     "labels": [
+      "bug"
+     ]
+    }
+   ],
+   "model_calls": 1
+  }
+ ]
+}

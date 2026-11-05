@@ -1,0 +1,16 @@
+== default policy
+  model calls 1, create requests 1, tickets 1
+  error:  TimeoutError: tracker did not answer within 5s
+== retry, no key
+  model calls 1, create requests 2, tickets 2
+  filed:  {"id": "REV-102", "title": "test_default_timeout failed in tests/test_client.py", "labels": ["bug"]}
+== retry, key per attempt
+  model calls 1, create requests 2, tickets 2
+  filed:  {"id": "REV-102", "title": "AssertionError in tests/test_client.py::test_default_timeout", "labels": ["bug"]}
+== retry, stable key
+  model calls 1, create requests 2, tickets 1
+  filed:  {"id": "REV-101", "title": "test_default_timeout failed in tests/test_client.py", "labels": ["bug"], "replayed": true}
+== fail, then resume with a stable key
+  model calls 1, create requests 2, tickets 1
+  filed:  {"id": "REV-101", "title": "test_default_timeout failed in tests/test_client.py", "labels": ["bug"], "replayed": true}
+  first run failed with TimeoutError: tracker did not answer within 5s

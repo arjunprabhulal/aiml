@@ -1,0 +1,66 @@
+{
+  "cli_version": "1.11.0",
+  "execution_mode": "actual-local-resolver-and-configuration-checks; no registration or telemetry delivery",
+  "project": "vertex-ai-experminent",
+  "available_apps": [],
+  "list_command_output": "  \u25b8 gcloud projects describe vertex-ai-experminent '--format=value(projectNumber)'\n{\"apps\": []}\n",
+  "publish_modes": {
+    "a2a_cloud_run": {
+      "resolved": {
+        "registration_type": "a2a",
+        "discovery_engine_endpoint": "https://discoveryengine.googleapis.com",
+        "agent_card_url": "https://docuctl-docs.example/a2a/app/.well-known/agent-card.json",
+        "card_auth_token_type": "audience_id_token",
+        "protocol": "JSONRPC"
+      }
+    },
+    "a2a_agent_runtime_from_metadata": {
+      "resolved": {
+        "registration_type": "a2a",
+        "discovery_engine_endpoint": "https://us-discoveryengine.googleapis.com",
+        "agent_card_url": "https://us-central1-aiplatform.googleapis.com/v1beta1/projects/913703049174/locations/us-central1/reasoningEngines/EXAMPLE_ENGINE/a2a/v1/card",
+        "card_auth_token_type": "access_token",
+        "protocol": "JSONRPC"
+      }
+    },
+    "adk_agent_runtime": {
+      "resolved": {
+        "registration_type": "adk",
+        "discovery_engine_endpoint": "https://discoveryengine.googleapis.com",
+        "target_resource": "projects/913703049174/locations/us-central1/reasoningEngines/EXAMPLE_ENGINE",
+        "protocol": "streamQuery"
+      }
+    }
+  },
+  "observability_tiers": {
+    "env": {
+      "LOGS_BUCKET_NAME": "EXAMPLE-docuctl-logs",
+      "OTEL_SERVICE_NAME": "docuctl-docs",
+      "OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT": "NO_CONTENT",
+      "ADK_CAPTURE_MESSAGE_CONTENT_IN_SPANS": "false",
+      "OTEL_INSTRUMENTATION_GENAI_COMPLETION_HOOK": "upload",
+      "OTEL_INSTRUMENTATION_GENAI_UPLOAD_BASE_PATH": "gs://EXAMPLE-docuctl-logs/completions"
+    },
+    "validated": {
+      "spans_include_message_content": false,
+      "gcs_completion_upload_enabled": true,
+      "upload_base_path": "gs://EXAMPLE-docuctl-logs/completions",
+      "bigquery_join_table": "completions_view"
+    }
+  },
+  "failures": {
+    "missing_registration_type": {
+      "error": "--registration-type is required in programmatic mode. Rerun with one of:\n  --registration-type <a2a|adk>  a2a needs --agent-card-url, adk needs --agent-runtime-id\n  -i, --interactive              be prompted for each missing value"
+    },
+    "upload_hook_without_logs_bucket": {
+      "error": "OTEL_INSTRUMENTATION_GENAI_COMPLETION_HOOK='upload' requires LOGS_BUCKET_NAME and a gs:// OTEL_INSTRUMENTATION_GENAI_UPLOAD_BASE_PATH; otherwise prompt/response JSONL payloads are dropped while spans record NO_CONTENT.",
+      "env": {
+        "OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT": "NO_CONTENT",
+        "OTEL_INSTRUMENTATION_GENAI_COMPLETION_HOOK": "upload",
+        "LOGS_BUCKET_NAME": "",
+        "OTEL_INSTRUMENTATION_GENAI_UPLOAD_BASE_PATH": ""
+      }
+    }
+  },
+  "recorded_at": "2026-10-26T02:22:09.226456+00:00"
+}

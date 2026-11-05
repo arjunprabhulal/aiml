@@ -1,0 +1,19 @@
+$ python adapt.py history --work recorded-adaptations/work --cohort recorded/cohort.json --model recorded/candidate.json --out recorded-adaptations/history.json
+{
+  "initial_materialization": {
+    "feature": "recent_event_count",
+    "storage_key": "user_events_1d@v1",
+    "observations": 240,
+    "matching_assembled_counts": 240,
+    "known_users": 24,
+    "known_zero_counts_are_materialized": true
+  },
+  "late_correction": {
+    "observation": "user-00-day-08",
+    "original": 2,
+    "historical_after_correction": 2,
+    "later_correction_for_same_cutoff": 3,
+    "original_view_preserved": true,
+    "latest_eligible_cutoff_at_later_read": 19440
+  }
+}

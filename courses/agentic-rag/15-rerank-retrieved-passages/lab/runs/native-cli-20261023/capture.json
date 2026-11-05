@@ -1,0 +1,51 @@
+{
+  "lesson_id": "rerank-retrieved-passages",
+  "argv": [
+    "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+    "run.py"
+  ],
+  "exit_code": 0,
+  "images": [
+    {
+      "file": "images/completed-top-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "8081b6c04e62e84cd12780f8497ab7e9b3af799aeeae07cc24e4baea50d4cb2a",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 1044,
+        "viewportY": 0,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "{\n  \"mechanism_check\": {\n    \"scope\": \"controlled candidate-order contract check; not an evaluation case or quality gain\",\n    \"query\": \"Will write_text replace the contents of an existing file?\",\n    \"before\": [\n      {\n        \"chunk_id\": \"e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c\",\n        \"source_id\": \"json-text\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/json.html#json.dumps\",\n        \"text\": \"json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select t\nhe encoding used by a file writer.\",\n        \"lexical_score\": -3.3056246724488786e-06,\n        \"vector_score\": 0.36746132784169144,\n        \"lexical_rank\": 3,\n        \"vector_rank\": 3,\n        \"lexical_contribution\": 0.015873015873015872,\n        \"vector_contribution\": 0.015873015873015872,\n        \"fused_score\": 0.031746031746031744\n      },\n      {\n        \"chunk_id\": \"c737db948e8111ae00e3442d8a22c80c876e43446dc1ee176ffe8ce142a41900\",\n        \"source_id\": \"path-read\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.read_text\",\n        \"text\": \"Path.read_text(encoding=None, errors=None) opens a file, returns its text as a string and closes the file. Set encoding=\\\"utf-8\\\" when reading a UTF-8 file.\",\n        \"lexical_score\": -4.084683995209214e-06,\n        \"vector_score\": 0.5547892797395033,\n        \"lexical_rank\": 2,\n        \"vector_rank\": 2,\n        \"lexical_contribution\": 0.016129032258064516,\n        \"vector_contribution\": 0.016129032258064516,\n        \"fused_score\": 0.03225806451612903\n      },\n      {\n        \"chunk_id\": \"c66643a4609c6ee157458bf4353f7446b9c6a200a3ef453846d6a18d5b5069a7\",\n        \"source_id\": \"path-write\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.write_text\",\n        \"text\": \"Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding=\\\"utf-8\\\" to select UTF-8. An existing file is over\nwritten. The method returns the number of characters written.\",\n        \"lexical_score\": -2.3976548397386743,\n        \"vector_score\": 0.6357498076122466,\n        \"lexical_rank\": 1,\n        \"vector_rank\": 1,\n        \"lexical_contribution\": 0.01639344262295082,\n        \"vector_contribution\": 0.01639344262295082,\n        \"fused_score\": 0.03278688524590164\n      }"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    },
+    {
+      "file": "images/completed-end-1920@2x.png",
+      "width_css": 1920,
+      "height_css": 1100,
+      "scale": 2,
+      "sha256": "b8d2b7adebead1c71e53ca34ca68c19e8548a9922126c13ac493b6f0730f02d5",
+      "state": {
+        "exit_code": 0,
+        "columns": 182,
+        "rows": 49,
+        "baseY": 1044,
+        "viewportY": 1044,
+        "command": [
+          "/Users/arjunprabhulal/aiml-lanes/envs/venv-agents/bin/python",
+          "run.py"
+        ],
+        "terminalText": "        \"rerank_rank\": 3\n      },\n      {\n        \"chunk_id\": \"e5455737b11664449f653280d89dfc2faaa9a14de16e9c3eb24296ca2ceea51c\",\n        \"source_id\": \"json-text\",\n        \"version\": \"3.12\",\n        \"url\": \"https://docs.python.org/3.12/library/json.html#json.dumps\",\n        \"text\": \"json.dumps(obj, ensure_ascii=True) returns a JSON string. Setting ensure_ascii=False leaves non-ASCII characters in that string. It does not write a file or select t\nhe encoding used by a file writer.\",\n        \"lexical_score\": -9.765013054830289e-07,\n        \"vector_score\": 0.4948350231504922,\n        \"lexical_rank\": 4,\n        \"vector_rank\": 4,\n        \"lexical_contribution\": 0.015625,\n        \"vector_contribution\": 0.015625,\n        \"fused_score\": 0.03125,\n        \"incoming_rank\": 4,\n        \"rerank_features\": {\n          \"query_tokens\": [\n            \"how\",\n            \"do\",\n            \"i\",\n            \"explicitly\",\n            \"select\",\n            \"utf\",\n            \"8\",\n            \"when\",\n            \"saving\",\n            \"text\",\n            \"with\",\n            \"pathlib\"\n          ],\n          \"matched_tokens\": [\n            \"select\"\n          ],\n          \"matched_count\": 1,\n          \"query_token_count\": 12\n        },\n        \"coverage_score\": 0.08333333333333333,\n        \"rerank_rank\": 4\n      }\n    ],\n    \"scope\": \"read/write lexical overlap diagnostic, not a new evaluation case\"\n  },\n  \"empty_candidates\": [],\n  \"altered_candidate_refusal\": \"candidate_payload_mismatch\",\n  \"limit\": \"Token overlap does not establish that a passage answers the question; it does not understand write versus read or unsupported requests.\"\n}\n"
+      },
+      "classification": "Original live learner CLI process viewport; post-completion scroll position, not another execution"
+    }
+  ],
+  "classification": "One original local learner CLI PTY, original resident buffer; no replay or output reconstruction"
+}

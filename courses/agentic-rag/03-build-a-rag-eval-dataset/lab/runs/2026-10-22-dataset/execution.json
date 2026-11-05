@@ -1,0 +1,51 @@
+{
+  "executed_on": "2026-10-22T22:57:41.627245+00:00",
+  "mode": "actual local dataset/failure validation; no retrieval or model calls",
+  "commands": [
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "verify_python312.py"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-dataset/public/examples/build-a-rag-eval-dataset",
+      "stdout": "{\n  \"python\": \"3.12.8\",\n  \"read_text_signature\": \"(self, encoding=None, errors=None)\",\n  \"write_text_signature\": \"(self, data, encoding=None, errors=None, newline=None)\",\n  \"write_utf8_characters\": 5,\n  \"read_back\": \"caf\\u00e9\\n\",\n  \"existing_file_replaced\": true,\n  \"json_dumps_type\": \"str\",\n  \"read_text_newline\": {\n    \"accepted\": false,\n    \"error_type\": \"TypeError\",\n    \"message\": \"Path.read_text() got an unexpected keyword argument 'newline'\"\n  },\n  \"python313_execution\": false\n}\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "build_dataset.py"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-dataset/public/examples/build-a-rag-eval-dataset",
+      "stdout": "actual local dataset validation; no retrieval, generation or quality benchmark\nQuestions: 8\nSources: 4\nSplits: {\"development\": 4, \"held_out\": 4}\nWrong documentation version: TargetError\nStale target hash: TargetError\nAnswerable question without a passage: TargetError\nEdited held-out question: SplitBoundaryError\nLock from another dataset: SplitBoundaryError\nPython 3.13 facts documented only; no 3.13 execution. Semantic relevance is a reviewed label, not a validated model answer.\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_dataset.py"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-dataset/public/examples/build-a-rag-eval-dataset",
+      "stdout": "",
+      "stderr": "test_313_source_is_explicitly_documented_only (test_dataset.DatasetTests.test_313_source_is_explicitly_documented_only) ... ok\ntest_actual_dataset_has_all_source_bound_targets_and_expected_classes (test_dataset.DatasetTests.test_actual_dataset_has_all_source_bound_targets_and_expected_classes) ... ok\ntest_answerable_case_needs_a_relevant_target (test_dataset.DatasetTests.test_answerable_case_needs_a_relevant_target) ... ok\ntest_blank_question_and_missing_intent_family_are_refused (test_dataset.DatasetTests.test_blank_question_and_missing_intent_family_are_refused) ... ok\ntest_blank_source_id_is_refused_before_snapshot_comparison (test_dataset.DatasetTests.test_blank_source_id_is_refused_before_snapshot_comparison) ... ok\ntest_chunk_from_other_source_cannot_be_attached_to_source_id (test_dataset.DatasetTests.test_chunk_from_other_source_cannot_be_attached_to_source_id) ... ok\ntest_chunk_ids_change_with_content_and_keep_versioned_source_identity (test_dataset.DatasetTests.test_chunk_ids_change_with_content_and_keep_versioned_source_identity) ... ok\ntest_existing_dataset_hash_changes_on_label_edit_not_json_whitespace (test_dataset.DatasetTests.test_existing_dataset_hash_changes_on_label_edit_not_json_whitespace) ... ok\ntest_existing_loader_rejects_duplicate_case_ids (test_dataset.DatasetTests.test_existing_loader_rejects_duplicate_case_ids) ... ok\ntest_existing_lock_detects_changed_labels_added_removed_or_moved_cases (test_dataset.DatasetTests.test_existing_lock_detects_changed_labels_added_removed_or_moved_cases) ... ok\ntest_existing_other_version_source_is_not_relevant_to_312_request (test_dataset.DatasetTests.test_existing_other_version_source_is_not_relevant_to_312_request) ... ok\ntest_held_out_question_edits_do_not_silently_refresh_the_lock (test_dataset.DatasetTests.test_held_out_question_edits_do_not_silently_refresh_the_lock) ... ok\ntest_lock_for_another_dataset_is_refused (test_dataset.DatasetTests.test_lock_for_another_dataset_is_refused) ... ok\ntest_paraphrase_parent_cannot_cross_the_split_boundary (test_dataset.DatasetTests.test_paraphrase_parent_cannot_cross_the_split_boundary) ... ok\ntest_question_class_and_answerability_must_agree (test_dataset.DatasetTests.test_question_class_and_answerability_must_agree) ... ok\ntest_related_intent_family_stays_in_one_split (test_dataset.DatasetTests.test_related_intent_family_stays_in_one_split) ... ok\ntest_semantic_relevance_is_not_proved_by_structural_validation (test_dataset.DatasetTests.test_semantic_relevance_is_not_proved_by_structural_validation) ... ok\ntest_source_changes_require_a_reviewed_snapshot (test_dataset.DatasetTests.test_source_changes_require_a_reviewed_snapshot) ... ok\ntest_stale_chunk_hash_is_refused (test_dataset.DatasetTests.test_stale_chunk_hash_is_refused) ... ok\ntest_stale_source_hash_is_refused (test_dataset.DatasetTests.test_stale_source_hash_is_refused) ... ok\ntest_unknown_chunk_is_refused_even_with_a_real_source (test_dataset.DatasetTests.test_unknown_chunk_is_refused_even_with_a_real_source) ... ok\ntest_unsupported_case_cannot_list_a_relevant_target (test_dataset.DatasetTests.test_unsupported_case_cannot_list_a_relevant_target) ... ok\ntest_wrong_declared_version_is_refused (test_dataset.DatasetTests.test_wrong_declared_version_is_refused) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.009s\n\nOK\n",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/aiml-agentic-rag-request-venv/bin/python",
+        "render_output.py",
+        "--html",
+        "/tmp/rag-dataset-runtime/report.html"
+      ],
+      "cwd": "/Users/arjunprabhulal/aiml-agentic-rag-dataset/public/examples/build-a-rag-eval-dataset",
+      "stdout": "actual local dataset validation; no retrieval, generation or quality benchmark\nQuestions: 8\nSources: 4\nSplits: {\"development\": 4, \"held_out\": 4}\nWrong documentation version: TargetError\nStale target hash: TargetError\nAnswerable question without a passage: TargetError\nEdited held-out question: SplitBoundaryError\nLock from another dataset: SplitBoundaryError\nPython 3.13 facts documented only; no 3.13 execution. Semantic relevance is a reviewed label, not a validated model answer.\n/tmp/rag-dataset-runtime/report.html\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  ]
+}

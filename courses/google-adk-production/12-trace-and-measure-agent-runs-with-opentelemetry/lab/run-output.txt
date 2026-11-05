@@ -1,0 +1,55 @@
+# Run defaults: (no OTEL_* variables)
+$ python traced.py 'How do I rebuild the search index?'
+answer: You can rebuild the search index by running `docs-assistant index --rebuild` (cli.md).
+
+spans:
+invocation                                 5659.9 ms
+  invoke_agent docs_assistant              5653.6 ms
+    call_llm                               1957.8 ms  model=gemini-3.8-flash input_tokens=156 output_tokens=33
+      generate_content gemini-3.8-flash    1955.5 ms  model=gemini-3.8-flash input_tokens=156 output_tokens=33
+    execute_tool list_pages                   0.9 ms  name=list_pages
+    call_llm                               1969.6 ms  model=gemini-3.8-flash input_tokens=218 output_tokens=53
+      generate_content gemini-3.8-flash    1967.4 ms  model=gemini-3.8-flash input_tokens=218 output_tokens=53
+    execute_tool read_page                    1.1 ms  name=read_page
+    call_llm                               1708.1 ms  model=gemini-3.8-flash input_tokens=349 output_tokens=75
+      generate_content gemini-3.8-flash    1707.4 ms  model=gemini-3.8-flash input_tokens=349 output_tokens=75
+
+metrics:
+gen_ai.execute_tool.duration               docs_assistant,list_pages count=1 sum=0.001 s
+gen_ai.execute_tool.duration               docs_assistant,read_page count=1 sum=0.001 s
+gen_ai.client.operation.duration           docs_assistant           count=3 sum=5.63 s
+gen_ai.client.token.usage                  docs_assistant,input     count=3 sum=723 {token}
+gen_ai.client.token.usage                  docs_assistant,output    count=3 sum=161 {token}
+gen_ai.invoke_agent.duration               docs_assistant           count=1 sum=5.654 s
+gen_ai.invoke_agent.inference_calls        docs_assistant           count=1 sum=3
+gen_ai.invoke_agent.tool_calls             docs_assistant           count=1 sum=2
+
+# Run production: OTEL_SERVICE_NAME=docs-assistant ADK_CAPTURE_MESSAGE_CONTENT_IN_SPANS=false
+$ python traced.py 'How do I rebuild the search index?'
+answer: You can rebuild the search index by running `docs-assistant index --rebuild` (cli.md).
+
+spans:
+invocation                                 4576.8 ms
+  invoke_agent docs_assistant              4569.2 ms
+    call_llm                               1572.3 ms  model=gemini-3.8-flash input_tokens=156 output_tokens=10
+      generate_content gemini-3.8-flash    1568.1 ms  model=gemini-3.8-flash input_tokens=156 output_tokens=10
+    execute_tool list_pages                   1.1 ms  name=list_pages
+    call_llm                               1745.4 ms  model=gemini-3.8-flash input_tokens=195 output_tokens=18
+      generate_content gemini-3.8-flash    1744.1 ms  model=gemini-3.8-flash input_tokens=195 output_tokens=18
+    execute_tool read_page                    0.3 ms  name=read_page
+    call_llm                               1234.8 ms  model=gemini-3.8-flash input_tokens=291 output_tokens=22
+      generate_content gemini-3.8-flash    1234.2 ms  model=gemini-3.8-flash input_tokens=291 output_tokens=22
+
+metrics:
+gen_ai.execute_tool.duration               docs_assistant,list_pages count=1 sum=0.001 s
+gen_ai.execute_tool.duration               docs_assistant,read_page count=1 sum=0.0 s
+gen_ai.client.operation.duration           docs_assistant           count=3 sum=4.546 s
+gen_ai.client.token.usage                  docs_assistant,input     count=3 sum=642 {token}
+gen_ai.client.token.usage                  docs_assistant,output    count=3 sum=50 {token}
+gen_ai.invoke_agent.duration               docs_assistant           count=1 sum=4.569 s
+gen_ai.invoke_agent.inference_calls        docs_assistant           count=1 sum=3
+gen_ai.invoke_agent.tool_calls             docs_assistant           count=1 sum=2
+
+# Run otlp-without-exporter: OTEL_SERVICE_NAME=docs-assistant OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
+$ python traced.py 'How do I rebuild the search index?'
+ModuleNotFoundError: No module named 'opentelemetry.exporter'

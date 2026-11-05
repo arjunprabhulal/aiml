@@ -1,0 +1,311 @@
+{
+  "start": 1800000000,
+  "conversations": [
+    {
+      "id": "own-lookup",
+      "user": "ana",
+      "proposed": 1,
+      "model_text": "",
+      "decisions": [
+        {
+          "call": {
+            "name": "lookup_order",
+            "arguments": {
+              "order_id": "n-1001"
+            }
+          },
+          "status": 200,
+          "result": {
+            "order_id": "n-1001",
+            "status": "shipped"
+          }
+        }
+      ]
+    },
+    {
+      "id": "viewer-refund",
+      "user": "ben",
+      "proposed": 1,
+      "model_text": "",
+      "decisions": [
+        {
+          "call": {
+            "name": "issue_refund",
+            "arguments": {
+              "order_id": "n-1002",
+              "reason": "damaged"
+            }
+          },
+          "status": 403,
+          "result": {
+            "error": "role viewer lacks refunds:write"
+          }
+        }
+      ]
+    },
+    {
+      "id": "other-shop-refund",
+      "user": "ana",
+      "proposed": 1,
+      "model_text": "",
+      "decisions": [
+        {
+          "call": {
+            "name": "issue_refund",
+            "arguments": {
+              "order_id": "s-2001",
+              "reason": "damaged"
+            }
+          },
+          "status": 404,
+          "result": {
+            "error": "order not found"
+          }
+        }
+      ]
+    },
+    {
+      "id": "injected-admin",
+      "user": "ana",
+      "proposed": 2,
+      "model_text": "",
+      "decisions": [
+        {
+          "call": {
+            "name": "issue_refund",
+            "arguments": {
+              "order_id": "s-2001",
+              "reason": "damaged"
+            }
+          },
+          "status": 404,
+          "result": {
+            "error": "order not found"
+          }
+        },
+        {
+          "call": {
+            "name": "issue_refund",
+            "arguments": {
+              "order_id": "n-1002",
+              "reason": "damaged"
+            }
+          },
+          "status": 200,
+          "result": {
+            "order_id": "n-1002",
+            "refunded": true,
+            "reason": "damaged"
+          }
+        }
+      ]
+    },
+    {
+      "id": "other-shop-lookup",
+      "user": "cara",
+      "proposed": 1,
+      "model_text": "",
+      "decisions": [
+        {
+          "call": {
+            "name": "lookup_order",
+            "arguments": {
+              "order_id": "n-1001"
+            }
+          },
+          "status": 404,
+          "result": {
+            "error": "order not found"
+          }
+        }
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "case": "session token sent to a tool service",
+      "status": 401,
+      "check": "service token",
+      "result": {
+        "error": "type: expected tool+jwt, got 'session+jwt'"
+      }
+    },
+    {
+      "case": "delegated token used once",
+      "status": 200,
+      "result": {
+        "order_id": "n-1001",
+        "status": "shipped"
+      }
+    },
+    {
+      "case": "same delegated token replayed",
+      "status": 401,
+      "check": "service token",
+      "result": {
+        "error": "replay: this token was already used"
+      }
+    },
+    {
+      "case": "orders token sent to the refunds service",
+      "status": 401,
+      "check": "service token",
+      "result": {
+        "error": "audience: issued for 'orders-service', not 'refunds-service'"
+      }
+    },
+    {
+      "case": "claims edited, old signature kept",
+      "status": 401,
+      "check": "service token",
+      "result": {
+        "error": "signature: does not match"
+      }
+    },
+    {
+      "case": "algorithm none, no signature",
+      "status": 401,
+      "check": "service token",
+      "result": {
+        "error": "algorithm: 'none' is not allowed"
+      }
+    },
+    {
+      "case": "tool token without the act claim",
+      "status": 403,
+      "check": "service delegation",
+      "result": {
+        "error": "an agent call must carry the act claim"
+      }
+    },
+    {
+      "case": "refunds token with only a read scope",
+      "status": 403,
+      "check": "service scope",
+      "result": {
+        "error": "token lacks refunds:write"
+      }
+    },
+    {
+      "case": "proposed arguments name another tenant",
+      "status": 400,
+      "result": {
+        "error": "unexpected argument tenant"
+      }
+    },
+    {
+      "case": "proposed call to a tool that does not exist",
+      "status": 404,
+      "result": {
+        "error": "unknown tool export_all_orders"
+      }
+    },
+    {
+      "case": "delegated token after its expiry",
+      "status": 401,
+      "check": "service token",
+      "result": {
+        "error": "expiry: the token has expired"
+      }
+    },
+    {
+      "case": "session token after its expiry",
+      "status": 401,
+      "result": {
+        "error": "expiry: the token has expired"
+      }
+    }
+  ],
+  "audit": [
+    {
+      "at": 1800000000,
+      "user": "ana",
+      "tool": "lookup_order",
+      "arguments_sha256": "02d5443ea6b67dd7e1c4402ef1d265abe65e203e88e679f5ed98d29691ea0d16",
+      "decision": "allowed",
+      "check": null,
+      "reason": null,
+      "jti": "f97aef83fd78c19c"
+    },
+    {
+      "at": 1800000001,
+      "user": "ben",
+      "tool": "issue_refund",
+      "arguments_sha256": "d2b77136a9f315e614e9bd3b06c1973acd66dcf301c1112812a8a4226a25d634",
+      "decision": "refused",
+      "check": "gateway role",
+      "reason": "role viewer lacks refunds:write",
+      "jti": null
+    },
+    {
+      "at": 1800000002,
+      "user": "ana",
+      "tool": "issue_refund",
+      "arguments_sha256": "ec98dedbed4900a08b6f7a77fe4fd3e9503a05d48541ab05f72c713a7b632cc8",
+      "decision": "refused",
+      "check": "service tenant",
+      "reason": "order not found",
+      "jti": "781ad86bca3bedb0"
+    },
+    {
+      "at": 1800000003,
+      "user": "ana",
+      "tool": "issue_refund",
+      "arguments_sha256": "ec98dedbed4900a08b6f7a77fe4fd3e9503a05d48541ab05f72c713a7b632cc8",
+      "decision": "refused",
+      "check": "service tenant",
+      "reason": "order not found",
+      "jti": "6897b69ca5755194"
+    },
+    {
+      "at": 1800000004,
+      "user": "ana",
+      "tool": "issue_refund",
+      "arguments_sha256": "d2b77136a9f315e614e9bd3b06c1973acd66dcf301c1112812a8a4226a25d634",
+      "decision": "allowed",
+      "check": null,
+      "reason": null,
+      "jti": "008572506e509377"
+    },
+    {
+      "at": 1800000005,
+      "user": "cara",
+      "tool": "lookup_order",
+      "arguments_sha256": "02d5443ea6b67dd7e1c4402ef1d265abe65e203e88e679f5ed98d29691ea0d16",
+      "decision": "refused",
+      "check": "service tenant",
+      "reason": "order not found",
+      "jti": "bf028e571ce18094"
+    },
+    {
+      "at": 1800000006,
+      "user": "ana",
+      "tool": "lookup_order",
+      "arguments_sha256": "399bf998c153c7013f1ab41b3442f66e32e5937e5e021d64f873c835ba4dea54",
+      "decision": "refused",
+      "check": "schema",
+      "reason": "unexpected argument tenant",
+      "jti": null
+    },
+    {
+      "at": 1800000006,
+      "user": "ana",
+      "tool": "export_all_orders",
+      "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "decision": "refused",
+      "check": "tool",
+      "reason": "unknown tool",
+      "jti": null
+    },
+    {
+      "at": 1800003666,
+      "user": null,
+      "tool": "lookup_order",
+      "arguments_sha256": "02d5443ea6b67dd7e1c4402ef1d265abe65e203e88e679f5ed98d29691ea0d16",
+      "decision": "refused",
+      "check": "session token",
+      "reason": "expiry: the token has expired",
+      "jti": null
+    }
+  ]
+}

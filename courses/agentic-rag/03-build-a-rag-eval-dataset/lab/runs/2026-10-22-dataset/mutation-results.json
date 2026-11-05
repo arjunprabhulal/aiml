@@ -1,0 +1,41 @@
+{
+  "method": "Six isolated source changes fail named semantic assertions, without collection/runtime errors.",
+  "results": [
+    {
+      "change": "ignore_version",
+      "test": "test_wrong_declared_version_is_refused",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "ignore_target_hash",
+      "test": "test_stale_source_hash_is_refused",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "allow_answer_without_target",
+      "test": "test_answerable_case_needs_a_relevant_target",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "ignore_held_out_lock",
+      "test": "test_held_out_question_edits_do_not_silently_refresh_the_lock",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "ignore_lock_name",
+      "test": "test_lock_for_another_dataset_is_refused",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "change": "ignore_source_snapshot",
+      "test": "test_source_changes_require_a_reviewed_snapshot",
+      "rejected": true,
+      "exit_code": 1
+    }
+  ]
+}

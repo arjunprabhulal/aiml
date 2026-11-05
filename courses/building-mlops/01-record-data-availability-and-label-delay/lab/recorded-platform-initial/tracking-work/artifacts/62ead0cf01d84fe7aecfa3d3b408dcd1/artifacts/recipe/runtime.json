@@ -1,0 +1,42 @@
+{
+  "python": "3.12.8",
+  "packages": {
+    "mlflow-skinny": "3.17.2",
+    "SQLAlchemy": "2.1.6"
+  },
+  "contract_id": "c5949d7b20bb578e0e641aec284179b3c36cf54e6fdbc3862760439b6214905f",
+  "source": {
+    "project": "user-return-24h-v1",
+    "format": "return-application-contract-v1",
+    "dataset_sha256": "5d009da4b520ee466b7919ab6d3bd5507c5d6c0e56be4d64302bb1ee9c347619",
+    "feature": {
+      "name": "recent_event_count",
+      "version": 1,
+      "entity": "existing_user",
+      "window_seconds": 86400,
+      "event_cutoff": "strictly_before_prediction",
+      "arrival_cutoff": "strictly_before_prediction",
+      "aggregation": "count",
+      "feature_order": [
+        "recent_event_count"
+      ],
+      "count_range": [
+        0,
+        1000
+      ]
+    },
+    "implementation": {
+      "workflow.py": "294a9ec66f614d6fc356bb0fdece2b0c2dd6d7f8f5e37e78c249fe1902e63be1",
+      "foundations.py": "b939bb9a6726363efa052eaae84667fe84b71c871a5eeedc4cd674c4e3e3f2ab",
+      "vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vendor/availability.py": "3039969944686e05ee6d2fc9990807d9f576f653403681671e8d656f717a3efb",
+      "vendor/baseline.py": "41b40a9ac8cc6b5b53b45f7b2f696f0fe9488b7fd583da1f20be53b293af97a9",
+      "vendor/partitions.py": "0fb0abe0fded003ec910d26beb16a3673b912448fc21937316d2cecf0297e712",
+      "vendor/feature_math.py": "477c12bf3d2cea0f8493e3ecb26af6a14092e4359dfecb01ba32100522e889fd",
+      "quarantine_reuse.py": "7be58f6b43aa9785947ba3a68be3791241a3ea628be9de32796a2ed30b507edd",
+      "history_reuse.py": "83349b3fc9877350fd3b5047d9d3f08f47b9e80de0326914e1ec8eeba8175f07",
+      "join.sql": "4add0ce2bcad1981f8ae708899b4b8a878651114452bd133b6d456590ab5bbc2"
+    }
+  },
+  "tracker_sha256": "9e7fed5323f592bccbf83a7076402e267ed77101176e35c94bb2e99c7a1435e8"
+}

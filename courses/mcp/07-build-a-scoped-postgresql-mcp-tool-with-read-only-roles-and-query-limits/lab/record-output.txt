@@ -1,0 +1,21 @@
+PostgreSQL 17.4
+first five pages                     5 rows, truncated=True
+pages per section                    3 rows, truncated=False
+one row of a million                 1 rows, truncated=True
+insert a page                        rejected: only one SELECT or VALUES query is allowed (42601)
+delete inside WITH                   rejected: the query uses a feature a cursor does not allow, such as a data-modifying WITH (0A000)
+function that writes                 rejected: the transaction is read-only (25006)
+read editor emails                   rejected: the role lacks the privilege (42501)
+slow query                           rejected: the query ran longer than 500 ms (57014)
+two statements                       rejected: only one SELECT or VALUES query is allowed (42601)
+turn off read-only for the session   1 rows, truncated=False
+function that writes, next call      rejected: the transaction is read-only (25006)
+one 300,000-character value          rejected: the result is larger than 200000 bytes; select fewer or shorter values
+send a notification                  1 rows, truncated=False
+too many rows requested              rejected: max_rows must be an integer from 1 to 200
+role: read-only default after SET    off
+role: insert with read-only off      42501: permission denied for table pages
+role: delete with read-only off      42501: permission denied for table pages
+role: read editors with read-only off 42501: permission denied for table editors
+role: create a large object with read-only off allowed
+wrote query-results.json

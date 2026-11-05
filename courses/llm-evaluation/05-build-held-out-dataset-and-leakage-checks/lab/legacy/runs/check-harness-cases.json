@@ -1,0 +1,39 @@
+{
+  "check_version": "1",
+  "case_set": {
+    "name": "inbox-triage",
+    "sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6"
+  },
+  "cases": {
+    "development": 9,
+    "held_out": 7
+  },
+  "artifacts": [
+    "triage.py"
+  ],
+  "locked": true,
+  "decision": "review",
+  "findings": [
+    {
+      "check": "held-out-only term",
+      "severity": "review",
+      "artifact": "triage.py",
+      "term": "log in",
+      "held_out": [
+        "cannot-log-in"
+      ]
+    }
+  ],
+  "held_out_runs": [
+    {
+      "record": "baseline-final.json",
+      "system": "keyword-triage v1",
+      "started_at": "2026-10-20T16:29:58+00:00"
+    },
+    {
+      "record": "candidate-final.json",
+      "system": "keyword-triage v2",
+      "started_at": "2026-10-20T16:29:58+00:00"
+    }
+  ]
+}

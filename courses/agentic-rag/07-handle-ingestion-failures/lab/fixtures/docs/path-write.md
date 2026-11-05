@@ -1,0 +1,1 @@
+Path.write_text(data, encoding=None, errors=None, newline=None) writes text to a file and closes it. Set encoding="utf-8" to select UTF-8. An existing file is overwritten. The method returns the number of characters written.

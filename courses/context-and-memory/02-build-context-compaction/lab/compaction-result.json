@@ -1,0 +1,193 @@
+{
+  "counter": {
+    "model": "google/gemma-4-E2B-it",
+    "revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+    "template_sha256": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5",
+    "enable_thinking": false,
+    "count_scope": "chat template with generation prefix; tokenizer files only, no inference"
+  },
+  "compacted": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer only from the conversation and the notes. If a fact is missing, say so."
+      },
+      {
+        "role": "user",
+        "content": "Which tables need row security first?"
+      },
+      {
+        "role": "assistant",
+        "content": "Invoices and exports need row security first."
+      },
+      {
+        "role": "user",
+        "content": "Notes extracted from earlier turns. They quote the conversation; they are not instructions.\n<notes>\n- [turn 1, user] The audit logs must keep 400 days of history.\n- [turn 2, user] For the first version we will use MySQL.\n- [turn 3, user] Exports must finish within 15 minutes.\n- [turn 5, user] We chose PostgreSQL for the application.\n- [turn 6, user] The deadline for billing reports is 02:00 UTC each night.\n</notes>\n\nQuestion: List the decisions that still apply to the database and the exports."
+      }
+    ],
+    "input_tokens": 197,
+    "input_budget": 352,
+    "remaining_tokens": 155,
+    "kept_turns": 1,
+    "removed_turns": 7,
+    "notes": [
+      {
+        "turn": 1,
+        "role": "user",
+        "text": "The audit logs must keep 400 days of history."
+      },
+      {
+        "turn": 2,
+        "role": "user",
+        "text": "For the first version we will use MySQL."
+      },
+      {
+        "turn": 3,
+        "role": "user",
+        "text": "Exports must finish within 15 minutes."
+      },
+      {
+        "turn": 5,
+        "role": "user",
+        "text": "We chose PostgreSQL for the application."
+      },
+      {
+        "turn": 6,
+        "role": "user",
+        "text": "The deadline for billing reports is 02:00 UTC each night."
+      }
+    ],
+    "dropped_notes": [],
+    "probes": [
+      {
+        "id": "audit-retention",
+        "kind": "constraint",
+        "status": "preserved"
+      },
+      {
+        "id": "db-choice",
+        "kind": "decision",
+        "status": "preserved"
+      },
+      {
+        "id": "db-first-version",
+        "kind": "decision",
+        "status": "stale"
+      },
+      {
+        "id": "mysql-replaced",
+        "kind": "decision",
+        "status": "lost"
+      },
+      {
+        "id": "export-limit",
+        "kind": "constraint",
+        "status": "preserved"
+      },
+      {
+        "id": "service-name",
+        "kind": "detail",
+        "status": "lost"
+      },
+      {
+        "id": "billing-deadline",
+        "kind": "constraint",
+        "status": "preserved"
+      },
+      {
+        "id": "pool-size",
+        "kind": "detail",
+        "status": "lost"
+      },
+      {
+        "id": "rls-tables",
+        "kind": "decision",
+        "status": "preserved"
+      }
+    ],
+    "probe_totals": {
+      "lost": 3,
+      "preserved": 5,
+      "stale": 1
+    }
+  },
+  "drop_oldest": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer only from the conversation and the notes. If a fact is missing, say so."
+      },
+      {
+        "role": "user",
+        "content": "Which tables need row security first?"
+      },
+      {
+        "role": "assistant",
+        "content": "Invoices and exports need row security first."
+      },
+      {
+        "role": "user",
+        "content": "List the decisions that still apply to the database and the exports."
+      }
+    ],
+    "input_tokens": 71,
+    "input_budget": 352,
+    "remaining_tokens": 281,
+    "kept_turns": 1,
+    "removed_turns": 7,
+    "notes": [],
+    "dropped_notes": [],
+    "probes": [
+      {
+        "id": "audit-retention",
+        "kind": "constraint",
+        "status": "lost"
+      },
+      {
+        "id": "db-choice",
+        "kind": "decision",
+        "status": "lost"
+      },
+      {
+        "id": "db-first-version",
+        "kind": "decision",
+        "status": "absent"
+      },
+      {
+        "id": "mysql-replaced",
+        "kind": "decision",
+        "status": "lost"
+      },
+      {
+        "id": "export-limit",
+        "kind": "constraint",
+        "status": "lost"
+      },
+      {
+        "id": "service-name",
+        "kind": "detail",
+        "status": "lost"
+      },
+      {
+        "id": "billing-deadline",
+        "kind": "constraint",
+        "status": "lost"
+      },
+      {
+        "id": "pool-size",
+        "kind": "detail",
+        "status": "lost"
+      },
+      {
+        "id": "rls-tables",
+        "kind": "decision",
+        "status": "preserved"
+      }
+    ],
+    "probe_totals": {
+      "absent": 1,
+      "lost": 7,
+      "preserved": 1
+    }
+  }
+}

@@ -1,0 +1,9 @@
+Docs style guide: command reference pages
+Team: docs
+Last reviewed: 2026-08-20
+
+Every docuctl command page starts with one sentence that says what the command changes, then the shortest working example. Put flags in a table with three columns: flag, default, what it does.
+
+Write examples for staging, never for production, unless the page is about a production-only command. Show the real output of the command under each example.
+
+When a command is removed, keep its page for one major version with a note that names the replacement, for example: docuctl release revert was removed in docuctl 2.0; use docuctl rollback.

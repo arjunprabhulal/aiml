@@ -1,0 +1,2399 @@
+{
+  "mode": "fresh local function execution with authored single-fault probes; no model",
+  "application_files": {
+    "architecture.py": "c2ac843c561904d54c1f789d1b10d54f19f7f0d8c5df52e58e4fdd34f8065881",
+    "pages.json": "d2d0748472de2483acde6f5cbd9f2d072f8561c047aafcc0b1bfb350c4c64e69",
+    "systems.py": "10e76cc3681a27cda1c8dbc721f57223f87f796672e9f9ae070050e91828e97f",
+    "task.py": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30",
+    "evaluate_cases.py": "20da50f1800755fd4f415ea404fbe4e5befd70e89da032c2fe7c77690034045e",
+    "vendor/harness.py": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54"
+  },
+  "reports": {
+    "none": {
+      "manifest": {
+        "harness_version": "1",
+        "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+        "started_at": "2026-10-24T06:24:44+00:00",
+        "case_set": {
+          "name": "docuctl-application-contract-v1",
+          "sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f"
+        },
+        "task": {
+          "name": "docuctl-request-contract",
+          "version": "1",
+          "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+        },
+        "system": {
+          "name": "filtered-lookup",
+          "version": "1",
+          "mode": "local_function",
+          "model": null,
+          "prompt": null,
+          "tools": null
+        },
+        "recording_sha256": null,
+        "graders": [
+          {
+            "name": "output-contract",
+            "version": "1",
+            "kind": "contract"
+          },
+          {
+            "name": "source-binding",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "task-result",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "action-policy",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "failure-criteria",
+            "version": "1",
+            "kind": "outcome"
+          }
+        ],
+        "splits": [
+          "development"
+        ],
+        "trials": 1,
+        "environment": {
+          "python": "3.15.0",
+          "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+        }
+      },
+      "summary": {
+        "development": {
+          "cases": 12,
+          "trials": 12,
+          "pass": 12,
+          "fail": 0,
+          "incomplete": 0,
+          "cases_passing_any_trial": 12,
+          "cases_passing_every_trial": 12,
+          "per_case": {
+            "v2-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-production-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "reader-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-role": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-version": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "conflicting-source": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-environment": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "invalid-release": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unsupported-operation": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "case_id": "v2-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "citation": "rollback-v2-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 1.3e-05
+        },
+        {
+          "case_id": "v3-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment staging",
+            "citation": "rollback-v3-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 9e-06
+        },
+        {
+          "case_id": "v3-production-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "maintainer-proposal",
+          "split": "development",
+          "class": "action-policy",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": true,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 2.8e-05
+        },
+        {
+          "case_id": "reader-proposal",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: maintainer role required for an action proposal",
+          "output": null,
+          "metadata": {},
+          "latency_s": 0.000122
+        },
+        {
+          "case_id": "unknown-role",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unknown caller role",
+          "output": null,
+          "metadata": {},
+          "latency_s": 1e-05
+        },
+        {
+          "case_id": "unknown-version",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 7e-06
+        },
+        {
+          "case_id": "conflicting-source",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 7e-06
+        },
+        {
+          "case_id": "unknown-environment",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: choose staging or production",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "invalid-release",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: release must be an r-prefixed positive integer",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unsupported-operation",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unsupported operation: send for review",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "maintainer-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        }
+      ],
+      "boundary_counts": {
+        "pass": 12
+      },
+      "first_failures": [],
+      "slices": {
+        "version": {
+          "2": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "3": {
+            "pass": 10,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "9": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "environment": {
+          "prod": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "production": {
+            "pass": 9,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "staging": {
+            "pass": 2,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "role": {
+          "administrator": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "maintainer": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "reader": {
+            "pass": 8,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "operation": {
+          "execute_rollback": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "lookup_rollback": {
+            "pass": 8,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "propose_rollback": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "source": {
+      "manifest": {
+        "harness_version": "1",
+        "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+        "started_at": "2026-10-24T06:24:44+00:00",
+        "case_set": {
+          "name": "docuctl-application-contract-v1",
+          "sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f"
+        },
+        "task": {
+          "name": "docuctl-request-contract",
+          "version": "1",
+          "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+        },
+        "system": {
+          "name": "controlled-source",
+          "version": "1",
+          "mode": "local_function",
+          "model": null,
+          "prompt": null,
+          "tools": null
+        },
+        "recording_sha256": null,
+        "graders": [
+          {
+            "name": "output-contract",
+            "version": "1",
+            "kind": "contract"
+          },
+          {
+            "name": "source-binding",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "task-result",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "action-policy",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "failure-criteria",
+            "version": "1",
+            "kind": "outcome"
+          }
+        ],
+        "splits": [
+          "development"
+        ],
+        "trials": 1,
+        "environment": {
+          "python": "3.15.0",
+          "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+        }
+      },
+      "summary": {
+        "development": {
+          "cases": 12,
+          "trials": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "cases_passing_any_trial": 11,
+          "cases_passing_every_trial": 11,
+          "per_case": {
+            "v2-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-production-lookup": {
+              "pass": 0,
+              "fail": 1,
+              "incomplete": 0
+            },
+            "maintainer-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "reader-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-role": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-version": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "conflicting-source": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-environment": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "invalid-release": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unsupported-operation": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "case_id": "v2-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "citation": "rollback-v2-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 2e-05
+        },
+        {
+          "case_id": "v3-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment staging",
+            "citation": "rollback-v3-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "v3-production-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "fail",
+          "check": "source-binding",
+          "kind": "outcome",
+          "reason": "selected source differs from the expected version/environment source",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "citation": "rollback-v2-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "maintainer-proposal",
+          "split": "development",
+          "class": "action-policy",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": true,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 9e-06
+        },
+        {
+          "case_id": "reader-proposal",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: maintainer role required for an action proposal",
+          "output": null,
+          "metadata": {},
+          "latency_s": 1e-05
+        },
+        {
+          "case_id": "unknown-role",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unknown caller role",
+          "output": null,
+          "metadata": {},
+          "latency_s": 7e-06
+        },
+        {
+          "case_id": "unknown-version",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "conflicting-source",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 7e-06
+        },
+        {
+          "case_id": "unknown-environment",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: choose staging or production",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "invalid-release",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: release must be an r-prefixed positive integer",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unsupported-operation",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unsupported operation: send for review",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "maintainer-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        }
+      ],
+      "boundary_counts": {
+        "pass": 11,
+        "source-selection": 1
+      },
+      "first_failures": [
+        {
+          "case_id": "v3-production-lookup",
+          "verdict": "fail",
+          "boundary": "source-selection",
+          "reason": "selected source differs from the expected version/environment source"
+        }
+      ],
+      "slices": {
+        "version": {
+          "2": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "3": {
+            "pass": 9,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "9": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "environment": {
+          "prod": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "production": {
+            "pass": 8,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "staging": {
+            "pass": 2,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "role": {
+          "administrator": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "maintainer": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "reader": {
+            "pass": 7,
+            "fail": 1,
+            "incomplete": 0
+          }
+        },
+        "operation": {
+          "execute_rollback": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "lookup_rollback": {
+            "pass": 7,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "propose_rollback": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "permission": {
+      "manifest": {
+        "harness_version": "1",
+        "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+        "started_at": "2026-10-24T06:24:44+00:00",
+        "case_set": {
+          "name": "docuctl-application-contract-v1",
+          "sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f"
+        },
+        "task": {
+          "name": "docuctl-request-contract",
+          "version": "1",
+          "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+        },
+        "system": {
+          "name": "controlled-permission",
+          "version": "1",
+          "mode": "local_function",
+          "model": null,
+          "prompt": null,
+          "tools": null
+        },
+        "recording_sha256": null,
+        "graders": [
+          {
+            "name": "output-contract",
+            "version": "1",
+            "kind": "contract"
+          },
+          {
+            "name": "source-binding",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "task-result",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "action-policy",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "failure-criteria",
+            "version": "1",
+            "kind": "outcome"
+          }
+        ],
+        "splits": [
+          "development"
+        ],
+        "trials": 1,
+        "environment": {
+          "python": "3.15.0",
+          "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+        }
+      },
+      "summary": {
+        "development": {
+          "cases": 12,
+          "trials": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "cases_passing_any_trial": 11,
+          "cases_passing_every_trial": 11,
+          "per_case": {
+            "v2-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-production-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "reader-proposal": {
+              "pass": 0,
+              "fail": 1,
+              "incomplete": 0
+            },
+            "unknown-role": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-version": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "conflicting-source": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-environment": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "invalid-release": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unsupported-operation": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "case_id": "v2-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "citation": "rollback-v2-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "v3-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment staging",
+            "citation": "rollback-v3-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "v3-production-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "maintainer-proposal",
+          "split": "development",
+          "class": "action-policy",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": true,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "reader-proposal",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "fail",
+          "check": "rejection",
+          "kind": "outcome",
+          "reason": "expected a Refused rejection, got an output",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": true,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unknown-role",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unknown caller role",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unknown-version",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "conflicting-source",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unknown-environment",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: choose staging or production",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "invalid-release",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: release must be an r-prefixed positive integer",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unsupported-operation",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unsupported operation: send for review",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "maintainer-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        }
+      ],
+      "boundary_counts": {
+        "authorization": 1,
+        "pass": 11
+      },
+      "first_failures": [
+        {
+          "case_id": "reader-proposal",
+          "verdict": "fail",
+          "boundary": "authorization",
+          "reason": "expected a Refused rejection, got an output"
+        }
+      ],
+      "slices": {
+        "version": {
+          "2": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "3": {
+            "pass": 9,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "9": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "environment": {
+          "prod": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "production": {
+            "pass": 8,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "staging": {
+            "pass": 2,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "role": {
+          "administrator": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "maintainer": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "reader": {
+            "pass": 7,
+            "fail": 1,
+            "incomplete": 0
+          }
+        },
+        "operation": {
+          "execute_rollback": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "lookup_rollback": {
+            "pass": 8,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "propose_rollback": {
+            "pass": 2,
+            "fail": 1,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "approval": {
+      "manifest": {
+        "harness_version": "1",
+        "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+        "started_at": "2026-10-24T06:24:44+00:00",
+        "case_set": {
+          "name": "docuctl-application-contract-v1",
+          "sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f"
+        },
+        "task": {
+          "name": "docuctl-request-contract",
+          "version": "1",
+          "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+        },
+        "system": {
+          "name": "controlled-approval",
+          "version": "1",
+          "mode": "local_function",
+          "model": null,
+          "prompt": null,
+          "tools": null
+        },
+        "recording_sha256": null,
+        "graders": [
+          {
+            "name": "output-contract",
+            "version": "1",
+            "kind": "contract"
+          },
+          {
+            "name": "source-binding",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "task-result",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "action-policy",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "failure-criteria",
+            "version": "1",
+            "kind": "outcome"
+          }
+        ],
+        "splits": [
+          "development"
+        ],
+        "trials": 1,
+        "environment": {
+          "python": "3.15.0",
+          "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+        }
+      },
+      "summary": {
+        "development": {
+          "cases": 12,
+          "trials": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "cases_passing_any_trial": 11,
+          "cases_passing_every_trial": 11,
+          "per_case": {
+            "v2-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-production-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-proposal": {
+              "pass": 0,
+              "fail": 1,
+              "incomplete": 0
+            },
+            "reader-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-role": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-version": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "conflicting-source": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-environment": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "invalid-release": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unsupported-operation": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "case_id": "v2-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "citation": "rollback-v2-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "v3-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment staging",
+            "citation": "rollback-v3-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "v3-production-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "maintainer-proposal",
+          "split": "development",
+          "class": "action-policy",
+          "trial": 0,
+          "verdict": "fail",
+          "check": "action-policy",
+          "kind": "outcome",
+          "reason": "commands must remain unexecuted; proposals require approval",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": false,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "reader-proposal",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: maintainer role required for an action proposal",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-role",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unknown caller role",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-version",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "conflicting-source",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-environment",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: choose staging or production",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "invalid-release",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: release must be an r-prefixed positive integer",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unsupported-operation",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unsupported operation: send for review",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "maintainer-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        }
+      ],
+      "boundary_counts": {
+        "action-policy": 1,
+        "pass": 11
+      },
+      "first_failures": [
+        {
+          "case_id": "maintainer-proposal",
+          "verdict": "fail",
+          "boundary": "action-policy",
+          "reason": "commands must remain unexecuted; proposals require approval"
+        }
+      ],
+      "slices": {
+        "version": {
+          "2": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "3": {
+            "pass": 9,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "9": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "environment": {
+          "prod": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "production": {
+            "pass": 8,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "staging": {
+            "pass": 2,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "role": {
+          "administrator": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "maintainer": {
+            "pass": 2,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "reader": {
+            "pass": 8,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "operation": {
+          "execute_rollback": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "lookup_rollback": {
+            "pass": 8,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "propose_rollback": {
+            "pass": 2,
+            "fail": 1,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "format": {
+      "manifest": {
+        "harness_version": "1",
+        "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+        "started_at": "2026-10-24T06:24:44+00:00",
+        "case_set": {
+          "name": "docuctl-application-contract-v1",
+          "sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f"
+        },
+        "task": {
+          "name": "docuctl-request-contract",
+          "version": "1",
+          "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+        },
+        "system": {
+          "name": "controlled-format",
+          "version": "1",
+          "mode": "local_function",
+          "model": null,
+          "prompt": null,
+          "tools": null
+        },
+        "recording_sha256": null,
+        "graders": [
+          {
+            "name": "output-contract",
+            "version": "1",
+            "kind": "contract"
+          },
+          {
+            "name": "source-binding",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "task-result",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "action-policy",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "failure-criteria",
+            "version": "1",
+            "kind": "outcome"
+          }
+        ],
+        "splits": [
+          "development"
+        ],
+        "trials": 1,
+        "environment": {
+          "python": "3.15.0",
+          "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+        }
+      },
+      "summary": {
+        "development": {
+          "cases": 12,
+          "trials": 12,
+          "pass": 11,
+          "fail": 1,
+          "incomplete": 0,
+          "cases_passing_any_trial": 11,
+          "cases_passing_every_trial": 11,
+          "per_case": {
+            "v2-staging-lookup": {
+              "pass": 0,
+              "fail": 1,
+              "incomplete": 0
+            },
+            "v3-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-production-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "reader-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-role": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-version": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "conflicting-source": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-environment": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "invalid-release": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unsupported-operation": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "case_id": "v2-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "fail",
+          "check": "output-contract",
+          "kind": "contract",
+          "reason": "output must have exactly the fields required by the operation",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "v3-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment staging",
+            "citation": "rollback-v3-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "v3-production-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 3e-06
+        },
+        {
+          "case_id": "maintainer-proposal",
+          "split": "development",
+          "class": "action-policy",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": true,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "reader-proposal",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: maintainer role required for an action proposal",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-role",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unknown caller role",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-version",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "conflicting-source",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-environment",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: choose staging or production",
+          "output": null,
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "invalid-release",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: release must be an r-prefixed positive integer",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unsupported-operation",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unsupported operation: send for review",
+          "output": null,
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "maintainer-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 3e-06
+        }
+      ],
+      "boundary_counts": {
+        "pass": 11,
+        "response-contract": 1
+      },
+      "first_failures": [
+        {
+          "case_id": "v2-staging-lookup",
+          "verdict": "fail",
+          "boundary": "response-contract",
+          "reason": "output must have exactly the fields required by the operation"
+        }
+      ],
+      "slices": {
+        "version": {
+          "2": {
+            "pass": 0,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "3": {
+            "pass": 10,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "9": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "environment": {
+          "prod": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "production": {
+            "pass": 9,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "staging": {
+            "pass": 1,
+            "fail": 1,
+            "incomplete": 0
+          }
+        },
+        "role": {
+          "administrator": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "maintainer": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "reader": {
+            "pass": 7,
+            "fail": 1,
+            "incomplete": 0
+          }
+        },
+        "operation": {
+          "execute_rollback": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "lookup_rollback": {
+            "pass": 7,
+            "fail": 1,
+            "incomplete": 0
+          },
+          "propose_rollback": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    "no_output": {
+      "manifest": {
+        "harness_version": "1",
+        "harness_sha256": "3592391910f8ad4907e36d61e6885e4938db112eafc4e093e8eb2bd362f66a54",
+        "started_at": "2026-10-24T06:24:44+00:00",
+        "case_set": {
+          "name": "docuctl-application-contract-v1",
+          "sha256": "08ce5e26ca09717d52e93af1e3d24444d635de0d125d6bed00f6cd9197c5891f"
+        },
+        "task": {
+          "name": "docuctl-request-contract",
+          "version": "1",
+          "sha256": "5f4fca82e868fa3bb58c261bb257a6e012c9d2b02b5072689e727a7825b76a30"
+        },
+        "system": {
+          "name": "controlled-no_output",
+          "version": "1",
+          "mode": "local_function",
+          "model": null,
+          "prompt": null,
+          "tools": null
+        },
+        "recording_sha256": null,
+        "graders": [
+          {
+            "name": "output-contract",
+            "version": "1",
+            "kind": "contract"
+          },
+          {
+            "name": "source-binding",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "task-result",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "action-policy",
+            "version": "1",
+            "kind": "outcome"
+          },
+          {
+            "name": "failure-criteria",
+            "version": "1",
+            "kind": "outcome"
+          }
+        ],
+        "splits": [
+          "development"
+        ],
+        "trials": 1,
+        "environment": {
+          "python": "3.15.0",
+          "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+        }
+      },
+      "summary": {
+        "development": {
+          "cases": 12,
+          "trials": 12,
+          "pass": 11,
+          "fail": 0,
+          "incomplete": 1,
+          "cases_passing_any_trial": 11,
+          "cases_passing_every_trial": 11,
+          "per_case": {
+            "v2-staging-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "v3-staging-lookup": {
+              "pass": 0,
+              "fail": 0,
+              "incomplete": 1
+            },
+            "v3-production-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "reader-proposal": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-role": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-version": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "conflicting-source": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unknown-environment": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "invalid-release": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "unsupported-operation": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            },
+            "maintainer-lookup": {
+              "pass": 1,
+              "fail": 0,
+              "incomplete": 0
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "case_id": "v2-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl rollback RELEASE --env staging",
+            "citation": "rollback-v2-staging",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "v3-staging-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "incomplete",
+          "check": null,
+          "kind": null,
+          "reason": "no output (returned None)",
+          "output": null,
+          "metadata": {},
+          "latency_s": 3e-06
+        },
+        {
+          "case_id": "v3-production-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "maintainer-proposal",
+          "split": "development",
+          "class": "action-policy",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "bounded_workflow",
+            "proposed_command": "docuctl releases rollback r41 --environment production",
+            "citation": "rollback-v3-production",
+            "approval_required": true,
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        },
+        {
+          "case_id": "reader-proposal",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: maintainer role required for an action proposal",
+          "output": null,
+          "metadata": {},
+          "latency_s": 6e-06
+        },
+        {
+          "case_id": "unknown-role",
+          "split": "development",
+          "class": "authorization",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unknown caller role",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-version",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "conflicting-source",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: expected one matching page; review missing or conflicting evidence",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unknown-environment",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: choose staging or production",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "invalid-release",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: release must be an r-prefixed positive integer",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "unsupported-operation",
+          "split": "development",
+          "class": "input-contract",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "rejected as expected: Refused: unsupported operation: send for review",
+          "output": null,
+          "metadata": {},
+          "latency_s": 5e-06
+        },
+        {
+          "case_id": "maintainer-lookup",
+          "split": "development",
+          "class": "source-selection",
+          "trial": 0,
+          "verdict": "pass",
+          "check": null,
+          "kind": null,
+          "reason": "",
+          "output": {
+            "architecture": "filtered_lookup",
+            "command_template": "docuctl releases rollback RELEASE --environment production",
+            "citation": "rollback-v3-production",
+            "executed": false
+          },
+          "metadata": {},
+          "latency_s": 4e-06
+        }
+      ],
+      "boundary_counts": {
+        "dependency-or-no-output": 1,
+        "pass": 11
+      },
+      "first_failures": [
+        {
+          "case_id": "v3-staging-lookup",
+          "verdict": "incomplete",
+          "boundary": "dependency-or-no-output",
+          "reason": "no output (returned None)"
+        }
+      ],
+      "slices": {
+        "version": {
+          "2": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "3": {
+            "pass": 9,
+            "fail": 0,
+            "incomplete": 1
+          },
+          "9": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          }
+        },
+        "environment": {
+          "prod": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "production": {
+            "pass": 9,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "staging": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 1
+          }
+        },
+        "role": {
+          "administrator": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "maintainer": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "reader": {
+            "pass": 7,
+            "fail": 0,
+            "incomplete": 1
+          }
+        },
+        "operation": {
+          "execute_rollback": {
+            "pass": 1,
+            "fail": 0,
+            "incomplete": 0
+          },
+          "lookup_rollback": {
+            "pass": 7,
+            "fail": 0,
+            "incomplete": 1
+          },
+          "propose_rollback": {
+            "pass": 3,
+            "fail": 0,
+            "incomplete": 0
+          }
+        }
+      }
+    }
+  }
+}

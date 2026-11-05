@@ -1,0 +1,1 @@
+Historical first complete platform execution. Raw outputs and code snapshot are preserved. The active execution adds equivalent-UTC timestamp handling to the delayed-outcome join. Archived backend paths retain their original execution locations; inspect these as records rather than executing this workspace.

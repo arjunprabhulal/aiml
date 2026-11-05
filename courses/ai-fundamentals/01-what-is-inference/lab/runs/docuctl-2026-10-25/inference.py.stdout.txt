@@ -1,0 +1,10 @@
+family          gemma4
+parameters      4.6B
+quantization    Q4_K_M
+context_length  131072
+
+--- without the docs
+The command `docuctl rollback --to r41` is used to revert the current state of a document to a specific revision identified as "r41". This action effectively undoes any recent changes and restores the document to the exact version present at revision r41.
+
+--- with docs/rollback.md in the prompt
+`docuctl rollback --to r41` moves an environment back to the release named r41. It does not rebuild anything; instead, it points traffic to that specified release.

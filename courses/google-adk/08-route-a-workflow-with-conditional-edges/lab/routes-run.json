@@ -1,0 +1,179 @@
+{
+  "environment": {
+    "google-adk": "2.12.0",
+    "google-genai": "2.32.0",
+    "model": "gemini-3.8-flash"
+  },
+  "runs": [
+    {
+      "log": "build-broken.log",
+      "events": [
+        {
+          "author": "build_router",
+          "node_info": {
+            "path": "build_router@1/classify_build@1",
+            "output_for": [
+              "build_router@1/classify_build@1"
+            ]
+          },
+          "output": {
+            "links": [
+              {
+                "page": "quickstart.md",
+                "target": "install.md#ollama-setup",
+                "reason": "anchor not found"
+              },
+              {
+                "page": "tools/search-docs.md",
+                "target": "reference/citation.md",
+                "reason": "page not found"
+              },
+              {
+                "page": "troubleshooting.md",
+                "target": "reference/cli-flags.md",
+                "reason": "page not found"
+              }
+            ]
+          },
+          "route": "broken_links",
+          "state": {
+            "pages": [
+              "index.md",
+              "install.md",
+              "quickstart.md",
+              "tools/search-docs.md",
+              "reference/citations.md",
+              "reference/cli.md",
+              "troubleshooting.md"
+            ]
+          }
+        },
+        {
+          "author": "triage_links",
+          "node_info": {
+            "path": "build_router@1/triage_links@1",
+            "output_for": [
+              "build_router@1/triage_links@1"
+            ]
+          },
+          "output": {
+            "fixes": [
+              {
+                "page": "quickstart.md",
+                "target": "install.md#ollama-setup",
+                "replacement": "install.md#ollama"
+              },
+              {
+                "page": "tools/search-docs.md",
+                "target": "reference/citation.md",
+                "replacement": "reference/citations.md"
+              },
+              {
+                "page": "troubleshooting.md",
+                "target": "reference/cli-flags.md",
+                "replacement": "reference/cli.md"
+              }
+            ]
+          },
+          "message": "{\"fixes\":[{\"page\":\"quickstart.md\",\"target\":\"install.md#ollama-setup\",\"replacement\":\"install.md#ollama\"},{\"page\":\"tools/search-docs.md\",\"target\":\"reference/citation.md\",\"replacement\":\"reference/citations.md\"},{\"page\":\"troubleshooting.md\",\"target\":\"reference/cli-flags.md\",\"replacement\":\"reference/cli.md\"}]}"
+        },
+        {
+          "author": "build_router",
+          "node_info": {
+            "path": "build_router@1/check_fixes@1"
+          },
+          "message": "Suggested link fixes:\n- quickstart.md: install.md#ollama-setup -> install.md#ollama (ok)\n- tools/search-docs.md: reference/citation.md -> reference/citations.md (ok)\n- troubleshooting.md: reference/cli-flags.md -> reference/cli.md (ok)"
+        }
+      ],
+      "model_calls": [
+        {
+          "system": "19d14e8d0996",
+          "request": "{\"links\": [{\"page\": \"quickstart.md\", \"target\": \"install.md#ollama-setup\", \"reason\": \"anchor not found\"}, {\"page\": \"tools/search-docs.md\", \"target\": \"reference/citation.md\", \"reason\": \"page not found\"}, {\"page\": \"troubleshooting.md\", \"target\": \"reference/cli-flags.md\", \"reason\": \"page not found\"}]}",
+          "reply": {
+            "model_version": "gemini-3.8-flash",
+            "content": {
+              "parts": [
+                {
+                  "text": "{\"fixes\":[{\"page\":\"quickstart.md\",\"target\":\"install.md#ollama-setup\",\"replacement\":\"install.md#ollama\"},{\"page\":\"tools/search-docs.md\",\"target\":\"reference/citation.md\",\"replacement\":\"reference/citations.md\"},{\"page\":\"troubleshooting.md\",\"target\":\"reference/cli-flags.md\",\"replacement\":\"reference/cli.md\"}]}"
+                }
+              ],
+              "role": "model"
+            },
+            "finish_reason": "STOP",
+            "usage_metadata": {
+              "candidates_token_count": 82,
+              "prompt_token_count": 169,
+              "prompt_tokens_details": [
+                {
+                  "modality": "TEXT",
+                  "token_count": 169
+                }
+              ],
+              "thoughts_token_count": 2882,
+              "total_token_count": 3133
+            }
+          },
+          "latency_s": 25.38
+        }
+      ]
+    },
+    {
+      "log": "build-clean.log",
+      "events": [
+        {
+          "author": "build_router",
+          "node_info": {
+            "path": "build_router@1/classify_build@1",
+            "output_for": [
+              "build_router@1/classify_build@1"
+            ]
+          },
+          "output": {
+            "links": []
+          },
+          "route": "clean"
+        },
+        {
+          "author": "build_router",
+          "node_info": {
+            "path": "build_router@1/report_clean@1"
+          },
+          "message": "Build passed: no broken links."
+        }
+      ],
+      "model_calls": []
+    },
+    {
+      "log": "build-incomplete.log",
+      "events": [
+        {
+          "author": "build_router",
+          "node_info": {
+            "path": "build_router@1/classify_build@1",
+            "output_for": [
+              "build_router@1/classify_build@1"
+            ]
+          },
+          "output": {
+            "links": [
+              {
+                "page": "quickstart.md",
+                "target": "install.md#ollama-setup",
+                "reason": "anchor not found"
+              }
+            ]
+          },
+          "route": "incomplete"
+        },
+        {
+          "author": "build_router",
+          "node_info": {
+            "path": "build_router@1/ask_for_rerun@1"
+          },
+          "message": "The build log has no 'Build finished' line. Rerun the build before triage."
+        }
+      ],
+      "model_calls": []
+    }
+  ]
+}

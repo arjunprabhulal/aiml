@@ -1,0 +1,99 @@
+{
+  "rubric_sha256": "9879ecc82fcfb369b2fbbb1993fe841db97ebd11a05e7e825c772764ceb47b47",
+  "verdicts": [
+    "pass",
+    "fail",
+    "needs_review"
+  ],
+  "cases": {
+    "utf8-write": {
+      "answer_sha256": "fdd6cab46d2a22de57652e9bc42d42b85f292cf81a7e1db2f400f42032632bc9",
+      "criteria": [
+        "Uses Path.write_text with encoding=\"utf-8\".",
+        "Does not confuse newline handling or ensure_ascii with file encoding."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "replace-file": {
+      "answer_sha256": "b91f4f2de5570781fad3aeb5d166120e9ecfe31cd7fdc4352b6c88973c665dc1",
+      "criteria": [
+        "Says existing contents are overwritten/replaced, not appended.",
+        "Does not invent preservation or backup behavior."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "json-result-type": {
+      "answer_sha256": "d62e53613c124167ce9b5c12070081740065dee4a537adc96c16d635c10dc1f7",
+      "criteria": [
+        "Says json.dumps returns str/text, not bytes.",
+        "Does not claim it writes a file or selects file encoding."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "backup-schedule": {
+      "answer_sha256": "d6c716363e129f1cc3b1d28a763a99202be5df2f179eacebf9abf97f7d5e753d",
+      "criteria": [
+        "Returns not_in_docs without a backup interval or service-policy claim.",
+        "States only that this bounded corpus lacks that policy."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "read-newline-312": {
+      "answer_sha256": "6126ff5c7c154f1e03ff10a86be83f375f1564a09ca56815d9ffd992f318affd",
+      "criteria": [
+        "Answers no for Python3.12, using the 3.12 signature/target.",
+        "Does not apply the 3.13 addition to3.12."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "read-newline-313": {
+      "answer_sha256": "095f6e4c6dfe204b570a9947698cf29934a0969eac9e2e23285f631d8402c7ce",
+      "criteria": [
+        "Answers yes for Python3.13 using the 3.13 source.",
+        "Treats this source as documented-only; no claim of executing Python3.13."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "json-throughput": {
+      "answer_sha256": "120d1c7631de80402ff8bdec9b6984cf54350b05197182cadad206714c1d947d",
+      "criteria": [
+        "Returns not_in_docs without invented objects/second or deployment measurements.",
+        "Does not turn API semantics into a measured performance claim."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    },
+    "create-parents": {
+      "answer_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "criteria": [
+        "Returns not_in_docs because the supplied summaries omit parent-directory behavior.",
+        "An outside-corpus Python fact is not a supported answer for this task."
+      ],
+      "verdict": "unreviewed",
+      "reviewer": null,
+      "supporting_or_contradicting_passage": null,
+      "notes": null
+    }
+  },
+  "note": "Automatic checks never fill this human semantic review."
+}

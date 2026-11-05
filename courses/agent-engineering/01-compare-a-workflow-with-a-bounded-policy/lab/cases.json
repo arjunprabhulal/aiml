@@ -1,0 +1,146 @@
+[
+  {
+    "id": "deploy-direct",
+    "family": "deploy",
+    "question": "deploy staging",
+    "version": "v2",
+    "expected_doc": "deploy-v2",
+    "expected_command": "docuctl deploy --env staging"
+  },
+  {
+    "id": "deploy-alias",
+    "family": "deploy",
+    "question": "rollout staging",
+    "version": "v2",
+    "expected_doc": "deploy-v2",
+    "expected_command": "docuctl deploy --env staging"
+  },
+  {
+    "id": "rollback-direct",
+    "family": "rollback",
+    "question": "rollback staging",
+    "version": "v2",
+    "expected_doc": "rollback-v2",
+    "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+  },
+  {
+    "id": "rollback-alias",
+    "family": "rollback",
+    "question": "undo a rollout staging",
+    "version": "v2",
+    "expected_doc": "rollback-v2",
+    "expected_command": "docuctl rollback --env staging --release LAST_GOOD"
+  },
+  {
+    "id": "tokens-direct",
+    "family": "tokens",
+    "question": "tokens rotate staging",
+    "version": "v2",
+    "expected_doc": "tokens-v2",
+    "expected_command": "docuctl tokens rotate --env staging --scope deploy"
+  },
+  {
+    "id": "tokens-alias",
+    "family": "tokens",
+    "question": "renew a credential staging",
+    "version": "v2",
+    "expected_doc": "tokens-v2",
+    "expected_command": "docuctl tokens rotate --env staging --scope deploy"
+  },
+  {
+    "id": "config-direct",
+    "family": "config",
+    "question": "config staging",
+    "version": "v2",
+    "expected_doc": "config-v2",
+    "expected_command": "docuctl config show --env staging"
+  },
+  {
+    "id": "config-alias",
+    "family": "config",
+    "question": "inspect settings staging",
+    "version": "v2",
+    "expected_doc": "config-v2",
+    "expected_command": "docuctl config show --env staging"
+  },
+  {
+    "id": "migrate-direct",
+    "family": "migrate",
+    "question": "migrate plan staging",
+    "version": "v2",
+    "expected_doc": "migrate-v2",
+    "expected_command": "docuctl migrate plan --env staging"
+  },
+  {
+    "id": "migrate-alias",
+    "family": "migrate",
+    "question": "preview schema staging",
+    "version": "v2",
+    "expected_doc": "migrate-v2",
+    "expected_command": "docuctl migrate plan --env staging"
+  },
+  {
+    "id": "releases-direct",
+    "family": "releases",
+    "question": "releases staging",
+    "version": "v2",
+    "expected_doc": "releases-v2",
+    "expected_command": "docuctl releases list --env staging"
+  },
+  {
+    "id": "releases-alias",
+    "family": "releases",
+    "question": "list revisions staging",
+    "version": "v2",
+    "expected_doc": "releases-v2",
+    "expected_command": "docuctl releases list --env staging"
+  },
+  {
+    "id": "logs-direct",
+    "family": "logs",
+    "question": "logs staging",
+    "version": "v2",
+    "expected_doc": "logs-v2",
+    "expected_command": "docuctl logs --env staging --tail 20"
+  },
+  {
+    "id": "logs-alias",
+    "family": "logs",
+    "question": "diagnose staging",
+    "version": "v2",
+    "expected_doc": "logs-v2",
+    "expected_command": "docuctl logs --env staging --tail 20"
+  },
+  {
+    "id": "health-direct",
+    "family": "health",
+    "question": "health staging",
+    "version": "v2",
+    "expected_doc": "health-v2",
+    "expected_command": "docuctl health --env staging"
+  },
+  {
+    "id": "health-alias",
+    "family": "health",
+    "question": "readiness staging",
+    "version": "v2",
+    "expected_doc": "health-v2",
+    "expected_command": "docuctl health --env staging"
+  },
+  {
+    "id": "old-deploy-1",
+    "family": "old-deploy",
+    "question": "deploy staging",
+    "version": "v1",
+    "expected_doc": "deploy-v1",
+    "expected_command": "docuctl release create --target staging"
+  },
+  {
+    "id": "old-deploy-2",
+    "family": "old-deploy",
+    "question": "rollout staging",
+    "version": "v1",
+    "expected_doc": "deploy-v1",
+    "expected_command": "docuctl release create --target staging"
+  }
+]

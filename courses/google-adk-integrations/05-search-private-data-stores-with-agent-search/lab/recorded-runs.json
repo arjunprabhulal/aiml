@@ -1,0 +1,425 @@
+{
+ "model": "gemini-3.8-flash",
+ "not_indexed": {
+  "question": "Why did staging deploys get stuck on September 30, and what changed?",
+  "team": "platform",
+  "transcript": "search ['staging deploys stuck September 30 postmortem', 'September 30 staging deploys stuck', '\"September 30\" \"staging\" deploy stuck', 'staging deploy stuck \"September 30\"'] -> []\nanswer I found no document regarding staging deploys getting stuck on September 30.",
+  "retrieval": [
+   {
+    "vertex_ai_search": {
+     "datastore": "projects/vertex-ai-experminent/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed",
+     "filter": "team: ANY(\"platform\")",
+     "max_results": 3
+    }
+   }
+  ],
+  "sources": [],
+  "model_turns": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "I found no document regarding staging deploys getting stuck on September 30."
+      }
+     ],
+     "role": "model"
+    },
+    "grounding_metadata": {
+     "retrieval_metadata": {},
+     "retrieval_queries": [
+      "staging deploys stuck September 30 postmortem",
+      "September 30 staging deploys stuck",
+      "\"September 30\" \"staging\" deploy stuck",
+      "staging deploy stuck \"September 30\""
+     ]
+    }
+   }
+  ]
+ },
+ "runs": {
+  "postmortem": {
+   "question": "Why did staging deploys get stuck on September 30, and what changed?",
+   "team": "platform",
+   "transcript": "search ['postmortem staging deploy September 30'] -> ['Postmortem: staging deploys stuck for 3 hours (2026-09-30)']\nanswer According to the document **Postmortem: staging deploys stuck for 3 hours (2026-09-30)**:\n\n### Why staging deploys got stuck\nA deploy job was killed during a node drain while holding the PostgreSQL advisory lock for staging. Because the advisory lock was tied to the database session and the job's connection pooler kept that session open, the lock was never released. Consequently, subsequent staging deploys waited indefinitely at the \"acquiring environment lock\" step.\n\n### What changed\n* **Lock handling:** Deploy jobs now acquire the lock using `pg_try_advisory_xact_lock` inside a transaction, ensuring the lock automatically releases when the transaction ends.\n* **Alerting:** An alert was added to trigger whenever an environment lock is held for longer than 20 minutes.\n* **Documentation follow-up:** A task was assigned to the docs team to document how to manually release a stuck lock.",
+   "retrieval": [
+    {
+     "vertex_ai_search": {
+      "datastore": "projects/vertex-ai-experminent/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed",
+      "filter": "team: ANY(\"platform\")",
+      "max_results": 3
+     }
+    }
+   ],
+   "sources": [
+    "Postmortem: staging deploys stuck for 3 hours (2026-09-30)"
+   ],
+   "model_turns": [
+    {
+     "content": {
+      "parts": [
+       {
+        "text": "According to the document **Postmortem: staging deploys stuck for 3 hours (2026-09-30)**:\n\n### Why staging deploys got stuck\nA deploy job was killed during a node drain while holding the PostgreSQL advisory lock for staging. Because the advisory lock was tied to the database session and the job's connection pooler kept that session open, the lock was never released. Consequently, subsequent staging deploys waited indefinitely at the \"acquiring environment lock\" step.\n\n### What changed\n* **Lock handling:** Deploy jobs now acquire the lock using `pg_try_advisory_xact_lock` inside a transaction, ensuring the lock automatically releases when the transaction ends.\n* **Alerting:** An alert was added to trigger whenever an environment lock is held for longer than 20 minutes.\n* **Documentation follow-up:** A task was assigned to the docs team to document how to manually release a stuck lock."
+       }
+      ],
+      "role": "model"
+     },
+     "grounding_metadata": {
+      "grounding_chunks": [
+       {
+        "retrieved_context": {
+         "document_name": "projects/<project-number>/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed/branches/0/documents/postmortem-2026-09-30-stuck-deploys",
+         "text": "Postmortem: staging deploys stuck for 3 hours (2026-09-30)\nTeam: platform\nSeverity: SEV-3 Summary: from 09:10 to 12:05 UTC, every staging deploy waited forever at the \"acquiring environment lock\" step. Cause: a deploy job was killed during a node drain while it held the PostgreSQL advisory lock for staging. The lock belongs to the database session, and the job's connection pooler kept that session open, so the lock was never released. Fix: the deploy job now takes the lock with pg_try_advisory_xact_lock inside a transaction, so the lock ends with the transaction. We also added an alert when one environment lock is held for more than 20 minutes. Follow-up: document how to release a stuck lock by hand (owner: docs team). ",
+         "title": "Postmortem: staging deploys stuck for 3 hours (2026-09-30)"
+        }
+       }
+      ],
+      "grounding_supports": [
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "end_index": 88,
+         "text": "According to the document **Postmortem: staging deploys stuck for 3 hours (2026-09-30)**"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 125,
+         "end_index": 223,
+         "text": "A deploy job was killed during a node drain while holding the PostgreSQL advisory lock for staging"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 225,
+         "end_index": 367,
+         "text": "Because the advisory lock was tied to the database session and the job's connection pooler kept that session open, the lock was never released"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 369,
+         "end_index": 470,
+         "text": "Consequently, subsequent staging deploys waited indefinitely at the \"acquiring environment lock\" step"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 492,
+         "end_index": 666,
+         "text": "**Lock handling:** Deploy jobs now acquire the lock using `pg_try_advisory_xact_lock` inside a transaction, ensuring the lock automatically releases when the transaction ends"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 670,
+         "end_index": 777,
+         "text": "**Alerting:** An alert was added to trigger whenever an environment lock is held for longer than 20 minutes"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 781,
+         "end_index": 895,
+         "text": "**Documentation follow-up:** A task was assigned to the docs team to document how to manually release a stuck lock"
+        }
+       }
+      ],
+      "retrieval_queries": [
+       "postmortem staging deploy September 30"
+      ]
+     }
+    }
+   ]
+  },
+  "rotate": {
+   "question": "How do I rotate the release signing key, and when can I revoke the old one?",
+   "team": "platform",
+   "transcript": "search ['rotate release signing key runbook revoke old'] -> ['Runbook: rotate the release signing key']\nanswer Based on the document **\"Runbook: rotate the release signing key\"**, here is how to rotate the release signing key and when to revoke the old one:\n\n### How to rotate the release signing key:\n1. **Create the new key:** Run `docuctl keys create --purpose release-signing`. This stores the key under a new version while the old version remains valid.\n2. **Promote the new key:** Run `docuctl keys promote <new-version>`. From this point forward, new releases will be signed with the new key.\n\n### When to revoke the old key:\n3. **Wait 7 days:** Allow 7 days so that every running release has either been redeployed or verified with the new key.\n4. **Revoke the old key:** After the 7-day waiting period, revoke the old key by running:\n   ```bash\n   docuctl keys revoke <old-version>\n   ```\n   *(Note: Never delete or revoke the old version before waiting the 7 days; otherwise, releases signed with the old key will fail verification and cannot be rolled back to.)*",
+   "retrieval": [
+    {
+     "vertex_ai_search": {
+      "datastore": "projects/vertex-ai-experminent/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed",
+      "filter": "team: ANY(\"platform\")",
+      "max_results": 3
+     }
+    }
+   ],
+   "sources": [
+    "Runbook: rotate the release signing key"
+   ],
+   "model_turns": [
+    {
+     "content": {
+      "parts": [
+       {
+        "text": "Based on the document **\"Runbook: rotate the release signing key\"**, here is how to rotate the release signing key and when to revoke the old one:\n\n### How to rotate the release signing key:\n1. **Create the new key:** Run `docuctl keys create --purpose release-signing`. This stores the key under a new version while the old version remains valid.\n2. **Promote the new key:** Run `docuctl keys promote <new-version>`. From this point forward, new releases will be signed with the new key.\n\n### When to revoke the old key:\n3. **Wait 7 days:** Allow 7 days so that every running release has either been redeployed or verified with the new key.\n4. **Revoke the old key:** After the 7-day waiting period, revoke the old key by running:\n   ```bash\n   docuctl keys revoke <old-version>\n   ```\n   *(Note: Never delete or revoke the old version before waiting the 7 days; otherwise, releases signed with the old key will fail verification and cannot be rolled back to.)*"
+       }
+      ],
+      "role": "model"
+     },
+     "grounding_metadata": {
+      "grounding_chunks": [
+       {
+        "retrieved_context": {
+         "document_name": "projects/<project-number>/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed/branches/0/documents/runbook-rotate-signing-key",
+         "text": "Runbook: rotate the release signing key\nTeam: platform\nLast reviewed: 2026-09-14 docuctl signs every release artifact with the release signing key kept in the secret store as RELEASE_SIGNING_KEY. Rotate it every 180 days, or at once if it may have leaked. 1. Create the new key with docuctl keys create --purpose release-signing. It is stored under a new version; the old version stays valid. 2. Run docuctl keys promote <new-version>. New releases are signed with the new key from this point. 3. Wait 7 days, so every running release has been redeployed or verified with the new key. 4. Run docuctl keys revoke <old-version>. Never delete the old version before step 4: releases signed with it would fail verification and could not be rolled back to. ",
+         "title": "Runbook: rotate the release signing key"
+        }
+       }
+      ],
+      "grounding_supports": [
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 194,
+         "end_index": 269,
+         "text": "**Create the new key:** Run `docuctl keys create --purpose release-signing`"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 271,
+         "end_index": 346,
+         "text": "This stores the key under a new version while the old version remains valid"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 351,
+         "end_index": 416,
+         "text": "**Promote the new key:** Run `docuctl keys promote <new-version>`"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 418,
+         "end_index": 487,
+         "text": "From this point forward, new releases will be signed with the new key"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 525,
+         "end_index": 640,
+         "text": "**Wait 7 days:** Allow 7 days so that every running release has either been redeployed or verified with the new key"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 790,
+         "end_index": 959,
+         "text": "*(Note: Never delete or revoke the old version before waiting the 7 days; otherwise, releases signed with the old key will fail verification and cannot be rolled back to"
+        }
+       }
+      ],
+      "retrieval_queries": [
+       "rotate release signing key runbook revoke old"
+      ]
+     }
+    }
+   ]
+  },
+  "team-docs": {
+   "question": "How do I rotate the release signing key?",
+   "team": "docs",
+   "transcript": "search ['rotate release signing key runbook', 'release signing key rotation', '\"release signing key\" rotate OR rotation', 'signing key rotation runbook'] -> []\nanswer I found no document on how to rotate the release signing key.",
+   "retrieval": [
+    {
+     "vertex_ai_search": {
+      "datastore": "projects/vertex-ai-experminent/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed",
+      "filter": "team: ANY(\"docs\")",
+      "max_results": 3
+     }
+    }
+   ],
+   "sources": [],
+   "model_turns": [
+    {
+     "content": {
+      "parts": [
+       {
+        "text": "I found no document on how to rotate the release signing key."
+       }
+      ],
+      "role": "model"
+     },
+     "grounding_metadata": {
+      "retrieval_metadata": {},
+      "retrieval_queries": [
+       "rotate release signing key runbook",
+       "release signing key rotation",
+       "\"release signing key\" rotate OR rotation",
+       "signing key rotation runbook"
+      ]
+     }
+    }
+   ]
+  },
+  "team-platform": {
+   "question": "How do I rotate the release signing key?",
+   "team": "platform",
+   "transcript": "search ['rotate release signing key runbook'] -> ['Runbook: rotate the release signing key']\nanswer Based on the document **Runbook: rotate the release signing key**, here are the steps to rotate the release signing key:\n\n1. **Create the new key:**  \n   Run `docuctl keys create --purpose release-signing`. This stores the key under a new version while keeping the old version valid.\n\n2. **Promote the new key:**  \n   Run `docuctl keys promote <new-version>`. From this point forward, new releases will be signed with the new key.\n\n3. **Wait 7 days:**  \n   Allow 7 days to pass so that every running release has either been redeployed or verified with the new key.\n\n4. **Revoke the old key:**  \n   Run `docuctl keys revoke <old-version>`. \n\n*(Note: Never delete the old key version before step 4, as releases signed with it would fail verification and could not be rolled back to.)*",
+   "retrieval": [
+    {
+     "vertex_ai_search": {
+      "datastore": "projects/vertex-ai-experminent/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed",
+      "filter": "team: ANY(\"platform\")",
+      "max_results": 3
+     }
+    }
+   ],
+   "sources": [
+    "Runbook: rotate the release signing key"
+   ],
+   "model_turns": [
+    {
+     "content": {
+      "parts": [
+       {
+        "text": "Based on the document **Runbook: rotate the release signing key**, here are the steps to rotate the release signing key:\n\n1. **Create the new key:**  \n   Run `docuctl keys create --purpose release-signing`. This stores the key under a new version while keeping the old version valid.\n\n2. **Promote the new key:**  \n   Run `docuctl keys promote <new-version>`. From this point forward, new releases will be signed with the new key.\n\n3. **Wait 7 days:**  \n   Allow 7 days to pass so that every running release has either been redeployed or verified with the new key.\n\n4. **Revoke the old key:**  \n   Run `docuctl keys revoke <old-version>`. \n\n*(Note: Never delete the old key version before step 4, as releases signed with it would fail verification and could not be rolled back to.)*"
+       }
+      ],
+      "role": "model"
+     },
+     "grounding_metadata": {
+      "grounding_chunks": [
+       {
+        "retrieved_context": {
+         "document_name": "projects/<project-number>/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed/branches/0/documents/runbook-rotate-signing-key",
+         "text": "Runbook: rotate the release signing key\nTeam: platform\nLast reviewed: 2026-09-14 docuctl signs every release artifact with the release signing key kept in the secret store as RELEASE_SIGNING_KEY. Rotate it every 180 days, or at once if it may have leaked. 1. Create the new key with docuctl keys create --purpose release-signing. It is stored under a new version; the old version stays valid. 2. Run docuctl keys promote <new-version>. New releases are signed with the new key from this point. 3. Wait 7 days, so every running release has been redeployed or verified with the new key. 4. Run docuctl keys revoke <old-version>. Never delete the old version before step 4: releases signed with it would fail verification and could not be rolled back to. ",
+         "title": "Runbook: rotate the release signing key"
+        }
+       }
+      ],
+      "grounding_supports": [
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 207,
+         "end_index": 282,
+         "text": "This stores the key under a new version while keeping the old version valid"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 360,
+         "end_index": 429,
+         "text": "From this point forward, new releases will be signed with the new key"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 457,
+         "end_index": 563,
+         "text": "Allow 7 days to pass so that every running release has either been redeployed or verified with the new key"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 598,
+         "end_index": 637,
+         "text": "Run `docuctl keys revoke <old-version>`"
+        }
+       },
+       {
+        "grounding_chunk_indices": [
+         0
+        ],
+        "segment": {
+         "start_index": 641,
+         "end_index": 779,
+         "text": "*(Note: Never delete the old key version before step 4, as releases signed with it would fail verification and could not be rolled back to"
+        }
+       }
+      ],
+      "retrieval_queries": [
+       "rotate release signing key runbook"
+      ]
+     }
+    }
+   ]
+  },
+  "not-found": {
+   "question": "What is our on-call rotation for the docs site?",
+   "team": "docs",
+   "transcript": "search ['docs site on-call rotation runbook', 'team docs site on call rotation decision record'] -> []\nanswer I found no document answering this question.",
+   "retrieval": [
+    {
+     "vertex_ai_search": {
+      "datastore": "projects/vertex-ai-experminent/locations/global/collections/default_collection/dataStores/aiml-lesson-docuctl-02c2064fed",
+      "filter": "team: ANY(\"docs\")",
+      "max_results": 3
+     }
+    }
+   ],
+   "sources": [],
+   "model_turns": [
+    {
+     "content": {
+      "parts": [
+       {
+        "text": "I found no document answering this question."
+       }
+      ],
+      "role": "model"
+     },
+     "grounding_metadata": {
+      "retrieval_metadata": {},
+      "retrieval_queries": [
+       "docs site on-call rotation runbook",
+       "team docs site on call rotation decision record"
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

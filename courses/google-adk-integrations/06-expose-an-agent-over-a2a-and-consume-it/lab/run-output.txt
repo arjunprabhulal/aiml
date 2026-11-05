@@ -1,0 +1,29 @@
+$ python client.py "How do I roll back production to r41?"   # run: rollback
+release_coordinator: call transfer_to_agent {'agent_name': 'docs_assistant'}
+docs_assistant: call read_page {'page': 'rollback'}
+docs_assistant: According to the `rollback` page of the docuctl documentation, you can roll back production to r41 by running:
+
+```bash
+docuctl rollback --env production --to r41
+```
+
+$ python client.py "How do I roll back production to r41?"   # run: timeout_ignored
+release_coordinator: call transfer_to_agent {'agent_name': 'docs_assistant'}
+docs_assistant: call read_page {'page': 'rollback'}
+docs_assistant: According to the **rollback** documentation page, you can roll back production to r41 using the following command:
+
+```bash
+docuctl rollback --env production --to r41
+```
+
+$ python client.py "How do I roll back production to r41?"   # run: timeout
+release_coordinator: call transfer_to_agent {'agent_name': 'docs_assistant'}
+docs_assistant: error None A2A request failed: Client Request timed out
+
+$ python client.py "How do I roll back production to r41?"   # run: card_url
+release_coordinator: call transfer_to_agent {'agent_name': 'docs_assistant'}
+docs_assistant: error None Failed to initialize remote A2A agent: Failed to initialize remote A2A agent docs_assistant: Agent card RPC URL must have the same origin as the location the card was fetched from (http://localhost:64771/.well-known/agent-card.json): http://localhost:64772
+
+$ python client.py "How do I roll back production to r41?"   # run: server_down
+release_coordinator: call transfer_to_agent {'agent_name': 'docs_assistant'}
+docs_assistant: error None Failed to initialize remote A2A agent: Failed to initialize remote A2A agent docs_assistant: Failed to resolve AgentCard from URL http://localhost:64785/.well-known/agent-card.json: Network communication error fetching agent card from http://localhost:64785/.well-known/agent-card.json: All connection attempts failed

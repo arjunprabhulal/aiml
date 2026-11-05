@@ -1,0 +1,62 @@
+{
+ "checked_on": "2026-10-20",
+ "vision": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "google/gemma-4-E2B-it",
+  "publisher_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+  "model_card": "https://huggingface.co/google/gemma-4-E2B-it",
+  "license": "Apache-2.0",
+  "card_inputs": "text, image, audio",
+  "ollama_tag": "gemma4:e2b",
+  "ollama_digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+  "ollama_version": "0.32.14",
+  "ollama_capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ],
+  "quantization": "Q4_K_M",
+  "parameters": "4.6B",
+  "context_length": 131072,
+  "options": {
+   "temperature": 0,
+   "seed": 42,
+   "num_predict": 512,
+   "num_ctx": 8192,
+   "think": false
+  },
+  "recorded_with": {
+   "machine": "Apple M4 Pro, 48 GB memory (Mac16,7)",
+   "os": "macOS 27.0.1",
+   "python": "3.15.0",
+   "date": "2026-10-20"
+  },
+  "ollama_size": "4.6 GB"
+ },
+ "embedding": {
+  "checked_on": "2026-10-20",
+  "publisher_model": "Qwen/Qwen3-Embedding-0.6B",
+  "publisher_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "model_card": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B",
+  "license": "Apache-2.0",
+  "ollama_tag": "qwen3-embedding:0.6b",
+  "ollama_digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+  "ollama_version": "0.32.14",
+  "quantization": "Q8_0",
+  "parameters": "595.78M",
+  "context_length": 32768,
+  "dimensions": 1024,
+  "query_instruction": "Given a question about a runbook, a checklist or a chart, retrieve the passages and figures that answer it",
+  "document_instruction": null,
+  "ollama_size": "639 MB"
+ },
+ "generation_options": {
+  "temperature": 0,
+  "seed": 42,
+  "num_predict": 400,
+  "num_ctx": 8192,
+  "think": false
+ }
+}

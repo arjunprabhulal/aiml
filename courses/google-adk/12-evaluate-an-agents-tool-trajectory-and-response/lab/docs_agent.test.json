@@ -1,0 +1,43 @@
+{
+  "eval_set_id": "docs_agent_smoke",
+  "name": "docs_agent_smoke",
+  "description": "Two questions whose answer is on exactly one docs page.",
+  "eval_cases": [
+    {
+      "eval_id": "rebuild_index",
+      "conversation": [
+        {
+          "invocation_id": "rebuild_index-1",
+          "user_content": {"role": "user", "parts": [{"text": "How do I rebuild the search index?"}]},
+          "final_response": {"role": "model", "parts": [{"text": "Run docs-assistant index --rebuild, which drops the search index and builds it again from the docs folder (cli.md)."}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "list_pages", "args": {}},
+              {"name": "read_page", "args": {"path": "cli.md"}}
+            ],
+            "intermediate_responses": []
+          }
+        }
+      ],
+      "session_input": {"app_name": "docs_agent", "user_id": "dev", "state": {}}
+    },
+    {
+      "eval_id": "python_version",
+      "conversation": [
+        {
+          "invocation_id": "python_version-1",
+          "user_content": {"role": "user", "parts": [{"text": "Which Python version does the assistant need?"}]},
+          "final_response": {"role": "model", "parts": [{"text": "The assistant needs Python 3.12 or later (install.md)."}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "list_pages", "args": {}},
+              {"name": "read_page", "args": {"path": "install.md"}}
+            ],
+            "intermediate_responses": []
+          }
+        }
+      ],
+      "session_input": {"app_name": "docs_agent", "user_id": "dev", "state": {}}
+    }
+  ]
+}

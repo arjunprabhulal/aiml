@@ -1,0 +1,1914 @@
+{
+ "eval_set_result_id": "docs_assistant_scenarios_1792628641.323023",
+ "eval_set_result_name": "docs_assistant_scenarios_1792628641.323023",
+ "eval_set_id": "scenarios",
+ "eval_case_results": [
+  {
+   "eval_set_file": "scenarios",
+   "eval_set_id": "scenarios",
+   "eval_id": "1ae10b45",
+   "final_eval_status": 3,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "multi_turn_task_success_v1",
+     "threshold": 0.8,
+     "criterion": {
+      "threshold": 0.8,
+      "include_intermediate_responses_in_final": false
+     },
+     "eval_status": 3,
+     "details": {}
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 1.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 2.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "score": 844.5,
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {
+       "total_tokens": 844.5,
+       "input_tokens": 676.0,
+       "prompt_tokens": 676.0,
+       "output_tokens": 168.5,
+       "candidates_tokens": 31.5,
+       "reasoning_tokens": 137.0
+      }
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "score": 4.402,
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "e-18ddf256-a7c7-4e49-a99b-e0cc0efffb0f",
+      "user_content": {
+       "parts": [
+        {
+         "text": "The docs assistant isn't working for me."
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "What specific error message or symptom are you encountering?"
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 177,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 177
+           }
+          ],
+          "thoughts_token_count": 63,
+          "total_token_count": 250
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792628585.9138958,
+      "duration": 2.309,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses. If the question does not say what is failing, ask one short question about the symptom first.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "multi_turn_task_success_v1",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "eval_status": 3,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 0.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 1.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 250.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 250.0,
+         "input_tokens": 177.0,
+         "prompt_tokens": 177.0,
+         "output_tokens": 73.0,
+         "candidates_tokens": 10.0,
+         "reasoning_tokens": 63.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 2.309,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    },
+    {
+     "actual_invocation": {
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "user_content": {
+       "parts": [
+        {
+         "text": "It's telling me that it can't reach Ollama."
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "Check that `OLLAMA_API_BASE` points to a running Ollama server (troubleshooting.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_459215",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 266,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 266
+           }
+          ],
+          "thoughts_token_count": 82,
+          "total_token_count": 358
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_459215",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_426472",
+             "args": {
+              "path": "troubleshooting.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 19,
+          "prompt_token_count": 387,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 387
+           }
+          ],
+          "thoughts_token_count": 31,
+          "total_token_count": 437
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_426472",
+             "name": "read_page",
+             "response": {
+              "path": "troubleshooting.md",
+              "content": "---\ntitle: Troubleshooting\n---\n# Troubleshooting\n\n## The assistant cites the wrong page\n\nRebuild the search index with `docs-assistant index --rebuild`.\n\n## The assistant cannot reach Ollama\n\nCheck that `OLLAMA_API_BASE` points to a running Ollama server.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 24,
+          "prompt_token_count": 522,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 522
+           }
+          ],
+          "thoughts_token_count": 98,
+          "total_token_count": 644
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792628594.713805,
+      "duration": 6.495,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses. If the question does not say what is failing, ask one short question about the symptom first.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "multi_turn_task_success_v1",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "eval_status": 3,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 2.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 3.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 1439.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 1439.0,
+         "input_tokens": 1175.0,
+         "prompt_tokens": 1175.0,
+         "output_tokens": 264.0,
+         "candidates_tokens": 53.0,
+         "reasoning_tokens": 211.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 6.495,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-12df141e-447a-4431-9251-a86fbb51023b",
+   "session_details": {
+    "id": "adk-eval-session-12df141e-447a-4431-9251-a86fbb51023b",
+    "app_name": "docs_assistant",
+    "user_id": "dev",
+    "state": {
+     "__llm_request_key__": "5ee163f1-9a9e-4972-bedc-1105f04ed6a1"
+    },
+    "events": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "The docs assistant isn't working for me."
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-18ddf256-a7c7-4e49-a99b-e0cc0efffb0f",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "751216f7-ce44-48d0-83fb-a71f34166f3e",
+      "timestamp": 1792628583.6822941
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "What specific error message or symptom are you encountering?"
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "d3be3d92-df41-450f-976f-1192b9763a76"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 177,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 177
+        }
+       ],
+       "thoughts_token_count": 63,
+       "total_token_count": 250
+      },
+      "invocation_id": "e-18ddf256-a7c7-4e49-a99b-e0cc0efffb0f",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "d3be3d92-df41-450f-976f-1192b9763a76"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "cafa5598-317f-4249-b548-dab877ff5863",
+      "timestamp": 1792628583.699496
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "It's telling me that it can't reach Ollama."
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "b8b15421-bb61-4da5-a576-700efcddb104",
+      "timestamp": 1792628592.296183
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_459215",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "1d67b349-9e97-470e-ba3c-86169de54be1"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 266,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 266
+        }
+       ],
+       "thoughts_token_count": 82,
+       "total_token_count": 358
+      },
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "1d67b349-9e97-470e-ba3c-86169de54be1"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "35ad21e4-2314-4529-8503-be38a6453700",
+      "timestamp": 1792628592.297089
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_459215",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "617930fa-92f1-46f9-b5c5-933c619fb054",
+      "timestamp": 1792628594.7141252
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_426472",
+          "args": {
+           "path": "troubleshooting.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "53eb13a8-8acb-4f52-875f-051d12ace089"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 19,
+       "prompt_token_count": 387,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 387
+        }
+       ],
+       "thoughts_token_count": 31,
+       "total_token_count": 437
+      },
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "53eb13a8-8acb-4f52-875f-051d12ace089"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "0f1dbaf3-8c47-4a23-ac4d-96d48531ddbf",
+      "timestamp": 1792628594.714669
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_426472",
+          "name": "read_page",
+          "response": {
+           "path": "troubleshooting.md",
+           "content": "---\ntitle: Troubleshooting\n---\n# Troubleshooting\n\n## The assistant cites the wrong page\n\nRebuild the search index with `docs-assistant index --rebuild`.\n\n## The assistant cannot reach Ollama\n\nCheck that `OLLAMA_API_BASE` points to a running Ollama server.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "8289c863-a1ed-467b-a10f-1ae84c956980",
+      "timestamp": 1792628596.811737
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "Check that `OLLAMA_API_BASE` points to a running Ollama server (troubleshooting.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "5ee163f1-9a9e-4972-bedc-1105f04ed6a1"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 24,
+       "prompt_token_count": 522,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 522
+        }
+       ],
+       "thoughts_token_count": 98,
+       "total_token_count": 644
+      },
+      "invocation_id": "e-08de7f9a-558b-473d-89c4-b63506717d45",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "5ee163f1-9a9e-4972-bedc-1105f04ed6a1"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "968abad2-fa97-4925-a152-0cd0a75376bb",
+      "timestamp": 1792628596.812285
+     }
+    ],
+    "last_update_time": 1792628596.812285
+   },
+   "user_id": "dev"
+  },
+  {
+   "eval_set_file": "scenarios",
+   "eval_set_id": "scenarios",
+   "eval_id": "6be7706e",
+   "final_eval_status": 3,
+   "overall_eval_metric_results": [
+    {
+     "metric_name": "multi_turn_task_success_v1",
+     "threshold": 0.8,
+     "criterion": {
+      "threshold": 0.8,
+      "include_intermediate_responses_in_final": false
+     },
+     "eval_status": 3,
+     "details": {}
+    },
+    {
+     "metric_name": "tool_call_count_v1",
+     "score": 3.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "inference_call_count_v1",
+     "score": 4.0,
+     "eval_status": 4,
+     "details": {}
+    },
+    {
+     "metric_name": "token_usage_v1",
+     "score": 5863.5,
+     "eval_status": 4,
+     "details": {
+      "token_usage_details": {
+       "total_tokens": 5863.5,
+       "input_tokens": 4997.0,
+       "prompt_tokens": 4997.0,
+       "output_tokens": 866.5,
+       "candidates_tokens": 66.0,
+       "reasoning_tokens": 800.5
+      }
+     }
+    },
+    {
+     "metric_name": "invocation_duration_v1",
+     "score": 11.546500000000002,
+     "eval_status": 4,
+     "details": {}
+    }
+   ],
+   "eval_metric_result_per_invocation": [
+    {
+     "actual_invocation": {
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "user_content": {
+       "parts": [
+        {
+         "text": "How do I make the assistant use a local model instead of Gemini?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "Set `OLLAMA_API_BASE` to use a local model instead of Gemini (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_636963",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 181,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 181
+           }
+          ],
+          "thoughts_token_count": 322,
+          "total_token_count": 513
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_636963",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_733066",
+             "args": {
+              "path": "cli.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 542,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 542
+           }
+          ],
+          "thoughts_token_count": 41,
+          "total_token_count": 601
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_733066",
+             "name": "read_page",
+             "response": {
+              "path": "cli.md",
+              "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_397583",
+             "args": {
+              "path": "install.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 679,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 679
+           }
+          ],
+          "thoughts_token_count": 8,
+          "total_token_count": 705
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_397583",
+             "name": "read_page",
+             "response": {
+              "path": "install.md",
+              "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_558156",
+             "args": {
+              "path": "troubleshooting.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 19,
+          "prompt_token_count": 776,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 776
+           }
+          ],
+          "thoughts_token_count": 623,
+          "total_token_count": 1418
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_558156",
+             "name": "read_page",
+             "response": {
+              "path": "troubleshooting.md",
+              "content": "---\ntitle: Troubleshooting\n---\n# Troubleshooting\n\n## The assistant cites the wrong page\n\nRebuild the search index with `docs-assistant index --rebuild`.\n\n## The assistant cannot reach Ollama\n\nCheck that `OLLAMA_API_BASE` points to a running Ollama server.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 23,
+          "prompt_token_count": 1503,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 1503
+           }
+          ],
+          "thoughts_token_count": 430,
+          "total_token_count": 1956
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792628587.0293481,
+      "duration": 16.952,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses. If the question does not say what is failing, ask one short question about the symptom first.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "multi_turn_task_success_v1",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "eval_status": 3,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 4.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 5.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 5193.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 5193.0,
+         "input_tokens": 3681.0,
+         "prompt_tokens": 3681.0,
+         "output_tokens": 1512.0,
+         "candidates_tokens": 88.0,
+         "reasoning_tokens": 1424.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 16.952,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    },
+    {
+     "actual_invocation": {
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "user_content": {
+       "parts": [
+        {
+         "text": "Which Python version does the project require?"
+        }
+       ],
+       "role": "user"
+      },
+      "final_response": {
+       "parts": [
+        {
+         "text": "The project requires Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "intermediate_data": {
+       "invocation_events": [
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_496107",
+             "args": {},
+             "name": "list_pages"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 10,
+          "prompt_token_count": 1966,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 1966
+           }
+          ],
+          "thoughts_token_count": 119,
+          "total_token_count": 2095
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_496107",
+             "name": "list_pages",
+             "response": {
+              "pages": [
+               "cli.md",
+               "install.md",
+               "troubleshooting.md"
+              ]
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_call": {
+             "id": "call_347138",
+             "args": {
+              "path": "install.md"
+             },
+             "name": "read_page"
+            }
+           }
+          ],
+          "role": "model"
+         },
+         "usage_metadata": {
+          "candidates_token_count": 18,
+          "prompt_token_count": 2124,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 2124
+           }
+          ],
+          "thoughts_token_count": 10,
+          "total_token_count": 2152
+         },
+         "model_version": "gemini-3.8-flash"
+        },
+        {
+         "author": "docs_assistant",
+         "content": {
+          "parts": [
+           {
+            "function_response": {
+             "id": "call_347138",
+             "name": "read_page",
+             "response": {
+              "path": "install.md",
+              "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+             }
+            }
+           }
+          ],
+          "role": "user"
+         }
+        },
+        {
+         "author": "docs_assistant",
+         "usage_metadata": {
+          "candidates_token_count": 16,
+          "prompt_token_count": 2223,
+          "prompt_tokens_details": [
+           {
+            "modality": "TEXT",
+            "token_count": 2223
+           }
+          ],
+          "thoughts_token_count": 48,
+          "total_token_count": 2287
+         },
+         "model_version": "gemini-3.8-flash"
+        }
+       ]
+      },
+      "creation_timestamp": 1792628609.982749,
+      "duration": 6.141,
+      "app_details": {
+       "agent_details": {
+        "docs_assistant": {
+         "name": "docs_assistant",
+         "instructions": "Answer questions about the docs-assistant project from its docs only. Call list_pages, then read_page on the one page that answers. Reply in one sentence and end it with the page path in parentheses. If the question does not say what is failing, ask one short question about the symptom first.\n\nYou are an agent. Your internal name is \"docs_assistant\".",
+         "tool_declarations": [
+          {
+           "function_declarations": [
+            {
+             "description": "List the docs pages by path.",
+             "name": "list_pages"
+            },
+            {
+             "description": "Return the Markdown of one docs page, by the path list_pages returned.",
+             "name": "read_page",
+             "parameters_json_schema": {
+              "properties": {
+               "path": {
+                "title": "Path",
+                "type": "string"
+               }
+              },
+              "required": [
+               "path"
+              ],
+              "title": "read_pageParams",
+              "type": "object"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     "eval_metric_results": [
+      {
+       "metric_name": "multi_turn_task_success_v1",
+       "threshold": 0.8,
+       "criterion": {
+        "threshold": 0.8,
+        "include_intermediate_responses_in_final": false
+       },
+       "eval_status": 3,
+       "details": {}
+      },
+      {
+       "metric_name": "tool_call_count_v1",
+       "score": 2.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "inference_call_count_v1",
+       "score": 3.0,
+       "eval_status": 4,
+       "details": {}
+      },
+      {
+       "metric_name": "token_usage_v1",
+       "score": 6534.0,
+       "eval_status": 4,
+       "details": {
+        "token_usage_details": {
+         "total_tokens": 6534.0,
+         "input_tokens": 6313.0,
+         "prompt_tokens": 6313.0,
+         "output_tokens": 221.0,
+         "candidates_tokens": 44.0,
+         "reasoning_tokens": 177.0
+        }
+       }
+      },
+      {
+       "metric_name": "invocation_duration_v1",
+       "score": 6.141,
+       "eval_status": 4,
+       "details": {}
+      }
+     ]
+    }
+   ],
+   "session_id": "adk-eval-session-610e8fa2-86f3-4afc-b4a6-000896df5193",
+   "session_details": {
+    "id": "adk-eval-session-610e8fa2-86f3-4afc-b4a6-000896df5193",
+    "app_name": "docs_assistant",
+    "user_id": "dev",
+    "state": {
+     "__llm_request_key__": "51169ae5-617f-4527-9ae5-c1c1aeea870f"
+    },
+    "events": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "How do I make the assistant use a local model instead of Gemini?"
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "c677bc51-c298-489f-9587-687cba46522a",
+      "timestamp": 1792628583.683288
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_636963",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "538d647d-b314-46b3-9c4b-ab8a2cbd37dc"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 181,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 181
+        }
+       ],
+       "thoughts_token_count": 322,
+       "total_token_count": 513
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "538d647d-b314-46b3-9c4b-ab8a2cbd37dc"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "a9a56040-88db-4736-8f21-f0da2722a0ff",
+      "timestamp": 1792628583.745093
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_636963",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "c64df729-8ddd-4b03-b788-177bc2006c9a",
+      "timestamp": 1792628587.0305228
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_733066",
+          "args": {
+           "path": "cli.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "8672d62c-3df8-4aaf-82b6-4cae99dd0e0d"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 542,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 542
+        }
+       ],
+       "thoughts_token_count": 41,
+       "total_token_count": 601
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "8672d62c-3df8-4aaf-82b6-4cae99dd0e0d"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "4aa7f097-afd3-485e-a2c6-28df55891df2",
+      "timestamp": 1792628587.031126
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_733066",
+          "name": "read_page",
+          "response": {
+           "path": "cli.md",
+           "content": "---\ntitle: CLI reference\n---\n# CLI reference\n\n## ask\n\n`docs-assistant ask QUESTION` prints an answer with citation links.\n\n## index\n\n`docs-assistant index --rebuild` drops the search index and builds it again from the docs folder.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "93ba7f43-a979-4768-b642-6b6f68109341",
+      "timestamp": 1792628588.674977
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_397583",
+          "args": {
+           "path": "install.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "583bb9fd-baf3-4158-bdb3-5e0020a00847"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 679,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 679
+        }
+       ],
+       "thoughts_token_count": 8,
+       "total_token_count": 705
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "583bb9fd-baf3-4158-bdb3-5e0020a00847"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "af3b6032-ef1a-45f5-8915-efb073679740",
+      "timestamp": 1792628588.675835
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_397583",
+          "name": "read_page",
+          "response": {
+           "path": "install.md",
+           "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "bbbee00f-8e15-4957-8654-83734bcb85ab",
+      "timestamp": 1792628589.927291
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_558156",
+          "args": {
+           "path": "troubleshooting.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "5ea309a9-6fee-4f98-b8f6-da7505c38c17"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 19,
+       "prompt_token_count": 776,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 776
+        }
+       ],
+       "thoughts_token_count": 623,
+       "total_token_count": 1418
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "5ea309a9-6fee-4f98-b8f6-da7505c38c17"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "c56c20a6-8437-4b1c-b2ef-9523b0593547",
+      "timestamp": 1792628589.927875
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_558156",
+          "name": "read_page",
+          "response": {
+           "path": "troubleshooting.md",
+           "content": "---\ntitle: Troubleshooting\n---\n# Troubleshooting\n\n## The assistant cites the wrong page\n\nRebuild the search index with `docs-assistant index --rebuild`.\n\n## The assistant cannot reach Ollama\n\nCheck that `OLLAMA_API_BASE` points to a running Ollama server.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "5916aa70-9ce6-4943-9e2d-aadeb58ecfa3",
+      "timestamp": 1792628596.25175
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "Set `OLLAMA_API_BASE` to use a local model instead of Gemini (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "1b4db410-e508-42b8-be04-ff9b42fced22"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 23,
+       "prompt_token_count": 1503,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 1503
+        }
+       ],
+       "thoughts_token_count": 430,
+       "total_token_count": 1956
+      },
+      "invocation_id": "e-ae06febe-b4b8-4d25-8602-ad494a9faf33",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "1b4db410-e508-42b8-be04-ff9b42fced22"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "eb1eecdb-6084-44a8-ac9f-a8d37b93e3a6",
+      "timestamp": 1792628596.252337
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "Which Python version does the project require?"
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "author": "user",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": ""
+      },
+      "id": "5b19580b-9ee0-480a-add4-096a6bdd61be",
+      "timestamp": 1792628607.374601
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_496107",
+          "args": {},
+          "name": "list_pages"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "24707447-fb55-4fb9-a5f2-b98c03e2529e"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 10,
+       "prompt_token_count": 1966,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 1966
+        }
+       ],
+       "thoughts_token_count": 119,
+       "total_token_count": 2095
+      },
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "24707447-fb55-4fb9-a5f2-b98c03e2529e"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "6d00a73b-bf3c-4ae5-942e-4bb8c7e72aab",
+      "timestamp": 1792628607.375563
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_496107",
+          "name": "list_pages",
+          "response": {
+           "pages": [
+            "cli.md",
+            "install.md",
+            "troubleshooting.md"
+           ]
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "124c81a5-5ae0-4b5c-b964-97647b3999d9",
+      "timestamp": 1792628609.9830651
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "function_call": {
+          "id": "call_347138",
+          "args": {
+           "path": "install.md"
+          },
+          "name": "read_page"
+         }
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "bec1dad6-55fc-4a03-9cc6-d4599f690498"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 18,
+       "prompt_token_count": 2124,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 2124
+        }
+       ],
+       "thoughts_token_count": 10,
+       "total_token_count": 2152
+      },
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "bec1dad6-55fc-4a03-9cc6-d4599f690498"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "long_running_tool_ids": [],
+      "id": "9d9c1197-253c-406c-a41c-585c01071aaf",
+      "timestamp": 1792628609.9836612
+     },
+     {
+      "content": {
+       "parts": [
+        {
+         "function_response": {
+          "id": "call_347138",
+          "name": "read_page",
+          "response": {
+           "path": "install.md",
+           "content": "---\ntitle: Install\n---\n# Install\n\n## Requirements\n\nPython 3.12 or later.\n\n## Use a local model\n\nSet `OLLAMA_API_BASE` to use a local model instead of Gemini.\n"
+          }
+         }
+        }
+       ],
+       "role": "user"
+      },
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {},
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "ec159a94-524e-46fa-b633-6f3eb399c562",
+      "timestamp": 1792628611.695828
+     },
+     {
+      "model_version": "gemini-3.8-flash",
+      "content": {
+       "parts": [
+        {
+         "text": "The project requires Python 3.12 or later (install.md)."
+        }
+       ],
+       "role": "model"
+      },
+      "finish_reason": "STOP",
+      "custom_metadata": {
+       "__llm_request_key__": "51169ae5-617f-4527-9ae5-c1c1aeea870f"
+      },
+      "usage_metadata": {
+       "candidates_token_count": 16,
+       "prompt_token_count": 2223,
+       "prompt_tokens_details": [
+        {
+         "modality": "TEXT",
+         "token_count": 2223
+        }
+       ],
+       "thoughts_token_count": 48,
+       "total_token_count": 2287
+      },
+      "invocation_id": "e-04b81d3e-3bad-4448-8b1e-8aca96ae7a7d",
+      "author": "docs_assistant",
+      "actions": {
+       "state_delta": {
+        "__llm_request_key__": "51169ae5-617f-4527-9ae5-c1c1aeea870f"
+       },
+       "artifact_delta": {},
+       "requested_auth_configs": {},
+       "requested_tool_confirmations": {}
+      },
+      "node_info": {
+       "path": "docs_assistant@1"
+      },
+      "id": "d1e54f48-4c39-4b18-85f8-38426fafb28f",
+      "timestamp": 1792628611.6964638
+     }
+    ],
+    "last_update_time": 1792628611.6964638
+   },
+   "user_id": "dev"
+  }
+ ],
+ "creation_timestamp": 1792628641.323023
+}

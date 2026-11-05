@@ -1,0 +1,283 @@
+{
+  "report_version": "1",
+  "case_set": {
+    "name": "inbox-triage",
+    "sha256": "9b7392a423cd6595973591357ab12843404f9d8d69ef3b5b697aca6bc4bf1cf6"
+  },
+  "systems": [
+    {
+      "system": {
+        "name": "model-triage-gemma4",
+        "version": "1",
+        "mode": "replay",
+        "model": "gemma4:e2b@b37049369adf",
+        "prompt": "triage-v1 sha256:053fdf51b21d891e",
+        "tools": null
+      },
+      "recording_sha256": "5091cc6f4507bb6178eb49e30166904c48ff382d1e20b6894b1aabdea7557fb6",
+      "trials_per_case": 10,
+      "cases": 9,
+      "verdicts": {
+        "pass": 90
+      },
+      "not_run": 0,
+      "failures_by_check": {},
+      "incomplete_by_error": {},
+      "per_case": {
+        "charged-twice": {
+          "class": "billing",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "stuck-tracking": {
+          "class": "delivery",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "password-changed": {
+          "class": "account security",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "product-advice": {
+          "class": "out of scope",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "refund-missing": {
+          "class": "billing",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "charged-after-closing": {
+          "class": "billing, ambiguous wording",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "blank-message": {
+          "class": "empty input",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "missing-body": {
+          "class": "missing input",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "late-order": {
+          "class": "delivery",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        }
+      },
+      "flaky_cases": [],
+      "never_passed": [],
+      "curve": {
+        "1": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "2": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "3": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "4": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "5": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "6": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "7": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "8": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "9": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        },
+        "10": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 1.0
+        }
+      },
+      "latency_s": {
+        "trials": 70,
+        "median": 0.651,
+        "p90": 0.719
+      }
+    },
+    {
+      "system": {
+        "name": "model-triage-qwen3.5",
+        "version": "1",
+        "mode": "replay",
+        "model": "qwen3.5:0.8b@de63045f2975",
+        "prompt": "triage-v1 sha256:053fdf51b21d891e",
+        "tools": null
+      },
+      "recording_sha256": "b314b3dc5d1110821cfed88b21b39bc0212244e9eb5c3e6f51d695fc6fd38d6b",
+      "trials_per_case": 10,
+      "cases": 9,
+      "verdicts": {
+        "pass": 77,
+        "fail": 13
+      },
+      "not_run": 0,
+      "failures_by_check": {
+        "failure-criteria": 2,
+        "triage-outcome": 11
+      },
+      "incomplete_by_error": {},
+      "per_case": {
+        "charged-twice": {
+          "class": "billing",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "stuck-tracking": {
+          "class": "delivery",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "password-changed": {
+          "class": "account security",
+          "pass": 7,
+          "fail": 3,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "product-advice": {
+          "class": "out of scope",
+          "pass": 2,
+          "fail": 8,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "refund-missing": {
+          "class": "billing",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "charged-after-closing": {
+          "class": "billing, ambiguous wording",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "blank-message": {
+          "class": "empty input",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "missing-body": {
+          "class": "missing input",
+          "pass": 10,
+          "fail": 0,
+          "incomplete": 0,
+          "not_run": 0
+        },
+        "late-order": {
+          "class": "delivery",
+          "pass": 8,
+          "fail": 2,
+          "incomplete": 0,
+          "not_run": 0
+        }
+      },
+      "flaky_cases": [
+        "password-changed",
+        "product-advice",
+        "late-order"
+      ],
+      "never_passed": [],
+      "curve": {
+        "1": {
+          "pass_at_k": 0.8556,
+          "pass_power_k": 0.8556
+        },
+        "2": {
+          "pass_at_k": 0.921,
+          "pass_power_k": 0.7901
+        },
+        "3": {
+          "pass_at_k": 0.9472,
+          "pass_power_k": 0.7509
+        },
+        "4": {
+          "pass_at_k": 0.963,
+          "pass_power_k": 0.7222
+        },
+        "5": {
+          "pass_at_k": 0.9753,
+          "pass_power_k": 0.7006
+        },
+        "6": {
+          "pass_at_k": 0.9852,
+          "pass_power_k": 0.6852
+        },
+        "7": {
+          "pass_at_k": 0.9926,
+          "pass_power_k": 0.675
+        },
+        "8": {
+          "pass_at_k": 0.9975,
+          "pass_power_k": 0.6691
+        },
+        "9": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 0.6667
+        },
+        "10": {
+          "pass_at_k": 1.0,
+          "pass_power_k": 0.6667
+        }
+      },
+      "latency_s": {
+        "trials": 70,
+        "median": 0.403,
+        "p90": 0.462
+      }
+    }
+  ]
+}

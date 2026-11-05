@@ -1,0 +1,14 @@
+test_changed_snapshot_is_rejected (test_ingest.ResumeTests.test_changed_snapshot_is_rejected) ... ok
+test_changed_stored_chunk_is_rejected_before_skip (test_ingest.ResumeTests.test_changed_stored_chunk_is_rejected_before_skip) ... ok
+test_duplicate_retry_is_idempotent (test_ingest.ResumeTests.test_duplicate_retry_is_idempotent) ... ok
+test_interruption_rolls_back_source_chunks_and_checkpoint (test_ingest.ResumeTests.test_interruption_rolls_back_source_chunks_and_checkpoint) ... ok
+test_missing_stored_chunk_is_rejected_before_skip (test_ingest.ResumeTests.test_missing_stored_chunk_is_rejected_before_skip) ... ok
+test_other_job_requires_new_database (test_ingest.ResumeTests.test_other_job_requires_new_database) ... ok
+test_persistent_restart_skips_committed_source (test_ingest.ResumeTests.test_persistent_restart_skips_committed_source) ... ok
+test_same_id_changed_input_is_rejected_after_interruption (test_ingest.ResumeTests.test_same_id_changed_input_is_rejected_after_interruption) ... ok
+test_stale_checkpoint_is_rejected (test_ingest.ResumeTests.test_stale_checkpoint_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.033s
+
+OK

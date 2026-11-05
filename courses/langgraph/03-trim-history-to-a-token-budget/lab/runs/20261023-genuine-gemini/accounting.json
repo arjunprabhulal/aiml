@@ -1,0 +1,147 @@
+{
+  "turns": [
+    {
+      "thread": "plain",
+      "turn": 1,
+      "estimated_tokens": 85,
+      "chars_only_estimate": 85,
+      "preflight_count_tokens": 76,
+      "provider_input_tokens": 76,
+      "candidate_tokens": 37,
+      "reported_thought_tokens": 181,
+      "total_tokens": 294,
+      "sent_history_messages": 1,
+      "stored_messages_before_reply": 1
+    },
+    {
+      "thread": "plain",
+      "turn": 2,
+      "estimated_tokens": 334,
+      "chars_only_estimate": 153,
+      "preflight_count_tokens": 145,
+      "provider_input_tokens": 326,
+      "candidate_tokens": 34,
+      "reported_thought_tokens": 132,
+      "total_tokens": 492,
+      "sent_history_messages": 3,
+      "stored_messages_before_reply": 3
+    },
+    {
+      "thread": "plain",
+      "turn": 3,
+      "estimated_tokens": 271,
+      "chars_only_estimate": 271,
+      "preflight_count_tokens": 433,
+      "provider_input_tokens": 433,
+      "candidate_tokens": 39,
+      "reported_thought_tokens": null,
+      "total_tokens": 472,
+      "sent_history_messages": 1,
+      "stored_messages_before_reply": 5
+    },
+    {
+      "thread": "plain",
+      "turn": 4,
+      "estimated_tokens": 195,
+      "chars_only_estimate": 195,
+      "preflight_count_tokens": 151,
+      "provider_input_tokens": 151,
+      "candidate_tokens": 44,
+      "reported_thought_tokens": null,
+      "total_tokens": 195,
+      "sent_history_messages": 1,
+      "stored_messages_before_reply": 7
+    },
+    {
+      "thread": "plain",
+      "turn": 5,
+      "estimated_tokens": 281,
+      "chars_only_estimate": 281,
+      "preflight_count_tokens": 210,
+      "provider_input_tokens": 210,
+      "candidate_tokens": 19,
+      "reported_thought_tokens": null,
+      "total_tokens": 229,
+      "sent_history_messages": 3,
+      "stored_messages_before_reply": 9
+    },
+    {
+      "thread": "pinned",
+      "turn": 1,
+      "estimated_tokens": 85,
+      "chars_only_estimate": 85,
+      "preflight_count_tokens": 76,
+      "provider_input_tokens": 76,
+      "candidate_tokens": 32,
+      "reported_thought_tokens": 159,
+      "total_tokens": 267,
+      "sent_history_messages": 1,
+      "stored_messages_before_reply": 1
+    },
+    {
+      "thread": "pinned",
+      "turn": 2,
+      "estimated_tokens": 328,
+      "chars_only_estimate": 169,
+      "preflight_count_tokens": 171,
+      "provider_input_tokens": 330,
+      "candidate_tokens": 32,
+      "reported_thought_tokens": 169,
+      "total_tokens": 531,
+      "sent_history_messages": 3,
+      "stored_messages_before_reply": 3
+    },
+    {
+      "thread": "pinned",
+      "turn": 3,
+      "estimated_tokens": 295,
+      "chars_only_estimate": 295,
+      "preflight_count_tokens": 464,
+      "provider_input_tokens": 464,
+      "candidate_tokens": 44,
+      "reported_thought_tokens": null,
+      "total_tokens": 508,
+      "sent_history_messages": 1,
+      "stored_messages_before_reply": 5
+    },
+    {
+      "thread": "pinned",
+      "turn": 4,
+      "estimated_tokens": 219,
+      "chars_only_estimate": 219,
+      "preflight_count_tokens": 182,
+      "provider_input_tokens": 182,
+      "candidate_tokens": 40,
+      "reported_thought_tokens": null,
+      "total_tokens": 222,
+      "sent_history_messages": 1,
+      "stored_messages_before_reply": 7
+    },
+    {
+      "thread": "pinned",
+      "turn": 5,
+      "estimated_tokens": 302,
+      "chars_only_estimate": 302,
+      "preflight_count_tokens": 237,
+      "provider_input_tokens": 237,
+      "candidate_tokens": 24,
+      "reported_thought_tokens": null,
+      "total_tokens": 261,
+      "sent_history_messages": 3,
+      "stored_messages_before_reply": 9
+    }
+  ],
+  "totals": {
+    "provider_input_tokens": 2485,
+    "candidate_tokens": 345,
+    "reported_thought_tokens": 641,
+    "total_tokens": 3471
+  },
+  "limits": [
+    "400 is an approximate trimming budget, not a hard provider input limit.",
+    "Preflight token counts and reported provider input differed on two turns:145 versus326 and171 versus330. Do not treat the count endpoint as a general billing cap.",
+    "Observed maximum provider input464 and output including thinking218 were below the reviewed4096 limits.",
+    "A missing thoughtsTokenCount field is kept as null here; no claim that thinking was disabled.",
+    "Usage records are not an invoice."
+  ]
+}

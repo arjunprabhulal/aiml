@@ -1,0 +1,7 @@
+[service]
+name = "docs-api"
+build = "make build"
+
+[env.staging]
+LOG_LEVEL = "debug"
+AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
